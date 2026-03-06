@@ -23,6 +23,7 @@
   --radius-md: 12px;
   --radius-sm: 999px;
   --sidebar-width: 320px;
+  --planechase-ratio: 800 / 559;
 }
 
 * {
@@ -57,8 +58,17 @@ a {
 }
 
 button,
-input {
+input,
+select {
   font: inherit;
+}
+
+code {
+  background: #121821;
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  padding: 0.1rem 0.35rem;
+  color: var(--text);
 }
 
 .app-shell {
@@ -212,7 +222,8 @@ input {
   background: #1b2330;
 }
 
-.search-input {
+.search-input,
+.select-input {
   width: 100%;
   border: 1px solid var(--border);
   background: #121821;
@@ -222,7 +233,8 @@ input {
   outline: none;
 }
 
-.search-input:focus {
+.search-input:focus,
+.select-input:focus {
   border-color: rgba(103, 183, 255, 0.5);
   box-shadow: 0 0 0 3px rgba(103, 183, 255, 0.12);
 }
@@ -237,7 +249,8 @@ input {
 
 .hero-card,
 .gallery-section,
-.filter-block {
+.filter-block,
+.result-group {
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
@@ -251,7 +264,8 @@ input {
 
 .hero-card h2,
 .filter-heading,
-.section-header h2 {
+.section-header h2,
+.result-group-title {
   margin: 0;
   letter-spacing: -0.02em;
 }
@@ -275,6 +289,10 @@ input {
   font-weight: 700;
 }
 
+.filter-label-spaced {
+  margin-top: 14px;
+}
+
 .filter-heading-row {
   display: flex;
   align-items: center;
@@ -285,6 +303,10 @@ input {
 
 .filter-heading {
   font-size: 1rem;
+}
+
+.group-tag-picker-wrap.hidden {
+  display: none;
 }
 
 .clear-inline-button,
@@ -388,10 +410,55 @@ input {
   font-weight: 700;
 }
 
+.gallery-host {
+  min-height: 80px;
+}
+
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 18px;
+}
+
+.single-card-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.single-card-item {
+  width: min(100%, 720px);
+  max-width: 720px;
+}
+
+.result-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.result-group {
+  overflow: hidden;
+}
+
+.result-group-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.result-group-meta {
+  margin: 0;
+  color: var(--text-faint);
+  font-size: 0.9rem;
+}
+
+.result-group-body {
+  padding: 18px;
 }
 
 .card-link {
@@ -456,20 +523,30 @@ input {
 .card-image-wrap {
   overflow: hidden;
   border-radius: 14px;
+  background: #10151c;
 }
 
 .card-image {
   display: block;
   width: 100%;
   height: auto;
-  aspect-ratio: 5 / 7;
-  object-fit: cover;
+  aspect-ratio: var(--planechase-ratio);
+  object-fit: contain;
   transition: transform 220ms ease;
 }
 
 .card-link:hover .card-image,
 .card-link:focus-visible .card-image {
-  transform: scale(1.065);
+  transform: scale(1.04);
+}
+
+.single-card-item .card {
+  width: 100%;
+}
+
+.single-card-item .card-image {
+  width: 100%;
+  height: auto;
 }
 
 .card-footer {
@@ -536,7 +613,7 @@ input {
 .modal-panel {
   position: relative;
   z-index: 1;
-  max-width: min(1280px, calc(100vw - 32px));
+  max-width: min(1400px, calc(100vw - 32px));
   max-height: calc(100vh - 32px);
   margin: 16px auto;
   background: linear-gradient(180deg, #151a21 0%, #11161c 100%);
@@ -595,7 +672,7 @@ input {
 
 .modal-layout {
   display: grid;
-  grid-template-columns: minmax(320px, 540px) minmax(280px, 1fr);
+  grid-template-columns: minmax(520px, 860px) minmax(280px, 1fr);
   max-height: calc(100vh - 32px);
 }
 
@@ -613,8 +690,12 @@ input {
 
 .modal-image {
   display: block;
-  max-width: 100%;
-  max-height: calc(100vh - 130px);
+  width: 100%;
+  max-width: 860px;
+  height: auto;
+  max-height: calc(100vh - 140px);
+  aspect-ratio: var(--planechase-ratio);
+  object-fit: contain;
   border-radius: 16px;
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
 }
@@ -706,6 +787,15 @@ input {
   .sidebar {
     width: min(92vw, 360px);
   }
+
+  .card-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  .single-card-item {
+    width: min(100%, 640px);
+    max-width: 640px;
+  }
 }
 
 @media (max-width: 980px) {
@@ -743,8 +833,13 @@ input {
   }
 
   .card-grid {
-    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 12px;
+  }
+
+  .single-card-item {
+    width: 100%;
+    max-width: 100%;
   }
 
   .modal-panel {

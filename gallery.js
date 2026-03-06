@@ -23,6 +23,11 @@ const clearStatusFiltersButton = document.getElementById("clear-status-filters")
 const clearTagFiltersButton = document.getElementById("clear-tag-filters");
 const clearAllFiltersButton = document.getElementById("clear-all-filters");
 
+const viewModeSelect = document.getElementById("view-mode-select");
+const groupBySelect = document.getElementById("group-by-select");
+const groupTagPickerWrap = document.getElementById("group-tag-picker-wrap");
+const groupTagSelect = document.getElementById("group-tag-select");
+
 const modal = document.getElementById("card-modal");
 const modalImage = document.getElementById("modal-image");
 const modalName = document.getElementById("modal-card-name");
@@ -40,6 +45,12 @@ const filters = {
   types: new Set(),
   statuses: new Set(),
   tags: new Set()
+};
+
+const displayState = {
+  viewMode: "grid",
+  groupBy: "none",
+  groupTag: ""
 };
 
 init();
@@ -65,6 +76,7 @@ async function init() {
 
     allCards = rawCards.map(enrichCard);
     buildTagFilters(allCards);
+    buildGroupTagOptions(allCards);
     bindEvents();
     applyFilters();
     tryOpenCardFromHash();
@@ -138,6 +150,22 @@ function bindEvents() {
 
   clearAllFiltersButton.addEventListener("click", clearAllFilters);
 
+  viewModeSelect.addEventListener("change", () => {
+    displayState.viewMode = viewModeSelect.value;
+    renderGallery();
+  });
+
+  groupBySelect.addEventListener("change", () => {
+    displayState.groupBy = groupBySelect.value;
+    groupTagPickerWrap.classList.toggle("hidden", displayState.groupBy !== "tag");
+    renderGallery();
+  });
+
+  groupTagSelect.addEventListener("change", () => {
+    displayState.groupTag = groupTagSelect.value;
+    renderGallery();
+  });
+
   sidebarToggle.addEventListener("click", toggleSidebar);
   topbarSidebarToggle.addEventListener("click", toggleSidebar);
   sidebarBackdrop.addEventListener("click", closeSidebar);
@@ -165,6 +193,35 @@ function bindEvents() {
       }
     }
 
+    if (event.key === "/" && !event.metaKey && !event.ctrlKey && !event.altKey) {
+      const active = document.activeElement;
+      const typing = active && (
+        active.tagName === "INPUT" ||
+        active.tagName === "TEXTAREA" ||
+        active.tagName === "SELECT" ||
+        active.isContentEditable
+      );
+
+      if (!typing) {
+        event.preventDefault();
+        topSearch.focus();
+      }
+    }
+
+    if (event.key.toLowerCase() === "f" && !event.metaKey && !event.ctrlKey && !event.altKey) {
+      const active = document.activeElement;
+      const typing = active && (
+        active.tagName === "INPUT" ||
+        active.tagName === "TEXTAREA" ||
+        active.tagName === "SELECT" ||
+        active.isContentEditable
+      );
+
+      if (!typing) {
+        toggleSidebar();
+      }
+    }
+
     if (modal.classList.contains("hidden")) return;
 
     if (event.key === "ArrowLeft") showPreviousCard();
@@ -188,14 +245,14 @@ function bindEvents() {
 function syncSearchInputsFromTop() {
   const value = topSearch.value;
   sidebarSearch.value = value;
-  filters.search = value.trim().toLowerCase();
+  filters.search = value.trim();
   applyFilters();
 }
 
 function syncSearchInputsFromSidebar() {
   const value = sidebarSearch.value;
   topSearch.value = value;
-  filters.search = value.trim().toLowerCase();
+  filters.search = value.trim();
   applyFilters();
 }
 
@@ -247,6 +304,21 @@ function buildTagFilters(cards) {
   }
 }
 
+function buildGroupTagOptions(cards) {
+  const tags = [...new Set(cards.flatMap((card) => card.tags))].sort((a, b) =>
+    a.localeCompare(b, undefined, { sensitivity: "base" })
+  );
+
+  groupTagSelect.innerHTML = `<option value="">Choose a tag...</option>`;
+
+  for (const tag of tags) {
+    const option = document.createElement("option");
+    option.value = tag;
+    option.textContent = tag;
+    groupTagSelect.appendChild(option);
+  }
+}
+
 function syncTagFilterUI() {
   const chips = [...tagFilterList.querySelectorAll(".tag-chip")];
   for (const chip of chips) {
@@ -255,7 +327,9 @@ function syncTagFilterUI() {
 }
 
 function applyFilters() {
-  filteredCards = allCards.filter(matchesFilters);
+  const parsedQuery = parseSearchQuery(filters.search);
+
+  filteredCards = allCards.filter((card) => matchesFilters(card, parsedQuery));
 
   filteredCards.sort((a, b) => {
     if (a.type !== b.type) {
@@ -267,24 +341,11 @@ function applyFilters() {
     });
   });
 
-  renderActiveFilters();
+  renderActiveFilters(parsedQuery);
   renderGallery();
 }
 
-function matchesFilters(card) {
-  if (filters.search) {
-    const haystack = [
-      card.displayName,
-      card.type,
-      card.status,
-      ...card.tags
-    ].join(" ").toLowerCase();
-
-    if (!haystack.includes(filters.search)) {
-      return false;
-    }
-  }
-
+function matchesFilters(card, parsedQuery) {
   if (filters.types.size > 0 && !filters.types.has(card.type)) {
     return false;
   }
@@ -301,7 +362,162 @@ function matchesFilters(card) {
     }
   }
 
+  if (!matchesParsedQuery(card, parsedQuery)) {
+    return false;
+  }
+
   return true;
+}
+
+function matchesParsedQuery(card, parsedQuery) {
+  const haystack = [
+    card.displayName,
+    card.type,
+    normalizeStatusLabel(card.status),
+    ...card.tags
+  ].join(" ").toLowerCase();
+
+  for (const term of parsedQuery.textTerms) {
+    if (!haystack.includes(term)) {
+      return false;
+    }
+  }
+
+  for (const term of parsedQuery.negTextTerms) {
+    if (haystack.includes(term)) {
+      return false;
+    }
+  }
+
+  for (const value of parsedQuery.nameTerms) {
+    if (!card.displayName.toLowerCase().includes(value)) {
+      return false;
+    }
+  }
+
+  for (const value of parsedQuery.negNameTerms) {
+    if (card.displayName.toLowerCase().includes(value)) {
+      return false;
+    }
+  }
+
+  for (const value of parsedQuery.typeTerms) {
+    if (card.type.toLowerCase() !== value) {
+      return false;
+    }
+  }
+
+  for (const value of parsedQuery.negTypeTerms) {
+    if (card.type.toLowerCase() === value) {
+      return false;
+    }
+  }
+
+  for (const value of parsedQuery.statusTerms) {
+    if (normalizeStatusLabel(card.status) !== value) {
+      return false;
+    }
+  }
+
+  for (const value of parsedQuery.negStatusTerms) {
+    if (normalizeStatusLabel(card.status) === value) {
+      return false;
+    }
+  }
+
+  for (const value of parsedQuery.tagTerms) {
+    if (!card.tags.includes(value)) {
+      return false;
+    }
+  }
+
+  for (const value of parsedQuery.negTagTerms) {
+    if (card.tags.includes(value)) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function parseSearchQuery(rawQuery) {
+  const parsed = {
+    textTerms: [],
+    negTextTerms: [],
+    nameTerms: [],
+    negNameTerms: [],
+    typeTerms: [],
+    negTypeTerms: [],
+    statusTerms: [],
+    negStatusTerms: [],
+    tagTerms: [],
+    negTagTerms: []
+  };
+
+  if (!rawQuery) return parsed;
+
+  const tokens = rawQuery.match(/"[^"]+"|\S+/g) || [];
+
+  for (let token of tokens) {
+    let negated = false;
+
+    if (token.startsWith("-")) {
+      negated = true;
+      token = token.slice(1);
+    }
+
+    token = stripQuotes(token);
+    if (!token) continue;
+
+    const colonIndex = token.indexOf(":");
+    if (colonIndex > 0) {
+      const field = token.slice(0, colonIndex).toLowerCase();
+      const value = stripQuotes(token.slice(colonIndex + 1)).toLowerCase().trim();
+      if (!value) continue;
+
+      if (field === "type" || field === "t") {
+        (negated ? parsed.negTypeTerms : parsed.typeTerms).push(value);
+        continue;
+      }
+
+      if (field === "status" || field === "s") {
+        const normalized = normalizeQueryStatus(value);
+        if (normalized) {
+          (negated ? parsed.negStatusTerms : parsed.statusTerms).push(normalized);
+        }
+        continue;
+      }
+
+      if (field === "tag") {
+        (negated ? parsed.negTagTerms : parsed.tagTerms).push(value);
+        continue;
+      }
+
+      if (field === "name") {
+        (negated ? parsed.negNameTerms : parsed.nameTerms).push(value);
+        continue;
+      }
+    }
+
+    (negated ? parsed.negTextTerms : parsed.textTerms).push(token.toLowerCase());
+  }
+
+  return parsed;
+}
+
+function stripQuotes(value) {
+  return value.replace(/^"(.*)"$/, "$1").trim();
+}
+
+function normalizeQueryStatus(value) {
+  if (value === "complete") return "complete";
+  if (value === "wip") return "wip";
+  if (value === "incomplete") return "wip";
+  return value;
+}
+
+function normalizeStatusLabel(status) {
+  return status === "complete" ? "complete" : "wip";
 }
 
 function renderGallery() {
@@ -313,48 +529,142 @@ function renderGallery() {
     return;
   }
 
-  for (const card of filteredCards) {
-    const cardButton = document.createElement("button");
-    cardButton.type = "button";
-    cardButton.className = "card-link";
-    cardButton.setAttribute("aria-label", `Open viewer for ${card.displayName}`);
+  if (displayState.groupBy === "none") {
+    const wrapper = document.createElement("div");
+    wrapper.className = displayState.viewMode === "single" ? "single-card-layout" : "card-grid";
 
-    const badgeText = card.status === "complete" ? "Complete" : "WIP";
-    const badgeClass = card.status === "complete" ? "card-badge-complete" : "card-badge-wip";
+    for (const card of filteredCards) {
+      const element = createCardElement(card);
+      if (displayState.viewMode === "single") {
+        element.classList.add("single-card-item");
+      }
+      wrapper.appendChild(element);
+    }
 
-    const visibleTags = card.tags.slice(0, 4);
-    const tagMarkup = visibleTags
-      .map((tag) => `<span class="card-tag">${escapeHtml(tag)}</span>`)
-      .join("");
+    gallery.appendChild(wrapper);
+    return;
+  }
 
-    cardButton.innerHTML = `
-      <article class="card">
-        <div class="card-badge ${badgeClass}">${badgeText}</div>
-        <div class="card-image-wrap">
-          <img class="card-image" src="${card.imagePath}" alt="${escapeHtml(card.displayName)}" loading="lazy" />
-        </div>
-        <div class="card-footer">
-          <div class="card-name-row">
-            <h3 class="card-name">${escapeHtml(card.displayName)}</h3>
-            <div class="card-type">${card.type}</div>
-          </div>
-          <div class="card-tags">${tagMarkup}</div>
-        </div>
-      </article>
+  const grouped = groupCards(filteredCards, displayState.groupBy, displayState.groupTag);
+  const groupsWrap = document.createElement("div");
+  groupsWrap.className = "result-groups";
+
+  for (const group of grouped) {
+    if (!group.cards.length) continue;
+
+    const section = document.createElement("section");
+    section.className = "result-group";
+
+    const inner = document.createElement("div");
+    inner.className = displayState.viewMode === "single"
+      ? "single-card-layout result-group-body"
+      : "card-grid result-group-body";
+
+    for (const card of group.cards) {
+      const element = createCardElement(card);
+      if (displayState.viewMode === "single") {
+        element.classList.add("single-card-item");
+      }
+      inner.appendChild(element);
+    }
+
+    section.innerHTML = `
+      <div class="result-group-header">
+        <h3 class="result-group-title">${escapeHtml(group.label)}</h3>
+        <p class="result-group-meta">${group.cards.length} ${group.cards.length === 1 ? "card" : "cards"}</p>
+      </div>
     `;
 
-    cardButton.addEventListener("click", () => openModalByKey(card.key, true));
-    gallery.appendChild(cardButton);
+    section.appendChild(inner);
+    groupsWrap.appendChild(section);
   }
+
+  gallery.appendChild(groupsWrap);
 }
 
-function renderActiveFilters() {
+function groupCards(cards, mode, selectedTag) {
+  const groups = new Map();
+
+  if (mode === "type") {
+    for (const card of cards) {
+      addCardToGroup(groups, card.type, card);
+    }
+  } else if (mode === "status") {
+    for (const card of cards) {
+      addCardToGroup(groups, card.status === "complete" ? "Complete" : "WIP", card);
+    }
+  } else if (mode === "tag") {
+    if (!selectedTag) {
+      addCardToGroup(groups, "Ungrouped", ...cards);
+    } else {
+      addCardToGroup(groups, `Has tag: ${selectedTag}`, ...cards.filter((card) => card.tags.includes(selectedTag)));
+      addCardToGroup(groups, `Missing tag: ${selectedTag}`, ...cards.filter((card) => !card.tags.includes(selectedTag)));
+    }
+  }
+
+  return [...groups.entries()].map(([label, groupCards]) => ({
+    label,
+    cards: groupCards
+  }));
+}
+
+function addCardToGroup(map, label, ...cards) {
+  if (!map.has(label)) {
+    map.set(label, []);
+  }
+  map.get(label).push(...cards);
+}
+
+function createCardElement(card) {
+  const cardButton = document.createElement("button");
+  cardButton.type = "button";
+  cardButton.className = "card-link";
+  cardButton.setAttribute("aria-label", `Open viewer for ${card.displayName}`);
+
+  const badgeText = card.status === "complete" ? "Complete" : "WIP";
+  const badgeClass = card.status === "complete" ? "card-badge-complete" : "card-badge-wip";
+
+  const visibleTags = card.tags.slice(0, 4);
+  const tagMarkup = visibleTags
+    .map((tag) => `<span class="card-tag">${escapeHtml(tag)}</span>`)
+    .join("");
+
+  cardButton.innerHTML = `
+    <article class="card">
+      <div class="card-badge ${badgeClass}">${badgeText}</div>
+      <div class="card-image-wrap">
+        <img class="card-image" src="${card.imagePath}" alt="${escapeHtml(card.displayName)}" loading="lazy" />
+      </div>
+      <div class="card-footer">
+        <div class="card-name-row">
+          <h3 class="card-name">${escapeHtml(card.displayName)}</h3>
+          <div class="card-type">${card.type}</div>
+        </div>
+        <div class="card-tags">${tagMarkup}</div>
+      </div>
+    </article>
+  `;
+
+  cardButton.addEventListener("click", () => openModalByKey(card.key, true));
+  return cardButton;
+}
+
+function renderActiveFilters(parsedQuery) {
   const pills = [];
 
   if (filters.search) pills.push(`Search: ${filters.search}`);
   for (const type of filters.types) pills.push(`Type: ${type}`);
   for (const status of filters.statuses) pills.push(`Status: ${status === "complete" ? "Complete" : "WIP"}`);
   for (const tag of filters.tags) pills.push(`Tag: ${tag}`);
+
+  for (const value of parsedQuery.typeTerms) pills.push(`type:${value}`);
+  for (const value of parsedQuery.negTypeTerms) pills.push(`-type:${value}`);
+  for (const value of parsedQuery.statusTerms) pills.push(`status:${value}`);
+  for (const value of parsedQuery.negStatusTerms) pills.push(`-status:${value}`);
+  for (const value of parsedQuery.tagTerms) pills.push(`tag:${value}`);
+  for (const value of parsedQuery.negTagTerms) pills.push(`-tag:${value}`);
+  for (const value of parsedQuery.nameTerms) pills.push(`name:${value}`);
+  for (const value of parsedQuery.negNameTerms) pills.push(`-name:${value}`);
 
   activeFilters.innerHTML = pills
     .map((pill) => `<span class="active-filter-pill">${escapeHtml(pill)}</span>`)
@@ -470,6 +780,13 @@ function clearAllFilters() {
 
   topSearch.value = "";
   sidebarSearch.value = "";
+  viewModeSelect.value = "grid";
+  groupBySelect.value = "none";
+  groupTagSelect.value = "";
+  displayState.viewMode = "grid";
+  displayState.groupBy = "none";
+  displayState.groupTag = "";
+  groupTagPickerWrap.classList.add("hidden");
 
   typeFilterInputs.forEach((input) => {
     input.checked = false;

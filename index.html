@@ -11,8 +11,8 @@
     <aside id="sidebar" class="sidebar collapsed">
       <div class="sidebar-header">
         <div>
-          <div class="brand-kicker">Custom MTG Set</div>
-          <h1 class="brand-title">Planechase</h1>
+          <div class="brand-kicker">Terraphice</div>
+          <h1 class="brand-title">Planechase Booster</h1>
         </div>
         <button id="sidebar-toggle" class="sidebar-toggle" type="button" aria-label="Close filters">
           ✕
@@ -23,6 +23,33 @@
         <div class="filter-block">
           <label class="filter-label" for="sidebar-search">Search</label>
           <input id="sidebar-search" class="search-input" type="search" placeholder="Search cards..." />
+        </div>
+
+        <div class="filter-block">
+          <div class="filter-heading-row">
+            <h2 class="filter-heading">Display</h2>
+          </div>
+
+          <label class="filter-label" for="view-mode-select">View mode</label>
+          <select id="view-mode-select" class="select-input">
+            <option value="grid">Grid</option>
+            <option value="single">Single-card</option>
+          </select>
+
+          <label class="filter-label filter-label-spaced" for="group-by-select">Group results by</label>
+          <select id="group-by-select" class="select-input">
+            <option value="none">None</option>
+            <option value="type">Type</option>
+            <option value="status">Status</option>
+            <option value="tag">Tag</option>
+          </select>
+
+          <div id="group-tag-picker-wrap" class="group-tag-picker-wrap hidden">
+            <label class="filter-label filter-label-spaced" for="group-tag-select">Tag to group by</label>
+            <select id="group-tag-select" class="select-input">
+              <option value="">Choose a tag...</option>
+            </select>
+          </div>
         </div>
 
         <div class="filter-block">
@@ -84,9 +111,9 @@
             </button>
 
             <div class="topbar-copy">
-              <div class="brand-kicker">Custom MTG Set</div>
-              <h1 class="page-title">Planechase Gallery</h1>
-              <p class="page-subtitle">Planes and Phenomena</p>
+              <div class="brand-kicker">Terraphice</div>
+              <h1 class="page-title">Planechase Booster</h1>
+              <p class="page-subtitle">Gallery</p>
             </div>
           </div>
 
@@ -97,20 +124,13 @@
       </header>
 
       <main class="content">
-        <section class="hero-card">
-          <h2>Browse</h2>
-          <p>
-            Click any card to view it full-size. Use the filter drawer to narrow by type, status, tags, or name.
-          </p>
-        </section>
-
         <section class="gallery-section">
           <div class="section-header">
-            <h2>Results</h2>
+            <h2>Gallery</h2>
             <p id="results-count" class="section-meta"></p>
           </div>
           <div id="active-filters" class="active-filters"></div>
-          <div id="gallery" class="card-grid"></div>
+          <div id="gallery" class="gallery-host"></div>
         </section>
       </main>
     </div>
