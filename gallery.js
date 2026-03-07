@@ -2,6 +2,7 @@ let allCards = [];
 let filteredCards = [];
 let currentModalIndex = -1;
 let cardMetadata = {};
+let stackActiveRaf = null;
 
 const gallery = document.getElementById("gallery");
 const resultsCount = document.getElementById("results-count");
@@ -156,17 +157,20 @@ function bindEvents() {
   viewModeSelect.addEventListener("change", () => {
     displayState.viewMode = viewModeSelect.value;
     renderGallery();
+    scheduleStackActiveUpdate();
   });
 
   groupBySelect.addEventListener("change", () => {
     displayState.groupBy = groupBySelect.value;
     groupTagPickerWrap.classList.toggle("hidden", displayState.groupBy !== "tag");
     renderGallery();
+    scheduleStackActiveUpdate();
   });
 
   groupTagSelect.addEventListener("change", () => {
     displayState.groupTag = groupTagSelect.value;
     renderGallery();
+    scheduleStackActiveUpdate();
   });
 
   sidebarToggle.addEventListener("click", toggleSidebar);
@@ -298,6 +302,9 @@ function bindEvents() {
 
     openModalByKey(key, false);
   });
+
+  window.addEventListener("scroll", scheduleStackActiveUpdate, { passive: true });
+  window.addEventListener("resize", scheduleStackActiveUpdate);
 }
 
 function syncSearchInputsFromTop() {
@@ -604,17 +611,15 @@ function renderGallery() {
 
   if (displayState.groupBy === "none") {
     const wrapper = document.createElement("div");
-    wrapper.className = displayState.viewMode === "single" ? "single-card-layout" : "card-grid";
+    wrapper.className = getLayoutClassName();
 
-    for (const card of filteredCards) {
-      const element = createCardElement(card);
-      if (displayState.viewMode === "single") {
-        element.classList.add("single-card-item");
-      }
+    filteredCards.forEach((card, index) => {
+      const element = createCardElement(card, index);
       wrapper.appendChild(element);
-    }
+    });
 
     gallery.appendChild(wrapper);
+    scheduleStackActiveUpdate();
     return;
   }
 
@@ -629,17 +634,12 @@ function renderGallery() {
     section.className = "result-group";
 
     const inner = document.createElement("div");
-    inner.className = displayState.viewMode === "single"
-      ? "single-card-layout result-group-body"
-      : "card-grid result-group-body";
+    inner.className = `${getLayoutClassName()} result-group-body`;
 
-    for (const card of group.cards) {
-      const element = createCardElement(card);
-      if (displayState.viewMode === "single") {
-        element.classList.add("single-card-item");
-      }
+    group.cards.forEach((card, index) => {
+      const element = createCardElement(card, index);
       inner.appendChild(element);
-    }
+    });
 
     section.innerHTML = `
       <div class="result-group-header">
@@ -653,6 +653,13 @@ function renderGallery() {
   }
 
   gallery.appendChild(groupsWrap);
+  scheduleStackActiveUpdate();
+}
+
+function getLayoutClassName() {
+  if (displayState.viewMode === "single") return "single-card-layout";
+  if (displayState.viewMode === "stack") return "stack-card-layout";
+  return "card-grid";
 }
 
 function groupCards(cards, mode, selectedTag) {
@@ -675,9 +682,9 @@ function groupCards(cards, mode, selectedTag) {
     }
   }
 
-  return [...groups.entries()].map(([label, groupCards]) => ({
+  return [...groups.entries()].map(([label, groupedCards]) => ({
     label,
-    cards: groupCards
+    cards: groupedCards
   }));
 }
 
@@ -688,11 +695,21 @@ function addCardToGroup(map, label, ...cards) {
   map.get(label).push(...cards);
 }
 
-function createCardElement(card) {
+function createCardElement(card, index = 0) {
   const cardButton = document.createElement("button");
   cardButton.type = "button";
   cardButton.className = "card-link";
   cardButton.setAttribute("aria-label", `Open viewer for ${card.displayName}`);
+  cardButton.dataset.cardKey = card.key;
+
+  if (displayState.viewMode === "single") {
+    cardButton.classList.add("single-card-item");
+  }
+
+  if (displayState.viewMode === "stack") {
+    cardButton.classList.add("stack-card-item");
+    cardButton.style.zIndex = String(index + 1);
+  }
 
   const badgeText = card.status === "complete" ? "Complete" : "WIP";
   const badgeClass = card.status === "complete" ? "card-badge-complete" : "card-badge-wip";
@@ -736,6 +753,57 @@ function createCardElement(card) {
 
   cardButton.addEventListener("click", () => openModalByKey(card.key, true));
   return cardButton;
+}
+
+function scheduleStackActiveUpdate() {
+  if (stackActiveRaf !== null) return;
+
+  stackActiveRaf = window.requestAnimationFrame(() => {
+    stackActiveRaf = null;
+    updateStackActiveCard();
+  });
+}
+
+function updateStackActiveCard() {
+  if (displayState.viewMode !== "stack") return;
+
+  const stackItems = [...gallery.querySelectorAll(".stack-card-item")];
+  if (!stackItems.length) return;
+
+  stackItems.forEach((item, index) => {
+    item.classList.remove("stack-active");
+    item.style.zIndex = String(index + 1);
+  });
+
+  const prefersCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+  if (!prefersCoarsePointer) return;
+
+  const viewportCenter = window.innerHeight / 2;
+  let bestItem = null;
+  let bestDistance = Number.POSITIVE_INFINITY;
+
+  for (const item of stackItems) {
+    const rect = item.getBoundingClientRect();
+
+    if (rect.bottom < 0 || rect.top > window.innerHeight) {
+      continue;
+    }
+
+    const itemCenter = rect.top + rect.height / 2;
+    const distance = Math.abs(itemCenter - viewportCenter);
+
+    if (distance < bestDistance) {
+      bestDistance = distance;
+      bestItem = item;
+    }
+  }
+
+  if (!bestItem) {
+    bestItem = stackItems[0];
+  }
+
+  bestItem.classList.add("stack-active");
+  bestItem.style.zIndex = "50";
 }
 
 function renderActiveFilters(parsedQuery) {
