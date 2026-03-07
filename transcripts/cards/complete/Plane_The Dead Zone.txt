@@ -1,0 +1,11 @@
+The Dead Zone
+
+Plane — Ulgrotha
+
+When you planeswalk to The Dead Zone, players lose all unspent mana. Players can’t add or produce mana, or activate mana abilities.
+
+Whenever you roll {CH}, create X 1/1 black Vampire creature tokens with lifelink and flying, where X is the number of lands you control.
+
+Artist: Rebecca Guay
+Set: Planechase Booster — Terraphice
+Rarity: N/A

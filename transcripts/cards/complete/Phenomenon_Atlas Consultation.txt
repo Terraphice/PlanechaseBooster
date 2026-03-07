@@ -1,0 +1,10 @@
+Atlas Consultation
+
+Phenomenon
+
+When you encounter Atlas Consultation, starting with you, each player votes for a plane card visited this game. Reveal cards from the top of the planar deck until you reveal a card with the most votes or tied for the most votes. Put that card on top and the rest on the bottom in a random order. (A plane card becomes visited when it becomes the active plane or if it was the active plane at the start of the game.)
+(Then planeswalk away from this phenomenon.)
+
+Artist: Alexander Forssberg
+Set: Planechase Booster — Terraphice
+Rarity: N/A

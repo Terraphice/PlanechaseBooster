@@ -1,0 +1,10 @@
+Embrace of Ichor
+
+Phenomenon
+
+When you encounter Embrace of Ichor, the player with the most poison counters or each player tied for the most poison counters becomes compleated. (Compleated players can’t get additional poison counters, can’t gain life, and for each {B} in a cost, they may pay 2 life rather than pay that mana. The same is true for {W}, {U}, {R}, and {G}.)
+(Then planeswalk away from this phenomenon.)
+
+Artist: Santiago Rosas
+Set: Planechase Booster — Terraphice
+Rarity: N/A
