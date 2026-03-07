@@ -186,6 +186,29 @@ function bindEvents() {
   modalNextButton.addEventListener("click", showNextCard);
   modalCopyLinkButton.addEventListener("click", copyCurrentCardLink);
 
+  modalTagList.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+
+    const tag = target.dataset.tag;
+    if (!tag) return;
+
+    event.preventDefault();
+    event.stopPropagation();
+    toggleTagFilter(tag);
+  });
+
+  activeFilters.addEventListener("click", (event) => {
+    const target = event.target;
+    if (!(target instanceof HTMLElement)) return;
+
+    const tag = target.dataset.tag;
+    if (!tag) return;
+
+    event.preventDefault();
+    toggleTagFilter(tag);
+  });
+
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       if (!modal.classList.contains("hidden")) {
@@ -356,13 +379,7 @@ function syncTagFilterUI() {
 }
 
 function toggleTagFilter(tag) {
-  const wasModalOpen = !modal.classList.contains("hidden");
-  const currentCardKey =
-    wasModalOpen &&
-    currentModalIndex >= 0 &&
-    currentModalIndex < filteredCards.length
-      ? filteredCards[currentModalIndex].key
-      : getCardKeyFromHash();
+  const currentKey = getCurrentModalCardKey();
 
   if (filters.tags.has(tag)) {
     filters.tags.delete(tag);
@@ -373,19 +390,28 @@ function toggleTagFilter(tag) {
   syncTagFilterUI();
   applyFilters();
 
-  if (!wasModalOpen || !currentCardKey) {
-    return;
+  if (!modal.classList.contains("hidden") && currentKey) {
+    const matchingIndex = filteredCards.findIndex((card) => card.key === currentKey);
+
+    if (matchingIndex === -1) {
+      closeModal(false);
+      return;
+    }
+
+    currentModalIndex = matchingIndex;
+    renderModal(filteredCards[currentModalIndex], false);
+  }
+}
+
+function getCurrentModalCardKey() {
+  const hashKey = getCardKeyFromHash();
+  if (hashKey) return hashKey;
+
+  if (currentModalIndex >= 0 && currentModalIndex < filteredCards.length) {
+    return filteredCards[currentModalIndex].key;
   }
 
-  const matchingIndex = filteredCards.findIndex((card) => card.key === currentCardKey);
-
-  if (matchingIndex === -1) {
-    closeModal(false);
-    return;
-  }
-
-  currentModalIndex = matchingIndex;
-  renderModal(filteredCards[currentModalIndex], false);
+  return null;
 }
 
 function applyFilters() {
@@ -693,27 +719,23 @@ function createCardElement(card) {
   footer.appendChild(tagsContainer);
 
   for (const tag of card.tags.slice(0, 4)) {
-    const tagElement = createInteractiveTag(tag, "card-tag");
+    const tagElement = document.createElement("span");
+    tagElement.className = "card-tag";
+    tagElement.textContent = tag;
+    tagElement.dataset.tag = tag;
+    tagElement.classList.toggle("active", filters.tags.has(tag));
+
+    tagElement.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      toggleTagFilter(tag);
+    });
+
     tagsContainer.appendChild(tagElement);
   }
 
   cardButton.addEventListener("click", () => openModalByKey(card.key, true));
   return cardButton;
-}
-
-function createInteractiveTag(tag, className = "card-tag") {
-  const element = document.createElement("span");
-  element.className = className;
-  element.textContent = tag;
-  element.classList.toggle("active", filters.tags.has(tag));
-
-  element.addEventListener("click", (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    toggleTagFilter(tag);
-  });
-
-  return element;
 }
 
 function renderActiveFilters(parsedQuery) {
@@ -761,15 +783,42 @@ function renderActiveFilters(parsedQuery) {
 
     if (pill.removable) {
       element.classList.add("active-filter-pill-removable");
-      element.addEventListener("click", () => {
-        toggleTagFilter(pill.tag);
-      });
+      element.dataset.tag = pill.tag;
     } else {
       element.disabled = true;
     }
 
     activeFilters.appendChild(element);
   }
+}
+
+function openModalByKey(cardKey, updateHash = true) {
+  let index = filteredCards.findIndex((card) => card.key === cardKey);
+
+  if (index === -1) {
+    const cardInAll = allCards.find((card) => card.key === cardKey);
+    if (!cardInAll) return;
+
+    if (!filteredCards.some((card) => card.key === cardKey)) {
+      filteredCards = [...allCards];
+      filteredCards.sort((a, b) => {
+        if (a.type !== b.type) {
+          return a.type.localeCompare(b.type);
+        }
+        return a.displayName.localeCompare(b.displayName, undefined, {
+          numeric: true,
+          sensitivity: "base"
+        });
+      });
+      renderGallery();
+    }
+
+    index = filteredCards.findIndex((card) => card.key === cardKey);
+    if (index === -1) return;
+  }
+
+  currentModalIndex = index;
+  renderModal(filteredCards[currentModalIndex], updateHash);
 }
 
 async function renderModal(card, updateHash = true) {
@@ -782,10 +831,12 @@ async function renderModal(card, updateHash = true) {
   modalBadge.textContent = card.status === "complete" ? "Complete" : "WIP";
   modalBadge.className = `modal-status-badge ${card.status === "complete" ? "complete" : "incomplete"}`;
 
-  modalTagList.innerHTML = "";
-  for (const tag of card.tags) {
-    modalTagList.appendChild(createInteractiveTag(tag, "modal-tag"));
-  }
+  modalTagList.innerHTML = card.tags
+    .map((tag) => {
+      const activeClass = filters.tags.has(tag) ? " active" : "";
+      return `<span class="modal-tag${activeClass}" data-tag="${escapeHtml(tag)}">${escapeHtml(tag)}</span>`;
+    })
+    .join("");
 
   modalTranscript.innerHTML = "Loading transcript…";
 
