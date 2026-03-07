@@ -326,13 +326,7 @@ function buildTagFilters(cards) {
     button.dataset.tag = tag;
 
     button.addEventListener("click", () => {
-      if (filters.tags.has(tag)) {
-        filters.tags.delete(tag);
-      } else {
-        filters.tags.add(tag);
-      }
-      syncTagFilterUI();
-      applyFilters();
+      toggleTagFilter(tag);
     });
 
     tagFilterList.appendChild(button);
@@ -359,6 +353,39 @@ function syncTagFilterUI() {
   for (const chip of chips) {
     chip.classList.toggle("active", filters.tags.has(chip.dataset.tag));
   }
+}
+
+function toggleTagFilter(tag) {
+  const wasModalOpen = !modal.classList.contains("hidden");
+  const currentCardKey =
+    wasModalOpen &&
+    currentModalIndex >= 0 &&
+    currentModalIndex < filteredCards.length
+      ? filteredCards[currentModalIndex].key
+      : getCardKeyFromHash();
+
+  if (filters.tags.has(tag)) {
+    filters.tags.delete(tag);
+  } else {
+    filters.tags.add(tag);
+  }
+
+  syncTagFilterUI();
+  applyFilters();
+
+  if (!wasModalOpen || !currentCardKey) {
+    return;
+  }
+
+  const matchingIndex = filteredCards.findIndex((card) => card.key === currentCardKey);
+
+  if (matchingIndex === -1) {
+    closeModal(false);
+    return;
+  }
+
+  currentModalIndex = matchingIndex;
+  renderModal(filteredCards[currentModalIndex], false);
 }
 
 function applyFilters() {
@@ -644,7 +671,6 @@ function createCardElement(card) {
   const badgeText = card.status === "complete" ? "Complete" : "WIP";
   const badgeClass = card.status === "complete" ? "card-badge-complete" : "card-badge-wip";
 
-  const visibleTags = card.tags.slice(0, 4);
   const tagsContainer = document.createElement("div");
   tagsContainer.className = "card-tags";
 
@@ -666,19 +692,8 @@ function createCardElement(card) {
   const footer = cardButton.querySelector(".card-footer");
   footer.appendChild(tagsContainer);
 
-  for (const tag of visibleTags) {
-    const tagElement = document.createElement("span");
-    tagElement.className = "card-tag";
-    tagElement.textContent = tag;
-
-    tagElement.addEventListener("click", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      filters.tags.add(tag);
-      syncTagFilterUI();
-      applyFilters();
-    });
-
+  for (const tag of card.tags.slice(0, 4)) {
+    const tagElement = createInteractiveTag(tag, "card-tag");
     tagsContainer.appendChild(tagElement);
   }
 
@@ -686,55 +701,75 @@ function createCardElement(card) {
   return cardButton;
 }
 
-function renderActiveFilters(parsedQuery) {
-  const pills = [];
+function createInteractiveTag(tag, className = "card-tag") {
+  const element = document.createElement("span");
+  element.className = className;
+  element.textContent = tag;
+  element.classList.toggle("active", filters.tags.has(tag));
 
-  if (filters.search) pills.push(`Search: ${filters.search}`);
-  for (const type of filters.types) pills.push(`Type: ${type}`);
-  for (const status of filters.statuses) pills.push(`Status: ${status === "complete" ? "Complete" : "WIP"}`);
-  for (const tag of filters.tags) pills.push(`Tag: ${tag}`);
+  element.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    toggleTagFilter(tag);
+  });
 
-  for (const value of parsedQuery.typeTerms) pills.push(`type:${value}`);
-  for (const value of parsedQuery.negTypeTerms) pills.push(`-type:${value}`);
-  for (const value of parsedQuery.statusTerms) pills.push(`status:${value}`);
-  for (const value of parsedQuery.negStatusTerms) pills.push(`-status:${value}`);
-  for (const value of parsedQuery.tagTerms) pills.push(`tag:${value}`);
-  for (const value of parsedQuery.negTagTerms) pills.push(`-tag:${value}`);
-  for (const value of parsedQuery.nameTerms) pills.push(`name:${value}`);
-  for (const value of parsedQuery.negNameTerms) pills.push(`-name:${value}`);
-
-  activeFilters.innerHTML = pills
-    .map((pill) => `<span class="active-filter-pill">${escapeHtml(pill)}</span>`)
-    .join("");
+  return element;
 }
 
-function openModalByKey(cardKey, updateHash = true) {
-  let index = filteredCards.findIndex((card) => card.key === cardKey);
+function renderActiveFilters(parsedQuery) {
+  activeFilters.innerHTML = "";
 
-  if (index === -1) {
-    const cardInAll = allCards.find((card) => card.key === cardKey);
-    if (!cardInAll) return;
+  const pillData = [];
 
-    if (!filteredCards.some((card) => card.key === cardKey)) {
-      filteredCards = [...allCards];
-      filteredCards.sort((a, b) => {
-        if (a.type !== b.type) {
-          return a.type.localeCompare(b.type);
-        }
-        return a.displayName.localeCompare(b.displayName, undefined, {
-          numeric: true,
-          sensitivity: "base"
-        });
-      });
-      renderGallery();
-    }
-
-    index = filteredCards.findIndex((card) => card.key === cardKey);
-    if (index === -1) return;
+  if (filters.search) {
+    pillData.push({ label: `Search: ${filters.search}`, removable: false });
   }
 
-  currentModalIndex = index;
-  renderModal(filteredCards[currentModalIndex], updateHash);
+  for (const type of filters.types) {
+    pillData.push({ label: `Type: ${type}`, removable: false });
+  }
+
+  for (const status of filters.statuses) {
+    pillData.push({
+      label: `Status: ${status === "complete" ? "Complete" : "WIP"}`,
+      removable: false
+    });
+  }
+
+  for (const tag of filters.tags) {
+    pillData.push({
+      label: `Tag: ${tag}`,
+      removable: true,
+      tag
+    });
+  }
+
+  for (const value of parsedQuery.typeTerms) pillData.push({ label: `type:${value}`, removable: false });
+  for (const value of parsedQuery.negTypeTerms) pillData.push({ label: `-type:${value}`, removable: false });
+  for (const value of parsedQuery.statusTerms) pillData.push({ label: `status:${value}`, removable: false });
+  for (const value of parsedQuery.negStatusTerms) pillData.push({ label: `-status:${value}`, removable: false });
+  for (const value of parsedQuery.tagTerms) pillData.push({ label: `tag:${value}`, removable: false });
+  for (const value of parsedQuery.negTagTerms) pillData.push({ label: `-tag:${value}`, removable: false });
+  for (const value of parsedQuery.nameTerms) pillData.push({ label: `name:${value}`, removable: false });
+  for (const value of parsedQuery.negNameTerms) pillData.push({ label: `-name:${value}`, removable: false });
+
+  for (const pill of pillData) {
+    const element = document.createElement("button");
+    element.type = "button";
+    element.className = "active-filter-pill";
+    element.textContent = pill.removable ? `${pill.label} ×` : pill.label;
+
+    if (pill.removable) {
+      element.classList.add("active-filter-pill-removable");
+      element.addEventListener("click", () => {
+        toggleTagFilter(pill.tag);
+      });
+    } else {
+      element.disabled = true;
+    }
+
+    activeFilters.appendChild(element);
+  }
 }
 
 async function renderModal(card, updateHash = true) {
@@ -747,9 +782,10 @@ async function renderModal(card, updateHash = true) {
   modalBadge.textContent = card.status === "complete" ? "Complete" : "WIP";
   modalBadge.className = `modal-status-badge ${card.status === "complete" ? "complete" : "incomplete"}`;
 
-  modalTagList.innerHTML = card.tags
-    .map((tag) => `<span class="modal-tag">${escapeHtml(tag)}</span>`)
-    .join("");
+  modalTagList.innerHTML = "";
+  for (const tag of card.tags) {
+    modalTagList.appendChild(createInteractiveTag(tag, "modal-tag"));
+  }
 
   modalTranscript.innerHTML = "Loading transcript…";
 

@@ -415,6 +415,25 @@ code {
   font-weight: 700;
 }
 
+button.active-filter-pill {
+  cursor: default;
+}
+
+button.active-filter-pill:disabled {
+  opacity: 1;
+}
+
+.active-filter-pill-removable {
+  cursor: pointer !important;
+  transition: border-color 160ms ease, background 160ms ease, color 160ms ease;
+}
+
+.active-filter-pill-removable:hover {
+  border-color: rgba(103, 183, 255, 0.55);
+  background: rgba(103, 183, 255, 0.16);
+  color: #eef6ff;
+}
+
 .gallery-host {
   min-height: 80px;
 }
@@ -591,12 +610,21 @@ code {
   margin-top: 10px;
 }
 
-.card-tag {
+.card-tag,
+.modal-tag {
   cursor: pointer;
   transition: border-color 160ms ease, background 160ms ease, color 160ms ease;
 }
 
-.card-tag:hover {
+.card-tag:hover,
+.modal-tag:hover {
+  border-color: rgba(103, 183, 255, 0.55);
+  background: rgba(103, 183, 255, 0.16);
+  color: #eef6ff;
+}
+
+.card-tag.active,
+.modal-tag.active {
   border-color: rgba(103, 183, 255, 0.55);
   background: rgba(103, 183, 255, 0.16);
   color: #eef6ff;
