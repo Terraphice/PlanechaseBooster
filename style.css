@@ -631,6 +631,21 @@ html[data-palette="gruvbox"][data-theme="dark"] .sidebar {
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
 }
 
+.symbol-glyph {
+  font-family:
+    "Segoe UI Symbol",
+    "Apple Symbols",
+    "Noto Sans Symbols 2",
+    "Noto Sans Symbols",
+    "Arial Unicode MS",
+    ui-sans-serif,
+    system-ui,
+    sans-serif;
+
+  font-variant-emoji: text;
+  line-height: 1;
+}
+
 .theme-toggle-glyph {
   display: inline-block;
   transition: transform 180ms ease, opacity 180ms ease, filter 180ms ease;
@@ -759,8 +774,11 @@ html[data-palette="gruvbox"][data-theme="dark"] .sidebar {
   right: 0;
   z-index: 80;
   width: min(440px, calc(100vw - 24px));
+  max-width: calc(100vw - 24px);
   max-height: min(72vh, 680px);
   overflow: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   padding: 14px;
   background: color-mix(in srgb, var(--bg-elev-1) 98%, transparent);
   border: 1px solid var(--border);
@@ -1656,8 +1674,14 @@ button.active-filter-pill:disabled {
   }
 
   .settings-menu {
-    width: min(420px, calc(100vw - 18px));
-    right: -6px;
+    position: fixed;
+    top: max(12px, env(safe-area-inset-top, 0px));
+    right: 12px;
+    left: 12px;
+    width: auto;
+    max-width: none;
+    max-height: calc(100vh - 24px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
+    border-radius: 16px;
   }
 
   .sidebar-lip {
