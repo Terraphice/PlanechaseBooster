@@ -7,7 +7,6 @@ Each planeswalker loses all abilities and becomes a creature with power and toug
 
 *(Then planeswalk away from this phenomenon.)*
 
-
 Illustrated by: Eli Minaya
 Set: Planechase Booster — Terraphice
 Rarity: N/A

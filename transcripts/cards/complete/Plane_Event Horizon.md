@@ -4,6 +4,7 @@ Plane — Blind Eternities
 
 Nonbasic lands are Wastes.
 Whenever you tap a permanent for {C}, add an additional {C}.
+
 Whenever chaos ensues, choose one —
 • Draw four cards.
 • Destroy target permanent.

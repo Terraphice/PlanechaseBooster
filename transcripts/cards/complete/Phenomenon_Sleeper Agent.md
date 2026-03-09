@@ -1,16 +1,10 @@
 Sleeper Agent
 
-
-
 Phenomenon
-
-
 
 When you encounter Sleeper Agent, the next player to lose life or get a poison counter becomes compleated. *(Compleated players can’t get additional poison counters, can’t gain life, and for each {B} in a cost, they may pay 2 life rather than pay that mana. The same is true for {W}, {U}, {R}, and {G}.)*
 
 *(Then planeswalk away from this phenomenon.)*
-
-
 
 Illustrated by: Jason Engle
 Set: Planechase Booster — Terraphice

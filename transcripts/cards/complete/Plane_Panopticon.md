@@ -4,6 +4,7 @@ Plane — Mirrodin
 
 When you planeswalk to Panopticon, draw a card.
 At the beginning of your draw step, draw an additional card.
+
 Whenever chaos ensues, draw a card.
 
 Illustrated by: John Avon

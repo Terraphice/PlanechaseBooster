@@ -1,14 +1,10 @@
 Morphic Tide
 
-
 Phenomenon
-
 
 When you encounter Morphic Tide, each player shuffles all permanents they own into their library, then reveals that many cards from the top of their library. Each player puts all artifact, creature, land, and planeswalker cards revealed this way onto the battlefield, then does the same for enchantment cards, then puts all cards revealed this way that weren't put onto the battlefield on the bottom of their library in any order.
 
-
 *(Then planeswalk away from this phenomenon.)*
-
 
 Illustrated by: Brandon Kitkouski
 Set: Planechase Anthology Planes (OPCA)
