@@ -164,16 +164,30 @@ function toggleDeckPanel() {
 
 function openDeckPanel() {
   deckPanelOpen = true;
-  deckPanel?.classList.add("open");
   deckPanel?.classList.remove("hidden");
+  deckButton?.classList.add("deck-panel-open");
   renderDeckList();
   onDeckChangeFn?.();
+  // Defer adding .open so the CSS transition plays after display:none → flex
+  requestAnimationFrame(() => {
+    deckPanel?.classList.add("open");
+  });
 }
 
 export function closeDeckPanel() {
   deckPanelOpen = false;
   deckPanel?.classList.remove("open");
+  deckButton?.classList.remove("deck-panel-open");
   onDeckChangeFn?.();
+  // Re-hide after transition so it's out of tab order
+  const panel = deckPanel;
+  if (panel) {
+    const onEnd = () => {
+      if (!panel.classList.contains("open")) panel.classList.add("hidden");
+      panel.removeEventListener("transitionend", onEnd);
+    };
+    panel.addEventListener("transitionend", onEnd);
+  }
 }
 
 export function isDeckPanelOpen() {
@@ -424,7 +438,7 @@ function decodeDeck(seed) {
       if (!part) continue;
       const starIdx = part.lastIndexOf("*");
       let ck, count;
-      if (starIdx > 1 && /^\d+$/.test(part.slice(starIdx + 1))) {
+      if (starIdx >= 1 && /^\d+$/.test(part.slice(starIdx + 1))) {
         ck = part.slice(0, starIdx);
         count = Math.max(1, Math.min(MAX_CARD_COUNT, parseInt(part.slice(starIdx + 1), 10)));
       } else {
@@ -725,11 +739,6 @@ function renderGameDeckView() {
   if (gameState.remaining.length === 0) {
     gameDeckViewList.innerHTML = `<p class="game-deck-view-empty">Library is empty.</p>`;
     return;
-  }
-
-  const seen = new Map();
-  for (const card of gameState.remaining) {
-    seen.set(card.key, (seen.get(card.key) || 0) + 1);
   }
 
   const ul = document.createElement("ol");

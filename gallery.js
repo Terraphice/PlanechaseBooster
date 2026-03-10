@@ -1544,7 +1544,7 @@ function preloadPageImagesAndTranscripts(cards) {
     const card = cards[i++];
 
     if (!transcriptCache.has(card.key)) {
-      transcriptCache.set(card.key, null);
+      transcriptCache.set(card.key, null); // null = fetch in progress; string = completed
       fetch(card.transcriptPathMd)
         .then((r) => {
           if (r.ok) return r.text();
