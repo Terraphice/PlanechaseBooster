@@ -19,7 +19,9 @@
     "file": "Phenomenon_Caught in a Parallel Universe.png",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon"
+      "Phenomenon",
+      "WHO",
+      "hidden"
     ]
   },
   {
@@ -73,7 +75,9 @@
     "file": "Phenomenon_Fixed Point in Time.png",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon"
+      "Phenomenon",
+      "WHO",
+      "hidden"
     ]
   },
   {
@@ -96,14 +100,18 @@
     "file": "Phenomenon_High and Dry Black Market.png",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon"
+      "Phenomenon",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
     "file": "Phenomenon_Human\u2014Time Lord Meta-Crisis.png",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon"
+      "Phenomenon",
+      "WHO",
+      "hidden"
     ]
   },
   {
@@ -133,7 +141,9 @@
     "file": "Phenomenon_Mad Labs.png",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon"
+      "Phenomenon",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -154,7 +164,9 @@
     "file": "Phenomenon_Omenpath Instability.png",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon"
+      "Phenomenon",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -169,7 +181,9 @@
     "file": "Phenomenon_Pin Trading.png",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon"
+      "Phenomenon",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -183,7 +197,9 @@
     "file": "Phenomenon_Probability Flux.png",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon"
+      "Phenomenon",
+      "WHO",
+      "hidden"
     ]
   },
   {
@@ -197,7 +213,9 @@
     "file": "Phenomenon_Royal Booster.png",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon"
+      "Phenomenon",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -227,7 +245,9 @@
     "file": "Phenomenon_Team-Up!.png",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon"
+      "Phenomenon",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -249,21 +269,27 @@
     "file": "Phenomenon_Unknown Event.png",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon"
+      "Phenomenon",
+      "PUNK",
+      "hidden"
     ]
   },
   {
     "file": "Phenomenon_Unleash the Flux.png",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon"
+      "Phenomenon",
+      "WHO",
+      "hidden"
     ]
   },
   {
     "file": "Phenomenon_Year-End Review.png",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon"
+      "Phenomenon",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -305,7 +331,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Earth"
+      "Earth",
+      "WHO",
+      "hidden"
     ]
   },
   {
@@ -340,7 +368,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Hell"
+      "Hell",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -374,7 +404,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Earth"
+      "Earth",
+      "WHO",
+      "hidden"
     ]
   },
   {
@@ -382,7 +414,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Amsterdam"
+      "Amsterdam",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -425,7 +459,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Las Vegas"
+      "Las Vegas",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -433,7 +469,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Chicago"
+      "Chicago",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -451,7 +489,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Clamhattan"
+      "Clamhattan",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -512,7 +552,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Las Vegas"
+      "Las Vegas",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -620,7 +662,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Avishkar"
+      "Avishkar",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -719,7 +763,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Thunder Junction"
+      "Thunder Junction",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -735,7 +781,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Spacecraft"
+      "Spacecraft",
+      "WHO",
+      "hidden"
     ]
   },
   {
@@ -784,7 +832,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Las Vegas"
+      "Las Vegas",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -800,7 +850,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Kandoka"
+      "Kandoka",
+      "WHO",
+      "hidden"
     ]
   },
   {
@@ -856,7 +908,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Earth"
+      "Earth",
+      "WHO",
+      "hidden"
     ]
   },
   {
@@ -948,7 +1002,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Las Vegas"
+      "Las Vegas",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -956,7 +1012,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Spacecraft"
+      "Spacecraft",
+      "WHO",
+      "hidden"
     ]
   },
   {
@@ -972,7 +1030,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Universia Beyondia"
+      "Universia Beyondia",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -1037,7 +1097,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "New Earth"
+      "New Earth",
+      "WHO",
+      "hidden"
     ]
   },
   {
@@ -1045,7 +1107,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Foundations"
+      "Foundations",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -1053,7 +1117,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Duskmourn"
+      "Duskmourn",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -1077,7 +1143,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Earth"
+      "Earth",
+      "WHO",
+      "hidden"
     ]
   },
   {
@@ -1101,7 +1169,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Horsehead Nebula"
+      "Horsehead Nebula",
+      "WHO",
+      "hidden"
     ]
   },
   {
@@ -1166,7 +1236,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Earth"
+      "Earth",
+      "WHO",
+      "hidden"
     ]
   },
   {
@@ -1190,7 +1262,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Las Vegas"
+      "Las Vegas",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -1198,7 +1272,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Earth"
+      "Earth",
+      "WHO",
+      "hidden"
     ]
   },
   {
@@ -1206,7 +1282,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Duskmourn"
+      "Duskmourn",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -1278,7 +1356,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Foldaria"
+      "Foldaria",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -1286,7 +1366,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Chicago"
+      "Chicago",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -1304,7 +1386,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Chicago"
+      "Chicago",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -1328,7 +1412,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Innistrad"
+      "Innistrad",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -1362,7 +1448,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Unknown Planet"
+      "Unknown Planet",
+      "WHO",
+      "hidden"
     ]
   },
   {
@@ -1386,7 +1474,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Amsterdam"
+      "Amsterdam",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -1420,7 +1510,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Thunder Junction"
+      "Thunder Junction",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -1468,7 +1560,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Chicago"
+      "Chicago",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -1484,7 +1578,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Earth"
+      "Earth",
+      "WHO",
+      "hidden"
     ]
   },
   {
@@ -1492,7 +1588,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Outside Mutter's Spiral"
+      "Outside Mutter's Spiral",
+      "WHO",
+      "hidden"
     ]
   },
   {
@@ -1518,7 +1616,6 @@
       ":top:badge:tr:amber:Custom",
       "Plane",
       "Ulgrotha",
-      "Homelands",
       "PBT"
     ]
   },
@@ -1527,7 +1624,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Spacecraft"
+      "Spacecraft",
+      "WHO",
+      "hidden"
     ]
   },
   {
@@ -1555,7 +1654,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Earth"
+      "Earth",
+      "WHO",
+      "hidden"
     ]
   },
   {
@@ -1588,7 +1689,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Eldraine"
+      "Eldraine",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -1636,7 +1739,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "The Library"
+      "The Library",
+      "WHO",
+      "hidden"
     ]
   },
   {
@@ -1662,7 +1767,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Moon"
+      "Moon",
+      "WHO",
+      "hidden"
     ]
   },
   {
@@ -1687,7 +1794,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Mars"
+      "Mars",
+      "WHO",
+      "hidden"
     ]
   },
   {
@@ -1695,7 +1804,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Las Vegas"
+      "Las Vegas",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -1728,7 +1839,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Chicago"
+      "Chicago",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -1803,7 +1916,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Earth"
+      "Earth",
+      "WHO",
+      "hidden"
     ]
   },
   {
@@ -1844,7 +1959,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Bloomburrow"
+      "Bloomburrow",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
@@ -1852,7 +1969,9 @@
     "tags": [
       ":top:badge:tr:green:Official",
       "Plane",
-      "Amsterdam"
+      "Amsterdam",
+      "MagicCon",
+      "hidden"
     ]
   },
   {
