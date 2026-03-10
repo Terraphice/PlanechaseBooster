@@ -9,4 +9,3 @@ When you planeswalk to The Dead Zone, players lose all unspent mana. Players can
 Illustrated by: Rebecca Guay
 Set: Planechase Booster — Terraphice
 Rarity: N/A
-

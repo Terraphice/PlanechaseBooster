@@ -9,4 +9,3 @@ When you planeswalk to The Tangle, and at the beginning of your upkeep, create a
 Illustrated by: Rob Alexander
 Set: Planechase Booster — Terraphice
 Rarity: N/A
-

@@ -96,6 +96,7 @@ const modalName = document.getElementById("modal-card-name");
 const modalType = document.getElementById("modal-card-type");
 const modalTranscript = document.getElementById("modal-transcript");
 const modalSourceLink = document.getElementById("modal-source-link");
+const modalScryfallLink = document.getElementById("modal-scryfall-link");
 const modalCloseButton = document.getElementById("modal-close");
 const modalPrevButton = document.getElementById("modal-prev");
 const modalNextButton = document.getElementById("modal-next");
@@ -173,10 +174,43 @@ async function init() {
         gallery.classList.toggle("deck-mode", isDeckPanelOpen());
       }
     });
+
+    prefetchAllTranscripts(allCards);
   } catch (error) {
     console.error(error);
     gallery.innerHTML = `<p class="empty-state">Could not load gallery data.</p>`;
     resultsCount.textContent = "";
+  }
+}
+
+function prefetchAllTranscripts(cards) {
+  const CONCURRENCY = 6;
+  let index = 0;
+
+  function next() {
+    if (index >= cards.length) return;
+    const card = cards[index++];
+
+    if (transcriptCache.has(card.key)) {
+      next();
+      return;
+    }
+
+    transcriptCache.set(card.key, null);
+    fetch(card.transcriptPath)
+      .then((r) => (r.ok ? r.text() : ""))
+      .then((text) => {
+        transcriptCache.set(card.key, text ? text.trim() : "");
+        next();
+      })
+      .catch(() => {
+        transcriptCache.set(card.key, "");
+        next();
+      });
+  }
+
+  for (let i = 0; i < CONCURRENCY; i++) {
+    next();
   }
 }
 
@@ -665,7 +699,7 @@ function getCurrentModalCardKey() {
 function applyFilters({ updateUrl = true } = {}) {
   const parsedQuery = parseSearchQuery(filters.search);
 
-  filteredCards = allCards.filter((card) => matchesFilters(card, parsedQuery, filters));
+  filteredCards = allCards.filter((card) => matchesFilters(card, parsedQuery, filters, transcriptCache));
   sortCards(filteredCards);
 
   paginationState.currentPage = 1;
@@ -1177,6 +1211,8 @@ function renderActiveFilters(parsedQuery) {
   for (const value of parsedQuery.negTagTerms) pillData.push({ label: `-tag:${value}`, removable: false });
   for (const value of parsedQuery.nameTerms) pillData.push({ label: `name:${value}`, removable: false });
   for (const value of parsedQuery.negNameTerms) pillData.push({ label: `-name:${value}`, removable: false });
+  for (const value of parsedQuery.oracleTerms) pillData.push({ label: `o:${value}`, removable: false });
+  for (const value of parsedQuery.negOracleTerms) pillData.push({ label: `-o:${value}`, removable: false });
 
   if (parsedQuery.regexSource) {
     pillData.push({ label: `regex:${parsedQuery.regexSource}`, removable: false });
@@ -1184,6 +1220,10 @@ function renderActiveFilters(parsedQuery) {
 
   if (filters.fuzzy) {
     pillData.push({ label: "Fuzzy", removable: false });
+  }
+
+  if (filters.showHidden) {
+    pillData.push({ label: "Hidden", removable: false });
   }
 
   for (const pill of pillData) {
@@ -1252,7 +1292,7 @@ function buildSuggestions(query) {
   const queryLower = query.toLowerCase();
   const parsed = parseSearchQuery(query);
   const matches = allCards
-    .filter((card) => matchesFilters(card, parsed, filters))
+    .filter((card) => matchesFilters(card, parsed, filters, transcriptCache))
     .slice(0, 6);
 
   const suggestions = [];
@@ -1451,11 +1491,15 @@ function openModalByKey(cardKey, updateHash = true) {
 }
 
 async function renderModal(card, updateHash = true) {
-  modalImage.src = card.imagePath;
+  modalImage.src = "";
   modalImage.alt = card.displayName;
+  modalImage.src = card.imagePath;
   modalName.textContent = card.displayName;
   modalType.textContent = card.type;
   modalSourceLink.href = card.imagePath;
+
+  const scryfallQuery = encodeURIComponent(`"${card.displayName}"`);
+  modalScryfallLink.href = `https://scryfall.com/search?q=${scryfallQuery}&utm_source=planar-atlas&utm_medium=referral`;
 
   setModalCardKey(card.key);
 
@@ -1482,14 +1526,14 @@ async function renderModal(card, updateHash = true) {
   modalTranscript.innerHTML = "Loading transcript…";
 
   try {
-    let response = await fetch(card.transcriptPathMd);
-    if (!response.ok) response = await fetch(card.transcriptPathTxt);
+    const response = await fetch(card.transcriptPath);
     if (!response.ok) throw new Error("Transcript not found");
 
     const transcript = await response.text();
     transcriptCache.set(card.key, transcript.trim());
     renderTranscriptMarkdown(transcript.trim() || "No transcript available.");
   } catch {
+    transcriptCache.set(card.key, "");
     renderTranscriptMarkdown("No transcript available.");
   }
 }
@@ -1509,20 +1553,32 @@ function closeModal(updateHash = true) {
 }
 
 function showPreviousCard() {
-  if (currentModalIndex <= 0) return;
+  const { start } = getPageBounds();
+  if (currentModalIndex <= start) return;
   currentModalIndex -= 1;
   renderModal(filteredCards[currentModalIndex], true);
 }
 
 function showNextCard() {
-  if (currentModalIndex >= filteredCards.length - 1) return;
+  const { end } = getPageBounds();
+  if (currentModalIndex >= end) return;
   currentModalIndex += 1;
   renderModal(filteredCards[currentModalIndex], true);
 }
 
+function getPageBounds() {
+  if (paginationState.mode === "paginated") {
+    const start = (paginationState.currentPage - 1) * paginationState.pageSize;
+    const end = Math.min(start + paginationState.pageSize, filteredCards.length) - 1;
+    return { start, end };
+  }
+  return { start: 0, end: Math.min(paginationState.infiniteLoadedCount, filteredCards.length) - 1 };
+}
+
 function updateModalNavButtons() {
-  modalPrevButton.disabled = currentModalIndex <= 0;
-  modalNextButton.disabled = currentModalIndex >= filteredCards.length - 1;
+  const { start, end } = getPageBounds();
+  modalPrevButton.disabled = currentModalIndex <= start;
+  modalNextButton.disabled = currentModalIndex >= end;
 }
 
 function preloadAdjacentImages() {
@@ -1536,27 +1592,12 @@ function preloadCardImage(card) {
   img.src = card.imagePath;
 }
 
-function preloadPageImagesAndTranscripts(cards) {
+function preloadPageImages(cards) {
   let i = 0;
 
   function preloadNext() {
     if (i >= cards.length) return;
     const card = cards[i++];
-
-    if (!transcriptCache.has(card.key)) {
-      transcriptCache.set(card.key, null); // null = fetch in progress; string = completed
-      fetch(card.transcriptPathMd)
-        .then((r) => {
-          if (r.ok) return r.text();
-          return fetch(card.transcriptPathTxt).then((r2) => (r2.ok ? r2.text() : ""));
-        })
-        .then((text) => {
-          transcriptCache.set(card.key, text ? text.trim() : "");
-        })
-        .catch(() => {
-          transcriptCache.set(card.key, "");
-        });
-    }
 
     if (card.imagePath) {
       const img = new Image();
@@ -1575,20 +1616,20 @@ function startPreloadingAfterThumbnails(cards) {
   const thumbImgs = [...gallery.querySelectorAll(".card-image")];
 
   if (thumbImgs.length === 0) {
-    preloadPageImagesAndTranscripts(cards);
+    preloadPageImages(cards);
     return;
   }
 
   let remaining = thumbImgs.filter((img) => !img.complete).length;
 
   if (remaining === 0) {
-    preloadPageImagesAndTranscripts(cards);
+    preloadPageImages(cards);
     return;
   }
 
   const onSettled = () => {
     remaining--;
-    if (remaining <= 0) preloadPageImagesAndTranscripts(cards);
+    if (remaining <= 0) preloadPageImages(cards);
   };
 
   for (const img of thumbImgs) {

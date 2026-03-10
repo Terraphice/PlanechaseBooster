@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="parallax-bg" aria-hidden="true"></div>
   <div class="app-shell">
     <aside id="sidebar" class="sidebar collapsed">
       <button id="sidebar-lip" class="sidebar-lip" type="button" aria-label="Toggle filters">
@@ -156,11 +157,14 @@
                         Use field filters directly in the search box.
                       </p>
                       <ul class="settings-menu-list">
-                        <li><code>tag:Plane</code> — match cards with a tag</li>
-                        <li><code>-tag:Phenomenon</code> — exclude a tag</li>
-                        <li><code>name:"Spatial Merging"</code> — search by exact name text</li>
-                        <li><code>show:hidden</code> — include hidden cards in results</li>
-                        <li><code>/chaos|planeswalker/i</code> — regex search</li>
+                        <li><code>name:Akoum</code> — search by card name (alias: <code>n:</code>)</li>
+                        <li><code>o:chaos</code> — search card text (alias: <code>text:</code>, <code>oracle:</code>)</li>
+                        <li><code>tag:Plane</code> — filter by tag (alias: <code>type:</code>, <code>t:</code>)</li>
+                        <li><code>tag:Official</code> — filter by badge label</li>
+                        <li><code>show:hidden</code> — include hidden cards</li>
+                        <li><code>/chaos|annihilator/i</code> — regex search</li>
+                        <li>Prefix any filter with <code>-</code> to negate it: <code>-name:Norn</code></li>
+                        <li>Quote multi-word values: <code>name:"Spatial Merging"</code></li>
                       </ul>
                     </div>
 
@@ -222,6 +226,14 @@
           <div id="pagination-controls" class="pagination-controls hidden"></div>
         </section>
       </main>
+
+      <footer class="site-footer">
+        <p class="site-footer-legal">
+          Planar Atlas is unofficial Fan Content permitted under the <a href="https://company.wizards.com/en/legal/fancontentpolicy" target="_blank" rel="noopener noreferrer">Wizards of the Coast Fan Content Policy</a>.
+          Magic: The Gathering, Planechase, and all associated card names, art, and symbols are property of Wizards of the Coast LLC.
+          Card images and text are © Wizards of the Coast. This site is not produced by, endorsed by, supported by, or affiliated with Wizards of the Coast.
+        </p>
+      </footer>
     </div>
   </div>
 
@@ -239,9 +251,14 @@
           <div class="modal-image-wrap">
             <img id="modal-image" class="modal-image" src="" alt="" />
           </div>
-          <a id="modal-source-link" class="modal-source-link" href="" target="_blank" rel="noopener noreferrer">
-            Full-Size
-          </a>
+          <div class="modal-source-links">
+            <a id="modal-source-link" class="modal-source-link" href="" target="_blank" rel="noopener noreferrer">
+              Full-Size
+            </a>
+            <a id="modal-scryfall-link" class="modal-source-link modal-scryfall-link" href="" target="_blank" rel="noopener noreferrer" referrerpolicy="origin">
+              Scryfall ↗
+            </a>
+          </div>
         </div>
 
         <div class="modal-info-column">

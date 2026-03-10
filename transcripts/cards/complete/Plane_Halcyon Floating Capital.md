@@ -9,4 +9,3 @@ All spells and permanents are colorless. When you planeswalk away from Halcyon, 
 Illustrated by: Robert Crescenzio
 Set: Planechase Booster — Terraphice
 Rarity: N/A
-

@@ -11,4 +11,3 @@ Whenever it becomes night, each player may transform any number of Humans, Horro
 Illustrated by: John Avon
 Set: Planechase Booster — Terraphice
 Rarity: N/A
-

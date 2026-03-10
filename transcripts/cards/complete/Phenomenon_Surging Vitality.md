@@ -9,4 +9,3 @@ When you encounter Surging Vitality, each player may gain five times X life, whe
 Illustrated by: Jim Nelson
 Set: Planechase Booster — Terraphice
 Rarity: N/A
-

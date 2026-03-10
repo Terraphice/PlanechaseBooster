@@ -10,4 +10,3 @@ As long as it’s day, Zombies, Vampires, Werewolves, and Horrors can’t attack
 Illustrated by: James Paick
 Set: Planechase Booster — Terraphice
 Rarity: N/A
-

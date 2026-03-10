@@ -9,4 +9,3 @@ When you planeswalk to Mephidross, and at the beginning of your upkeep, you get 
 Illustrated by: Lars Grant-West
 Set: Planechase Booster — Terraphice
 Rarity: N/A
-

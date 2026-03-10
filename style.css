@@ -287,38 +287,38 @@ html[data-palette="catppuccin"][data-theme="light"] {
 
 html[data-palette="scryfall"][data-theme="dark"] {
   color-scheme: dark;
-  --bg: #1a1a1a;
-  --bg-elev-1: #242424;
-  --bg-elev-2: #2e2e2e;
-  --border: #444444;
-  --border-soft: #363636;
-  --text: #ebebeb;
-  --text-soft: #b0b0b0;
-  --text-faint: #757575;
+  --bg: #14181e;
+  --bg-elev-1: #1e2430;
+  --bg-elev-2: #252e3e;
+  --border: #38455a;
+  --border-soft: #2c3648;
+  --text: #e8ecf2;
+  --text-soft: #9dafc8;
+  --text-faint: #6275a0;
   --accent: #6fa8dc;
   --accent-soft: rgba(111, 168, 220, 0.16);
-  --tag-bg: #2a2a2a;
-  --tag-border: #484848;
-  --tag-text: #d4d4d4;
-  --shadow: 0 18px 48px rgba(0, 0, 0, 0.42);
+  --tag-bg: #1d2840;
+  --tag-border: #364e78;
+  --tag-text: #b8cce4;
+  --shadow: 0 18px 48px rgba(0, 0, 0, 0.48);
 }
 
 html[data-palette="scryfall"][data-theme="light"] {
   color-scheme: light;
-  --bg: #f5f5f5;
+  --bg: #eef2f8;
   --bg-elev-1: #ffffff;
-  --bg-elev-2: #eeeeee;
-  --border: #d8d8d8;
-  --border-soft: #e8e8e8;
-  --text: #333333;
-  --text-soft: #555555;
-  --text-faint: #888888;
-  --accent: #3d72aa;
-  --accent-soft: rgba(61, 114, 170, 0.12);
-  --tag-bg: #e8eef4;
-  --tag-border: #c5d3e0;
-  --tag-text: #2a4a6b;
-  --shadow: 0 18px 48px rgba(33, 53, 80, 0.10);
+  --bg-elev-2: #f4f7fb;
+  --border: #c8d4e4;
+  --border-soft: #dce5f0;
+  --text: #1a2642;
+  --text-soft: #3d5a8a;
+  --text-faint: #7090b8;
+  --accent: #2e6db0;
+  --accent-soft: rgba(46, 109, 176, 0.12);
+  --tag-bg: #e0eaf6;
+  --tag-border: #b8cfe8;
+  --tag-text: #1a3d6e;
+  --shadow: 0 18px 48px rgba(20, 40, 80, 0.12);
 }
 
 * {
@@ -327,6 +327,26 @@ html[data-palette="scryfall"][data-theme="light"] {
 
 html {
   scroll-behavior: smooth;
+}
+
+.parallax-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -3;
+  background-image: url('images/assets/social-preview.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  opacity: 0.06;
+  filter: blur(2px) saturate(0.6);
+  transform: scale(1.04);
+  pointer-events: none;
+  will-change: transform;
+  transition: opacity 180ms ease;
+}
+
+html[data-theme="light"] .parallax-bg {
+  opacity: 0.04;
 }
 
 body {
@@ -584,9 +604,10 @@ html[data-palette="gruvbox"][data-theme="dark"] .sidebar {
   position: sticky;
   top: 0;
   z-index: 200;
-  backdrop-filter: blur(12px);
-  background: color-mix(in srgb, var(--bg) 78%, transparent);
-  border-bottom: 1px solid color-mix(in srgb, var(--border) 38%, transparent);
+  backdrop-filter: blur(16px) saturate(1.2);
+  background: color-mix(in srgb, var(--bg) 76%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 42%, transparent);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--accent) 6%, transparent);
 }
 
 .topbar-inner {
@@ -909,11 +930,11 @@ html[data-palette="gruvbox"][data-theme="dark"] .sidebar {
 .gallery-section,
 .filter-block,
 .result-group {
-  background: linear-gradient(180deg, color-mix(in srgb, white 2%, transparent), color-mix(in srgb, white 1%, transparent));
-  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg-elev-1) 82%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
 }
 
 .filter-block {
@@ -1476,11 +1497,28 @@ button.active-filter-pill:disabled {
   object-fit: contain;
 }
 
-.modal-source-link {
+.modal-source-links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
   margin-top: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.modal-source-link {
   color: var(--accent);
   font-size: 0.92rem;
   font-weight: 700;
+  transition: opacity 160ms ease;
+}
+
+.modal-source-link:hover {
+  opacity: 0.75;
+}
+
+.modal-scryfall-link {
+  opacity: 0.72;
 }
 
 .modal-info-column {
@@ -3049,9 +3087,48 @@ button.active-filter-pill:disabled {
   .game-menu-bl { bottom: 60px; }
 }
 
-/* ── Scryfall palette sidebar override ───────────────────────────────────────── */
+/* ── Scryfall palette overrides ───────────────────────────────────────────────── */
+
+html[data-palette="scryfall"][data-theme="dark"] body {
+  background:
+    radial-gradient(circle at top, color-mix(in srgb, var(--accent) 8%, transparent), transparent 30%),
+    linear-gradient(180deg, #0d1117 0%, #14181e 40%, #1e2430 100%);
+}
+
+html[data-palette="scryfall"][data-theme="light"] body {
+  background:
+    radial-gradient(circle at top, color-mix(in srgb, var(--accent) 6%, transparent), transparent 30%),
+    linear-gradient(180deg, #2e6db0 0%, #4a8cc8 8%, #eef2f8 28%, #eef2f8 100%);
+}
 
 html[data-palette="scryfall"][data-theme="dark"] .sidebar {
-  background: linear-gradient(180deg, #242424, #1e1e1e);
-  border-right-color: #444;
+  background: linear-gradient(180deg, #1e2430, #14181e);
+  border-right-color: #38455a;
+}
+
+/* ── Site footer ──────────────────────────────────────────────────────────────── */
+
+.site-footer {
+  padding: 20px 24px 28px;
+  margin-top: 8px;
+  border-top: 1px solid color-mix(in srgb, var(--border) 40%, transparent);
+}
+
+.site-footer-legal {
+  margin: 0;
+  color: var(--text-faint);
+  font-size: 0.73rem;
+  line-height: 1.6;
+  opacity: 0.68;
+}
+
+.site-footer-legal a {
+  color: var(--text-faint);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--text-faint) 40%, transparent);
+}
+
+.site-footer-legal a:hover {
+  color: var(--text-soft);
+  opacity: 1;
 }

@@ -9,4 +9,3 @@ When you encounter Omenpath Shortcut, reveal the top six cards of the planar dec
 Illustrated by: Daren Bader
 Set: Planechase Booster — Terraphice
 Rarity: N/A
-

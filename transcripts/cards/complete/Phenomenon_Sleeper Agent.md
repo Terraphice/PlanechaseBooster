@@ -9,4 +9,3 @@ When you encounter Sleeper Agent, the next player to lose life or get a poison c
 Illustrated by: Jason Engle
 Set: Planechase Booster — Terraphice
 Rarity: N/A
-

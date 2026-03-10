@@ -9,4 +9,3 @@ At the beginning of combat on your turn, if you control a Kraken, Leviathan, or 
 Illustrated by: Chris Cold
 Set: Planechase Booster — Terraphice
 Rarity: N/A
-

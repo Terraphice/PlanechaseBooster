@@ -91,8 +91,7 @@ export function enrichCard(card) {
     displayName: getDisplayName(card.file),
     imagePath: `images/cards/${folder}/${card.file}`,
     thumbPath: `images/thumb/${getCardKey(card.file)}.webp`,
-    transcriptPathMd: `transcripts/cards/${folder}/${getCardKey(card.file)}.md`,
-    transcriptPathTxt: `transcripts/cards/${folder}/${getCardKey(card.file)}.txt`,
+    transcriptPath: `transcripts/cards/${folder}/${getCardKey(card.file)}.md`,
     tags,
     normalizedTags,
     type: getCardType(normalizedTags)
@@ -194,7 +193,7 @@ export function writeUrlState(filters, displayState, { push = false } = {}) {
   }
 }
 
-export function matchesFilters(card, parsedQuery, filters) {
+export function matchesFilters(card, parsedQuery, filters, transcriptCache = null) {
   if (!filters.showHidden && !parsedQuery.showHidden && isHiddenCard(card.normalizedTags)) {
     return false;
   }
@@ -207,10 +206,10 @@ export function matchesFilters(card, parsedQuery, filters) {
     }
   }
 
-  return matchesParsedQuery(card, parsedQuery, filters);
+  return matchesParsedQuery(card, parsedQuery, filters, transcriptCache);
 }
 
-export function matchesParsedQuery(card, parsedQuery, filters) {
+export function matchesParsedQuery(card, parsedQuery, filters, transcriptCache = null) {
   const haystack = [
     card.displayName,
     card.type,
@@ -277,6 +276,27 @@ export function matchesParsedQuery(card, parsedQuery, filters) {
     }
   }
 
+  if (parsedQuery.oracleTerms.length > 0 || parsedQuery.negOracleTerms.length > 0) {
+    const cached = transcriptCache ? transcriptCache.get(card.key) : null;
+    const cardText = (typeof cached === "string" ? cached : "").toLowerCase();
+
+    for (const value of parsedQuery.oracleTerms) {
+      if (filters.fuzzy) {
+        if (!fuzzyIncludes(cardText, value)) return false;
+      } else if (!cardText.includes(value)) {
+        return false;
+      }
+    }
+
+    for (const value of parsedQuery.negOracleTerms) {
+      if (filters.fuzzy) {
+        if (fuzzyIncludes(cardText, value)) return false;
+      } else if (cardText.includes(value)) {
+        return false;
+      }
+    }
+  }
+
   return true;
 }
 
@@ -288,6 +308,8 @@ export function parseSearchQuery(rawQuery) {
     negNameTerms: [],
     tagTerms: [],
     negTagTerms: [],
+    oracleTerms: [],
+    negOracleTerms: [],
     regex: null,
     regexSource: null,
     showHidden: false
@@ -330,8 +352,13 @@ export function parseSearchQuery(rawQuery) {
         continue;
       }
 
-      if (field === "name") {
+      if (field === "name" || field === "n") {
         (negated ? parsed.negNameTerms : parsed.nameTerms).push(value);
+        continue;
+      }
+
+      if (field === "oracle" || field === "o" || field === "text") {
+        (negated ? parsed.negOracleTerms : parsed.oracleTerms).push(value);
         continue;
       }
 

@@ -36,6 +36,7 @@ for (const folder of IMAGE_FOLDERS) {
 
     cards.push({
       file: entry.name,
+      folder,
       tags: mergedTags
     });
   }
@@ -61,17 +62,19 @@ function getCardKey(filename) {
 }
 
 function getInferredTypeTag(filename) {
-  if (/^plane[-_ ]/i.test(filename)) return "plane";
-  if (/^phenomenon[-_ ]/i.test(filename)) return "phenomenon";
+  if (/^plane[-_ ]/i.test(filename)) return "Plane";
+  if (/^phenomenon[-_ ]/i.test(filename)) return "Phenomenon";
   return null;
 }
 
 function uniqueTags(tags) {
-  return [...new Set(
-    tags
-      .map((tag) => String(tag).trim().toLowerCase())
-      .filter(Boolean)
-  )];
+  const seen = new Set();
+  return tags.filter((tag) => {
+    const key = String(tag).trim().toLowerCase();
+    if (!key || seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  }).map((tag) => String(tag).trim());
 }
 
 function readExistingCards(filepath) {

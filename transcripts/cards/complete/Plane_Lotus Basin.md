@@ -9,4 +9,3 @@ When you planeswalk to Lotus Basin, and at the beginning of each upkeep, put a p
 Illustrated by: Marc Simonetti
 Set: Planechase Booster — Terraphice
 Rarity: N/A
-

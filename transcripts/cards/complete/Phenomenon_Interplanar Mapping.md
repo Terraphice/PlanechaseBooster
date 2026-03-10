@@ -10,4 +10,3 @@ If an ability of a plane would trigger while planeswalking this way, that abilit
 Illustrated by: Volkan Baga
 Set: Planechase Booster — Terraphice
 Rarity: N/A
-

@@ -9,4 +9,3 @@ Lands you control have, “{T}, Sacrifice a creature, lose 1 life and draw a car
 Illustrated by: Zdzislaw Beksinski
 Set: Planechase Booster — Terraphice
 Rarity: N/A
-

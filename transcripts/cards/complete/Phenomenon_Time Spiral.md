@@ -9,4 +9,3 @@ When you encounter Time Spiral, each player exiles a nonland card from their han
 Illustrated by: Zoltan Boros \& Gabor Szikszai
 Set: Planechase Booster — Terraphice
 Rarity: N/A
-

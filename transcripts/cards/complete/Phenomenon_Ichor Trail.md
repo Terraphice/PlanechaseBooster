@@ -9,4 +9,3 @@ When you encounter Ichor Trail, each player gets one poison counter whenever the
 Illustrated by: Steven Belledin
 Set: Planechase Booster — Terraphice
 Rarity: N/A
-

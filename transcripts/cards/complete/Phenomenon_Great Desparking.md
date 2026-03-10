@@ -10,4 +10,3 @@ Each planeswalker loses all abilities and becomes a creature with power and toug
 Illustrated by: Eli Minaya
 Set: Planechase Booster — Terraphice
 Rarity: N/A
-
