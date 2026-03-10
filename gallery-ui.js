@@ -6,9 +6,9 @@ const THEME_ICONS = {
   light: "☀"
 };
 const THEME_LABELS = {
-  system: "System theme",
-  dark: "Dark theme",
-  light: "Light theme"
+  system: "System",
+  dark: "Dark",
+  light: "Light"
 };
 
 function isAltPaletteEvent(event) {
@@ -85,7 +85,7 @@ export function initThemeController({
     button.dataset.palette = palette;
     button.setAttribute(
       "aria-label",
-      `Theme: ${getAnnouncementLabel()}. Click to cycle standard themes. Hold or Alt-click to cycle alternate palettes.`
+      `Theme: ${getAnnouncementLabel()}. Click to cycle dark/light mode.`
     );
     button.title = getAnnouncementLabel();
 
