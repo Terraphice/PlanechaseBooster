@@ -12,6 +12,7 @@ import {
   getTagToneClass,
   getBadgeTags,
   parseBadgeTag,
+  isTopTag,
   escapeHtml
 } from "./gallery-utils.js";
 
@@ -37,6 +38,8 @@ let randomLongPressTimer = null;
 let suppressRandomClick = false;
 let randomIconResetTimer = null;
 let infiniteScrollObserver = null;
+
+const transcriptCache = new Map();
 
 const resultsCount = document.getElementById("results-count");
 const activeFilters = document.getElementById("active-filters");
@@ -520,27 +523,45 @@ function toggleSettingsMenu() {
 }
 
 function buildTagFilters(cards) {
-  const tags = [...new Set(cards.flatMap((card) => card.tags))].sort((a, b) =>
+  const allTags = [...new Set(cards.flatMap((card) => card.tags))].sort((a, b) =>
     a.localeCompare(b, undefined, { sensitivity: "base" })
   );
 
+  const topTags = allTags.filter(isTopTag);
+  const regularTags = allTags.filter((tag) => !isTopTag(tag));
+
   tagFilterList.innerHTML = "";
 
-  for (const tag of tags) {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.className = getTagToneClass(tag, "tag-chip");
-    button.textContent = getTagLabel(tag);
-    button.dataset.tag = tag;
+  for (const tag of topTags) {
+    tagFilterList.appendChild(createTagFilterChip(tag));
+  }
 
-    button.addEventListener("click", () => {
-      toggleTagFilter(tag);
-    });
+  if (topTags.length > 0 && regularTags.length > 0) {
+    const divider = document.createElement("div");
+    divider.className = "tag-filter-divider";
+    divider.setAttribute("aria-hidden", "true");
+    tagFilterList.appendChild(divider);
+  }
 
-    tagFilterList.appendChild(button);
+  for (const tag of regularTags) {
+    tagFilterList.appendChild(createTagFilterChip(tag));
   }
 
   syncTagFilterUI();
+}
+
+function createTagFilterChip(tag) {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = getTagToneClass(tag, "tag-chip");
+  button.textContent = getTagLabel(tag);
+  button.dataset.tag = tag;
+
+  button.addEventListener("click", () => {
+    toggleTagFilter(tag);
+  });
+
+  return button;
 }
 
 function buildGroupTagOptions(cards) {
@@ -686,6 +707,8 @@ function renderGallery() {
   if (paginationState.mode === "infinite" && paginationState.infiniteLoadedCount < totalCards) {
     setupInfiniteScroll();
   }
+
+  startPreloadingAfterThumbnails(cardsToShow);
 }
 
 function getPageCards(totalCards) {
@@ -1371,8 +1394,6 @@ async function renderModal(card, updateHash = true) {
     modalTagList.appendChild(createTagChipElement(tag, "modal-tag"));
   }
 
-  modalTranscript.innerHTML = "Loading transcript…";
-
   modal.classList.remove("hidden");
   modal.setAttribute("aria-hidden", "false");
   document.body.classList.add("modal-open");
@@ -1382,12 +1403,21 @@ async function renderModal(card, updateHash = true) {
   if (updateHash) updateUrlForCard(card);
   preloadAdjacentImages();
 
+  const cached = transcriptCache.get(card.key);
+  if (typeof cached === "string") {
+    renderTranscriptMarkdown(cached || "No transcript available.");
+    return;
+  }
+
+  modalTranscript.innerHTML = "Loading transcript…";
+
   try {
-    let response = await fetch(card.transcriptPathMd, { cache: "no-store" });
-    if (!response.ok) response = await fetch(card.transcriptPathTxt, { cache: "no-store" });
+    let response = await fetch(card.transcriptPathMd);
+    if (!response.ok) response = await fetch(card.transcriptPathTxt);
     if (!response.ok) throw new Error("Transcript not found");
 
     const transcript = await response.text();
+    transcriptCache.set(card.key, transcript.trim());
     renderTranscriptMarkdown(transcript.trim() || "No transcript available.");
   } catch {
     renderTranscriptMarkdown("No transcript available.");
@@ -1434,6 +1464,55 @@ function preloadCardImage(card) {
   if (!card || !card.imagePath) return;
   const img = new Image();
   img.src = card.imagePath;
+}
+
+function preloadPageImagesAndTranscripts(cards) {
+  for (const card of cards) {
+    preloadCardImage(card);
+
+    if (!transcriptCache.has(card.key)) {
+      transcriptCache.set(card.key, null); // null = fetch in progress; string = completed
+      fetch(card.transcriptPathMd)
+        .then((r) => {
+          if (r.ok) return r.text();
+          return fetch(card.transcriptPathTxt).then((r2) => (r2.ok ? r2.text() : ""));
+        })
+        .then((text) => {
+          transcriptCache.set(card.key, text ? text.trim() : "");
+        })
+        .catch(() => {
+          transcriptCache.set(card.key, "");
+        });
+    }
+  }
+}
+
+function startPreloadingAfterThumbnails(cards) {
+  const thumbImgs = [...gallery.querySelectorAll(".card-image")];
+
+  if (thumbImgs.length === 0) {
+    preloadPageImagesAndTranscripts(cards);
+    return;
+  }
+
+  let remaining = thumbImgs.filter((img) => !img.complete).length;
+
+  if (remaining === 0) {
+    preloadPageImagesAndTranscripts(cards);
+    return;
+  }
+
+  const onSettled = () => {
+    remaining--;
+    if (remaining <= 0) preloadPageImagesAndTranscripts(cards);
+  };
+
+  for (const img of thumbImgs) {
+    if (!img.complete) {
+      img.addEventListener("load", onSettled, { once: true });
+      img.addEventListener("error", onSettled, { once: true });
+    }
+  }
 }
 
 function openRandomCard() {

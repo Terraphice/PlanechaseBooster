@@ -961,6 +961,13 @@ html[data-palette="gruvbox"][data-theme="dark"] .sidebar {
   gap: 8px;
 }
 
+.tag-filter-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border-soft);
+  margin: 4px 0;
+}
+
 .tag-chip {
   border: 1px solid var(--tag-border);
   background: var(--tag-bg);
@@ -1197,7 +1204,11 @@ button.active-filter-pill:disabled {
 .card-image-wrap {
   overflow: hidden;
   border-radius: 14px;
-  background: color-mix(in srgb, var(--bg-elev-1) 86%, black 14%);
+  background-color: color-mix(in srgb, var(--bg-elev-1) 86%, black 14%);
+  background-image: url('images/assets/card-preview.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .card-image {
@@ -1397,16 +1408,26 @@ button.active-filter-pill:disabled {
     color-mix(in srgb, var(--bg-elev-1) 88%, black 12%);
 }
 
+.modal-image-wrap {
+  width: 100%;
+  max-width: 860px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+  background-color: color-mix(in srgb, var(--bg-elev-1) 88%, black 12%);
+  background-image: url('images/assets/card-preview.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
 .modal-image {
   display: block;
   width: 100%;
-  max-width: 860px;
   height: auto;
   max-height: calc(100vh - 140px);
   aspect-ratio: var(--planechase-ratio);
   object-fit: contain;
-  border-radius: 16px;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
 }
 
 .modal-source-link {

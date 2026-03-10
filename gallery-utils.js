@@ -411,8 +411,16 @@ export function levenshteinDistance(a, b) {
   return dp[a.length][b.length];
 }
 
+export function isTopTag(tag) {
+  return String(tag).startsWith(":top:");
+}
+
+export function stripTopPrefix(tag) {
+  return isTopTag(tag) ? String(tag).slice(5) : String(tag);
+}
+
 export function parseBadgeTag(tag) {
-  const parts = String(tag).split(":");
+  const parts = stripTopPrefix(String(tag)).split(":");
   if (parts.length < 4 || parts[0] !== "badge") return null;
 
   const corner = parts[1];
@@ -431,12 +439,14 @@ export function getBadgeTags(tags) {
 }
 
 export function getTagLabel(tag) {
-  const badge = parseBadgeTag(tag);
-  return badge ? badge.label : tag;
+  const stripped = stripTopPrefix(tag);
+  const badge = parseBadgeTag(stripped);
+  return badge ? badge.label : stripped;
 }
 
 export function getTagToneClass(tag, baseClass) {
-  const badge = parseBadgeTag(tag);
+  const stripped = stripTopPrefix(tag);
+  const badge = parseBadgeTag(stripped);
   return badge ? `${baseClass} tone-${badge.color}` : baseClass;
 }
 
