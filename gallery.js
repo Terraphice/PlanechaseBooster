@@ -68,6 +68,7 @@ const viewModeSelect = document.getElementById("view-mode-select");
 const groupBySelect = document.getElementById("group-by-select");
 const groupTagPickerWrap = document.getElementById("group-tag-picker-wrap");
 const groupTagSelect = document.getElementById("group-tag-select");
+const perPageSelect = document.getElementById("per-page-select");
 
 const settingsMenuToggle = document.getElementById("settings-menu-toggle");
 const settingsMenu = document.getElementById("settings-menu");
@@ -166,6 +167,7 @@ function applyStoredPreferencesToUI() {
   topSearchGhost.value = "";
   sidebarSearchGhost.value = "";
   groupTagPickerWrap.classList.toggle("hidden", displayState.groupBy !== "tag");
+  perPageSelect.value = paginationState.mode === "infinite" ? "infinite" : String(paginationState.pageSize);
 }
 
 function persistPreferences() {
@@ -271,6 +273,8 @@ function bindEvents() {
     scheduleStackActiveUpdate();
     updateUrlFromState();
   });
+
+  perPageSelect.addEventListener("change", handlePerPageChange);
 
   sidebarToggle.addEventListener("click", closeSidebar);
   sidebarLip.addEventListener("click", toggleSidebar);
@@ -754,41 +758,6 @@ function renderPaginationControls(totalCards) {
       : `All ${totalCards} cards loaded`;
     paginationControls.appendChild(infoRow);
   }
-
-  const perPageRow = document.createElement("div");
-  perPageRow.className = "pagination-per-page-row";
-
-  const label = document.createElement("label");
-  label.className = "pagination-per-page-label";
-  label.htmlFor = "per-page-select";
-  label.textContent = "Per page:";
-
-  const select = document.createElement("select");
-  select.className = "select-input pagination-per-page-select";
-  select.id = "per-page-select";
-  select.setAttribute("aria-label", "Cards per page");
-
-  const options = [
-    ...PAGE_SIZES.map((n) => ({ value: String(n), label: String(n) })),
-    { value: "infinite", label: "∞ Infinite scroll" }
-  ];
-
-  for (const { value, label: optLabel } of options) {
-    const opt = document.createElement("option");
-    opt.value = value;
-    opt.textContent = optLabel;
-    const selected =
-      (value === "infinite" && paginationState.mode === "infinite") ||
-      (value !== "infinite" && paginationState.mode === "paginated" && parseInt(value, 10) === paginationState.pageSize);
-    if (selected) opt.selected = true;
-    select.appendChild(opt);
-  }
-
-  select.addEventListener("change", handlePerPageChange);
-
-  perPageRow.appendChild(label);
-  perPageRow.appendChild(select);
-  paginationControls.appendChild(perPageRow);
 }
 
 function handlePerPageChange(event) {
