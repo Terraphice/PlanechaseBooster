@@ -1297,6 +1297,8 @@ button.active-filter-pill:disabled {
   flex-wrap: wrap;
   gap: 6px;
   margin-top: 10px;
+  position: relative;
+  z-index: 5;
 }
 
 .card-tag-more {
@@ -2913,13 +2915,6 @@ button.active-filter-pill:disabled {
   font-size: 0.9rem;
   font-weight: 700;
   color: var(--accent);
-}
-
-/* ── Card tags z-index fix for deck mode ────────────────────────────────────── */
-
-.card-tags {
-  position: relative;
-  z-index: 5;
 }
 
 /* ── Game cost display ───────────────────────────────────────────────────────── */
