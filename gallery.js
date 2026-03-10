@@ -720,7 +720,7 @@ function createCardElement(card, index = 0) {
 
   const imageWrap = document.createElement("div");
   imageWrap.className = "card-image-wrap";
-  imageWrap.innerHTML = `<img class="card-image" src="${card.imagePath}" alt="${escapeHtml(card.displayName)}" loading="lazy" />`;
+  imageWrap.innerHTML = `<img class="card-image" src="${card.thumbPath}" alt="${escapeHtml(card.displayName)}" loading="lazy" />`;
 
   const footer = document.createElement("div");
   footer.className = "card-footer";

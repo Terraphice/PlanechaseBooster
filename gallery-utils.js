@@ -80,6 +80,7 @@ export function enrichCard(card) {
     key: getCardKey(card.file),
     displayName: getDisplayName(card.file),
     imagePath: `images/cards/${card.folder}/${card.file}`,
+    thumbPath: `images/thumb/${getCardKey(card.file)}.webp`,
     transcriptPathMd: `transcripts/cards/${card.folder}/${getCardKey(card.file)}.md`,
     transcriptPathTxt: `transcripts/cards/${card.folder}/${getCardKey(card.file)}.txt`,
     tags,
