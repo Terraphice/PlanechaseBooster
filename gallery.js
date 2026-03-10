@@ -1292,7 +1292,7 @@ function buildSuggestions(query) {
   const queryLower = query.toLowerCase();
   const parsed = parseSearchQuery(query);
   const matches = allCards
-    .filter((card) => matchesFilters(card, parsed, filters))
+    .filter((card) => matchesFilters(card, parsed, filters, transcriptCache))
     .slice(0, 6);
 
   const suggestions = [];
@@ -1492,17 +1492,14 @@ function openModalByKey(cardKey, updateHash = true) {
 
 async function renderModal(card, updateHash = true) {
   modalImage.src = "";
-  modalImage.alt = "";
-  modalImage.src = card.imagePath;
   modalImage.alt = card.displayName;
+  modalImage.src = card.imagePath;
   modalName.textContent = card.displayName;
   modalType.textContent = card.type;
   modalSourceLink.href = card.imagePath;
 
-  if (modalScryfallLink) {
-    const scryfallQuery = encodeURIComponent(`"${card.displayName}"`);
-    modalScryfallLink.href = `https://scryfall.com/search?q=${scryfallQuery}&utm_source=planar-atlas&utm_medium=referral`;
-  }
+  const scryfallQuery = encodeURIComponent(`"${card.displayName}"`);
+  modalScryfallLink.href = `https://scryfall.com/search?q=${scryfallQuery}&utm_source=planar-atlas&utm_medium=referral`;
 
   setModalCardKey(card.key);
 
@@ -1595,27 +1592,12 @@ function preloadCardImage(card) {
   img.src = card.imagePath;
 }
 
-function preloadPageImagesAndTranscripts(cards) {
+function preloadPageImages(cards) {
   let i = 0;
 
   function preloadNext() {
     if (i >= cards.length) return;
     const card = cards[i++];
-
-    if (!transcriptCache.has(card.key)) {
-      transcriptCache.set(card.key, null); // null = fetch in progress; string = completed
-      fetch(card.transcriptPath)
-        .then((r) => {
-          if (r.ok) return r.text();
-          return "";
-        })
-        .then((text) => {
-          transcriptCache.set(card.key, text ? text.trim() : "");
-        })
-        .catch(() => {
-          transcriptCache.set(card.key, "");
-        });
-    }
 
     if (card.imagePath) {
       const img = new Image();
@@ -1634,20 +1616,20 @@ function startPreloadingAfterThumbnails(cards) {
   const thumbImgs = [...gallery.querySelectorAll(".card-image")];
 
   if (thumbImgs.length === 0) {
-    preloadPageImagesAndTranscripts(cards);
+    preloadPageImages(cards);
     return;
   }
 
   let remaining = thumbImgs.filter((img) => !img.complete).length;
 
   if (remaining === 0) {
-    preloadPageImagesAndTranscripts(cards);
+    preloadPageImages(cards);
     return;
   }
 
   const onSettled = () => {
     remaining--;
-    if (remaining <= 0) preloadPageImagesAndTranscripts(cards);
+    if (remaining <= 0) preloadPageImages(cards);
   };
 
   for (const img of thumbImgs) {

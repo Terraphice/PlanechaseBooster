@@ -604,9 +604,10 @@ html[data-palette="gruvbox"][data-theme="dark"] .sidebar {
   position: sticky;
   top: 0;
   z-index: 200;
-  backdrop-filter: blur(12px);
-  background: color-mix(in srgb, var(--bg) 78%, transparent);
-  border-bottom: 1px solid color-mix(in srgb, var(--border) 38%, transparent);
+  backdrop-filter: blur(16px) saturate(1.2);
+  background: color-mix(in srgb, var(--bg) 76%, transparent);
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 42%, transparent);
+  box-shadow: 0 1px 0 color-mix(in srgb, var(--accent) 6%, transparent);
 }
 
 .topbar-inner {
@@ -929,11 +930,11 @@ html[data-palette="gruvbox"][data-theme="dark"] .sidebar {
 .gallery-section,
 .filter-block,
 .result-group {
-  background: linear-gradient(180deg, color-mix(in srgb, white 2%, transparent), color-mix(in srgb, white 1%, transparent));
-  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--bg-elev-1) 82%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
 }
 
 .filter-block {
