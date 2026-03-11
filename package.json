@@ -1,1 +1,7 @@
-{}
+{
+  "type": "module",
+  "scripts": {
+    "generate": "node generate-cards.js",
+    "sync": "node sync-cards.js"
+  }
+}

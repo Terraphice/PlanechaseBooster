@@ -1,10 +1,10 @@
-const fs = require("fs");
-const path = require("path");
+import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync, unlinkSync } from "fs";
+import { join } from "path";
 
 const CARDS_JSON = "cards.json";
 const CARDS_DIR = "cards";
 
-const raw = fs.readFileSync(CARDS_JSON, "utf8");
+const raw = readFileSync(CARDS_JSON, "utf8");
 const cards = JSON.parse(raw);
 
 if (!Array.isArray(cards) || cards.length === 0) {
@@ -12,8 +12,8 @@ if (!Array.isArray(cards) || cards.length === 0) {
   process.exit(1);
 }
 
-if (!fs.existsSync(CARDS_DIR)) {
-  fs.mkdirSync(CARDS_DIR);
+if (!existsSync(CARDS_DIR)) {
+  mkdirSync(CARDS_DIR);
 }
 
 const expectedFiles = new Set();
@@ -24,26 +24,26 @@ for (const card of cards) {
   const jsonFilename = getCardJsonFilename(card.file);
   expectedFiles.add(jsonFilename);
 
-  const outputPath = path.join(CARDS_DIR, jsonFilename);
+  const outputPath = join(CARDS_DIR, jsonFilename);
   const output = { file: card.file, tags: card.tags };
   const content = JSON.stringify(output, null, 2) + "\n";
 
-  if (fs.existsSync(outputPath) && fs.readFileSync(outputPath, "utf8") === content) {
+  if (existsSync(outputPath) && readFileSync(outputPath, "utf8") === content) {
     unchanged++;
     continue;
   }
 
-  fs.writeFileSync(outputPath, content);
+  writeFileSync(outputPath, content);
   console.log(`Written: ${jsonFilename}`);
   written++;
 }
 
-const existingFiles = fs.readdirSync(CARDS_DIR).filter((f) => f.endsWith(".json"));
+const existingFiles = readdirSync(CARDS_DIR).filter((f) => f.endsWith(".json"));
 let removed = 0;
 
 for (const file of existingFiles) {
   if (!expectedFiles.has(file)) {
-    fs.unlinkSync(path.join(CARDS_DIR, file));
+    unlinkSync(join(CARDS_DIR, file));
     console.log(`Removed: ${file}`);
     removed++;
   }

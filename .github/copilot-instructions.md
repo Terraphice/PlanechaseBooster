@@ -9,7 +9,7 @@ Planar Atlas is a static web gallery and searchable database for Magic: The Gath
 - **Type:** Static website (no build step for the site itself)
 - **Languages:** HTML5, CSS3, JavaScript (ES6 modules, `type="module"`)
 - **Runtime dependencies (CDN, no install needed):** `marked.js` (Markdown rendering), `DOMPurify` (sanitisation), `mana-font` (MTG icon font)
-- **Node.js** is only needed to run `gencards.js` (a one-off data generation script)
+- **Node.js** is only needed to run `generate-cards.js` and `sync-cards.js` (data generation scripts)
 - **No test framework, no linter, no bundler, no CI/CD pipelines**
 - **Hosting:** GitHub Pages (CNAME: `planechase.terraphice.dev`)
 - **package.json** is empty (`{}`); there are no npm dependencies to install
@@ -23,7 +23,8 @@ Planar Atlas is a static web gallery and searchable database for Magic: The Gath
 ├── gallery.js            # Main application logic, state management, event wiring
 ├── gallery-ui.js         # Theme system and toast notification controllers
 ├── gallery-utils.js      # Pure utility functions: preferences, search parsing, card enrichment
-├── gencards.js           # Node.js script to regenerate cards.json from image files
+├── generate-cards.js     # Node.js script to regenerate cards.json from image files
+├── sync-cards.js         # Node.js script to sync per-card JSON files from cards.json
 ├── cards.json            # Auto-generated master card database (230 cards); do not edit by hand
 ├── CNAME                 # GitHub Pages custom domain
 ├── README.md             # Minimal project description
@@ -45,7 +46,7 @@ Planar Atlas is a static web gallery and searchable database for Magic: The Gath
 - **`gallery.js`** — Initialises the app, manages state (filters, display mode, current card), wires all DOM events, handles modal navigation, search suggestions, tag filtering, and card rendering. Imports from `gallery-ui.js` and `gallery-utils.js`.
 - **`gallery-ui.js`** — `ThemeController` (7 palettes: `standard`, `gruvbox`, `atom`, `dracula`, `solarized`, `nord`, `catppuccin`; 3 modes: `system`, `dark`, `light`) and `ToastManager` (ephemeral notifications).
 - **`gallery-utils.js`** — Stateless helpers: `loadPreferences`/`savePreferences` (localStorage key `planar-atlas-prefs-v2`), `getCardKey`, `getDisplayName`, search/filter logic, tag badge parsing.
-- **`cards.json`** — Array of card objects `{ file, folder, tags[] }`. Consumed at runtime via `fetch()`. Do not edit by hand; regenerate with `gencards.js` when adding/removing card images.
+- **`cards.json`** — Array of card objects `{ file, folder, tags[] }`. Consumed at runtime via `fetch()`. Do not edit by hand; regenerate with `generate-cards.js` when adding/removing card images.
 - **`style.css`** — Uses CSS custom properties for theming. Each palette sets `--bg`, `--fg`, `--accent`, etc. on `:root`. No preprocessor.
 
 ## Card Data Format
@@ -63,14 +64,34 @@ Planar Atlas is a static web gallery and searchable database for Magic: The Gath
 There is **no build step** for the website. To regenerate `cards.json` after adding or removing card images:
 
 ```bash
-node gencards.js
+node generate-cards.js
 ```
 
 - Requires Node.js (any recent LTS, e.g., v18+). No `npm install` needed.
 - Scans `images/cards/complete/` and `images/cards/incomplete/` for `.jpg`, `.jpeg`, `.png`, `.webp`, `.avif` files.
-- Preserves existing metadata from `cards.json` and merges in newly inferred type tags (`plane`, `phenomenon`).
+- Preserves existing metadata from `cards.json` and merges in newly inferred type tags (`Plane`, `Phenomenon`).
 - Refuses to overwrite `cards.json` if no valid images are found (exits with code 1).
 - Output is written to `cards.json` in the repo root.
+
+To sync the per-card JSON files in `cards/` from `cards.json`:
+
+```bash
+node sync-cards.js
+```
+
+- Writes one JSON file per card to `cards/` (e.g., `cards/akoum.json`).
+- Removes any stale files in `cards/` that no longer have a corresponding entry in `cards.json`.
+
+Both scripts can also be run via npm:
+
+```bash
+npm run generate   # runs generate-cards.js
+npm run sync       # runs sync-cards.js
+```
+
+These scripts are also run automatically by GitHub Actions:
+- **`generate-cards.yml`** — triggers when images in `images/cards/**` are pushed, commits updated `cards.json`.
+- **`sync-cards.yml`** — triggers when `cards.json` is pushed, commits updated files in `cards/`.
 
 ## Running Locally
 
@@ -96,9 +117,10 @@ Or use any static file server (e.g., `npx serve`, VS Code Live Server extension)
 
 There are no automated tests or linters. To validate changes:
 
-1. Run `node gencards.js` if card images changed (verify no errors and count is non-zero)
-2. Serve locally with `python3 -m http.server 8080` and open `http://localhost:8080`
-3. Check the browser console for JavaScript errors
-4. Manually verify affected features (search, filtering, modal, theme switching)
+1. Run `node generate-cards.js` if card images changed (verify no errors and count is non-zero)
+2. Run `node sync-cards.js` to verify per-card JSON files are up to date
+3. Serve locally with `python3 -m http.server 8080` and open `http://localhost:8080`
+4. Check the browser console for JavaScript errors
+5. Manually verify affected features (search, filtering, modal, theme switching)
 
 **Trust these instructions.** Only search or explore further if you find them incomplete or incorrect.

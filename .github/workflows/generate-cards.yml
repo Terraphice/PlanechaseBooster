@@ -1,15 +1,15 @@
-name: Sync Individual Card JSON Files
+name: Generate Cards Database
 
 on:
   push:
     branches:
       - main
     paths:
-      - cards.json
-      - sync-cards.js
+      - images/cards/**
+      - generate-cards.js
 
 jobs:
-  sync:
+  generate:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -17,17 +17,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Run sync-cards.js
-        run: node sync-cards.js
+      - name: Run generate-cards.js
+        run: node generate-cards.js
 
-      - name: Commit updated card files
+      - name: Commit updated cards.json
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add cards/
+          git add cards.json
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "chore: sync individual card JSON files from cards.json"
+            git commit -m "chore: regenerate cards.json from image files"
             git push
           fi

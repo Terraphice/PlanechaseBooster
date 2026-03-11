@@ -1,5 +1,5 @@
-const fs = require("fs");
-const path = require("path");
+import { readFileSync, writeFileSync, readdirSync, existsSync } from "fs";
+import { join, extname } from "path";
 
 const IMAGE_FOLDERS = ["complete", "incomplete"];
 const VALID_EXTENSIONS = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif"]);
@@ -11,18 +11,18 @@ const existingByKey = new Map(existingCards.map((card) => [getCardKey(card.file)
 const cards = [];
 
 for (const folder of IMAGE_FOLDERS) {
-  const folderPath = path.join("images", "cards", folder);
+  const folderPath = join("images", "cards", folder);
 
-  if (!fs.existsSync(folderPath)) {
+  if (!existsSync(folderPath)) {
     continue;
   }
 
-  const files = fs.readdirSync(folderPath, { withFileTypes: true });
+  const files = readdirSync(folderPath, { withFileTypes: true });
 
   for (const entry of files) {
     if (!entry.isFile()) continue;
 
-    const extension = path.extname(entry.name).toLowerCase();
+    const extension = extname(entry.name).toLowerCase();
     if (!VALID_EXTENSIONS.has(extension)) continue;
 
     const key = getCardKey(entry.name);
@@ -54,7 +54,7 @@ if (cards.length === 0) {
   process.exit(1);
 }
 
-fs.writeFileSync(OUTPUT_FILE, JSON.stringify(cards, null, 2) + "\n");
+writeFileSync(OUTPUT_FILE, JSON.stringify(cards, null, 2) + "\n");
 console.log(`Generated ${OUTPUT_FILE} with ${cards.length} cards.`);
 
 function getCardKey(filename) {
@@ -69,19 +69,21 @@ function getInferredTypeTag(filename) {
 
 function uniqueTags(tags) {
   const seen = new Set();
-  return tags.filter((tag) => {
-    const key = String(tag).trim().toLowerCase();
-    if (!key || seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  }).map((tag) => String(tag).trim());
+  return tags
+    .filter((tag) => {
+      const key = String(tag).trim().toLowerCase();
+      if (!key || seen.has(key)) return false;
+      seen.add(key);
+      return true;
+    })
+    .map((tag) => String(tag).trim());
 }
 
 function readExistingCards(filepath) {
-  if (!fs.existsSync(filepath)) return [];
+  if (!existsSync(filepath)) return [];
 
   try {
-    const raw = fs.readFileSync(filepath, "utf8");
+    const raw = readFileSync(filepath, "utf8");
     const parsed = JSON.parse(raw);
     return Array.isArray(parsed) ? parsed : [];
   } catch {
