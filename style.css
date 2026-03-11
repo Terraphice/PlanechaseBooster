@@ -4515,6 +4515,12 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
     overflow-y: visible;
     padding: 12px 20px 20px;
   }
+
+  .game-reader-zoom-img {
+    transform: rotate(-90deg);
+    max-width: 100vh;
+    max-height: 100vw;
+  }
 }
 
 /* ── Mobile: sidebar and deck panel ──────────────────────────────────────────── */
