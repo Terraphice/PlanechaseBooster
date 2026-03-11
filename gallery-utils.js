@@ -18,7 +18,7 @@ export function loadPreferences(storageKey) {
 
     const parsed = JSON.parse(raw);
     return {
-      viewMode: ["grid", "single", "stack"].includes(parsed.viewMode) ? parsed.viewMode : defaults.viewMode,
+      viewMode: ["grid", "single", "stack", "list"].includes(parsed.viewMode) ? parsed.viewMode : defaults.viewMode,
       groupBy: ["none", "tag"].includes(parsed.groupBy) ? parsed.groupBy : defaults.groupBy,
       groupTag: typeof parsed.groupTag === "string" ? parsed.groupTag : defaults.groupTag,
       fuzzySearch: Boolean(parsed.fuzzySearch),

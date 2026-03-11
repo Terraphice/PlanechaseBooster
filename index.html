@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Planar Atlas</title>
-  <meta name="description" content="A simple gallery and database for Magic: The Gathering's Planechase format.">
+  <title>Planar Atlas — Complete Planechase Experience</title>
+  <meta name="description" content="A complete Planechase experience for Magic: The Gathering — searchable gallery, custom deck builder, and full Planechase simulator including the Blind Eternities Map.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Planar Atlas">
-  <meta property="og:description" content="A simple gallery and database for Magic: The Gathering's Planechase format.">
+  <meta property="og:title" content="Planar Atlas — Complete Planechase Experience">
+  <meta property="og:description" content="A complete Planechase experience for Magic: The Gathering — searchable gallery, custom deck builder, and full Planechase simulator including the Blind Eternities Map.">
   <meta property="og:url" content="https://planechase.terraphice.dev/">
   <meta property="og:site_name" content="Planar Atlas">
   <meta property="og:image" content="https://planechase.terraphice.dev/images/assets/social-preview.jpg">
@@ -71,6 +71,7 @@
             <option value="grid">Grid</option>
             <option value="single">Singleton</option>
             <option value="stack">Stack</option>
+            <option value="list">List</option>
           </select>
 
           <label class="filter-label filter-label-spaced" for="group-by-select">Grouping:</label>
@@ -115,24 +116,26 @@
 
           <div class="topbar-controls">
             <div class="topbar-actions">
-              <button id="random-card-button" class="topbar-random-button" type="button" aria-label="Random card">
-                <i id="random-card-icon" class="ms ms-chaos" aria-hidden="true"></i>
-                <span class="sr-only">Random card</span>
-              </button>
+              <div class="topbar-left-buttons">
+                <button id="random-card-button" class="topbar-random-button" type="button" aria-label="Chaos" title="Chaos">
+                  <i id="random-card-icon" class="ms ms-chaos" aria-hidden="true"></i>
+                  <span class="sr-only">Chaos</span>
+                </button>
 
-              <button id="play-game-button" class="topbar-random-button topbar-play-button" type="button" aria-label="Play Planechase">
-                <i class="ms ms-planeswalker" aria-hidden="true"></i>
-                <span class="sr-only">Play</span>
-              </button>
+                <button id="play-game-button" class="topbar-random-button topbar-play-button" type="button" aria-label="Play Planechase" title="Play">
+                  <i class="ms ms-planeswalker" aria-hidden="true"></i>
+                  <span class="sr-only">Play</span>
+                </button>
 
-              <button id="deck-button" class="topbar-deck-button" type="button" aria-label="Deck builder">
-                <svg class="deck-btn-icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
-                  <rect x="5" y="2" width="12" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                  <rect x="3" y="4" width="12" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                  <rect x="1" y="6" width="12" height="14" rx="2" fill="currentColor" stroke="currentColor" stroke-width="1.5"/>
-                </svg>
-                <span id="deck-button-badge" class="deck-button-badge hidden" aria-hidden="true"></span>
-              </button>
+                <button id="deck-button" class="topbar-deck-button" type="button" aria-label="Deck builder" title="Deck">
+                  <svg class="deck-btn-icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+                    <rect x="5" y="2" width="12" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                    <rect x="3" y="4" width="12" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                    <rect x="1" y="6" width="12" height="14" rx="2" fill="currentColor" stroke="currentColor" stroke-width="1.5"/>
+                  </svg>
+                  <span id="deck-button-badge" class="deck-button-badge hidden" aria-hidden="true"></span>
+                </button>
+              </div>
 
               <div class="search-shell">
                 <div class="search-inline-shell">
@@ -144,7 +147,7 @@
 
               <div class="topbar-utility-buttons">
                 <div class="settings-menu-wrap">
-                  <button id="settings-menu-toggle" class="topbar-icon-button" type="button" aria-label="Open site settings">
+                  <button id="settings-menu-toggle" class="topbar-icon-button" type="button" aria-label="Open site settings" title="Settings">
                     <span class="symbol-glyph">⚙&#xFE0E;</span>
                   </button>
 
@@ -152,7 +155,7 @@
                     <div class="settings-menu-section">
                       <h2 class="settings-menu-title">About</h2>
                       <p class="settings-menu-copy">
-                        A simple gallery and database for Magic: The Gathering's Planechase format.
+                        A complete Planechase experience — searchable gallery of planes and phenomena, a custom deck builder, and a full Planechase simulator including the Blind Eternities Map.
                       </p>
                     </div>
 
@@ -196,10 +199,22 @@
                     </div>
 
                     <div class="settings-menu-section settings-menu-actions">
-                      <button id="settings-clear-preferences" class="settings-menu-action" type="button">Clear Saved Preferences</button>
-                      <a id="settings-contact-developer" class="settings-menu-action settings-menu-link" href="mailto:me@terraphice.dev?subject=Planar%20Atlas">
-                        Contact
-                      </a>
+                      <div class="settings-menu-action-row">
+                        <button id="settings-export-profile" class="settings-menu-action settings-menu-action-half" type="button" title="Export all preferences and decks as a seed">
+                          ↑ Export Profile
+                        </button>
+                        <button id="settings-import-profile" class="settings-menu-action settings-menu-action-half" type="button" title="Import preferences and decks from a seed">
+                          ↓ Import Profile
+                        </button>
+                      </div>
+                      <div class="settings-menu-action-row settings-menu-action-row-icons">
+                        <button id="settings-clear-preferences" class="settings-menu-action settings-menu-action-icon settings-menu-action-danger" type="button" title="Reset all preferences and decks">
+                          🗑
+                        </button>
+                        <a id="settings-contact-developer" class="settings-menu-action settings-menu-action-icon settings-menu-link" href="mailto:me@terraphice.dev?subject=Planar%20Atlas" title="Contact developer">
+                          ✉
+                        </a>
+                      </div>
                     </div>
 
                     <div class="settings-menu-section settings-menu-fineprint-section">
@@ -210,7 +225,7 @@
                   </div>
                 </div>
 
-                <button id="theme-toggle" class="topbar-icon-button theme-toggle" type="button" aria-label="Theme">
+                <button id="theme-toggle" class="topbar-icon-button theme-toggle" type="button" aria-label="Theme" title="Theme">
                   <span class="theme-toggle-glyph symbol-glyph" aria-hidden="true">◐&#xFE0E;</span>
                   <span class="sr-only">Theme</span>
                 </button>
@@ -515,6 +530,18 @@
         <button id="game-reveal-top-all" class="game-reveal-footer-btn" type="button">Top</button>
         <button id="game-reveal-bottom-all" class="game-reveal-footer-btn" type="button">Bottom</button>
         <button id="game-reveal-exile-all" class="game-reveal-footer-btn game-reveal-footer-btn-danger" type="button">Exile</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="confirm-dialog" class="confirm-dialog hidden" role="dialog" aria-modal="true" aria-labelledby="confirm-dialog-title">
+    <div class="confirm-backdrop"></div>
+    <div class="confirm-panel">
+      <h2 id="confirm-dialog-title" class="confirm-title">⚠ Reset Everything?</h2>
+      <p class="confirm-body">This will permanently delete <strong>all decks</strong> and <strong>all saved preferences</strong>. This cannot be undone.</p>
+      <div class="confirm-actions">
+        <button id="confirm-cancel" class="confirm-btn confirm-cancel" type="button">Cancel</button>
+        <button id="confirm-ok" class="confirm-btn confirm-ok" type="button">Reset All</button>
       </div>
     </div>
   </div>

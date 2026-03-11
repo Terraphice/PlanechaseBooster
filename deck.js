@@ -729,6 +729,75 @@ export function getCardDeckCount(cardKey) {
   return deckCards().get(cardKey) || 0;
 }
 
+export function getAllDecksForProfile() {
+  return {
+    slot: currentSlot,
+    decks: allDecks.map((d) => [...d.entries()]),
+    names: [...deckNames]
+  };
+}
+
+export function importProfileDecks(data) {
+  if (!data) return;
+  if (typeof data.slot === "number" && data.slot >= 0 && data.slot < NUM_DECK_SLOTS) {
+    currentSlot = data.slot;
+  }
+  if (Array.isArray(data.decks)) {
+    allDecks = data.decks.slice(0, NUM_DECK_SLOTS).map((d) => {
+      if (!Array.isArray(d)) return new Map();
+      return new Map(d.filter(([k, v]) => typeof k === "string" && typeof v === "number" && v > 0 && v <= MAX_CARD_COUNT));
+    });
+    while (allDecks.length < NUM_DECK_SLOTS) allDecks.push(new Map());
+  }
+  if (Array.isArray(data.names)) {
+    deckNames = data.names.slice(0, NUM_DECK_SLOTS).map((n, i) =>
+      typeof n === "string" && n.trim() ? n.trim() : (i === 0 ? "Default Official Deck" : `Deck ${i + 1}`)
+    );
+    while (deckNames.length < NUM_DECK_SLOTS) deckNames.push(`Deck ${deckNames.length + 1}`);
+  }
+  saveDecksToStorage();
+  saveDeckNamesToStorage();
+  updateDeckButton();
+  renderDeckSlotDropdown();
+  renderDeckList();
+  updateAllCardOverlays();
+}
+
+export function clearAllDecks() {
+  for (let i = 0; i < NUM_DECK_SLOTS; i++) {
+    allDecks[i] = new Map();
+  }
+  deckNames = Array.from({ length: NUM_DECK_SLOTS }, (_, i) =>
+    i === 0 ? "Default Official Deck" : `Deck ${i + 1}`
+  );
+  localStorage.removeItem(DECK_STORAGE_KEY);
+  localStorage.removeItem(DECK_NAMES_KEY);
+  localStorage.removeItem(DECK_INIT_FLAG_KEY);
+  updateDeckButton();
+  renderDeckList();
+  updateAllCardOverlays();
+  renderDeckSlotDropdown();
+}
+
+export function encodeProfileData(prefsObj) {
+  const deckData = getAllDecksForProfile();
+  const obj = { v: 1, p: prefsObj, d: deckData };
+  try {
+    return "pr1:" + toBase64Url(JSON.stringify(obj));
+  } catch {
+    return "";
+  }
+}
+
+export function decodeProfileData(seed) {
+  if (!seed?.startsWith("pr1:")) return null;
+  try {
+    return JSON.parse(fromBase64Url(seed.slice(4)));
+  } catch {
+    return null;
+  }
+}
+
 export function getDeckTotal() {
   return [...deckCards().values()].reduce((a, b) => a + b, 0);
 }

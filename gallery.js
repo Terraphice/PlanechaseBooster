@@ -31,13 +31,18 @@ import {
   setModalCardKey,
   isGameActive,
   syncGameHash,
-  showGameModeDialog
+  showGameModeDialog,
+  clearAllDecks,
+  getAllDecksForProfile,
+  importProfileDecks,
+  encodeProfileData,
+  decodeProfileData
 } from "./deck.js";
 
 const STORAGE_KEY = "planechaseGalleryPreferences.v2";
 const ALL_PALETTES = ["standard", "gruvbox", "atom", "dracula", "solarized", "nord", "catppuccin", "scryfall"];
 const THEME_PREFERENCES = ["system", "dark", "light"];
-const VIEW_MODES = ["grid", "single", "stack"];
+const VIEW_MODES = ["grid", "single", "stack", "list"];
 const GROUP_MODES = ["none", "tag"];
 const PAGE_SIZES = [10, 20, 50, 100];
 
@@ -92,7 +97,13 @@ const settingsMenuToggle = document.getElementById("settings-menu-toggle");
 const settingsMenu = document.getElementById("settings-menu");
 const settingsClearPreferencesButton = document.getElementById("settings-clear-preferences");
 const settingsContactDeveloperLink = document.getElementById("settings-contact-developer");
+const settingsExportProfileButton = document.getElementById("settings-export-profile");
+const settingsImportProfileButton = document.getElementById("settings-import-profile");
 const themeToggleButton = document.getElementById("theme-toggle");
+
+const confirmDialog = document.getElementById("confirm-dialog");
+const confirmOkButton = document.getElementById("confirm-ok");
+const confirmCancelButton = document.getElementById("confirm-cancel");
 
 const modal = document.getElementById("card-modal");
 const modalImageWrap = document.getElementById("modal-image-wrap");
@@ -353,8 +364,15 @@ function bindEvents() {
   sidebarBackdrop.addEventListener("click", closeSidebar);
 
   settingsMenuToggle.addEventListener("click", toggleSettingsMenu);
-  settingsClearPreferencesButton.addEventListener("click", clearSavedPreferences);
+  settingsClearPreferencesButton.addEventListener("click", showClearPrefsConfirm);
   settingsContactDeveloperLink.addEventListener("click", closeSettingsMenu);
+  settingsExportProfileButton?.addEventListener("click", exportProfile);
+  settingsImportProfileButton?.addEventListener("click", importProfile);
+  confirmOkButton?.addEventListener("click", executeClearAll);
+  confirmCancelButton?.addEventListener("click", hideClearPrefsConfirm);
+  confirmDialog?.addEventListener("click", (event) => {
+    if (event.target === confirmDialog) hideClearPrefsConfirm();
+  });
 
   randomCardButton.addEventListener("click", (event) => {
     if (suppressRandomClick) {
@@ -415,6 +433,11 @@ function bindEvents() {
 
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
+      if (confirmDialog && !confirmDialog.classList.contains("hidden")) {
+        hideClearPrefsConfirm();
+        return;
+      }
+
       if (isGameActive()) {
         // Close reader view if open
         const readerView = document.getElementById("game-reader-view");
@@ -772,7 +795,11 @@ function renderGallery() {
     wrapper.className = getLayoutClassName();
 
     cardsToShow.forEach((card, index) => {
-      wrapper.appendChild(createCardElement(card, index));
+      wrapper.appendChild(
+        displayState.viewMode === "list"
+          ? createListCardElement(card)
+          : createCardElement(card, index)
+      );
     });
 
     gallery.appendChild(wrapper);
@@ -792,7 +819,11 @@ function renderGallery() {
       inner.className = `${getLayoutClassName()} result-group-body`;
 
       group.cards.forEach((card, index) => {
-        inner.appendChild(createCardElement(card, index));
+        inner.appendChild(
+          displayState.viewMode === "list"
+            ? createListCardElement(card)
+            : createCardElement(card, index)
+        );
       });
 
       section.innerHTML = `
@@ -998,9 +1029,13 @@ function loadMoreInfiniteCards() {
   paginationState.infiniteLoadedCount = newCount;
 
   if (displayState.groupBy === "none") {
-    const wrapper = gallery.querySelector(".card-grid, .single-card-layout, .stack-card-layout");
+    const wrapper = gallery.querySelector(".card-grid, .single-card-layout, .stack-card-layout, .list-card-layout");
     if (wrapper) {
-      newCards.forEach((card, i) => wrapper.appendChild(createCardElement(card, startIndex + i)));
+      newCards.forEach((card, i) => wrapper.appendChild(
+        displayState.viewMode === "list"
+          ? createListCardElement(card)
+          : createCardElement(card, startIndex + i)
+      ));
       scheduleStackActiveUpdate();
       renderPaginationControls(filteredCards.length);
 
@@ -1017,6 +1052,7 @@ function loadMoreInfiniteCards() {
 function getLayoutClassName() {
   if (displayState.viewMode === "single") return "single-card-layout";
   if (displayState.viewMode === "stack") return "stack-card-layout";
+  if (displayState.viewMode === "list") return "list-card-layout";
   return "card-grid";
 }
 
@@ -1152,6 +1188,70 @@ function createCardElement(card, index = 0) {
     openModalByKey(card.key, true);
   });
   return cardButton;
+}
+
+function createListCardElement(card) {
+  const row = document.createElement("div");
+  row.className = "list-card-row";
+  row.dataset.cardKey = card.key;
+
+  const nameBtn = document.createElement("button");
+  nameBtn.type = "button";
+  nameBtn.className = "list-card-name";
+  nameBtn.textContent = card.displayName;
+  nameBtn.setAttribute("aria-label", `Open viewer for ${card.displayName}`);
+  nameBtn.addEventListener("click", () => {
+    if (isDeckPanelOpen()) return;
+    openModalByKey(card.key, true);
+  });
+
+  const typeEl = document.createElement("span");
+  typeEl.className = "list-card-type";
+  typeEl.textContent = card.type;
+
+  const tagsEl = document.createElement("div");
+  tagsEl.className = "list-card-tags";
+  for (const tag of card.tags.slice(0, 6)) {
+    tagsEl.appendChild(createTagChipElement(tag, "card-tag"));
+  }
+  if (card.tags.length > 6) {
+    const more = document.createElement("span");
+    more.className = "card-tag card-tag-more";
+    more.textContent = `+${card.tags.length - 6}`;
+    more.setAttribute("aria-hidden", "true");
+    tagsEl.appendChild(more);
+  }
+
+  const deckEl = document.createElement("div");
+  deckEl.className = "list-card-deck";
+  const deckCount = getCardDeckCount(card.key);
+  deckEl.innerHTML = `
+    <button class="list-deck-btn list-deck-dec" data-action="dec" aria-label="Remove one copy" type="button"${deckCount === 0 ? " disabled" : ""}>−</button>
+    <span class="list-deck-count">${deckCount > 0 ? String(deckCount) : "·"}</span>
+    <button class="list-deck-btn list-deck-inc" data-action="inc" aria-label="Add one copy" type="button">+</button>
+  `;
+  deckEl.addEventListener("click", (event) => {
+    event.stopPropagation();
+    const btn = event.target.closest("[data-action]");
+    if (!btn) return;
+    const decBtn = deckEl.querySelector("[data-action='dec']");
+    if (btn.dataset.action === "inc") {
+      addCardToDeck(card.key);
+    } else if (btn.dataset.action === "dec") {
+      removeCardFromDeck(card.key);
+    }
+    const newCount = getCardDeckCount(card.key);
+    const countEl = deckEl.querySelector(".list-deck-count");
+    if (countEl) countEl.textContent = newCount > 0 ? String(newCount) : "·";
+    if (decBtn) decBtn.disabled = newCount === 0;
+  });
+
+  row.appendChild(nameBtn);
+  row.appendChild(typeEl);
+  row.appendChild(tagsEl);
+  row.appendChild(deckEl);
+
+  return row;
 }
 
 function renderCardBadgeLayer(card) {
@@ -1348,21 +1448,8 @@ function renderSearchSuggestions() {
 function buildSuggestions(query) {
   const queryLower = query.toLowerCase();
   const parsed = parseSearchQuery(query);
-  const matches = allCards
-    .filter((card) => matchesFilters(card, parsed, filters, transcriptCache))
-    .slice(0, 6);
 
   const suggestions = [];
-
-  for (const card of matches) {
-    suggestions.push({
-      kind: "card",
-      value: card.displayName,
-      title: card.displayName,
-      meta: `${card.type} · ${card.tags.slice(0, 3).map(getTagLabel).join(" · ")}`,
-      cardKey: card.key
-    });
-  }
 
   const matchingTags = [...new Set(
     allCards.flatMap((card) => card.tags).filter((tag) => getTagLabel(tag).toLowerCase().includes(queryLower))
@@ -1374,6 +1461,20 @@ function buildSuggestions(query) {
       value: `tag:${tag}`,
       title: `tag:${getTagLabel(tag)}`,
       meta: "Filter by tag"
+    });
+  }
+
+  const matches = allCards
+    .filter((card) => matchesFilters(card, parsed, filters, transcriptCache))
+    .slice(0, 6);
+
+  for (const card of matches) {
+    suggestions.push({
+      kind: "card",
+      value: card.displayName,
+      title: card.displayName,
+      meta: `${card.type} · ${card.tags.slice(0, 3).map(getTagLabel).join(" · ")}`,
+      cardKey: card.key
     });
   }
 
@@ -1809,6 +1910,57 @@ async function copyCurrentCardLink() {
   }
 }
 
+function showClearPrefsConfirm() {
+  closeSettingsMenu();
+  confirmDialog?.classList.remove("hidden");
+  document.body.classList.add("confirm-open");
+}
+
+function hideClearPrefsConfirm() {
+  confirmDialog?.classList.add("hidden");
+  document.body.classList.remove("confirm-open");
+}
+
+function executeClearAll() {
+  hideClearPrefsConfirm();
+
+  localStorage.removeItem(STORAGE_KEY);
+  clearAllDecks();
+
+  filters.search = "";
+  filters.tags.clear();
+  filters.fuzzy = false;
+  filters.inlineAutocomplete = true;
+  filters.showHidden = false;
+
+  displayState.viewMode = "grid";
+  displayState.groupBy = "none";
+  displayState.groupTag = "";
+
+  paginationState.currentPage = 1;
+  paginationState.pageSize = 20;
+  paginationState.mode = "paginated";
+  paginationState.infiniteLoadedCount = 20;
+
+  themeController.setTheme("system", {
+    silent: true,
+    paletteOverride: "standard"
+  });
+
+  topSearch.value = "";
+  sidebarSearch.value = "";
+  topSearchGhost.value = "";
+  sidebarSearchGhost.value = "";
+
+  applyStoredPreferencesToUI();
+  buildGroupTagOptions(allCards);
+  syncTagFilterUI();
+  hideAllSearchSuggestions();
+  applyFilters();
+
+  showToast("All preferences and decks cleared.");
+}
+
 function clearSavedPreferences() {
   localStorage.removeItem(STORAGE_KEY);
 
@@ -1844,6 +1996,72 @@ function clearSavedPreferences() {
   closeSettingsMenu();
 
   showToast("Preferences cleared.");
+}
+
+function exportProfile() {
+  const prefsObj = {
+    viewMode: displayState.viewMode,
+    groupBy: displayState.groupBy,
+    groupTag: displayState.groupTag,
+    fuzzySearch: filters.fuzzy,
+    inlineAutocomplete: filters.inlineAutocomplete,
+    showHidden: filters.showHidden,
+    theme: themeController.getTheme(),
+    themePalette: themeController.getPalette(),
+    pageSize: paginationState.pageSize,
+    paginationMode: paginationState.mode
+  };
+
+  const seed = encodeProfileData(prefsObj);
+  if (!seed) { showToast("Export failed."); return; }
+
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(seed)
+      .then(() => showToast("Profile seed copied to clipboard."))
+      .catch(() => prompt("Copy your profile seed:", seed));
+  } else {
+    prompt("Copy your profile seed:", seed);
+  }
+  closeSettingsMenu();
+}
+
+function importProfile() {
+  const seed = prompt("Paste a profile seed to import:");
+  if (!seed?.trim()) return;
+
+  const data = decodeProfileData(seed.trim());
+  if (!data || data.v !== 1) { showToast("Invalid profile seed."); return; }
+
+  if (data.p) {
+    const p = data.p;
+    if (["grid", "single", "stack", "list"].includes(p.viewMode)) displayState.viewMode = p.viewMode;
+    if (["none", "tag"].includes(p.groupBy)) displayState.groupBy = p.groupBy;
+    if (typeof p.groupTag === "string") displayState.groupTag = p.groupTag;
+    if (typeof p.fuzzySearch === "boolean") filters.fuzzy = p.fuzzySearch;
+    if (typeof p.inlineAutocomplete === "boolean") filters.inlineAutocomplete = p.inlineAutocomplete;
+    if (typeof p.showHidden === "boolean") filters.showHidden = p.showHidden;
+    if ([10, 20, 50, 100].includes(p.pageSize)) paginationState.pageSize = p.pageSize;
+    if (["paginated", "infinite"].includes(p.paginationMode)) paginationState.mode = p.paginationMode;
+
+    const validThemes = ["system", "dark", "light"];
+    const validPalettes = ["standard", "gruvbox", "atom", "dracula", "solarized", "nord", "catppuccin", "scryfall"];
+    const newTheme = validThemes.includes(p.theme) ? p.theme : "system";
+    const newPalette = validPalettes.includes(p.themePalette) ? p.themePalette : "standard";
+    themeController.setTheme(newTheme, { silent: true, paletteOverride: newPalette });
+  }
+
+  if (data.d) {
+    importProfileDecks(data.d);
+  }
+
+  persistPreferences();
+  applyStoredPreferencesToUI();
+  buildGroupTagOptions(allCards);
+  syncTagFilterUI();
+  applyFilters();
+  closeSettingsMenu();
+
+  showToast("Profile imported.");
 }
 
 function clearAllFilters() {
