@@ -108,6 +108,14 @@ export function initDeck({ cards, showToast, onDeckChange }) {
   bindDeckEvents();
   renderDeckSlotButtons();
   updateDeckButton();
+
+  if (window.location.hash === "#play") {
+    if (getDeckTotal() > 0) {
+      startGame();
+    } else {
+      history.replaceState(null, "", `${window.location.pathname}${window.location.search}`);
+    }
+  }
 }
 
 // ── Deck slot management ──────────────────────────────────────────────────────
@@ -786,15 +794,23 @@ function startGame() {
   showGamePlaceholder();
   resetDieIcon();
   updateCostDisplay();
+
+  if (window.location.hash !== "#play") {
+    history.pushState(null, "", `${window.location.pathname}${window.location.search}#play`);
+  }
 }
 
-function exitGame() {
+function exitGame({ updateHash = true } = {}) {
   clearTimeout(gameState?._dieResetTimer);
   gameActive = false;
   gameState = null;
   document.body.classList.remove("game-open");
   gameView?.classList.add("hidden");
   closeAllGameMenus();
+
+  if (updateHash && window.location.hash === "#play") {
+    history.pushState(null, "", `${window.location.pathname}${window.location.search}`);
+  }
 }
 
 function resetGame() {
@@ -1098,4 +1114,12 @@ function closeAllGameMenus() {
 
 export function isGameActive() {
   return gameActive;
+}
+
+export function syncGameHash() {
+  if (window.location.hash === "#play") {
+    if (!gameActive && getDeckTotal() > 0) startGame();
+  } else {
+    if (gameActive) exitGame({ updateHash: false });
+  }
 }

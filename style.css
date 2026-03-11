@@ -1429,7 +1429,6 @@ button.active-filter-pill:disabled {
   position: absolute;
   z-index: 3;
   border: 1px solid var(--border);
-  border-radius: 999px;
   background: color-mix(in srgb, var(--bg-elev-1) 92%, transparent);
   color: var(--text);
   cursor: pointer;
@@ -1441,22 +1440,35 @@ button.active-filter-pill:disabled {
   width: 38px;
   height: 38px;
   font-size: 1.5rem;
+  border-radius: 10px;
 }
 
 .modal-nav {
   top: 50%;
   transform: translateY(-50%);
-  width: 44px;
-  height: 44px;
-  font-size: 1.9rem;
+  width: 48px;
+  height: 64px;
+  font-size: 2.2rem;
   line-height: 1;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.45;
+  transition: opacity 160ms ease, border-color 160ms ease, background 160ms ease;
+  backdrop-filter: blur(8px);
+}
+
+.modal-nav:hover,
+.modal-nav:focus-visible {
+  opacity: 1;
 }
 
 .modal-prev { left: 12px; }
 .modal-next { right: 12px; }
 
 .modal-nav:disabled {
-  opacity: 0.35;
+  opacity: 0.15;
   cursor: default;
 }
 
@@ -3089,6 +3101,70 @@ button.active-filter-pill:disabled {
 
   .game-menu-br { bottom: 60px; }
   .game-menu-bl { bottom: 60px; }
+}
+
+/* ── Mobile portrait: rotate game view to landscape ──────────────────────────── */
+
+@media (pointer: coarse) and (orientation: portrait) {
+  body.game-open {
+    overflow: hidden;
+  }
+
+  .game-view {
+    top: calc((100vh - 100vw) / 2);
+    right: auto;
+    bottom: auto;
+    left: calc((100vw - 100vh) / 2);
+    width: 100vh;
+    height: 100vw;
+    transform: rotate(-90deg);
+    transform-origin: center center;
+  }
+
+  .game-card-image {
+    max-width: calc(100vh - 180px);
+    max-height: calc(100vw - 120px);
+  }
+
+  .game-main-area {
+    padding: 64px 12px 48px;
+  }
+
+  .game-card-name {
+    font-size: 0.88rem;
+    margin-top: 8px;
+  }
+
+  .game-corner-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+
+  .game-tl { top: 10px; left: 10px; }
+  .game-tr { top: 10px; right: 10px; }
+  .game-bl { bottom: 10px; left: 10px; }
+  .game-br { bottom: 10px; right: 10px; }
+
+  .game-tl-group {
+    top: 10px;
+    left: 10px;
+  }
+
+  .game-menu {
+    max-height: calc(100vw - 80px);
+    max-width: calc(100vh - 100px);
+  }
+
+  .game-menu-br {
+    bottom: 68px;
+    right: 10px;
+  }
+
+  .game-menu-bl {
+    bottom: 68px;
+    left: 10px;
+  }
 }
 
 /* ── Scryfall palette overrides ───────────────────────────────────────────────── */

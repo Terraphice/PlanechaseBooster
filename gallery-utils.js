@@ -128,7 +128,7 @@ export function reconcileSelectedTags(selectedTags, cards) {
   );
 }
 
-export function readUrlState(filters, displayState) {
+export function readUrlState(filters, displayState, paginationState = null) {
   const params = new URLSearchParams(window.location.search);
 
   filters.search = params.get("q") || "";
@@ -157,9 +157,16 @@ export function readUrlState(filters, displayState) {
   if (params.has("groupTag")) {
     displayState.groupTag = params.get("groupTag") || "";
   }
+
+  if (paginationState && params.has("page")) {
+    const page = parseInt(params.get("page"), 10);
+    if (!isNaN(page) && page >= 1) {
+      paginationState.currentPage = page;
+    }
+  }
 }
 
-export function writeUrlState(filters, displayState, { push = false } = {}) {
+export function writeUrlState(filters, displayState, { push = false, paginationState = null } = {}) {
   const params = new URLSearchParams();
 
   if (filters.search) {
@@ -180,6 +187,10 @@ export function writeUrlState(filters, displayState, { push = false } = {}) {
 
   if (displayState.groupTag) {
     params.set("groupTag", displayState.groupTag);
+  }
+
+  if (paginationState && paginationState.mode === "paginated" && paginationState.currentPage > 1) {
+    params.set("page", String(paginationState.currentPage));
   }
 
   const query = params.toString();

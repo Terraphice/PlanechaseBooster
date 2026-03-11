@@ -29,7 +29,8 @@ import {
   isDeckPanelOpen,
   closeDeckPanel,
   setModalCardKey,
-  isGameActive
+  isGameActive,
+  syncGameHash
 } from "./deck.js";
 
 const STORAGE_KEY = "planechaseGalleryPreferences.v2";
@@ -150,7 +151,7 @@ init();
 
 async function init() {
   try {
-    readUrlState(filters, displayState);
+    readUrlState(filters, displayState, paginationState);
     applyStoredPreferencesToUI();
 
     const response = await fetch("cards.json");
@@ -169,7 +170,7 @@ async function init() {
     buildGroupTagOptions(allCards);
     bindEvents();
     syncTagFilterUI();
-    applyFilters({ updateUrl: false });
+    applyFilters({ updateUrl: false, preservePage: true });
     tryOpenCardFromHash();
 
     initDeck({
@@ -244,7 +245,7 @@ function persistPreferences() {
 }
 
 function updateUrlFromState(options) {
-  writeUrlState(filters, displayState, options);
+  writeUrlState(filters, displayState, { ...options, paginationState });
 }
 
 function bindEvents() {
@@ -504,6 +505,11 @@ function bindEvents() {
   });
 
   window.addEventListener("hashchange", () => {
+    if (window.location.hash === "#play" || (!window.location.hash && isGameActive())) {
+      syncGameHash();
+      return;
+    }
+
     const key = getCardKeyFromHash();
 
     if (!key) {
@@ -515,7 +521,9 @@ function bindEvents() {
   });
 
   window.addEventListener("popstate", () => {
-    readUrlState(filters, displayState);
+    syncGameHash();
+
+    readUrlState(filters, displayState, paginationState);
     filters.tags = reconcileSelectedTags(filters.tags, allCards);
 
     if (displayState.groupTag) {
@@ -525,7 +533,7 @@ function bindEvents() {
     applyStoredPreferencesToUI();
     buildGroupTagOptions(allCards);
     syncTagFilterUI();
-    applyFilters({ updateUrl: false });
+    applyFilters({ updateUrl: false, preservePage: true });
     tryOpenCardFromHash();
   });
 
@@ -712,14 +720,20 @@ function getCurrentModalCardKey() {
   return null;
 }
 
-function applyFilters({ updateUrl = true } = {}) {
+function applyFilters({ updateUrl = true, preservePage = false } = {}) {
   const parsedQuery = parseSearchQuery(filters.search);
 
   filteredCards = allCards.filter((card) => matchesFilters(card, parsedQuery, filters, transcriptCache));
   sortCards(filteredCards);
 
-  paginationState.currentPage = 1;
-  paginationState.infiniteLoadedCount = paginationState.pageSize;
+  if (!preservePage) {
+    paginationState.currentPage = 1;
+    paginationState.infiniteLoadedCount = paginationState.pageSize;
+  } else {
+    const totalPages = Math.max(1, Math.ceil(filteredCards.length / paginationState.pageSize));
+    paginationState.currentPage = Math.min(paginationState.currentPage, totalPages);
+    paginationState.infiniteLoadedCount = paginationState.pageSize;
+  }
 
   renderActiveFilters(parsedQuery);
   renderGallery();
@@ -922,6 +936,7 @@ function goToPrevPage() {
   paginationState.currentPage--;
   renderGallery();
   scrollToGalleryTop();
+  updateUrlFromState({ push: true });
 }
 
 function goToNextPage() {
@@ -930,6 +945,7 @@ function goToNextPage() {
   paginationState.currentPage++;
   renderGallery();
   scrollToGalleryTop();
+  updateUrlFromState({ push: true });
 }
 
 function scrollToGalleryTop() {
