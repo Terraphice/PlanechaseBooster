@@ -4914,14 +4914,13 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
 /* BEM info bar */
 .bem-info-bar {
   position: absolute;
-  bottom: 80px;
+  bottom: 16px;
   left: 0;
   right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 16px;
-  padding-bottom: 6px;
+  padding: 0 80px;
 }
 
 .bem-view-card-btn {
@@ -5029,7 +5028,7 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
   }
 
   .bem-info-bar {
-    bottom: 68px;
+    bottom: 16px;
   }
 
   .bem-map {
@@ -5064,6 +5063,200 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
     font-size: 0.9rem;
     padding: 0 14px;
   }
+}
+
+/* ── BEM zoom levels ─────────────────────────────────────────────────────────── */
+
+/* BEM-only controls are hidden by default; visible only in BEM mode */
+.bem-only-setting {
+  display: none;
+}
+
+.game-view.bem-active .bem-only-setting {
+  display: flex;
+}
+
+/* Zoom row layout */
+.game-menu-zoom-row {
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  gap: 10px;
+}
+
+.game-menu-zoom-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.game-menu-zoom-select {
+  flex: 1;
+  min-width: 0;
+  background: var(--bg-elev-2);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 8px;
+  cursor: pointer;
+  outline: none;
+}
+
+.game-menu-zoom-select:focus-visible {
+  border-color: var(--accent);
+}
+
+/* Close zoom: centre card fills most of viewport */
+.game-view.bem-zoom-close .bem-map {
+  --bem-cell-w: min(
+    calc((100vw - 12px) * 0.86),
+    calc((100vh - 162px) * 0.86 * 1.4),
+    900px
+  );
+  --bem-cell-h: calc(var(--bem-cell-w) / 1.4);
+}
+
+/* Far zoom: all 3×3 cells visible at once */
+.game-view.bem-zoom-far .bem-map {
+  --bem-cell-w: min(
+    calc((100vw - 24px) / 3),
+    calc((100vh - 162px) * 1.4 / 3),
+    240px
+  );
+  --bem-cell-h: calc(var(--bem-cell-w) / 1.4);
+}
+
+/* ── Die result popups ───────────────────────────────────────────────────────── */
+
+.die-popup {
+  position: fixed;
+  inset: 0;
+  z-index: 3500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.die-popup.hidden {
+  display: none;
+}
+
+.die-popup-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+}
+
+.die-popup-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Planeswalk button — blue glow (matches bem-cell-planeswalk-glow) */
+.die-popup-planeswalk-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-width: 220px;
+  padding: 22px 40px;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text);
+  background: color-mix(in srgb, var(--bg-elev-2) 88%, transparent);
+  border: 2px solid #60a5fa;
+  border-radius: 18px;
+  cursor: pointer;
+  box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.55),
+              0 0 18px rgba(96, 165, 250, 0.45);
+  animation: bemBluePulse 1.4s ease infinite;
+  backdrop-filter: blur(12px);
+  transition: transform 120ms ease, background 120ms ease;
+  letter-spacing: 0.01em;
+}
+
+.die-popup-planeswalk-btn .ms {
+  font-size: 2rem;
+}
+
+.die-popup-planeswalk-btn:hover,
+.die-popup-planeswalk-btn:focus-visible {
+  transform: scale(1.04);
+  background: color-mix(in srgb, #60a5fa 16%, var(--bg-elev-2));
+}
+
+/* Remain button — green glow (matches bem-cell-player) */
+.die-popup-remain-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+  padding: 12px 28px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  background: color-mix(in srgb, var(--bg-elev-2) 88%, transparent);
+  border: 2px solid #4ade80;
+  border-radius: 14px;
+  cursor: pointer;
+  box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.35),
+              0 8px 24px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  transition: transform 120ms ease, background 120ms ease;
+}
+
+.die-popup-remain-btn:hover,
+.die-popup-remain-btn:focus-visible {
+  transform: scale(1.04);
+  background: color-mix(in srgb, #4ade80 14%, var(--bg-elev-2));
+}
+
+/* "CHAOS ENSUES" heading — fiery red glow (matches hellride) */
+.die-chaos-title {
+  margin: 0;
+  font-size: 2.2rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #f97316;
+  text-shadow: 0 0 8px rgba(239, 68, 68, 0.9),
+               0 0 22px rgba(239, 68, 68, 0.7),
+               0 0 45px rgba(239, 68, 68, 0.4);
+  animation: bemFirePulse 1.4s ease infinite;
+}
+
+/* Chaos close button — fiery red glow */
+.die-popup-chaos-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 120px;
+  border: 2px solid #f97316;
+  border-radius: 24px;
+  background: color-mix(in srgb, rgba(239, 68, 68, 0.12) 70%, var(--bg-elev-2));
+  color: #f97316;
+  cursor: pointer;
+  font-size: 3.5rem;
+  box-shadow: 0 0 0 2px rgba(249, 115, 22, 0.55),
+              0 0 22px rgba(239, 68, 68, 0.5),
+              0 0 40px rgba(239, 68, 68, 0.2);
+  animation: bemFirePulse 1.4s ease infinite;
+  backdrop-filter: blur(12px);
+  transition: transform 120ms ease;
+}
+
+.die-popup-chaos-btn:hover,
+.die-popup-chaos-btn:focus-visible {
+  transform: scale(1.06);
 }
 
 /* ── List view ───────────────────────────────────────────────────────────────── */

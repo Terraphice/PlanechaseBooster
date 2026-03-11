@@ -4,9 +4,9 @@ import { escapeHtml, shuffleArray, isHiddenCard, enhanceManaSymbols } from "./ga
 
 const DECK_STORAGE_KEY = "planar-atlas-decks-v2";
 const DECK_NAMES_KEY = "planar-atlas-deck-names-v1";
-const DECK_INIT_FLAG_KEY = "planar-atlas-deck-init-v1";
 const TUTORIAL_CLASSIC_KEY = "planar-atlas-tutorial-classic-v1";
 const TUTORIAL_BEM_KEY = "planar-atlas-tutorial-bem-v1";
+const BEM_ZOOM_KEY = "planar-atlas-bem-zoom-v1";
 const NUM_DECK_SLOTS = 10;
 const MAX_CARD_COUNT = 9;
 
@@ -33,6 +33,7 @@ let bemDragStart = null;
 let bemDragHandled = false;
 let bemLandOnPhenomenon = false;
 let phenomenonAnimationEnabled = true;
+let bemZoomLevel = "default";
 let pendingGameMode = null;
 const readerTranscriptCache = new Map();
 
@@ -155,6 +156,16 @@ const gameTutorialTitle = document.getElementById("game-tutorial-title");
 const gameTutorialBody = document.getElementById("game-tutorial-body");
 const gameTutorialClose = document.getElementById("game-tutorial-close");
 
+const bemZoomSelect = document.getElementById("bem-zoom-select");
+
+const diePlaneswalkerPopup = document.getElementById("die-planeswalk-popup");
+const diePlaneswalkerBackdrop = document.getElementById("die-planeswalk-backdrop");
+const diePlaneswalkerBtn = document.getElementById("die-planeswalk-btn");
+const dieRemainBtn = document.getElementById("die-remain-btn");
+const dieChaosPopup = document.getElementById("die-chaos-popup");
+const dieChaosBackdrop = document.getElementById("die-chaos-backdrop");
+const dieChaosCloseBtn = document.getElementById("die-chaos-close-btn");
+
 // ── Initialization ────────────────────────────────────────────────────────────
 
 export function initDeck({ cards, showToast, onDeckChange }) {
@@ -167,7 +178,8 @@ export function initDeck({ cards, showToast, onDeckChange }) {
   currentSlot = stored.slot;
   deckNames = stored.names;
 
-  maybeAutoPopulateFirstSlot();
+  populateDefaultSlot();
+  loadBemZoom();
 
   const urlParams = new URLSearchParams(window.location.search);
   const seedParam = urlParams.get("deck");
@@ -242,24 +254,15 @@ function switchDeckSlot(slot) {
   updateAllCardOverlays();
 }
 
-// ── Auto-populate first slot ──────────────────────────────────────────────────
+// ── Default slot (always rebuilt dynamically) ─────────────────────────────────
 
-function maybeAutoPopulateFirstSlot() {
-  try {
-    if (localStorage.getItem(DECK_INIT_FLAG_KEY)) return;
-    localStorage.setItem(DECK_INIT_FLAG_KEY, "1");
-  } catch {
-    return;
-  }
-  if (allDecks[0].size > 0) return;
-  let count = 0;
+function populateDefaultSlot() {
+  allDecks[0] = new Map();
   for (const card of allCards) {
     if (!isHiddenCard(card.normalizedTags) && card.normalizedTags.some((t) => t.includes("official"))) {
       allDecks[0].set(card.key, 1);
-      count++;
     }
   }
-  if (count > 0) saveDecksToStorage();
 }
 
 // ── Auto-import ───────────────────────────────────────────────────────────────
@@ -642,6 +645,25 @@ function bindDeckEvents() {
     if (focused) openGameReaderView(focused, buildMainCardActions(gameState.focusedIndex));
   });
 
+  // BEM zoom select
+  bemZoomSelect?.addEventListener("change", () => {
+    const val = bemZoomSelect.value;
+    if (val === "close" || val === "default" || val === "far") {
+      bemZoomLevel = val;
+      applyBemZoom();
+      try { localStorage.setItem(BEM_ZOOM_KEY, bemZoomLevel); } catch { /* ignore */ }
+    }
+  });
+
+  // Planeswalk die popup
+  diePlaneswalkerBtn?.addEventListener("click", executePlaneswalkerAction);
+  dieRemainBtn?.addEventListener("click", closePlaneswalkerPopup);
+  diePlaneswalkerBackdrop?.addEventListener("click", closePlaneswalkerPopup);
+
+  // Chaos die popup
+  dieChaosCloseBtn?.addEventListener("click", closeChaosPopup);
+  dieChaosBackdrop?.addEventListener("click", closeChaosPopup);
+
   // BEM drag navigation (pan view only, no player movement)
   bemMapArea?.addEventListener("pointerdown", handleBemPointerDown);
   bemMapArea?.addEventListener("pointermove", handleBemPointerMove);
@@ -801,6 +823,7 @@ export function importProfileDecks(data) {
     );
     while (deckNames.length < NUM_DECK_SLOTS) deckNames.push(`Deck ${deckNames.length + 1}`);
   }
+  populateDefaultSlot();
   saveDecksToStorage();
   saveDeckNamesToStorage();
   updateDeckButton();
@@ -818,7 +841,11 @@ export function clearAllDecks() {
   );
   localStorage.removeItem(DECK_STORAGE_KEY);
   localStorage.removeItem(DECK_NAMES_KEY);
-  localStorage.removeItem(DECK_INIT_FLAG_KEY);
+  localStorage.removeItem(BEM_ZOOM_KEY);
+  bemZoomLevel = "default";
+  applyBemZoom();
+  if (bemZoomSelect) bemZoomSelect.value = "default";
+  populateDefaultSlot();
   updateDeckButton();
   renderDeckList();
   updateAllCardOverlays();
@@ -1481,6 +1508,8 @@ function exitGame({ updateHash = true } = {}) {
   gameView?.classList.remove("bem-active");
   bemMapArea?.classList.add("hidden");
   gameRevealOverlay?.classList.add("hidden");
+  closePlaneswalkerPopup();
+  closeChaosPopup();
   closeGameReaderView();
   closeAllGameMenus();
   syncBemTrButton();
@@ -1579,6 +1608,42 @@ function applyDieResult(roll) {
   gameDieIcon.classList.remove("game-die-flash");
   void gameDieIcon.offsetWidth;
   gameDieIcon.classList.add("game-die-flash");
+
+  if (roll === 1) showChaosPopup();
+  else if (roll === 6) showPlaneswalkerPopup();
+}
+
+function showPlaneswalkerPopup() {
+  diePlaneswalkerPopup?.classList.remove("hidden");
+}
+
+function closePlaneswalkerPopup() {
+  diePlaneswalkerPopup?.classList.add("hidden");
+}
+
+function executePlaneswalkerAction() {
+  closePlaneswalkerPopup();
+  if (!gameState) return;
+  if (gameState.mode === "bem") {
+    const cell = gameState.bemGrid?.get(bemKey(gameState.bemPos.x, gameState.bemPos.y));
+    if (cell?.placeholder && !cell?.card) {
+      bemFillPlaceholder();
+    } else if (cell?.card?.type === "Phenomenon") {
+      bemResolvePhenomenon();
+    } else {
+      toggleBemPlaneswalkMode();
+    }
+  } else {
+    gamePlaneswalk();
+  }
+}
+
+function showChaosPopup() {
+  dieChaosPopup?.classList.remove("hidden");
+}
+
+function closeChaosPopup() {
+  dieChaosPopup?.classList.add("hidden");
 }
 
 function resetDieIcon() {
@@ -1587,6 +1652,26 @@ function resetDieIcon() {
   gameDieIcon.textContent = "";
   gameDieIcon.removeAttribute("aria-label");
   gameBtnTl?.classList.remove("game-die-chaos", "game-die-walk", "game-die-blank");
+}
+
+function loadBemZoom() {
+  try {
+    const stored = localStorage.getItem(BEM_ZOOM_KEY);
+    if (stored === "close" || stored === "default" || stored === "far") {
+      bemZoomLevel = stored;
+    }
+  } catch {
+    // ignore
+  }
+  if (bemZoomSelect) bemZoomSelect.value = bemZoomLevel;
+  applyBemZoom();
+}
+
+function applyBemZoom() {
+  if (!gameView) return;
+  gameView.classList.remove("bem-zoom-close", "bem-zoom-far");
+  if (bemZoomLevel === "close") gameView.classList.add("bem-zoom-close");
+  else if (bemZoomLevel === "far") gameView.classList.add("bem-zoom-far");
 }
 
 function updateCostDisplay() {
