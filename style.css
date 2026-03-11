@@ -5030,8 +5030,8 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
 }
 
 .game-view.bem-active .game-side-panel {
-  right: auto;
-  left: 16px;
+  right: 16px;
+  left: auto;
 }
 
 /* Planeswalk (TR) button shows phenomenon indicator in BEM */
@@ -5315,6 +5315,20 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
 .die-popup-chaos-btn:hover,
 .die-popup-chaos-btn:focus-visible {
   transform: scale(1.06);
+}
+
+/* Mobile portrait: die popups rotate with game view */
+@media (pointer: coarse) and (orientation: portrait) {
+  .die-popup {
+    top: calc((100vh - 100vw) / 2);
+    right: auto;
+    bottom: auto;
+    left: calc((100vw - 100vh) / 2);
+    width: 100vh;
+    height: 100vw;
+    transform: rotate(-90deg);
+    transform-origin: center center;
+  }
 }
 
 /* ── List view ───────────────────────────────────────────────────────────────── */

@@ -1744,6 +1744,19 @@ function renderGameSidePanel(activePlanes, focusedIndex) {
 
   if (isBem) {
     if (activePlanes.length === 0) return;
+    if (activePlanes.length > 1) {
+      const cycleBtn = document.createElement("button");
+      cycleBtn.type = "button";
+      cycleBtn.className = "game-cycle-btn";
+      cycleBtn.setAttribute("aria-label", "Cycle active planes");
+      cycleBtn.innerHTML = `<span class="game-cycle-icon" aria-hidden="true">↻</span>`;
+      cycleBtn.addEventListener("click", () => {
+        if (!gameState) return;
+        gameState.focusedIndex = (focusedIndex + 1) % activePlanes.length;
+        renderGameSidePanel(gameState.activePlanes, gameState.focusedIndex);
+      });
+      gameSidePanel.appendChild(cycleBtn);
+    }
     for (let i = 0; i < activePlanes.length; i++) {
       const card = activePlanes[i];
       const idx = i;
@@ -1970,6 +1983,32 @@ function buildSideCardActions(sideIdx) {
 
 function buildBemActiveSideCardActions(sideIdx) {
   return [
+    {
+      label: "Make Main",
+      action: () => {
+        if (!gameState) return;
+        gameState.focusedIndex = sideIdx;
+        closeGameReaderView();
+        renderGameSidePanel(gameState.activePlanes, gameState.focusedIndex);
+        syncGameToolsState(gameState.remaining.length);
+      }
+    },
+    {
+      label: "Planeswalk Here",
+      action: () => {
+        if (!gameState) return;
+        const card = gameState.activePlanes.splice(sideIdx, 1)[0];
+        if (!card) return;
+        const shuffledOthers = shuffleArray([...gameState.activePlanes]);
+        gameState.remaining.push(...shuffledOthers);
+        gameState.activePlanes = [card];
+        gameState.focusedIndex = 0;
+        closeGameReaderView();
+        renderGameSidePanel(gameState.activePlanes, gameState.focusedIndex);
+        syncGameToolsState(gameState.remaining.length);
+        showToastFn?.(`Planeswalked to ${card.displayName}.`);
+      }
+    },
     {
       label: "Return to Top",
       action: () => {
@@ -2807,6 +2846,13 @@ function bemRemoveFalloff() {
   }
 }
 
+function bemClearActivePlanesToBottom() {
+  if (!gameState?.activePlanes?.length) return;
+  gameState.remaining.push(...shuffleArray([...gameState.activePlanes]));
+  gameState.activePlanes = [];
+  gameState.focusedIndex = 0;
+}
+
 function bemMovePlayer(nx, ny) {
   if (!gameState?.bemGrid || !gameState?.bemPos) return;
 
@@ -2838,6 +2884,7 @@ function bemMovePlayer(nx, ny) {
     bemLandOnPhenomenon = cell.card?.type === "Phenomenon" && phenomenonAnimationEnabled;
     gameState.bemPos = { x: nx, y: ny };
     bemViewOffset = { dx: 0, dy: 0 };
+    bemClearActivePlanesToBottom();
     const orthDirs = [{ dx: 0, dy: -1 }, { dx: 0, dy: 1 }, { dx: -1, dy: 0 }, { dx: 1, dy: 0 }];
     for (const { dx: odx, dy: ody } of orthDirs) {
       const adjCell = bemGrid.get(bemKey(nx + odx, ny + ody));
@@ -2887,6 +2934,8 @@ function bemMovePlayer(nx, ny) {
 
   gameState.bemPos = { x: nx, y: ny };
   bemViewOffset = { dx: 0, dy: 0 };
+
+  bemClearActivePlanesToBottom();
 
   // Auto-flip any orthogonal adjacent face-down cards at new position
   const orthDirs = [{ dx: 0, dy: -1 }, { dx: 0, dy: 1 }, { dx: -1, dy: 0 }, { dx: 1, dy: 0 }];
