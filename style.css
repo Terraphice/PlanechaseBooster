@@ -4819,6 +4819,7 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
     font-size: 0.9rem;
     padding: 0 14px;
   }
+}
 
 /* ── List view ───────────────────────────────────────────────────────────────── */
 
@@ -4831,12 +4832,44 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
   overflow: hidden;
 }
 
+.list-card-header,
 .list-card-row {
   display: grid;
-  grid-template-columns: 1fr auto 1fr auto;
+  grid-template-columns:
+    minmax(0, 2.5fr)
+    100px
+    minmax(0, 1.4fr)
+    62px
+    minmax(0, 1.4fr)
+    minmax(0, 0.8fr)
+    auto;
   align-items: center;
-  gap: 12px;
-  padding: 10px 16px;
+  gap: 0 14px;
+  padding: 0 16px;
+  min-height: 42px;
+}
+
+.list-card-header {
+  background: var(--bg-elev-2);
+  border-bottom: 1px solid var(--border);
+  min-height: 36px;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.list-header-cell {
+  font-size: 0.67rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--text-faint);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.list-card-row {
   background: var(--bg-elev-1);
   border-bottom: 1px solid var(--border-soft);
   transition: background 140ms ease;
@@ -4850,6 +4883,17 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
   background: color-mix(in srgb, var(--bg-elev-2) 80%, var(--accent) 8%);
 }
 
+.list-card-name,
+.list-card-type,
+.list-card-plane,
+.list-card-set,
+.list-card-illustrator {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
 .list-card-name {
   background: none;
   border: 0;
@@ -4859,10 +4903,6 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
   font-weight: 700;
   cursor: pointer;
   text-align: left;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  min-width: 0;
   transition: color 140ms ease;
 }
 
@@ -4876,25 +4916,38 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  white-space: nowrap;
-  flex-shrink: 0;
+}
+
+.list-card-plane {
+  color: var(--text-soft);
+  font-size: 0.84rem;
+}
+
+.list-card-set {
+  color: var(--text-soft);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.list-card-illustrator {
+  color: var(--text-faint);
+  font-size: 0.82rem;
+  font-style: italic;
 }
 
 .list-card-tags {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 5px;
   align-items: center;
   min-width: 0;
+  overflow: hidden;
 }
 
 .list-card-tags .card-tag {
-  max-width: none;
+  flex-shrink: 0;
   white-space: nowrap;
-  overflow: visible;
-  text-overflow: clip;
-  display: inline-flex;
-  vertical-align: baseline;
 }
 
 .list-card-deck {
@@ -4938,25 +4991,42 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
   color: var(--text-soft);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 900px) {
+  .list-card-header,
   .list-card-row {
-    grid-template-columns: 1fr auto;
-    grid-template-rows: auto auto;
+    grid-template-columns:
+      minmax(0, 2.5fr)
+      100px
+      minmax(0, 1.4fr)
+      62px
+      minmax(0, 0.8fr)
+      auto;
   }
 
-  .list-card-type {
-    grid-column: 2;
-    grid-row: 1;
+  .list-card-illustrator,
+  .list-header-cell:nth-child(5) {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .list-card-header,
+  .list-card-row {
+    grid-template-columns:
+      minmax(0, 1fr)
+      72px
+      auto;
   }
 
-  .list-card-tags {
-    grid-column: 1 / -1;
-    grid-row: 2;
-  }
-
-  .list-card-deck {
-    grid-column: 2;
-    grid-row: 2;
+  .list-card-plane,
+  .list-card-set,
+  .list-card-illustrator,
+  .list-card-tags,
+  .list-header-cell:nth-child(3),
+  .list-header-cell:nth-child(4),
+  .list-header-cell:nth-child(5),
+  .list-header-cell:nth-child(6) {
+    display: none;
   }
 }
 

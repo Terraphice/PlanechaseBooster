@@ -794,6 +794,10 @@ function renderGallery() {
     const wrapper = document.createElement("div");
     wrapper.className = getLayoutClassName();
 
+    if (displayState.viewMode === "list") {
+      wrapper.appendChild(createListHeader());
+    }
+
     cardsToShow.forEach((card, index) => {
       wrapper.appendChild(
         displayState.viewMode === "list"
@@ -817,6 +821,10 @@ function renderGallery() {
 
       const inner = document.createElement("div");
       inner.className = `${getLayoutClassName()} result-group-body`;
+
+      if (displayState.viewMode === "list") {
+        inner.appendChild(createListHeader());
+      }
 
       group.cards.forEach((card, index) => {
         inner.appendChild(
@@ -1190,6 +1198,74 @@ function createCardElement(card, index = 0) {
   return cardButton;
 }
 
+function isSetCodeTag(tag) {
+  return /^[A-Z]{2,6}$/.test(tag) || tag === "MagicCon";
+}
+
+function isRawBadgeTag(tag) {
+  return tag.startsWith("badge:") || tag.startsWith(":top:badge:");
+}
+
+function getPlaneNameFromTags(tags) {
+  return (
+    tags.find(
+      tag =>
+        !isRawBadgeTag(tag) &&
+        tag !== "Plane" &&
+        tag !== "Phenomenon" &&
+        tag !== "hidden" &&
+        !isSetCodeTag(tag)
+    ) || ""
+  );
+}
+
+function getSetCodeFromTags(tags) {
+  const setCodes = tags.filter(isSetCodeTag);
+  const upperOnly = setCodes.filter(t => /^[A-Z]+$/.test(t));
+  return upperOnly[0] || setCodes[0] || "";
+}
+
+function parseIllustratorFromTranscript(text) {
+  const match = text.match(/^Illustrated by:\s*(.+)$/m);
+  return match ? match[1].trim() : "";
+}
+
+function loadIllustratorCell(card, cell) {
+  const cached = transcriptCache.get(card.key);
+  if (typeof cached === "string") {
+    cell.textContent = parseIllustratorFromTranscript(cached) || "—";
+    return;
+  }
+  if (cached === null) return;
+  transcriptCache.set(card.key, null);
+  fetch(card.transcriptPath)
+    .then(r => (r.ok ? r.text() : ""))
+    .then(text => {
+      const t = text.trim();
+      transcriptCache.set(card.key, t);
+      if (cell.isConnected) {
+        cell.textContent = parseIllustratorFromTranscript(t) || "—";
+      }
+    })
+    .catch(() => {
+      transcriptCache.set(card.key, "");
+    });
+}
+
+function createListHeader() {
+  const header = document.createElement("div");
+  header.className = "list-card-header";
+  header.setAttribute("aria-hidden", "true");
+  const labels = ["Card Name", "Type", "Plane / Setting", "Set", "Illustrator", "Tags", ""];
+  for (const label of labels) {
+    const cell = document.createElement("span");
+    cell.className = "list-header-cell";
+    cell.textContent = label;
+    header.appendChild(cell);
+  }
+  return header;
+}
+
 function createListCardElement(card) {
   const row = document.createElement("div");
   row.className = "list-card-row";
@@ -1209,17 +1285,25 @@ function createListCardElement(card) {
   typeEl.className = "list-card-type";
   typeEl.textContent = card.type;
 
+  const planeEl = document.createElement("span");
+  planeEl.className = "list-card-plane";
+  const planeName = card.type === "Plane" ? getPlaneNameFromTags(card.tags) : "";
+  planeEl.textContent = planeName || "—";
+
+  const setEl = document.createElement("span");
+  setEl.className = "list-card-set";
+  setEl.textContent = getSetCodeFromTags(card.tags) || "—";
+
+  const illEl = document.createElement("span");
+  illEl.className = "list-card-illustrator";
+  illEl.textContent = "—";
+  loadIllustratorCell(card, illEl);
+
   const tagsEl = document.createElement("div");
   tagsEl.className = "list-card-tags";
-  for (const tag of card.tags.slice(0, 6)) {
+  const badgeTags = card.tags.filter(isRawBadgeTag);
+  for (const tag of badgeTags.slice(0, 3)) {
     tagsEl.appendChild(createTagChipElement(tag, "card-tag"));
-  }
-  if (card.tags.length > 6) {
-    const more = document.createElement("span");
-    more.className = "card-tag card-tag-more";
-    more.textContent = `+${card.tags.length - 6}`;
-    more.setAttribute("aria-hidden", "true");
-    tagsEl.appendChild(more);
   }
 
   const deckEl = document.createElement("div");
@@ -1248,6 +1332,9 @@ function createListCardElement(card) {
 
   row.appendChild(nameBtn);
   row.appendChild(typeEl);
+  row.appendChild(planeEl);
+  row.appendChild(setEl);
+  row.appendChild(illEl);
   row.appendChild(tagsEl);
   row.appendChild(deckEl);
 
