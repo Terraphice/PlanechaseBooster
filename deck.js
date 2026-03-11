@@ -37,7 +37,7 @@ const readerTranscriptCache = new Map();
 // ── BEM (Blind Eternities Map) constants ──────────────────────────────────────
 
 const BEM_VIEW_RADIUS = 1;   // cells visible each side of player (3×3 grid)
-const BEM_FALLOFF_DIST = 3;  // Chebyshev distance before card falls off deck
+const BEM_FALLOFF_DIST = 2;  // Chebyshev distance before card falls off deck
 const BEM_FACEDOWN_IMG = "images/assets/card-preview.jpg";
 const BEM_DRAG_THRESHOLD = 44; // px drag needed to trigger navigation
 
@@ -2354,8 +2354,9 @@ const TUTORIAL_CONTENT = {
 
 <h3>Controls</h3>
 <ul>
-  <li>Tap the <strong>Planeswalk button</strong> to enter/cancel movement mode.</li>
-  <li>Tap any face-up card to view its details.</li>
+  <li>Tap/click the <strong>Planeswalk button</strong> to enter/cancel movement mode.</li>
+  <li>Tap/click any face-up card to view its details.</li>
+  <li>On desktop: use <strong>arrow keys</strong> or <strong>middle mouse drag</strong> to pan the view. On mobile: press and drag to pan.</li>
   <li>The <strong>Tools</strong> and <strong>Options</strong> menus work the same as in Classic mode.</li>
 </ul>
 `
@@ -2886,6 +2887,13 @@ function handleBemArrowKey(event) {
     default: return;
   }
   event.preventDefault();
+
+  // Block panning to cells with no card at all
+  const { x: px, y: py } = gameState.bemPos;
+  const newViewX = px + bemViewOffset.dx + panDx;
+  const newViewY = py + bemViewOffset.dy + panDy;
+  if (!gameState.bemGrid.has(bemKey(newViewX, newViewY))) return;
+
   bemViewOffset = { dx: bemViewOffset.dx + panDx, dy: bemViewOffset.dy + panDy };
   renderBemMap();
 }
@@ -2893,6 +2901,8 @@ function handleBemArrowKey(event) {
 function handleBemPointerDown(event) {
   if (!gameState?.bemGrid) return;
   if (bemDragPointerId !== null) return;
+  // On desktop (mouse), only allow middle-button drag; touch can always drag
+  if (event.pointerType === "mouse" && event.button !== 1) return;
   bemDragPointerId = event.pointerId;
   bemDragStart = { x: event.clientX, y: event.clientY };
   bemDragHandled = false;
@@ -2918,6 +2928,13 @@ function handleBemPointerMove(event) {
   } else {
     panDy = dy > 0 ? -1 : 1;
   }
+
+  // Block panning to cells with no card at all
+  const { x: px, y: py } = gameState.bemPos;
+  const newViewX = px + bemViewOffset.dx + panDx;
+  const newViewY = py + bemViewOffset.dy + panDy;
+  if (!gameState.bemGrid.has(bemKey(newViewX, newViewY))) return;
+
   bemViewOffset = { dx: bemViewOffset.dx + panDx, dy: bemViewOffset.dy + panDy };
   renderBemMap();
 }
