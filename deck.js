@@ -33,6 +33,7 @@ let bemDragStart = null;
 let bemDragHandled = false;
 let bemLandOnPhenomenon = false;
 let phenomenonAnimationEnabled = true;
+let riskyHellridingEnabled = true;
 let bemZoomLevel = "default";
 let pendingGameMode = null;
 const readerTranscriptCache = new Map();
@@ -2599,6 +2600,10 @@ export function setPhenomenonAnimation(enabled) {
   phenomenonAnimationEnabled = Boolean(enabled);
 }
 
+export function setRiskyHellriding(enabled) {
+  riskyHellridingEnabled = Boolean(enabled);
+}
+
 export function syncGameHash() {
   if (window.location.hash === "#play") {
     if (!gameActive && getDeckTotal() > 0) startGame();
@@ -2812,7 +2817,7 @@ function bemMovePlayer(nx, ny) {
     //  position has not already had the hellride check applied this game)
     const originalCard = cell.card;
     const alreadyHellrided = gameState.bemHellridedPositions?.has(key);
-    if (originalCard.type !== "Phenomenon" && !alreadyHellrided) {
+    if (riskyHellridingEnabled && originalCard.type !== "Phenomenon" && !alreadyHellrided) {
       gameState.bemHellridedPositions?.add(key);
       const phenIdx = gameState.remaining.findIndex(c => c.type === "Phenomenon");
       if (phenIdx !== -1 && Math.random() < 2 / 3) {
