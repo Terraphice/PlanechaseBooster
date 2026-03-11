@@ -475,6 +475,15 @@
     <div id="game-tools-menu" class="game-menu game-menu-br hidden" role="dialog" aria-label="Tools">
       <h3 class="game-menu-title">Tools</h3>
       <div class="game-menu-scroll">
+        <div id="bem-zoom-row" class="game-menu-zoom-row bem-only-setting">
+          <label class="game-menu-zoom-label" for="bem-zoom-select">Zoom</label>
+          <select id="bem-zoom-select" class="game-menu-zoom-select">
+            <option value="close">Close (1×1)</option>
+            <option value="default" selected>Default (current)</option>
+            <option value="far">Far (3×3)</option>
+          </select>
+        </div>
+        <div class="game-menu-divider bem-only-setting"></div>
         <button id="game-tools-shuffle" class="game-menu-item" type="button">Shuffle Library</button>
         <button id="game-tools-add-top" class="game-menu-item" type="button">
           <span>Add Top of Library</span>
@@ -545,6 +554,29 @@
         <button id="game-reveal-bottom-all" class="game-reveal-footer-btn" type="button">Bottom</button>
         <button id="game-reveal-exile-all" class="game-reveal-footer-btn game-reveal-footer-btn-danger" type="button">Exile</button>
       </div>
+    </div>
+  </div>
+
+  <!-- Planeswalk die result popup -->
+  <div id="die-planeswalk-popup" class="die-popup hidden" role="dialog" aria-modal="true" aria-label="Planeswalk!">
+    <div id="die-planeswalk-backdrop" class="die-popup-backdrop"></div>
+    <div class="die-popup-content">
+      <button id="die-planeswalk-btn" class="die-popup-planeswalk-btn" type="button">
+        <i class="ms ms-planeswalker" aria-hidden="true"></i>
+        Planeswalk
+      </button>
+      <button id="die-remain-btn" class="die-popup-remain-btn" type="button">Remain</button>
+    </div>
+  </div>
+
+  <!-- Chaos die result popup -->
+  <div id="die-chaos-popup" class="die-popup hidden" role="dialog" aria-modal="true" aria-label="Chaos ensues!">
+    <div id="die-chaos-backdrop" class="die-popup-backdrop"></div>
+    <div class="die-popup-content">
+      <p class="die-chaos-title">CHAOS ENSUES</p>
+      <button id="die-chaos-close-btn" class="die-popup-chaos-btn" type="button">
+        <i class="ms ms-chaos" aria-hidden="true"></i>
+      </button>
     </div>
   </div>
 
