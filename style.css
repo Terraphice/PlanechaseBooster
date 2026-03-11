@@ -1819,6 +1819,25 @@ button.active-filter-pill:disabled {
   font-size: 0.8rem;
 }
 
+.pagination-page-input {
+  width: 3.5em;
+  text-align: center;
+  border: 1px solid var(--border);
+  background: var(--bg-elev-2);
+  color: var(--text);
+  border-radius: 6px;
+  padding: 2px 4px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  -moz-appearance: textfield;
+}
+
+.pagination-page-input::-webkit-outer-spin-button,
+.pagination-page-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .pagination-infinite-info {
   text-align: center;
   color: var(--text-faint);
