@@ -18,9 +18,17 @@ let showToastFn = null;
 let onDeckChangeFn = null;
 let revealedCards = [];
 let revealViewMode = "list";
+let easyPlaneswalk = false;
+let readerImageFlipped = false;
+let readerCardPath = "";
+const readerTranscriptCache = new Map();
 
 function deckCards() {
   return allDecks[currentSlot];
+}
+
+function isTouchDevice() {
+  return window.matchMedia("(pointer: coarse)").matches;
 }
 
 // ── DOM references ────────────────────────────────────────────────────────────
@@ -75,8 +83,18 @@ const gameCostDisplay = document.getElementById("game-cost-display");
 const gameCostReset = document.getElementById("game-cost-reset");
 const gameReaderView = document.getElementById("game-reader-view");
 const gameReaderImage = document.getElementById("game-reader-image");
+const gameReaderImageWrap = document.getElementById("game-reader-image-wrap");
+const gameReaderFlipHint = document.getElementById("game-reader-flip-hint");
 const gameReaderClose = document.getElementById("game-reader-close");
 const gameReaderBackdrop = document.getElementById("game-reader-backdrop");
+const gameReaderCardName = document.getElementById("game-reader-card-name");
+const gameReaderCardType = document.getElementById("game-reader-card-type");
+const gameReaderTranscript = document.getElementById("game-reader-transcript");
+const gameReaderActions = document.getElementById("game-reader-actions");
+const gameEasyPlaneswalkToggle = document.getElementById("game-easy-planeswalk-toggle");
+const gameOptSaveState = document.getElementById("game-opt-save-state");
+const gameOptLoadState = document.getElementById("game-opt-load-state");
+const gameOptStateLink = document.getElementById("game-opt-state-link");
 
 const gameToolsRevealToggle = document.getElementById("game-tools-reveal-toggle");
 const gameRevealInputRow = document.getElementById("game-reveal-input-row");
@@ -126,6 +144,20 @@ export function initDeck({ cards, showToast, onDeckChange }) {
   bindDeckEvents();
   renderDeckSlotButtons();
   updateDeckButton();
+
+  const gameParam = urlParams.get("game");
+  if (gameParam) {
+    const decoded = decodeGameState(gameParam);
+    if (decoded) {
+      const newParams = new URLSearchParams(urlParams);
+      newParams.delete("game");
+      const query = newParams.toString();
+      history.replaceState(null, "", `${window.location.pathname}${query ? `?${query}` : ""}#play`);
+      startGameFromState(decoded);
+      showToastFn?.("Game state restored from link.");
+      return;
+    }
+  }
 
   if (window.location.hash === "#play") {
     if (getDeckTotal() > 0) {
@@ -341,6 +373,10 @@ function bindDeckEvents() {
     showToastFn?.(`Returned ${returned.length} plane${returned.length > 1 ? "s" : ""} to bottom.`);
   });
 
+  gameEasyPlaneswalkToggle?.addEventListener("change", () => {
+    easyPlaneswalk = gameEasyPlaneswalkToggle.checked;
+  });
+
   gameLibraryToggle?.addEventListener("click", () => {
     const isHidden = gameMenuSearchSection?.classList.contains("hidden");
     if (isHidden) {
@@ -394,6 +430,10 @@ function bindDeckEvents() {
     openDeckPanel();
   });
 
+  gameOptSaveState?.addEventListener("click", saveGameStateSeed);
+  gameOptLoadState?.addEventListener("click", loadGameStatePrompt);
+  gameOptStateLink?.addEventListener("click", shareGameStateLink);
+
   gameCostReset?.addEventListener("click", () => {
     if (gameState) {
       gameState.chaosCost = 0;
@@ -401,7 +441,22 @@ function bindDeckEvents() {
     }
   });
 
-  gameCardImageBtn?.addEventListener("click", openGameReaderView);
+  gameCardImageBtn?.addEventListener("click", (event) => {
+    if (!gameState || gameState.activePlanes.length === 0) {
+      gamePlaneswalk();
+      return;
+    }
+    if (easyPlaneswalk) {
+      if (isTouchDevice() || event.shiftKey) {
+        gamePlaneswalk();
+        return;
+      }
+    }
+    const focused = gameState.activePlanes[gameState.focusedIndex] ?? gameState.activePlanes[0];
+    if (focused) openGameReaderView(focused, buildMainCardActions(gameState.focusedIndex));
+  });
+
+  gameReaderImageWrap?.addEventListener("click", flipReaderImage);
 
   gameReaderClose?.addEventListener("click", closeGameReaderView);
   gameReaderBackdrop?.addEventListener("click", closeGameReaderView);
@@ -775,6 +830,90 @@ function shareDeckLink() {
   }
 }
 
+// ── Game state encoding ───────────────────────────────────────────────────────
+
+function encodeGameState() {
+  if (!gameState) return "";
+  const obj = {
+    r: gameState.remaining.map((c) => compressKey(c.key)),
+    a: gameState.activePlanes.map((c) => compressKey(c.key)),
+    f: gameState.focusedIndex,
+    c: gameState.chaosCost,
+    e: gameState.exiled.map((c) => compressKey(c.key))
+  };
+  if (revealedCards.length > 0) {
+    obj.rv = revealedCards.map((c) => compressKey(c.key));
+  }
+  try {
+    return "g1:" + toBase64Url(JSON.stringify(obj));
+  } catch {
+    return "";
+  }
+}
+
+function decodeGameState(seed) {
+  if (!seed?.startsWith("g1:")) return null;
+  try {
+    const raw = fromBase64Url(seed.slice(3));
+    const obj = JSON.parse(raw);
+    const lookupCard = (ck) => {
+      const key = decompressKey(ck);
+      return key ? allCards.find((c) => c.key === key) : null;
+    };
+    const remaining = (obj.r || []).map(lookupCard).filter(Boolean);
+    const activePlanes = (obj.a || []).map(lookupCard).filter(Boolean);
+    const exiled = (obj.e || []).map(lookupCard).filter(Boolean);
+    const revealed = (obj.rv || []).map(lookupCard).filter(Boolean);
+    const focusedIndex = Math.max(0, Math.min(
+      typeof obj.f === "number" ? obj.f : 0,
+      Math.max(0, activePlanes.length - 1)
+    ));
+    const chaosCost = typeof obj.c === "number" ? Math.max(0, obj.c) : 0;
+    return { remaining, activePlanes, focusedIndex, chaosCost, exiled, revealed };
+  } catch {
+    return null;
+  }
+}
+
+function saveGameStateSeed() {
+  if (!gameState) { showToastFn?.("No active game to save."); return; }
+  const seed = encodeGameState();
+  if (!seed) { showToastFn?.("Failed to encode game state."); return; }
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(seed).then(() => showToastFn?.("Game state seed copied!")).catch(() => prompt("Copy this game seed:", seed));
+  } else {
+    prompt("Copy this game seed:", seed);
+  }
+  closeAllGameMenus();
+}
+
+function loadGameStatePrompt() {
+  const seed = prompt("Paste a game state seed to restore:");
+  if (!seed?.trim()) return;
+  const decoded = decodeGameState(seed.trim());
+  if (!decoded) { showToastFn?.("Invalid game state seed."); return; }
+  closeGameReaderView();
+  closeAllGameMenus();
+  startGameFromState(decoded);
+  showToastFn?.("Game state restored.");
+}
+
+function shareGameStateLink() {
+  if (!gameState) { showToastFn?.("No active game to share."); return; }
+  const seed = encodeGameState();
+  if (!seed) { showToastFn?.("Failed to encode game state."); return; }
+  const url = new URL(window.location.href);
+  url.hash = "#play";
+  url.searchParams.set("game", seed);
+  const urlStr = url.toString();
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(urlStr).then(() => showToastFn?.("Game link copied!")).catch(() => prompt("Copy this game link:", urlStr));
+  } else {
+    prompt("Copy this game link:", urlStr);
+  }
+  closeAllGameMenus();
+}
+
 // ── Storage ───────────────────────────────────────────────────────────────────
 
 function loadDecksFromStorage() {
@@ -846,6 +985,43 @@ function startGame() {
   }
 }
 
+function startGameFromState(decoded) {
+  clearTimeout(gameState?._dieResetTimer);
+  gameState = {
+    remaining: decoded.remaining,
+    activePlanes: decoded.activePlanes,
+    focusedIndex: decoded.focusedIndex,
+    dieRolling: false,
+    chaosCost: decoded.chaosCost,
+    exiled: decoded.exiled,
+    _dieResetTimer: null
+  };
+  revealedCards = decoded.revealed;
+
+  gameActive = true;
+  closeDeckPanel();
+  document.body.classList.add("game-open");
+  gameView?.classList.remove("hidden");
+  resetDieIcon();
+  updateCostDisplay();
+
+  if (gameState.activePlanes.length > 0) {
+    updateGameView();
+  } else {
+    showGamePlaceholder();
+  }
+
+  if (revealedCards.length > 0) {
+    renderRevealCards();
+    updateRevealFooter();
+    gameRevealOverlay?.classList.remove("hidden");
+  }
+
+  if (window.location.hash !== "#play") {
+    history.pushState(null, "", `${window.location.pathname}${window.location.search}#play`);
+  }
+}
+
 function exitGame({ updateHash = true } = {}) {
   clearTimeout(gameState?._dieResetTimer);
   gameActive = false;
@@ -854,6 +1030,7 @@ function exitGame({ updateHash = true } = {}) {
   document.body.classList.remove("game-open");
   gameView?.classList.add("hidden");
   gameRevealOverlay?.classList.add("hidden");
+  closeGameReaderView();
   closeAllGameMenus();
 
   if (updateHash && window.location.hash === "#play") {
@@ -963,10 +1140,14 @@ function updateCostDisplay() {
 function showGamePlaceholder() {
   if (gameCardImage) {
     gameCardImage.src = "images/assets/card-preview.jpg";
-    gameCardImage.alt = "Press Planeswalk to begin";
+    gameCardImage.alt = "Click to planeswalk";
   }
-  if (gameCardName) gameCardName.textContent = "Press ▶ to planeswalk";
+  if (gameCardName) gameCardName.textContent = "";
   if (gameSidePanel) gameSidePanel.innerHTML = "";
+  if (gameCardImageBtn) {
+    gameCardImageBtn.setAttribute("aria-label", "Planeswalk");
+    gameCardImageBtn.classList.add("game-card-image-btn-placeholder");
+  }
   syncGameToolsState(gameState?.remaining.length ?? 0);
 }
 
@@ -987,6 +1168,10 @@ function updateGameView() {
   }
   if (gameCardName) {
     gameCardName.textContent = focused.displayName;
+  }
+  if (gameCardImageBtn) {
+    gameCardImageBtn.setAttribute("aria-label", easyPlaneswalk ? "Planeswalk (or Shift+click to view)" : "View card close-up");
+    gameCardImageBtn.classList.remove("game-card-image-btn-placeholder");
   }
 
   renderGameSidePanel(activePlanes, focusedIndex);
@@ -1019,15 +1204,14 @@ function renderGameSidePanel(activePlanes, focusedIndex) {
     const sideCard = document.createElement("button");
     sideCard.type = "button";
     sideCard.className = "game-side-card";
-    sideCard.setAttribute("aria-label", `Switch to ${card.displayName}`);
+    sideCard.setAttribute("aria-label", `View ${card.displayName}`);
     sideCard.innerHTML = `
       <img class="game-side-card-img" src="${card.thumbPath}" alt="${escapeHtml(card.displayName)}" />
       <div class="game-side-card-label">${escapeHtml(card.displayName)}</div>
     `;
     sideCard.addEventListener("click", () => {
       if (!gameState) return;
-      gameState.focusedIndex = idx;
-      updateGameView();
+      openGameReaderView(card, buildSideCardActions(idx));
     });
     gameSidePanel.appendChild(sideCard);
   }
@@ -1052,21 +1236,244 @@ function syncGameToolsState(remainingCount) {
   }
 }
 
-function openGameReaderView() {
-  if (!gameState) return;
-  const src = gameCardImage?.src;
-  if (!src || src === window.location.href) return;
+function buildMainCardActions(focusedIdx) {
+  return [
+    {
+      label: "Planeswalk Away",
+      action: () => { closeGameReaderView(); gamePlaneswalk(); }
+    },
+    {
+      label: "Return to Top",
+      action: () => {
+        if (!gameState) return;
+        const card = gameState.activePlanes.splice(focusedIdx, 1)[0];
+        if (!card) return;
+        gameState.remaining.unshift(card);
+        gameState.focusedIndex = Math.min(gameState.focusedIndex, Math.max(0, gameState.activePlanes.length - 1));
+        closeGameReaderView();
+        updateGameView();
+        showToastFn?.(`${card.displayName} returned to top.`);
+      }
+    },
+    {
+      label: "Return to Bottom",
+      action: () => {
+        if (!gameState) return;
+        const card = gameState.activePlanes.splice(focusedIdx, 1)[0];
+        if (!card) return;
+        gameState.remaining.push(card);
+        gameState.focusedIndex = Math.min(gameState.focusedIndex, Math.max(0, gameState.activePlanes.length - 1));
+        closeGameReaderView();
+        updateGameView();
+        showToastFn?.(`${card.displayName} returned to bottom.`);
+      }
+    },
+    {
+      label: "Shuffle Into Library",
+      action: () => {
+        if (!gameState) return;
+        const card = gameState.activePlanes.splice(focusedIdx, 1)[0];
+        if (!card) return;
+        gameState.remaining.push(card);
+        gameState.remaining = shuffleArray(gameState.remaining);
+        gameState.focusedIndex = Math.min(gameState.focusedIndex, Math.max(0, gameState.activePlanes.length - 1));
+        closeGameReaderView();
+        updateGameView();
+        showToastFn?.(`${card.displayName} shuffled into library.`);
+      }
+    },
+    {
+      label: "Exile",
+      danger: true,
+      action: () => {
+        if (!gameState) return;
+        const card = gameState.activePlanes.splice(focusedIdx, 1)[0];
+        if (!card) return;
+        gameState.exiled.push(card);
+        gameState.focusedIndex = Math.min(gameState.focusedIndex, Math.max(0, gameState.activePlanes.length - 1));
+        closeGameReaderView();
+        updateGameView();
+        showToastFn?.(`${card.displayName} exiled.`);
+      }
+    }
+  ];
+}
+
+function buildSideCardActions(sideIdx) {
+  return [
+    {
+      label: "Make Main",
+      action: () => {
+        if (!gameState) return;
+        gameState.focusedIndex = sideIdx;
+        closeGameReaderView();
+        updateGameView();
+      }
+    },
+    {
+      label: "Planeswalk Here",
+      action: () => {
+        if (!gameState) return;
+        const card = gameState.activePlanes.splice(sideIdx, 1)[0];
+        if (!card) return;
+        gameState.remaining.push(...gameState.activePlanes);
+        gameState.activePlanes = [card];
+        gameState.focusedIndex = 0;
+        closeGameReaderView();
+        updateGameView();
+        showToastFn?.(`Planeswalked to ${card.displayName}.`);
+      }
+    },
+    {
+      label: "Return to Top",
+      action: () => {
+        if (!gameState) return;
+        const card = gameState.activePlanes.splice(sideIdx, 1)[0];
+        if (!card) return;
+        gameState.remaining.unshift(card);
+        gameState.focusedIndex = Math.min(gameState.focusedIndex, Math.max(0, gameState.activePlanes.length - 1));
+        closeGameReaderView();
+        updateGameView();
+        showToastFn?.(`${card.displayName} returned to top.`);
+      }
+    },
+    {
+      label: "Return to Bottom",
+      action: () => {
+        if (!gameState) return;
+        const card = gameState.activePlanes.splice(sideIdx, 1)[0];
+        if (!card) return;
+        gameState.remaining.push(card);
+        gameState.focusedIndex = Math.min(gameState.focusedIndex, Math.max(0, gameState.activePlanes.length - 1));
+        closeGameReaderView();
+        updateGameView();
+        showToastFn?.(`${card.displayName} returned to bottom.`);
+      }
+    },
+    {
+      label: "Shuffle Into Library",
+      action: () => {
+        if (!gameState) return;
+        const card = gameState.activePlanes.splice(sideIdx, 1)[0];
+        if (!card) return;
+        gameState.remaining.push(card);
+        gameState.remaining = shuffleArray(gameState.remaining);
+        gameState.focusedIndex = Math.min(gameState.focusedIndex, Math.max(0, gameState.activePlanes.length - 1));
+        closeGameReaderView();
+        updateGameView();
+        showToastFn?.(`${card.displayName} shuffled into library.`);
+      }
+    },
+    {
+      label: "Exile",
+      danger: true,
+      action: () => {
+        if (!gameState) return;
+        const card = gameState.activePlanes.splice(sideIdx, 1)[0];
+        if (!card) return;
+        gameState.exiled.push(card);
+        gameState.focusedIndex = Math.min(gameState.focusedIndex, Math.max(0, gameState.activePlanes.length - 1));
+        closeGameReaderView();
+        updateGameView();
+        showToastFn?.(`${card.displayName} exiled.`);
+      }
+    }
+  ];
+}
+
+function openGameReaderView(card, actions = []) {
+  if (!gameReaderView || !card) return;
+
+  readerImageFlipped = false;
+  readerCardPath = card.imagePath;
+
   if (gameReaderImage) {
-    gameReaderImage.src = src;
-    gameReaderImage.alt = gameCardImage?.alt ?? "";
+    gameReaderImage.src = card.imagePath;
+    gameReaderImage.alt = card.displayName;
   }
-  gameReaderView?.classList.remove("hidden");
+  if (gameReaderImageWrap) {
+    gameReaderImageWrap.classList.remove("game-reader-image-flipped", "game-reader-image-spinning");
+  }
+  if (gameReaderFlipHint) gameReaderFlipHint.style.opacity = "";
+  if (gameReaderCardName) gameReaderCardName.textContent = card.displayName;
+  if (gameReaderCardType) gameReaderCardType.textContent = card.type || "";
+
+  if (gameReaderTranscript) {
+    gameReaderTranscript.textContent = "Loading…";
+    loadReaderTranscript(card);
+  }
+
+  if (gameReaderActions) {
+    gameReaderActions.innerHTML = "";
+    for (const { label, action, danger } of actions) {
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "game-reader-action-btn" + (danger ? " game-reader-action-danger" : "");
+      btn.textContent = label;
+      btn.addEventListener("click", action);
+      gameReaderActions.appendChild(btn);
+    }
+  }
+
+  gameReaderView.classList.remove("hidden");
   document.body.classList.add("game-reader-open");
+}
+
+async function loadReaderTranscript(card) {
+  if (!gameReaderTranscript) return;
+  const cached = readerTranscriptCache.get(card.key);
+  if (typeof cached === "string") {
+    renderReaderTranscriptMarkdown(cached || "No transcript available.");
+    return;
+  }
+  try {
+    const response = await fetch(card.transcriptPath);
+    if (!response.ok) throw new Error("Not found");
+    const text = await response.text();
+    const trimmed = text.trim();
+    readerTranscriptCache.set(card.key, trimmed);
+    if (gameReaderTranscript) renderReaderTranscriptMarkdown(trimmed || "No transcript available.");
+  } catch {
+    readerTranscriptCache.set(card.key, "");
+    if (gameReaderTranscript) renderReaderTranscriptMarkdown("No transcript available.");
+  }
+}
+
+function renderReaderTranscriptMarkdown(text) {
+  if (!gameReaderTranscript) return;
+  try {
+    const html = window.marked ? window.marked.parse(text) : text.replace(/\n/g, "<br>");
+    const safe = window.DOMPurify ? window.DOMPurify.sanitize(html) : html;
+    gameReaderTranscript.innerHTML = safe;
+  } catch {
+    gameReaderTranscript.textContent = text;
+  }
+}
+
+function flipReaderImage() {
+  if (!gameReaderImage || !gameReaderImageWrap) return;
+  const wasFlipped = readerImageFlipped;
+  readerImageFlipped = !wasFlipped;
+  gameReaderImageWrap.classList.add("game-reader-image-spinning");
+  setTimeout(() => {
+    if (wasFlipped) {
+      gameReaderImage.src = readerCardPath;
+      gameReaderImage.alt = gameReaderCardName?.textContent ?? "";
+    } else {
+      gameReaderImage.src = "images/assets/card-preview.jpg";
+      gameReaderImage.alt = "Card back";
+    }
+    gameReaderImageWrap.classList.toggle("game-reader-image-flipped", readerImageFlipped);
+  }, 200);
+  setTimeout(() => {
+    gameReaderImageWrap.classList.remove("game-reader-image-spinning");
+  }, 400);
 }
 
 function closeGameReaderView() {
   gameReaderView?.classList.add("hidden");
   document.body.classList.remove("game-reader-open");
+  readerImageFlipped = false;
 }
 
 function renderGameLibraryView() {
