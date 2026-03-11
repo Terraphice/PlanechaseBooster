@@ -16,6 +16,8 @@ let gameActive = false;
 let gameState = null;
 let showToastFn = null;
 let onDeckChangeFn = null;
+let revealedCards = [];
+let revealViewMode = "list";
 
 function deckCards() {
   return allDecks[currentSlot];
@@ -75,6 +77,22 @@ const gameReaderView = document.getElementById("game-reader-view");
 const gameReaderImage = document.getElementById("game-reader-image");
 const gameReaderClose = document.getElementById("game-reader-close");
 const gameReaderBackdrop = document.getElementById("game-reader-backdrop");
+
+const gameToolsRevealToggle = document.getElementById("game-tools-reveal-toggle");
+const gameRevealInputRow = document.getElementById("game-reveal-input-row");
+const gameRevealCountInput = document.getElementById("game-reveal-count-input");
+const gameRevealGoBtn = document.getElementById("game-reveal-go-btn");
+const gameRevealOverlay = document.getElementById("game-reveal-overlay");
+const gameRevealBackdrop = document.getElementById("game-reveal-backdrop");
+const gameRevealCardsContainer = document.getElementById("game-reveal-cards-container");
+const gameRevealClose = document.getElementById("game-reveal-close");
+const gameRevealTitleCount = document.getElementById("game-reveal-title-count");
+const gameRevealShuffleIn = document.getElementById("game-reveal-shuffle-in");
+const gameRevealTopAll = document.getElementById("game-reveal-top-all");
+const gameRevealBottomAll = document.getElementById("game-reveal-bottom-all");
+const gameRevealExileAll = document.getElementById("game-reveal-exile-all");
+const gameRevealListBtn = document.getElementById("game-reveal-list-btn");
+const gameRevealGalleryBtn = document.getElementById("game-reveal-gallery-btn");
 
 // ── Initialization ────────────────────────────────────────────────────────────
 
@@ -341,6 +359,33 @@ function bindDeckEvents() {
     updateGameSearchResults();
     renderGameLibraryView();
   });
+
+  gameToolsRevealToggle?.addEventListener("click", () => {
+    const isHidden = gameRevealInputRow?.classList.contains("hidden");
+    if (isHidden) {
+      gameRevealInputRow?.classList.remove("hidden");
+      gameRevealCountInput?.focus();
+    } else {
+      gameRevealInputRow?.classList.add("hidden");
+    }
+  });
+
+  gameRevealGoBtn?.addEventListener("click", openRevealCards);
+
+  gameRevealCountInput?.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") openRevealCards();
+  });
+
+  gameRevealClose?.addEventListener("click", closeRevealOverlay);
+  gameRevealBackdrop?.addEventListener("click", closeRevealOverlay);
+
+  gameRevealShuffleIn?.addEventListener("click", () => handleRevealBulkAction("shuffle"));
+  gameRevealTopAll?.addEventListener("click", () => handleRevealBulkAction("top"));
+  gameRevealBottomAll?.addEventListener("click", () => handleRevealBulkAction("bottom"));
+  gameRevealExileAll?.addEventListener("click", () => handleRevealBulkAction("exile"));
+
+  gameRevealListBtn?.addEventListener("click", () => setRevealViewMode("list"));
+  gameRevealGalleryBtn?.addEventListener("click", () => setRevealViewMode("gallery"));
 
   gameOptExit?.addEventListener("click", exitGame);
   gameOptReset?.addEventListener("click", resetGame);
@@ -784,6 +829,7 @@ function startGame() {
     focusedIndex: 0,
     dieRolling: false,
     chaosCost: 0,
+    exiled: [],
     _dieResetTimer: null
   };
 
@@ -804,8 +850,10 @@ function exitGame({ updateHash = true } = {}) {
   clearTimeout(gameState?._dieResetTimer);
   gameActive = false;
   gameState = null;
+  revealedCards = [];
   document.body.classList.remove("game-open");
   gameView?.classList.add("hidden");
+  gameRevealOverlay?.classList.add("hidden");
   closeAllGameMenus();
 
   if (updateHash && window.location.hash === "#play") {
@@ -823,6 +871,7 @@ function resetGame() {
     focusedIndex: 0,
     dieRolling: false,
     chaosCost: 0,
+    exiled: [],
     _dieResetTimer: null
   };
   showGamePlaceholder();
@@ -1034,10 +1083,24 @@ function renderGameLibraryView() {
   }
   const ol = document.createElement("ol");
   ol.className = "game-deck-view-ol";
-  for (const card of gameState.remaining) {
+  ol.addEventListener("click", handleLibraryItemAction);
+  for (let i = 0; i < gameState.remaining.length; i++) {
+    const card = gameState.remaining[i];
     const li = document.createElement("li");
     li.className = "game-deck-view-item";
-    li.innerHTML = `<span class="game-deck-view-name">${escapeHtml(card.displayName)}</span><span class="game-deck-view-type">${escapeHtml(card.type)}</span>`;
+    li.innerHTML = `
+      <div class="game-deck-item-row">
+        <span class="game-deck-view-name">${escapeHtml(card.displayName)}</span>
+        <span class="game-deck-view-type">${escapeHtml(card.type)}</span>
+      </div>
+      <div class="game-deck-item-actions">
+        <button class="game-deck-action-btn" data-action="planeswalk" data-idx="${i}" title="Planeswalk to this card" type="button">▶</button>
+        <button class="game-deck-action-btn" data-action="active" data-idx="${i}" title="Add to active cards" type="button">+</button>
+        <button class="game-deck-action-btn" data-action="top" data-idx="${i}" title="Put on top of library" type="button">↑</button>
+        <button class="game-deck-action-btn" data-action="bottom" data-idx="${i}" title="Put on bottom of library" type="button">↓</button>
+        <button class="game-deck-action-btn game-deck-action-exile" data-action="exile" data-idx="${i}" title="Exile (remove temporarily)" type="button">✕</button>
+      </div>
+    `;
     ol.appendChild(li);
   }
   gameLibraryViewList.appendChild(ol);
@@ -1058,10 +1121,11 @@ function updateGameSearchResults() {
 
   const seen = new Set();
   const matches = [];
-  for (const card of gameState.remaining) {
+  for (let i = 0; i < gameState.remaining.length; i++) {
+    const card = gameState.remaining[i];
     if (!seen.has(card.key) && card.displayName.toLowerCase().includes(query)) {
       seen.add(card.key);
-      matches.push(card);
+      matches.push({ card, key: card.key });
     }
     if (matches.length >= 8) break;
   }
@@ -1071,21 +1135,294 @@ function updateGameSearchResults() {
     return;
   }
 
-  for (const card of matches) {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "game-search-result-btn";
-    btn.textContent = card.displayName;
-    btn.addEventListener("click", () => {
-      const idx = gameState.remaining.findIndex((c) => c.key === card.key);
-      if (idx !== -1) gameState.remaining.splice(idx, 1);
-      gameState.activePlanes.push(card);
-      updateGameView();
-      closeAllGameMenus();
-      showToastFn?.(`${card.displayName} added simultaneously.`);
-    });
-    gameToolsSearchResults.appendChild(btn);
+  const list = document.createElement("div");
+  list.addEventListener("click", handleSearchResultItemAction);
+  for (const { card } of matches) {
+    const item = document.createElement("div");
+    item.className = "game-search-result-item";
+    item.innerHTML = `
+      <div class="game-deck-item-row">
+        <span class="game-search-result-name">${escapeHtml(card.displayName)}</span>
+        <span class="game-deck-view-type">${escapeHtml(card.type)}</span>
+      </div>
+      <div class="game-deck-item-actions">
+        <button class="game-deck-action-btn" data-action="planeswalk" data-key="${escapeHtml(card.key)}" title="Planeswalk to this card" type="button">▶</button>
+        <button class="game-deck-action-btn" data-action="active" data-key="${escapeHtml(card.key)}" title="Add to active cards" type="button">+</button>
+        <button class="game-deck-action-btn" data-action="top" data-key="${escapeHtml(card.key)}" title="Put on top of library" type="button">↑</button>
+        <button class="game-deck-action-btn" data-action="bottom" data-key="${escapeHtml(card.key)}" title="Put on bottom of library" type="button">↓</button>
+        <button class="game-deck-action-btn game-deck-action-exile" data-action="exile" data-key="${escapeHtml(card.key)}" title="Exile (remove temporarily)" type="button">✕</button>
+      </div>
+    `;
+    list.appendChild(item);
   }
+  gameToolsSearchResults.appendChild(list);
+}
+
+function handleLibraryItemAction(event) {
+  if (!gameState) return;
+  const btn = event.target.closest("[data-action][data-idx]");
+  if (!btn) return;
+  const action = btn.dataset.action;
+  const idx = parseInt(btn.dataset.idx, 10);
+  if (isNaN(idx) || idx < 0 || idx >= gameState.remaining.length) return;
+
+  const card = gameState.remaining.splice(idx, 1)[0];
+
+  switch (action) {
+    case "planeswalk":
+      gameState.remaining.push(...gameState.activePlanes);
+      gameState.activePlanes = [card];
+      gameState.focusedIndex = 0;
+      closeAllGameMenus();
+      showToastFn?.(`Planeswalked to ${card.displayName}.`);
+      break;
+    case "active":
+      gameState.activePlanes.push(card);
+      showToastFn?.(`${card.displayName} added simultaneously.`);
+      break;
+    case "top":
+      gameState.remaining.unshift(card);
+      showToastFn?.(`${card.displayName} put on top.`);
+      break;
+    case "bottom":
+      gameState.remaining.push(card);
+      showToastFn?.(`${card.displayName} put on bottom.`);
+      break;
+    case "exile":
+      gameState.exiled.push(card);
+      showToastFn?.(`${card.displayName} exiled.`);
+      break;
+  }
+
+  updateGameView();
+  if (action !== "planeswalk") {
+    renderGameLibraryView();
+    syncGameToolsState(gameState.remaining.length);
+  }
+}
+
+function handleSearchResultItemAction(event) {
+  if (!gameState) return;
+  const btn = event.target.closest("[data-action][data-key]");
+  if (!btn) return;
+  const action = btn.dataset.action;
+  const key = btn.dataset.key;
+  const idx = gameState.remaining.findIndex((c) => c.key === key);
+  if (idx === -1) return;
+
+  const card = gameState.remaining.splice(idx, 1)[0];
+
+  switch (action) {
+    case "planeswalk":
+      gameState.remaining.push(...gameState.activePlanes);
+      gameState.activePlanes = [card];
+      gameState.focusedIndex = 0;
+      closeAllGameMenus();
+      showToastFn?.(`Planeswalked to ${card.displayName}.`);
+      break;
+    case "active":
+      gameState.activePlanes.push(card);
+      showToastFn?.(`${card.displayName} added simultaneously.`);
+      break;
+    case "top":
+      gameState.remaining.unshift(card);
+      showToastFn?.(`${card.displayName} put on top.`);
+      break;
+    case "bottom":
+      gameState.remaining.push(card);
+      showToastFn?.(`${card.displayName} put on bottom.`);
+      break;
+    case "exile":
+      gameState.exiled.push(card);
+      showToastFn?.(`${card.displayName} exiled.`);
+      break;
+  }
+
+  updateGameView();
+  if (action !== "planeswalk") {
+    updateGameSearchResults();
+    syncGameToolsState(gameState.remaining.length);
+  }
+}
+
+function openRevealCards() {
+  if (!gameState) return;
+  if (revealedCards.length > 0) {
+    showToastFn?.("Resolve the current reveal before revealing more cards.");
+    gameRevealOverlay?.classList.remove("hidden");
+    closeAllGameMenus();
+    return;
+  }
+  const countStr = gameRevealCountInput?.value.trim();
+  const count = parseInt(countStr, 10);
+  if (!count || count < 1) {
+    showToastFn?.("Enter a number of cards to reveal.");
+    return;
+  }
+  if (gameState.remaining.length === 0) {
+    showToastFn?.("No cards remaining in library.");
+    return;
+  }
+  const actualCount = Math.min(count, gameState.remaining.length);
+  revealedCards = gameState.remaining.splice(0, actualCount);
+  if (gameRevealCountInput) gameRevealCountInput.value = "";
+  if (gameRevealInputRow) gameRevealInputRow.classList.add("hidden");
+  closeAllGameMenus();
+  renderRevealCards();
+  updateRevealFooter();
+  gameRevealOverlay?.classList.remove("hidden");
+}
+
+function closeRevealOverlay() {
+  if (revealedCards.length > 0 && gameState) {
+    gameState.remaining.push(...revealedCards);
+    gameState.remaining = shuffleArray(gameState.remaining);
+    revealedCards = [];
+    showToastFn?.("Remaining revealed cards shuffled back into library.");
+    updateGameView();
+  }
+  gameRevealOverlay?.classList.add("hidden");
+}
+
+function renderRevealCards() {
+  if (!gameRevealCardsContainer) return;
+  gameRevealCardsContainer.innerHTML = "";
+  if (gameRevealTitleCount) gameRevealTitleCount.textContent = revealedCards.length;
+
+  if (revealedCards.length === 0) {
+    gameRevealCardsContainer.innerHTML = `<p class="game-reveal-empty">All cards have been resolved.</p>`;
+    updateRevealFooter();
+    return;
+  }
+
+  const isGallery = revealViewMode === "gallery";
+
+  for (let i = 0; i < revealedCards.length; i++) {
+    const card = revealedCards[i];
+    const item = document.createElement("div");
+
+    if (isGallery) {
+      item.className = "game-reveal-gallery-item";
+      item.innerHTML = `
+        <img class="game-reveal-thumb" src="${card.thumbPath}" alt="${escapeHtml(card.displayName)}" />
+        <div class="game-reveal-card-name">${escapeHtml(card.displayName)}</div>
+        <div class="game-reveal-card-type">${escapeHtml(card.type)}</div>
+        <div class="game-reveal-card-actions">
+          <button class="game-reveal-action-btn" data-action="planeswalk" data-reveal-idx="${i}" title="Planeswalk to this card" type="button">▶ Planeswalk</button>
+          <button class="game-reveal-action-btn" data-action="active" data-reveal-idx="${i}" title="Add to active cards" type="button">+ Active</button>
+          <button class="game-reveal-action-btn" data-action="top" data-reveal-idx="${i}" title="Put on top of library" type="button">↑ Top</button>
+          <button class="game-reveal-action-btn" data-action="bottom" data-reveal-idx="${i}" title="Put on bottom of library" type="button">↓ Bottom</button>
+          <button class="game-reveal-action-btn game-reveal-action-exile" data-action="exile" data-reveal-idx="${i}" title="Exile (remove temporarily)" type="button">✕ Exile</button>
+        </div>
+      `;
+    } else {
+      item.className = "game-reveal-list-item";
+      item.innerHTML = `
+        <div class="game-reveal-list-info">
+          <span class="game-reveal-list-name">${escapeHtml(card.displayName)}</span>
+          <span class="game-reveal-list-type">${escapeHtml(card.type)}</span>
+        </div>
+        <div class="game-reveal-card-actions game-reveal-list-actions">
+          <button class="game-reveal-action-btn" data-action="planeswalk" data-reveal-idx="${i}" title="Planeswalk to this card" type="button">▶</button>
+          <button class="game-reveal-action-btn" data-action="active" data-reveal-idx="${i}" title="Add to active cards" type="button">+</button>
+          <button class="game-reveal-action-btn" data-action="top" data-reveal-idx="${i}" title="Put on top of library" type="button">↑</button>
+          <button class="game-reveal-action-btn" data-action="bottom" data-reveal-idx="${i}" title="Put on bottom of library" type="button">↓</button>
+          <button class="game-reveal-action-btn game-reveal-action-exile" data-action="exile" data-reveal-idx="${i}" title="Exile (remove temporarily)" type="button">✕</button>
+        </div>
+      `;
+    }
+
+    item.addEventListener("click", handleRevealCardAction);
+    gameRevealCardsContainer.appendChild(item);
+  }
+}
+
+function handleRevealCardAction(event) {
+  if (!gameState) return;
+  const btn = event.target.closest("[data-action][data-reveal-idx]");
+  if (!btn) return;
+  const action = btn.dataset.action;
+  const revealIdx = parseInt(btn.dataset.revealIdx, 10);
+  if (isNaN(revealIdx) || revealIdx < 0 || revealIdx >= revealedCards.length) return;
+
+  const card = revealedCards.splice(revealIdx, 1)[0];
+
+  switch (action) {
+    case "planeswalk":
+      gameState.remaining.push(...gameState.activePlanes);
+      gameState.activePlanes = [card];
+      gameState.focusedIndex = 0;
+      showToastFn?.(`Planeswalked to ${card.displayName}.`);
+      break;
+    case "active":
+      gameState.activePlanes.push(card);
+      showToastFn?.(`${card.displayName} added simultaneously.`);
+      break;
+    case "top":
+      gameState.remaining.unshift(card);
+      showToastFn?.(`${card.displayName} put on top.`);
+      break;
+    case "bottom":
+      gameState.remaining.push(card);
+      showToastFn?.(`${card.displayName} put on bottom.`);
+      break;
+    case "exile":
+      gameState.exiled.push(card);
+      showToastFn?.(`${card.displayName} exiled.`);
+      break;
+  }
+
+  updateGameView();
+  renderRevealCards();
+  updateRevealFooter();
+}
+
+function handleRevealBulkAction(action) {
+  if (!gameState) return;
+  if (revealedCards.length === 0) {
+    gameRevealOverlay?.classList.add("hidden");
+    return;
+  }
+  const count = revealedCards.length;
+  switch (action) {
+    case "shuffle":
+      gameState.remaining.push(...revealedCards);
+      gameState.remaining = shuffleArray(gameState.remaining);
+      showToastFn?.(`${count} card(s) shuffled back into library.`);
+      break;
+    case "top":
+      gameState.remaining.unshift(...revealedCards);
+      showToastFn?.(`${count} card(s) put on top of library.`);
+      break;
+    case "bottom":
+      gameState.remaining.push(...revealedCards);
+      showToastFn?.(`${count} card(s) put on bottom of library.`);
+      break;
+    case "exile":
+      gameState.exiled.push(...revealedCards);
+      showToastFn?.(`${count} card(s) exiled.`);
+      break;
+  }
+  revealedCards = [];
+  gameRevealOverlay?.classList.add("hidden");
+  updateGameView();
+}
+
+function updateRevealFooter() {
+  const hasCards = revealedCards.length > 0;
+  if (gameRevealShuffleIn) gameRevealShuffleIn.disabled = !hasCards;
+  if (gameRevealTopAll) gameRevealTopAll.disabled = !hasCards;
+  if (gameRevealBottomAll) gameRevealBottomAll.disabled = !hasCards;
+  if (gameRevealExileAll) gameRevealExileAll.disabled = !hasCards;
+}
+
+function setRevealViewMode(mode) {
+  revealViewMode = mode;
+  gameRevealCardsContainer?.classList.toggle("game-reveal-mode-gallery", mode === "gallery");
+  gameRevealCardsContainer?.classList.toggle("game-reveal-mode-list", mode === "list");
+  if (gameRevealListBtn) gameRevealListBtn.classList.toggle("active", mode === "list");
+  if (gameRevealGalleryBtn) gameRevealGalleryBtn.classList.toggle("active", mode === "gallery");
+  renderRevealCards();
 }
 
 function toggleGameToolsMenu() {
@@ -1094,6 +1431,7 @@ function toggleGameToolsMenu() {
   if (isHidden) {
     gameToolsMenu?.classList.remove("hidden");
     gameMenuSearchSection?.classList.add("hidden");
+    gameRevealInputRow?.classList.add("hidden");
     if (gameLibraryToggle) gameLibraryToggle.textContent = "Search & View Library";
     if (gameToolsSearchInput) gameToolsSearchInput.value = "";
     if (gameToolsSearchResults) gameToolsSearchResults.innerHTML = "";

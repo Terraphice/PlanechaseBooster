@@ -394,6 +394,39 @@
         <div id="game-tools-search-results" class="game-tools-search-results"></div>
         <div id="game-library-view-list" class="game-library-view-list"></div>
       </div>
+      <div class="game-menu-divider"></div>
+      <button id="game-tools-reveal-toggle" class="game-menu-item" type="button">Reveal Top Cards…</button>
+      <div id="game-reveal-input-row" class="game-reveal-input-row hidden">
+        <input id="game-reveal-count-input" type="number" min="1" class="game-tools-search-input" placeholder="Number of cards…" autocomplete="off" />
+        <button id="game-reveal-go-btn" class="game-reveal-go-btn" type="button">Reveal</button>
+      </div>
+    </div>
+
+    <!-- Reveal overlay -->
+    <div id="game-reveal-overlay" class="game-reveal-overlay hidden" role="dialog" aria-modal="true" aria-label="Revealed Cards">
+      <div id="game-reveal-backdrop" class="game-reveal-backdrop"></div>
+      <div class="game-reveal-panel">
+        <div class="game-reveal-header">
+          <h3 class="game-reveal-title">Revealed Cards (<span id="game-reveal-title-count">0</span>)</h3>
+          <div class="game-reveal-header-right">
+            <div class="game-reveal-view-toggle" role="group" aria-label="View mode">
+              <button id="game-reveal-list-btn" class="game-reveal-view-btn active" type="button">List</button>
+              <button id="game-reveal-gallery-btn" class="game-reveal-view-btn" type="button">Gallery</button>
+            </div>
+            <button id="game-reveal-close" class="game-reveal-close" type="button" aria-label="Close revealed cards">×</button>
+          </div>
+        </div>
+        <div id="game-reveal-cards-container" class="game-reveal-cards-container game-reveal-mode-list">
+          <!-- Rendered by JS -->
+        </div>
+        <div class="game-reveal-footer">
+          <span class="game-reveal-footer-label">Remaining:</span>
+          <button id="game-reveal-shuffle-in" class="game-reveal-footer-btn" type="button">Shuffle In</button>
+          <button id="game-reveal-top-all" class="game-reveal-footer-btn" type="button">Top</button>
+          <button id="game-reveal-bottom-all" class="game-reveal-footer-btn" type="button">Bottom</button>
+          <button id="game-reveal-exile-all" class="game-reveal-footer-btn game-reveal-footer-btn-danger" type="button">Exile</button>
+        </div>
+      </div>
     </div>
 
     <!-- Options menu (bottom-left) -->
