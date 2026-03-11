@@ -2103,11 +2103,11 @@ button.active-filter-pill:disabled {
   }
 
   .brand-kicker {
-    display: none;
+    font-size: 0.62rem;
   }
 
   .page-title {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
   }
 }
 /* ── Deck button ─────────────────────────────────────────────────────────────── */
