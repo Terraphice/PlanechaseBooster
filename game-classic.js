@@ -193,6 +193,13 @@ export function buildMainCardActions(focusedIdx) {
         if (!gameState) return;
         ctx.pushHistory?.();
         const card = gameState.activePlanes.splice(focusedIdx, 1)[0];
+        if (!card) return;
+        gameState.remaining.push(card);
+        gameState.remaining = shuffleArray(gameState.remaining);
+        gameState.focusedIndex = Math.min(gameState.focusedIndex, Math.max(0, gameState.activePlanes.length - 1));
+        closeGameReaderView();
+        updateGameView();
+        showToast(`${card.displayName} shuffled into library.`);
       }
     },
     {
@@ -203,6 +210,12 @@ export function buildMainCardActions(focusedIdx) {
         if (!gameState) return;
         ctx.pushHistory?.();
         const card = gameState.activePlanes.splice(focusedIdx, 1)[0];
+        if (!card) return;
+        gameState.exiled.push(card);
+        gameState.focusedIndex = Math.min(gameState.focusedIndex, Math.max(0, gameState.activePlanes.length - 1));
+        closeGameReaderView();
+        updateGameView();
+        showToast(`${card.displayName} exiled.`);
       }
     }
   ];

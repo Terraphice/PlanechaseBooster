@@ -9,5 +9,5 @@ A feature complete Planechase tool for Magic: The Gathering! Browse a searchable
 - **Planechase Simulator** — Classic mode and Blind Eternities Map, onboarding, and even savestates using seeds.
 - **Custom Cards** — Includes community-created planes alongside official content, curated for the best experience.
 - **Profile Seeds** — Export and import your entire setup (preferences + all decks) as a short seed string rather than an account system.
-- **Game History & Undo** — Undo the last action in the Tools menu to reverse accidental planewsalks, die rolls, or card moves (up to 20 steps).
+- **Game History & Undo** — Undo the last action in the Tools menu to reverse accidental planeswalks, die rolls, or card moves (up to 20 steps).
 - **Keyboard Shortcuts** — Play without touching the mouse: `Space` to roll the planar die, `Enter` to planeswalk, `I` to inspect the current card, `T` to toggle the tools menu, and `Escape` to close any open overlay.
