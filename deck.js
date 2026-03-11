@@ -548,16 +548,14 @@ function bindDeckEvents() {
     }
   });
 
-  gameCardImageBtn?.addEventListener("click", (event) => {
+  gameCardImageBtn?.addEventListener("click", () => {
     if (!gameState || gameState.activePlanes.length === 0) {
       gamePlaneswalk();
       return;
     }
     if (easyPlaneswalk) {
-      if (isTouchDevice() || event.shiftKey) {
-        gamePlaneswalk();
-        return;
-      }
+      gamePlaneswalk();
+      return;
     }
     const focused = gameState.activePlanes[gameState.focusedIndex] ?? gameState.activePlanes[0];
     if (focused) openGameReaderView(focused, buildMainCardActions(gameState.focusedIndex));
@@ -1598,7 +1596,7 @@ function updateGameView() {
     gameCardImage.alt = focused.displayName;
   }
   if (gameCardImageBtn) {
-    gameCardImageBtn.setAttribute("aria-label", easyPlaneswalk ? "Planeswalk (or Shift+click to view)" : "View card close-up");
+    gameCardImageBtn.setAttribute("aria-label", easyPlaneswalk ? "Planeswalk" : "View card close-up");
     gameCardImageBtn.classList.remove("game-card-image-btn-placeholder");
     gameCardImageBtn.classList.toggle("active-plane", focused.type !== "Phenomenon");
     gameCardImageBtn.classList.toggle("active-phenomenon", focused.type === "Phenomenon");
