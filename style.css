@@ -2323,18 +2323,30 @@ button.active-filter-pill:disabled {
   box-shadow:
     -8px 0 20px rgba(0, 0, 0, 0.18),
     0 0 0 1px color-mix(in srgb, var(--border) 55%, transparent);
-  transition: background 180ms ease, color 180ms ease;
+  transition: transform 180ms ease, filter 180ms ease, box-shadow 180ms ease, background 180ms ease, color 180ms ease;
   z-index: 1;
   overflow: hidden;
 }
 
 .deck-panel-lip:hover,
 .deck-panel-lip:focus-visible {
-  color: var(--text);
+  color: color-mix(in srgb, var(--text) 92%, white 8%);
   background:
     linear-gradient(180deg,
       color-mix(in srgb, var(--bg-elev-2) 82%, var(--accent) 18%),
       color-mix(in srgb, var(--bg-elev-1) 90%, var(--accent) 10%));
+  box-shadow:
+    -16px 0 32px rgba(0, 0, 0, 0.24),
+    0 0 0 1px color-mix(in srgb, var(--accent) 26%, transparent),
+    0 0 24px color-mix(in srgb, var(--accent) 16%, transparent);
+  animation: deckPanelLipBounce 420ms ease;
+}
+
+@keyframes deckPanelLipBounce {
+  0% { transform: translateX(0); }
+  35% { transform: translateX(-3px); }
+  65% { transform: translateX(1px); }
+  100% { transform: translateX(0); }
 }
 
 .deck-panel-lip-icon {
@@ -4599,6 +4611,22 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
     gap: 8px;
     box-shadow: 0 -6px 16px rgba(0, 0, 0, 0.18),
                 0 0 0 1px color-mix(in srgb, var(--border) 55%, transparent);
+  }
+
+  .deck-panel-lip:hover,
+  .deck-panel-lip:focus-visible {
+    box-shadow:
+      0 -12px 28px rgba(0, 0, 0, 0.24),
+      0 0 0 1px color-mix(in srgb, var(--accent) 26%, transparent),
+      0 0 24px color-mix(in srgb, var(--accent) 16%, transparent);
+    animation: deckPanelLipBounce 420ms ease;
+  }
+
+  @keyframes deckPanelLipBounce {
+    0% { transform: translateX(-50%) translateY(0); }
+    35% { transform: translateX(-50%) translateY(-3px); }
+    65% { transform: translateX(-50%) translateY(1px); }
+    100% { transform: translateX(-50%) translateY(0); }
   }
 
   .deck-panel-lip-label {
