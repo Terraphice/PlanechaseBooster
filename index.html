@@ -115,9 +115,14 @@
 
           <div class="topbar-controls">
             <div class="topbar-actions">
-              <button id="random-card-button" class="topbar-random-button" type="button" aria-label="Planeswalk">
-                <i id="random-card-icon" class="ms ms-planeswalker" aria-hidden="true"></i>
-                <span class="sr-only">Planeswalk</span>
+              <button id="random-card-button" class="topbar-random-button" type="button" aria-label="Random card">
+                <i id="random-card-icon" class="ms ms-chaos" aria-hidden="true"></i>
+                <span class="sr-only">Random card</span>
+              </button>
+
+              <button id="play-game-button" class="topbar-random-button topbar-play-button" type="button" aria-label="Play Planechase">
+                <i class="ms ms-planeswalker" aria-hidden="true"></i>
+                <span class="sr-only">Play</span>
               </button>
 
               <button id="deck-button" class="topbar-deck-button" type="button" aria-label="Deck builder">
@@ -328,15 +333,18 @@
 
   <!-- Deck builder panel -->
   <div id="deck-panel" class="deck-panel hidden" role="dialog" aria-label="Deck builder" aria-modal="false">
+    <button id="deck-panel-lip" class="deck-panel-lip" type="button" aria-label="Shelve deck panel">
+      <span class="deck-panel-lip-icon">◫</span>
+      <span class="deck-panel-lip-label">Deck</span>
+    </button>
     <div class="deck-panel-header">
       <div class="deck-panel-title-row">
         <h2 class="deck-panel-title">Deck Builder</h2>
         <span id="deck-total-count" class="deck-total-count">0 cards</span>
       </div>
       <div class="deck-slot-row" role="group" aria-label="Deck slots">
-        <button class="deck-slot-btn active" data-slot="0" type="button" aria-label="Deck 1">Deck 1</button>
-        <button class="deck-slot-btn" data-slot="1" type="button" aria-label="Deck 2">Deck 2</button>
-        <button class="deck-slot-btn" data-slot="2" type="button" aria-label="Deck 3">Deck 3</button>
+        <select id="deck-slot-select" class="deck-slot-select" aria-label="Select deck slot"></select>
+        <input id="deck-slot-name-input" class="deck-slot-name-input" type="text" placeholder="Name this deck…" maxlength="40" />
       </div>
       <div class="deck-panel-actions">
         <button id="deck-play-btn" class="deck-action-btn deck-play-btn" type="button">▶ Play</button>
@@ -395,6 +403,11 @@
         <img id="game-card-image" class="game-card-image" src="" alt="" />
       </button>
       <div id="game-card-name" class="game-card-name"></div>
+      <button id="classic-view-card-btn" class="classic-view-card-btn hidden" type="button" aria-label="View current card details">
+        <i class="ms ms-planeswalker" aria-hidden="true"></i>
+        <span id="classic-card-name-label" class="classic-card-name-label"></span>
+        <span id="classic-library-label" class="classic-library-label"></span>
+      </button>
     </div>
 
     <!-- BEM map area -->
@@ -404,8 +417,8 @@
         <button id="bem-view-card-btn" class="bem-view-card-btn" type="button" aria-label="View current card">
           <i class="ms ms-planeswalker" aria-hidden="true"></i>
           <span id="bem-card-name" class="bem-card-name-label"></span>
+          <span id="bem-status-label" class="bem-status-label"></span>
         </button>
-        <span id="bem-status-label" class="bem-status-label"></span>
       </div>
     </div>
 

@@ -30,7 +30,8 @@ import {
   closeDeckPanel,
   setModalCardKey,
   isGameActive,
-  syncGameHash
+  syncGameHash,
+  showGameModeDialog
 } from "./deck.js";
 
 const STORAGE_KEY = "planechaseGalleryPreferences.v2";
@@ -76,6 +77,8 @@ const sidebarLip = document.getElementById("sidebar-lip");
 const sidebarBackdrop = document.getElementById("sidebar-backdrop");
 const randomCardButton = document.getElementById("random-card-button");
 const randomCardIcon = document.getElementById("random-card-icon");
+const playGameButton = document.getElementById("play-game-button");
+const mainPanel = document.querySelector(".main-panel");
 
 const clearTagFiltersButton = document.getElementById("clear-tag-filters");
 const clearAllFiltersButton = document.getElementById("clear-all-filters");
@@ -177,7 +180,9 @@ async function init() {
       cards: allCards,
       showToast,
       onDeckChange: () => {
-        gallery.classList.toggle("deck-mode", isDeckPanelOpen());
+        const panelOpen = isDeckPanelOpen();
+        gallery.classList.toggle("deck-mode", panelOpen);
+        mainPanel?.classList.toggle("deck-panel-offset", panelOpen);
       }
     });
 
@@ -371,6 +376,10 @@ function bindEvents() {
   randomCardButton.addEventListener("pointerup", clearRandomLongPress);
   randomCardButton.addEventListener("pointercancel", clearRandomLongPress);
   randomCardButton.addEventListener("pointerleave", clearRandomLongPress);
+
+  playGameButton?.addEventListener("click", () => {
+    showGameModeDialog();
+  });
 
   modal.addEventListener("click", (event) => {
     if (event.target instanceof HTMLElement && event.target.dataset.closeModal === "true") {
@@ -1714,17 +1723,11 @@ function clearRandomLongPress() {
 }
 
 function triggerChaosIcon() {
-  if (!randomCardIcon) return;
-
+  if (!randomCardButton) return;
   randomCardButton.classList.add("is-chaos");
-  randomCardIcon.classList.remove("ms-planeswalker");
-  randomCardIcon.classList.add("ms-chaos");
-
   window.clearTimeout(randomIconResetTimer);
   randomIconResetTimer = window.setTimeout(() => {
     randomCardButton.classList.remove("is-chaos");
-    randomCardIcon.classList.remove("ms-chaos");
-    randomCardIcon.classList.add("ms-planeswalker");
   }, 1200);
 }
 
