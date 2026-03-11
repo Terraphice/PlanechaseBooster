@@ -2103,7 +2103,7 @@ function renderReaderTranscriptMarkdown(text) {
       ? window.marked.parse(text, { breaks: true })
       : text.replace(/\n/g, "<br>");
     const safe = window.DOMPurify ? window.DOMPurify.sanitize(html) : html;
-    gameReaderTranscript.innerHTML = safe;
+    gameReaderTranscript.innerHTML = enhanceManaSymbols(safe);
   } catch {
     gameReaderTranscript.textContent = text;
   }
