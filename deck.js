@@ -988,10 +988,12 @@ function syncGameToolsState(remainingCount) {
 }
 
 function openGameReaderView() {
-  if (!gameState || !gameCardImage?.src) return;
+  if (!gameState) return;
+  const src = gameCardImage?.src;
+  if (!src || src === window.location.href) return;
   if (gameReaderImage) {
-    gameReaderImage.src = gameCardImage.src;
-    gameReaderImage.alt = gameCardImage.alt;
+    gameReaderImage.src = src;
+    gameReaderImage.alt = gameCardImage?.alt ?? "";
   }
   gameReaderView?.classList.remove("hidden");
   document.body.classList.add("game-reader-open");
