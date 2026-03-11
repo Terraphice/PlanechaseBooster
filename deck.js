@@ -83,6 +83,8 @@ const gameCostReset = document.getElementById("game-cost-reset");
 const gameReaderView = document.getElementById("game-reader-view");
 const gameReaderImage = document.getElementById("game-reader-image");
 const gameReaderImageWrap = document.getElementById("game-reader-image-wrap");
+const gameReaderZoomOverlay = document.getElementById("game-reader-zoom-overlay");
+const gameReaderZoomImg = document.getElementById("game-reader-zoom-img");
 const gameReaderClose = document.getElementById("game-reader-close");
 const gameReaderBackdrop = document.getElementById("game-reader-backdrop");
 const gameReaderCardName = document.getElementById("game-reader-card-name");
@@ -459,6 +461,14 @@ function bindDeckEvents() {
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
       zoomReaderImage();
+    }
+  });
+
+  gameReaderZoomOverlay?.addEventListener("click", closeReaderZoom);
+  gameReaderZoomOverlay?.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " " || event.key === "Escape") {
+      event.preventDefault();
+      closeReaderZoom();
     }
   });
 
@@ -1398,9 +1408,7 @@ function openGameReaderView(card, actions = []) {
     gameReaderImage.src = card.imagePath;
     gameReaderImage.alt = card.displayName;
   }
-  if (gameReaderImageWrap) {
-    gameReaderImageWrap.classList.remove("game-reader-image-zoomed");
-  }
+  closeReaderZoom();
   if (gameReaderCardName) gameReaderCardName.textContent = card.displayName;
   if (gameReaderCardType) gameReaderCardType.textContent = card.type || "";
 
@@ -1457,17 +1465,28 @@ function renderReaderTranscriptMarkdown(text) {
 }
 
 function zoomReaderImage() {
-  const zoomed = gameReaderImageWrap?.classList.toggle("game-reader-image-zoomed");
+  if (!gameReaderZoomOverlay || !gameReaderZoomImg) return;
+  gameReaderZoomImg.src = readerCardPath;
+  gameReaderZoomImg.alt = gameReaderImage?.alt || "";
+  gameReaderZoomOverlay.classList.remove("hidden");
   if (gameReaderImageWrap) {
-    gameReaderImageWrap.setAttribute("aria-label", zoomed ? "Close zoomed image" : "Zoom card image");
-    gameReaderImageWrap.setAttribute("aria-pressed", zoomed ? "true" : "false");
+    gameReaderImageWrap.setAttribute("aria-pressed", "true");
+    gameReaderImageWrap.setAttribute("aria-label", "Close zoomed image");
+  }
+}
+
+function closeReaderZoom() {
+  gameReaderZoomOverlay?.classList.add("hidden");
+  if (gameReaderImageWrap) {
+    gameReaderImageWrap.setAttribute("aria-label", "Zoom card image");
+    gameReaderImageWrap.setAttribute("aria-pressed", "false");
   }
 }
 
 function closeGameReaderView() {
   gameReaderView?.classList.add("hidden");
   document.body.classList.remove("game-reader-open");
-  gameReaderImageWrap?.classList.remove("game-reader-image-zoomed");
+  closeReaderZoom();
   if (gameReaderImageWrap) {
     gameReaderImageWrap.setAttribute("aria-label", "Zoom card image");
     gameReaderImageWrap.setAttribute("aria-pressed", "false");
