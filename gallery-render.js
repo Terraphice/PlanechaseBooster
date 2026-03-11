@@ -581,7 +581,28 @@ export function createRenderer({
 
       const pageMeta = document.createElement("span");
       pageMeta.className = "pagination-page-meta";
-      pageMeta.textContent = `Page ${paginationState.currentPage} of ${totalPages}`;
+      pageMeta.appendChild(document.createTextNode("Page "));
+      const pageInput = document.createElement("input");
+      pageInput.type = "number";
+      pageInput.className = "pagination-page-input";
+      pageInput.value = paginationState.currentPage;
+      pageInput.min = 1;
+      pageInput.max = totalPages;
+      pageInput.setAttribute("aria-label", "Go to page");
+      pageInput.setAttribute("inputmode", "numeric");
+      pageInput.addEventListener("keydown", (e) => {
+        if (e.key === "Enter") {
+          const page = parseInt(pageInput.value, 10);
+          if (!isNaN(page)) {
+            paginationState.currentPage = Math.max(1, Math.min(totalPages, page));
+            renderGallery();
+            callbacks.updateUrlFromState({ push: true });
+          }
+          pageInput.blur();
+        }
+      });
+      pageMeta.appendChild(pageInput);
+      pageMeta.appendChild(document.createTextNode(` of ${totalPages}`));
 
       const nextBtn = document.createElement("button");
       nextBtn.type = "button";
@@ -599,6 +620,14 @@ export function createRenderer({
       lastBtn.disabled = paginationState.currentPage >= totalPages;
       lastBtn.addEventListener("click", goToLastPage);
 
+      const topBtn = document.createElement("button");
+      topBtn.type = "button";
+      topBtn.className = "pagination-btn";
+      topBtn.setAttribute("aria-label", "Scroll to top");
+      topBtn.textContent = "Top";
+      topBtn.addEventListener("click", scrollToGalleryTop);
+
+      navRow.appendChild(topBtn);
       navRow.appendChild(firstBtn);
       navRow.appendChild(prevBtn);
       navRow.appendChild(pageLabel);
@@ -672,7 +701,6 @@ export function createRenderer({
     if (paginationState.currentPage <= 1) return;
     paginationState.currentPage = 1;
     renderGallery();
-    scrollToGalleryTop();
     callbacks.updateUrlFromState({ push: true });
   }
 
@@ -680,7 +708,6 @@ export function createRenderer({
     if (paginationState.currentPage <= 1) return;
     paginationState.currentPage--;
     renderGallery();
-    scrollToGalleryTop();
     callbacks.updateUrlFromState({ push: true });
   }
 
@@ -690,7 +717,6 @@ export function createRenderer({
     if (paginationState.currentPage >= totalPages) return;
     paginationState.currentPage++;
     renderGallery();
-    scrollToGalleryTop();
     callbacks.updateUrlFromState({ push: true });
   }
 
@@ -700,7 +726,6 @@ export function createRenderer({
     if (paginationState.currentPage >= totalPages) return;
     paginationState.currentPage = totalPages;
     renderGallery();
-    scrollToGalleryTop();
     callbacks.updateUrlFromState({ push: true });
   }
 
