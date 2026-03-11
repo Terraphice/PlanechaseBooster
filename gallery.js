@@ -92,6 +92,7 @@ const randomCardButton = document.getElementById("random-card-button");
 const randomCardIcon = document.getElementById("random-card-icon");
 const playGameButton = document.getElementById("play-game-button");
 const mainPanel = document.querySelector(".main-panel");
+const topbarCopy = document.querySelector(".topbar .topbar-copy");
 
 const clearTagFiltersButton = document.getElementById("clear-tag-filters");
 const clearAllFiltersButton = document.getElementById("clear-all-filters");
@@ -311,6 +312,10 @@ function bindEvents() {
     if (!insideSettings) {
       closeSettingsMenu();
     }
+  });
+
+  topbarCopy?.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   fuzzySearchToggle.addEventListener("change", () => {

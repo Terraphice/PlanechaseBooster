@@ -666,6 +666,7 @@ html[data-palette="gruvbox"][data-theme="dark"] .sidebar {
 .topbar-copy {
   min-width: 0;
   flex-shrink: 1;
+  cursor: default;
 }
 
 .topbar-search-group {
