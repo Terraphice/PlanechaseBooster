@@ -3969,6 +3969,12 @@ button.active-filter-pill:disabled {
 
   .game-menu-br { bottom: 70px; }
   .game-menu-bl { bottom: 70px; }
+
+  .game-view.bem-active .game-side-panel {
+    order: 2;
+    border-left: 1px solid var(--border-soft);
+    border-right: none;
+  }
 }
 
 /* ── Mobile portrait: rotate game view to landscape ──────────────────────────── */
@@ -5087,6 +5093,7 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
 @media (max-height: 520px) and (orientation: landscape) {
   .bem-map-area {
     padding: 48px 0 68px;
+    flex: 1;
   }
 
   .bem-info-bar {

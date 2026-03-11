@@ -1743,20 +1743,6 @@ function renderGameSidePanel(activePlanes, focusedIndex) {
   const isBem = gameState?.mode === "bem";
 
   if (isBem) {
-    if (activePlanes.length === 0) return;
-    if (activePlanes.length > 1) {
-      const cycleBtn = document.createElement("button");
-      cycleBtn.type = "button";
-      cycleBtn.className = "game-cycle-btn";
-      cycleBtn.setAttribute("aria-label", "Cycle active planes");
-      cycleBtn.innerHTML = `<span class="game-cycle-icon" aria-hidden="true">↻</span>`;
-      cycleBtn.addEventListener("click", () => {
-        if (!gameState) return;
-        gameState.focusedIndex = (focusedIndex + 1) % activePlanes.length;
-        renderGameSidePanel(gameState.activePlanes, gameState.focusedIndex);
-      });
-      gameSidePanel.appendChild(cycleBtn);
-    }
     for (let i = 0; i < activePlanes.length; i++) {
       const card = activePlanes[i];
       const idx = i;
@@ -1770,7 +1756,7 @@ function renderGameSidePanel(activePlanes, focusedIndex) {
       `;
       sideCard.addEventListener("click", () => {
         if (!gameState) return;
-        openGameReaderView(card, buildBemActiveSideCardActions(idx));
+        openGameReaderView(card, buildSideCardActions(idx));
       });
       gameSidePanel.appendChild(sideCard);
     }
@@ -1975,91 +1961,6 @@ function buildSideCardActions(sideIdx) {
         gameState.focusedIndex = Math.min(gameState.focusedIndex, Math.max(0, gameState.activePlanes.length - 1));
         closeGameReaderView();
         updateGameView();
-        showToastFn?.(`${card.displayName} exiled.`);
-      }
-    }
-  ];
-}
-
-function buildBemActiveSideCardActions(sideIdx) {
-  return [
-    {
-      label: "Make Main",
-      action: () => {
-        if (!gameState) return;
-        gameState.focusedIndex = sideIdx;
-        closeGameReaderView();
-        renderGameSidePanel(gameState.activePlanes, gameState.focusedIndex);
-        syncGameToolsState(gameState.remaining.length);
-      }
-    },
-    {
-      label: "Planeswalk Here",
-      action: () => {
-        if (!gameState) return;
-        const card = gameState.activePlanes.splice(sideIdx, 1)[0];
-        if (!card) return;
-        const shuffledOthers = shuffleArray([...gameState.activePlanes]);
-        gameState.remaining.push(...shuffledOthers);
-        gameState.activePlanes = [card];
-        gameState.focusedIndex = 0;
-        closeGameReaderView();
-        renderGameSidePanel(gameState.activePlanes, gameState.focusedIndex);
-        syncGameToolsState(gameState.remaining.length);
-        showToastFn?.(`Planeswalked to ${card.displayName}.`);
-      }
-    },
-    {
-      label: "Return to Top",
-      action: () => {
-        if (!gameState) return;
-        const card = gameState.activePlanes.splice(sideIdx, 1)[0];
-        if (!card) return;
-        gameState.remaining.unshift(card);
-        closeGameReaderView();
-        renderGameSidePanel(gameState.activePlanes, gameState.focusedIndex);
-        syncGameToolsState(gameState.remaining.length);
-        showToastFn?.(`${card.displayName} returned to top.`);
-      }
-    },
-    {
-      label: "Return to Bottom",
-      action: () => {
-        if (!gameState) return;
-        const card = gameState.activePlanes.splice(sideIdx, 1)[0];
-        if (!card) return;
-        gameState.remaining.push(card);
-        closeGameReaderView();
-        renderGameSidePanel(gameState.activePlanes, gameState.focusedIndex);
-        syncGameToolsState(gameState.remaining.length);
-        showToastFn?.(`${card.displayName} returned to bottom.`);
-      }
-    },
-    {
-      label: "Shuffle Into Library",
-      action: () => {
-        if (!gameState) return;
-        const card = gameState.activePlanes.splice(sideIdx, 1)[0];
-        if (!card) return;
-        gameState.remaining.push(card);
-        gameState.remaining = shuffleArray(gameState.remaining);
-        closeGameReaderView();
-        renderGameSidePanel(gameState.activePlanes, gameState.focusedIndex);
-        syncGameToolsState(gameState.remaining.length);
-        showToastFn?.(`${card.displayName} shuffled into library.`);
-      }
-    },
-    {
-      label: "Exile",
-      danger: true,
-      action: () => {
-        if (!gameState) return;
-        const card = gameState.activePlanes.splice(sideIdx, 1)[0];
-        if (!card) return;
-        gameState.exiled.push(card);
-        closeGameReaderView();
-        renderGameSidePanel(gameState.activePlanes, gameState.focusedIndex);
-        syncGameToolsState(gameState.remaining.length);
         showToastFn?.(`${card.displayName} exiled.`);
       }
     }
