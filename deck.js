@@ -76,7 +76,6 @@ const modalDeckCount = document.getElementById("modal-deck-count");
 const gameView = document.getElementById("game-view");
 const gameCardImageBtn = document.getElementById("game-card-image-btn");
 const gameCardImage = document.getElementById("game-card-image");
-const gameCardName = document.getElementById("game-card-name");
 const gameSidePanel = document.getElementById("game-side-panel");
 const gameBtnTl = document.getElementById("game-btn-tl");
 const gameBtnTr = document.getElementById("game-btn-tr");
@@ -2588,7 +2587,6 @@ function bemMovePlayer(nx, ny) {
   for (const { dx: odx, dy: ody } of orthDirs) {
     const adjCell = bemGrid.get(bemKey(nx + odx, ny + ody));
     if (adjCell && !adjCell.faceUp) adjCell.faceUp = true;
-
   }
 
   bemPlaneswalkPending = false;
@@ -2688,7 +2686,7 @@ function renderBemMap() {
       // Planeswalk pending glow
       if (bemPlaneswalkPending && !isPlayer) {
         if (isOrthog && cell?.faceUp) div.classList.add("bem-cell-planeswalk-glow");
-        else if (isDiag && cell && !cell.faceUp) div.classList.add("bem-cell-planeswalk-glow", "bem-cell-hellride-glow");
+        else if (isDiag && cell && !cell.faceUp) div.classList.add("bem-cell-hellride-glow");
       }
 
       if (!cell) {
@@ -2712,6 +2710,8 @@ function renderBemMap() {
           div.classList.add("bem-cell-player");
           if (cell.card.type === "Phenomenon") {
             div.classList.add("bem-cell-phenomenon");
+          } else {
+            div.classList.add("bem-cell-active-plane");
           }
         } else if (isOrthog) {
           if (!bemPlaneswalkPending) div.classList.add("bem-cell-moveable");
@@ -2963,7 +2963,6 @@ function buildBemCardActions() {
     }
   ];
 }
-
 
 function buildBemAdjacentCardActions(nx, ny) {
   return [

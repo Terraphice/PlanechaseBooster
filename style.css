@@ -770,10 +770,6 @@ html[data-palette="gruvbox"][data-theme="dark"] .sidebar {
   filter: blur(0.5px);
 }
 
-.topbar-right-spacer {
-  /* Empty, mirrors left group for centering */
-}
-
 .search-shell {
   position: relative;
   width: 100%;
@@ -2785,12 +2781,12 @@ button.active-filter-pill:disabled {
 }
 
 .game-menu-br {
-  bottom: 86px;
+  bottom: 96px;
   right: 16px;
 }
 
 .game-menu-bl {
-  bottom: 86px;
+  bottom: 96px;
   left: 16px;
 }
 
@@ -3262,6 +3258,15 @@ button.active-filter-pill:disabled {
 
 .game-tl-group .game-corner-btn {
   position: static;
+  transition: border-color 160ms ease, background 160ms ease, transform 160ms ease, border-radius 200ms ease;
+}
+
+.game-tl-group .game-corner-btn:hover,
+.game-tl-group .game-corner-btn:focus-visible {
+  transform: none;
+}
+
+.game-tl-group:has(.game-cost-visible) .game-corner-btn {
   border-radius: 16px 16px 0 0;
 }
 
