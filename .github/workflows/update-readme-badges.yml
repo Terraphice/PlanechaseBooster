@@ -1,0 +1,43 @@
+name: Update README Card Badges
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - cards.json
+
+jobs:
+  update-badges:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Count cards and update README badges
+        run: |
+          node -e "
+          const cards = JSON.parse(require('fs').readFileSync('cards.json', 'utf8'));
+          const total = cards.length;
+          const official = cards.filter(c => c.tags && c.tags.some(t => t.endsWith(':Official'))).length;
+          const custom = cards.filter(c => c.tags && c.tags.some(t => t.endsWith(':Custom'))).length;
+          console.log(total + ' ' + official + ' ' + custom);
+          " > /tmp/counts.txt
+          read total official custom < /tmp/counts.txt
+          sed -i "s|Total_Cards-[0-9]*-|Total_Cards-${total}-|g" README.md
+          sed -i "s|Official_Cards-[0-9]*-|Official_Cards-${official}-|g" README.md
+          sed -i "s|Custom_Cards-[0-9]*-|Custom_Cards-${custom}-|g" README.md
+
+      - name: Commit updated README
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: update card count badges in README"
+            git push
+          fi

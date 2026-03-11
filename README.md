@@ -12,6 +12,10 @@ Browse a fully searchable gallery of every plane and phenomenon, build and share
 [![PWA](https://img.shields.io/badge/PWA-Installable_&_Offline-22c55e?style=for-the-badge&logo=pwa&logoColor=white)](https://planechase.terraphice.dev)
 [![No Build](https://img.shields.io/badge/No_Build_Step-Vanilla_JS-3b82f6?style=for-the-badge)](https://github.com/Terraphice/PlanarAtlas)
 
+[![Total Cards](https://img.shields.io/badge/Total_Cards-230-6366f1?style=for-the-badge)](https://planechase.terraphice.dev)
+[![Official Cards](https://img.shields.io/badge/Official_Cards-206-22c55e?style=for-the-badge)](https://planechase.terraphice.dev)
+[![Custom Cards](https://img.shields.io/badge/Custom_Cards-24-f59e0b?style=for-the-badge)](https://planechase.terraphice.dev)
+
 </div>
 
 ---
