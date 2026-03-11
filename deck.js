@@ -2681,7 +2681,6 @@ function bemDrawNonPhenomenon(remaining) {
     remaining.push(card);
     attempts++;
   }
-  if (remaining.length > 0) return remaining.shift();
   return null;
 }
 
@@ -2705,14 +2704,22 @@ function startBemGame() {
   ];
 
   for (const { dx, dy, faceUp } of positions) {
-    if (shuffled.length === 0) break;
-    let card;
     if (faceUp) {
-      card = bemDrawNonPhenomenon(shuffled);
+      if (shuffled.length === 0) {
+        bemGrid.set(bemKey(dx, dy), { card: null, faceUp: true, placeholder: true });
+        continue;
+      }
+      const card = bemDrawNonPhenomenon(shuffled);
+      if (card) {
+        bemGrid.set(bemKey(dx, dy), { card, faceUp: true });
+      } else {
+        bemGrid.set(bemKey(dx, dy), { card: null, faceUp: true, placeholder: true });
+      }
     } else {
-      card = shuffled.shift();
+      if (shuffled.length === 0) break;
+      const card = shuffled.shift();
+      if (card) bemGrid.set(bemKey(dx, dy), { card, faceUp: false });
     }
-    if (card) bemGrid.set(bemKey(dx, dy), { card, faceUp });
   }
 
   bemViewOffset = { dx: 0, dy: 0 };
@@ -2770,14 +2777,18 @@ function bemDiscoverAdjacent() {
     const nx = px + dx;
     const ny = py + dy;
     const key = bemKey(nx, ny);
-    if (!bemGrid.has(key) && remaining.length > 0) {
-      let card;
+    if (!bemGrid.has(key)) {
       if (faceUp) {
-        card = bemDrawNonPhenomenon(remaining);
-      } else {
-        card = remaining.shift();
+        const card = bemDrawNonPhenomenon(remaining);
+        if (card) {
+          bemGrid.set(key, { card, faceUp: true });
+        } else {
+          bemGrid.set(key, { card: null, faceUp: true, placeholder: true });
+        }
+      } else if (remaining.length > 0) {
+        const card = remaining.shift();
+        if (card) bemGrid.set(key, { card, faceUp: false });
       }
-      if (card) bemGrid.set(key, { card, faceUp });
     }
   }
 }
@@ -2813,40 +2824,16 @@ function bemMovePlayer(nx, ny) {
 
   if (!cell) return;
 
-  // If moving to a placeholder cell, fill it with a new card from remaining
+  // If moving to a placeholder cell, try to fill it with a new plane from remaining
   if (cell.placeholder && !cell.card) {
     const { remaining } = gameState;
-    if (remaining.length > 0) {
-      const nextCard = bemDrawNonPhenomenon(remaining);
-      if (nextCard) {
-        cell.card = nextCard;
-        cell.placeholder = false;
-        showToastFn?.(`Moving to ${nextCard.displayName}.`);
-      } else {
-        showToastFn?.("Moving to empty spot — library is empty.");
-        gameState.bemPos = { x: nx, y: ny };
-        bemViewOffset = { dx: 0, dy: 0 };
-        bemPlaneswalkPending = false;
-        bemRemoveFalloff();
-        bemDiscoverAdjacent();
-        renderBemMap();
-        updateBemInfoBar();
-        syncBemTrButton();
-        closeAllGameMenus();
-        return;
-      }
+    const nextCard = bemDrawNonPhenomenon(remaining);
+    if (nextCard) {
+      cell.card = nextCard;
+      cell.placeholder = false;
+      showToastFn?.(`Moving to ${nextCard.displayName}.`);
     } else {
-      showToastFn?.("Moving to empty spot — library is empty.");
-      gameState.bemPos = { x: nx, y: ny };
-      bemViewOffset = { dx: 0, dy: 0 };
-      bemPlaneswalkPending = false;
-      bemRemoveFalloff();
-      bemDiscoverAdjacent();
-      renderBemMap();
-      updateBemInfoBar();
-      syncBemTrButton();
-      closeAllGameMenus();
-      return;
+      showToastFn?.("Moving to empty spot — no planes remain.");
     }
     bemLandOnPhenomenon = cell.card?.type === "Phenomenon" && phenomenonAnimationEnabled;
     gameState.bemPos = { x: nx, y: ny };
@@ -2942,8 +2929,8 @@ function bemResolvePhenomenon() {
     bemGrid.set(key, { card: nextCard, faceUp: true });
     showToastFn?.(`${phenomenon.displayName} resolved. ${nextCard.displayName} appears.`);
   } else {
-    bemGrid.delete(key);
-    showToastFn?.(`${phenomenon.displayName} resolved. Library is empty.`);
+    bemGrid.set(key, { card: null, faceUp: true, placeholder: true });
+    showToastFn?.(`${phenomenon.displayName} resolved. No planes remain.`);
   }
 
   renderBemMap();
@@ -2971,8 +2958,7 @@ function bemFillPlaceholder() {
     bemGrid.set(key, { card: nextCard, faceUp: true });
     showToastFn?.(`${nextCard.displayName} revealed.`);
   } else {
-    bemGrid.delete(key);
-    showToastFn?.("Library is empty.");
+    showToastFn?.("No planes remain in the library.");
   }
 
   renderBemMap();
@@ -3286,10 +3272,23 @@ function handleBemPointerMove(event) {
   // Drag pans the view without moving the player
   let panDx = 0;
   let panDy = 0;
-  if (adx >= ady) {
-    panDx = dx > 0 ? -1 : 1;
+
+  // On portrait mobile the game view is rotated -90deg, so physical x/y axes
+  // are swapped relative to game grid coordinates. Adjust panning accordingly.
+  const isPortraitMobile = event.pointerType !== "mouse" && window.innerHeight > window.innerWidth;
+
+  if (isPortraitMobile) {
+    if (adx >= ady) {
+      panDy = dx > 0 ? -1 : 1;
+    } else {
+      panDx = dy > 0 ? 1 : -1;
+    }
   } else {
-    panDy = dy > 0 ? -1 : 1;
+    if (adx >= ady) {
+      panDx = dx > 0 ? -1 : 1;
+    } else {
+      panDy = dy > 0 ? -1 : 1;
+    }
   }
 
   // Block panning to cells with no card at all

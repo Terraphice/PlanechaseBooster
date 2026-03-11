@@ -368,6 +368,10 @@ html[data-theme="light"] .parallax-bg {
   opacity: 0.04;
 }
 
+html {
+  touch-action: pan-x pan-y;
+}
+
 body {
   margin: 0;
   color: var(--text);
@@ -1931,7 +1935,7 @@ button.active-filter-pill:disabled {
   }
 }
 
-@media (max-width: 740px) {
+@media (max-width: 860px) {
   .topbar-inner {
     grid-template-columns: 1fr auto;
     grid-template-rows: auto auto;
@@ -1942,6 +1946,8 @@ button.active-filter-pill:disabled {
   .topbar-left-group {
     grid-column: 1;
     grid-row: 1;
+    min-width: 0;
+    overflow: hidden;
   }
 
   .topbar-right-buttons {
@@ -1953,6 +1959,16 @@ button.active-filter-pill:disabled {
     grid-column: 1 / -1;
     grid-row: 2;
     width: 100%;
+  }
+
+  .topbar-play-label {
+    display: none;
+  }
+
+  .topbar-play-button {
+    width: 46px;
+    min-width: 0;
+    padding: 0;
   }
 
   .content {
@@ -2015,7 +2031,14 @@ button.active-filter-pill:disabled {
   }
 
   .sidebar-lip {
-    top: 92px;
+    /* 128px positions the lip below the 2-row mobile header (~118px tall) */
+    top: 128px;
+  }
+
+  .page-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .modal-close {
@@ -2063,6 +2086,28 @@ button.active-filter-pill:disabled {
 
   .pagination-page-meta {
     display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .topbar-random-button,
+  .topbar-icon-button,
+  .topbar-deck-button,
+  .topbar-play-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .topbar-right-buttons {
+    gap: 4px;
+  }
+
+  .brand-kicker {
+    display: none;
+  }
+
+  .page-title {
+    font-size: 1.25rem;
   }
 }
 /* ── Deck button ─────────────────────────────────────────────────────────────── */
@@ -4433,41 +4478,42 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
   }
 }
 
-/* ── Mobile portrait: rotate game-reader-view to match the rotated game view ─── */
+/* ── Mobile portrait: game-reader-view stays in natural portrait orientation ─── */
 
 @media (pointer: coarse) and (orientation: portrait) {
   .game-reader-view {
-    top: calc((100vh - 100vw) / 2);
-    right: auto;
-    bottom: auto;
-    left: calc((100vw - 100vh) / 2);
-    width: 100vh;
-    height: 100vw;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
     padding: 12px;
-    transform: rotate(-90deg);
-    transform-origin: center center;
+    transform: none;
   }
 
   .game-reader-panel {
-    flex-direction: row;
-    max-height: calc(100vw - 24px);
-    overflow-y: hidden;
-  }
-
-  .game-reader-image-col {
-    padding: 16px 0 16px 16px;
+    flex-direction: column;
+    width: min(560px, calc(100vw - 24px));
+    max-height: calc(100vh - 24px);
     overflow-y: auto;
   }
 
+  .game-reader-image-col {
+    padding: 20px 20px 0;
+    justify-content: center;
+    overflow-y: visible;
+  }
+
   .game-reader-image {
-    max-width: none;
-    max-height: calc(100vw - 48px);
+    max-width: min(380px, calc(100vw - 64px));
+    max-height: 38vh;
     width: auto;
   }
 
   .game-reader-info-col {
-    overflow-y: auto;
-    padding: 16px 16px 16px 0;
+    overflow-y: visible;
+    padding: 12px 20px 20px;
   }
 }
 
