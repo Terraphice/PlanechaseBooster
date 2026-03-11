@@ -2247,7 +2247,7 @@ button.active-filter-pill:disabled {
 }
 
 .deck-panel.shelved {
-  transform: translateX(calc(100% - var(--deck-lip-w, 48px)));
+  transform: translateX(100%);
 }
 
 .deck-panel.hidden {
