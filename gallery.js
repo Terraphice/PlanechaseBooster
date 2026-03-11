@@ -40,7 +40,8 @@ import {
   importProfileDecks,
   encodeProfileData,
   decodeProfileData,
-  setPhenomenonAnimation
+  setPhenomenonAnimation,
+  setRiskyHellriding
 } from "./deck.js";
 
 const STORAGE_KEY = "planechaseGalleryPreferences.v2";
@@ -79,6 +80,7 @@ const fuzzySearchToggle = document.getElementById("fuzzy-search-toggle");
 const showHiddenToggle = document.getElementById("show-hidden-toggle");
 const inlineAutocompleteToggle = document.getElementById("inline-autocomplete-toggle");
 const phenomenonAnimationToggle = document.getElementById("phenomenon-animation-toggle");
+const riskyHellridingToggle = document.getElementById("risky-hellriding-toggle");
 
 const sidebar = document.getElementById("sidebar");
 const sidebarContent = document.getElementById("sidebar-content");
@@ -146,7 +148,8 @@ const filters = {
   fuzzy: preferences.fuzzySearch,
   inlineAutocomplete: preferences.inlineAutocomplete,
   showHidden: preferences.showHidden,
-  phenomenonAnimation: preferences.phenomenonAnimation
+  phenomenonAnimation: preferences.phenomenonAnimation,
+  riskyHellriding: preferences.riskyHellriding
 };
 
 const displayState = {
@@ -203,6 +206,7 @@ async function init() {
       }
     });
     setPhenomenonAnimation(filters.phenomenonAnimation);
+    setRiskyHellriding(filters.riskyHellriding);
 
     prefetchAllTranscripts(allCards);
   } catch (error) {
@@ -250,6 +254,7 @@ function applyStoredPreferencesToUI() {
   showHiddenToggle.checked = filters.showHidden;
   inlineAutocompleteToggle.checked = filters.inlineAutocomplete;
   if (phenomenonAnimationToggle) phenomenonAnimationToggle.checked = filters.phenomenonAnimation;
+  if (riskyHellridingToggle) riskyHellridingToggle.checked = filters.riskyHellriding;
   topSearch.value = filters.search;
   sidebarSearch.value = filters.search;
   topSearchGhost.value = "";
@@ -329,6 +334,12 @@ function bindEvents() {
   phenomenonAnimationToggle?.addEventListener("change", () => {
     filters.phenomenonAnimation = phenomenonAnimationToggle.checked;
     setPhenomenonAnimation(filters.phenomenonAnimation);
+    persistPreferences();
+  });
+
+  riskyHellridingToggle?.addEventListener("change", () => {
+    filters.riskyHellriding = riskyHellridingToggle.checked;
+    setRiskyHellriding(filters.riskyHellriding);
     persistPreferences();
   });
 
@@ -2038,6 +2049,8 @@ function executeClearAll() {
   filters.fuzzy = false;
   filters.inlineAutocomplete = true;
   filters.showHidden = false;
+  filters.riskyHellriding = true;
+  setRiskyHellriding(true);
 
   displayState.viewMode = "grid";
   displayState.groupBy = "none";
@@ -2116,7 +2129,8 @@ function exportProfile() {
     themePalette: themeController.getPalette(),
     pageSize: paginationState.pageSize,
     paginationMode: paginationState.mode,
-    phenomenonAnimation: filters.phenomenonAnimation
+    phenomenonAnimation: filters.phenomenonAnimation,
+    riskyHellriding: filters.riskyHellriding
   };
 
   const seed = encodeProfileData(prefsObj);
@@ -2150,6 +2164,10 @@ function importProfile() {
     if (typeof p.phenomenonAnimation === "boolean") {
       filters.phenomenonAnimation = p.phenomenonAnimation;
       setPhenomenonAnimation(filters.phenomenonAnimation);
+    }
+    if (typeof p.riskyHellriding === "boolean") {
+      filters.riskyHellriding = p.riskyHellriding;
+      setRiskyHellriding(filters.riskyHellriding);
     }
     if ([10, 20, 50, 100].includes(p.pageSize)) paginationState.pageSize = p.pageSize;
     if (["paginated", "infinite"].includes(p.paginationMode)) paginationState.mode = p.paginationMode;
