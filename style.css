@@ -676,15 +676,12 @@ html[data-palette="gruvbox"][data-theme="dark"] .sidebar {
   max-width: 100%;
 }
 
-.topbar-right-spacer {
-  /* Empty, mirrors left group for centering */
-}
-
-.topbar-left-buttons {
+.topbar-right-buttons {
   display: flex;
   align-items: center;
   gap: 6px;
   flex-shrink: 0;
+  justify-content: flex-end;
 }
 
 .topbar-random-button,
@@ -699,9 +696,9 @@ html[data-palette="gruvbox"][data-theme="dark"] .sidebar {
 }
 
 .topbar-random-button {
-  min-width: 56px;
+  width: 46px;
   height: 46px;
-  padding: 0 14px;
+  padding: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -724,10 +721,24 @@ html[data-palette="gruvbox"][data-theme="dark"] .sidebar {
   color: var(--accent);
 }
 
+.topbar-play-button {
+  width: auto;
+  min-width: 138px;
+  padding: 0 16px;
+  gap: 8px;
+}
+
+.topbar-play-label {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .topbar-icon-button {
-  min-width: 48px;
+  width: 46px;
   height: 46px;
-  padding: 0 12px;
+  padding: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -989,6 +1000,8 @@ html[data-palette="gruvbox"][data-theme="dark"] .sidebar {
 
 .settings-menu-link {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   text-decoration: none;
 }
 
@@ -1920,27 +1933,26 @@ button.active-filter-pill:disabled {
 
 @media (max-width: 740px) {
   .topbar-inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto auto;
     gap: 8px;
     padding: 10px 14px;
   }
 
   .topbar-left-group {
-    flex-wrap: wrap;
-    gap: 8px;
+    grid-column: 1;
+    grid-row: 1;
   }
 
-  .topbar-left-buttons {
-    flex-wrap: nowrap;
-    flex: 0 0 auto;
+  .topbar-right-buttons {
+    grid-column: 2;
+    grid-row: 1;
   }
 
   .topbar-search-group {
+    grid-column: 1 / -1;
+    grid-row: 2;
     width: 100%;
-  }
-
-  .topbar-right-spacer {
-    display: none;
   }
 
   .content {
@@ -2058,9 +2070,9 @@ button.active-filter-pill:disabled {
 .topbar-deck-button {
   flex-shrink: 0;
   position: relative;
-  min-width: 52px;
+  width: 46px;
   height: 46px;
-  padding: 0 13px;
+  padding: 0;
   border: 1px solid var(--border);
   background: var(--bg-elev-2);
   color: var(--text);

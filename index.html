@@ -112,110 +112,6 @@
               <div class="brand-kicker">Terraphice's</div>
               <h1 class="page-title">Planar Atlas</h1>
             </div>
-            <div class="topbar-left-buttons">
-              <button id="play-game-button" class="topbar-random-button topbar-play-button" type="button" aria-label="Play Planechase" title="Play">
-                <i class="ms ms-planeswalker" aria-hidden="true"></i>
-                <span class="sr-only">Play</span>
-              </button>
-
-              <button id="random-card-button" class="topbar-random-button" type="button" aria-label="Chaos" title="Chaos">
-                <i id="random-card-icon" class="ms ms-chaos" aria-hidden="true"></i>
-                <span class="sr-only">Chaos</span>
-              </button>
-
-              <button id="deck-button" class="topbar-deck-button" type="button" aria-label="Deck builder" title="Deck">
-                <svg class="deck-btn-icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
-                  <rect x="5" y="2" width="12" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                  <rect x="3" y="4" width="12" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                  <rect x="1" y="6" width="12" height="14" rx="2" fill="currentColor" stroke="currentColor" stroke-width="1.5"/>
-                </svg>
-                <span id="deck-button-badge" class="deck-button-badge hidden" aria-hidden="true"></span>
-              </button>
-
-              <button id="theme-toggle" class="topbar-icon-button theme-toggle" type="button" aria-label="Theme" title="Theme">
-                <span class="theme-toggle-glyph symbol-glyph" aria-hidden="true">◐&#xFE0E;</span>
-                <span class="sr-only">Theme</span>
-              </button>
-
-              <div class="settings-menu-wrap">
-                <button id="settings-menu-toggle" class="topbar-icon-button" type="button" aria-label="Open site settings" title="Settings">
-                  <span class="symbol-glyph">⚙&#xFE0E;</span>
-                </button>
-
-                  <div id="settings-menu" class="settings-menu hidden" role="dialog" aria-label="Site settings">
-                    <div class="settings-menu-section">
-                      <h2 class="settings-menu-title">About</h2>
-                      <p class="settings-menu-copy">
-                        A complete Planechase experience — searchable gallery of planes and phenomena, a custom deck builder, and a full Planechase simulator including the Blind Eternities Map.
-                      </p>
-                    </div>
-
-                    <div class="settings-menu-section">
-                      <h2 class="settings-menu-title">Advanced search syntax</h2>
-                      <p class="settings-menu-copy">
-                        Use field filters directly in the search box.
-                      </p>
-                      <ul class="settings-menu-list">
-                        <li><code>name:Akoum</code> — search by card name (alias: <code>n:</code>)</li>
-                        <li><code>o:chaos</code> — search card text (alias: <code>text:</code>, <code>oracle:</code>)</li>
-                        <li><code>tag:Plane</code> — filter by tag (alias: <code>type:</code>, <code>t:</code>)</li>
-                        <li><code>tag:Official</code> — filter by badge label</li>
-                        <li><code>show:hidden</code> — include hidden cards</li>
-                        <li><code>/chaos|annihilator/i</code> — regex search</li>
-                        <li>Prefix any filter with <code>-</code> to negate it: <code>-name:Norn</code></li>
-                        <li>Quote multi-word values: <code>name:"Spatial Merging"</code></li>
-                      </ul>
-                    </div>
-
-                    <div class="settings-menu-section">
-                      <h2 class="settings-menu-title">Keyboard shortcuts</h2>
-                      <ul class="settings-menu-list">
-                        <li><kbd>/</kbd> Focus search</li>
-                        <li><kbd>f</kbd> Toggle filters</li>
-                        <li><kbd>g</kbd> Jump to gallery</li>
-                        <li><kbd>Tab</kbd> Accept inline autocomplete</li>
-                        <li><kbd>n</kbd> / <kbd>→</kbd> Next card in modal</li>
-                        <li><kbd>p</kbd> / <kbd>←</kbd> Previous card in modal</li>
-                        <li><kbd>Esc</kbd> Close suggestions, modal, settings, or sidebar</li>
-                      </ul>
-                    </div>
-
-                    <div class="settings-menu-section">
-                      <h2 class="settings-menu-title">Preferences</h2>
-
-                      <label class="checkbox-row settings-checkbox-row">
-                        <input id="inline-autocomplete-toggle" type="checkbox" />
-                        <span>Tab Autocompletion</span>
-                      </label>
-                    </div>
-
-                    <div class="settings-menu-section settings-menu-actions">
-                      <div class="settings-menu-action-row">
-                        <button id="settings-export-profile" class="settings-menu-action settings-menu-action-half" type="button" title="Export all preferences and decks as a seed">
-                          ↑ Export Profile
-                        </button>
-                        <button id="settings-import-profile" class="settings-menu-action settings-menu-action-half" type="button" title="Import preferences and decks from a seed">
-                          ↓ Import Profile
-                        </button>
-                      </div>
-                      <div class="settings-menu-action-row">
-                        <button id="settings-clear-preferences" class="settings-menu-action settings-menu-action-half settings-menu-action-danger" type="button" title="Reset all preferences and decks" aria-label="Reset all preferences and decks">
-                          🗑 Reset All
-                        </button>
-                        <a id="settings-contact-developer" class="settings-menu-action settings-menu-action-half settings-menu-link" href="mailto:me@terraphice.dev?subject=Planar%20Atlas" title="Contact developer" aria-label="Contact developer">
-                          ✉ Contact
-                        </a>
-                      </div>
-                    </div>
-
-                    <div class="settings-menu-section settings-menu-fineprint-section">
-                      <p class="settings-menu-fineprint">
-                        Don&#39;t like the style? <strong>HOLD</strong> on! <strong>ALT</strong>ernate themes may be available to those with the knowledge to find them.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-            </div>
           </div>
 
           <div class="topbar-search-group">
@@ -228,7 +124,110 @@
             </div>
           </div>
 
-          <div class="topbar-right-spacer" aria-hidden="true"></div>
+          <div class="topbar-right-buttons">
+            <button id="play-game-button" class="topbar-random-button topbar-play-button" type="button" aria-label="Play Planechase" title="Play">
+              <i class="ms ms-planeswalker" aria-hidden="true"></i>
+              <span class="topbar-play-label">Play</span>
+            </button>
+
+            <button id="random-card-button" class="topbar-random-button" type="button" aria-label="Chaos" title="Chaos">
+              <i id="random-card-icon" class="ms ms-chaos" aria-hidden="true"></i>
+              <span class="sr-only">Chaos</span>
+            </button>
+
+            <button id="deck-button" class="topbar-deck-button" type="button" aria-label="Deck builder" title="Deck">
+              <svg class="deck-btn-icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" width="20" height="20">
+                <rect x="5" y="2" width="12" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="3" y="4" width="12" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                <rect x="1" y="6" width="12" height="14" rx="2" fill="currentColor" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+              <span id="deck-button-badge" class="deck-button-badge hidden" aria-hidden="true"></span>
+            </button>
+
+            <button id="theme-toggle" class="topbar-icon-button theme-toggle" type="button" aria-label="Theme" title="Theme">
+              <span class="theme-toggle-glyph symbol-glyph" aria-hidden="true">◐&#xFE0E;</span>
+              <span class="sr-only">Theme</span>
+            </button>
+
+            <div class="settings-menu-wrap">
+              <button id="settings-menu-toggle" class="topbar-icon-button" type="button" aria-label="Open site settings" title="Settings">
+                <span class="symbol-glyph">⚙&#xFE0E;</span>
+              </button>
+
+              <div id="settings-menu" class="settings-menu hidden" role="dialog" aria-label="Site settings">
+                <div class="settings-menu-section">
+                  <h2 class="settings-menu-title">About</h2>
+                  <p class="settings-menu-copy">
+                    A complete Planechase experience — searchable gallery of planes and phenomena, a custom deck builder, and a full Planechase simulator including the Blind Eternities Map.
+                  </p>
+                </div>
+
+                <div class="settings-menu-section">
+                  <h2 class="settings-menu-title">Advanced search syntax</h2>
+                  <p class="settings-menu-copy">
+                    Use field filters directly in the search box.
+                  </p>
+                  <ul class="settings-menu-list">
+                    <li><code>name:Akoum</code> — search by card name (alias: <code>n:</code>)</li>
+                    <li><code>o:chaos</code> — search card text (alias: <code>text:</code>, <code>oracle:</code>)</li>
+                    <li><code>tag:Plane</code> — filter by tag (alias: <code>type:</code>, <code>t:</code>)</li>
+                    <li><code>tag:Official</code> — filter by badge label</li>
+                    <li><code>show:hidden</code> — include hidden cards</li>
+                    <li><code>/chaos|annihilator/i</code> — regex search</li>
+                    <li>Prefix any filter with <code>-</code> to negate it: <code>-name:Norn</code></li>
+                    <li>Quote multi-word values: <code>name:"Spatial Merging"</code></li>
+                  </ul>
+                </div>
+
+                <div class="settings-menu-section">
+                  <h2 class="settings-menu-title">Keyboard shortcuts</h2>
+                  <ul class="settings-menu-list">
+                    <li><kbd>/</kbd> Focus search</li>
+                    <li><kbd>f</kbd> Toggle filters</li>
+                    <li><kbd>g</kbd> Jump to gallery</li>
+                    <li><kbd>Tab</kbd> Accept inline autocomplete</li>
+                    <li><kbd>n</kbd> / <kbd>→</kbd> Next card in modal</li>
+                    <li><kbd>p</kbd> / <kbd>←</kbd> Previous card in modal</li>
+                    <li><kbd>Esc</kbd> Close suggestions, modal, settings, or sidebar</li>
+                  </ul>
+                </div>
+
+                <div class="settings-menu-section">
+                  <h2 class="settings-menu-title">Preferences</h2>
+
+                  <label class="checkbox-row settings-checkbox-row">
+                    <input id="inline-autocomplete-toggle" type="checkbox" />
+                    <span>Tab Autocompletion</span>
+                  </label>
+                </div>
+
+                <div class="settings-menu-section settings-menu-actions">
+                  <div class="settings-menu-action-row">
+                    <button id="settings-export-profile" class="settings-menu-action settings-menu-action-half" type="button" title="Export all preferences and decks as a seed">
+                      ↑ Export Profile
+                    </button>
+                    <button id="settings-import-profile" class="settings-menu-action settings-menu-action-half" type="button" title="Import preferences and decks from a seed">
+                      ↓ Import Profile
+                    </button>
+                  </div>
+                  <div class="settings-menu-action-row">
+                    <button id="settings-clear-preferences" class="settings-menu-action settings-menu-action-half settings-menu-action-danger" type="button" title="Reset all preferences and decks" aria-label="Reset all preferences and decks">
+                      🗑 Reset All
+                    </button>
+                    <a id="settings-contact-developer" class="settings-menu-action settings-menu-action-half settings-menu-link" href="mailto:me@terraphice.dev?subject=Planar%20Atlas" title="Contact developer" aria-label="Contact developer">
+                      ✉ Contact
+                    </a>
+                  </div>
+                </div>
+
+                <div class="settings-menu-section settings-menu-fineprint-section">
+                  <p class="settings-menu-fineprint">
+                    Don&#39;t like the style? <strong>HOLD</strong> on! <strong>ALT</strong>ernate themes may be available to those with the knowledge to find them.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </header>
 
