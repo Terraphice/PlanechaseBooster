@@ -1,8 +1,9 @@
 {
   "file": "Plane_The Golden City of Orazca.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Ixalan"
+    "Ixalan",
+    "MOC"
   ]
 }

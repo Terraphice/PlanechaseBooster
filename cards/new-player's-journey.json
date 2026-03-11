@@ -1,8 +1,11 @@
 {
   "file": "Plane_New Player's Journey.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Foundations"
+    "Foundations",
+    "MagicCon",
+    "hidden",
+    "PUNK"
   ]
 }

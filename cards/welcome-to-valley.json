@@ -1,8 +1,11 @@
 {
   "file": "Plane_Welcome to Valley.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Bloomburrow"
+    "Bloomburrow",
+    "MagicCon",
+    "hidden",
+    "PUNK"
   ]
 }

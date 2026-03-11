@@ -1,8 +1,10 @@
 {
   "file": "Plane_The Cheetah Planet.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Outside Mutter's Spiral"
+    "Outside Mutter's Spiral",
+    "WHO",
+    "hidden"
   ]
 }

@@ -1,8 +1,9 @@
 {
   "file": "Plane_Skybreen.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Kaldheim"
+    "Kaldheim",
+    "OPCA"
   ]
 }

@@ -1,9 +1,10 @@
 {
   "file": "Plane_Artist Alley.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
     "MagicCon",
-    "hidden"
+    "hidden",
+    "PUNK"
   ]
 }

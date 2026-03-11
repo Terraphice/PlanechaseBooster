@@ -1,8 +1,9 @@
 {
   "file": "Plane_Tember City.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Kinshala"
+    "Kinshala",
+    "OPCA"
   ]
 }

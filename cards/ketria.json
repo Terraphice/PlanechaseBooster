@@ -1,8 +1,9 @@
 {
   "file": "Plane_Ketria.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Ikoria"
+    "Ikoria",
+    "MOC"
   ]
 }

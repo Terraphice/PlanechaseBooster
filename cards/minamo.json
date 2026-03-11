@@ -1,8 +1,9 @@
 {
   "file": "Plane_Minamo.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Kamigawa"
+    "Kamigawa",
+    "OPCA"
   ]
 }

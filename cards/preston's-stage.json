@@ -1,8 +1,11 @@
 {
   "file": "Plane_Preston's Stage.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Las Vegas"
+    "Las Vegas",
+    "MagicCon",
+    "hidden",
+    "PUNK"
   ]
 }

@@ -1,8 +1,11 @@
 {
   "file": "Plane_Sorin's Remastered Manor.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Innistrad"
+    "Innistrad",
+    "MagicCon",
+    "hidden",
+    "PUNK"
   ]
 }

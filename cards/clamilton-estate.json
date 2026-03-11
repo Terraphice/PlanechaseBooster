@@ -1,8 +1,11 @@
 {
   "file": "Plane_Clamilton Estate.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Clamhattan"
+    "Clamhattan",
+    "MagicCon",
+    "hidden",
+    "PUNK"
   ]
 }

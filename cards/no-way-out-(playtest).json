@@ -1,8 +1,11 @@
 {
   "file": "Plane_No Way Out (Playtest).png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Duskmourn"
+    "Duskmourn",
+    "MagicCon",
+    "hidden",
+    "PUNK"
   ]
 }

@@ -1,8 +1,11 @@
 {
   "file": "Plane_Shy Town.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Chicago"
+    "Chicago",
+    "MagicCon",
+    "hidden",
+    "PUNK"
   ]
 }

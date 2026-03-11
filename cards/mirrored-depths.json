@@ -1,8 +1,9 @@
 {
   "file": "Plane_Mirrored Depths.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Karsus"
+    "Karsus",
+    "OPCA"
   ]
 }

@@ -1,8 +1,9 @@
 {
   "file": "Plane_Onakke Catacomb.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Shandalar"
+    "Shandalar",
+    "OPCA"
   ]
 }

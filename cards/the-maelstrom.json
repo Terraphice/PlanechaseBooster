@@ -1,8 +1,9 @@
 {
   "file": "Plane_The Maelstrom.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Alara"
+    "Alara",
+    "OPCA"
   ]
 }

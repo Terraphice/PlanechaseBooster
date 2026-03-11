@@ -1,8 +1,10 @@
 {
   "file": "Plane_Kerblam! Warehouse.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Kandoka"
+    "Kandoka",
+    "WHO",
+    "hidden"
   ]
 }

@@ -1,8 +1,10 @@
 {
   "file": "Plane_The Moonbase.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Moon"
+    "Moon",
+    "WHO",
+    "hidden"
   ]
 }

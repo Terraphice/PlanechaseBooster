@@ -1,7 +1,10 @@
 {
   "file": "Phenomenon_Team-Up!.png",
   "tags": [
-    "badge:tr:green:Official",
-    "Phenomenon"
+    ":top:badge:tr:green:Official",
+    "Phenomenon",
+    "MagicCon",
+    "hidden",
+    "PUNK"
   ]
 }

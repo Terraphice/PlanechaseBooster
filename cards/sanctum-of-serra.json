@@ -1,8 +1,9 @@
 {
   "file": "Plane_Sanctum of Serra.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Serra's Realm"
+    "Serra's Realm",
+    "OPCA"
   ]
 }

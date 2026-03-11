@@ -1,8 +1,11 @@
 {
   "file": "Plane_Shrinking Plane.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Foldaria"
+    "Foldaria",
+    "MagicCon",
+    "hidden",
+    "PUNK"
   ]
 }

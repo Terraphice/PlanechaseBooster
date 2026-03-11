@@ -1,8 +1,9 @@
 {
   "file": "Plane_Horizon Boughs.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Pyrulea"
+    "Pyrulea",
+    "OPCA"
   ]
 }

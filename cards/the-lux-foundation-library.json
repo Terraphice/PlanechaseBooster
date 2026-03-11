@@ -1,8 +1,10 @@
 {
   "file": "Plane_The Lux Foundation Library.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "The Library"
+    "The Library",
+    "WHO",
+    "hidden"
   ]
 }

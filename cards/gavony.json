@@ -1,8 +1,9 @@
 {
   "file": "Plane_Gavony.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Innistrad"
+    "Innistrad",
+    "MOC"
   ]
 }

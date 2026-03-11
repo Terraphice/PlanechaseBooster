@@ -1,8 +1,9 @@
 {
   "file": "Plane_The Dark Barony.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Ulgrotha"
+    "Ulgrotha",
+    "OPCA"
   ]
 }

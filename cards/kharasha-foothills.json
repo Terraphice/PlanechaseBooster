@@ -1,8 +1,9 @@
 {
   "file": "Plane_Kharasha Foothills.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Mongseng"
+    "Mongseng",
+    "MOC"
   ]
 }

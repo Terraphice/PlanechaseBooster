@@ -1,8 +1,10 @@
 {
   "file": "Plane_Ood Sphere.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Horsehead Nebula"
+    "Horsehead Nebula",
+    "WHO",
+    "hidden"
   ]
 }

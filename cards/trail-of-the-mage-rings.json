@@ -1,8 +1,9 @@
 {
   "file": "Plane_Trail of the Mage-Rings.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Vryn"
+    "Vryn",
+    "OPCA"
   ]
 }

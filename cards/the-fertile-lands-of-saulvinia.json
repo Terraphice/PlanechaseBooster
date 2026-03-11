@@ -1,8 +1,9 @@
 {
   "file": "Plane_The Fertile Lands of Saulvinia.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Antausia"
+    "Antausia",
+    "MOC"
   ]
 }

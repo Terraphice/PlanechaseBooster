@@ -1,8 +1,10 @@
 {
   "file": "Plane_New New York.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "New Earth"
+    "New Earth",
+    "WHO",
+    "hidden"
   ]
 }

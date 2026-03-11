@@ -1,8 +1,10 @@
 {
   "file": "Plane_The Dining Car.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Spacecraft"
+    "Spacecraft",
+    "WHO",
+    "hidden"
   ]
 }

@@ -1,8 +1,9 @@
 {
   "file": "Plane_Kilnspire District.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Ravnica"
+    "Ravnica",
+    "OPCA"
   ]
 }

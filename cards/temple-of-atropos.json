@@ -1,8 +1,10 @@
 {
   "file": "Plane_Temple of Atropos.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Time"
+    "Time",
+    "WHO",
+    "Hidden"
   ]
 }

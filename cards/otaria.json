@@ -1,8 +1,9 @@
 {
   "file": "Plane_Otaria.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Dominaria"
+    "Dominaria",
+    "OPCA"
   ]
 }

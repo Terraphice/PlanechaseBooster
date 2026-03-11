@@ -1,8 +1,9 @@
 {
   "file": "Plane_Turri Island.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Ir"
+    "Ir",
+    "MOC"
   ]
 }

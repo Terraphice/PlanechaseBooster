@@ -1,8 +1,9 @@
 {
   "file": "Plane_Cliffside Market.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Mercadia"
+    "Mercadia",
+    "OPCA"
   ]
 }

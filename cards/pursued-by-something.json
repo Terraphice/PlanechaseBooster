@@ -1,8 +1,11 @@
 {
   "file": "Plane_Pursued by Something.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Duskmourn"
+    "Duskmourn",
+    "MagicCon",
+    "hidden",
+    "PUNK"
   ]
 }

@@ -1,8 +1,9 @@
 {
   "file": "Plane_Naktamun.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Amonkhet"
+    "Amonkhet",
+    "MOC"
   ]
 }

@@ -1,8 +1,9 @@
 {
   "file": "Plane_Furnace Layer.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "New Phyrexia"
+    "New Phyrexia",
+    "OPCA"
   ]
 }

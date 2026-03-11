@@ -1,9 +1,10 @@
 {
   "file": "Plane_Fblthp_ Completely, Utterly, Totally Lost.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
     "Secret Lair",
-    "hidden"
+    "hidden",
+    "PSSC"
   ]
 }

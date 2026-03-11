@@ -1,8 +1,10 @@
 {
   "file": "Plane_Pompeii.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Earth"
+    "Earth",
+    "WHO",
+    "hidden"
   ]
 }

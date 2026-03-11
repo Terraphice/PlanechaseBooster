@@ -1,8 +1,10 @@
 {
   "file": "Plane_Gardens of Tranquil Repose.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Necros"
+    "Necros",
+    "WHO",
+    "hidden"
   ]
 }

@@ -1,8 +1,11 @@
 {
   "file": "Plane_Multiversal High Council.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Universia Beyondia"
+    "Universia Beyondia",
+    "MagicCon",
+    "hidden",
+    "PUNK"
   ]
 }

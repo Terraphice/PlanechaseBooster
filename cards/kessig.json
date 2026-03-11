@@ -1,8 +1,9 @@
 {
   "file": "Plane_Kessig.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Innistrad"
+    "Innistrad",
+    "OPCA"
   ]
 }

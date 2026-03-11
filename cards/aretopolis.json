@@ -1,8 +1,9 @@
 {
   "file": "Plane_Aretopolis.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Kephalai"
+    "Kephalai",
+    "OPCA"
   ]
 }

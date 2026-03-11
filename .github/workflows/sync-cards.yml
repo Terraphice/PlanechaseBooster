@@ -1,0 +1,33 @@
+name: Sync Individual Card JSON Files
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - cards.json
+      - syncards.js
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Run syncards.js
+        run: node syncards.js
+
+      - name: Commit updated card files
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add cards/
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: sync individual card JSON files from cards.json"
+            git push
+          fi

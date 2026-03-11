@@ -1,9 +1,10 @@
 {
   "file": "Plane_The Pro Tour.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
     "MagicCon",
-    "hidden"
+    "hidden",
+    "PUNK"
   ]
 }

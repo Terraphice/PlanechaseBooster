@@ -1,8 +1,11 @@
 {
   "file": "Plane_High Noon At Thunder Junction.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Thunder Junction"
+    "Thunder Junction",
+    "MagicCon",
+    "hidden",
+    "PUNK"
   ]
 }

@@ -1,8 +1,9 @@
 {
   "file": "Plane_Immersturm.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Valla"
+    "Valla",
+    "OPCA"
   ]
 }

@@ -1,8 +1,10 @@
 {
   "file": "Plane_The Pyramid of Mars.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Mars"
+    "Mars",
+    "WHO",
+    "hidden"
   ]
 }

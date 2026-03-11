@@ -1,8 +1,9 @@
 {
   "file": "Plane_Lair of the Ashen Idol.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Azgol"
+    "Azgol",
+    "OPCA"
   ]
 }

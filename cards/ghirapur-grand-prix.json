@@ -1,8 +1,11 @@
 {
   "file": "Plane_Ghirapur Grand Prix.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Avishkar"
+    "Avishkar",
+    "MagicCon",
+    "hidden",
+    "PUNK"
   ]
 }

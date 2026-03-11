@@ -1,8 +1,9 @@
 {
   "file": "Plane_Velis Vel.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Lorwyn"
+    "Lorwyn",
+    "OPCA"
   ]
 }

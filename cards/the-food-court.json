@@ -1,8 +1,11 @@
 {
   "file": "Plane_The Food Court.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Eldraine"
+    "Eldraine",
+    "MagicCon",
+    "hidden",
+    "PUNK"
   ]
 }

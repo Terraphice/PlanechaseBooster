@@ -1,8 +1,10 @@
 {
   "file": "Plane_Hotel of Fears.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Spacecraft"
+    "Spacecraft",
+    "WHO",
+    "hidden"
   ]
 }

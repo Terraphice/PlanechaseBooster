@@ -1,8 +1,9 @@
 {
   "file": "Plane_Paliano.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Fiora"
+    "Fiora",
+    "MOC"
   ]
 }

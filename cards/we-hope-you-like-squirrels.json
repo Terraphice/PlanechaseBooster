@@ -1,9 +1,10 @@
 {
   "file": "Plane_We Hope You Like Squirrels.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
     "Secret Lair",
-    "hidden"
+    "hidden",
+    "PSSC"
   ]
 }

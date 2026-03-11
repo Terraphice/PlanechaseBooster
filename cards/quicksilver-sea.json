@@ -1,8 +1,9 @@
 {
   "file": "Plane_Quicksilver Sea.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Mirrodin"
+    "Mirrodin",
+    "OPCA"
   ]
 }

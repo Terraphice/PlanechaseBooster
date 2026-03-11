@@ -1,8 +1,11 @@
 {
   "file": "Plane_Bicycle Rack.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Amsterdam"
+    "Amsterdam",
+    "MagicCon",
+    "hidden",
+    "PUNK"
   ]
 }

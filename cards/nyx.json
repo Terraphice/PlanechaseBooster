@@ -1,8 +1,9 @@
 {
   "file": "Plane_Nyx.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Theros"
+    "Theros",
+    "MOC"
   ]
 }

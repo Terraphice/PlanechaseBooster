@@ -1,8 +1,9 @@
 {
   "file": "Plane_Strixhaven.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Arcavios"
+    "Arcavios",
+    "MOC"
   ]
 }

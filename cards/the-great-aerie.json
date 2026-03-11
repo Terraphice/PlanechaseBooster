@@ -1,8 +1,9 @@
 {
   "file": "Plane_The Great Aerie.png",
   "tags": [
-    "badge:tr:green:Official",
+    ":top:badge:tr:green:Official",
     "Plane",
-    "Tarkir"
+    "Tarkir",
+    "MOC"
   ]
 }
