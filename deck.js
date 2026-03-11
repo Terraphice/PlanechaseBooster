@@ -1204,7 +1204,7 @@ function renderGameSidePanel(activePlanes, focusedIndex) {
     const sideCard = document.createElement("button");
     sideCard.type = "button";
     sideCard.className = "game-side-card";
-    sideCard.setAttribute("aria-label", `View ${card.displayName}`);
+    sideCard.setAttribute("aria-label", `View ${card.displayName} (opens card reader)`);
     sideCard.innerHTML = `
       <img class="game-side-card-img" src="${card.thumbPath}" alt="${escapeHtml(card.displayName)}" />
       <div class="game-side-card-label">${escapeHtml(card.displayName)}</div>
