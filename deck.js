@@ -25,6 +25,7 @@ let onDeckChangeFn = null;
 let revealedCards = [];
 let revealViewMode = "list";
 let readerOpenedFromReveal = false;
+let readerOpenedFromLibrary = false;
 let easyPlaneswalk = false;
 let readerCardPath = "";
 let bemPlaneswalkPending = false;
@@ -2068,11 +2069,21 @@ export function closeGameReaderView() {
     gameRevealOverlay?.classList.remove("hidden");
     readerOpenedFromReveal = false;
   }
+  if (readerOpenedFromLibrary) {
+    gameToolsMenu?.classList.remove("hidden");
+    readerOpenedFromLibrary = false;
+  }
 }
 
 function openRevealCardInfo(card) {
   gameRevealOverlay?.classList.add("hidden");
   readerOpenedFromReveal = true;
+  openGameReaderView(card, []);
+}
+
+function openLibraryCardInfo(card) {
+  gameToolsMenu?.classList.add("hidden");
+  readerOpenedFromLibrary = true;
   openGameReaderView(card, []);
 }
 
@@ -2101,6 +2112,7 @@ function renderGameLibraryView() {
         <span class="game-deck-view-type">${escapeHtml(card.type)}</span>
       </div>
       <div class="game-deck-item-actions">
+        <button class="game-deck-action-btn" data-action="info" data-idx="${i}" title="View card details" type="button">ℹ</button>
         <button class="game-deck-action-btn" data-action="planeswalk" data-idx="${i}" title="Planeswalk to this card" type="button">▶</button>
         <button class="game-deck-action-btn" data-action="active" data-idx="${i}" title="Add to active cards" type="button">+</button>
         <button class="game-deck-action-btn" data-action="top" data-idx="${i}" title="Put on top of library" type="button">↑</button>
@@ -2153,6 +2165,7 @@ function updateGameSearchResults() {
         <span class="game-deck-view-type">${escapeHtml(card.type)}</span>
       </div>
       <div class="game-deck-item-actions">
+        <button class="game-deck-action-btn" data-action="info" data-key="${escapeHtml(card.key)}" title="View card details" type="button">ℹ</button>
         <button class="game-deck-action-btn" data-action="planeswalk" data-key="${escapeHtml(card.key)}" title="Planeswalk to this card" type="button">▶</button>
         <button class="game-deck-action-btn" data-action="active" data-key="${escapeHtml(card.key)}" title="Add to active cards" type="button">+</button>
         <button class="game-deck-action-btn" data-action="top" data-key="${escapeHtml(card.key)}" title="Put on top of library" type="button">↑</button>
@@ -2173,6 +2186,11 @@ function handleLibraryItemAction(event) {
   const action = btn.dataset.action;
   const idx = parseInt(btn.dataset.idx, 10);
   if (isNaN(idx) || idx < 0 || idx >= gameState.remaining.length) return;
+
+  if (action === "info") {
+    openLibraryCardInfo(gameState.remaining[idx]);
+    return;
+  }
 
   const card = gameState.remaining.splice(idx, 1)[0];
 
@@ -2229,6 +2247,11 @@ function handleSearchResultItemAction(event) {
   const key = btn.dataset.key;
   const idx = gameState.remaining.findIndex((c) => c.key === key);
   if (idx === -1) return;
+
+  if (action === "info") {
+    openLibraryCardInfo(gameState.remaining[idx]);
+    return;
+  }
 
   const card = gameState.remaining.splice(idx, 1)[0];
 
