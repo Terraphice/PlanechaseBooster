@@ -2978,13 +2978,12 @@ function renderBemMap() {
       } else if (cell.placeholder && !cell.card) {
         // Placeholder cell: card was removed from this position
         div.classList.add("bem-cell-placeholder");
-        if (isPlayer) {
-          div.classList.add("bem-cell-player");
-          const icon = document.createElement("div");
-          icon.className = "bem-cell-placeholder-icon";
-          icon.textContent = "?";
-          div.appendChild(icon);
-        }
+        if (isPlayer) div.classList.add("bem-cell-player");
+        const img = document.createElement("img");
+        img.className = "bem-cell-placeholder-img";
+        img.src = "images/assets/card-preview.jpg";
+        img.alt = "";
+        div.appendChild(img);
       } else if (cell.faceUp) {
         div.classList.add("bem-cell-faceup");
 

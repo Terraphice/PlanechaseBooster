@@ -3993,6 +3993,7 @@ button.active-filter-pill:disabled {
     height: 100vw;
     transform: rotate(-90deg);
     transform-origin: center center;
+    flex-direction: column;
   }
 
   .game-card-image {
@@ -4001,55 +4002,80 @@ button.active-filter-pill:disabled {
   }
 
   .game-main-area {
-    padding: 64px 12px 48px;
+    flex: 1;
+    height: auto;
+    justify-content: center;
+    padding: 60px 12px;
   }
 
   .game-card-name {
-    font-size: 0.88rem;
+    font-size: 0.85rem;
     margin-top: 8px;
   }
 
   .game-corner-btn {
-    width: 50px;
-    height: 50px;
-    font-size: 1.3rem;
+    width: 44px;
+    height: 44px;
+    font-size: 1.2rem;
   }
 
   .game-tl-group {
-    top: 10px;
-    left: 10px;
+    top: 8px;
+    left: 8px;
   }
 
   .game-tr-group {
-    top: 10px;
-    right: 10px;
+    top: 8px;
+    right: 8px;
   }
 
   .game-bl-group {
-    bottom: 10px;
-    left: 10px;
+    bottom: 8px;
+    left: 8px;
   }
 
   .game-br-group {
-    bottom: 10px;
-    right: 10px;
+    bottom: 8px;
+    right: 8px;
   }
 
-  .game-cost-display { width: 50px; }
+  .game-cost-display { width: 44px; }
+
+  .game-side-panel {
+    order: 2;
+    position: relative;
+    right: auto;
+    top: auto;
+    transform: none;
+    flex-direction: column;
+    height: 90px;
+    width: 100%;
+    max-height: none;
+    overflow-y: auto;
+    overflow-x: visible;
+    justify-content: center;
+    padding: 8px;
+    background: color-mix(in srgb, var(--bg-elev-1) 80%, transparent);
+    border-top: 1px solid var(--border-soft);
+  }
+
+  .game-view.bem-active .game-side-panel {
+    right: auto;
+  }
 
   .game-menu {
-    max-height: min(calc(100vw - 80px), 480px);
+    max-height: 80vw;
     max-width: calc(100vh - 100px);
   }
 
   .game-menu-br {
-    bottom: 68px;
-    right: 10px;
+    bottom: 70px;
+    right: 8px;
   }
 
   .game-menu-bl {
-    bottom: 68px;
-    left: 10px;
+    bottom: 70px;
+    left: 8px;
   }
 
   .game-reveal-overlay {
@@ -4193,6 +4219,10 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
   cursor: pointer;
   opacity: 0.85;
   transition: opacity 140ms ease, transform 140ms ease;
+}
+
+.game-card-image-btn-placeholder .game-card-image {
+  border: 2px dashed rgba(192, 132, 252, 0.35);
 }
 
 .game-card-image-btn-placeholder:hover {
@@ -4843,11 +4873,14 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
               0 8px 24px rgba(0, 0, 0, 0.4) !important;
 }
 
-.bem-cell-placeholder-icon {
-  font-size: 2rem;
-  color: var(--text-faint);
+.bem-cell-placeholder-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   opacity: 0.35;
+  border-radius: 6px;
   user-select: none;
+  pointer-events: none;
 }
 
 /* Phenomenon landing animation */
@@ -5113,15 +5146,23 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
 /* Mobile portrait: BEM grid rotates with the game view */
 @media (pointer: coarse) and (orientation: portrait) {
   .bem-map-area {
-    padding: 60px 0 80px;
+    flex: 1;
+    height: auto;
+    padding: 48px 0 68px;
+  }
+
+  .bem-info-bar {
+    bottom: 16px;
   }
 
   .bem-map {
-    /* In rotated portrait mode, vw/vh are swapped relative to visual layout */
+    /* In rotated portrait mode, vw/vh are swapped relative to visual layout.
+       With the inline side panel taking 90px visual width, adjust the constraints.
+       102px = 90px side panel + 12px gap; 128px = 48px top + 68px bottom padding + 12px gap. */
     --bem-cell-w: min(
-      calc((100vh - 12px) * 0.6),
-      calc((100vw - 162px) * 0.6 * 1.4),
-      420px
+      calc((100vh - 102px) * 0.6),
+      calc((100vw - 128px) * 0.6 * 1.4),
+      360px
     );
     --bem-cell-h: calc(var(--bem-cell-w) / 1.4);
   }
