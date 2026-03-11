@@ -1075,18 +1075,20 @@ function createCardElement(card, index = 0) {
 
   const deckCount = getCardDeckCount(card.key);
   deckOverlay.innerHTML = `
-    <button class="deck-overlay-add-btn" data-action="toggle" aria-label="Toggle in deck" type="button">
-      <span class="deck-overlay-plus">+</span>
+    <div class="deck-overlay-controls">
+      <button class="deck-overlay-btn deck-overlay-dec" data-action="dec" aria-label="Remove one copy" type="button"${deckCount === 0 ? " disabled" : ""}>−</button>
       <span class="deck-overlay-count">${deckCount > 0 ? deckCount : ""}</span>
-    </button>
+      <button class="deck-overlay-btn deck-overlay-inc" data-action="inc" aria-label="Add one copy" type="button">+</button>
+    </div>
   `;
   if (deckCount > 0) deckOverlay.classList.add("deck-has-count");
 
   deckOverlay.addEventListener("click", (event) => {
     event.stopPropagation();
-    const count = getCardDeckCount(card.key);
-    if (count > 0) removeCardFromDeck(card.key);
-    else addCardToDeck(card.key);
+    const btn = event.target.closest("[data-action]");
+    if (!btn) return;
+    if (btn.dataset.action === "inc") addCardToDeck(card.key);
+    else if (btn.dataset.action === "dec") removeCardFromDeck(card.key);
   });
 
   imageWrap.appendChild(deckOverlay);

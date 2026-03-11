@@ -19,7 +19,6 @@ let onDeckChangeFn = null;
 let revealedCards = [];
 let revealViewMode = "list";
 let easyPlaneswalk = false;
-let readerImageFlipped = false;
 let readerCardPath = "";
 const readerTranscriptCache = new Map();
 
@@ -84,7 +83,6 @@ const gameCostReset = document.getElementById("game-cost-reset");
 const gameReaderView = document.getElementById("game-reader-view");
 const gameReaderImage = document.getElementById("game-reader-image");
 const gameReaderImageWrap = document.getElementById("game-reader-image-wrap");
-const gameReaderFlipHint = document.getElementById("game-reader-flip-hint");
 const gameReaderClose = document.getElementById("game-reader-close");
 const gameReaderBackdrop = document.getElementById("game-reader-backdrop");
 const gameReaderCardName = document.getElementById("game-reader-card-name");
@@ -456,7 +454,7 @@ function bindDeckEvents() {
     if (focused) openGameReaderView(focused, buildMainCardActions(gameState.focusedIndex));
   });
 
-  gameReaderImageWrap?.addEventListener("click", flipReaderImage);
+  gameReaderImageWrap?.addEventListener("click", zoomReaderImage);
 
   gameReaderClose?.addEventListener("click", closeGameReaderView);
   gameReaderBackdrop?.addEventListener("click", closeGameReaderView);
@@ -665,6 +663,8 @@ function updateCardOverlays(cardKey) {
     const countEl = overlay.querySelector(".deck-overlay-count");
     if (countEl) countEl.textContent = count > 0 ? count : "";
     overlay.classList.toggle("deck-has-count", count > 0);
+    const decBtn = overlay.querySelector(".deck-overlay-dec");
+    if (decBtn) decBtn.disabled = count === 0;
   }
 }
 
@@ -676,6 +676,8 @@ function updateAllCardOverlays() {
     const countEl = overlay.querySelector(".deck-overlay-count");
     if (countEl) countEl.textContent = count > 0 ? count : "";
     overlay.classList.toggle("deck-has-count", count > 0);
+    const decBtn = overlay.querySelector(".deck-overlay-dec");
+    if (decBtn) decBtn.disabled = count === 0;
   }
 }
 
@@ -1384,7 +1386,6 @@ function buildSideCardActions(sideIdx) {
 function openGameReaderView(card, actions = []) {
   if (!gameReaderView || !card) return;
 
-  readerImageFlipped = false;
   readerCardPath = card.imagePath;
 
   if (gameReaderImage) {
@@ -1392,9 +1393,8 @@ function openGameReaderView(card, actions = []) {
     gameReaderImage.alt = card.displayName;
   }
   if (gameReaderImageWrap) {
-    gameReaderImageWrap.classList.remove("game-reader-image-flipped", "game-reader-image-spinning");
+    gameReaderImageWrap.classList.remove("game-reader-image-zoomed");
   }
-  if (gameReaderFlipHint) gameReaderFlipHint.style.opacity = "";
   if (gameReaderCardName) gameReaderCardName.textContent = card.displayName;
   if (gameReaderCardType) gameReaderCardType.textContent = card.type || "";
 
@@ -1450,30 +1450,14 @@ function renderReaderTranscriptMarkdown(text) {
   }
 }
 
-function flipReaderImage() {
-  if (!gameReaderImage || !gameReaderImageWrap) return;
-  const wasFlipped = readerImageFlipped;
-  readerImageFlipped = !wasFlipped;
-  gameReaderImageWrap.classList.add("game-reader-image-spinning");
-  setTimeout(() => {
-    if (wasFlipped) {
-      gameReaderImage.src = readerCardPath;
-      gameReaderImage.alt = gameReaderCardName?.textContent ?? "";
-    } else {
-      gameReaderImage.src = "images/assets/card-preview.jpg";
-      gameReaderImage.alt = "Card back";
-    }
-    gameReaderImageWrap.classList.toggle("game-reader-image-flipped", readerImageFlipped);
-  }, 200);
-  setTimeout(() => {
-    gameReaderImageWrap.classList.remove("game-reader-image-spinning");
-  }, 400);
+function zoomReaderImage() {
+  gameReaderImageWrap?.classList.toggle("game-reader-image-zoomed");
 }
 
 function closeGameReaderView() {
   gameReaderView?.classList.add("hidden");
   document.body.classList.remove("game-reader-open");
-  readerImageFlipped = false;
+  gameReaderImageWrap?.classList.remove("game-reader-image-zoomed");
 }
 
 function renderGameLibraryView() {
@@ -1569,6 +1553,7 @@ function handleLibraryItemAction(event) {
   if (!gameState) return;
   const btn = event.target.closest("[data-action][data-idx]");
   if (!btn) return;
+  event.stopPropagation();
   const action = btn.dataset.action;
   const idx = parseInt(btn.dataset.idx, 10);
   if (isNaN(idx) || idx < 0 || idx >= gameState.remaining.length) return;
@@ -1580,7 +1565,6 @@ function handleLibraryItemAction(event) {
       gameState.remaining.push(...gameState.activePlanes);
       gameState.activePlanes = [card];
       gameState.focusedIndex = 0;
-      closeAllGameMenus();
       showToastFn?.(`Planeswalked to ${card.displayName}.`);
       break;
     case "active":
@@ -1602,16 +1586,15 @@ function handleLibraryItemAction(event) {
   }
 
   updateGameView();
-  if (action !== "planeswalk") {
-    renderGameLibraryView();
-    syncGameToolsState(gameState.remaining.length);
-  }
+  renderGameLibraryView();
+  syncGameToolsState(gameState.remaining.length);
 }
 
 function handleSearchResultItemAction(event) {
   if (!gameState) return;
   const btn = event.target.closest("[data-action][data-key]");
   if (!btn) return;
+  event.stopPropagation();
   const action = btn.dataset.action;
   const key = btn.dataset.key;
   const idx = gameState.remaining.findIndex((c) => c.key === key);
@@ -1624,7 +1607,6 @@ function handleSearchResultItemAction(event) {
       gameState.remaining.push(...gameState.activePlanes);
       gameState.activePlanes = [card];
       gameState.focusedIndex = 0;
-      closeAllGameMenus();
       showToastFn?.(`Planeswalked to ${card.displayName}.`);
       break;
     case "active":
@@ -1646,10 +1628,8 @@ function handleSearchResultItemAction(event) {
   }
 
   updateGameView();
-  if (action !== "planeswalk") {
-    updateGameSearchResults();
-    syncGameToolsState(gameState.remaining.length);
-  }
+  updateGameSearchResults();
+  syncGameToolsState(gameState.remaining.length);
 }
 
 function openRevealCards() {
