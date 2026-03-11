@@ -1199,6 +1199,8 @@ function createCardElement(card, index = 0) {
 }
 
 function isSetCodeTag(tag) {
+  // All-uppercase 2–6 char tags are set codes (e.g. OPCA, MOC, PUNK, WHO, PBT, PSSC).
+  // MagicCon is a mixed-case exception used to denote MagicCon event promo sets.
   return /^[A-Z]{2,6}$/.test(tag) || tag === "MagicCon";
 }
 
@@ -1225,12 +1227,14 @@ function getSetCodeFromTags(tags) {
   return upperOnly[0] || setCodes[0] || "";
 }
 
+// Transcript format: "Illustrated by: <name>" on its own line near the bottom of the file.
 function parseIllustratorFromTranscript(text) {
   const match = text.match(/^Illustrated by:\s*(.+)$/m);
   return match ? match[1].trim() : "";
 }
 
 function loadIllustratorCell(card, cell) {
+  // transcriptCache states: undefined = not fetched, null = fetch in progress, string = loaded.
   const cached = transcriptCache.get(card.key);
   if (typeof cached === "string") {
     cell.textContent = parseIllustratorFromTranscript(cached) || "—";
