@@ -27,6 +27,7 @@ let revealViewMode = "list";
 let easyPlaneswalk = false;
 let readerCardPath = "";
 let bemPlaneswalkPending = false;
+let bemViewOffset = { dx: 0, dy: 0 };
 let bemDragPointerId = null;
 let bemDragStart = null;
 let bemDragHandled = false;
@@ -623,11 +624,14 @@ function bindDeckEvents() {
     if (focused) openGameReaderView(focused, buildMainCardActions(gameState.focusedIndex));
   });
 
-  // BEM drag navigation
+  // BEM drag navigation (pan view only, no player movement)
   bemMapArea?.addEventListener("pointerdown", handleBemPointerDown);
   bemMapArea?.addEventListener("pointermove", handleBemPointerMove);
   bemMapArea?.addEventListener("pointerup", handleBemPointerUp);
   bemMapArea?.addEventListener("pointercancel", handleBemPointerUp);
+
+  // BEM arrow key pan
+  document.addEventListener("keydown", handleBemArrowKey);
 }
 
 // ── Deck panel ────────────────────────────────────────────────────────────────
@@ -2460,6 +2464,9 @@ function startBemGame() {
     if (card) bemGrid.set(bemKey(dx, dy), { card, faceUp });
   }
 
+  bemViewOffset = { dx: 0, dy: 0 };
+  bemPlaneswalkPending = false;
+
   gameState = {
     mode: "bem",
     remaining: shuffled,
@@ -2470,7 +2477,8 @@ function startBemGame() {
     activePlanes: [],
     focusedIndex: 0,
     bemGrid,
-    bemPos: { x: 0, y: 0 }
+    bemPos: { x: 0, y: 0 },
+    bemHellridedPositions: new Set()
   };
 
   gameActive = true;
@@ -2561,9 +2569,12 @@ function bemMovePlayer(nx, ny) {
     }
 
     // 66.6% chance to encounter a phenomenon before the destination card
-    // (only if the destination card is not already a phenomenon)
+    // (only if the destination card is not already a phenomenon, and this
+    //  position has not already had the hellride check applied this game)
     const originalCard = cell.card;
-    if (originalCard.type !== "Phenomenon") {
+    const alreadyHellrided = gameState.bemHellridedPositions?.has(key);
+    if (originalCard.type !== "Phenomenon" && !alreadyHellrided) {
+      gameState.bemHellridedPositions?.add(key);
       const phenIdx = gameState.remaining.findIndex(c => c.type === "Phenomenon");
       if (phenIdx !== -1 && Math.random() < 2 / 3) {
         const [phenomenon] = gameState.remaining.splice(phenIdx, 1);
@@ -2581,6 +2592,7 @@ function bemMovePlayer(nx, ny) {
   }
 
   gameState.bemPos = { x: nx, y: ny };
+  bemViewOffset = { dx: 0, dy: 0 };
 
   // Auto-flip any orthogonal adjacent face-down cards at new position
   const orthDirs = [{ dx: 0, dy: -1 }, { dx: 0, dy: 1 }, { dx: -1, dy: 0 }, { dx: 1, dy: 0 }];
@@ -2644,49 +2656,43 @@ function syncBemTrButton() {
     : "Planeswalk");
 }
 
-function getBemDirLabel(dx, dy) {
-  if (dx === 0 && dy === -1) return "N";
-  if (dx === 0 && dy === 1) return "S";
-  if (dx === -1 && dy === 0) return "W";
-  if (dx === 1 && dy === 0) return "E";
-  if (dx === -1 && dy === -1) return "NW";
-  if (dx === 1 && dy === -1) return "NE";
-  if (dx === -1 && dy === 1) return "SW";
-  if (dx === 1 && dy === 1) return "SE";
-  return "";
-}
-
 function renderBemMap() {
   if (!bemMapEl || !gameState?.bemGrid || !gameState?.bemPos) return;
 
   const { bemGrid, bemPos } = gameState;
   const { x: px, y: py } = bemPos;
+  const viewX = px + bemViewOffset.dx;
+  const viewY = py + bemViewOffset.dy;
+  const isPanning = bemViewOffset.dx !== 0 || bemViewOffset.dy !== 0;
 
   bemMapEl.innerHTML = "";
 
   const R = BEM_VIEW_RADIUS;
-  for (let dy = -R; dy <= R; dy++) {
-    for (let dx = -R; dx <= R; dx++) {
-      const cx = px + dx;
-      const cy = py + dy;
+  for (let gy = -R; gy <= R; gy++) {
+    for (let gx = -R; gx <= R; gx++) {
+      const cx = viewX + gx;
+      const cy = viewY + gy;
       const key = bemKey(cx, cy);
       const cell = bemGrid.get(key);
 
       const div = document.createElement("div");
-      div.style.gridColumn = (dx + R + 1).toString();
-      div.style.gridRow = (dy + R + 1).toString();
+      div.style.gridColumn = (gx + R + 1).toString();
+      div.style.gridRow = (gy + R + 1).toString();
       div.className = "bem-cell";
       div.dataset.x = cx;
       div.dataset.y = cy;
 
-      const isPlayer = dx === 0 && dy === 0;
-      const isDiag = Math.abs(dx) === 1 && Math.abs(dy) === 1;
-      const isOrthog = (Math.abs(dx) + Math.abs(dy)) === 1;
+      // Player-relative offsets (from actual player position)
+      const pdx = cx - px;
+      const pdy = cy - py;
+      const isPlayer = pdx === 0 && pdy === 0;
+      const isDiagToPlayer = Math.abs(pdx) === 1 && Math.abs(pdy) === 1;
+      const isOrthogToPlayer = (Math.abs(pdx) + Math.abs(pdy)) === 1;
 
-      // Planeswalk pending glow
-      if (bemPlaneswalkPending && !isPlayer) {
-        if (isOrthog && cell?.faceUp) div.classList.add("bem-cell-planeswalk-glow");
-        else if (isDiag && cell && !cell.faceUp) div.classList.add("bem-cell-hellride-glow");
+      // Planeswalk pending glow (only when not panning)
+      if (bemPlaneswalkPending && !isPlayer && !isPanning) {
+        if (isOrthogToPlayer && cell?.faceUp) div.classList.add("bem-cell-planeswalk-glow");
+        else if (isDiagToPlayer && cell && !cell.faceUp) div.classList.add("bem-cell-hellride-glow");
       }
 
       if (!cell) {
@@ -2713,12 +2719,8 @@ function renderBemMap() {
           } else {
             div.classList.add("bem-cell-active-plane");
           }
-        } else if (isOrthog) {
+        } else if (isOrthogToPlayer && !isPanning) {
           if (!bemPlaneswalkPending) div.classList.add("bem-cell-moveable");
-          const hint = document.createElement("span");
-          hint.className = "bem-cell-dir-hint";
-          hint.textContent = getBemDirLabel(dx, dy);
-          div.appendChild(hint);
         }
       } else {
         div.classList.add("bem-cell-facedown");
@@ -2729,7 +2731,7 @@ function renderBemMap() {
         img.alt = "Face-down card";
         div.appendChild(img);
 
-        if (isDiag) {
+        if (isDiagToPlayer && !isPanning) {
           if (!bemPlaneswalkPending) div.classList.add("bem-cell-hellride");
           const hint = document.createElement("span");
           hint.className = "bem-cell-hellride-hint";
@@ -2781,16 +2783,39 @@ function handleBemCellClick(event) {
   const { x: px, y: py } = gameState.bemPos;
   const dx = nx - px;
   const dy = ny - py;
+  const isPanning = bemViewOffset.dx !== 0 || bemViewOffset.dy !== 0;
 
   if (dx === 0 && dy === 0) {
-    // Current player cell → view card detail
+    // Player's actual cell clicked
+    if (easyPlaneswalk) {
+      // In easy mode, clicking the current card acts like the Planeswalk button
+      if (isPanning) {
+        bemViewOffset = { dx: 0, dy: 0 };
+        renderBemMap();
+        showToastFn?.("Returned to your position.");
+        return;
+      }
+      const currentCell = gameState.bemGrid.get(bemKey(nx, ny));
+      if (currentCell?.card?.type === "Phenomenon") {
+        bemResolvePhenomenon();
+      } else {
+        toggleBemPlaneswalkMode();
+      }
+      return;
+    }
+    // Normal mode: open detail view for current card
     const gridCell = gameState.bemGrid.get(bemKey(nx, ny));
     if (gridCell?.card) openGameReaderView(gridCell.card, buildBemCardActions());
     return;
   }
 
   if (bemPlaneswalkPending) {
-    // In planeswalk mode: click a glowing cell to move there
+    if (isPanning) {
+      bemViewOffset = { dx: 0, dy: 0 };
+      renderBemMap();
+      showToastFn?.("Returned to your position. Select a direction to planeswalk.");
+      return;
+    }
     const isOrthog = (Math.abs(dx) + Math.abs(dy)) === 1;
     const isDiag = Math.abs(dx) === 1 && Math.abs(dy) === 1;
     const gridCell = gameState.bemGrid.get(bemKey(nx, ny));
@@ -2800,21 +2825,26 @@ function handleBemCellClick(event) {
       // Cancel planeswalk mode on clicking non-valid cell
       bemPlaneswalkPending = false;
       renderBemMap();
+      syncBemTrButton();
     }
     return;
   }
 
   if (easyPlaneswalk) {
-    // Easy mode: shift/alt-click for detail view; tap/click to planeswalk (if valid move)
-    if (event.shiftKey || event.altKey) {
-      const gridCell = gameState.bemGrid.get(bemKey(nx, ny));
-      if (gridCell?.card && gridCell.faceUp) openGameReaderView(gridCell.card, buildBemAdjacentCardActions(nx, ny));
+    if (isPanning) {
+      bemViewOffset = { dx: 0, dy: 0 };
+      renderBemMap();
+      showToastFn?.("Returned to your position. Tap an adjacent card to move.");
       return;
     }
-    // Only planeswalk if it's a valid move (adjacent cell)
+    // Easy mode: click adjacent card to move there
     const isValidMove = (Math.abs(dx) + Math.abs(dy) === 1) || (Math.abs(dx) === 1 && Math.abs(dy) === 1);
     if (isValidMove) {
       bemMovePlayer(nx, ny);
+    } else {
+      // Non-adjacent cell in easy mode → open detail view
+      const gridCell = gameState.bemGrid.get(bemKey(nx, ny));
+      if (gridCell?.card && gridCell.faceUp) openGameReaderView(gridCell.card, buildBemAdjacentCardActions(nx, ny));
     }
     return;
   }
@@ -2828,6 +2858,13 @@ function handleBemCellClick(event) {
 
 function toggleBemPlaneswalkMode() {
   if (!gameState?.bemGrid) return;
+  const isPanning = bemViewOffset.dx !== 0 || bemViewOffset.dy !== 0;
+  if (isPanning) {
+    bemViewOffset = { dx: 0, dy: 0 };
+    renderBemMap();
+    showToastFn?.("Returned to your position. Planeswalk again to continue.");
+    return;
+  }
   bemPlaneswalkPending = !bemPlaneswalkPending;
   renderBemMap();
   syncBemTrButton();
@@ -2838,13 +2875,29 @@ function toggleBemPlaneswalkMode() {
 
 // ── BEM drag navigation ───────────────────────────────────────────────────────
 
+function handleBemArrowKey(event) {
+  if (!gameActive || gameState?.mode !== "bem") return;
+  if (document.body.classList.contains("game-reader-open")) return;
+  if (document.body.classList.contains("tutorial-open")) return;
+  let panDx = 0, panDy = 0;
+  switch (event.key) {
+    case "ArrowLeft":  panDx = -1; break;
+    case "ArrowRight": panDx = 1;  break;
+    case "ArrowUp":    panDy = -1; break;
+    case "ArrowDown":  panDy = 1;  break;
+    default: return;
+  }
+  event.preventDefault();
+  bemViewOffset = { dx: bemViewOffset.dx + panDx, dy: bemViewOffset.dy + panDy };
+  renderBemMap();
+}
+
 function handleBemPointerDown(event) {
   if (!gameState?.bemGrid) return;
   if (bemDragPointerId !== null) return;
   bemDragPointerId = event.pointerId;
   bemDragStart = { x: event.clientX, y: event.clientY };
   bemDragHandled = false;
-  try { bemMapArea?.setPointerCapture(event.pointerId); } catch { /* ignore */ }
 }
 
 function handleBemPointerMove(event) {
@@ -2859,15 +2912,16 @@ function handleBemPointerMove(event) {
   bemDragPointerId = null;
   bemDragStart = null;
 
-  let moveDx = 0;
-  let moveDy = 0;
+  // Drag pans the view without moving the player
+  let panDx = 0;
+  let panDy = 0;
   if (adx >= ady) {
-    moveDx = dx > 0 ? 1 : -1;
+    panDx = dx > 0 ? -1 : 1;
   } else {
-    moveDy = dy > 0 ? 1 : -1;
+    panDy = dy > 0 ? -1 : 1;
   }
-  const { x: px, y: py } = gameState.bemPos;
-  bemMovePlayer(px + moveDx, py + moveDy);
+  bemViewOffset = { dx: bemViewOffset.dx + panDx, dy: bemViewOffset.dy + panDy };
+  renderBemMap();
 }
 
 function handleBemPointerUp(event) {

@@ -4429,6 +4429,44 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
   }
 }
 
+/* ── Mobile portrait: rotate game-reader-view to match the rotated game view ─── */
+
+@media (pointer: coarse) and (orientation: portrait) {
+  .game-reader-view {
+    top: calc((100vh - 100vw) / 2);
+    right: auto;
+    bottom: auto;
+    left: calc((100vw - 100vh) / 2);
+    width: 100vh;
+    height: 100vw;
+    padding: 12px;
+    transform: rotate(-90deg);
+    transform-origin: center center;
+  }
+
+  .game-reader-panel {
+    flex-direction: row;
+    max-height: calc(100vw - 24px);
+    overflow-y: hidden;
+  }
+
+  .game-reader-image-col {
+    padding: 16px 0 16px 16px;
+    overflow-y: auto;
+  }
+
+  .game-reader-image {
+    max-width: none;
+    max-height: calc(100vw - 48px);
+    width: auto;
+  }
+
+  .game-reader-info-col {
+    overflow-y: auto;
+    padding: 16px 16px 16px 0;
+  }
+}
+
 /* ── Mobile: sidebar and deck panel ──────────────────────────────────────────── */
 
 @media (max-width: 480px) {
@@ -4627,14 +4665,11 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
 /* ── BEM map area ────────────────────────────────────────────────────────────── */
 
 .bem-map-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: 1fr auto;
   width: 100%;
   height: 100%;
-  gap: 10px;
-  padding: 70px 16px 80px;
+  padding: 60px 0 80px;
   overflow: hidden;
   touch-action: none;
 }
@@ -4643,13 +4678,21 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
   display: none;
 }
 
-/* BEM grid: 3×3 cells around the player */
+/* BEM grid: 3×3 cells around the player — sized so center fills view and
+   adjacent cards peek in from the edges (≈ 1/3 visible each side). */
 .bem-map {
+  --bem-cell-w: min(
+    calc((100vw - 12px) * 0.6),
+    calc((100vh - 162px) * 0.6 * 1.4),
+    560px
+  );
+  --bem-cell-h: calc(var(--bem-cell-w) / 1.4);
   display: grid;
-  grid-template-columns: repeat(3, var(--bem-cell-w, 240px));
-  grid-template-rows: repeat(3, var(--bem-cell-h, 168px));
+  grid-template-columns: repeat(3, var(--bem-cell-w));
+  grid-template-rows: repeat(3, var(--bem-cell-h));
   gap: 6px;
-  flex-shrink: 0;
+  align-self: center;
+  justify-self: center;
 }
 
 /* Individual cells */
@@ -4807,19 +4850,6 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
   opacity: 0.6;
 }
 
-.bem-cell-dir-hint {
-  position: absolute;
-  top: 4px;
-  right: 6px;
-  font-size: 0.78rem;
-  font-weight: 800;
-  color: var(--accent);
-  opacity: 0.9;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  line-height: 1;
-}
-
 .bem-cell-hellride-hint {
   position: absolute;
   top: 4px;
@@ -4837,8 +4867,8 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
   align-items: center;
   justify-content: center;
   width: 100%;
-  flex-shrink: 0;
   padding: 0 16px;
+  padding-bottom: 6px;
 }
 
 .bem-view-card-btn {
@@ -4909,8 +4939,12 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
 
 @media (max-width: 680px) {
   .bem-map {
-    --bem-cell-w: min(28vw, 200px);
-    --bem-cell-h: min(20vw, 140px);
+    --bem-cell-w: min(
+      calc((100vw - 12px) * 0.6),
+      calc((100vh - 162px) * 0.6 * 1.4),
+      400px
+    );
+    --bem-cell-h: calc(var(--bem-cell-w) / 1.4);
     gap: 4px;
   }
 
@@ -4921,8 +4955,12 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
 
 @media (max-width: 480px) {
   .bem-map {
-    --bem-cell-w: min(30vw, 160px);
-    --bem-cell-h: min(21vw, 112px);
+    --bem-cell-w: min(
+      calc((100vw - 12px) * 0.6),
+      calc((100vh - 162px) * 0.6 * 1.4),
+      320px
+    );
+    --bem-cell-h: calc(var(--bem-cell-w) / 1.4);
     gap: 3px;
   }
 
@@ -4933,26 +4971,33 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
 
 @media (max-height: 520px) and (orientation: landscape) {
   .bem-map-area {
-    padding: 48px 8px 72px;
-    gap: 6px;
+    padding: 48px 0 68px;
   }
 
   .bem-map {
-    --bem-cell-w: min(22vh, 200px);
-    --bem-cell-h: min(15vh, 140px);
+    --bem-cell-w: min(
+      calc((100vw - 12px) * 0.6),
+      calc((100vh - 128px) * 0.6 * 1.4),
+      360px
+    );
+    --bem-cell-h: calc(var(--bem-cell-w) / 1.4);
   }
 }
 
 /* Mobile portrait: BEM grid rotates with the game view */
 @media (pointer: coarse) and (orientation: portrait) {
   .bem-map-area {
-    padding: 60px 12px 80px;
-    gap: 10px;
+    padding: 60px 0 80px;
   }
 
   .bem-map {
-    --bem-cell-w: min(26vh, 220px);
-    --bem-cell-h: min(18vh, 154px);
+    /* In rotated portrait mode, vw/vh are swapped relative to visual layout */
+    --bem-cell-w: min(
+      calc((100vh - 12px) * 0.6),
+      calc((100vw - 162px) * 0.6 * 1.4),
+      420px
+    );
+    --bem-cell-h: calc(var(--bem-cell-w) / 1.4);
   }
 
   .bem-view-card-btn {
