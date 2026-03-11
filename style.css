@@ -4773,6 +4773,50 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
               0 8px 24px rgba(0, 0, 0, 0.4) !important;
 }
 
+/* Placeholder cell — card was removed from this position */
+.bem-cell-placeholder {
+  border: 2px dashed rgba(192, 132, 252, 0.3);
+  background: color-mix(in srgb, var(--bg-elev-2) 25%, transparent);
+}
+
+.bem-cell-placeholder.bem-cell-player {
+  border: 2px dashed #4ade80 !important;
+  box-shadow: 0 0 0 2px rgba(74, 222, 128, 0.2),
+              0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+.bem-cell-placeholder-icon {
+  font-size: 2rem;
+  color: var(--text-faint);
+  opacity: 0.35;
+  user-select: none;
+}
+
+/* Phenomenon landing animation */
+@keyframes bemPhenomenonLand {
+  0%   { transform: scale(1) rotate(0deg);
+         box-shadow: 0 0 0 2px rgba(192,132,252,0.35), 0 8px 24px rgba(0,0,0,0.4); }
+  12%  { transform: scale(1.12) rotate(-1.5deg);
+         box-shadow: 0 0 0 5px rgba(192,132,252,0.9), 0 0 35px rgba(192,132,252,0.7); }
+  28%  { transform: scale(1.10) rotate(1.2deg);
+         box-shadow: 0 0 0 7px rgba(192,132,252,1.0), 0 0 55px rgba(192,132,252,0.85); }
+  40%  { transform: scale(1.11) rotate(-0.8deg);
+         box-shadow: 0 0 0 6px rgba(192,132,252,0.95), 0 0 48px rgba(192,132,252,0.75); }
+  56%  { transform: scale(1.08) rotate(0.5deg);
+         box-shadow: 0 0 0 4px rgba(192,132,252,0.7), 0 0 34px rgba(192,132,252,0.6); }
+  72%  { transform: scale(1.04) rotate(-0.3deg);
+         box-shadow: 0 0 0 3px rgba(192,132,252,0.55), 0 0 22px rgba(192,132,252,0.45); }
+  86%  { transform: scale(1.01);
+         box-shadow: 0 0 0 2.5px rgba(192,132,252,0.42), 0 0 14px rgba(192,132,252,0.36); }
+  100% { transform: scale(1) rotate(0deg);
+         box-shadow: 0 0 0 2px rgba(192,132,252,0.35), 0 8px 24px rgba(0,0,0,0.4); }
+}
+
+.bem-cell-phenomenon-landing {
+  z-index: 10 !important;
+  animation: bemPhenomenonLand 1.5s cubic-bezier(0.2, 0.8, 0.4, 1.0) forwards;
+}
+
 /* Planeswalk pending glow — cool blue for valid moves */
 .bem-cell-planeswalk-glow {
   border-color: #60a5fa !important;
@@ -4931,7 +4975,8 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
 }
 
 .game-view.bem-active .game-side-panel {
-  display: none;
+  right: auto;
+  left: 16px;
 }
 
 /* Planeswalk (TR) button shows phenomenon indicator in BEM */

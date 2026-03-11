@@ -39,7 +39,8 @@ import {
   getAllDecksForProfile,
   importProfileDecks,
   encodeProfileData,
-  decodeProfileData
+  decodeProfileData,
+  setPhenomenonAnimation
 } from "./deck.js";
 
 const STORAGE_KEY = "planechaseGalleryPreferences.v2";
@@ -77,6 +78,7 @@ const sidebarSearchSuggestions = document.getElementById("sidebar-search-suggest
 const fuzzySearchToggle = document.getElementById("fuzzy-search-toggle");
 const showHiddenToggle = document.getElementById("show-hidden-toggle");
 const inlineAutocompleteToggle = document.getElementById("inline-autocomplete-toggle");
+const phenomenonAnimationToggle = document.getElementById("phenomenon-animation-toggle");
 
 const sidebar = document.getElementById("sidebar");
 const sidebarContent = document.getElementById("sidebar-content");
@@ -143,7 +145,8 @@ const filters = {
   tags: new Set(),
   fuzzy: preferences.fuzzySearch,
   inlineAutocomplete: preferences.inlineAutocomplete,
-  showHidden: preferences.showHidden
+  showHidden: preferences.showHidden,
+  phenomenonAnimation: preferences.phenomenonAnimation
 };
 
 const displayState = {
@@ -199,6 +202,7 @@ async function init() {
         mainPanel?.classList.toggle("deck-panel-offset", panelOpen);
       }
     });
+    setPhenomenonAnimation(filters.phenomenonAnimation);
 
     prefetchAllTranscripts(allCards);
   } catch (error) {
@@ -245,6 +249,7 @@ function applyStoredPreferencesToUI() {
   fuzzySearchToggle.checked = filters.fuzzy;
   showHiddenToggle.checked = filters.showHidden;
   inlineAutocompleteToggle.checked = filters.inlineAutocomplete;
+  if (phenomenonAnimationToggle) phenomenonAnimationToggle.checked = filters.phenomenonAnimation;
   topSearch.value = filters.search;
   sidebarSearch.value = filters.search;
   topSearchGhost.value = "";
@@ -319,6 +324,12 @@ function bindEvents() {
     persistPreferences();
     updateInlineAutocomplete();
     applyFilters();
+  });
+
+  phenomenonAnimationToggle?.addEventListener("change", () => {
+    filters.phenomenonAnimation = phenomenonAnimationToggle.checked;
+    setPhenomenonAnimation(filters.phenomenonAnimation);
+    persistPreferences();
   });
 
   clearTagFiltersButton.addEventListener("click", () => {
@@ -2104,7 +2115,8 @@ function exportProfile() {
     theme: themeController.getTheme(),
     themePalette: themeController.getPalette(),
     pageSize: paginationState.pageSize,
-    paginationMode: paginationState.mode
+    paginationMode: paginationState.mode,
+    phenomenonAnimation: filters.phenomenonAnimation
   };
 
   const seed = encodeProfileData(prefsObj);
@@ -2135,6 +2147,10 @@ function importProfile() {
     if (typeof p.fuzzySearch === "boolean") filters.fuzzy = p.fuzzySearch;
     if (typeof p.inlineAutocomplete === "boolean") filters.inlineAutocomplete = p.inlineAutocomplete;
     if (typeof p.showHidden === "boolean") filters.showHidden = p.showHidden;
+    if (typeof p.phenomenonAnimation === "boolean") {
+      filters.phenomenonAnimation = p.phenomenonAnimation;
+      setPhenomenonAnimation(filters.phenomenonAnimation);
+    }
     if ([10, 20, 50, 100].includes(p.pageSize)) paginationState.pageSize = p.pageSize;
     if (["paginated", "infinite"].includes(p.paginationMode)) paginationState.mode = p.paginationMode;
 

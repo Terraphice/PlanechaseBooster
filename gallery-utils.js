@@ -9,7 +9,8 @@ export function loadPreferences(storageKey) {
     theme: "system",
     themePalette: "standard",
     pageSize: 20,
-    paginationMode: "paginated"
+    paginationMode: "paginated",
+    phenomenonAnimation: true
   };
 
   try {
@@ -29,7 +30,8 @@ export function loadPreferences(storageKey) {
         ? parsed.themePalette
         : defaults.themePalette,
       pageSize: [10, 20, 50, 100].includes(parsed.pageSize) ? parsed.pageSize : defaults.pageSize,
-      paginationMode: ["paginated", "infinite"].includes(parsed.paginationMode) ? parsed.paginationMode : defaults.paginationMode
+      paginationMode: ["paginated", "infinite"].includes(parsed.paginationMode) ? parsed.paginationMode : defaults.paginationMode,
+      phenomenonAnimation: parsed.phenomenonAnimation === undefined ? defaults.phenomenonAnimation : Boolean(parsed.phenomenonAnimation)
     };
   } catch {
     return defaults;
@@ -50,7 +52,8 @@ export function savePreferences(storageKey, displayState, filters, theme = "syst
         theme,
         themePalette,
         pageSize: paginationState.pageSize ?? 20,
-        paginationMode: paginationState.mode ?? "paginated"
+        paginationMode: paginationState.mode ?? "paginated",
+        phenomenonAnimation: filters.phenomenonAnimation
       })
     );
   } catch {
