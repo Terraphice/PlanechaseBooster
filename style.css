@@ -3885,7 +3885,7 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
 .game-reader-image-zoomed {
   position: fixed;
   inset: 0;
-  z-index: 10000;
+  z-index: 4000;
   background: rgba(0, 0, 0, 0.92);
   display: flex;
   align-items: center;

@@ -455,6 +455,12 @@ function bindDeckEvents() {
   });
 
   gameReaderImageWrap?.addEventListener("click", zoomReaderImage);
+  gameReaderImageWrap?.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      zoomReaderImage();
+    }
+  });
 
   gameReaderClose?.addEventListener("click", closeGameReaderView);
   gameReaderBackdrop?.addEventListener("click", closeGameReaderView);
@@ -657,14 +663,18 @@ function refreshDeckCardItem(cardKey) {
   if (incBtn) incBtn.disabled = count >= MAX_CARD_COUNT;
 }
 
+function applyOverlayCount(overlay, count) {
+  const countEl = overlay.querySelector(".deck-overlay-count");
+  if (countEl) countEl.textContent = count > 0 ? count : "";
+  overlay.classList.toggle("deck-has-count", count > 0);
+  const decBtn = overlay.querySelector(".deck-overlay-dec");
+  if (decBtn) decBtn.disabled = count === 0;
+}
+
 function updateCardOverlays(cardKey) {
   const count = deckCards().get(cardKey) || 0;
   for (const overlay of document.querySelectorAll(`.deck-card-overlay[data-card-key="${CSS.escape(cardKey)}"]`)) {
-    const countEl = overlay.querySelector(".deck-overlay-count");
-    if (countEl) countEl.textContent = count > 0 ? count : "";
-    overlay.classList.toggle("deck-has-count", count > 0);
-    const decBtn = overlay.querySelector(".deck-overlay-dec");
-    if (decBtn) decBtn.disabled = count === 0;
+    applyOverlayCount(overlay, count);
   }
 }
 
@@ -673,11 +683,7 @@ function updateAllCardOverlays() {
     const key = overlay.dataset.cardKey;
     if (!key) continue;
     const count = deckCards().get(key) || 0;
-    const countEl = overlay.querySelector(".deck-overlay-count");
-    if (countEl) countEl.textContent = count > 0 ? count : "";
-    overlay.classList.toggle("deck-has-count", count > 0);
-    const decBtn = overlay.querySelector(".deck-overlay-dec");
-    if (decBtn) decBtn.disabled = count === 0;
+    applyOverlayCount(overlay, count);
   }
 }
 
@@ -1451,13 +1457,21 @@ function renderReaderTranscriptMarkdown(text) {
 }
 
 function zoomReaderImage() {
-  gameReaderImageWrap?.classList.toggle("game-reader-image-zoomed");
+  const zoomed = gameReaderImageWrap?.classList.toggle("game-reader-image-zoomed");
+  if (gameReaderImageWrap) {
+    gameReaderImageWrap.setAttribute("aria-label", zoomed ? "Close zoomed image" : "Zoom card image");
+    gameReaderImageWrap.setAttribute("aria-pressed", zoomed ? "true" : "false");
+  }
 }
 
 function closeGameReaderView() {
   gameReaderView?.classList.add("hidden");
   document.body.classList.remove("game-reader-open");
   gameReaderImageWrap?.classList.remove("game-reader-image-zoomed");
+  if (gameReaderImageWrap) {
+    gameReaderImageWrap.setAttribute("aria-label", "Zoom card image");
+    gameReaderImageWrap.setAttribute("aria-pressed", "false");
+  }
 }
 
 function renderGameLibraryView() {
