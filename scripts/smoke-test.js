@@ -182,6 +182,37 @@ for (const file of requiredFiles) {
   }
 }
 
+// ── 8. Changelog DOM elements exist in index.html ────────────────────────────
+
+section("8. Changelog integration");
+
+const indexHtmlPath = join(ROOT, "index.html");
+try {
+  const indexHtml = readFileSync(indexHtmlPath, "utf8");
+  const changelogIds = [
+    "changelog-overlay",
+    "changelog-backdrop",
+    "changelog-close",
+    "changelog-dismiss",
+    "changelog-version",
+    "changelog-body",
+  ];
+  let missingIds = 0;
+  for (const id of changelogIds) {
+    if (indexHtml.includes(`id="${id}"`)) {
+      pass(`#${id} element exists in index.html`);
+    } else {
+      fail(`#${id} element missing from index.html — required by changelog.js`);
+      missingIds++;
+    }
+  }
+  if (missingIds === 0) {
+    pass("changelog.js DOM contract is satisfied by index.html");
+  }
+} catch (e) {
+  fail(`Failed to read index.html: ${e.message}`);
+}
+
 // ── Summary ───────────────────────────────────────────────────────────────────
 
 console.log(`\n${"─".repeat(40)}`);
