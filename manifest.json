@@ -1,7 +1,7 @@
 {
   "name": "Planar Atlas",
   "short_name": "Planar Atlas",
-  "description": "A feature-complete Planechase tool: searchable card gallery, deck builder, and game simulator.",
+  "description": "A feature-complete Planechase utility tool: searchable card gallery, deck builder, and game companion.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0f0e17",

@@ -6,7 +6,7 @@
 
 **A feature-complete Planechase tool for Magic: The Gathering**
 
-Browse a fully searchable gallery of every plane and phenomenon, build and share custom decks, and simulate entire Planechase games, all in a single installable web app with no accounts and no servers.
+Browse a fully searchable gallery of every plane and phenomenon, build and share custom decks, and run full Planechase game companions, all in a single installable web app with no accounts and no servers.
 
 [![Live Site](https://img.shields.io/badge/Live_Site-planechase.terraphice.dev-6366f1?style=for-the-badge&logo=firefox&logoColor=white)](https://planechase.terraphice.dev)
 [![PWA](https://img.shields.io/badge/PWA-Installable_&_Offline-22c55e?style=for-the-badge&logo=pwa&logoColor=white)](https://planechase.terraphice.dev)
@@ -22,7 +22,7 @@ Browse a fully searchable gallery of every plane and phenomenon, build and share
 
 ## Overview
 
-Planar Atlas started as a personal tool and grew into the most comprehensive Planechase companion available. Every card is rendered at full resolution with searchable transcripts, tagged by set and world, and ready to drop into a custom deck. The simulator handles the full game loop for both variants of Planechase, from the initial planeswalk through phenomena resolution and die rolls, with an undo stack so no accident is permanent.
+Planar Atlas started as a personal tool and grew into the most comprehensive Planechase companion available. Every card is rendered at full resolution with searchable transcripts, tagged by set and world, and ready to drop into a custom deck. The game companion handles the full game loop for both variants of Planechase, from the initial planeswalk through phenomena resolution and die rolls, with an undo stack so no accident is permanent.
 
 There is no backend, no login, and nothing to install. The entire application is a static web page that caches itself for offline use the first time it loads.
 
@@ -98,11 +98,11 @@ The deck builder supports multiple named deck slots saved to your browser's loca
 
 ---
 
-## Planechase Simulator
+## Planechase Companion
 
 ### Classic Mode
 
-The traditional shared-deck format. All players share a single combined planar deck and take turns planeswalking, rolling the planar die, and resolving phenomena. The simulator handles the full game loop from the opening shuffle through phenomena resolution, with an undo stack covering every action.
+The traditional shared-deck format. All players share a single combined planar deck and take turns planeswalking, rolling the planar die, and resolving phenomena. The game companion handles the full game loop from the opening shuffle through phenomena resolution, with an undo stack covering every action.
 
 ### Blind Eternities Map
 

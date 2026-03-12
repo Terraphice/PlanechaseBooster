@@ -3038,23 +3038,6 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
   border-radius: 4px;
 }
 
-.bem-cell-label {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 4px 6px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--text-soft);
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  background: color-mix(in srgb, var(--bg-elev-1) 85%, transparent);
-  backdrop-filter: blur(4px);
-}
-
 .bem-cell-facedown-icon {
   font-size: 1rem;
   color: var(--text-faint);
@@ -3157,10 +3140,6 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
     --bem-cell-h: calc(var(--bem-cell-w) / 1.4);
     gap: 4px;
   }
-
-  .bem-cell-label {
-    font-size: 0.65rem;
-  }
 }
 
 @media (max-width: 480px) {
@@ -3172,10 +3151,6 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
     );
     --bem-cell-h: calc(var(--bem-cell-w) / 1.4);
     gap: 3px;
-  }
-
-  .bem-cell-label {
-    font-size: 0.58rem;
   }
 }
 

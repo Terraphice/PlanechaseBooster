@@ -535,11 +535,6 @@ export function renderBemMap() {
         img.alt = cell.card.displayName;
         div.appendChild(img);
 
-        const lbl = document.createElement("div");
-        lbl.className = "bem-cell-label";
-        lbl.textContent = cell.card.displayName;
-        div.appendChild(lbl);
-
         if (isPlayer) {
           div.classList.add("bem-cell-player");
           if (cell.card.type === "Phenomenon") {
