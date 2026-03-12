@@ -1,5 +1,5 @@
-// CACHE_VERSION is automatically updated by .github/workflows/release.yml on each release.
-// Do not edit manually — it will be overwritten on the next publish.
+// CACHE_VERSION is automatically updated on each push to main.
+// Do not edit manually — it will be overwritten by CI.
 const CACHE_VERSION = "1.0.0";
 const CACHE_NAME = `planar-atlas-${CACHE_VERSION}`;
 

@@ -1,0 +1,34 @@
+name: Update Service Worker Cache Version
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - ".github/**"
+
+jobs:
+  cache-bust:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update service worker cache version
+        run: |
+          SHORT_SHA="${GITHUB_SHA::8}"
+          sed -i "s|^const CACHE_VERSION = .*|const CACHE_VERSION = \"${SHORT_SHA}\";|" sw.js
+
+      - name: Commit updated service worker
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add sw.js
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: update service worker cache key [skip ci]"
+            git push
+          fi

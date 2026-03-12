@@ -27,16 +27,11 @@ jobs:
         run: |
           printf '{"version":"%s"}\n' "${{ steps.version.outputs.version }}" > version.json
 
-      - name: Update service worker cache version
-        run: |
-          VERSION="${{ steps.version.outputs.version }}"
-          sed -i "s|^const CACHE_VERSION = .*|const CACHE_VERSION = \"${VERSION}\";|" sw.js
-
       - name: Commit updated files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add version.json sw.js
+          git add version.json
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
