@@ -1335,7 +1335,7 @@ button.active-filter-pill:disabled {
 
 .modal-header-actions {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 10px;
   flex-shrink: 0;
 }
@@ -1745,7 +1745,10 @@ button.active-filter-pill:disabled {
   }
 
   .modal-header-actions {
-    justify-content: space-between;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
   }
 
   .modal-info-column,

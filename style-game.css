@@ -1876,20 +1876,6 @@
     font-size: 0.82rem;
   }
 
-  .game-side-panel {
-    position: relative;
-    right: auto;
-    top: auto;
-    transform: none;
-    flex-direction: column;
-    width: 90px;
-    height: 100vh;
-    justify-content: center;
-    padding: 8px;
-    background: color-mix(in srgb, var(--bg-elev-1) 80%, transparent);
-    border-left: 1px solid var(--border-soft);
-  }
-
   .game-tl-group {
     top: 8px;
     left: 8px;
@@ -1924,12 +1910,6 @@
 
   .game-menu-br { bottom: 70px; }
   .game-menu-bl { bottom: 70px; }
-
-  .game-view.bem-active .game-side-panel {
-    order: 2;
-    border-left: 1px solid var(--border-soft);
-    border-right: none;
-  }
 }
 
 /* ── Mobile portrait: rotate game view to landscape ──────────────────────────── */
@@ -2021,6 +2001,10 @@
   .game-reveal-panel {
     max-height: calc(100vw - 32px);
     width: min(600px, calc(100vh - 32px));
+  }
+
+  .game-side-panel {
+    max-height: calc(100vw - 120px);
   }
 }
 
@@ -2439,42 +2423,43 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
   }
 }
 
-/* ── Mobile portrait: game-reader-view stays in natural portrait orientation ─── */
+/* ── Mobile portrait: game-reader-view rotates with game view ─── */
 
 @media (pointer: coarse) and (orientation: portrait) {
   .game-reader-view {
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-    padding: 12px;
-    transform: none;
+    top: calc((100vh - 100vw) / 2);
+    right: auto;
+    bottom: auto;
+    left: calc((100vw - 100vh) / 2);
+    width: 100vh;
+    height: 100vw;
+    padding: 16px;
+    transform: rotate(-90deg);
+    transform-origin: center center;
   }
 
   .game-reader-panel {
-    flex-direction: column;
-    width: min(560px, calc(100vw - 24px));
-    max-height: calc(100vh - 24px);
-    overflow-y: auto;
+    flex-direction: row;
+    width: min(960px, calc(100vh - 32px));
+    max-height: calc(100vw - 32px);
+    overflow-y: hidden;
   }
 
   .game-reader-image-col {
-    padding: 20px 20px 0;
+    padding: 20px 0 20px 20px;
     justify-content: center;
     overflow-y: visible;
   }
 
   .game-reader-image {
-    max-width: min(380px, calc(100vw - 64px));
-    max-height: 38vh;
+    max-width: min(420px, 40vh);
+    max-height: calc(100vw - 64px);
     width: auto;
   }
 
   .game-reader-info-col {
-    overflow-y: visible;
-    padding: 12px 20px 20px;
+    overflow-y: auto;
+    padding: 20px 20px 20px 0;
   }
 
   .game-reader-zoom-img {
