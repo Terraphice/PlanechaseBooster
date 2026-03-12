@@ -55,6 +55,7 @@ let easyPlaneswalk = false;
 let phenomenonAnimationEnabled = true;
 let riskyHellridingEnabled = true;
 let smoothTravelEnabled = false;
+let bemEdgePlaceholdersEnabled = false;
 
 // ── DOM references (only what deck.js needs directly) ────────────────────────
 
@@ -393,6 +394,10 @@ export function setSmoothTravel(enabled) {
   smoothTravelEnabled = Boolean(enabled);
 }
 
+export function setBemEdgePlaceholders(enabled) {
+  bemEdgePlaceholdersEnabled = Boolean(enabled);
+}
+
 export function syncGameHash() {
   if (window.location.hash === "#play") {
     if (!gameActive && getDeckTotal() > 0) startGame();
@@ -665,6 +670,7 @@ export function initDeck({ cards, showToast, onDeckChange }) {
     getPhenomenonAnimationEnabled: () => phenomenonAnimationEnabled,
     getRiskyHellridingEnabled: () => riskyHellridingEnabled,
     getSmoothTravelEnabled: () => smoothTravelEnabled,
+    getBemEdgePlaceholders: () => bemEdgePlaceholdersEnabled,
     getEasyPlaneswalk: () => easyPlaneswalk,
     showToast: (msg) => showToastFn?.(msg),
     renderGameSidePanel,

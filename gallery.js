@@ -36,7 +36,8 @@ import {
   closeGameReaderView,
   closeTopGameOverlay,
   setRiskyHellriding,
-  setSmoothTravel
+  setSmoothTravel,
+  setBemEdgePlaceholders
 } from "./deck.js";
 
 import {
@@ -79,6 +80,7 @@ const inlineAutocompleteToggle = document.getElementById("inline-autocomplete-to
 const phenomenonAnimationToggle = document.getElementById("phenomenon-animation-toggle");
 const riskyHellridingToggle = document.getElementById("risky-hellriding-toggle");
 const smoothTravelToggle = document.getElementById("smooth-travel-toggle");
+const bemEdgePlaceholdersToggle = document.getElementById("bem-edge-placeholders-toggle");
 
 const sidebar = document.getElementById("sidebar");
 const sidebarContent = document.getElementById("sidebar-content");
@@ -156,6 +158,7 @@ const stateManager = initStateManager({
   phenomenonAnimationToggle,
   riskyHellridingToggle,
   smoothTravelToggle,
+  bemEdgePlaceholdersToggle,
   viewModeSelect,
   groupBySelect,
   groupTagPickerWrap
@@ -339,6 +342,7 @@ async function init() {
     setPhenomenonAnimation(filters.phenomenonAnimation);
     setRiskyHellriding(filters.riskyHellriding);
     setSmoothTravel(filters.smoothTravel);
+    setBemEdgePlaceholders(filters.bemEdgePlaceholders);
 
     initChangelog();
 
@@ -564,8 +568,10 @@ function executeClearAll() {
   filters.showHidden = false;
   filters.riskyHellriding = true;
   setRiskyHellriding(true);
-  filters.smoothTravel = false;
-  setSmoothTravel(false);
+  filters.smoothTravel = true;
+  setSmoothTravel(true);
+  filters.bemEdgePlaceholders = false;
+  setBemEdgePlaceholders(false);
 
   displayState.viewMode = "grid";
   displayState.groupBy = "none";
@@ -608,7 +614,8 @@ function exportProfile() {
     paginationMode: paginationState.mode,
     phenomenonAnimation: filters.phenomenonAnimation,
     riskyHellriding: filters.riskyHellriding,
-    smoothTravel: filters.smoothTravel
+    smoothTravel: filters.smoothTravel,
+    bemEdgePlaceholders: filters.bemEdgePlaceholders
   };
 
   const seed = encodeProfileData(prefsObj);
@@ -650,6 +657,10 @@ function importProfile() {
     if (typeof p.smoothTravel === "boolean") {
       filters.smoothTravel = p.smoothTravel;
       setSmoothTravel(filters.smoothTravel);
+    }
+    if (typeof p.bemEdgePlaceholders === "boolean") {
+      filters.bemEdgePlaceholders = p.bemEdgePlaceholders;
+      setBemEdgePlaceholders(filters.bemEdgePlaceholders);
     }
     if ([10, 20, 50, 100].includes(p.pageSize)) paginationState.pageSize = p.pageSize;
     if (["paginated", "infinite"].includes(p.paginationMode)) paginationState.mode = p.paginationMode;
@@ -749,6 +760,12 @@ function bindEvents() {
   smoothTravelToggle?.addEventListener("change", () => {
     filters.smoothTravel = smoothTravelToggle.checked;
     setSmoothTravel(filters.smoothTravel);
+    stateManager.persistPreferences();
+  });
+
+  bemEdgePlaceholdersToggle?.addEventListener("change", () => {
+    filters.bemEdgePlaceholders = bemEdgePlaceholdersToggle.checked;
+    setBemEdgePlaceholders(filters.bemEdgePlaceholders);
     stateManager.persistPreferences();
   });
 

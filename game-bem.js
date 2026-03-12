@@ -491,9 +491,8 @@ export function renderBemMap() {
       }
 
       if (!cell) {
-        const inActiveBounds = gx >= actMinGx && gx <= actMaxGx && gy >= actMinGy && gy <= actMaxGy;
         const inEdgeBounds = gx >= edgeMinGx && gx <= edgeMaxGx && gy >= edgeMinGy && gy <= edgeMaxGy;
-        if (inEdgeBounds && !inActiveBounds) {
+        if (ctx.getBemEdgePlaceholders?.() && inEdgeBounds) {
           div.classList.add("bem-cell-edge");
           const img = document.createElement("img");
           img.className = "bem-cell-img";
@@ -684,7 +683,7 @@ export function toggleBemPlaneswalkMode() {
   const gameState = ctx.getGameState();
   if (!gameState?.bemGrid) return;
   const isPanning = bemViewOffset.dx !== 0 || bemViewOffset.dy !== 0;
-  if (isPanning) {
+  if (isPanning && bemPlaneswalkPending) {
     const nx = gameState.bemPos.x + bemViewOffset.dx;
     const ny = gameState.bemPos.y + bemViewOffset.dy;
     const cell = gameState.bemGrid.get(bemKey(nx, ny));
