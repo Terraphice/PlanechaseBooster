@@ -32,6 +32,8 @@ let revealedCards = [];
 let revealViewMode = "list";
 let readerOpenedFromReveal = false;
 let readerOpenedFromLibrary = false;
+let readerOpenedFromExile = false;
+let exileViewMode = "list";
 let readerCardPath = "";
 let bemZoomLevel = "default";
 let pendingGameMode = null;
@@ -107,6 +109,17 @@ const dieChaosPopup = document.getElementById("die-chaos-popup");
 const dieChaosBackdrop = document.getElementById("die-chaos-backdrop");
 const dieChaosCloseBtn = document.getElementById("die-chaos-close-btn");
 const classicViewCardBtn = document.getElementById("classic-view-card-btn");
+const gameExileOverlay = document.getElementById("game-exile-overlay");
+const gameExileBackdrop = document.getElementById("game-exile-backdrop");
+const gameExileCardsContainer = document.getElementById("game-exile-cards-container");
+const gameExileClose = document.getElementById("game-exile-close");
+const gameExileTitleCount = document.getElementById("game-exile-title-count");
+const gameExileShuffleIn = document.getElementById("game-exile-shuffle-in");
+const gameExileTopAll = document.getElementById("game-exile-top-all");
+const gameExileBottomAll = document.getElementById("game-exile-bottom-all");
+const gameExileListBtn = document.getElementById("game-exile-list-btn");
+const gameExileGalleryBtn = document.getElementById("game-exile-gallery-btn");
+const gameToolsExileToggle = document.getElementById("game-tools-exile-toggle");
 
 // ── State accessors (needed by game-state.js via context) ─────────────────────
 
@@ -246,6 +259,11 @@ export function syncGameToolsState(remainingCount) {
   if (gameToolsShuffle) gameToolsShuffle.disabled = !gameState;
   if (gameLibraryToggle) gameLibraryToggle.disabled = !gameState;
   if (gameToolsRevealToggle) gameToolsRevealToggle.disabled = !gameState;
+  if (gameToolsExileToggle) {
+    gameToolsExileToggle.disabled = !gameState;
+    const exileCount = gameState?.exiled?.length ?? 0;
+    gameToolsExileToggle.textContent = `View Exile Zone (${exileCount})`;
+  }
   ctx.autoSaveGameState();
 }
 
@@ -410,6 +428,10 @@ export function closeTopGameOverlay() {
     closeRevealOverlay();
     return true;
   }
+  if (!gameExileOverlay?.classList.contains("hidden")) {
+    closeExileOverlay();
+    return true;
+  }
   if (!gameToolsMenu?.classList.contains("hidden") || !gameOptionsMenu?.classList.contains("hidden")) {
     closeAllGameMenus();
     return true;
@@ -474,6 +496,10 @@ export function closeGameReaderView() {
   if (readerOpenedFromLibrary) {
     gameToolsMenu?.classList.remove("hidden");
     readerOpenedFromLibrary = false;
+  }
+  if (readerOpenedFromExile) {
+    gameExileOverlay?.classList.remove("hidden");
+    readerOpenedFromExile = false;
   }
 }
 
@@ -764,6 +790,203 @@ function setRevealViewMode(mode) {
 }
 
 // ── Library / search view ─────────────────────────────────────────────────────
+
+// ── Exile zone overlay ────────────────────────────────────────────────────────
+
+/** Opens the exile zone overlay to browse exiled cards. */
+export function openExileOverlay() {
+  const gameState = ctx.getGameState();
+  if (!gameState) return;
+  closeAllGameMenus();
+  renderExileCards();
+  updateExileFooter();
+  gameExileOverlay?.classList.remove("hidden");
+}
+
+/** Closes the exile zone overlay without changing any state. */
+export function closeExileOverlay() {
+  gameExileOverlay?.classList.add("hidden");
+}
+
+/** Re-renders the exiled cards in the current view mode (list or gallery). */
+export function renderExileCards() {
+  const gameState = ctx.getGameState();
+  if (!gameExileCardsContainer) return;
+  gameExileCardsContainer.innerHTML = "";
+  const exiled = gameState?.exiled ?? [];
+  if (gameExileTitleCount) gameExileTitleCount.textContent = exiled.length;
+
+  if (exiled.length === 0) {
+    gameExileCardsContainer.innerHTML = `<p class="game-reveal-empty">No cards in the exile zone.</p>`;
+    updateExileFooter();
+    return;
+  }
+
+  const isGallery = exileViewMode === "gallery";
+
+  for (let i = 0; i < exiled.length; i++) {
+    const card = exiled[i];
+    const item = document.createElement("div");
+
+    if (isGallery) {
+      item.className = "game-reveal-gallery-item";
+      item.innerHTML = `
+        <button class="game-reveal-thumb-btn" data-action="info" data-exile-idx="${i}" type="button" aria-label="View ${escapeHtml(card.displayName)} details">
+          <img class="game-reveal-thumb" src="${card.thumbPath}" alt="${escapeHtml(card.displayName)}" />
+        </button>
+        <div class="game-reveal-card-name">${escapeHtml(card.displayName)}</div>
+        <div class="game-reveal-card-type">${escapeHtml(card.type)}</div>
+        <div class="game-reveal-card-actions">
+          <button class="game-reveal-action-btn" data-action="planeswalk" data-exile-idx="${i}" title="Planeswalk to this card" type="button">▶ Planeswalk</button>
+          <button class="game-reveal-action-btn" data-action="active" data-exile-idx="${i}" title="Add to active cards" type="button">+ Active</button>
+          <button class="game-reveal-action-btn" data-action="top" data-exile-idx="${i}" title="Put on top of library" type="button">↑ Top</button>
+          <button class="game-reveal-action-btn" data-action="bottom" data-exile-idx="${i}" title="Put on bottom of library" type="button">↓ Bottom</button>
+          <button class="game-reveal-action-btn" data-action="shuffle" data-exile-idx="${i}" title="Shuffle into library" type="button">↺ Shuffle</button>
+        </div>
+      `;
+    } else {
+      item.className = "game-reveal-list-item";
+      item.innerHTML = `
+        <div class="game-reveal-list-info">
+          <span class="game-reveal-list-name">${escapeHtml(card.displayName)}</span>
+          <span class="game-reveal-list-type">${escapeHtml(card.type)}</span>
+        </div>
+        <div class="game-reveal-card-actions game-reveal-list-actions">
+          <button class="game-reveal-action-btn" data-action="info" data-exile-idx="${i}" title="View card details" type="button">ℹ</button>
+          <button class="game-reveal-action-btn" data-action="planeswalk" data-exile-idx="${i}" title="Planeswalk to this card" type="button">▶</button>
+          <button class="game-reveal-action-btn" data-action="active" data-exile-idx="${i}" title="Add to active cards" type="button">+</button>
+          <button class="game-reveal-action-btn" data-action="top" data-exile-idx="${i}" title="Put on top of library" type="button">↑</button>
+          <button class="game-reveal-action-btn" data-action="bottom" data-exile-idx="${i}" title="Put on bottom of library" type="button">↓</button>
+          <button class="game-reveal-action-btn" data-action="shuffle" data-exile-idx="${i}" title="Shuffle into library" type="button">↺</button>
+        </div>
+      `;
+    }
+
+    item.addEventListener("click", handleExileCardAction);
+    gameExileCardsContainer.appendChild(item);
+  }
+}
+
+function handleExileCardAction(event) {
+  const gameState = ctx.getGameState();
+  if (!gameState) return;
+  const btn = event.target.closest("[data-action][data-exile-idx]");
+  if (!btn) return;
+  const action = btn.dataset.action;
+  const exileIdx = parseInt(btn.dataset.exileIdx, 10);
+  if (isNaN(exileIdx) || exileIdx < 0 || exileIdx >= gameState.exiled.length) return;
+
+  if (action === "info") {
+    gameExileOverlay?.classList.add("hidden");
+    readerOpenedFromExile = true;
+    openGameReaderView(gameState.exiled[exileIdx], []);
+    return;
+  }
+
+  ctx.pushGameHistory();
+  const card = gameState.exiled.splice(exileIdx, 1)[0];
+
+  switch (action) {
+    case "planeswalk":
+      if (gameState.mode === "bem") {
+        const key = bemKey(gameState.bemPos.x, gameState.bemPos.y);
+        const cell = gameState.bemGrid.get(key);
+        if (cell?.card) gameState.remaining.push(cell.card);
+        gameState.bemGrid.set(key, { card, faceUp: true });
+        ctx.showToast(`Planeswalked to ${card.displayName}.`);
+      } else {
+        gameState.remaining.push(...gameState.activePlanes);
+        gameState.activePlanes = [card];
+        gameState.focusedIndex = 0;
+        ctx.showToast(`Planeswalked to ${card.displayName}.`);
+      }
+      break;
+    case "active":
+      gameState.activePlanes.push(card);
+      ctx.showToast(`${card.displayName} added simultaneously.`);
+      break;
+    case "top":
+      gameState.remaining.unshift(card);
+      ctx.showToast(`${card.displayName} put on top.`);
+      break;
+    case "bottom":
+      gameState.remaining.push(card);
+      ctx.showToast(`${card.displayName} put on bottom.`);
+      break;
+    case "shuffle":
+      gameState.remaining.push(card);
+      gameState.remaining = shuffleArray(gameState.remaining);
+      ctx.showToast(`${card.displayName} shuffled into library.`);
+      break;
+  }
+
+  if (gameState.mode === "bem") {
+    renderBemMap();
+    updateBemInfoBar();
+    syncBemTrButton();
+  } else {
+    updateGameView();
+  }
+  renderExileCards();
+  updateExileFooter();
+  syncGameToolsState(gameState.remaining.length);
+}
+
+/**
+ * Handles bulk actions on all currently exiled cards.
+ * @param {"shuffle" | "top" | "bottom"} action
+ */
+export function handleExileBulkAction(action) {
+  const gameState = ctx.getGameState();
+  if (!gameState) return;
+  if (gameState.exiled.length === 0) {
+    closeExileOverlay();
+    return;
+  }
+  ctx.pushGameHistory();
+  const count = gameState.exiled.length;
+  const cards = gameState.exiled.splice(0, count);
+  switch (action) {
+    case "shuffle":
+      gameState.remaining.push(...cards);
+      gameState.remaining = shuffleArray(gameState.remaining);
+      ctx.showToast(`${count} card(s) shuffled back into library.`);
+      break;
+    case "top":
+      gameState.remaining.unshift(...cards);
+      ctx.showToast(`${count} card(s) put on top of library.`);
+      break;
+    case "bottom":
+      gameState.remaining.push(...cards);
+      ctx.showToast(`${count} card(s) put on bottom of library.`);
+      break;
+  }
+  closeExileOverlay();
+  updateGameView();
+  syncGameToolsState(gameState.remaining.length);
+}
+
+/** Updates the enabled/disabled state of exile footer bulk-action buttons. */
+export function updateExileFooter() {
+  const gameState = ctx.getGameState();
+  const hasCards = (gameState?.exiled?.length ?? 0) > 0;
+  if (gameExileShuffleIn) gameExileShuffleIn.disabled = !hasCards;
+  if (gameExileTopAll) gameExileTopAll.disabled = !hasCards;
+  if (gameExileBottomAll) gameExileBottomAll.disabled = !hasCards;
+}
+
+/**
+ * Switches the exile overlay between list and gallery display modes.
+ * @param {"list" | "gallery"} mode
+ */
+function setExileViewMode(mode) {
+  exileViewMode = mode;
+  gameExileCardsContainer?.classList.toggle("game-reveal-mode-gallery", mode === "gallery");
+  gameExileCardsContainer?.classList.toggle("game-reveal-mode-list", mode === "list");
+  if (gameExileListBtn) gameExileListBtn.classList.toggle("active", mode === "list");
+  if (gameExileGalleryBtn) gameExileGalleryBtn.classList.toggle("active", mode === "gallery");
+  renderExileCards();
+}
 
 /** Renders the ordered library card list inside the tools menu. */
 export function renderGameLibraryView() {
@@ -1296,6 +1519,15 @@ function bindGameUIEvents() {
   gameRevealExileAll?.addEventListener("click", () => handleRevealBulkAction("exile"));
   gameRevealListBtn?.addEventListener("click", () => setRevealViewMode("list"));
   gameRevealGalleryBtn?.addEventListener("click", () => setRevealViewMode("gallery"));
+
+  gameToolsExileToggle?.addEventListener("click", () => openExileOverlay());
+  gameExileClose?.addEventListener("click", closeExileOverlay);
+  gameExileBackdrop?.addEventListener("click", closeExileOverlay);
+  gameExileShuffleIn?.addEventListener("click", () => handleExileBulkAction("shuffle"));
+  gameExileTopAll?.addEventListener("click", () => handleExileBulkAction("top"));
+  gameExileBottomAll?.addEventListener("click", () => handleExileBulkAction("bottom"));
+  gameExileListBtn?.addEventListener("click", () => setExileViewMode("list"));
+  gameExileGalleryBtn?.addEventListener("click", () => setExileViewMode("gallery"));
 
   gameCardImageBtn?.addEventListener("click", () => {
     const gameState = ctx.getGameState();
