@@ -18,6 +18,7 @@ import {
   bemKey,
   buildBemCardActions,
   buildBemAdjacentCardActions,
+  buildBemSideCardActions,
 } from "./game-bem.js";
 
 // ── Constants ─────────────────────────────────────────────────────────────────
@@ -211,6 +212,40 @@ export function renderGameSidePanel(activePlanes, focusedIndex) {
   const isBem = gameState?.mode === "bem";
 
   if (isBem) {
+    if (activePlanes.length === 0) return;
+
+    const cycleBtn = document.createElement("button");
+    cycleBtn.type = "button";
+    cycleBtn.className = "game-cycle-btn";
+    cycleBtn.setAttribute("aria-label", "Cycle active planes");
+    cycleBtn.innerHTML = `<span class="game-cycle-icon" aria-hidden="true">↻</span>`;
+    cycleBtn.addEventListener("click", () => {
+      const gs = ctx.getGameState();
+      if (!gs?.bemGrid || !gs?.bemPos || !gs.activePlanes.length) return;
+      ctx.pushGameHistory();
+      const nextIdx = Math.max(0, gs.focusedIndex) % gs.activePlanes.length;
+      const sideCard = gs.activePlanes[nextIdx];
+      const key = bemKey(gs.bemPos.x, gs.bemPos.y);
+      const cell = gs.bemGrid.get(key);
+      if (cell?.card) {
+        gs.activePlanes[nextIdx] = cell.card;
+        cell.card = sideCard;
+      } else if (cell) {
+        gs.activePlanes.splice(nextIdx, 1);
+        cell.card = sideCard;
+        cell.placeholder = false;
+      } else {
+        gs.bemGrid.set(key, { card: sideCard, faceUp: true });
+        gs.activePlanes.splice(nextIdx, 1);
+      }
+      gs.focusedIndex = gs.activePlanes.length > 0 ? (nextIdx + 1) % gs.activePlanes.length : 0;
+      renderBemMap();
+      updateBemInfoBar();
+      syncBemTrButton();
+      ctx.showToast(`${sideCard.displayName} is now the active plane.`);
+    });
+    gameSidePanel.appendChild(cycleBtn);
+
     for (let i = 0; i < activePlanes.length; i++) {
       const card = activePlanes[i];
       const idx = i;
@@ -224,7 +259,7 @@ export function renderGameSidePanel(activePlanes, focusedIndex) {
       `;
       sideCard.addEventListener("click", () => {
         if (!ctx.getGameState()) return;
-        openGameReaderView(card, buildSideCardActions(idx));
+        openGameReaderView(card, buildBemSideCardActions(idx));
       });
       gameSidePanel.appendChild(sideCard);
     }

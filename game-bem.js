@@ -746,3 +746,99 @@ export function buildBemAdjacentCardActions(nx, ny) {
     }
   ];
 }
+
+export function buildBemSideCardActions(sideIdx) {
+  const { getGameState, closeGameReaderView, showToast } = ctx;
+
+  return [
+    {
+      label: "Make Main",
+      action: () => {
+        const gameState = getGameState();
+        if (!gameState?.bemGrid || !gameState?.bemPos) return;
+        ctx.pushHistory?.();
+        const sideCard = gameState.activePlanes.splice(sideIdx, 1)[0];
+        if (!sideCard) return;
+        const key = bemKey(gameState.bemPos.x, gameState.bemPos.y);
+        const cell = gameState.bemGrid.get(key);
+        if (cell?.card) {
+          gameState.activePlanes.splice(sideIdx, 0, cell.card);
+          cell.card = sideCard;
+        } else if (cell) {
+          cell.card = sideCard;
+          cell.placeholder = false;
+        } else {
+          gameState.bemGrid.set(key, { card: sideCard, faceUp: true });
+        }
+        gameState.focusedIndex = Math.min(gameState.focusedIndex, Math.max(0, gameState.activePlanes.length - 1));
+        closeGameReaderView();
+        renderBemMap();
+        updateBemInfoBar();
+        syncBemTrButton();
+        showToast(`${sideCard.displayName} is now the active plane.`);
+      }
+    },
+    {
+      label: "Return to Top",
+      action: () => {
+        const gameState = getGameState();
+        if (!gameState) return;
+        ctx.pushHistory?.();
+        const card = gameState.activePlanes.splice(sideIdx, 1)[0];
+        if (!card) return;
+        gameState.remaining.unshift(card);
+        gameState.focusedIndex = Math.min(gameState.focusedIndex, Math.max(0, gameState.activePlanes.length - 1));
+        closeGameReaderView();
+        updateBemInfoBar();
+        showToast(`${card.displayName} returned to top.`);
+      }
+    },
+    {
+      label: "Return to Bottom",
+      action: () => {
+        const gameState = getGameState();
+        if (!gameState) return;
+        ctx.pushHistory?.();
+        const card = gameState.activePlanes.splice(sideIdx, 1)[0];
+        if (!card) return;
+        gameState.remaining.push(card);
+        gameState.focusedIndex = Math.min(gameState.focusedIndex, Math.max(0, gameState.activePlanes.length - 1));
+        closeGameReaderView();
+        updateBemInfoBar();
+        showToast(`${card.displayName} returned to bottom.`);
+      }
+    },
+    {
+      label: "Shuffle Into Library",
+      action: () => {
+        const gameState = getGameState();
+        if (!gameState) return;
+        ctx.pushHistory?.();
+        const card = gameState.activePlanes.splice(sideIdx, 1)[0];
+        if (!card) return;
+        gameState.remaining.push(card);
+        gameState.remaining = shuffleArray(gameState.remaining);
+        gameState.focusedIndex = Math.min(gameState.focusedIndex, Math.max(0, gameState.activePlanes.length - 1));
+        closeGameReaderView();
+        updateBemInfoBar();
+        showToast(`${card.displayName} shuffled into library.`);
+      }
+    },
+    {
+      label: "Exile",
+      danger: true,
+      action: () => {
+        const gameState = getGameState();
+        if (!gameState) return;
+        ctx.pushHistory?.();
+        const card = gameState.activePlanes.splice(sideIdx, 1)[0];
+        if (!card) return;
+        gameState.exiled.push(card);
+        gameState.focusedIndex = Math.min(gameState.focusedIndex, Math.max(0, gameState.activePlanes.length - 1));
+        closeGameReaderView();
+        updateBemInfoBar();
+        showToast(`${card.displayName} exiled.`);
+      }
+    }
+  ];
+}
