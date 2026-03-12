@@ -139,6 +139,8 @@ export function createModalManager({
     modalType.textContent = card.type;
     modalSourceLink.href = card.imagePath;
 
+    const isOfficial = card.normalizedTags.some((t) => t.includes("official"));
+    modalScryfallLink.classList.toggle("hidden", !isOfficial);
     const scryfallQuery = encodeURIComponent(`"${card.displayName}"`);
     modalScryfallLink.href = `https://scryfall.com/search?q=${scryfallQuery}&utm_source=planar-atlas&utm_medium=referral`;
 
