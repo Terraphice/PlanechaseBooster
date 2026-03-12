@@ -25,7 +25,7 @@ jobs:
 
       - name: Update version.json
         run: |
-          echo '{"version":"${{ steps.version.outputs.version }}"}' > version.json
+          printf '{"version":"%s"}\n' "${{ steps.version.outputs.version }}" > version.json
 
       - name: Update service worker cache version
         run: |

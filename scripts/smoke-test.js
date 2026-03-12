@@ -115,6 +115,7 @@ if (missingTranscripts === 0) {
 
 section("5. Per-card JSON file check");
 
+// This function must match the logic in sync-cards.js getCardJsonFilename().
 function getCardJsonFilename(filename) {
   const withoutExtension = filename.replace(/\.[^.]+$/, "");
   const withoutPrefix = withoutExtension.replace(/^(Plane|Phenomenon)[-_ ]+/i, "");
