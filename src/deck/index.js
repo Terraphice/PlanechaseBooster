@@ -7,7 +7,7 @@ import {
   initBemGame, startBemGame, bemKey, bemMovePlayer, bemResolvePhenomenon, bemFillPlaceholder,
   syncBemTrButton, handleBemCellClick, toggleBemPlaneswalkMode, handleBemArrowKey,
   handleBemPointerDown, handleBemPointerMove, handleBemPointerUp,
-  buildBemCardActions, getBemPlaneswalkPending, getBemViewOffset, resetBemState, getBemAnimating
+  buildBemCardActions, getBemPlaneswalkPending, getBemViewOffset
 } from "../game/bem.js";
 
 import {
@@ -19,14 +19,14 @@ import {
 import {
   initGameUI, updateGameView, showGamePlaceholder, updateCostDisplay, syncGameToolsState,
   closeAllGameMenus, closePlaneswalkerPopup, closeChaosPopup, executePlaneswalkerAction,
-  resetDieIcon, openGameReaderView, closeGameReaderView, closeTopGameOverlay,
+  resetDieIcon, openGameReaderView, closeGameReaderView,
   renderGameSidePanel, renderRevealCards, updateRevealFooter, gameRollDie,
-  toggleGameToolsMenu, maybeShowTutorial, clearTutorialFlags, loadBemZoom,
+  toggleGameToolsMenu, maybeShowTutorial, loadBemZoom,
   getRevealedCards, setRevealedCards, setReaderOpenedFromReveal, updatePhenomenonBanner
 } from "../game/ui.js";
 
 import {
-  initDeckPanel, openDeckPanel, closeDeckPanel, isDeckPanelOpen, setModalCardKey,
+  initDeckPanel, openDeckPanel, closeDeckPanel,
   updateDeckButton, renderDeckList, renderDeckSlotDropdown, updateCardOverlays,
   updateAllCardOverlays, refreshDeckCardItem, updateModalDeckButton
 } from "./panel.js";

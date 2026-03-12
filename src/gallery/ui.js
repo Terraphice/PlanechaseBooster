@@ -68,7 +68,7 @@ export function initThemeController({
   let palette = HIDDEN_PALETTE_ORDER.includes(initialPalette) ? initialPalette : "standard";
   let suppressClick = false;
   let longPressTimer = null;
-  let longPressFired = false;
+  let _longPressFired = false;
 
   function resolveTheme(preference) {
     return preference === "system" ? (media.matches ? "dark" : "light") : preference;
@@ -160,11 +160,11 @@ export function initThemeController({
 
   function handlePointerDown(event) {
     if (event.pointerType === "mouse") return;
-    longPressFired = false;
+    _longPressFired = false;
     clearLongPressTimer();
 
     longPressTimer = window.setTimeout(() => {
-      longPressFired = true;
+      _longPressFired = true;
       suppressClick = true;
       cycleAlternatePalette();
     }, 650);

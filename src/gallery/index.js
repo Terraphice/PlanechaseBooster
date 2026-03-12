@@ -10,8 +10,7 @@ import {
   parseSearchQuery,
   getTagLabel,
   getTagToneClass,
-  isTopTag,
-  enhanceManaSymbols
+  isTopTag
 } from "./utils.js";
 
 import {
@@ -32,12 +31,10 @@ import {
   showGameModeDialog,
   clearAllDecks,
   clearTutorialFlags,
-  getAllDecksForProfile,
   importProfileDecks,
   encodeProfileData,
   decodeProfileData,
   setPhenomenonAnimation,
-  closeGameReaderView,
   closeTopGameOverlay,
   setRiskyHellriding,
   setSmoothTravel,
@@ -57,8 +54,6 @@ import { createRenderer } from "./render.js";
 import { createSearchManager } from "./search.js";
 import { createModalManager } from "./modal.js";
 import { initChangelog } from "../changelog.js";
-
-const ALL_PALETTES = ["standard", "gruvbox", "atom", "dracula", "solarized", "nord", "catppuccin", "scryfall"];
 
 let allCards = [];
 let filteredCards = [];
@@ -198,12 +193,10 @@ const renderer = createRenderer({
 
 const {
   renderGallery,
-  renderPaginationControls,
   renderActiveFilters,
   createTagChipElement,
   scheduleStackActiveUpdate,
   preloadCardImage,
-  disconnectInfiniteScroll
 } = renderer;
 
 // ── Search manager ────────────────────────────────────────────────────────────
@@ -284,7 +277,6 @@ const modalManager = createModalManager({
       syncTagFilterUI();
     },
     applyFilters,
-    renderGallery,
     showToast,
     scheduleStackActiveUpdate
   }

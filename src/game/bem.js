@@ -1,7 +1,7 @@
 // ── game-bem.js ───────────────────────────────────────────────────────────────
 // Rendering and game logic for the Blind Eternities Map game mode.
 
-import { escapeHtml, shuffleArray } from "../gallery/utils.js";
+import { shuffleArray } from "../gallery/utils.js";
 const BEM_FALLOFF_DIST = 2;
 const BEM_DRAG_THRESHOLD = 44;
 const BEM_FACEDOWN_IMG = "assets/card-preview.jpg";

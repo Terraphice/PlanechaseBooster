@@ -20,7 +20,7 @@ const MAX_GAME_HISTORY = 20;
 
 // ── Module state ──────────────────────────────────────────────────────────────
 
-let gameHistory = [];
+const gameHistory = [];
 let gameRedoStack = [];
 
 // ── Context (set by initGameStateManager) ────────────────────────────────────

@@ -3,7 +3,7 @@
 // game menus, die rolling, cost display, BEM zoom, and tutorial overlay.
 
 import { escapeHtml, shuffleArray, enhanceManaSymbols } from "../gallery/utils.js";
-import { updateClassicGameView, renderClassicSidePanel, buildMainCardActions, buildSideCardActions } from "./classic.js";
+import { updateClassicGameView, renderClassicSidePanel, buildMainCardActions } from "./classic.js";
 import {
   syncBemTrButton,
   renderBemMap,
@@ -11,12 +11,8 @@ import {
   bemFillPlaceholder,
   bemResolvePhenomenon,
   toggleBemPlaneswalkMode,
-  getBemPlaneswalkPending,
-  getBemViewOffset,
-  bemMovePlayer,
   bemKey,
   buildBemCardActions,
-  buildBemAdjacentCardActions,
   buildBemSideCardActions,
 } from "./bem.js";
 
@@ -1608,7 +1604,6 @@ function bindGameUIEvents() {
   const bemMapEl = document.getElementById("bem-map");
   const bemMapArea = document.getElementById("bem-map-area");
   const bemViewCardBtn = document.getElementById("bem-view-card-btn");
-  const bemCardNameLabel = document.getElementById("bem-card-name");
 
   bemMapEl?.addEventListener("click", (event) => ctx.handleBemCellClick(event));
   bemViewCardBtn?.addEventListener("click", () => {

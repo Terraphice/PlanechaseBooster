@@ -12,7 +12,7 @@ export function initClassicGame(context) {
 // ── Classic game startup ───────────────────────────────────────────────────────
 
 export function startClassicGame() {
-  const { getGameState, setGameState, setGameActive, buildDeckArray, getDeckTotal, closeDeckPanel, showGamePlaceholder, resetDieIcon, updateCostDisplay, syncBemTrButton, showToast, gameView, bemMapArea } = ctx;
+  const { setGameState, setGameActive, buildDeckArray, getDeckTotal, closeDeckPanel, showGamePlaceholder, resetDieIcon, updateCostDisplay, syncBemTrButton, showToast, gameView, bemMapArea } = ctx;
 
   const total = getDeckTotal();
   if (total === 0) { showToast("Add cards to your deck first."); return; }
@@ -99,7 +99,7 @@ export function gamePlaneswalk() {
 // ── Classic view rendering ────────────────────────────────────────────────────
 
 export function updateClassicGameView(gameState) {
-  const { openGameReaderView, buildMainCardActions, syncGameToolsState, showToast, gameCardImage, gameCardImageBtn, classicViewCardBtn, classicCardNameLabel, gameSidePanel } = ctx;
+  const { syncGameToolsState, gameCardImage, gameCardImageBtn, classicViewCardBtn, classicCardNameLabel } = ctx;
 
   const { activePlanes, focusedIndex, remaining } = gameState;
   const focused = activePlanes[focusedIndex] ?? activePlanes[0];
