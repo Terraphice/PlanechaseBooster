@@ -514,12 +514,17 @@
         <button id="game-tools-redo" class="game-menu-item" type="button" disabled>Redo Next Action</button>
         <div class="game-menu-divider"></div>
         <button id="game-tools-shuffle" class="game-menu-item" type="button">Shuffle Library</button>
-        <button id="game-tools-add-top" class="game-menu-item" type="button">
-          <span>Add Top of Library</span>
-        </button>
-        <button id="game-tools-add-bottom" class="game-menu-item" type="button">
-          <span>Add Bottom of Library</span>
-        </button>
+        <div class="game-menu-btn-row">
+          <button id="game-tools-library-toggle" class="game-menu-item game-menu-btn-row-item" type="button">View Library</button>
+          <button id="game-tools-reveal-toggle" class="game-menu-item game-menu-btn-row-item" type="button">Reveal Cards…</button>
+          <button id="game-tools-exile-toggle" class="game-menu-item game-menu-btn-row-item" type="button">View Exile</button>
+        </div>
+        <div id="game-reveal-input-row" class="game-reveal-input-row hidden">
+          <input id="game-reveal-count-input" type="number" min="1" class="game-tools-search-input" placeholder="Number of cards…" autocomplete="off" />
+          <button id="game-reveal-go-btn" class="game-reveal-go-btn" type="button">Reveal</button>
+        </div>
+        <button id="game-tools-add-top" class="game-menu-item" type="button">Add Top of Library</button>
+        <button id="game-tools-add-bottom" class="game-menu-item" type="button">Add Bottom of Library</button>
         <button id="game-tools-return-top" class="game-menu-item" type="button">Return Active to Top</button>
         <button id="game-tools-return-bottom" class="game-menu-item" type="button">Return Active to Bottom</button>
         <div class="game-menu-divider"></div>
@@ -527,21 +532,6 @@
           <input type="checkbox" id="game-easy-planeswalk-toggle" class="game-menu-toggle-check" />
           <span>Easy Planeswalking</span>
         </label>
-        <div class="game-menu-divider"></div>
-        <button id="game-tools-library-toggle" class="game-menu-item" type="button">Search &amp; View Library</button>
-        <div id="game-menu-search-section" class="game-menu-search hidden">
-          <input id="game-tools-search-input" class="game-tools-search-input" type="search" placeholder="Search cards in library…" autocomplete="off" />
-          <div id="game-tools-search-results" class="game-tools-search-results"></div>
-          <div id="game-library-view-list" class="game-library-view-list"></div>
-        </div>
-        <div class="game-menu-divider"></div>
-        <button id="game-tools-reveal-toggle" class="game-menu-item" type="button">Reveal Top Cards…</button>
-        <div id="game-reveal-input-row" class="game-reveal-input-row hidden">
-          <input id="game-reveal-count-input" type="number" min="1" class="game-tools-search-input" placeholder="Number of cards…" autocomplete="off" />
-          <button id="game-reveal-go-btn" class="game-reveal-go-btn" type="button">Reveal</button>
-        </div>
-        <div class="game-menu-divider"></div>
-        <button id="game-tools-exile-toggle" class="game-menu-item" type="button">View Exile Zone (0)</button>
       </div>
     </div>
 
@@ -607,9 +597,32 @@
       </div>
       <div class="game-reveal-footer">
         <span class="game-reveal-footer-label">All:</span>
-        <button id="game-exile-shuffle-in" class="game-reveal-footer-btn" type="button">Shuffle In</button>
+        <button id="game-exile-shuffle-in" class="game-reveal-footer-btn game-reveal-footer-btn-success" type="button">Shuffle In</button>
         <button id="game-exile-top-all" class="game-reveal-footer-btn" type="button">Top</button>
         <button id="game-exile-bottom-all" class="game-reveal-footer-btn" type="button">Bottom</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Library overlay (fixed position, outside game-view to avoid mobile rotation) -->
+  <div id="game-library-overlay" class="game-reveal-overlay hidden" role="dialog" aria-modal="true" aria-label="Library">
+    <div id="game-library-backdrop" class="game-reveal-backdrop"></div>
+    <div class="game-reveal-panel">
+      <div class="game-reveal-header">
+        <h3 class="game-reveal-title">Library (<span id="game-library-title-count">0</span>)</h3>
+        <div class="game-reveal-header-right">
+          <div class="game-reveal-view-toggle" role="group" aria-label="View mode">
+            <button id="game-library-list-btn" class="game-reveal-view-btn active" type="button">List</button>
+            <button id="game-library-gallery-btn" class="game-reveal-view-btn" type="button">Gallery</button>
+          </div>
+          <button id="game-library-close" class="game-reveal-close" type="button" aria-label="Close library">×</button>
+        </div>
+      </div>
+      <div class="game-library-search-row">
+        <input id="game-library-search-input" class="game-tools-search-input" type="search" placeholder="Search cards in library…" autocomplete="off" />
+      </div>
+      <div id="game-library-cards-container" class="game-reveal-cards-container game-reveal-mode-list">
+        <!-- Rendered by JS -->
       </div>
     </div>
   </div>

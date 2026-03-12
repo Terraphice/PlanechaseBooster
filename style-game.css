@@ -1463,6 +1463,26 @@
   margin: 6px 0;
 }
 
+.game-menu-btn-row {
+  display: flex;
+  gap: 2px;
+  padding: 0;
+}
+
+.game-menu-btn-row-item {
+  flex: 1;
+  text-align: center;
+  font-size: 0.78rem;
+  padding: 8px 4px;
+  border-radius: 8px;
+}
+
+.game-library-search-row {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border-soft);
+  flex-shrink: 0;
+}
+
 .game-menu-toggle-row {
   display: flex;
   align-items: center;
@@ -1759,6 +1779,16 @@
   border-color: var(--tone-red-border);
 }
 
+.game-reveal-action-shuffle {
+  color: var(--tone-green-text);
+  border-color: color-mix(in srgb, var(--tone-green-border) 60%, transparent);
+}
+
+.game-reveal-action-shuffle:hover {
+  background: color-mix(in srgb, var(--tone-green-bg) 60%, transparent);
+  border-color: var(--tone-green-border);
+}
+
 /* Reveal footer */
 
 .game-reveal-footer {
@@ -1813,6 +1843,16 @@
 .game-reveal-footer-btn-danger:hover:not(:disabled) {
   background: color-mix(in srgb, var(--tone-red-bg) 60%, transparent);
   border-color: var(--tone-red-border);
+}
+
+.game-reveal-footer-btn-success {
+  color: var(--tone-green-text);
+  border-color: color-mix(in srgb, var(--tone-green-border) 60%, transparent);
+}
+
+.game-reveal-footer-btn-success:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--tone-green-bg) 60%, transparent);
+  border-color: var(--tone-green-border);
 }
 
 /* ── Mobile landscape optimization for game mode ─────────────────────────────── */

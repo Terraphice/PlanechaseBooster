@@ -34,6 +34,7 @@ let readerOpenedFromReveal = false;
 let readerOpenedFromLibrary = false;
 let readerOpenedFromExile = false;
 let exileViewMode = "list";
+let libraryViewMode = "list";
 let readerCardPath = "";
 let bemZoomLevel = "default";
 let pendingGameMode = null;
@@ -63,11 +64,15 @@ const gameToolsAddTop = document.getElementById("game-tools-add-top");
 const gameToolsAddBottom = document.getElementById("game-tools-add-bottom");
 const gameToolsReturnTop = document.getElementById("game-tools-return-top");
 const gameToolsReturnBottom = document.getElementById("game-tools-return-bottom");
-const gameToolsSearchInput = document.getElementById("game-tools-search-input");
-const gameToolsSearchResults = document.getElementById("game-tools-search-results");
-const gameLibraryViewList = document.getElementById("game-library-view-list");
-const gameMenuSearchSection = document.getElementById("game-menu-search-section");
 const gameLibraryToggle = document.getElementById("game-tools-library-toggle");
+const gameLibraryOverlay = document.getElementById("game-library-overlay");
+const gameLibraryBackdrop = document.getElementById("game-library-backdrop");
+const gameLibraryCardsContainer = document.getElementById("game-library-cards-container");
+const gameLibraryClose = document.getElementById("game-library-close");
+const gameLibraryTitleCount = document.getElementById("game-library-title-count");
+const gameLibraryListBtn = document.getElementById("game-library-list-btn");
+const gameLibraryGalleryBtn = document.getElementById("game-library-gallery-btn");
+const gameLibrarySearchInput = document.getElementById("game-library-search-input");
 const gameCostValue = document.getElementById("game-cost-value");
 const gameCostDisplay = document.getElementById("game-cost-display");
 const gameReaderView = document.getElementById("game-reader-view");
@@ -242,13 +247,9 @@ export function syncGameToolsState(remainingCount) {
   if (gameToolsRedo) gameToolsRedo.disabled = ctx.getGameRedoStack().length === 0;
   if (gameToolsAddTop) {
     gameToolsAddTop.disabled = remainingCount === 0;
-    const span = gameToolsAddTop.querySelector("span");
-    if (span) span.textContent = `Add Top of Library (${remainingCount} left)`;
   }
   if (gameToolsAddBottom) {
     gameToolsAddBottom.disabled = remainingCount === 0;
-    const span = gameToolsAddBottom.querySelector("span");
-    if (span) span.textContent = `Add Bottom of Library (${remainingCount} left)`;
   }
   if (gameToolsReturnTop) {
     gameToolsReturnTop.disabled = !gameState || (!isBem && gameState.activePlanes.length === 0);
@@ -262,7 +263,7 @@ export function syncGameToolsState(remainingCount) {
   if (gameToolsExileToggle) {
     gameToolsExileToggle.disabled = !gameState;
     const exileCount = gameState?.exiled?.length ?? 0;
-    gameToolsExileToggle.textContent = `View Exile Zone (${exileCount})`;
+    gameToolsExileToggle.textContent = `View Exile (${exileCount})`;
   }
   ctx.autoSaveGameState();
 }
@@ -378,11 +379,7 @@ export function toggleGameToolsMenu() {
   if (isHidden) {
     gameToolsMenu?.classList.remove("hidden");
     gameBtnBr?.setAttribute("aria-expanded", "true");
-    gameMenuSearchSection?.classList.add("hidden");
     gameRevealInputRow?.classList.add("hidden");
-    if (gameLibraryToggle) gameLibraryToggle.textContent = "Search & View Library";
-    if (gameToolsSearchInput) gameToolsSearchInput.value = "";
-    if (gameToolsSearchResults) gameToolsSearchResults.innerHTML = "";
     syncGameToolsState(ctx.getGameState()?.remaining.length ?? 0);
   }
 }
@@ -426,6 +423,10 @@ export function closeTopGameOverlay() {
   }
   if (!gameRevealOverlay?.classList.contains("hidden")) {
     closeRevealOverlay();
+    return true;
+  }
+  if (!gameLibraryOverlay?.classList.contains("hidden")) {
+    closeLibraryOverlay();
     return true;
   }
   if (!gameExileOverlay?.classList.contains("hidden")) {
@@ -494,7 +495,7 @@ export function closeGameReaderView() {
     readerOpenedFromReveal = false;
   }
   if (readerOpenedFromLibrary) {
-    gameToolsMenu?.classList.remove("hidden");
+    gameLibraryOverlay?.classList.remove("hidden");
     readerOpenedFromLibrary = false;
   }
   if (readerOpenedFromExile) {
@@ -562,7 +563,7 @@ function openRevealCardInfo(card) {
 }
 
 function openLibraryCardInfo(card) {
-  gameToolsMenu?.classList.add("hidden");
+  gameLibraryOverlay?.classList.add("hidden");
   readerOpenedFromLibrary = true;
   openGameReaderView(card, []);
 }
@@ -791,6 +792,104 @@ function setRevealViewMode(mode) {
 
 // ── Library / search view ─────────────────────────────────────────────────────
 
+/** Opens the library overlay to browse library cards. */
+export function openLibraryOverlay() {
+  const gameState = ctx.getGameState();
+  if (!gameState) return;
+  closeAllGameMenus();
+  if (gameLibrarySearchInput) gameLibrarySearchInput.value = "";
+  renderLibraryCards();
+  gameLibraryOverlay?.classList.remove("hidden");
+}
+
+/** Closes the library overlay. */
+export function closeLibraryOverlay() {
+  gameLibraryOverlay?.classList.add("hidden");
+}
+
+/** Re-renders the library cards in the current view mode (list or gallery). */
+export function renderLibraryCards() {
+  const gameState = ctx.getGameState();
+  if (!gameLibraryCardsContainer) return;
+  gameLibraryCardsContainer.innerHTML = "";
+  const allCards = gameState?.remaining ?? [];
+  const query = gameLibrarySearchInput?.value.trim().toLowerCase() || "";
+  const cards = query ? allCards.filter((c) => c.displayName.toLowerCase().includes(query)) : allCards;
+
+  if (gameLibraryTitleCount) gameLibraryTitleCount.textContent = allCards.length;
+
+  if (cards.length === 0) {
+    gameLibraryCardsContainer.innerHTML = query
+      ? `<p class="game-reveal-empty">No matches in library.</p>`
+      : `<p class="game-reveal-empty">Library is empty.</p>`;
+    return;
+  }
+
+  const isGallery = libraryViewMode === "gallery";
+
+  if (isGallery) {
+    for (let i = 0; i < cards.length; i++) {
+      const card = cards[i];
+      const item = document.createElement("div");
+      item.className = "game-reveal-gallery-item";
+      item.innerHTML = `
+        <button class="game-reveal-thumb-btn" data-action="info" data-lib-key="${escapeHtml(card.key)}" type="button" aria-label="View ${escapeHtml(card.displayName)} details">
+          <img class="game-reveal-thumb" src="${card.thumbPath}" alt="${escapeHtml(card.displayName)}" />
+        </button>
+        <div class="game-reveal-card-name">${escapeHtml(card.displayName)}</div>
+        <div class="game-reveal-card-type">${escapeHtml(card.type)}</div>
+        <div class="game-reveal-card-actions">
+          <button class="game-reveal-action-btn" data-action="planeswalk" data-lib-key="${escapeHtml(card.key)}" title="Planeswalk to this card" type="button">▶ Planeswalk</button>
+          <button class="game-reveal-action-btn" data-action="active" data-lib-key="${escapeHtml(card.key)}" title="Add to active cards" type="button">+ Active</button>
+          <button class="game-reveal-action-btn" data-action="top" data-lib-key="${escapeHtml(card.key)}" title="Put on top of library" type="button">↑ Top</button>
+          <button class="game-reveal-action-btn" data-action="bottom" data-lib-key="${escapeHtml(card.key)}" title="Put on bottom of library" type="button">↓ Bottom</button>
+          <button class="game-reveal-action-btn game-reveal-action-exile" data-action="exile" data-lib-key="${escapeHtml(card.key)}" title="Exile (remove temporarily)" type="button">✕ Exile</button>
+        </div>
+      `;
+      item.addEventListener("click", handleLibraryCardAction);
+      gameLibraryCardsContainer.appendChild(item);
+    }
+  } else {
+    const ol = document.createElement("ol");
+    ol.className = "game-deck-view-ol";
+    ol.addEventListener("click", handleLibraryCardAction);
+    for (let i = 0; i < cards.length; i++) {
+      const card = cards[i];
+      const li = document.createElement("li");
+      li.className = "game-deck-view-item";
+      li.innerHTML = `
+        <div class="game-deck-item-row">
+          <span class="game-deck-view-name">${escapeHtml(card.displayName)}</span>
+          <span class="game-deck-view-type">${escapeHtml(card.type)}</span>
+        </div>
+        <div class="game-deck-item-actions">
+          <button class="game-deck-action-btn" data-action="info" data-lib-key="${escapeHtml(card.key)}" title="View card details" type="button">ℹ</button>
+          <button class="game-deck-action-btn" data-action="planeswalk" data-lib-key="${escapeHtml(card.key)}" title="Planeswalk to this card" type="button">▶</button>
+          <button class="game-deck-action-btn" data-action="active" data-lib-key="${escapeHtml(card.key)}" title="Add to active cards" type="button">+</button>
+          <button class="game-deck-action-btn" data-action="top" data-lib-key="${escapeHtml(card.key)}" title="Put on top of library" type="button">↑</button>
+          <button class="game-deck-action-btn" data-action="bottom" data-lib-key="${escapeHtml(card.key)}" title="Put on bottom of library" type="button">↓</button>
+          <button class="game-deck-action-btn game-deck-action-exile" data-action="exile" data-lib-key="${escapeHtml(card.key)}" title="Exile (remove temporarily)" type="button">✕</button>
+        </div>
+      `;
+      ol.appendChild(li);
+    }
+    gameLibraryCardsContainer.appendChild(ol);
+  }
+}
+
+/**
+ * Switches the library overlay between list and gallery display modes.
+ * @param {"list" | "gallery"} mode
+ */
+function setLibraryViewMode(mode) {
+  libraryViewMode = mode;
+  gameLibraryCardsContainer?.classList.toggle("game-reveal-mode-gallery", mode === "gallery");
+  gameLibraryCardsContainer?.classList.toggle("game-reveal-mode-list", mode === "list");
+  if (gameLibraryListBtn) gameLibraryListBtn.classList.toggle("active", mode === "list");
+  if (gameLibraryGalleryBtn) gameLibraryGalleryBtn.classList.toggle("active", mode === "gallery");
+  renderLibraryCards();
+}
+
 // ── Exile zone overlay ────────────────────────────────────────────────────────
 
 /** Opens the exile zone overlay to browse exiled cards. */
@@ -841,7 +940,7 @@ export function renderExileCards() {
           <button class="game-reveal-action-btn" data-action="active" data-exile-idx="${i}" title="Add to active cards" type="button">+ Active</button>
           <button class="game-reveal-action-btn" data-action="top" data-exile-idx="${i}" title="Put on top of library" type="button">↑ Top</button>
           <button class="game-reveal-action-btn" data-action="bottom" data-exile-idx="${i}" title="Put on bottom of library" type="button">↓ Bottom</button>
-          <button class="game-reveal-action-btn" data-action="shuffle" data-exile-idx="${i}" title="Shuffle into library" type="button">↺ Shuffle</button>
+          <button class="game-reveal-action-btn game-reveal-action-shuffle" data-action="shuffle" data-exile-idx="${i}" title="Shuffle into library" type="button">↺ Shuffle</button>
         </div>
       `;
     } else {
@@ -857,7 +956,7 @@ export function renderExileCards() {
           <button class="game-reveal-action-btn" data-action="active" data-exile-idx="${i}" title="Add to active cards" type="button">+</button>
           <button class="game-reveal-action-btn" data-action="top" data-exile-idx="${i}" title="Put on top of library" type="button">↑</button>
           <button class="game-reveal-action-btn" data-action="bottom" data-exile-idx="${i}" title="Put on bottom of library" type="button">↓</button>
-          <button class="game-reveal-action-btn" data-action="shuffle" data-exile-idx="${i}" title="Shuffle into library" type="button">↺</button>
+          <button class="game-reveal-action-btn game-reveal-action-shuffle" data-action="shuffle" data-exile-idx="${i}" title="Shuffle into library" type="button">↺</button>
         </div>
       `;
     }
@@ -988,171 +1087,14 @@ function setExileViewMode(mode) {
   renderExileCards();
 }
 
-/** Renders the ordered library card list inside the tools menu. */
-export function renderGameLibraryView() {
-  const gameState = ctx.getGameState();
-  if (!gameLibraryViewList || !gameState) return;
-  const query = gameToolsSearchInput?.value.trim().toLowerCase() || "";
-  if (query) {
-    gameLibraryViewList.innerHTML = "";
-    return;
-  }
-  gameLibraryViewList.innerHTML = "";
-  if (gameState.remaining.length === 0) {
-    gameLibraryViewList.innerHTML = `<p class="game-search-empty">Library is empty.</p>`;
-    return;
-  }
-  const ol = document.createElement("ol");
-  ol.className = "game-deck-view-ol";
-  ol.addEventListener("click", handleLibraryItemAction);
-  for (let i = 0; i < gameState.remaining.length; i++) {
-    const card = gameState.remaining[i];
-    const li = document.createElement("li");
-    li.className = "game-deck-view-item";
-    li.innerHTML = `
-      <div class="game-deck-item-row">
-        <span class="game-deck-view-name">${escapeHtml(card.displayName)}</span>
-        <span class="game-deck-view-type">${escapeHtml(card.type)}</span>
-      </div>
-      <div class="game-deck-item-actions">
-        <button class="game-deck-action-btn" data-action="info" data-idx="${i}" title="View card details" type="button">ℹ</button>
-        <button class="game-deck-action-btn" data-action="planeswalk" data-idx="${i}" title="Planeswalk to this card" type="button">▶</button>
-        <button class="game-deck-action-btn" data-action="active" data-idx="${i}" title="Add to active cards" type="button">+</button>
-        <button class="game-deck-action-btn" data-action="top" data-idx="${i}" title="Put on top of library" type="button">↑</button>
-        <button class="game-deck-action-btn" data-action="bottom" data-idx="${i}" title="Put on bottom of library" type="button">↓</button>
-        <button class="game-deck-action-btn game-deck-action-exile" data-action="exile" data-idx="${i}" title="Exile (remove temporarily)" type="button">✕</button>
-      </div>
-    `;
-    ol.appendChild(li);
-  }
-  gameLibraryViewList.appendChild(ol);
-}
-
-/** Updates the library search results based on the current search input. */
-export function updateGameSearchResults() {
-  const gameState = ctx.getGameState();
-  if (!gameToolsSearchInput || !gameToolsSearchResults || !gameState) return;
-
-  const query = gameToolsSearchInput.value.trim().toLowerCase();
-  gameToolsSearchResults.innerHTML = "";
-
-  if (!query) {
-    renderGameLibraryView();
-    return;
-  }
-
-  if (gameLibraryViewList) gameLibraryViewList.innerHTML = "";
-
-  const seen = new Set();
-  const matches = [];
-  for (let i = 0; i < gameState.remaining.length; i++) {
-    const card = gameState.remaining[i];
-    if (!seen.has(card.key) && card.displayName.toLowerCase().includes(query)) {
-      seen.add(card.key);
-      matches.push({ card, key: card.key });
-    }
-    if (matches.length >= 8) break;
-  }
-
-  if (matches.length === 0) {
-    gameToolsSearchResults.innerHTML = `<p class="game-search-empty">No matches in remaining library.</p>`;
-    return;
-  }
-
-  const list = document.createElement("div");
-  list.addEventListener("click", handleSearchResultItemAction);
-  for (const { card } of matches) {
-    const item = document.createElement("div");
-    item.className = "game-search-result-item";
-    item.innerHTML = `
-      <div class="game-deck-item-row">
-        <span class="game-search-result-name">${escapeHtml(card.displayName)}</span>
-        <span class="game-deck-view-type">${escapeHtml(card.type)}</span>
-      </div>
-      <div class="game-deck-item-actions">
-        <button class="game-deck-action-btn" data-action="info" data-key="${escapeHtml(card.key)}" title="View card details" type="button">ℹ</button>
-        <button class="game-deck-action-btn" data-action="planeswalk" data-key="${escapeHtml(card.key)}" title="Planeswalk to this card" type="button">▶</button>
-        <button class="game-deck-action-btn" data-action="active" data-key="${escapeHtml(card.key)}" title="Add to active cards" type="button">+</button>
-        <button class="game-deck-action-btn" data-action="top" data-key="${escapeHtml(card.key)}" title="Put on top of library" type="button">↑</button>
-        <button class="game-deck-action-btn" data-action="bottom" data-key="${escapeHtml(card.key)}" title="Put on bottom of library" type="button">↓</button>
-        <button class="game-deck-action-btn game-deck-action-exile" data-action="exile" data-key="${escapeHtml(card.key)}" title="Exile (remove temporarily)" type="button">✕</button>
-      </div>
-    `;
-    list.appendChild(item);
-  }
-  gameToolsSearchResults.appendChild(list);
-}
-
-function handleLibraryItemAction(event) {
+function handleLibraryCardAction(event) {
   const gameState = ctx.getGameState();
   if (!gameState) return;
-  const btn = event.target.closest("[data-action][data-idx]");
+  const btn = event.target.closest("[data-action][data-lib-key]");
   if (!btn) return;
   event.stopPropagation();
   const action = btn.dataset.action;
-  const idx = parseInt(btn.dataset.idx, 10);
-  if (isNaN(idx) || idx < 0 || idx >= gameState.remaining.length) return;
-
-  if (action === "info") {
-    openLibraryCardInfo(gameState.remaining[idx]);
-    return;
-  }
-
-  ctx.pushGameHistory();
-  const card = gameState.remaining.splice(idx, 1)[0];
-
-  switch (action) {
-    case "planeswalk":
-      if (gameState.mode === "bem") {
-        const key = bemKey(gameState.bemPos.x, gameState.bemPos.y);
-        const cell = gameState.bemGrid.get(key);
-        if (cell?.card) gameState.remaining.push(cell.card);
-        gameState.bemGrid.set(key, { card, faceUp: true });
-        ctx.showToast(`Planeswalked to ${card.displayName}.`);
-      } else {
-        gameState.remaining.push(...gameState.activePlanes);
-        gameState.activePlanes = [card];
-        gameState.focusedIndex = 0;
-        ctx.showToast(`Planeswalked to ${card.displayName}.`);
-      }
-      break;
-    case "active":
-      gameState.activePlanes.push(card);
-      ctx.showToast(`${card.displayName} added simultaneously.`);
-      break;
-    case "top":
-      gameState.remaining.unshift(card);
-      ctx.showToast(`${card.displayName} put on top.`);
-      break;
-    case "bottom":
-      gameState.remaining.push(card);
-      ctx.showToast(`${card.displayName} put on bottom.`);
-      break;
-    case "exile":
-      gameState.exiled.push(card);
-      ctx.showToast(`${card.displayName} exiled.`);
-      break;
-  }
-
-  if (gameState.mode === "bem") {
-    renderBemMap();
-    updateBemInfoBar();
-    syncBemTrButton();
-  } else {
-    updateGameView();
-  }
-  renderGameLibraryView();
-  syncGameToolsState(gameState.remaining.length);
-}
-
-function handleSearchResultItemAction(event) {
-  const gameState = ctx.getGameState();
-  if (!gameState) return;
-  const btn = event.target.closest("[data-action][data-key]");
-  if (!btn) return;
-  event.stopPropagation();
-  const action = btn.dataset.action;
-  const key = btn.dataset.key;
+  const key = btn.dataset.libKey;
   const idx = gameState.remaining.findIndex((c) => c.key === key);
   if (idx === -1) return;
 
@@ -1204,7 +1146,7 @@ function handleSearchResultItemAction(event) {
   } else {
     updateGameView();
   }
-  updateGameSearchResults();
+  renderLibraryCards();
   syncGameToolsState(gameState.remaining.length);
 }
 
@@ -1399,7 +1341,7 @@ function bindGameUIEvents() {
     ctx.pushGameHistory();
     gameState.remaining = shuffleArray(gameState.remaining);
     ctx.showToast("Remaining library shuffled.");
-    if (!gameMenuSearchSection?.classList.contains("hidden")) renderGameLibraryView();
+    if (!gameLibraryOverlay?.classList.contains("hidden")) renderLibraryCards();
   });
 
   gameToolsAddTop?.addEventListener("click", () => {
@@ -1417,7 +1359,7 @@ function bindGameUIEvents() {
       updateGameView();
     }
     ctx.showToast(`${top.displayName} added simultaneously.`);
-    if (!gameMenuSearchSection?.classList.contains("hidden")) renderGameLibraryView();
+    if (!gameLibraryOverlay?.classList.contains("hidden")) renderLibraryCards();
   });
 
   gameToolsAddBottom?.addEventListener("click", () => {
@@ -1435,7 +1377,7 @@ function bindGameUIEvents() {
       updateGameView();
     }
     ctx.showToast(`${bottom.displayName} added simultaneously.`);
-    if (!gameMenuSearchSection?.classList.contains("hidden")) renderGameLibraryView();
+    if (!gameLibraryOverlay?.classList.contains("hidden")) renderLibraryCards();
   });
 
   gameToolsReturnTop?.addEventListener("click", () => {
@@ -1454,7 +1396,7 @@ function bindGameUIEvents() {
     } else {
       updateGameView();
     }
-    if (!gameMenuSearchSection?.classList.contains("hidden")) renderGameLibraryView();
+    if (!gameLibraryOverlay?.classList.contains("hidden")) renderLibraryCards();
     ctx.showToast(`Returned ${returned.length} plane${returned.length > 1 ? "s" : ""} to top.`);
   });
 
@@ -1474,28 +1416,11 @@ function bindGameUIEvents() {
     } else {
       updateGameView();
     }
-    if (!gameMenuSearchSection?.classList.contains("hidden")) renderGameLibraryView();
+    if (!gameLibraryOverlay?.classList.contains("hidden")) renderLibraryCards();
     ctx.showToast(`Returned ${returned.length} plane${returned.length > 1 ? "s" : ""} to bottom.`);
   });
 
-  gameLibraryToggle?.addEventListener("click", () => {
-    const isHidden = gameMenuSearchSection?.classList.contains("hidden");
-    if (isHidden) {
-      gameMenuSearchSection?.classList.remove("hidden");
-      if (gameToolsSearchInput) gameToolsSearchInput.value = "";
-      if (gameToolsSearchResults) gameToolsSearchResults.innerHTML = "";
-      renderGameLibraryView();
-      if (gameLibraryToggle) gameLibraryToggle.textContent = "Hide Library";
-    } else {
-      gameMenuSearchSection?.classList.add("hidden");
-      if (gameLibraryToggle) gameLibraryToggle.textContent = "Search & View Library";
-    }
-  });
-
-  gameToolsSearchInput?.addEventListener("input", () => {
-    updateGameSearchResults();
-    renderGameLibraryView();
-  });
+  gameLibraryToggle?.addEventListener("click", () => openLibraryOverlay());
 
   gameToolsRevealToggle?.addEventListener("click", () => {
     const isHidden = gameRevealInputRow?.classList.contains("hidden");
@@ -1528,6 +1453,12 @@ function bindGameUIEvents() {
   gameExileBottomAll?.addEventListener("click", () => handleExileBulkAction("bottom"));
   gameExileListBtn?.addEventListener("click", () => setExileViewMode("list"));
   gameExileGalleryBtn?.addEventListener("click", () => setExileViewMode("gallery"));
+
+  gameLibraryClose?.addEventListener("click", closeLibraryOverlay);
+  gameLibraryBackdrop?.addEventListener("click", closeLibraryOverlay);
+  gameLibraryListBtn?.addEventListener("click", () => setLibraryViewMode("list"));
+  gameLibraryGalleryBtn?.addEventListener("click", () => setLibraryViewMode("gallery"));
+  gameLibrarySearchInput?.addEventListener("input", renderLibraryCards);
 
   gameCardImageBtn?.addEventListener("click", () => {
     const gameState = ctx.getGameState();
