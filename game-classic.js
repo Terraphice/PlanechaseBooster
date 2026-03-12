@@ -23,6 +23,7 @@ export function startClassicGame() {
     dieRolling: false,
     chaosCost: 0,
     exiled: [],
+    recentPhenomena: [],
     _dieResetTimer: null
   });
 
@@ -36,6 +37,7 @@ export function startClassicGame() {
   resetDieIcon();
   updateCostDisplay();
   syncBemTrButton();
+  ctx.updatePhenomenonBanner?.();
 
   if (window.location.hash !== "#play") {
     history.pushState(null, "", `${window.location.pathname}${window.location.search}#play`);
@@ -54,6 +56,25 @@ export function gamePlaneswalk() {
 
   const { activePlanes, remaining } = gameState;
 
+  if (!gameState.recentPhenomena) gameState.recentPhenomena = [];
+
+  let hasPhenomenon = false;
+  let hasNonPhenomenon = false;
+  for (const card of activePlanes) {
+    if (card.type === "Phenomenon") {
+      hasPhenomenon = true;
+      if (!gameState.recentPhenomena.includes(card)) {
+        gameState.recentPhenomena.push(card);
+      }
+    } else {
+      hasNonPhenomenon = true;
+    }
+  }
+
+  if (!hasPhenomenon && hasNonPhenomenon && gameState.recentPhenomena.length > 0) {
+    gameState.recentPhenomena = [];
+  }
+
   for (const card of activePlanes) remaining.push(card);
 
   if (remaining.length === 0) {
@@ -61,6 +82,7 @@ export function gamePlaneswalk() {
     gameState.focusedIndex = 0;
     updateGameView();
     showToast("No more planes in the library.");
+    ctx.updatePhenomenonBanner?.();
     return;
   }
 
@@ -68,6 +90,7 @@ export function gamePlaneswalk() {
   gameState.activePlanes = [nextCard];
   gameState.focusedIndex = 0;
   updateGameView();
+  ctx.updatePhenomenonBanner?.();
 }
 
 // ── Classic view rendering ────────────────────────────────────────────────────

@@ -22,7 +22,7 @@ import {
   resetDieIcon, openGameReaderView, closeGameReaderView, closeTopGameOverlay,
   renderGameSidePanel, renderRevealCards, updateRevealFooter, gameRollDie,
   toggleGameToolsMenu, maybeShowTutorial, clearTutorialFlags, loadBemZoom,
-  getRevealedCards, setRevealedCards, setReaderOpenedFromReveal
+  getRevealedCards, setRevealedCards, setReaderOpenedFromReveal, updatePhenomenonBanner
 } from "./game-ui.js";
 
 import {
@@ -625,6 +625,7 @@ export function initDeck({ cards, showToast, onDeckChange }) {
     renderRevealCards,
     updateRevealFooter,
     closeGameReaderView,
+    updatePhenomenonBanner,
   });
 
   initClassicGame({
@@ -646,6 +647,7 @@ export function initDeck({ cards, showToast, onDeckChange }) {
     closeAllGameMenus,
     syncGameToolsState,
     pushHistory: pushGameHistory,
+    updatePhenomenonBanner,
     gameView,
     bemMapArea,
     gameCardImage,
@@ -679,6 +681,7 @@ export function initDeck({ cards, showToast, onDeckChange }) {
     closeGameReaderView,
     closeAllGameMenus,
     pushHistory: pushGameHistory,
+    updatePhenomenonBanner,
     gameBtnTr,
     gameView,
     bemMapArea,

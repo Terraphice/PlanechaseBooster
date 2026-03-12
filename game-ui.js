@@ -126,6 +126,7 @@ const gameExileBottomAll = document.getElementById("game-exile-bottom-all");
 const gameExileListBtn = document.getElementById("game-exile-list-btn");
 const gameExileGalleryBtn = document.getElementById("game-exile-gallery-btn");
 const gameToolsExileToggle = document.getElementById("game-tools-exile-toggle");
+const phenomenonBanner = document.getElementById("phenomenon-banner");
 
 // ── State accessors (needed by game-state.js via context) ─────────────────────
 
@@ -536,6 +537,61 @@ export function closeGameReaderView() {
   if (readerOpenedFromExile) {
     gameExileOverlay?.classList.remove("hidden");
     readerOpenedFromExile = false;
+  }
+}
+
+/**
+ * Renders the phenomenon reminder banner based on the current game state's
+ * recentPhenomena list. Call this after any action that changes recentPhenomena.
+ */
+export function updatePhenomenonBanner() {
+  if (!phenomenonBanner) return;
+  const gameState = ctx?.getGameState();
+  const phenomena = gameState?.recentPhenomena ?? [];
+
+  if (phenomena.length === 0) {
+    phenomenonBanner.classList.add("hidden");
+    phenomenonBanner.innerHTML = "";
+    return;
+  }
+
+  phenomenonBanner.classList.remove("hidden");
+  phenomenonBanner.innerHTML = "";
+
+  for (const card of phenomena) {
+    const row = document.createElement("div");
+    row.className = "phenomenon-banner-row";
+
+    const infoBtn = document.createElement("button");
+    infoBtn.type = "button";
+    infoBtn.className = "phenomenon-banner-btn phenomenon-banner-info-btn";
+    infoBtn.setAttribute("aria-label", `View ${card.displayName} details`);
+    infoBtn.textContent = "ℹ";
+    infoBtn.addEventListener("click", () => {
+      openGameReaderView(card, []);
+    });
+
+    const nameEl = document.createElement("span");
+    nameEl.className = "phenomenon-banner-name";
+    nameEl.textContent = card.displayName;
+    nameEl.title = card.displayName;
+
+    const dismissBtn = document.createElement("button");
+    dismissBtn.type = "button";
+    dismissBtn.className = "phenomenon-banner-btn phenomenon-banner-dismiss-btn";
+    dismissBtn.setAttribute("aria-label", `Dismiss ${card.displayName} reminder`);
+    dismissBtn.textContent = "✕";
+    dismissBtn.addEventListener("click", () => {
+      const gs = ctx.getGameState();
+      if (!gs) return;
+      gs.recentPhenomena = (gs.recentPhenomena ?? []).filter(c => c !== card);
+      updatePhenomenonBanner();
+    });
+
+    row.appendChild(infoBtn);
+    row.appendChild(nameEl);
+    row.appendChild(dismissBtn);
+    phenomenonBanner.appendChild(row);
   }
 }
 

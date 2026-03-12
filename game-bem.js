@@ -211,6 +211,7 @@ export function startBemGame() {
     _dieResetTimer: null,
     activePlanes: [],
     focusedIndex: 0,
+    recentPhenomena: [],
     bemGrid,
     bemPos: { x: 0, y: 0 },
     bemHellridedPositions: new Set()
@@ -227,6 +228,7 @@ export function startBemGame() {
   renderBemMap();
   updateBemInfoBar();
   syncBemTrButton();
+  ctx.updatePhenomenonBanner?.();
 
   if (window.location.hash !== "#play") {
     history.pushState(null, "", `${window.location.pathname}${window.location.search}#play`);
@@ -273,6 +275,9 @@ export function bemMovePlayer(nx, ny) {
     gameState.bemPos = { x: nx, y: ny };
     bemViewOffset = { dx: 0, dy: 0 };
     bemClearActivePlanesToBottom();
+    if (cell.card?.type !== "Phenomenon" && gameState.recentPhenomena?.length > 0) {
+      gameState.recentPhenomena = [];
+    }
     const orthDirs = [{ dx: 0, dy: -1 }, { dx: 0, dy: 1 }, { dx: -1, dy: 0 }, { dx: 1, dy: 0 }];
     for (const { dx: odx, dy: ody } of orthDirs) {
       const adjCell = bemGrid.get(bemKey(nx + odx, ny + ody));
@@ -284,6 +289,7 @@ export function bemMovePlayer(nx, ny) {
     renderBemMap();
     updateBemInfoBar();
     syncBemTrButton();
+    ctx.updatePhenomenonBanner?.();
     ctx.closeAllGameMenus();
     return;
   }
@@ -320,6 +326,10 @@ export function bemMovePlayer(nx, ny) {
 
   bemClearActivePlanesToBottom();
 
+  if (cell.card?.type !== "Phenomenon" && gameState.recentPhenomena?.length > 0) {
+    gameState.recentPhenomena = [];
+  }
+
   const orthDirs = [{ dx: 0, dy: -1 }, { dx: 0, dy: 1 }, { dx: -1, dy: 0 }, { dx: 1, dy: 0 }];
   for (const { dx: odx, dy: ody } of orthDirs) {
     const adjCell = bemGrid.get(bemKey(nx + odx, ny + ody));
@@ -333,6 +343,7 @@ export function bemMovePlayer(nx, ny) {
   renderBemMap();
   updateBemInfoBar();
   syncBemTrButton();
+  ctx.updatePhenomenonBanner?.();
   ctx.closeAllGameMenus();
 }
 
@@ -356,6 +367,9 @@ export function bemResolvePhenomenon() {
   delete cell.queuedCard;
   remaining.push(phenomenon);
 
+  if (!gameState.recentPhenomena) gameState.recentPhenomena = [];
+  gameState.recentPhenomena.push(phenomenon);
+
   if (nextCard) {
     bemGrid.set(key, { card: nextCard, faceUp: true });
     ctx.showToast(`${phenomenon.displayName} resolved. ${nextCard.displayName} appears.`);
@@ -367,6 +381,7 @@ export function bemResolvePhenomenon() {
   renderBemMap();
   updateBemInfoBar();
   syncBemTrButton();
+  ctx.updatePhenomenonBanner?.();
 }
 
 export function bemFillPlaceholder() {

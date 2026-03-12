@@ -69,6 +69,7 @@ function cloneGameState(state) {
   clone.remaining = [...state.remaining];
   clone.activePlanes = [...state.activePlanes];
   clone.exiled = [...state.exiled];
+  if (state.recentPhenomena) clone.recentPhenomena = [...state.recentPhenomena];
   if (state.bemGrid instanceof Map) {
     const gridClone = new Map();
     for (const [key, cell] of state.bemGrid) {
@@ -126,6 +127,7 @@ export function undoLastAction() {
   }
   syncBemTrButton();
   ctx.syncGameToolsState(restored.remaining.length);
+  ctx.updatePhenomenonBanner?.();
   ctx.closeAllGameMenus();
   if (gameToolsUndo) gameToolsUndo.disabled = gameHistory.length === 0;
   if (gameToolsRedo) gameToolsRedo.disabled = false;
@@ -158,6 +160,7 @@ export function redoNextAction() {
   }
   syncBemTrButton();
   ctx.syncGameToolsState(restored.remaining.length);
+  ctx.updatePhenomenonBanner?.();
   ctx.closeAllGameMenus();
   if (gameToolsUndo) gameToolsUndo.disabled = false;
   if (gameToolsRedo) gameToolsRedo.disabled = gameRedoStack.length === 0;
@@ -366,6 +369,8 @@ export function startGameFromState(decoded) {
   if (window.location.hash !== "#play") {
     history.pushState(null, "", `${window.location.pathname}${window.location.search}#play`);
   }
+
+  ctx.updatePhenomenonBanner?.();
 }
 
 /**
@@ -393,6 +398,7 @@ export function exitGame({ updateHash = true } = {}) {
   ctx.closeChaosPopup();
   ctx.closeGameReaderView();
   ctx.closeAllGameMenus();
+  ctx.updatePhenomenonBanner?.();
   syncBemTrButton();
   if (classicViewCardBtn) classicViewCardBtn.classList.add("hidden");
 
@@ -426,10 +432,12 @@ export function resetGame() {
       dieRolling: false,
       chaosCost: 0,
       exiled: [],
+      recentPhenomena: [],
       _dieResetTimer: null
     });
     ctx.showGamePlaceholder();
     ctx.updateCostDisplay();
+    ctx.updatePhenomenonBanner?.();
     ctx.showToast("Deck reshuffled and reset.");
   }
 }

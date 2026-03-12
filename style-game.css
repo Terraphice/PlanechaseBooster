@@ -1292,6 +1292,90 @@
   margin-top: 6px;
 }
 
+/* ── Phenomenon reminder banner ──────────────────────────────────────────────── */
+
+.phenomenon-banner {
+  position: absolute;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 8;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 5px;
+  pointer-events: auto;
+  max-width: calc(100% - 200px);
+  min-width: 180px;
+}
+
+.phenomenon-banner.hidden {
+  display: none;
+}
+
+.phenomenon-banner-row {
+  display: flex;
+  align-items: stretch;
+  height: 38px;
+  border: 1px solid color-mix(in srgb, var(--accent) 35%, var(--border));
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--bg-elev-2) 94%, var(--accent) 6%);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+  animation: phenomenonBannerRowIn 220ms ease both;
+}
+
+@keyframes phenomenonBannerRowIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.phenomenon-banner-btn {
+  flex-shrink: 0;
+  width: 38px;
+  height: 100%;
+  border: none;
+  background: transparent;
+  color: var(--text-soft);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: color 120ms ease, background 120ms ease;
+}
+
+.phenomenon-banner-btn:hover {
+  color: var(--text);
+  background: color-mix(in srgb, var(--accent) 14%, transparent);
+}
+
+.phenomenon-banner-info-btn {
+  border-right: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+}
+
+.phenomenon-banner-dismiss-btn {
+  border-left: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+}
+
+.phenomenon-banner-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  padding: 0 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.01em;
+}
+
 /* ── Game cost display ───────────────────────────────────────────────────────── */
 
 .game-cost-display {
@@ -1910,6 +1994,25 @@
 
   .game-menu-br { bottom: 70px; }
   .game-menu-bl { bottom: 70px; }
+
+  .phenomenon-banner {
+    top: 8px;
+    max-width: calc(100% - 160px);
+    min-width: 140px;
+  }
+
+  .phenomenon-banner-row {
+    height: 34px;
+  }
+
+  .phenomenon-banner-btn {
+    width: 34px;
+  }
+
+  .phenomenon-banner-name {
+    font-size: 0.76rem;
+    padding: 0 8px;
+  }
 }
 
 /* ── Mobile portrait: rotate game view to landscape ──────────────────────────── */
@@ -1985,6 +2088,11 @@
   .game-menu-bl {
     bottom: 68px;
     left: 10px;
+  }
+
+  .phenomenon-banner {
+    top: 10px;
+    max-width: calc(100% - 180px);
   }
 
   .game-reveal-overlay {
