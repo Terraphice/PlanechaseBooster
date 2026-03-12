@@ -809,12 +809,6 @@ export function buildBemCardActions() {
       closeGameReaderView(); renderBemMap(); updateBemInfoBar(); syncBemTrButton();
       showToast(`${name} added simultaneously.`);
     }),
-    makeAction("Return to Library", (gs, key, cell, name) => {
-      gs.remaining.push(cell.card);
-      gs.bemGrid.set(key, { card: null, faceUp: true, placeholder: true });
-      closeGameReaderView(); renderBemMap(); updateBemInfoBar(); syncBemTrButton();
-      showToast(`${name} returned to library.`);
-    }),
     makeAction("Return to Top", (gs, key, cell, name) => {
       gs.remaining.unshift(cell.card);
       gs.bemGrid.set(key, { card: null, faceUp: true, placeholder: true });

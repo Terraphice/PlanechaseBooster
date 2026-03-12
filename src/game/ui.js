@@ -58,8 +58,6 @@ const gameToolsRedo = document.getElementById("game-tools-redo");
 const gameToolsShuffle = document.getElementById("game-tools-shuffle");
 const gameToolsAddTop = document.getElementById("game-tools-add-top");
 const gameToolsAddBottom = document.getElementById("game-tools-add-bottom");
-const gameToolsReturnTop = document.getElementById("game-tools-return-top");
-const gameToolsReturnBottom = document.getElementById("game-tools-return-bottom");
 const gameLibraryToggle = document.getElementById("game-tools-library-toggle");
 const gameLibraryOverlay = document.getElementById("game-library-overlay");
 const gameLibraryBackdrop = document.getElementById("game-library-backdrop");
@@ -281,12 +279,6 @@ export function syncGameToolsState(remainingCount) {
   }
   if (gameToolsAddBottom) {
     gameToolsAddBottom.disabled = remainingCount === 0;
-  }
-  if (gameToolsReturnTop) {
-    gameToolsReturnTop.disabled = !gameState || (!isBem && gameState.activePlanes.length === 0);
-  }
-  if (gameToolsReturnBottom) {
-    gameToolsReturnBottom.disabled = !gameState || (!isBem && gameState.activePlanes.length === 0);
   }
   if (gameToolsShuffle) gameToolsShuffle.disabled = !gameState;
   if (gameLibraryToggle) gameLibraryToggle.disabled = !gameState;
@@ -1464,46 +1456,6 @@ function bindGameUIEvents() {
     }
     ctx.showToast(`${bottom.displayName} added simultaneously.`);
     if (!gameLibraryOverlay?.classList.contains("hidden")) renderLibraryCards();
-  });
-
-  gameToolsReturnTop?.addEventListener("click", () => {
-    const gameState = ctx.getGameState();
-    if (!gameState || gameState.activePlanes.length === 0) {
-      ctx.showToast("No active planes to return.");
-      return;
-    }
-    ctx.pushGameHistory();
-    const returned = [...gameState.activePlanes];
-    gameState.remaining.unshift(...returned);
-    gameState.activePlanes = [];
-    gameState.focusedIndex = 0;
-    if (gameState.mode === "bem") {
-      updateBemInfoBar();
-    } else {
-      updateGameView();
-    }
-    if (!gameLibraryOverlay?.classList.contains("hidden")) renderLibraryCards();
-    ctx.showToast(`Returned ${returned.length} plane${returned.length > 1 ? "s" : ""} to top.`);
-  });
-
-  gameToolsReturnBottom?.addEventListener("click", () => {
-    const gameState = ctx.getGameState();
-    if (!gameState || gameState.activePlanes.length === 0) {
-      ctx.showToast("No active planes to return.");
-      return;
-    }
-    ctx.pushGameHistory();
-    const returned = [...gameState.activePlanes];
-    gameState.remaining.push(...returned);
-    gameState.activePlanes = [];
-    gameState.focusedIndex = 0;
-    if (gameState.mode === "bem") {
-      updateBemInfoBar();
-    } else {
-      updateGameView();
-    }
-    if (!gameLibraryOverlay?.classList.contains("hidden")) renderLibraryCards();
-    ctx.showToast(`Returned ${returned.length} plane${returned.length > 1 ? "s" : ""} to bottom.`);
   });
 
   gameLibraryToggle?.addEventListener("click", () => openLibraryOverlay());
