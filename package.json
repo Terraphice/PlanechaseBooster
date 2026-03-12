@@ -6,7 +6,16 @@
     "test": "node scripts/smoke-test.js",
     "test:codec": "node scripts/test-codec.js",
     "test:utils": "node scripts/test-utils.js",
-    "test:unit": "node scripts/test-codec.js && node scripts/test-utils.js",
+    "test:generate": "node scripts/test-generate.js",
+    "test:sync": "node scripts/test-sync.js",
+    "test:unit": "node scripts/test-codec.js && node scripts/test-utils.js && node scripts/test-generate.js && node scripts/test-sync.js",
+    "test:e2e": "npx playwright test",
     "lint": "eslint ."
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.58.2",
+    "eslint": "^10.0.3",
+    "serve": "^14.2.6"
   }
 }

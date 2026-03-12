@@ -73,13 +73,16 @@ export default [
     },
   },
   {
-    // Ignore generated/vendor files and node_modules
+    // Ignore generated/vendor files, node_modules, and test artifacts
     ignores: [
       "node_modules/**",
       "cards/**",
       "images/**",
       "transcripts/**",
       "MSE/**",
+      "test-results/**",
+      "playwright-report/**",
+      "tests/**",
     ],
   },
 ];
