@@ -58,10 +58,6 @@ for (const card of cards) {
     fail(`Card missing "file" field: ${JSON.stringify(card)}`);
     schemaErrors++;
   }
-  if (typeof card.folder !== "string" || !["complete", "incomplete"].includes(card.folder)) {
-    fail(`Card "${card.file}" has invalid "folder": ${card.folder}`);
-    schemaErrors++;
-  }
   if (!Array.isArray(card.tags)) {
     fail(`Card "${card.file}" is missing "tags" array`);
     schemaErrors++;
@@ -79,9 +75,9 @@ section("3. Image file existence");
 
 let missingImages = 0;
 for (const card of cards) {
-  const imagePath = join(ROOT, "images", "cards", card.folder, card.file);
+  const imagePath = join(ROOT, "cards", "images", card.file);
   if (!existsSync(imagePath)) {
-    fail(`Missing image: images/cards/${card.folder}/${card.file}`);
+    fail(`Missing image: cards/images/${card.file}`);
     missingImages++;
   }
 }
@@ -93,22 +89,21 @@ if (missingImages === 0) {
 
 // ── 4. Transcript files (soft check — not all cards need transcripts) ─────────
 
-section("4. Transcript file check (complete cards only)");
+section("4. Transcript file check");
 
 let missingTranscripts = 0;
-const completeCards = cards.filter((c) => c.folder === "complete");
-for (const card of completeCards) {
+for (const card of cards) {
   const stem = card.file.replace(/\.[^.]+$/, "");
-  const mdPath = join(ROOT, "transcripts", "cards", "complete", stem + ".md");
-  const txtPath = join(ROOT, "transcripts", "cards", "complete", stem + ".txt");
+  const mdPath = join(ROOT, "cards", "transcripts", stem + ".md");
+  const txtPath = join(ROOT, "cards", "transcripts", stem + ".txt");
   if (!existsSync(mdPath) && !existsSync(txtPath)) {
     missingTranscripts++;
   }
 }
 if (missingTranscripts === 0) {
-  pass(`All ${completeCards.length} complete cards have transcript files`);
+  pass(`All ${cards.length} cards have transcript files`);
 } else {
-  pass(`${completeCards.length - missingTranscripts} of ${completeCards.length} complete cards have transcripts (${missingTranscripts} missing — may be intentional)`);
+  pass(`${cards.length - missingTranscripts} of ${cards.length} cards have transcripts (${missingTranscripts} missing — may be intentional)`);
 }
 
 // ── 5. Per-card JSON files in cards/ ─────────────────────────────────────────
@@ -172,7 +167,10 @@ const requiredFiles = [
   "sw.js",
   "manifest.json",
   "version.json",
-  "favicon.svg",
+  "assets/favicon.svg",
+  "assets/card-preview.jpg",
+  "assets/favicon-192.png",
+  "assets/favicon-512.png",
   "cards.json",
 ];
 

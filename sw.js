@@ -27,10 +27,10 @@ const PRECACHE_ASSETS = [
   "/cards.json",
   "/version.json",
   "/manifest.json",
-  "/favicon.svg",
-  "/images/assets/favicon-192.png",
-  "/images/assets/favicon-512.png",
-  "/images/assets/card-preview.jpg",
+  "/assets/favicon.svg",
+  "/assets/favicon-192.png",
+  "/assets/favicon-512.png",
+  "/assets/card-preview.jpg",
   "https://cdn.jsdelivr.net/npm/marked/marked.min.js",
   "https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js",
   "https://cdn.jsdelivr.net/npm/mana-font@latest/css/mana.min.css"
@@ -58,7 +58,7 @@ self.addEventListener("fetch", (event) => {
   if (request.method !== "GET" || url.protocol === "chrome-extension:") return;
 
   // For card images and thumbnails: cache-first with network fallback
-  if (url.pathname.startsWith("/images/cards/") || url.pathname.startsWith("/images/thumb/")) {
+  if (url.pathname.startsWith("/cards/images/") || url.pathname.startsWith("/cards/thumbs/")) {
     event.respondWith(
       caches.match(request).then((cached) => {
         if (cached) return cached;
@@ -68,7 +68,7 @@ self.addEventListener("fetch", (event) => {
             caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
           }
           return response;
-        }).catch(() => caches.match("/images/assets/card-preview.jpg").then(r => r || Response.error()));
+        }).catch(() => caches.match("/assets/card-preview.jpg").then(r => r || Response.error()));
       })
     );
     return;

@@ -168,7 +168,7 @@ export function updateCostDisplay() {
 /** Shows the placeholder card image when no active plane is present. */
 export function showGamePlaceholder() {
   if (gameCardImage) {
-    gameCardImage.src = "images/assets/card-preview.jpg";
+    gameCardImage.src = "assets/card-preview.jpg";
     gameCardImage.alt = "Click to planeswalk";
   }
   if (gameSidePanel) gameSidePanel.innerHTML = "";

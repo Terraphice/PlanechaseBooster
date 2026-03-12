@@ -5,7 +5,7 @@ import { fileURLToPath } from "url";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 
-const IMAGE_FOLDERS = ["complete", "incomplete"];
+const IMAGES_DIR = join(ROOT, "cards", "images");
 const VALID_EXTENSIONS = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif"]);
 const OUTPUT_FILE = join(ROOT, "cards.json");
 
@@ -14,36 +14,32 @@ const existingByKey = new Map(existingCards.map((card) => [getCardKey(card.file)
 
 const cards = [];
 
-for (const folder of IMAGE_FOLDERS) {
-  const folderPath = join(ROOT, "images", "cards", folder);
+if (!existsSync(IMAGES_DIR)) {
+  console.error(`Image directory not found: cards/images/`);
+  process.exit(1);
+}
 
-  if (!existsSync(folderPath)) {
-    continue;
-  }
+const files = readdirSync(IMAGES_DIR, { withFileTypes: true });
 
-  const files = readdirSync(folderPath, { withFileTypes: true });
+for (const entry of files) {
+  if (!entry.isFile()) continue;
 
-  for (const entry of files) {
-    if (!entry.isFile()) continue;
+  const extension = extname(entry.name).toLowerCase();
+  if (!VALID_EXTENSIONS.has(extension)) continue;
 
-    const extension = extname(entry.name).toLowerCase();
-    if (!VALID_EXTENSIONS.has(extension)) continue;
+  const key = getCardKey(entry.name);
+  const existing = existingByKey.get(key) || {};
+  const inferredTypeTag = getInferredTypeTag(entry.name);
 
-    const key = getCardKey(entry.name);
-    const existing = existingByKey.get(key) || {};
-    const inferredTypeTag = getInferredTypeTag(entry.name);
+  const mergedTags = uniqueTags([
+    ...(Array.isArray(existing.tags) ? existing.tags : []),
+    ...(inferredTypeTag ? [inferredTypeTag] : [])
+  ]);
 
-    const mergedTags = uniqueTags([
-      ...(Array.isArray(existing.tags) ? existing.tags : []),
-      ...(inferredTypeTag ? [inferredTypeTag] : [])
-    ]);
-
-    cards.push({
-      file: entry.name,
-      folder,
-      tags: mergedTags
-    });
-  }
+  cards.push({
+    file: entry.name,
+    tags: mergedTags
+  });
 }
 
 cards.sort((a, b) => {

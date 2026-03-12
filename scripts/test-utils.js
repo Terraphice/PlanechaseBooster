@@ -79,29 +79,25 @@ assert(getCardType(["plane", "phenomenon"]) === "Plane", "Plane takes precedence
 // ── enrichCard ────────────────────────────────────────────────────────────────
 
 section("enrichCard");
-const raw = { file: "Plane_Akoum.png", folder: "complete", tags: ["Plane", "Zendikar", "badge:tr:green:Official"] };
+const raw = { file: "Plane_Akoum.png", tags: ["Plane", "Zendikar", "badge:tr:green:Official"] };
 const enriched = enrichCard(raw);
 assert(enriched.key === "Plane_Akoum", "key is set");
 assert(enriched.displayName === "Akoum", "displayName is set");
 assert(enriched.type === "Plane", "type is set");
-assert(enriched.imagePath === "images/cards/complete/Plane_Akoum.png", "imagePath is set");
-assert(enriched.thumbPath === "images/thumb/Plane_Akoum.webp", "thumbPath is set");
-assert(enriched.transcriptPath === "transcripts/cards/complete/Plane_Akoum.md", "transcriptPath is set");
+assert(enriched.imagePath === "cards/images/Plane_Akoum.png", "imagePath is set");
+assert(enriched.thumbPath === "cards/thumbs/Plane_Akoum.webp", "thumbPath is set");
+assert(enriched.transcriptPath === "cards/transcripts/Plane_Akoum.md", "transcriptPath is set");
 assert(Array.isArray(enriched.tags), "tags is an array");
 assert(Array.isArray(enriched.normalizedTags), "normalizedTags is an array");
 assert(enriched.normalizedTags[0] === "plane", "normalizedTags are lowercased");
-
-const incomplete = enrichCard({ file: "Plane_Test.png", folder: "incomplete", tags: ["Plane"] });
-assert(incomplete.imagePath.includes("incomplete"), "incomplete folder in imagePath");
-assert(incomplete.transcriptPath.includes("incomplete"), "incomplete folder in transcriptPath");
 
 // ── sortCards ─────────────────────────────────────────────────────────────────
 
 section("sortCards");
 const unsorted = [
-  enrichCard({ file: "Plane_Zendikar.png", folder: "complete", tags: ["Plane"] }),
-  enrichCard({ file: "Plane_Akoum.png", folder: "complete", tags: ["Plane"] }),
-  enrichCard({ file: "Plane_Bant.png", folder: "complete", tags: ["Plane"] }),
+  enrichCard({ file: "Plane_Zendikar.png", tags: ["Plane"] }),
+  enrichCard({ file: "Plane_Akoum.png", tags: ["Plane"] }),
+  enrichCard({ file: "Plane_Bant.png", tags: ["Plane"] }),
 ];
 sortCards(unsorted);
 assert(unsorted[0].displayName === "Akoum", "First after sort: Akoum");
@@ -112,8 +108,8 @@ assert(unsorted[2].displayName === "Zendikar", "Third after sort: Zendikar");
 
 section("reconcileSelectedTags");
 const cards = [
-  enrichCard({ file: "Plane_A.png", folder: "complete", tags: ["Zendikar", "Official"] }),
-  enrichCard({ file: "Plane_B.png", folder: "complete", tags: ["Ravnica"] }),
+  enrichCard({ file: "Plane_A.png", tags: ["Zendikar", "Official"] }),
+  enrichCard({ file: "Plane_B.png", tags: ["Ravnica"] }),
 ];
 const reconciled = reconcileSelectedTags(new Set(["zendikar", "ravnica"]), cards);
 assert(reconciled.has("Zendikar"), "Reconciled 'zendikar' → 'Zendikar' (canonical)");

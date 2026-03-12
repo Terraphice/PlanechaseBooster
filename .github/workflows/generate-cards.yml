@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - images/cards/**
+      - cards/images/**
       - scripts/generate-cards.js
 
 jobs:

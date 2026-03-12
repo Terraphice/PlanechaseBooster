@@ -3,7 +3,7 @@
   position: fixed;
   inset: 0;
   z-index: -3;
-  background-image: url('../images/assets/social-preview.jpg');
+  background-image: url('../assets/social-preview.jpg');
   background-size: cover;
   background-position: center 30%;
   background-repeat: no-repeat;
@@ -1029,7 +1029,7 @@ button.active-filter-pill:disabled {
   overflow: hidden;
   border-radius: 14px;
   background-color: color-mix(in srgb, var(--bg-elev-1) 86%, black 14%);
-  background-image: url('../images/assets/card-preview.jpg');
+  background-image: url('../assets/card-preview.jpg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -1274,7 +1274,7 @@ button.active-filter-pill:disabled {
   overflow: hidden;
   box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
   background-color: color-mix(in srgb, var(--bg-elev-1) 88%, black 12%);
-  background-image: url('../images/assets/card-preview.jpg');
+  background-image: url('../assets/card-preview.jpg');
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

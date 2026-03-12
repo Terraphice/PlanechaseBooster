@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="images/assets/social-preview.jpg" alt="Planar Atlas, a feature-complete Planechase tool" width="100%" style="border-radius:12px;" />
+<img src="assets/social-preview.jpg" alt="Planar Atlas, a feature-complete Planechase tool" width="100%" style="border-radius:12px;" />
 
 # Planar Atlas
 
@@ -204,7 +204,7 @@ CDN runtime dependencies: [marked.js](https://marked.js.org/) (Markdown renderin
 
 ## Contributing
 
-Contributions are welcome. The easiest way to contribute is to add card images or transcripts for planes and phenomena that are missing from the library. See the existing files in `images/cards/` and `transcripts/cards/complete/` for the expected formats and naming conventions.
+Contributions are welcome. The easiest way to contribute is to add card images or transcripts for planes and phenomena that are missing from the library. See the existing files in `cards/images/` and `cards/transcripts/` for the expected formats and naming conventions.
 
 I'm honestly choosy about which custom cards are welcome in the library, for now. Please understand that any denied PR/contribution of custom cards
 isn't so much an attack on the quality or design, but more so a desire to reduce duplicate/excessive design, or maintain game scope.

@@ -104,7 +104,7 @@ export function getCardType(tags) {
 
 /**
  * Enriches a raw card object from cards.json with derived fields.
- * @param {{ file: string, folder: string, tags: string[] }} card - Raw card data.
+ * @param {{ file: string, tags: string[] }} card - Raw card data.
  * @returns {object} Enriched card with key, displayName, type, imagePath, thumbPath, transcriptPath, tags, normalizedTags.
  */
 export function enrichCard(card) {
@@ -117,14 +117,13 @@ export function enrichCard(card) {
 
   const normalizedTags = tags.map((tag) => tag.toLowerCase());
 
-  const folder = card.folder || "complete";
   return {
     ...card,
     key: getCardKey(card.file),
     displayName: getDisplayName(card.file),
-    imagePath: `images/cards/${folder}/${card.file}`,
-    thumbPath: `images/thumb/${getCardKey(card.file)}.webp`,
-    transcriptPath: `transcripts/cards/${folder}/${getCardKey(card.file)}.md`,
+    imagePath: `cards/images/${card.file}`,
+    thumbPath: `cards/thumbs/${getCardKey(card.file)}.webp`,
+    transcriptPath: `cards/transcripts/${getCardKey(card.file)}.md`,
     tags,
     normalizedTags,
     type: getCardType(normalizedTags)

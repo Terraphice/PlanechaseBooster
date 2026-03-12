@@ -3,7 +3,7 @@ import { escapeHtml, shuffleArray } from "../gallery/utils.js";
 const BEM_VIEW_RADIUS = 1;
 const BEM_FALLOFF_DIST = 2;
 const BEM_DRAG_THRESHOLD = 44;
-const BEM_FACEDOWN_IMG = "images/assets/card-preview.jpg";
+const BEM_FACEDOWN_IMG = "assets/card-preview.jpg";
 
 let ctx = null;
 
@@ -522,7 +522,7 @@ export function renderBemMap() {
         if (isPlayer) div.classList.add("bem-cell-player");
         const img = document.createElement("img");
         img.className = "bem-cell-placeholder-img";
-        img.src = "images/assets/card-preview.jpg";
+        img.src = "assets/card-preview.jpg";
         img.alt = "";
         div.appendChild(img);
       } else if (cell.faceUp) {

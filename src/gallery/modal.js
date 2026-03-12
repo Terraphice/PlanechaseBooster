@@ -235,7 +235,7 @@ export function createModalManager({
         modalImage.src = modalCurrentCardImagePath;
         modalImage.alt = modalName.textContent;
       } else {
-        modalImage.src = "images/assets/card-preview.jpg";
+        modalImage.src = "assets/card-preview.jpg";
         modalImage.alt = "Card back";
       }
       modalImageWrap.classList.toggle("modal-image-flipped", modalImageFlipped);
