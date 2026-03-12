@@ -1,9 +1,12 @@
-const CACHE_NAME = "planar-atlas-v1";
+const CACHE_VERSION = "1.0.0";
+const CACHE_NAME = `planar-atlas-${CACHE_VERSION}`;
 
 const PRECACHE_ASSETS = [
   "/",
   "/index.html",
-  "/style.css",
+  "/style-themes.css",
+  "/style-gallery.css",
+  "/style-game.css",
   "/gallery.js",
   "/gallery-ui.js",
   "/gallery-utils.js",
@@ -12,9 +15,12 @@ const PRECACHE_ASSETS = [
   "/gallery-modal.js",
   "/gallery-state.js",
   "/deck.js",
+  "/deck-codec.js",
+  "/changelog.js",
   "/game-classic.js",
   "/game-bem.js",
   "/cards.json",
+  "/version.json",
   "/manifest.json",
   "/favicon.svg",
   "/images/assets/favicon-192.png",

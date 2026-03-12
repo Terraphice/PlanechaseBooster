@@ -12,7 +12,9 @@
   <meta property="og:image" content="https://planechase.terraphice.dev/images/assets/social-preview.jpg">
   <meta property="og:image:alt" content="Preview image for Planar Atlas.">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style-themes.css" />
+  <link rel="stylesheet" href="style-gallery.css" />
+  <link rel="stylesheet" href="style-game.css" />
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="images/assets/favicon-32.png" sizes="32x32" type="image/png" />
@@ -484,14 +486,14 @@
 
     <div class="game-bl-group">
       <span class="game-btn-label game-btn-label-top">Options</span>
-      <button id="game-btn-bl" class="game-corner-btn game-bl" type="button" aria-label="Options">
+      <button id="game-btn-bl" class="game-corner-btn game-bl" type="button" aria-label="Options" aria-expanded="false" aria-controls="game-options-menu">
         <span class="symbol-glyph" aria-hidden="true">☰&#xFE0E;</span>
       </button>
     </div>
 
     <div class="game-br-group">
       <span class="game-btn-label game-btn-label-top">Tools</span>
-      <button id="game-btn-br" class="game-corner-btn game-br" type="button" aria-label="Tools">
+      <button id="game-btn-br" class="game-corner-btn game-br" type="button" aria-label="Tools" aria-expanded="false" aria-controls="game-tools-menu">
         <span class="symbol-glyph" aria-hidden="true">⚙&#xFE0E;</span>
       </button>
     </div>
@@ -628,6 +630,22 @@
       <div id="game-tutorial-body" class="game-tutorial-body"></div>
       <div class="game-tutorial-footer">
         <button id="game-tutorial-close" class="game-tutorial-close-btn" type="button">Let's Play!</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- What's New / Changelog panel -->
+  <div id="changelog-overlay" class="changelog-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="changelog-title">
+    <div id="changelog-backdrop" class="changelog-backdrop"></div>
+    <div class="changelog-panel">
+      <div class="changelog-header">
+        <h2 id="changelog-title" class="changelog-title">What's New</h2>
+        <span id="changelog-version" class="changelog-version"></span>
+        <button id="changelog-close" class="changelog-close" type="button" aria-label="Close changelog">×</button>
+      </div>
+      <div id="changelog-body" class="changelog-body"></div>
+      <div class="changelog-footer">
+        <button id="changelog-dismiss" class="changelog-dismiss-btn" type="button">Got it!</button>
       </div>
     </div>
   </div>

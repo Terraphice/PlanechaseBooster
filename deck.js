@@ -1,4 +1,5 @@
 import { escapeHtml, shuffleArray, isHiddenCard, enhanceManaSymbols } from "./gallery-utils.js";
+import { compressKey, decompressKey, toBase64Url, fromBase64Url, encodeDeck, decodeDeck } from "./deck-codec.js";
 
 import {
   initClassicGame,
@@ -40,6 +41,7 @@ const DECK_NAMES_KEY = "planar-atlas-deck-names-v1";
 const TUTORIAL_CLASSIC_KEY = "planar-atlas-tutorial-classic-v1";
 const TUTORIAL_BEM_KEY = "planar-atlas-tutorial-bem-v1";
 const BEM_ZOOM_KEY = "planar-atlas-bem-zoom-v1";
+const GAME_STATE_AUTOSAVE_KEY = "planar-atlas-game-state-autosave-v1";
 const NUM_DECK_SLOTS = 10;
 const MAX_CARD_COUNT = 9;
 
@@ -305,6 +307,16 @@ export function initDeck({ cards, showToast, onDeckChange }) {
       history.replaceState(null, "", `${window.location.pathname}${query ? `?${query}` : ""}#play`);
       startGameFromState(decoded);
       showToastFn?.("Game state restored from link.");
+      return;
+    }
+  }
+
+  const autosaved = localStorage.getItem(GAME_STATE_AUTOSAVE_KEY);
+  if (autosaved && window.location.hash !== "#play") {
+    const decoded = decodeGameState(autosaved);
+    if (decoded) {
+      startGameFromState(decoded);
+      showToastFn?.("Game resumed from previous session.");
       return;
     }
   }
@@ -1338,83 +1350,6 @@ export function setModalCardKey(cardKey) {
   updateModalDeckButton(cardKey);
 }
 
-// ── Seed encoding ─────────────────────────────────────────────────────────────
-
-function compressKey(key) {
-  if (key.startsWith("Plane_")) return "p" + key.slice(6);
-  if (key.startsWith("Phenomenon_")) return "n" + key.slice(11);
-  return "u" + key;
-}
-
-function decompressKey(compressed) {
-  if (!compressed || compressed.length < 2) return null;
-  const pre = compressed[0];
-  const rest = compressed.slice(1);
-  if (pre === "p") return "Plane_" + rest;
-  if (pre === "n") return "Phenomenon_" + rest;
-  if (pre === "u") return rest;
-  return null;
-}
-
-function toBase64Url(str) {
-  const bytes = new TextEncoder().encode(str);
-  let binary = "";
-  for (const byte of bytes) binary += String.fromCharCode(byte);
-  return btoa(binary).replace(/\+/g, "-").replace(/\//g, "_").replace(/=/g, "");
-}
-
-function fromBase64Url(b64) {
-  const padded = b64.replace(/-/g, "+").replace(/_/g, "/");
-  const padding = (4 - (padded.length % 4)) % 4;
-  const binary = atob(padded + "=".repeat(padding));
-  const bytes = new Uint8Array(binary.length);
-  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
-  return new TextDecoder().decode(bytes);
-}
-
-function encodeDeck(map) {
-  const entries = [...map.entries()]
-    .filter(([, c]) => c > 0)
-    .sort(([a], [b]) => a.localeCompare(b));
-  if (!entries.length) return "";
-
-  const raw = entries.map(([k, c]) => {
-    const ck = compressKey(k);
-    return c === 1 ? ck : `${ck}*${c}`;
-  }).join(",");
-
-  try {
-    return "d1:" + toBase64Url(raw);
-  } catch {
-    return "";
-  }
-}
-
-function decodeDeck(seed) {
-  if (!seed?.startsWith("d1:")) return new Map();
-  try {
-    const raw = fromBase64Url(seed.slice(3));
-    const map = new Map();
-    for (const part of raw.split(",")) {
-      if (!part) continue;
-      const starIdx = part.lastIndexOf("*");
-      let ck, count;
-      if (starIdx >= 1 && /^\d+$/.test(part.slice(starIdx + 1))) {
-        ck = part.slice(0, starIdx);
-        count = Math.max(1, Math.min(MAX_CARD_COUNT, parseInt(part.slice(starIdx + 1), 10)));
-      } else {
-        ck = part;
-        count = 1;
-      }
-      const key = decompressKey(ck);
-      if (key) map.set(key, count);
-    }
-    return map;
-  } catch {
-    return new Map();
-  }
-}
-
 function filterValidDeck(map) {
   const valid = new Map();
   for (const [key, count] of map) {
@@ -1785,6 +1720,7 @@ function exitGame({ updateHash = true } = {}) {
   if (gameToolsRedo) gameToolsRedo.disabled = true;
   revealedCards = [];
   resetBemState();
+  try { localStorage.removeItem(GAME_STATE_AUTOSAVE_KEY); } catch { /* ignore */ }
   readerOpenedFromReveal = false; // reset before closeGameReaderView so overlay isn't restored on exit
   document.body.classList.remove("game-open");
   gameView?.classList.add("hidden");
@@ -2038,9 +1974,18 @@ function syncGameToolsState(remainingCount) {
   if (gameToolsShuffle) gameToolsShuffle.disabled = !gameState;
   if (gameLibraryToggle) gameLibraryToggle.disabled = !gameState;
   if (gameToolsRevealToggle) gameToolsRevealToggle.disabled = !gameState;
+  autoSaveGameState();
 }
 
-
+function autoSaveGameState() {
+  if (!gameState) return;
+  try {
+    const seed = encodeGameState();
+    if (seed) localStorage.setItem(GAME_STATE_AUTOSAVE_KEY, seed);
+  } catch {
+    // ignore storage errors
+  }
+}
 
 function openGameReaderView(card, actions = []) {
   if (!gameReaderView || !card) return;
@@ -2581,6 +2526,7 @@ function toggleGameToolsMenu() {
   closeAllGameMenus();
   if (isHidden) {
     gameToolsMenu?.classList.remove("hidden");
+    gameBtnBr?.setAttribute("aria-expanded", "true");
     gameMenuSearchSection?.classList.add("hidden");
     gameRevealInputRow?.classList.add("hidden");
     if (gameLibraryToggle) gameLibraryToggle.textContent = "Search & View Library";
@@ -2593,12 +2539,17 @@ function toggleGameToolsMenu() {
 function toggleGameOptionsMenu() {
   const isHidden = gameOptionsMenu?.classList.contains("hidden");
   closeAllGameMenus();
-  if (isHidden) gameOptionsMenu?.classList.remove("hidden");
+  if (isHidden) {
+    gameOptionsMenu?.classList.remove("hidden");
+    gameBtnBl?.setAttribute("aria-expanded", "true");
+  }
 }
 
 function closeAllGameMenus() {
   gameToolsMenu?.classList.add("hidden");
   gameOptionsMenu?.classList.add("hidden");
+  gameBtnBr?.setAttribute("aria-expanded", "false");
+  gameBtnBl?.setAttribute("aria-expanded", "false");
 }
 
 // ── Tutorial overlay ──────────────────────────────────────────────────────────

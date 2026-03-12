@@ -50,6 +50,7 @@ import {
 import { createRenderer } from "./gallery-render.js";
 import { createSearchManager } from "./gallery-search.js";
 import { createModalManager } from "./gallery-modal.js";
+import { initChangelog } from "./changelog.js";
 
 const ALL_PALETTES = ["standard", "gruvbox", "atom", "dracula", "solarized", "nord", "catppuccin", "scryfall"];
 
@@ -334,6 +335,8 @@ async function init() {
     });
     setPhenomenonAnimation(filters.phenomenonAnimation);
     setRiskyHellriding(filters.riskyHellriding);
+
+    initChangelog();
 
     prefetchAllTranscripts(allCards);
   } catch (error) {
