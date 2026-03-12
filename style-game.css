@@ -2463,7 +2463,6 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
   }
 
   .game-reader-zoom-img {
-    transform: rotate(-90deg);
     max-width: 100vh;
     max-height: 100vw;
   }
