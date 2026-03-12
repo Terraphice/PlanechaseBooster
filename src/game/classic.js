@@ -2,6 +2,10 @@
 // Rendering and game logic for the Classic shared-deck Planechase game mode.
 
 import { escapeHtml, shuffleArray } from "../gallery/utils.js";
+
+let ctx = null;
+
+export function initClassicGame(context) {
   ctx = context;
 }
 
