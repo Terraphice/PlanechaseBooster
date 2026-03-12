@@ -38,6 +38,10 @@ export default [
         MutationObserver: "readonly",
         IntersectionObserver: "readonly",
         HTMLElement: "readonly",
+        Node: "readonly",
+        Image: "readonly",
+        DOMPurify: "readonly",
+        marked: "readonly",
         // Node.js globals (for scripts/)
         process: "readonly",
         console: "readonly",
@@ -56,6 +60,16 @@ export default [
 
       // Keep code consistent
       "eqeqeq": ["warn", "always", { null: "ignore" }],
+    },
+  },
+  {
+    files: ["sw.js"],
+    languageOptions: {
+      globals: {
+        self: "readonly",
+        caches: "readonly",
+        Response: "readonly",
+      },
     },
   },
   {

@@ -8,7 +8,7 @@ export function createModalManager({
   modal,
   modalImageWrap,
   modalImage,
-  modalFlipHint,
+  _modalFlipHint,
   modalName,
   modalType,
   modalTranscript,
@@ -18,7 +18,7 @@ export function createModalManager({
   modalNextButton,
   modalTagList,
   randomCardButton,
-  randomCardIcon,
+  _randomCardIcon,
   filters,
   displayState,
   paginationState,
@@ -319,10 +319,6 @@ export function createModalManager({
       selected.add(randomFrom(allTags));
     }
     return selected;
-  }
-
-  function capitalize(value) {
-    return value ? value[0].toUpperCase() + value.slice(1) : value;
   }
 
   function triggerChaosMode() {

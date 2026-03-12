@@ -8,9 +8,5 @@
     "test:utils": "node scripts/test-utils.js",
     "test:unit": "node scripts/test-codec.js && node scripts/test-utils.js",
     "lint": "eslint ."
-  },
-  "dependencies": {
-    "@eslint/js": "^10.0.1",
-    "eslint": "^10.0.3"
   }
 }
