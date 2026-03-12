@@ -540,6 +540,8 @@
           <input id="game-reveal-count-input" type="number" min="1" class="game-tools-search-input" placeholder="Number of cards…" autocomplete="off" />
           <button id="game-reveal-go-btn" class="game-reveal-go-btn" type="button">Reveal</button>
         </div>
+        <div class="game-menu-divider"></div>
+        <button id="game-tools-exile-toggle" class="game-menu-item" type="button">View Exile Zone (0)</button>
       </div>
     </div>
 
@@ -582,6 +584,32 @@
         <button id="game-reveal-top-all" class="game-reveal-footer-btn" type="button">Top</button>
         <button id="game-reveal-bottom-all" class="game-reveal-footer-btn" type="button">Bottom</button>
         <button id="game-reveal-exile-all" class="game-reveal-footer-btn game-reveal-footer-btn-danger" type="button">Exile</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Exile zone overlay (fixed position, outside game-view to avoid mobile rotation) -->
+  <div id="game-exile-overlay" class="game-reveal-overlay hidden" role="dialog" aria-modal="true" aria-label="Exile Zone">
+    <div id="game-exile-backdrop" class="game-reveal-backdrop"></div>
+    <div class="game-reveal-panel">
+      <div class="game-reveal-header">
+        <h3 class="game-reveal-title">Exile Zone (<span id="game-exile-title-count">0</span>)</h3>
+        <div class="game-reveal-header-right">
+          <div class="game-reveal-view-toggle" role="group" aria-label="View mode">
+            <button id="game-exile-list-btn" class="game-reveal-view-btn active" type="button">List</button>
+            <button id="game-exile-gallery-btn" class="game-reveal-view-btn" type="button">Gallery</button>
+          </div>
+          <button id="game-exile-close" class="game-reveal-close" type="button" aria-label="Close exile zone">×</button>
+        </div>
+      </div>
+      <div id="game-exile-cards-container" class="game-reveal-cards-container game-reveal-mode-list">
+        <!-- Rendered by JS -->
+      </div>
+      <div class="game-reveal-footer">
+        <span class="game-reveal-footer-label">All:</span>
+        <button id="game-exile-shuffle-in" class="game-reveal-footer-btn" type="button">Shuffle In</button>
+        <button id="game-exile-top-all" class="game-reveal-footer-btn" type="button">Top</button>
+        <button id="game-exile-bottom-all" class="game-reveal-footer-btn" type="button">Bottom</button>
       </div>
     </div>
   </div>
