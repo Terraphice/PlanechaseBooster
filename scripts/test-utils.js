@@ -28,7 +28,7 @@ import {
   shuffleArray,
   getManaClasses,
   enhanceManaSymbols,
-} from "../gallery-utils.js";
+} from "../src/gallery/utils.js";
 
 let passed = 0;
 let failed = 0;

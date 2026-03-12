@@ -1,4 +1,4 @@
-import { escapeHtml, shuffleArray } from "./gallery-utils.js";
+import { escapeHtml, shuffleArray } from "../gallery/utils.js";
 
 let ctx = null;
 

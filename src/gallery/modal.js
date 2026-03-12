@@ -1,4 +1,4 @@
-import { enhanceManaSymbols } from "./gallery-utils.js";
+import { enhanceManaSymbols } from "./utils.js";
 
 export function createModalManager({
   modal,

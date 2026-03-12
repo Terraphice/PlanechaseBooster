@@ -1,8 +1,12 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync, unlinkSync } from "fs";
-import { join } from "path";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
 
-const CARDS_JSON = "cards.json";
-const CARDS_DIR = "cards";
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const ROOT = join(__dirname, "..");
+
+const CARDS_JSON = join(ROOT, "cards.json");
+const CARDS_DIR = join(ROOT, "cards");
 
 const raw = readFileSync(CARDS_JSON, "utf8");
 const cards = JSON.parse(raw);

@@ -10,7 +10,7 @@ import {
   fromBase64Url,
   encodeDeck,
   decodeDeck,
-} from "../deck-codec.js";
+} from "../src/deck/codec.js";
 
 let passed = 0;
 let failed = 0;

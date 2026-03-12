@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - images/cards/**
-      - generate-cards.js
+      - scripts/generate-cards.js
 
 jobs:
   generate:
@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run generate-cards.js
-        run: node generate-cards.js
+        run: node scripts/generate-cards.js
 
       - name: Commit updated cards.json
         run: |

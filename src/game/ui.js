@@ -3,8 +3,8 @@
 // game menus, die rolling, cost display, BEM zoom, and tutorial overlay.
 // Extracted from deck.js for maintainability.
 
-import { escapeHtml, shuffleArray, enhanceManaSymbols } from "./gallery-utils.js";
-import { updateClassicGameView, renderClassicSidePanel, buildMainCardActions, buildSideCardActions } from "./game-classic.js";
+import { escapeHtml, shuffleArray, enhanceManaSymbols } from "../gallery/utils.js";
+import { updateClassicGameView, renderClassicSidePanel, buildMainCardActions, buildSideCardActions } from "./classic.js";
 import {
   syncBemTrButton,
   renderBemMap,
@@ -19,7 +19,7 @@ import {
   buildBemCardActions,
   buildBemAdjacentCardActions,
   buildBemSideCardActions,
-} from "./game-bem.js";
+} from "./bem.js";
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 

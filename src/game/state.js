@@ -3,8 +3,8 @@
 // and game lifecycle transitions (start, exit, reset).
 // Extracted from deck.js for maintainability.
 
-import { shuffleArray } from "./gallery-utils.js";
-import { compressKey, decompressKey, toBase64Url, fromBase64Url } from "./deck-codec.js";
+import { shuffleArray } from "../gallery/utils.js";
+import { compressKey, decompressKey, toBase64Url, fromBase64Url } from "../deck/codec.js";
 import {
   bemKey,
   resetBemState,
@@ -12,7 +12,7 @@ import {
   renderBemMap,
   updateBemInfoBar,
   syncBemTrButton,
-} from "./game-bem.js";
+} from "./bem.js";
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 

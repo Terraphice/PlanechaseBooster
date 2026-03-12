@@ -1,4 +1,4 @@
-import { getTagLabel, matchesFilters, parseSearchQuery, escapeHtml } from "./gallery-utils.js";
+import { getTagLabel, matchesFilters, parseSearchQuery, escapeHtml } from "./utils.js";
 
 export function createSearchManager({
   topSearch,

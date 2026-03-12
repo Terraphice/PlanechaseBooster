@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - cards.json
-      - sync-cards.js
+      - scripts/sync-cards.js
 
 jobs:
   sync:
@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Run sync-cards.js
-        run: node sync-cards.js
+        run: node scripts/sync-cards.js
 
       - name: Commit updated card files
         run: |

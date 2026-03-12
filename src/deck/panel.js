@@ -3,8 +3,8 @@
 // card overlays, auto-import, and deck import/export.
 // Extracted from deck.js for maintainability.
 
-import { escapeHtml, isHiddenCard } from "./gallery-utils.js";
-import { encodeDeck, decodeDeck } from "./deck-codec.js";
+import { escapeHtml, isHiddenCard } from "../gallery/utils.js";
+import { encodeDeck, decodeDeck } from "./codec.js";
 
 // ── Module state ──────────────────────────────────────────────────────────────
 

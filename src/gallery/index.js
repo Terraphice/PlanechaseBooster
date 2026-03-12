@@ -8,12 +8,12 @@ import {
   getTagToneClass,
   isTopTag,
   enhanceManaSymbols
-} from "./gallery-utils.js";
+} from "./utils.js";
 
 import {
   initToastManager,
   initThemeController
-} from "./gallery-ui.js";
+} from "./ui.js";
 
 import {
   initDeck,
@@ -38,7 +38,7 @@ import {
   setRiskyHellriding,
   setSmoothTravel,
   setBemEdgePlaceholders
-} from "./deck.js";
+} from "../deck/index.js";
 
 import {
   STORAGE_KEY,
@@ -47,12 +47,12 @@ import {
   paginationState,
   preferences,
   initStateManager
-} from "./gallery-state.js";
+} from "./state.js";
 
-import { createRenderer } from "./gallery-render.js";
-import { createSearchManager } from "./gallery-search.js";
-import { createModalManager } from "./gallery-modal.js";
-import { initChangelog } from "./changelog.js";
+import { createRenderer } from "./render.js";
+import { createSearchManager } from "./search.js";
+import { createModalManager } from "./modal.js";
+import { initChangelog } from "../changelog.js";
 
 const ALL_PALETTES = ["standard", "gruvbox", "atom", "dracula", "solarized", "nord", "catppuccin", "scryfall"];
 

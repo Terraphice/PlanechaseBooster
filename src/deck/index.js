@@ -1,20 +1,20 @@
-import { isHiddenCard } from "./gallery-utils.js";
-import { toBase64Url, fromBase64Url, decodeDeck } from "./deck-codec.js";
+import { isHiddenCard } from "../gallery/utils.js";
+import { toBase64Url, fromBase64Url, decodeDeck } from "./codec.js";
 
-import { initClassicGame, startClassicGame, gamePlaneswalk, buildMainCardActions } from "./game-classic.js";
+import { initClassicGame, startClassicGame, gamePlaneswalk, buildMainCardActions } from "../game/classic.js";
 
 import {
   initBemGame, startBemGame, bemKey, bemMovePlayer, bemResolvePhenomenon, bemFillPlaceholder,
   syncBemTrButton, handleBemCellClick, toggleBemPlaneswalkMode, handleBemArrowKey,
   handleBemPointerDown, handleBemPointerMove, handleBemPointerUp,
   buildBemCardActions, getBemPlaneswalkPending, getBemViewOffset, resetBemState, getBemAnimating
-} from "./game-bem.js";
+} from "../game/bem.js";
 
 import {
   initGameStateManager, pushGameHistory, undoLastAction, redoNextAction,
   startGameFromState, exitGame, resetGame, encodeGameState, decodeGameState,
   autoSaveGameState, getGameHistory, getGameRedoStack
-} from "./game-state.js";
+} from "../game/state.js";
 
 import {
   initGameUI, updateGameView, showGamePlaceholder, updateCostDisplay, syncGameToolsState,
@@ -23,13 +23,13 @@ import {
   renderGameSidePanel, renderRevealCards, updateRevealFooter, gameRollDie,
   toggleGameToolsMenu, maybeShowTutorial, clearTutorialFlags, loadBemZoom,
   getRevealedCards, setRevealedCards, setReaderOpenedFromReveal, updatePhenomenonBanner
-} from "./game-ui.js";
+} from "../game/ui.js";
 
 import {
   initDeckPanel, openDeckPanel, closeDeckPanel, isDeckPanelOpen, setModalCardKey,
   updateDeckButton, renderDeckList, renderDeckSlotDropdown, updateCardOverlays,
   updateAllCardOverlays, refreshDeckCardItem, updateModalDeckButton
-} from "./deck-panel.js";
+} from "./panel.js";
 
 
 // ── Constants ─────────────────────────────────────────────────────────────────
@@ -406,8 +406,8 @@ export function syncGameHash() {
 
 // ── Re-exports from sub-modules ───────────────────────────────────────────────
 
-export { isDeckPanelOpen, closeDeckPanel, setModalCardKey } from "./deck-panel.js";
-export { clearTutorialFlags, closeGameReaderView, closeTopGameOverlay } from "./game-ui.js";
+export { isDeckPanelOpen, closeDeckPanel, setModalCardKey } from "./panel.js";
+export { clearTutorialFlags, closeGameReaderView, closeTopGameOverlay } from "../game/ui.js";
 
 // ── Events ────────────────────────────────────────────────────────────────────
 

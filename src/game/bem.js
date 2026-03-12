@@ -1,4 +1,4 @@
-import { escapeHtml, shuffleArray } from "./gallery-utils.js";
+import { escapeHtml, shuffleArray } from "../gallery/utils.js";
 
 const BEM_VIEW_RADIUS = 1;
 const BEM_FALLOFF_DIST = 2;

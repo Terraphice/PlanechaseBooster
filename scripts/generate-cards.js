@@ -1,9 +1,13 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "fs";
-import { join, extname } from "path";
+import { join, extname, dirname } from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const ROOT = join(__dirname, "..");
 
 const IMAGE_FOLDERS = ["complete", "incomplete"];
 const VALID_EXTENSIONS = new Set([".jpg", ".jpeg", ".png", ".webp", ".avif"]);
-const OUTPUT_FILE = "cards.json";
+const OUTPUT_FILE = join(ROOT, "cards.json");
 
 const existingCards = readExistingCards(OUTPUT_FILE);
 const existingByKey = new Map(existingCards.map((card) => [getCardKey(card.file), card]));
@@ -11,7 +15,7 @@ const existingByKey = new Map(existingCards.map((card) => [getCardKey(card.file)
 const cards = [];
 
 for (const folder of IMAGE_FOLDERS) {
-  const folderPath = join("images", "cards", folder);
+  const folderPath = join(ROOT, "images", "cards", folder);
 
   if (!existsSync(folderPath)) {
     continue;
@@ -55,7 +59,7 @@ if (cards.length === 0) {
 }
 
 writeFileSync(OUTPUT_FILE, JSON.stringify(cards, null, 2) + "\n");
-console.log(`Generated ${OUTPUT_FILE} with ${cards.length} cards.`);
+console.log(`Generated cards.json with ${cards.length} cards.`);
 
 function getCardKey(filename) {
   return filename.replace(/\.[^.]+$/, "");

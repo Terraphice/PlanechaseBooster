@@ -4,7 +4,7 @@ import {
   getBadgeTags,
   parseBadgeTag,
   escapeHtml
-} from "./gallery-utils.js";
+} from "./utils.js";
 
 export function createRenderer({
   gallery,
