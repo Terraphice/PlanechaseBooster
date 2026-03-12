@@ -577,6 +577,8 @@ export function initDeck({ cards, showToast, onDeckChange }) {
     getGameHistory,
     getGameRedoStack,
     pushGameHistory,
+    undoLastAction,
+    redoNextAction,
     autoSaveGameState,
     gamePlaneswalk,
     startClassicGame,
