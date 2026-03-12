@@ -58,12 +58,20 @@ export function gamePlaneswalk() {
 
   if (!gameState.recentPhenomena) gameState.recentPhenomena = [];
 
-  const activePhenomena = activePlanes.filter(c => c.type === "Phenomenon");
-  const hasNonPhenomenon = activePlanes.some(c => c.type !== "Phenomenon");
+  let hasPhenomenon = false;
+  let hasNonPhenomenon = false;
+  for (const card of activePlanes) {
+    if (card.type === "Phenomenon") {
+      hasPhenomenon = true;
+      if (!gameState.recentPhenomena.includes(card)) {
+        gameState.recentPhenomena.push(card);
+      }
+    } else {
+      hasNonPhenomenon = true;
+    }
+  }
 
-  if (activePhenomena.length > 0) {
-    gameState.recentPhenomena.push(...activePhenomena);
-  } else if (hasNonPhenomenon && gameState.recentPhenomena.length > 0) {
+  if (!hasPhenomenon && hasNonPhenomenon && gameState.recentPhenomena.length > 0) {
     gameState.recentPhenomena = [];
   }
 
