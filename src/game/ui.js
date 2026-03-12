@@ -1,7 +1,6 @@
 // ── game-ui.js ────────────────────────────────────────────────────────────────
 // Shared game UI rendering: card reader view, reveal overlay, library view,
 // game menus, die rolling, cost display, BEM zoom, and tutorial overlay.
-// Extracted from deck.js for maintainability.
 
 import { escapeHtml, shuffleArray, enhanceManaSymbols } from "../gallery/utils.js";
 import { updateClassicGameView, renderClassicSidePanel, buildMainCardActions, buildSideCardActions } from "./classic.js";

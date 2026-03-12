@@ -1,7 +1,6 @@
 // ── deck-panel.js ─────────────────────────────────────────────────────────────
 // Deck panel UI: open/close/shelve, list rendering, slot management,
 // card overlays, auto-import, and deck import/export.
-// Extracted from deck.js for maintainability.
 
 import { escapeHtml, isHiddenCard } from "../gallery/utils.js";
 import { encodeDeck, decodeDeck } from "./codec.js";

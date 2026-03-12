@@ -1,3 +1,7 @@
+// ── gallery-ui.js ─────────────────────────────────────────────────────────────
+// ThemeController (palette and mode cycling) and ToastManager (ephemeral
+// notification toasts).
+
 const STANDARD_THEME_ORDER = ["system", "dark", "light"];
 const HIDDEN_PALETTE_ORDER = ["standard", "gruvbox", "atom", "dracula", "solarized", "nord", "catppuccin", "scryfall"];
 const THEME_ICONS = {

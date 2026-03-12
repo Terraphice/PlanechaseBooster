@@ -1,3 +1,7 @@
+// ── gallery-utils.js ──────────────────────────────────────────────────────────
+// Stateless utility functions: card enrichment, search parsing, fuzzy matching,
+// tag helpers, preference persistence, and URL state serialisation.
+
 export function loadPreferences(storageKey) {
   const defaults = {
     viewMode: "grid",

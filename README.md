@@ -102,27 +102,24 @@ The deck builder supports multiple named deck slots saved to your browser's loca
 
 ### Classic Mode
 
-The traditional shared-deck format. All players share a single combined planar deck. 
-
-
+The traditional shared-deck format. All players share a single combined planar deck and take turns planeswalking, rolling the planar die, and resolving phenomena. The simulator handles the full game loop from the opening shuffle through phenomena resolution, with an undo stack covering every action.
 
 ### Blind Eternities Map
 
-A shared planar deck is used to build an interconnected map. Planes are revealed as players move between adjacent nodes. Planar Atlas renders the full map layout, tracks the active position, and handles encountering phenomena mid-travel. Risk-takers may opt. to "hellride" to unknown (diagonal) face-down cards, which may come with risk of a phenomena encounter. (Risky-hellriding is a toggle-able 66.6% chance to encounter a phenomenon when hellriding, for a more interesting and impactful game.)
+A shared planar deck is laid out as an interconnected map of face-down cards. Planes are revealed as players move between adjacent nodes. Planar Atlas renders the full map layout, tracks the active position, and handles phenomena automatically when encountered mid-travel. Risk-takers may choose to hellride to unknown (diagonal) face-down cards, with a configurable chance of encountering a phenomenon along the way.
 
 Planar Atlas handles:
 
 - Shuffling and activating the opening plane.
 - Encountering phenomena automatically when they surface.
-- Rolling the planar die with cost, and animations.
-- Tracking planes, the planar deck, etc.
-- Multiple active planes and phenomenon at once, simultaneous planeswalking.
-- Searching the planar library, revealing cards from the top/bottom, etc. all with multiple view styles.
-- Detailed views & transcripts for each card, including cards not in play.
+- Rolling the planar die with cost tracking and animations.
+- Tracking the planar deck, active planes, and the exile zone.
+- Multiple active planes and phenomena at once.
+- Searching the planar library and revealing cards from the top or bottom, with multiple view styles.
+- Detailed views and transcripts for every card, including cards not currently in play.
 - Undo for every game action up to 20 steps back, and redo for undone actions.
-- Shuffle, exile, place on top/bottom, etc. support for almost all cards in play/in the library.
-- Planeswalking mode: Moving between planes, highlighting available choices, hellriding, and more. 
-- More that I can't remember off the top of my head! Explore for yourself!
+- Shuffle, exile, and place-on-top/bottom support for cards in play and in the library.
+- Planeswalking mode: moving between planes, highlighting available choices, and hellriding.
 
 ---
 
@@ -172,7 +169,6 @@ Every card includes a high-resolution image and a plain-text transcript, as well
 ## Profile Seeds
 
 A profile seed is a compact encoded string that captures your entire Planar Atlas state: all preferences, all deck slots and their contents, and your current theme. Share a seed with another player and they can import it to get an identical setup in seconds, no account or file transfer needed.
-(This was my solution to an account system, without requiring an account back-end. I am honestly a little sorry in advance if it feels clunky at first.)
 
 Seeds are generated and imported inside the Settings panel, at the bottom, as well as within the deck-builder.
 
@@ -184,19 +180,24 @@ Planar Atlas is a vanilla JavaScript single-page application with no framework, 
 
 | Module | Purpose |
 |---|---|
-| `gallery.js` | Application entry point: fetches card data, wires DOM events, and delegates to all other modules |
-| `gallery-render.js` | Card rendering in all view modes, pagination, and tag-based grouping |
-| `gallery-search.js` | Search input, suggestion list, keyboard navigation, and ghost-text autocomplete |
-| `gallery-modal.js` | Card detail modal: navigation, transcript loading, and phenomenon flip animation |
-| `gallery-state.js` | Shared state objects for preferences, filters, display, and pagination |
-| `gallery-utils.js` | Stateless helpers: search parsing, fuzzy matching, card enrichment, URL state |
-| `gallery-ui.js` | Theme controller (palettes and modes) and toast notification manager |
-| `deck.js` | Deck builder, game state machine for both game modes, profile seed encoding, undo history |
-| `game-classic.js` | Rendering layer for the Classic shared-deck game mode |
-| `game-bem.js` | Rendering layer for the Blind Eternities Map game mode |
+| `src/gallery/index.js` | Application entry point: fetches card data, wires DOM events, and delegates to all other modules |
+| `src/gallery/render.js` | Card rendering in all view modes, pagination, and tag-based grouping |
+| `src/gallery/search.js` | Search input, suggestion list, keyboard navigation, and ghost-text autocomplete |
+| `src/gallery/modal.js` | Card detail modal: navigation, transcript loading, and phenomenon flip animation |
+| `src/gallery/state.js` | Shared state objects for preferences, filters, display, and pagination |
+| `src/gallery/utils.js` | Stateless helpers: search parsing, fuzzy matching, card enrichment, and URL state |
+| `src/gallery/ui.js` | Theme controller (palettes and modes) and toast notification manager |
+| `src/deck/index.js` | Deck builder, game orchestration for both game modes, profile seed encoding, and undo history |
+| `src/deck/panel.js` | Deck panel UI: open/close, list rendering, slot management, and import/export |
+| `src/deck/codec.js` | Pure encoding/decoding for deck seeds and game state seeds |
+| `src/game/state.js` | Game state machine: history, undo/redo, state encoding/decoding, and game lifecycle |
+| `src/game/ui.js` | Shared game UI: card reader, reveal overlay, library view, die rolling, and tutorial |
+| `src/game/classic.js` | Rendering layer for the Classic shared-deck game mode |
+| `src/game/bem.js` | Rendering layer for the Blind Eternities Map game mode |
+| `src/changelog.js` | Fetches the latest GitHub release and shows a "What's New" panel once per version |
 | `sw.js` | Service worker: caches all modules, card images, and CDN assets for offline use |
-| `generate-cards.js` | Node.js script to regenerate `cards.json` from the images directory |
-| `sync-cards.js` | Node.js script to sync per-card JSON files in `cards/` from `cards.json` |
+| `scripts/generate-cards.js` | Node.js script: regenerates `cards.json` from the card images directory |
+| `scripts/sync-cards.js` | Node.js script: syncs per-card JSON files in `cards/` from `cards.json` |
 
 CDN runtime dependencies: [marked.js](https://marked.js.org/) (Markdown rendering), [DOMPurify](https://github.com/cure53/DOMPurify) (HTML sanitisation), [mana-font](https://mana.andrewgioia.com/) (MTG symbol font).
 
@@ -209,7 +210,7 @@ Contributions are welcome. The easiest way to contribute is to add card images o
 I'm honestly choosy about which custom cards are welcome in the library, for now. Please understand that any denied PR/contribution of custom cards
 isn't so much an attack on the quality or design, but more so a desire to reduce duplicate/excessive design, or maintain game scope.
 
-For code contributions, open an issue first to discuss the change, then submit a pull request. There are no automated tests, so manual verification against the checklist in the repository is expected.
+For code contributions, open an issue first to discuss the change, then submit a pull request. Run `npm test` and `npm run test:unit` to verify your changes, and manually test affected features against the checklist in the repository.
 
 ---
 

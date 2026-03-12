@@ -1,3 +1,7 @@
+// ── gallery-render.js ─────────────────────────────────────────────────────────
+// Card rendering in all view modes (grid, singleton, stack, list), pagination,
+// active filter chips, and tag-based grouping.
+
 import {
   getTagLabel,
   getTagToneClass,

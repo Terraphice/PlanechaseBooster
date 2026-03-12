@@ -1,3 +1,7 @@
+// ── gallery-index.js ──────────────────────────────────────────────────────────
+// Application entry point: fetches card data, enriches cards, wires all DOM
+// events, and delegates to all other gallery and game modules.
+
 import {
   enrichCard,
   sortCards,

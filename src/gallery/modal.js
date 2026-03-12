@@ -1,3 +1,7 @@
+// ── gallery-modal.js ──────────────────────────────────────────────────────────
+// Card detail modal: navigation between cards, asynchronous transcript loading,
+// phenomenon flip animation, and URL hash synchronisation.
+
 import { enhanceManaSymbols } from "./utils.js";
 
 export function createModalManager({

@@ -1,3 +1,7 @@
+// ── gallery-state.js ──────────────────────────────────────────────────────────
+// Shared state objects for preferences, filters, display, and pagination.
+// Also exports the storage key and initStateManager for wiring UI toggles.
+
 import { loadPreferences, savePreferences, readUrlState, writeUrlState } from "./utils.js";
 
 export const STORAGE_KEY = "planechaseGalleryPreferences.v2";

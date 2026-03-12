@@ -1,3 +1,7 @@
+// ── gallery-search.js ─────────────────────────────────────────────────────────
+// Search input management: suggestion list, keyboard navigation, and ghost-text
+// inline autocomplete for both the top bar and sidebar search surfaces.
+
 import { getTagLabel, matchesFilters, parseSearchQuery, escapeHtml } from "./utils.js";
 
 export function createSearchManager({
