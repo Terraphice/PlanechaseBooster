@@ -1206,9 +1206,19 @@ button.active-filter-pill:disabled {
 }
 
 .modal-close {
-  padding: 8px 10px;
-  font-size: 1.1rem;
+  padding: 8px 12px;
+  font-size: 0.85rem;
   font-weight: 700;
+  border-color: color-mix(in srgb, var(--tone-red-border) 50%, var(--border));
+  color: var(--tone-red-text);
+  background: color-mix(in srgb, var(--tone-red-bg) 60%, var(--bg-elev-2));
+}
+
+.modal-close:hover {
+  border-color: var(--tone-red-border);
+  background: var(--tone-red-bg);
+  color: var(--tone-red-text);
+  box-shadow: 0 4px 12px color-mix(in srgb, var(--tone-red-border) 25%, transparent);
 }
 
 .modal-nav {
