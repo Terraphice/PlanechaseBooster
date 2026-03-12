@@ -7,7 +7,7 @@ import {
   initBemGame, startBemGame, bemKey, bemMovePlayer, bemResolvePhenomenon, bemFillPlaceholder,
   syncBemTrButton, handleBemCellClick, toggleBemPlaneswalkMode, handleBemArrowKey,
   handleBemPointerDown, handleBemPointerMove, handleBemPointerUp,
-  buildBemCardActions, getBemPlaneswalkPending, getBemViewOffset, resetBemState
+  buildBemCardActions, getBemPlaneswalkPending, getBemViewOffset, resetBemState, getBemAnimating
 } from "./game-bem.js";
 
 import {
@@ -54,6 +54,7 @@ let onDeckChangeFn = null;
 let easyPlaneswalk = false;
 let phenomenonAnimationEnabled = true;
 let riskyHellridingEnabled = true;
+let smoothTravelEnabled = false;
 
 // ── DOM references (only what deck.js needs directly) ────────────────────────
 
@@ -388,6 +389,10 @@ export function setRiskyHellriding(enabled) {
   riskyHellridingEnabled = Boolean(enabled);
 }
 
+export function setSmoothTravel(enabled) {
+  smoothTravelEnabled = Boolean(enabled);
+}
+
 export function syncGameHash() {
   if (window.location.hash === "#play") {
     if (!gameActive && getDeckTotal() > 0) startGame();
@@ -659,6 +664,7 @@ export function initDeck({ cards, showToast, onDeckChange }) {
     syncBemTrButton,
     getPhenomenonAnimationEnabled: () => phenomenonAnimationEnabled,
     getRiskyHellridingEnabled: () => riskyHellridingEnabled,
+    getSmoothTravelEnabled: () => smoothTravelEnabled,
     getEasyPlaneswalk: () => easyPlaneswalk,
     showToast: (msg) => showToastFn?.(msg),
     renderGameSidePanel,

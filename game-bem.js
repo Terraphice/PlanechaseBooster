@@ -13,6 +13,7 @@ let bemDragStart = null;
 let bemDragHandled = false;
 let bemLandOnPhenomenon = false;
 let bemPlaneswalkPending = false;
+let bemAnimating = false;
 
 export function initBemGame(context) {
   ctx = context;
@@ -28,7 +29,12 @@ export function getBemViewOffset() {
   return bemViewOffset;
 }
 
+export function getBemAnimating() {
+  return bemAnimating;
+}
+
 export function resetBemState() {
+  cancelBemPanAnimation();
   bemViewOffset = { dx: 0, dy: 0 };
   bemPlaneswalkPending = false;
   bemLandOnPhenomenon = false;
@@ -38,6 +44,12 @@ export function resetBemState() {
 
 export function bemKey(x, y) {
   return `${x},${y}`;
+}
+
+function bemIsValidPlaneswalkTarget(dx, dy, cell) {
+  const isOrthog = (Math.abs(dx) + Math.abs(dy)) === 1;
+  const isDiag = Math.abs(dx) === 1 && Math.abs(dy) === 1;
+  return (isOrthog && cell?.faceUp) || (isDiag && cell && !cell.faceUp);
 }
 
 function bemDrawNonPhenomenon(remaining) {
@@ -106,6 +118,35 @@ function bemClearActivePlanesToBottom() {
   gameState.remaining.push(...shuffleArray([...gameState.activePlanes]));
   gameState.activePlanes = [];
   gameState.focusedIndex = 0;
+}
+
+// ── BEM pan animation ─────────────────────────────────────────────────────────
+
+function cancelBemPanAnimation() {
+  if (!bemAnimating) return;
+  const bemMapEl = ctx?.bemMapEl;
+  if (bemMapEl) {
+    bemMapEl.style.transition = "";
+    bemMapEl.style.transform = "";
+  }
+  bemAnimating = false;
+}
+
+function startBemPanAnimation(fromDx, fromDy) {
+  const { bemMapEl } = ctx;
+  if (!bemMapEl) return;
+  bemAnimating = true;
+  bemMapEl.style.transition = "none";
+  bemMapEl.style.transform = `translate(${fromDx * 33.333}%, ${fromDy * 33.333}%)`;
+  void bemMapEl.offsetWidth; // force reflow so the transition starts from the initial transform
+  bemMapEl.style.transition = "transform 300ms ease";
+  bemMapEl.style.transform = "translate(0, 0)";
+  bemMapEl.addEventListener("transitionend", function onEnd() {
+    bemMapEl.removeEventListener("transitionend", onEnd);
+    bemMapEl.style.transition = "";
+    bemMapEl.style.transform = "";
+    bemAnimating = false;
+  });
 }
 
 // ── BEM game startup ──────────────────────────────────────────────────────────
@@ -191,6 +232,8 @@ export function startBemGame() {
 export function bemMovePlayer(nx, ny) {
   const gameState = ctx.getGameState();
   if (!gameState?.bemGrid || !gameState?.bemPos) return;
+
+  cancelBemPanAnimation();
 
   const { bemGrid, bemPos } = gameState;
   const { x: px, y: py } = bemPos;
@@ -548,15 +591,18 @@ export function handleBemCellClick(event) {
 
   if (bemPlaneswalkPending) {
     if (isPanning) {
+      const gridCell = gameState.bemGrid.get(bemKey(nx, ny));
+      if (bemIsValidPlaneswalkTarget(dx, dy, gridCell)) {
+        bemMovePlayer(nx, ny);
+        return;
+      }
       bemViewOffset = { dx: 0, dy: 0 };
       renderBemMap();
       ctx.showToast("Returned to your position. Select a direction to planeswalk.");
       return;
     }
-    const isOrthog = (Math.abs(dx) + Math.abs(dy)) === 1;
-    const isDiag = Math.abs(dx) === 1 && Math.abs(dy) === 1;
     const gridCell = gameState.bemGrid.get(bemKey(nx, ny));
-    if ((isOrthog && gridCell?.faceUp) || (isDiag && gridCell && !gridCell.faceUp)) {
+    if (bemIsValidPlaneswalkTarget(dx, dy, gridCell)) {
       bemMovePlayer(nx, ny);
     } else {
       bemPlaneswalkPending = false;
@@ -594,6 +640,13 @@ export function toggleBemPlaneswalkMode() {
   if (!gameState?.bemGrid) return;
   const isPanning = bemViewOffset.dx !== 0 || bemViewOffset.dy !== 0;
   if (isPanning) {
+    const nx = gameState.bemPos.x + bemViewOffset.dx;
+    const ny = gameState.bemPos.y + bemViewOffset.dy;
+    const cell = gameState.bemGrid.get(bemKey(nx, ny));
+    if (bemIsValidPlaneswalkTarget(bemViewOffset.dx, bemViewOffset.dy, cell)) {
+      bemMovePlayer(nx, ny);
+      return;
+    }
     bemViewOffset = { dx: 0, dy: 0 };
     renderBemMap();
     ctx.showToast("Returned to your position. Planeswalk again to continue.");
@@ -612,6 +665,7 @@ export function handleBemArrowKey(event) {
   if (!ctx.getGameActive() || gameState?.mode !== "bem") return;
   if (document.body.classList.contains("game-reader-open")) return;
   if (document.body.classList.contains("tutorial-open")) return;
+  if (bemAnimating) return;
 
   let panDx = 0, panDy = 0;
   switch (event.key) {
@@ -630,6 +684,7 @@ export function handleBemArrowKey(event) {
 
   bemViewOffset = { dx: bemViewOffset.dx + panDx, dy: bemViewOffset.dy + panDy };
   renderBemMap();
+  if (ctx.getSmoothTravelEnabled?.()) startBemPanAnimation(-panDx, -panDy);
 }
 
 export function handleBemPointerDown(event) {
@@ -643,6 +698,7 @@ export function handleBemPointerDown(event) {
 
 export function handleBemPointerMove(event) {
   if (event.pointerId !== bemDragPointerId || !bemDragStart || !ctx.getGameState()?.bemGrid) return;
+  if (bemAnimating) return;
   const dx = event.clientX - bemDragStart.x;
   const dy = event.clientY - bemDragStart.y;
   const adx = Math.abs(dx);
@@ -673,6 +729,7 @@ export function handleBemPointerMove(event) {
 
   bemViewOffset = { dx: bemViewOffset.dx + panDx, dy: bemViewOffset.dy + panDy };
   renderBemMap();
+  if (ctx.getSmoothTravelEnabled?.()) startBemPanAnimation(-panDx, -panDy);
 }
 
 export function handleBemPointerUp(event) {

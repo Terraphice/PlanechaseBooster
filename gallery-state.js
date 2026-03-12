@@ -11,7 +11,8 @@ export const filters = {
   inlineAutocomplete: preferences.inlineAutocomplete,
   showHidden: preferences.showHidden,
   phenomenonAnimation: preferences.phenomenonAnimation,
-  riskyHellriding: preferences.riskyHellriding
+  riskyHellriding: preferences.riskyHellriding,
+  smoothTravel: preferences.smoothTravel
 };
 
 export const displayState = {
@@ -27,7 +28,7 @@ export const paginationState = {
   infiniteLoadedCount: preferences.pageSize
 };
 
-export function initStateManager({ themeController, topSearch, sidebarSearch, topSearchGhost, sidebarSearchGhost, fuzzySearchToggle, showHiddenToggle, inlineAutocompleteToggle, phenomenonAnimationToggle, riskyHellridingToggle, viewModeSelect, groupBySelect, groupTagPickerWrap }) {
+export function initStateManager({ themeController, topSearch, sidebarSearch, topSearchGhost, sidebarSearchGhost, fuzzySearchToggle, showHiddenToggle, inlineAutocompleteToggle, phenomenonAnimationToggle, riskyHellridingToggle, smoothTravelToggle, viewModeSelect, groupBySelect, groupTagPickerWrap }) {
   function persistPreferences() {
     savePreferences(
       STORAGE_KEY,
@@ -55,6 +56,7 @@ export function initStateManager({ themeController, topSearch, sidebarSearch, to
     inlineAutocompleteToggle.checked = filters.inlineAutocomplete;
     if (phenomenonAnimationToggle) phenomenonAnimationToggle.checked = filters.phenomenonAnimation;
     if (riskyHellridingToggle) riskyHellridingToggle.checked = filters.riskyHellriding;
+    if (smoothTravelToggle) smoothTravelToggle.checked = filters.smoothTravel;
     topSearch.value = filters.search;
     sidebarSearch.value = filters.search;
     topSearchGhost.value = "";

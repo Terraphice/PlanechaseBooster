@@ -11,7 +11,8 @@ export function loadPreferences(storageKey) {
     pageSize: 20,
     paginationMode: "paginated",
     phenomenonAnimation: true,
-    riskyHellriding: true
+    riskyHellriding: true,
+    smoothTravel: false
   };
 
   try {
@@ -33,7 +34,8 @@ export function loadPreferences(storageKey) {
       pageSize: [10, 20, 50, 100].includes(parsed.pageSize) ? parsed.pageSize : defaults.pageSize,
       paginationMode: ["paginated", "infinite"].includes(parsed.paginationMode) ? parsed.paginationMode : defaults.paginationMode,
       phenomenonAnimation: parsed.phenomenonAnimation === undefined ? defaults.phenomenonAnimation : Boolean(parsed.phenomenonAnimation),
-      riskyHellriding: parsed.riskyHellriding === undefined ? defaults.riskyHellriding : Boolean(parsed.riskyHellriding)
+      riskyHellriding: parsed.riskyHellriding === undefined ? defaults.riskyHellriding : Boolean(parsed.riskyHellriding),
+      smoothTravel: parsed.smoothTravel === undefined ? defaults.smoothTravel : Boolean(parsed.smoothTravel)
     };
   } catch {
     return defaults;
@@ -56,7 +58,8 @@ export function savePreferences(storageKey, displayState, filters, theme = "syst
         pageSize: paginationState.pageSize ?? 20,
         paginationMode: paginationState.mode ?? "paginated",
         phenomenonAnimation: filters.phenomenonAnimation,
-        riskyHellriding: filters.riskyHellriding
+        riskyHellriding: filters.riskyHellriding,
+        smoothTravel: filters.smoothTravel
       })
     );
   } catch {

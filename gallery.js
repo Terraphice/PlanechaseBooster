@@ -35,7 +35,8 @@ import {
   setPhenomenonAnimation,
   closeGameReaderView,
   closeTopGameOverlay,
-  setRiskyHellriding
+  setRiskyHellriding,
+  setSmoothTravel
 } from "./deck.js";
 
 import {
@@ -77,6 +78,7 @@ const showHiddenToggle = document.getElementById("show-hidden-toggle");
 const inlineAutocompleteToggle = document.getElementById("inline-autocomplete-toggle");
 const phenomenonAnimationToggle = document.getElementById("phenomenon-animation-toggle");
 const riskyHellridingToggle = document.getElementById("risky-hellriding-toggle");
+const smoothTravelToggle = document.getElementById("smooth-travel-toggle");
 
 const sidebar = document.getElementById("sidebar");
 const sidebarContent = document.getElementById("sidebar-content");
@@ -153,6 +155,7 @@ const stateManager = initStateManager({
   inlineAutocompleteToggle,
   phenomenonAnimationToggle,
   riskyHellridingToggle,
+  smoothTravelToggle,
   viewModeSelect,
   groupBySelect,
   groupTagPickerWrap
@@ -335,6 +338,7 @@ async function init() {
     });
     setPhenomenonAnimation(filters.phenomenonAnimation);
     setRiskyHellriding(filters.riskyHellriding);
+    setSmoothTravel(filters.smoothTravel);
 
     initChangelog();
 
@@ -560,6 +564,8 @@ function executeClearAll() {
   filters.showHidden = false;
   filters.riskyHellriding = true;
   setRiskyHellriding(true);
+  filters.smoothTravel = false;
+  setSmoothTravel(false);
 
   displayState.viewMode = "grid";
   displayState.groupBy = "none";
@@ -601,7 +607,8 @@ function exportProfile() {
     pageSize: paginationState.pageSize,
     paginationMode: paginationState.mode,
     phenomenonAnimation: filters.phenomenonAnimation,
-    riskyHellriding: filters.riskyHellriding
+    riskyHellriding: filters.riskyHellriding,
+    smoothTravel: filters.smoothTravel
   };
 
   const seed = encodeProfileData(prefsObj);
@@ -639,6 +646,10 @@ function importProfile() {
     if (typeof p.riskyHellriding === "boolean") {
       filters.riskyHellriding = p.riskyHellriding;
       setRiskyHellriding(filters.riskyHellriding);
+    }
+    if (typeof p.smoothTravel === "boolean") {
+      filters.smoothTravel = p.smoothTravel;
+      setSmoothTravel(filters.smoothTravel);
     }
     if ([10, 20, 50, 100].includes(p.pageSize)) paginationState.pageSize = p.pageSize;
     if (["paginated", "infinite"].includes(p.paginationMode)) paginationState.mode = p.paginationMode;
@@ -732,6 +743,12 @@ function bindEvents() {
   riskyHellridingToggle?.addEventListener("change", () => {
     filters.riskyHellriding = riskyHellridingToggle.checked;
     setRiskyHellriding(filters.riskyHellriding);
+    stateManager.persistPreferences();
+  });
+
+  smoothTravelToggle?.addEventListener("change", () => {
+    filters.smoothTravel = smoothTravelToggle.checked;
+    setSmoothTravel(filters.smoothTravel);
     stateManager.persistPreferences();
   });
 
