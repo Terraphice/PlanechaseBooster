@@ -138,14 +138,20 @@ function startBemPanAnimation(fromDx, fromDy) {
   bemAnimating = true;
   bemMapEl.style.transition = "none";
   bemMapEl.style.transform = `translate(${fromDx * 33.333}%, ${fromDy * 33.333}%)`;
-  void bemMapEl.offsetWidth; // force reflow so the transition starts from the initial transform
-  bemMapEl.style.transition = "transform 300ms ease";
-  bemMapEl.style.transform = "translate(0, 0)";
-  bemMapEl.addEventListener("transitionend", function onEnd() {
-    bemMapEl.removeEventListener("transitionend", onEnd);
-    bemMapEl.style.transition = "";
-    bemMapEl.style.transform = "";
-    bemAnimating = false;
+  // Use double rAF so the browser paints the "from" position before starting
+  // the slide transition, avoiding a visual jerk from the offsetWidth reflow trick.
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      if (!bemAnimating) return;
+      bemMapEl.style.transition = "transform 300ms ease";
+      bemMapEl.style.transform = "translate(0, 0)";
+      bemMapEl.addEventListener("transitionend", function onEnd() {
+        bemMapEl.removeEventListener("transitionend", onEnd);
+        bemMapEl.style.transition = "";
+        bemMapEl.style.transform = "";
+        bemAnimating = false;
+      });
+    });
   });
 }
 
