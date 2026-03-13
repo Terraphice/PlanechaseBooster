@@ -54,19 +54,55 @@ function bemIsValidPlaneswalkTarget(dx, dy, cell) {
   return (isOrthog && cell?.faceUp) || (isDiag && cell && !cell.faceUp);
 }
 
-function bemDrawNonPhenomenon(remaining) {
-  let attempts = 0;
-  while (remaining.length > 0 && attempts < remaining.length) {
-    const card = remaining.shift();
-    if (card.type !== "Phenomenon") return card;
-    remaining.push(card);
-    attempts++;
+function bemDrawFirstPlane(remaining) {
+  const planeIdx = remaining.findIndex((card) => card.type !== "Phenomenon");
+  if (planeIdx === -1) return null;
+  return remaining.splice(planeIdx, 1)[0] || null;
+}
+
+function bemDrawForMap(remaining, { avoidPhenomena = false } = {}) {
+  if (!avoidPhenomena) return remaining.shift() || null;
+  return bemDrawFirstPlane(remaining);
+}
+
+function bemRestorePhenomenaToTop(remaining, cards) {
+  if (!cards.length) return;
+  const shuffled = shuffleArray([...cards]);
+  remaining.unshift(...shuffled);
+}
+
+function bemRevealOrthogonalsAround(nx, ny) {
+  const gameState = ctx.getGameState();
+  const { bemGrid, remaining } = gameState;
+  const antiPhenomena = ctx.getRiskyHellridingEnabled();
+  const orthDirs = [{ dx: 0, dy: -1 }, { dx: 0, dy: 1 }, { dx: -1, dy: 0 }, { dx: 1, dy: 0 }];
+  const replacedPhenomena = [];
+
+  for (const { dx: odx, dy: ody } of orthDirs) {
+    const adjCell = bemGrid.get(bemKey(nx + odx, ny + ody));
+    if (!adjCell || adjCell.faceUp) continue;
+
+    if (antiPhenomena && adjCell.card?.type === "Phenomenon") {
+      replacedPhenomena.push(adjCell.card);
+      const nextCard = bemDrawForMap(remaining, { avoidPhenomena: true });
+      if (nextCard) {
+        adjCell.card = nextCard;
+        delete adjCell.placeholder;
+      } else {
+        adjCell.card = null;
+        adjCell.placeholder = true;
+      }
+    }
+
+    adjCell.faceUp = true;
   }
-  return null;
+
+  bemRestorePhenomenaToTop(remaining, replacedPhenomena);
 }
 
 function bemDiscoverAdjacent() {
   const { bemGrid, bemPos, remaining } = ctx.getGameState();
+  const antiPhenomena = ctx.getRiskyHellridingEnabled();
   const { x: px, y: py } = bemPos;
 
   const dirs = [
@@ -86,7 +122,7 @@ function bemDiscoverAdjacent() {
     const key = bemKey(nx, ny);
     if (!bemGrid.has(key)) {
       if (faceUp) {
-        const card = bemDrawNonPhenomenon(remaining);
+        const card = bemDrawForMap(remaining, { avoidPhenomena: antiPhenomena });
         if (card) {
           bemGrid.set(key, { card, faceUp: true });
         } else {
@@ -181,13 +217,18 @@ export function startBemGame() {
     { dx: -1, dy: -1, faceUp: false }
   ];
 
+  const antiPhenomena = ctx.getRiskyHellridingEnabled();
+
   for (const { dx, dy, faceUp } of positions) {
+    const isCenter = dx === 0 && dy === 0;
     if (faceUp) {
       if (shuffled.length === 0) {
         bemGrid.set(bemKey(dx, dy), { card: null, faceUp: true, placeholder: true });
         continue;
       }
-      const card = bemDrawNonPhenomenon(shuffled);
+      const card = isCenter
+        ? bemDrawFirstPlane(shuffled)
+        : bemDrawForMap(shuffled, { avoidPhenomena: antiPhenomena });
       if (card) {
         bemGrid.set(bemKey(dx, dy), { card, faceUp: true });
       } else {
@@ -264,7 +305,7 @@ export function bemMovePlayer(nx, ny) {
 
   if (cell.placeholder && !cell.card) {
     const { remaining } = gameState;
-    const nextCard = bemDrawNonPhenomenon(remaining);
+    const nextCard = bemDrawForMap(remaining, { avoidPhenomena: ctx.getRiskyHellridingEnabled() });
     if (nextCard) {
       cell.card = nextCard;
       cell.placeholder = false;
@@ -279,11 +320,7 @@ export function bemMovePlayer(nx, ny) {
     if (cell.card?.type !== "Phenomenon" && gameState.recentPhenomena?.length > 0) {
       gameState.recentPhenomena = [];
     }
-    const orthDirs = [{ dx: 0, dy: -1 }, { dx: 0, dy: 1 }, { dx: -1, dy: 0 }, { dx: 1, dy: 0 }];
-    for (const { dx: odx, dy: ody } of orthDirs) {
-      const adjCell = bemGrid.get(bemKey(nx + odx, ny + ody));
-      if (adjCell && !adjCell.faceUp) adjCell.faceUp = true;
-    }
+    bemRevealOrthogonalsAround(nx, ny);
     bemPlaneswalkPending = false;
     bemRemoveFalloff();
     bemDiscoverAdjacent();
@@ -331,11 +368,7 @@ export function bemMovePlayer(nx, ny) {
     gameState.recentPhenomena = [];
   }
 
-  const orthDirs = [{ dx: 0, dy: -1 }, { dx: 0, dy: 1 }, { dx: -1, dy: 0 }, { dx: 1, dy: 0 }];
-  for (const { dx: odx, dy: ody } of orthDirs) {
-    const adjCell = bemGrid.get(bemKey(nx + odx, ny + ody));
-    if (adjCell && !adjCell.faceUp) adjCell.faceUp = true;
-  }
+  bemRevealOrthogonalsAround(nx, ny);
 
   bemPlaneswalkPending = false;
   bemRemoveFalloff();
@@ -364,7 +397,7 @@ export function bemResolvePhenomenon() {
   ctx.pushHistory?.();
 
   const phenomenon = cell.card;
-  const nextCard = cell.queuedCard ?? bemDrawNonPhenomenon(remaining);
+  const nextCard = cell.queuedCard ?? bemDrawForMap(remaining, { avoidPhenomena: ctx.getRiskyHellridingEnabled() });
   delete cell.queuedCard;
   remaining.push(phenomenon);
 
@@ -402,7 +435,7 @@ export function bemFillPlaceholder() {
 
   ctx.pushHistory?.();
 
-  const nextCard = bemDrawNonPhenomenon(remaining);
+  const nextCard = bemDrawForMap(remaining, { avoidPhenomena: ctx.getRiskyHellridingEnabled() });
   if (nextCard) {
     bemLandOnPhenomenon = nextCard.type === "Phenomenon" && ctx.getPhenomenonAnimationEnabled();
     bemGrid.set(key, { card: nextCard, faceUp: true });
