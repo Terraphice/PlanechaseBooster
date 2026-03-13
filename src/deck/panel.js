@@ -2,7 +2,7 @@
 // Deck panel UI: open/close/shelve, list rendering, slot management,
 // card overlays, auto-import, and deck import/export.
 
-import { escapeHtml, isHiddenCard } from "../gallery/utils.js";
+import { escapeHtml, isHiddenCard, syncPlanechaseImageOrientation } from "../gallery/utils.js";
 import { encodeDeck, decodeDeck } from "./codec.js";
 
 // ── Module state ──────────────────────────────────────────────────────────────
@@ -160,6 +160,10 @@ export function renderDeckList() {
         <button class="deck-count-btn" data-key="${escapeHtml(key)}" data-action="inc" aria-label="Add one copy" type="button"${count >= ctx.MAX_CARD_COUNT ? " disabled" : ""}>+</button>
       </div>
     `;
+
+
+    const deckThumb = item.querySelector(".deck-card-thumb");
+    syncPlanechaseImageOrientation(deckThumb);
 
     for (const btn of item.querySelectorAll(".deck-count-btn")) {
       btn.addEventListener("click", () => {

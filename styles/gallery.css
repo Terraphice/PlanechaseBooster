@@ -1042,12 +1042,20 @@ button.active-filter-pill:disabled {
   height: auto;
   aspect-ratio: var(--planechase-ratio);
   object-fit: contain;
+  --planechase-rotation: 0deg;
+  --planechase-rotation-scale: 1;
+  transform: rotate(var(--planechase-rotation)) scale(var(--planechase-rotation-scale));
   transition: transform 220ms ease;
+}
+
+.planechase-image-rotated {
+  --planechase-rotation: 90deg;
+  --planechase-rotation-scale: calc(800 / 559);
 }
 
 .card-link:hover .card-image,
 .card-link:focus-visible .card-image {
-  transform: scale(1.04);
+  transform: rotate(var(--planechase-rotation)) scale(calc(var(--planechase-rotation-scale) * 1.04));
 }
 
 .card-footer {
@@ -1287,6 +1295,9 @@ button.active-filter-pill:disabled {
   max-height: calc(100vh - 140px);
   aspect-ratio: var(--planechase-ratio);
   object-fit: contain;
+  --planechase-rotation: 0deg;
+  --planechase-rotation-scale: 1;
+  transform: rotate(var(--planechase-rotation)) scale(var(--planechase-rotation-scale));
 }
 
 .modal-source-links {

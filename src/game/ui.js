@@ -2,7 +2,7 @@
 // Shared game UI rendering: card reader view, reveal overlay, library view,
 // game menus, die rolling, cost display, BEM zoom, and tutorial overlay.
 
-import { escapeHtml, shuffleArray, enhanceManaSymbols } from "../gallery/utils.js";
+import { escapeHtml, shuffleArray, enhanceManaSymbols, syncPlanechaseImageOrientation } from "../gallery/utils.js";
 import { updateClassicGameView, renderClassicSidePanel, buildMainCardActions } from "./classic.js";
 import {
   syncBemTrButton,
@@ -29,6 +29,10 @@ let revealViewMode = "list";
 let readerOpenedFromReveal = false;
 let readerOpenedFromLibrary = false;
 let readerOpenedFromExile = false;
+
+syncPlanechaseImageOrientation(gameCardImage);
+syncPlanechaseImageOrientation(gameReaderImage);
+syncPlanechaseImageOrientation(gameReaderZoomImg);
 let exileViewMode = "list";
 let libraryViewMode = "list";
 let readerCardPath = "";

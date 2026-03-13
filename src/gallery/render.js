@@ -7,7 +7,8 @@ import {
   getTagToneClass,
   getBadgeTags,
   parseBadgeTag,
-  escapeHtml
+  escapeHtml,
+  syncPlanechaseImageOrientation
 } from "./utils.js";
 
 export function createRenderer({
@@ -187,6 +188,8 @@ export function createRenderer({
     const imageWrap = document.createElement("div");
     imageWrap.className = "card-image-wrap";
     imageWrap.innerHTML = `<img class="card-image" src="${card.thumbPath}" alt="${escapeHtml(card.displayName)}" loading="lazy" />`;
+    const cardImage = imageWrap.querySelector(".card-image");
+    syncPlanechaseImageOrientation(cardImage);
 
     const deckOverlay = document.createElement("div");
     deckOverlay.className = "deck-card-overlay";

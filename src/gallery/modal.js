@@ -2,7 +2,7 @@
 // Card detail modal: navigation between cards, asynchronous transcript loading,
 // phenomenon flip animation, and URL hash synchronisation.
 
-import { enhanceManaSymbols } from "./utils.js";
+import { enhanceManaSymbols, syncPlanechaseImageOrientation } from "./utils.js";
 
 export function createModalManager({
   modal,
@@ -38,6 +38,8 @@ export function createModalManager({
   let randomLongPressTimer = null;
   let suppressRandomClick = false;
   let randomIconResetTimer = null;
+
+  syncPlanechaseImageOrientation(modalImage);
 
   // ── URL helpers ───────────────────────────────────────────────────────────────
 

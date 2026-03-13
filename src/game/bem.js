@@ -1,7 +1,7 @@
 // ── game-bem.js ───────────────────────────────────────────────────────────────
 // Rendering and game logic for the Blind Eternities Map game mode.
 
-import { shuffleArray } from "../gallery/utils.js";
+import { shuffleArray, syncPlanechaseImageOrientation } from "../gallery/utils.js";
 const BEM_FALLOFF_DIST = 2;
 const BEM_DRAG_THRESHOLD = 44;
 const BEM_FACEDOWN_IMG = "assets/card-preview.jpg";
@@ -514,6 +514,7 @@ export function renderBemMap() {
           img.className = "bem-cell-img";
           img.src = BEM_FACEDOWN_IMG;
           img.alt = "";
+          syncPlanechaseImageOrientation(img);
           div.appendChild(img);
         } else {
           div.classList.add("bem-cell-void");
@@ -533,6 +534,7 @@ export function renderBemMap() {
         img.className = "bem-cell-img";
         img.src = cell.card.thumbPath;
         img.alt = cell.card.displayName;
+        syncPlanechaseImageOrientation(img);
         div.appendChild(img);
 
         if (isPlayer) {
