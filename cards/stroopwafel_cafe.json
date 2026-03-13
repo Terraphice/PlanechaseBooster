@@ -2,14 +2,13 @@
   "id": "stroopwafel_cafe",
   "name": "Stroopwafel Cafe",
   "type": "Plane",
-  "image": "cards/images/Stroopwafel Cafe.png",
-  "thumb": "cards/thumbs/Stroopwafel Cafe.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Stroopwafel%20Cafe&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Stroopwafel%20Cafe&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Stroopwafel Cafe.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Amsterdam",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

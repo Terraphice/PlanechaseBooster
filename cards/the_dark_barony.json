@@ -2,13 +2,12 @@
   "id": "the_dark_barony",
   "name": "The Dark Barony",
   "type": "Plane",
-  "image": "cards/images/The Dark Barony.png",
-  "thumb": "cards/thumbs/The Dark Barony.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Dark%20Barony&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=The%20Dark%20Barony&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/The Dark Barony.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Ulgrotha",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

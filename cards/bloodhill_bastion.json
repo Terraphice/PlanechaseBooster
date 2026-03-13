@@ -2,13 +2,12 @@
   "id": "bloodhill_bastion",
   "name": "Bloodhill Bastion",
   "type": "Plane",
-  "image": "cards/images/Bloodhill Bastion.png",
-  "thumb": "cards/thumbs/Bloodhill Bastion.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Bloodhill%20Bastion&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Bloodhill%20Bastion&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Bloodhill Bastion.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Equilor",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

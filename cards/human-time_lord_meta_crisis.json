@@ -2,13 +2,12 @@
   "id": "human-time_lord_meta_crisis",
   "name": "Human—Time Lord Meta Crisis",
   "type": "Phenomenon",
-  "image": "cards/images/Human—Time Lord Meta-Crisis.png",
-  "thumb": "cards/thumbs/Human—Time Lord Meta-Crisis.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Human%E2%80%94Time%20Lord%20Meta%20Crisis&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Human%E2%80%94Time%20Lord%20Meta%20Crisis&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Human—Time Lord Meta-Crisis.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

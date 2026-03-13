@@ -2,14 +2,13 @@
   "id": "raiders_allegiance",
   "name": "Raiders' Allegiance",
   "type": "Plane",
-  "image": "cards/images/Raiders' Allegiance.png",
-  "thumb": "cards/thumbs/Raiders' Allegiance.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Raiders'%20Allegiance&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Raiders'%20Allegiance&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Raiders' Allegiance.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Ixalan",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

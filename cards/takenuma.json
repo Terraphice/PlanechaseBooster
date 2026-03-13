@@ -2,13 +2,12 @@
   "id": "takenuma",
   "name": "Takenuma",
   "type": "Plane",
-  "image": "cards/images/Takenuma.png",
-  "thumb": "cards/thumbs/Takenuma.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Takenuma&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Takenuma&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Takenuma.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Kamigawa",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

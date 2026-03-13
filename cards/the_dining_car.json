@@ -2,14 +2,13 @@
   "id": "the_dining_car",
   "name": "The Dining Car",
   "type": "Plane",
-  "image": "cards/images/The Dining Car.png",
-  "thumb": "cards/thumbs/The Dining Car.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Dining%20Car&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=The%20Dining%20Car&set=who&format=image&version=small",
   "transcript": "cards/transcripts/The Dining Car.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Spacecraft",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

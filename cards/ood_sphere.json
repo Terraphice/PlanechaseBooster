@@ -2,14 +2,13 @@
   "id": "ood_sphere",
   "name": "Ood Sphere",
   "type": "Plane",
-  "image": "cards/images/Ood Sphere.png",
-  "thumb": "cards/thumbs/Ood Sphere.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Ood%20Sphere&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Ood%20Sphere&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Ood Sphere.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Horsehead Nebula",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

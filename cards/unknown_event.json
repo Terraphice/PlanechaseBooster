@@ -2,13 +2,12 @@
   "id": "unknown_event",
   "name": "Unknown Event",
   "type": "Phenomenon",
-  "image": "cards/images/Unknown Event.png",
-  "thumb": "cards/thumbs/Unknown Event.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Unknown%20Event&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Unknown%20Event&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Unknown Event.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

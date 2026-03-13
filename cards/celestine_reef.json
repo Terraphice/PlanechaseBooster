@@ -2,13 +2,12 @@
   "id": "celestine_reef",
   "name": "Celestine Reef",
   "type": "Plane",
-  "image": "cards/images/Celestine Reef.png",
-  "thumb": "cards/thumbs/Celestine Reef.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Celestine%20Reef&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Celestine%20Reef&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Celestine Reef.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Luvion",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

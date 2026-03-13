@@ -2,14 +2,13 @@
   "id": "tarnation",
   "name": "Tarnation",
   "type": "Plane",
-  "image": "cards/images/Tarnation.png",
-  "thumb": "cards/thumbs/Tarnation.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Tarnation&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Tarnation&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Tarnation.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Thunder Junction",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

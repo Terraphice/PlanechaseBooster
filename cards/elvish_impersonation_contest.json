@@ -2,14 +2,13 @@
   "id": "elvish_impersonation_contest",
   "name": "Elvish Impersonation Contest",
   "type": "Plane",
-  "image": "cards/images/Elvish Impersonation Contest.png",
-  "thumb": "cards/thumbs/Elvish Impersonation Contest.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Elvish%20Impersonation%20Contest&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Elvish%20Impersonation%20Contest&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Elvish Impersonation Contest.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Las Vegas",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

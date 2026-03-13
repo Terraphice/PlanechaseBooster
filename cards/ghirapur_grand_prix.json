@@ -2,14 +2,13 @@
   "id": "ghirapur_grand_prix",
   "name": "Ghirapur Grand Prix",
   "type": "Plane",
-  "image": "cards/images/Ghirapur Grand Prix.png",
-  "thumb": "cards/thumbs/Ghirapur Grand Prix.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Ghirapur%20Grand%20Prix&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Ghirapur%20Grand%20Prix&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Ghirapur Grand Prix.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Avishkar",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

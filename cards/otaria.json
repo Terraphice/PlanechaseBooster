@@ -2,13 +2,12 @@
   "id": "otaria",
   "name": "Otaria",
   "type": "Plane",
-  "image": "cards/images/Otaria.png",
-  "thumb": "cards/thumbs/Otaria.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Otaria&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Otaria&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Otaria.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Dominaria",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

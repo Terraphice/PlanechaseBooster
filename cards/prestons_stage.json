@@ -2,14 +2,13 @@
   "id": "prestons_stage",
   "name": "Preston's Stage",
   "type": "Plane",
-  "image": "cards/images/Preston's Stage.png",
-  "thumb": "cards/thumbs/Preston's Stage.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Preston's%20Stage&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Preston's%20Stage&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Preston's Stage.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Las Vegas",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

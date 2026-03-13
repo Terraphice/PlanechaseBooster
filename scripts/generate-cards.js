@@ -41,20 +41,6 @@ export function uniqueTags(tags) {
     .map((tag) => String(tag).trim());
 }
 
-export function isOfficialCard(tags) {
-  return tags.some((tag) => {
-    const stripped = tag.startsWith(":top:") ? tag.slice(5) : tag;
-    if (stripped.startsWith("badge:")) {
-      const parts = stripped.split(":");
-      if (parts.length >= 4) {
-        const label = parts.slice(3).join(":");
-        return label.toLowerCase().includes("official");
-      }
-    }
-    return false;
-  });
-}
-
 // ── Internal helpers ──────────────────────────────────────────────────────────
 
 function readExistingCards(filepath) {
@@ -130,10 +116,6 @@ if (isDirectRun) {
       transcript: `cards/transcripts/${name}.md`,
       tags: mergedTags
     };
-
-    if (isOfficialCard(mergedTags)) {
-      card.scryfallId = existing.scryfallId !== undefined ? existing.scryfallId : null;
-    }
 
     cards.push(card);
   }

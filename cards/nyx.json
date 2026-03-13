@@ -2,13 +2,12 @@
   "id": "nyx",
   "name": "Nyx",
   "type": "Plane",
-  "image": "cards/images/Nyx.png",
-  "thumb": "cards/thumbs/Nyx.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Nyx&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Nyx&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Nyx.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Theros",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

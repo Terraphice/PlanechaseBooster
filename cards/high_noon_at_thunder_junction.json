@@ -2,14 +2,13 @@
   "id": "high_noon_at_thunder_junction",
   "name": "High Noon At Thunder Junction",
   "type": "Plane",
-  "image": "cards/images/High Noon At Thunder Junction.png",
-  "thumb": "cards/thumbs/High Noon At Thunder Junction.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=High%20Noon%20At%20Thunder%20Junction&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=High%20Noon%20At%20Thunder%20Junction&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/High Noon At Thunder Junction.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Thunder Junction",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

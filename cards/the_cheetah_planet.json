@@ -2,14 +2,13 @@
   "id": "the_cheetah_planet",
   "name": "The Cheetah Planet",
   "type": "Plane",
-  "image": "cards/images/The Cheetah Planet.png",
-  "thumb": "cards/thumbs/The Cheetah Planet.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Cheetah%20Planet&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=The%20Cheetah%20Planet&set=who&format=image&version=small",
   "transcript": "cards/transcripts/The Cheetah Planet.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Outside Mutter's Spiral",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

@@ -2,13 +2,12 @@
   "id": "the_pro_tour",
   "name": "The Pro Tour",
   "type": "Plane",
-  "image": "cards/images/The Pro Tour.png",
-  "thumb": "cards/thumbs/The Pro Tour.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Pro%20Tour&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=The%20Pro%20Tour&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/The Pro Tour.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

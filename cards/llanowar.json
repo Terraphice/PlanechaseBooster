@@ -2,13 +2,12 @@
   "id": "llanowar",
   "name": "Llanowar",
   "type": "Plane",
-  "image": "cards/images/Llanowar.png",
-  "thumb": "cards/thumbs/Llanowar.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Llanowar&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Llanowar&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Llanowar.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Dominaria",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

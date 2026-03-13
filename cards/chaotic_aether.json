@@ -2,12 +2,11 @@
   "id": "chaotic_aether",
   "name": "Chaotic Aether",
   "type": "Phenomenon",
-  "image": "cards/images/Chaotic Aether.png",
-  "thumb": "cards/thumbs/Chaotic Aether.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Chaotic%20Aether&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Chaotic%20Aether&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Chaotic Aether.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

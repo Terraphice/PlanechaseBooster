@@ -2,14 +2,13 @@
   "id": "new_players_journey",
   "name": "New Player's Journey",
   "type": "Plane",
-  "image": "cards/images/New Player's Journey.png",
-  "thumb": "cards/thumbs/New Player's Journey.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=New%20Player's%20Journey&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=New%20Player's%20Journey&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/New Player's Journey.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Foundations",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

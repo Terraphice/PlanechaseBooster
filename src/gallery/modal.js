@@ -3,7 +3,6 @@
 // phenomenon flip animation, and URL hash synchronisation.
 
 import { enhanceManaSymbols } from "./utils.js";
-import { remapLegacyKey } from "../deck/codec.js";
 
 export function createModalManager({
   modal,
@@ -101,10 +100,7 @@ export function createModalManager({
 
     if (index === -1) {
       const allCards = getAllCards();
-      let resolvedKey = cardKey;
-      if (!allCards.some((c) => c.id === resolvedKey)) {
-        resolvedKey = remapLegacyKey(cardKey);
-      }
+      const resolvedKey = cardKey;
       const cardInAll = allCards.find((card) => card.id === resolvedKey);
       if (!cardInAll) return;
 
@@ -150,7 +146,6 @@ export function createModalManager({
 
     const isOfficial = card.normalizedTags.some((t) => t.includes("official"));
     modalScryfallLink.classList.toggle("hidden", !isOfficial);
-    // TODO: Use card.scryfallId when populated to link directly to the Scryfall card page.
     const scryfallQuery = encodeURIComponent(`"${card.name}"`);
     modalScryfallLink.href = `https://scryfall.com/search?q=${scryfallQuery}&utm_source=planar-atlas&utm_medium=referral`;
 

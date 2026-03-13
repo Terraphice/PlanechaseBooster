@@ -2,14 +2,13 @@
   "id": "besieged_viking_village",
   "name": "Besieged Viking Village",
   "type": "Plane",
-  "image": "cards/images/Besieged Viking Village.png",
-  "thumb": "cards/thumbs/Besieged Viking Village.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Besieged%20Viking%20Village&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Besieged%20Viking%20Village&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Besieged Viking Village.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Earth",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

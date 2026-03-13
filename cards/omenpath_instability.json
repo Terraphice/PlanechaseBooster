@@ -2,13 +2,12 @@
   "id": "omenpath_instability",
   "name": "Omenpath Instability",
   "type": "Phenomenon",
-  "image": "cards/images/Omenpath Instability.png",
-  "thumb": "cards/thumbs/Omenpath Instability.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Omenpath%20Instability&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Omenpath%20Instability&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Omenpath Instability.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

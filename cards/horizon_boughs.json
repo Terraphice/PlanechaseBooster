@@ -2,13 +2,12 @@
   "id": "horizon_boughs",
   "name": "Horizon Boughs",
   "type": "Plane",
-  "image": "cards/images/Horizon Boughs.png",
-  "thumb": "cards/thumbs/Horizon Boughs.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Horizon%20Boughs&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Horizon%20Boughs&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Horizon Boughs.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Pyrulea",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

@@ -3,7 +3,7 @@
 // and game lifecycle transitions (start, exit, reset).
 
 import { shuffleArray } from "../gallery/utils.js";
-import { compressKey, decompressKey, remapLegacyKey, toBase64Url, fromBase64Url } from "../deck/codec.js";
+import { compressKey, toBase64Url, fromBase64Url } from "../deck/codec.js";
 import {
   bemKey,
   resetBemState,
@@ -222,26 +222,18 @@ export function encodeGameState() {
 }
 
 /**
- * Decodes a "g2:" or legacy "g1:" seed string back into a game state object.
+ * Decodes a "g2:" seed string back into a game state object.
  * @param {string | null | undefined} seed - The seed string to decode.
  * @returns {object | null} The decoded game state, or null if invalid.
  */
 export function decodeGameState(seed) {
-  const isLegacy = seed?.startsWith("g1:");
-  if (!seed?.startsWith("g2:") && !isLegacy) return null;
+  if (!seed?.startsWith("g2:")) return null;
   const allCards = ctx.getAllCards();
   try {
     const raw = fromBase64Url(seed.slice(3));
     const obj = JSON.parse(raw);
     const lookupCard = (ck) => {
-      let id;
-      if (isLegacy) {
-        id = decompressKey(ck);
-        if (!id) return null;
-        id = remapLegacyKey(id);
-      } else {
-        id = remapLegacyKey(ck);
-      }
+      const id = ck;
       return allCards.find((c) => c.id === id) || null;
     };
     if (obj.m === "bem") {

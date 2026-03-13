@@ -2,12 +2,11 @@
   "id": "planewide_disaster",
   "name": "Planewide Disaster",
   "type": "Phenomenon",
-  "image": "cards/images/Planewide Disaster.png",
-  "thumb": "cards/thumbs/Planewide Disaster.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Planewide%20Disaster&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Planewide%20Disaster&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Planewide Disaster.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

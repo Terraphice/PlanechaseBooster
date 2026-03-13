@@ -2,13 +2,12 @@
   "id": "murasa",
   "name": "Murasa",
   "type": "Plane",
-  "image": "cards/images/Murasa.png",
-  "thumb": "cards/thumbs/Murasa.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Murasa&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Murasa&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Murasa.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Zendikar",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

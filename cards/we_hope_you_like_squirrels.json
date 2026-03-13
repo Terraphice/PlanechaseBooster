@@ -2,14 +2,13 @@
   "id": "we_hope_you_like_squirrels",
   "name": "We Hope You Like Squirrels",
   "type": "Plane",
-  "image": "cards/images/We Hope You Like Squirrels.png",
-  "thumb": "cards/thumbs/We Hope You Like Squirrels.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=We%20Hope%20You%20Like%20Squirrels&set=pssc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=We%20Hope%20You%20Like%20Squirrels&set=pssc&format=image&version=small",
   "transcript": "cards/transcripts/We Hope You Like Squirrels.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Secret Lair",
     "hidden",
     "PSSC"
-  ],
-  "scryfallId": null
+  ]
 }

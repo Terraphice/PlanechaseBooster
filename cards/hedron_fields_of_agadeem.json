@@ -2,13 +2,12 @@
   "id": "hedron_fields_of_agadeem",
   "name": "Hedron Fields of Agadeem",
   "type": "Plane",
-  "image": "cards/images/Hedron Fields of Agadeem.png",
-  "thumb": "cards/thumbs/Hedron Fields of Agadeem.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Hedron%20Fields%20of%20Agadeem&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Hedron%20Fields%20of%20Agadeem&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Hedron Fields of Agadeem.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Zendikar",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

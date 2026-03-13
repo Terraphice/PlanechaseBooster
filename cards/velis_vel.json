@@ -2,13 +2,12 @@
   "id": "velis_vel",
   "name": "Velis Vel",
   "type": "Plane",
-  "image": "cards/images/Velis Vel.png",
-  "thumb": "cards/thumbs/Velis Vel.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Velis%20Vel&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Velis%20Vel&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Velis Vel.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Lorwyn",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

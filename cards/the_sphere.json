@@ -2,14 +2,13 @@
   "id": "the_sphere",
   "name": "The Sphere",
   "type": "Plane",
-  "image": "cards/images/The Sphere.png",
-  "thumb": "cards/thumbs/The Sphere.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Sphere&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=The%20Sphere&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/The Sphere.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Las Vegas",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

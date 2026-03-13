@@ -2,13 +2,12 @@
   "id": "the_eon_fog",
   "name": "The Eon Fog",
   "type": "Plane",
-  "image": "cards/images/The Eon Fog.png",
-  "thumb": "cards/thumbs/The Eon Fog.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Eon%20Fog&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=The%20Eon%20Fog&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/The Eon Fog.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Equilor",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

@@ -2,13 +2,12 @@
   "id": "riptide_island",
   "name": "Riptide Island",
   "type": "Plane",
-  "image": "cards/images/Riptide Island.png",
-  "thumb": "cards/thumbs/Riptide Island.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Riptide%20Island&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Riptide%20Island&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Riptide Island.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Dominaria",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

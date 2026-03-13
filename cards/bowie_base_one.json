@@ -2,14 +2,13 @@
   "id": "bowie_base_one",
   "name": "Bowie Base One",
   "type": "Plane",
-  "image": "cards/images/Bowie Base One.png",
-  "thumb": "cards/thumbs/Bowie Base One.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Bowie%20Base%20One&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Bowie%20Base%20One&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Bowie Base One.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Mars",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

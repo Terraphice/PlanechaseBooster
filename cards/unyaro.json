@@ -2,13 +2,12 @@
   "id": "unyaro",
   "name": "Unyaro",
   "type": "Plane",
-  "image": "cards/images/Unyaro.png",
-  "thumb": "cards/thumbs/Unyaro.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Unyaro&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Unyaro&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Unyaro.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Zhalfir",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

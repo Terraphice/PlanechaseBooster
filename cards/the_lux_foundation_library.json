@@ -2,14 +2,13 @@
   "id": "the_lux_foundation_library",
   "name": "The Lux Foundation Library",
   "type": "Plane",
-  "image": "cards/images/The Lux Foundation Library.png",
-  "thumb": "cards/thumbs/The Lux Foundation Library.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Lux%20Foundation%20Library&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=The%20Lux%20Foundation%20Library&set=who&format=image&version=small",
   "transcript": "cards/transcripts/The Lux Foundation Library.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "The Library",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

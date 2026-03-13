@@ -2,14 +2,13 @@
   "id": "no_way_out_playtest",
   "name": "No Way Out (Playtest)",
   "type": "Plane",
-  "image": "cards/images/No Way Out (Playtest).png",
-  "thumb": "cards/thumbs/No Way Out (Playtest).webp",
+  "image": "https://api.scryfall.com/cards/named?exact=No%20Way%20Out%20(Playtest)&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=No%20Way%20Out%20(Playtest)&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/No Way Out (Playtest).md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Duskmourn",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

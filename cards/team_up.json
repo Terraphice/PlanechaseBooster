@@ -2,13 +2,12 @@
   "id": "team_up",
   "name": "Team Up!",
   "type": "Phenomenon",
-  "image": "cards/images/Team-Up!.png",
-  "thumb": "cards/thumbs/Team-Up!.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Team%20Up!&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Team%20Up!&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Team-Up!.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

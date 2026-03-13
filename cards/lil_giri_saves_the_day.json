@@ -2,14 +2,13 @@
   "id": "lil_giri_saves_the_day",
   "name": "Li'l Giri Saves the Day",
   "type": "Plane",
-  "image": "cards/images/Li'l Giri Saves the Day.png",
-  "thumb": "cards/thumbs/Li'l Giri Saves the Day.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Li'l%20Giri%20Saves%20the%20Day&set=pssc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Li'l%20Giri%20Saves%20the%20Day&set=pssc&format=image&version=small",
   "transcript": "cards/transcripts/Li'l Giri Saves the Day.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Secret Lair",
     "hidden",
     "PSSC"
-  ],
-  "scryfallId": null
+  ]
 }

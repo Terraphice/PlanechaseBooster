@@ -2,14 +2,13 @@
   "id": "aplan_mortarium",
   "name": "Aplan Mortarium",
   "type": "Plane",
-  "image": "cards/images/Aplan Mortarium.png",
-  "thumb": "cards/thumbs/Aplan Mortarium.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Aplan%20Mortarium&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Aplan%20Mortarium&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Aplan Mortarium.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Alfava Metraxis",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

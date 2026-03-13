@@ -2,13 +2,12 @@
   "id": "paliano",
   "name": "Paliano",
   "type": "Plane",
-  "image": "cards/images/Paliano.png",
-  "thumb": "cards/thumbs/Paliano.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Paliano&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Paliano&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Paliano.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Fiora",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

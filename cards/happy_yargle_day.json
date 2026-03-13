@@ -2,14 +2,13 @@
   "id": "happy_yargle_day",
   "name": "Happy Yargle Day!",
   "type": "Plane",
-  "image": "cards/images/Happy Yargle Day!.png",
-  "thumb": "cards/thumbs/Happy Yargle Day!.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Happy%20Yargle%20Day!&set=pssc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Happy%20Yargle%20Day!&set=pssc&format=image&version=small",
   "transcript": "cards/transcripts/Happy Yargle Day!.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Secret Lair",
     "hidden",
     "PSSC"
-  ],
-  "scryfallId": null
+  ]
 }

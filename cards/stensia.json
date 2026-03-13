@@ -2,13 +2,12 @@
   "id": "stensia",
   "name": "Stensia",
   "type": "Plane",
-  "image": "cards/images/Stensia.png",
-  "thumb": "cards/thumbs/Stensia.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Stensia&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Stensia&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Stensia.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Innistrad",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

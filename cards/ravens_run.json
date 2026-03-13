@@ -2,13 +2,12 @@
   "id": "ravens_run",
   "name": "Raven's Run",
   "type": "Plane",
-  "image": "cards/images/Raven's Run.png",
-  "thumb": "cards/thumbs/Raven's Run.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Raven's%20Run&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Raven's%20Run&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Raven's Run.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Shadowmoor",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

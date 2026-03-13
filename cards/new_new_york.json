@@ -2,14 +2,13 @@
   "id": "new_new_york",
   "name": "New New York",
   "type": "Plane",
-  "image": "cards/images/New New York.png",
-  "thumb": "cards/thumbs/New New York.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=New%20New%20York&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=New%20New%20York&set=who&format=image&version=small",
   "transcript": "cards/transcripts/New New York.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "New Earth",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

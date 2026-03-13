@@ -2,14 +2,13 @@
   "id": "clamilton_estate",
   "name": "Clamilton Estate",
   "type": "Plane",
-  "image": "cards/images/Clamilton Estate.png",
-  "thumb": "cards/thumbs/Clamilton Estate.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Clamilton%20Estate&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Clamilton%20Estate&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Clamilton Estate.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Clamhattan",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

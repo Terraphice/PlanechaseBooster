@@ -2,14 +2,13 @@
   "id": "jaliras_show",
   "name": "Jalira's Show",
   "type": "Plane",
-  "image": "cards/images/Jalira's Show.png",
-  "thumb": "cards/thumbs/Jalira's Show.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Jalira's%20Show&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Jalira's%20Show&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Jalira's Show.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Las Vegas",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

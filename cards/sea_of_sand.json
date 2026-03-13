@@ -2,13 +2,12 @@
   "id": "sea_of_sand",
   "name": "Sea of Sand",
   "type": "Plane",
-  "image": "cards/images/Sea of Sand.png",
-  "thumb": "cards/thumbs/Sea of Sand.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Sea%20of%20Sand&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Sea%20of%20Sand&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Sea of Sand.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Rabiah",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

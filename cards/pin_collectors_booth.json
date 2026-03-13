@@ -2,13 +2,12 @@
   "id": "pin_collectors_booth",
   "name": "Pin Collector's Booth",
   "type": "Plane",
-  "image": "cards/images/Pin Collector's Booth.png",
-  "thumb": "cards/thumbs/Pin Collector's Booth.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Pin%20Collector's%20Booth&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Pin%20Collector's%20Booth&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Pin Collector's Booth.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

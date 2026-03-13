@@ -2,14 +2,13 @@
   "id": "tardis_bay",
   "name": "TARDIS Bay",
   "type": "Plane",
-  "image": "cards/images/TARDIS Bay.png",
-  "thumb": "cards/thumbs/TARDIS Bay.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=TARDIS%20Bay&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=TARDIS%20Bay&set=who&format=image&version=small",
   "transcript": "cards/transcripts/TARDIS Bay.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Gallifrey",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

@@ -2,13 +2,12 @@
   "id": "shiv",
   "name": "Shiv",
   "type": "Plane",
-  "image": "cards/images/Shiv.png",
-  "thumb": "cards/thumbs/Shiv.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Shiv&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Shiv&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Shiv.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Dominaria",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

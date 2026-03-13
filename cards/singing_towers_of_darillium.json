@@ -2,14 +2,13 @@
   "id": "singing_towers_of_darillium",
   "name": "Singing Towers of Darillium",
   "type": "Plane",
-  "image": "cards/images/Singing Towers of Darillium.png",
-  "thumb": "cards/thumbs/Singing Towers of Darillium.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Singing%20Towers%20of%20Darillium&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Singing%20Towers%20of%20Darillium&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Singing Towers of Darillium.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Darillium",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

@@ -2,13 +2,12 @@
   "id": "feeding_grounds",
   "name": "Feeding Grounds",
   "type": "Plane",
-  "image": "cards/images/Feeding Grounds.png",
-  "thumb": "cards/thumbs/Feeding Grounds.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Feeding%20Grounds&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Feeding%20Grounds&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Feeding Grounds.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Muraganda",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

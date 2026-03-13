@@ -2,13 +2,12 @@
   "id": "turri_island",
   "name": "Turri Island",
   "type": "Plane",
-  "image": "cards/images/Turri Island.png",
-  "thumb": "cards/thumbs/Turri Island.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Turri%20Island&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Turri%20Island&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Turri Island.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Ir",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

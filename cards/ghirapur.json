@@ -2,13 +2,12 @@
   "id": "ghirapur",
   "name": "Ghirapur",
   "type": "Plane",
-  "image": "cards/images/Ghirapur.png",
-  "thumb": "cards/thumbs/Ghirapur.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Ghirapur&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Ghirapur&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Ghirapur.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Avishkar",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

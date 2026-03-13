@@ -2,13 +2,12 @@
   "id": "mirrored_depths",
   "name": "Mirrored Depths",
   "type": "Plane",
-  "image": "cards/images/Mirrored Depths.png",
-  "thumb": "cards/thumbs/Mirrored Depths.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Mirrored%20Depths&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Mirrored%20Depths&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Mirrored Depths.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Karsus",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

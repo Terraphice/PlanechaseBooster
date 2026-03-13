@@ -2,13 +2,12 @@
   "id": "esper",
   "name": "Esper",
   "type": "Plane",
-  "image": "cards/images/Esper.png",
-  "thumb": "cards/thumbs/Esper.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Esper&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Esper&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Esper.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Alara",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

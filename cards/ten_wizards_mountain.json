@@ -2,13 +2,12 @@
   "id": "ten_wizards_mountain",
   "name": "Ten Wizards Mountain",
   "type": "Plane",
-  "image": "cards/images/Ten Wizards Mountain.png",
-  "thumb": "cards/thumbs/Ten Wizards Mountain.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Ten%20Wizards%20Mountain&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Ten%20Wizards%20Mountain&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Ten Wizards Mountain.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Shenmeng",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

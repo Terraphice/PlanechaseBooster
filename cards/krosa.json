@@ -2,13 +2,12 @@
   "id": "krosa",
   "name": "Krosa",
   "type": "Plane",
-  "image": "cards/images/Krosa.png",
-  "thumb": "cards/thumbs/Krosa.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Krosa&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Krosa&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Krosa.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Dominaria",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

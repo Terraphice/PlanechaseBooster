@@ -2,14 +2,13 @@
   "id": "lake_silencio",
   "name": "Lake Silencio",
   "type": "Plane",
-  "image": "cards/images/Lake Silencio.png",
-  "thumb": "cards/thumbs/Lake Silencio.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Lake%20Silencio&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Lake%20Silencio&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Lake Silencio.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Earth",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

@@ -162,7 +162,7 @@ All palettes support both dark and light variants. Preferences persist across se
 
 The library covers both official Wizards of the Coast Planechase releases and curated community custom content, and is actively growing. Each card is badged **Official** or **Custom** in the gallery for clarity.
 
-Every card includes a high-resolution image and a plain-text transcript, as well as more efficient thumbnail images. Transcripts are loaded asynchronously in the card detail modal and are also indexed by the `oracle:` search operator.
+Every card includes a high-resolution image and a plain-text transcript, as well as more efficient thumbnail images. Official cards now load their images from Scryfall, while custom cards load from local assets. Transcripts are loaded asynchronously in the card detail modal and are also indexed by the `oracle:` search operator.
 
 ---
 

@@ -2,13 +2,12 @@
   "id": "nephalia",
   "name": "Nephalia",
   "type": "Plane",
-  "image": "cards/images/Nephalia.png",
-  "thumb": "cards/thumbs/Nephalia.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Nephalia&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Nephalia&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Nephalia.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Innistrad",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

@@ -2,12 +2,11 @@
   "id": "morphic_tide",
   "name": "Morphic Tide",
   "type": "Phenomenon",
-  "image": "cards/images/Morphic Tide.png",
-  "thumb": "cards/thumbs/Morphic Tide.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Morphic%20Tide&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Morphic%20Tide&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Morphic Tide.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

@@ -2,14 +2,13 @@
   "id": "unit_headquarters",
   "name": "UNIT Headquarters",
   "type": "Plane",
-  "image": "cards/images/UNIT Headquarters.png",
-  "thumb": "cards/thumbs/UNIT Headquarters.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=UNIT%20Headquarters&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=UNIT%20Headquarters&set=who&format=image&version=small",
   "transcript": "cards/transcripts/UNIT Headquarters.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Earth",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

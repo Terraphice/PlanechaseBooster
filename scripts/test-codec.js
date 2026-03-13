@@ -5,8 +5,6 @@
 
 import {
   compressKey,
-  decompressKey,
-  remapLegacyKey,
   toBase64Url,
   fromBase64Url,
   encodeDeck,
@@ -30,7 +28,7 @@ function section(name) {
   console.log(`\n${name}`);
 }
 
-// ── compressKey / decompressKey ───────────────────────────────────────────────
+// ── compressKey ───────────────────────────────────────────────────────────────
 
 section("compressKey");
 assert(compressKey("akoum") === "akoum", "identity: akoum");
@@ -38,17 +36,7 @@ assert(compressKey("interplanar_tunnel") === "interplanar_tunnel", "identity: in
 assert(compressKey("atlas_consultation") === "atlas_consultation", "identity: atlas_consultation");
 assert(compressKey("") === "", "identity: empty string");
 
-section("decompressKey (legacy d1: expansion only)");
-assert(decompressKey("pakoum") === "plane_akoum", "Restores plane_ prefix from d1: compressed key");
-assert(decompressKey("ninterplanar_tunnel") === "phenomenon_interplanar_tunnel", "Restores phenomenon_ prefix");
-assert(decompressKey("ucustomcard") === "customcard", "Restores no-prefix key");
-assert(decompressKey("p") === null, "Single 'p' (no rest) returns null (length < 2)");
-assert(decompressKey("") === null, "Empty string returns null");
-assert(decompressKey("x") === null, "Single char (no rest) returns null");
-assert(decompressKey(null) === null, "null returns null");
-assert(decompressKey(undefined) === null, "undefined returns null");
-
-section("compressKey / decompressKey roundtrip");
+section("compressKey roundtrip");
 const roundtripKeys = [
   "akoum",
   "the_library_of_leng",
@@ -58,18 +46,6 @@ const roundtripKeys = [
 for (const key of roundtripKeys) {
   assert(compressKey(key) === key, `compressKey identity: ${key}`);
 }
-
-// ── remapLegacyKey ────────────────────────────────────────────────────────────
-
-section("remapLegacyKey");
-assert(remapLegacyKey("Plane_Akoum") === "akoum", "Plane_ prefix remapped");
-assert(remapLegacyKey("Phenomenon_Interplanar_Tunnel") === "interplanar_tunnel", "Phenomenon_ prefix remapped");
-assert(remapLegacyKey("Plane_The Library of Leng") === "the_library_of_leng", "Spaces become underscores");
-assert(remapLegacyKey("Plane_Atlas Consultation") === "atlas_consultation", "Multi-word name");
-assert(remapLegacyKey("plane_akoum") === "akoum", "Intermediate plane_ prefix remapped");
-assert(remapLegacyKey("phenomenon_interplanar_tunnel") === "interplanar_tunnel", "Intermediate phenomenon_ prefix remapped");
-assert(remapLegacyKey("akoum") === "akoum", "New format: no-op");
-assert(remapLegacyKey("atlas_consultation") === "atlas_consultation", "New format: no-op");
 
 // ── toBase64Url / fromBase64Url ───────────────────────────────────────────────
 
@@ -128,20 +104,6 @@ const clampDeck = new Map([["akoum", 9]]);
 const clampSeed = encodeDeck(clampDeck);
 const clampDecoded = decodeDeck(clampSeed, 5);
 assert((clampDecoded.get("akoum") ?? 0) <= 5, "maxCardCount=5 clamps count to ≤5");
-
-section("decodeDeck: backward compat (d1: legacy seeds)");
-const legacyRaw = "pAkoum,nInterplanar_Tunnel";
-const legacySeed = "d1:" + toBase64Url(legacyRaw);
-const legacyDecoded = decodeDeck(legacySeed);
-assert(legacyDecoded.has("akoum"), "d1: seed: Plane_Akoum remapped to akoum");
-assert(legacyDecoded.has("interplanar_tunnel"), "d1: seed: Phenomenon_Interplanar_Tunnel remapped");
-
-section("decodeDeck: backward compat (d2: intermediate plane_xxx seeds)");
-const intermediateRaw = "plane_akoum,phenomenon_interplanar_tunnel";
-const intermediateSeed = "d2:" + toBase64Url(intermediateRaw);
-const intermediateDecoded = decodeDeck(intermediateSeed);
-assert(intermediateDecoded.has("akoum"), "d2: intermediate: plane_akoum remapped to akoum");
-assert(intermediateDecoded.has("interplanar_tunnel"), "d2: intermediate: phenomenon_interplanar_tunnel remapped");
 
 // ── Summary ───────────────────────────────────────────────────────────────────
 

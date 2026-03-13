@@ -2,13 +2,12 @@
   "id": "aretopolis",
   "name": "Aretopolis",
   "type": "Plane",
-  "image": "cards/images/Aretopolis.png",
-  "thumb": "cards/thumbs/Aretopolis.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Aretopolis&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Aretopolis&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Aretopolis.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Kephalai",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

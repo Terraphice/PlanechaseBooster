@@ -2,14 +2,13 @@
   "id": "pompeii",
   "name": "Pompeii",
   "type": "Plane",
-  "image": "cards/images/Pompeii.png",
-  "thumb": "cards/thumbs/Pompeii.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Pompeii&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Pompeii&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Pompeii.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Earth",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

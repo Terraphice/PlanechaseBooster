@@ -2,13 +2,12 @@
   "id": "bant",
   "name": "Bant",
   "type": "Plane",
-  "image": "cards/images/Bant.png",
-  "thumb": "cards/thumbs/Bant.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Bant&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Bant&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Bant.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Alara",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

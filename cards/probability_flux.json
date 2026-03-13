@@ -2,13 +2,12 @@
   "id": "probability_flux",
   "name": "Probability Flux",
   "type": "Phenomenon",
-  "image": "cards/images/Probability Flux.png",
-  "thumb": "cards/thumbs/Probability Flux.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Probability%20Flux&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Probability%20Flux&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Probability Flux.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

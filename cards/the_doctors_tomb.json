@@ -2,14 +2,13 @@
   "id": "the_doctors_tomb",
   "name": "The Doctor's Tomb",
   "type": "Plane",
-  "image": "cards/images/The Doctor's Tomb.png",
-  "thumb": "cards/thumbs/The Doctor's Tomb.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Doctor's%20Tomb&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=The%20Doctor's%20Tomb&set=who&format=image&version=small",
   "transcript": "cards/transcripts/The Doctor's Tomb.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Trenzalore",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

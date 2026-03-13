@@ -2,13 +2,12 @@
   "id": "caught_in_a_parallel_universe",
   "name": "Caught in a Parallel Universe",
   "type": "Phenomenon",
-  "image": "cards/images/Caught in a Parallel Universe.png",
-  "thumb": "cards/thumbs/Caught in a Parallel Universe.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Caught%20in%20a%20Parallel%20Universe&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Caught%20in%20a%20Parallel%20Universe&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Caught in a Parallel Universe.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

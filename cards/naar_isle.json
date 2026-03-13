@@ -2,13 +2,12 @@
   "id": "naar_isle",
   "name": "Naar Isle",
   "type": "Plane",
-  "image": "cards/images/Naar Isle.png",
-  "thumb": "cards/thumbs/Naar Isle.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Naar%20Isle&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Naar%20Isle&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Naar Isle.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Wildfire",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

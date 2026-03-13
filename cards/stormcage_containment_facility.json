@@ -2,14 +2,13 @@
   "id": "stormcage_containment_facility",
   "name": "Stormcage Containment Facility",
   "type": "Plane",
-  "image": "cards/images/Stormcage Containment Facility.png",
-  "thumb": "cards/thumbs/Stormcage Containment Facility.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Stormcage%20Containment%20Facility&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Stormcage%20Containment%20Facility&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Stormcage Containment Facility.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Unknown Planet",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

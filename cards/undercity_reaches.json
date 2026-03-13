@@ -2,13 +2,12 @@
   "id": "undercity_reaches",
   "name": "Undercity Reaches",
   "type": "Plane",
-  "image": "cards/images/Undercity Reaches.png",
-  "thumb": "cards/thumbs/Undercity Reaches.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Undercity%20Reaches&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Undercity%20Reaches&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Undercity Reaches.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Ravnica",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

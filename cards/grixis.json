@@ -2,13 +2,12 @@
   "id": "grixis",
   "name": "Grixis",
   "type": "Plane",
-  "image": "cards/images/Grixis.png",
-  "thumb": "cards/thumbs/Grixis.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Grixis&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Grixis&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Grixis.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Alara",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

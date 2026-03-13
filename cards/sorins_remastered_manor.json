@@ -2,14 +2,13 @@
   "id": "sorins_remastered_manor",
   "name": "Sorin's Remastered Manor",
   "type": "Plane",
-  "image": "cards/images/Sorin's Remastered Manor.png",
-  "thumb": "cards/thumbs/Sorin's Remastered Manor.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Sorin's%20Remastered%20Manor&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Sorin's%20Remastered%20Manor&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Sorin's Remastered Manor.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Innistrad",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

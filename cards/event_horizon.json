@@ -2,14 +2,13 @@
   "id": "event_horizon",
   "name": "Event Horizon",
   "type": "Plane",
-  "image": "cards/images/Event Horizon.png",
-  "thumb": "cards/thumbs/Event Horizon.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Event%20Horizon&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Event%20Horizon&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Event Horizon.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Blind Eternities",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

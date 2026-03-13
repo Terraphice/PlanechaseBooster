@@ -2,13 +2,12 @@
   "id": "lair_of_the_ashen_idol",
   "name": "Lair of the Ashen Idol",
   "type": "Plane",
-  "image": "cards/images/Lair of the Ashen Idol.png",
-  "thumb": "cards/thumbs/Lair of the Ashen Idol.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Lair%20of%20the%20Ashen%20Idol&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Lair%20of%20the%20Ashen%20Idol&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Lair of the Ashen Idol.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Azgol",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

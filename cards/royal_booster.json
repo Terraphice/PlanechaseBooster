@@ -2,13 +2,12 @@
   "id": "royal_booster",
   "name": "Royal Booster",
   "type": "Phenomenon",
-  "image": "cards/images/Royal Booster.png",
-  "thumb": "cards/thumbs/Royal Booster.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Royal%20Booster&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Royal%20Booster&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Royal Booster.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

@@ -2,12 +2,11 @@
   "id": "mutual_epiphany",
   "name": "Mutual Epiphany",
   "type": "Phenomenon",
-  "image": "cards/images/Mutual Epiphany.png",
-  "thumb": "cards/thumbs/Mutual Epiphany.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Mutual%20Epiphany&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Mutual%20Epiphany&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Mutual Epiphany.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

@@ -2,14 +2,13 @@
   "id": "pursued_by_something",
   "name": "Pursued by Something",
   "type": "Plane",
-  "image": "cards/images/Pursued by Something.png",
-  "thumb": "cards/thumbs/Pursued by Something.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Pursued%20by%20Something&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Pursued%20by%20Something&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Pursued by Something.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Duskmourn",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

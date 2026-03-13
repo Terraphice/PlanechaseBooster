@@ -2,14 +2,13 @@
   "id": "circus_of_the_sun",
   "name": "Circus of the Sun",
   "type": "Plane",
-  "image": "cards/images/Circus of the Sun.png",
-  "thumb": "cards/thumbs/Circus of the Sun.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Circus%20of%20the%20Sun&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Circus%20of%20the%20Sun&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Circus of the Sun.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Las Vegas",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

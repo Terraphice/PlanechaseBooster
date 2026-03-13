@@ -2,13 +2,12 @@
   "id": "norns_dominion",
   "name": "Norn's Dominion",
   "type": "Plane",
-  "image": "cards/images/Norn's Dominion.png",
-  "thumb": "cards/thumbs/Norn's Dominion.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Norn's%20Dominion&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Norn's%20Dominion&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Norn's Dominion.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "New Phyrexia",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

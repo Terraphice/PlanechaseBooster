@@ -2,14 +2,13 @@
   "id": "the_cave_of_skulls",
   "name": "The Cave of Skulls",
   "type": "Plane",
-  "image": "cards/images/The Cave of Skulls.png",
-  "thumb": "cards/thumbs/The Cave of Skulls.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Cave%20of%20Skulls&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=The%20Cave%20of%20Skulls&set=who&format=image&version=small",
   "transcript": "cards/transcripts/The Cave of Skulls.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Earth",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

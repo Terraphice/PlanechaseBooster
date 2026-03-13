@@ -2,13 +2,12 @@
   "id": "orzhova",
   "name": "Orzhova",
   "type": "Plane",
-  "image": "cards/images/Orzhova.png",
-  "thumb": "cards/thumbs/Orzhova.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Orzhova&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Orzhova&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Orzhova.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Ravnica",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

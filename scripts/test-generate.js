@@ -8,7 +8,6 @@ import {
   getDisplayName,
   getCardId,
   uniqueTags,
-  isOfficialCard,
 } from "./generate-cards.js";
 
 let passed = 0;
@@ -70,15 +69,6 @@ assert(deepEqual(uniqueTags([]), []), "Empty array returns empty");
 assert(deepEqual(uniqueTags(["  Zendikar  ", "OPCA"]), ["Zendikar", "OPCA"]), "Trims whitespace");
 assert(deepEqual(uniqueTags(["", "  ", "Zendikar"]), ["Zendikar"]), "Filters empty/whitespace-only tags");
 assert(deepEqual(uniqueTags(["Zendikar", "OPCA", "zendikar", "opca"]), ["Zendikar", "OPCA"]), "Multiple duplicates removed");
-
-// ── isOfficialCard ────────────────────────────────────────────────────────────
-
-section("isOfficialCard");
-assert(isOfficialCard([":top:badge:tr:green:Official"]) === true, "Top badge with Official label → true");
-assert(isOfficialCard(["badge:tr:green:Official"]) === true, "Badge with Official label → true");
-assert(isOfficialCard([":top:badge:tr:amber:Custom"]) === false, "Custom badge → false");
-assert(isOfficialCard(["Zendikar"]) === false, "No badge → false");
-assert(isOfficialCard([]) === false, "Empty tags → false");
 
 // ── Summary ───────────────────────────────────────────────────────────────────
 

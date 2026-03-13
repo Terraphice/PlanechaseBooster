@@ -2,13 +2,12 @@
   "id": "year_end_review",
   "name": "Year End Review",
   "type": "Phenomenon",
-  "image": "cards/images/Year-End Review.png",
-  "thumb": "cards/thumbs/Year-End Review.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Year%20End%20Review&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Year%20End%20Review&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Year-End Review.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

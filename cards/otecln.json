@@ -2,14 +2,13 @@
   "id": "otecln",
   "name": "Oteclán",
   "type": "Plane",
-  "image": "cards/images/Oteclán.png",
-  "thumb": "cards/thumbs/Oteclán.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Otecl%C3%A1n&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Otecl%C3%A1n&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Oteclán.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Ixalan",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

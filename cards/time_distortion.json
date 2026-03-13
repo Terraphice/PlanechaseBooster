@@ -2,12 +2,11 @@
   "id": "time_distortion",
   "name": "Time Distortion",
   "type": "Phenomenon",
-  "image": "cards/images/Time Distortion.png",
-  "thumb": "cards/thumbs/Time Distortion.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Time%20Distortion&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Time%20Distortion&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Time Distortion.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

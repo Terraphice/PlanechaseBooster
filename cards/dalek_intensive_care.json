@@ -2,14 +2,13 @@
   "id": "dalek_intensive_care",
   "name": "Dalek Intensive Care",
   "type": "Plane",
-  "image": "cards/images/Dalek Intensive Care.png",
-  "thumb": "cards/thumbs/Dalek Intensive Care.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Dalek%20Intensive%20Care&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Dalek%20Intensive%20Care&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Dalek Intensive Care.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "The Dalek Asylum",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

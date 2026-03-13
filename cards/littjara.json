@@ -2,13 +2,12 @@
   "id": "littjara",
   "name": "Littjara",
   "type": "Plane",
-  "image": "cards/images/Littjara.png",
-  "thumb": "cards/thumbs/Littjara.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Littjara&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Littjara&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Littjara.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Kaldheim",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

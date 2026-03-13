@@ -2,13 +2,12 @@
   "id": "selesnya_loft_gardens",
   "name": "Selesnya Loft Gardens",
   "type": "Plane",
-  "image": "cards/images/Selesnya Loft Gardens.png",
-  "thumb": "cards/thumbs/Selesnya Loft Gardens.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Selesnya%20Loft%20Gardens&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Selesnya%20Loft%20Gardens&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Selesnya Loft Gardens.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Ravnica",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

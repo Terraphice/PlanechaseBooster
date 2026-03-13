@@ -27,28 +27,26 @@
     "id": "caught_in_a_parallel_universe",
     "name": "Caught in a Parallel Universe",
     "type": "Phenomenon",
-    "image": "cards/images/Caught in a Parallel Universe.png",
-    "thumb": "cards/thumbs/Caught in a Parallel Universe.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Caught%20in%20a%20Parallel%20Universe&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Caught%20in%20a%20Parallel%20Universe&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Caught in a Parallel Universe.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "chaotic_aether",
     "name": "Chaotic Aether",
     "type": "Phenomenon",
-    "image": "cards/images/Chaotic Aether.png",
-    "thumb": "cards/thumbs/Chaotic Aether.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Chaotic%20Aether&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Chaotic%20Aether&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Chaotic Aether.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "cleansing_dawn",
@@ -114,15 +112,14 @@
     "id": "fixed_point_in_time",
     "name": "Fixed Point in Time",
     "type": "Phenomenon",
-    "image": "cards/images/Fixed Point in Time.png",
-    "thumb": "cards/thumbs/Fixed Point in Time.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Fixed%20Point%20in%20Time&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Fixed%20Point%20in%20Time&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Fixed Point in Time.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "glimpse_of_fate",
@@ -152,29 +149,27 @@
     "id": "high_and_dry_black_market",
     "name": "High and Dry Black Market",
     "type": "Phenomenon",
-    "image": "cards/images/High and Dry Black Market.png",
-    "thumb": "cards/thumbs/High and Dry Black Market.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=High%20and%20Dry%20Black%20Market&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=High%20and%20Dry%20Black%20Market&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/High and Dry Black Market.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "human-time_lord_meta_crisis",
     "name": "Human—Time Lord Meta Crisis",
     "type": "Phenomenon",
-    "image": "cards/images/Human—Time Lord Meta-Crisis.png",
-    "thumb": "cards/thumbs/Human—Time Lord Meta-Crisis.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Human%E2%80%94Time%20Lord%20Meta%20Crisis&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Human%E2%80%94Time%20Lord%20Meta%20Crisis&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Human—Time Lord Meta-Crisis.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "ichor_trail",
@@ -204,68 +199,63 @@
     "id": "interplanar_tunnel",
     "name": "Interplanar Tunnel",
     "type": "Phenomenon",
-    "image": "cards/images/Interplanar Tunnel.png",
-    "thumb": "cards/thumbs/Interplanar Tunnel.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Interplanar%20Tunnel&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Interplanar%20Tunnel&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Interplanar Tunnel.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "mad_labs",
     "name": "Mad Labs",
     "type": "Phenomenon",
-    "image": "cards/images/Mad Labs.png",
-    "thumb": "cards/thumbs/Mad Labs.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Mad%20Labs&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Mad%20Labs&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Mad Labs.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "morphic_tide",
     "name": "Morphic Tide",
     "type": "Phenomenon",
-    "image": "cards/images/Morphic Tide.png",
-    "thumb": "cards/thumbs/Morphic Tide.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Morphic%20Tide&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Morphic%20Tide&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Morphic Tide.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "mutual_epiphany",
     "name": "Mutual Epiphany",
     "type": "Phenomenon",
-    "image": "cards/images/Mutual Epiphany.png",
-    "thumb": "cards/thumbs/Mutual Epiphany.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Mutual%20Epiphany&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Mutual%20Epiphany&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Mutual Epiphany.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "omenpath_instability",
     "name": "Omenpath Instability",
     "type": "Phenomenon",
-    "image": "cards/images/Omenpath Instability.png",
-    "thumb": "cards/thumbs/Omenpath Instability.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Omenpath%20Instability&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Omenpath%20Instability&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Omenpath Instability.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "omenpath_shortcut",
@@ -283,69 +273,64 @@
     "id": "pin_trading",
     "name": "Pin Trading",
     "type": "Phenomenon",
-    "image": "cards/images/Pin Trading.png",
-    "thumb": "cards/thumbs/Pin Trading.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Pin%20Trading&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Pin%20Trading&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Pin Trading.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "planewide_disaster",
     "name": "Planewide Disaster",
     "type": "Phenomenon",
-    "image": "cards/images/Planewide Disaster.png",
-    "thumb": "cards/thumbs/Planewide Disaster.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Planewide%20Disaster&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Planewide%20Disaster&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Planewide Disaster.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "probability_flux",
     "name": "Probability Flux",
     "type": "Phenomenon",
-    "image": "cards/images/Probability Flux.png",
-    "thumb": "cards/thumbs/Probability Flux.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Probability%20Flux&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Probability%20Flux&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Probability Flux.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "reality_shaping",
     "name": "Reality Shaping",
     "type": "Phenomenon",
-    "image": "cards/images/Reality Shaping.png",
-    "thumb": "cards/thumbs/Reality Shaping.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Reality%20Shaping&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Reality%20Shaping&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Reality Shaping.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "royal_booster",
     "name": "Royal Booster",
     "type": "Phenomenon",
-    "image": "cards/images/Royal Booster.png",
-    "thumb": "cards/thumbs/Royal Booster.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Royal%20Booster&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Royal%20Booster&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Royal Booster.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "sleeper_agent",
@@ -363,14 +348,13 @@
     "id": "spatial_merging",
     "name": "Spatial Merging",
     "type": "Phenomenon",
-    "image": "cards/images/Spatial Merging.png",
-    "thumb": "cards/thumbs/Spatial Merging.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Spatial%20Merging&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Spatial%20Merging&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Spatial Merging.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "surging_vitality",
@@ -388,28 +372,26 @@
     "id": "team_up",
     "name": "Team Up!",
     "type": "Phenomenon",
-    "image": "cards/images/Team-Up!.png",
-    "thumb": "cards/thumbs/Team-Up!.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Team%20Up!&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Team%20Up!&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Team-Up!.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "time_distortion",
     "name": "Time Distortion",
     "type": "Phenomenon",
-    "image": "cards/images/Time Distortion.png",
-    "thumb": "cards/thumbs/Time Distortion.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Time%20Distortion&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Time%20Distortion&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Time Distortion.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "time_spiral",
@@ -427,580 +409,540 @@
     "id": "unknown_event",
     "name": "Unknown Event",
     "type": "Phenomenon",
-    "image": "cards/images/Unknown Event.png",
-    "thumb": "cards/thumbs/Unknown Event.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Unknown%20Event&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Unknown%20Event&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Unknown Event.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "unleash_the_flux",
     "name": "Unleash the Flux",
     "type": "Phenomenon",
-    "image": "cards/images/Unleash the Flux.png",
-    "thumb": "cards/thumbs/Unleash the Flux.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Unleash%20the%20Flux&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Unleash%20the%20Flux&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Unleash the Flux.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "year_end_review",
     "name": "Year End Review",
     "type": "Phenomenon",
-    "image": "cards/images/Year-End Review.png",
-    "thumb": "cards/thumbs/Year-End Review.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Year%20End%20Review&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Year%20End%20Review&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Year-End Review.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "academy_at_tolaria_west",
     "name": "Academy at Tolaria West",
     "type": "Plane",
-    "image": "cards/images/Academy at Tolaria West.png",
-    "thumb": "cards/thumbs/Academy at Tolaria West.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Academy%20at%20Tolaria%20West&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Academy%20at%20Tolaria%20West&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Academy at Tolaria West.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Dominaria",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "agyrem",
     "name": "Agyrem",
     "type": "Plane",
-    "image": "cards/images/Agyrem.png",
-    "thumb": "cards/thumbs/Agyrem.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Agyrem&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Agyrem&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Agyrem.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Ravnica",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "akoum",
     "name": "Akoum",
     "type": "Plane",
-    "image": "cards/images/Akoum.png",
-    "thumb": "cards/thumbs/Akoum.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Akoum&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Akoum&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Akoum.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Zendikar",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "amys_home",
     "name": "Amy's Home",
     "type": "Plane",
-    "image": "cards/images/Amy's Home.png",
-    "thumb": "cards/thumbs/Amy's Home.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Amy's%20Home&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Amy's%20Home&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Amy's Home.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Earth",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "antarctic_research_base",
     "name": "Antarctic Research Base",
     "type": "Plane",
-    "image": "cards/images/Antarctic Research Base.png",
-    "thumb": "cards/thumbs/Antarctic Research Base.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Antarctic%20Research%20Base&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Antarctic%20Research%20Base&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Antarctic Research Base.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Earth",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "aplan_mortarium",
     "name": "Aplan Mortarium",
     "type": "Plane",
-    "image": "cards/images/Aplan Mortarium.png",
-    "thumb": "cards/thumbs/Aplan Mortarium.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Aplan%20Mortarium&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Aplan%20Mortarium&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Aplan Mortarium.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Alfava Metraxis",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "aretopolis",
     "name": "Aretopolis",
     "type": "Plane",
-    "image": "cards/images/Aretopolis.png",
-    "thumb": "cards/thumbs/Aretopolis.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Aretopolis&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Aretopolis&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Aretopolis.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Kephalai",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "artist_alley",
     "name": "Artist Alley",
     "type": "Plane",
-    "image": "cards/images/Artist Alley.png",
-    "thumb": "cards/thumbs/Artist Alley.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Artist%20Alley&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Artist%20Alley&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Artist Alley.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "asmoranomardicadaistinaculdacars_kitchen",
     "name": "Asmoranomardicadaistinaculdacar's Kitchen",
     "type": "Plane",
-    "image": "cards/images/Asmoranomardicadaistinaculdacar's Kitchen.png",
-    "thumb": "cards/thumbs/Asmoranomardicadaistinaculdacar's Kitchen.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Asmoranomardicadaistinaculdacar's%20Kitchen&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Asmoranomardicadaistinaculdacar's%20Kitchen&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Asmoranomardicadaistinaculdacar's Kitchen.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Hell",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "astral_arena",
     "name": "Astral Arena",
     "type": "Plane",
-    "image": "cards/images/Astral Arena.png",
-    "thumb": "cards/thumbs/Astral Arena.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Astral%20Arena&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Astral%20Arena&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Astral Arena.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Kolbahan",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "bad_wolf_bay",
     "name": "Bad Wolf Bay",
     "type": "Plane",
-    "image": "cards/images/Bad Wolf Bay.png",
-    "thumb": "cards/thumbs/Bad Wolf Bay.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Bad%20Wolf%20Bay&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Bad%20Wolf%20Bay&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Bad Wolf Bay.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Earth",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "bant",
     "name": "Bant",
     "type": "Plane",
-    "image": "cards/images/Bant.png",
-    "thumb": "cards/thumbs/Bant.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Bant&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Bant&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Bant.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Alara",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "besieged_viking_village",
     "name": "Besieged Viking Village",
     "type": "Plane",
-    "image": "cards/images/Besieged Viking Village.png",
-    "thumb": "cards/thumbs/Besieged Viking Village.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Besieged%20Viking%20Village&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Besieged%20Viking%20Village&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Besieged Viking Village.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Earth",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "bicycle_rack",
     "name": "Bicycle Rack",
     "type": "Plane",
-    "image": "cards/images/Bicycle Rack.png",
-    "thumb": "cards/thumbs/Bicycle Rack.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Bicycle%20Rack&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Bicycle%20Rack&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Bicycle Rack.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Amsterdam",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "black_lotus_lounge",
     "name": "Black Lotus Lounge",
     "type": "Plane",
-    "image": "cards/images/Black Lotus Lounge.png",
-    "thumb": "cards/thumbs/Black Lotus Lounge.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Black%20Lotus%20Lounge&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Black%20Lotus%20Lounge&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Black Lotus Lounge.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "bloodhill_bastion",
     "name": "Bloodhill Bastion",
     "type": "Plane",
-    "image": "cards/images/Bloodhill Bastion.png",
-    "thumb": "cards/thumbs/Bloodhill Bastion.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Bloodhill%20Bastion&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Bloodhill%20Bastion&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Bloodhill Bastion.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Equilor",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "bowie_base_one",
     "name": "Bowie Base One",
     "type": "Plane",
-    "image": "cards/images/Bowie Base One.png",
-    "thumb": "cards/thumbs/Bowie Base One.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Bowie%20Base%20One&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Bowie%20Base%20One&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Bowie Base One.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Mars",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "celestine_reef",
     "name": "Celestine Reef",
     "type": "Plane",
-    "image": "cards/images/Celestine Reef.png",
-    "thumb": "cards/thumbs/Celestine Reef.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Celestine%20Reef&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Celestine%20Reef&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Celestine Reef.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Luvion",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "circus_of_the_sun",
     "name": "Circus of the Sun",
     "type": "Plane",
-    "image": "cards/images/Circus of the Sun.png",
-    "thumb": "cards/thumbs/Circus of the Sun.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Circus%20of%20the%20Sun&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Circus%20of%20the%20Sun&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Circus of the Sun.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Las Vegas",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "city_hall",
     "name": "City Hall",
     "type": "Plane",
-    "image": "cards/images/City Hall.png",
-    "thumb": "cards/thumbs/City Hall.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=City%20Hall&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=City%20Hall&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/City Hall.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Chicago",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "city_of_the_daleks",
     "name": "City of the Daleks",
     "type": "Plane",
-    "image": "cards/images/City of the Daleks.png",
-    "thumb": "cards/thumbs/City of the Daleks.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=City%20of%20the%20Daleks&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=City%20of%20the%20Daleks&set=who&format=image&version=small",
     "transcript": "cards/transcripts/City of the Daleks.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Skaro",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "clamilton_estate",
     "name": "Clamilton Estate",
     "type": "Plane",
-    "image": "cards/images/Clamilton Estate.png",
-    "thumb": "cards/thumbs/Clamilton Estate.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Clamilton%20Estate&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Clamilton%20Estate&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Clamilton Estate.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Clamhattan",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "cliffside_market",
     "name": "Cliffside Market",
     "type": "Plane",
-    "image": "cards/images/Cliffside Market.png",
-    "thumb": "cards/thumbs/Cliffside Market.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Cliffside%20Market&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Cliffside%20Market&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Cliffside Market.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Mercadia",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "coal_hill_school",
     "name": "Coal Hill School",
     "type": "Plane",
-    "image": "cards/images/Coal Hill School.png",
-    "thumb": "cards/thumbs/Coal Hill School.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Coal%20Hill%20School&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Coal%20Hill%20School&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Coal Hill School.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Earth",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "dalek_intensive_care",
     "name": "Dalek Intensive Care",
     "type": "Plane",
-    "image": "cards/images/Dalek Intensive Care.png",
-    "thumb": "cards/thumbs/Dalek Intensive Care.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Dalek%20Intensive%20Care&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Dalek%20Intensive%20Care&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Dalek Intensive Care.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "The Dalek Asylum",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "deceptive_divination",
     "name": "Deceptive Divination",
     "type": "Plane",
-    "image": "cards/images/Deceptive Divination.png",
-    "thumb": "cards/thumbs/Deceptive Divination.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Deceptive%20Divination&set=pssc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Deceptive%20Divination&set=pssc&format=image&version=small",
     "transcript": "cards/transcripts/Deceptive Divination.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Secret Lair",
       "hidden",
       "PSSC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "edge_of_malacol",
     "name": "Edge of Malacol",
     "type": "Plane",
-    "image": "cards/images/Edge of Malacol.png",
-    "thumb": "cards/thumbs/Edge of Malacol.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Edge%20of%20Malacol&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Edge%20of%20Malacol&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Edge of Malacol.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Belenon",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "eloren_wilds",
     "name": "Eloren Wilds",
     "type": "Plane",
-    "image": "cards/images/Eloren Wilds.png",
-    "thumb": "cards/thumbs/Eloren Wilds.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Eloren%20Wilds&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Eloren%20Wilds&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Eloren Wilds.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Shandalar",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "elvish_impersonation_contest",
     "name": "Elvish Impersonation Contest",
     "type": "Plane",
-    "image": "cards/images/Elvish Impersonation Contest.png",
-    "thumb": "cards/thumbs/Elvish Impersonation Contest.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Elvish%20Impersonation%20Contest&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Elvish%20Impersonation%20Contest&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Elvish Impersonation Contest.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Las Vegas",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "enigma_ridges",
     "name": "Enigma Ridges",
     "type": "Plane",
-    "image": "cards/images/Enigma Ridges.png",
-    "thumb": "cards/thumbs/Enigma Ridges.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Enigma%20Ridges&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Enigma%20Ridges&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Enigma Ridges.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Echoir",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "esper",
     "name": "Esper",
     "type": "Plane",
-    "image": "cards/images/Esper.png",
-    "thumb": "cards/thumbs/Esper.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Esper&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Esper&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Esper.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Alara",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "event_horizon",
     "name": "Event Horizon",
     "type": "Plane",
-    "image": "cards/images/Event Horizon.png",
-    "thumb": "cards/thumbs/Event Horizon.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Event%20Horizon&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Event%20Horizon&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Event Horizon.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Blind Eternities",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "fblthp_completely_utterly_totally_lost",
     "name": "Fblthp  Completely, Utterly, Totally Lost",
     "type": "Plane",
-    "image": "cards/images/Fblthp_ Completely, Utterly, Totally Lost.png",
-    "thumb": "cards/thumbs/Fblthp_ Completely, Utterly, Totally Lost.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Fblthp%20%20Completely%2C%20Utterly%2C%20Totally%20Lost&set=pssc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Fblthp%20%20Completely%2C%20Utterly%2C%20Totally%20Lost&set=pssc&format=image&version=small",
     "transcript": "cards/transcripts/Fblthp_ Completely, Utterly, Totally Lost.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Secret Lair",
       "hidden",
       "PSSC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "feeding_grounds",
     "name": "Feeding Grounds",
     "type": "Plane",
-    "image": "cards/images/Feeding Grounds.png",
-    "thumb": "cards/thumbs/Feeding Grounds.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Feeding%20Grounds&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Feeding%20Grounds&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Feeding Grounds.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Muraganda",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "fields_of_summer",
     "name": "Fields of Summer",
     "type": "Plane",
-    "image": "cards/images/Fields of Summer.png",
-    "thumb": "cards/thumbs/Fields of Summer.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Fields%20of%20Summer&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Fields%20of%20Summer&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Fields of Summer.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Moag",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "finally_left_handed_magic_cards",
     "name": "Finally! Left Handed Magic Cards",
     "type": "Plane",
-    "image": "cards/images/Finally! Left-Handed Magic Cards.png",
-    "thumb": "cards/thumbs/Finally! Left-Handed Magic Cards.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Finally!%20Left%20Handed%20Magic%20Cards&set=pssc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Finally!%20Left%20Handed%20Magic%20Cards&set=pssc&format=image&version=small",
     "transcript": "cards/transcripts/Finally! Left-Handed Magic Cards.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Secret Lair",
       "hidden",
       "PSSC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "furnace_layer",
     "name": "Furnace Layer",
     "type": "Plane",
-    "image": "cards/images/Furnace Layer.png",
-    "thumb": "cards/thumbs/Furnace Layer.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Furnace%20Layer&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Furnace%20Layer&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Furnace Layer.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "New Phyrexia",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "gamalgoth_first_city",
@@ -1019,157 +961,146 @@
     "id": "game_knights_live",
     "name": "Game Knights Live",
     "type": "Plane",
-    "image": "cards/images/Game Knights Live.png",
-    "thumb": "cards/thumbs/Game Knights Live.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Game%20Knights%20Live&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Game%20Knights%20Live&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Game Knights Live.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "gardens_of_tranquil_repose",
     "name": "Gardens of Tranquil Repose",
     "type": "Plane",
-    "image": "cards/images/Gardens of Tranquil Repose.png",
-    "thumb": "cards/thumbs/Gardens of Tranquil Repose.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Gardens%20of%20Tranquil%20Repose&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Gardens%20of%20Tranquil%20Repose&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Gardens of Tranquil Repose.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Necros",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "gavony",
     "name": "Gavony",
     "type": "Plane",
-    "image": "cards/images/Gavony.png",
-    "thumb": "cards/thumbs/Gavony.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Gavony&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Gavony&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Gavony.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Innistrad",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "ghirapur_grand_prix",
     "name": "Ghirapur Grand Prix",
     "type": "Plane",
-    "image": "cards/images/Ghirapur Grand Prix.png",
-    "thumb": "cards/thumbs/Ghirapur Grand Prix.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Ghirapur%20Grand%20Prix&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Ghirapur%20Grand%20Prix&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Ghirapur Grand Prix.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Avishkar",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "ghirapur",
     "name": "Ghirapur",
     "type": "Plane",
-    "image": "cards/images/Ghirapur.png",
-    "thumb": "cards/thumbs/Ghirapur.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Ghirapur&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Ghirapur&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Ghirapur.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Avishkar",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "glen_elendra",
     "name": "Glen Elendra",
     "type": "Plane",
-    "image": "cards/images/Glen Elendra.png",
-    "thumb": "cards/thumbs/Glen Elendra.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Glen%20Elendra&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Glen%20Elendra&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Glen Elendra.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Lorwyn",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "glimmervoid_basin",
     "name": "Glimmervoid Basin",
     "type": "Plane",
-    "image": "cards/images/Glimmervoid Basin.png",
-    "thumb": "cards/thumbs/Glimmervoid Basin.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Glimmervoid%20Basin&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Glimmervoid%20Basin&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Glimmervoid Basin.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Mirrodin",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "goldmeadow",
     "name": "Goldmeadow",
     "type": "Plane",
-    "image": "cards/images/Goldmeadow.png",
-    "thumb": "cards/thumbs/Goldmeadow.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Goldmeadow&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Goldmeadow&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Goldmeadow.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Lorwyn",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "grand_ossuary",
     "name": "Grand Ossuary",
     "type": "Plane",
-    "image": "cards/images/Grand Ossuary.png",
-    "thumb": "cards/thumbs/Grand Ossuary.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Grand%20Ossuary&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Grand%20Ossuary&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Grand Ossuary.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Ravnica",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "grixis",
     "name": "Grixis",
     "type": "Plane",
-    "image": "cards/images/Grixis.png",
-    "thumb": "cards/thumbs/Grixis.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Grixis&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Grixis&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Grixis.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Alara",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "grove_of_the_dreampods",
     "name": "Grove of the Dreampods",
     "type": "Plane",
-    "image": "cards/images/Grove of the Dreampods.png",
-    "thumb": "cards/thumbs/Grove of the Dreampods.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Grove%20of%20the%20Dreampods&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Grove%20of%20the%20Dreampods&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Grove of the Dreampods.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Fabacin",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "halcyon_floating_capital",
@@ -1188,16 +1119,15 @@
     "id": "happy_yargle_day",
     "name": "Happy Yargle Day!",
     "type": "Plane",
-    "image": "cards/images/Happy Yargle Day!.png",
-    "thumb": "cards/thumbs/Happy Yargle Day!.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Happy%20Yargle%20Day!&set=pssc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Happy%20Yargle%20Day!&set=pssc&format=image&version=small",
     "transcript": "cards/transcripts/Happy Yargle Day!.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Secret Lair",
       "hidden",
       "PSSC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "havengul_port_city",
@@ -1216,330 +1146,307 @@
     "id": "hedron_fields_of_agadeem",
     "name": "Hedron Fields of Agadeem",
     "type": "Plane",
-    "image": "cards/images/Hedron Fields of Agadeem.png",
-    "thumb": "cards/thumbs/Hedron Fields of Agadeem.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Hedron%20Fields%20of%20Agadeem&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Hedron%20Fields%20of%20Agadeem&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Hedron Fields of Agadeem.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Zendikar",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "high_noon_at_thunder_junction",
     "name": "High Noon At Thunder Junction",
     "type": "Plane",
-    "image": "cards/images/High Noon At Thunder Junction.png",
-    "thumb": "cards/thumbs/High Noon At Thunder Junction.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=High%20Noon%20At%20Thunder%20Junction&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=High%20Noon%20At%20Thunder%20Junction&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/High Noon At Thunder Junction.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Thunder Junction",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "horizon_boughs",
     "name": "Horizon Boughs",
     "type": "Plane",
-    "image": "cards/images/Horizon Boughs.png",
-    "thumb": "cards/thumbs/Horizon Boughs.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Horizon%20Boughs&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Horizon%20Boughs&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Horizon Boughs.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Pyrulea",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "hotel_of_fears",
     "name": "Hotel of Fears",
     "type": "Plane",
-    "image": "cards/images/Hotel of Fears.png",
-    "thumb": "cards/thumbs/Hotel of Fears.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Hotel%20of%20Fears&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Hotel%20of%20Fears&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Hotel of Fears.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Spacecraft",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "imaginary_friends_plane",
     "name": "Imaginary Friends (Plane)",
     "type": "Plane",
-    "image": "cards/images/Imaginary Friends (Plane).png",
-    "thumb": "cards/thumbs/Imaginary Friends (Plane).webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Imaginary%20Friends%20(Plane)&set=pssc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Imaginary%20Friends%20(Plane)&set=pssc&format=image&version=small",
     "transcript": "cards/transcripts/Imaginary Friends (Plane).md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Secret Lair",
       "hidden",
       "PSSC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "immersturm",
     "name": "Immersturm",
     "type": "Plane",
-    "image": "cards/images/Immersturm.png",
-    "thumb": "cards/thumbs/Immersturm.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Immersturm&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Immersturm&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Immersturm.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Valla",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "inys_haen",
     "name": "Inys Haen",
     "type": "Plane",
-    "image": "cards/images/Inys Haen.png",
-    "thumb": "cards/thumbs/Inys Haen.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Inys%20Haen&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Inys%20Haen&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Inys Haen.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Cridhe",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "isle_of_vesuva",
     "name": "Isle of Vesuva",
     "type": "Plane",
-    "image": "cards/images/Isle of Vesuva.png",
-    "thumb": "cards/thumbs/Isle of Vesuva.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Isle%20of%20Vesuva&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Isle%20of%20Vesuva&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Isle of Vesuva.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Dominaria",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "izzet_steam_maze",
     "name": "Izzet Steam Maze",
     "type": "Plane",
-    "image": "cards/images/Izzet Steam Maze.png",
-    "thumb": "cards/thumbs/Izzet Steam Maze.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Izzet%20Steam%20Maze&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Izzet%20Steam%20Maze&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Izzet Steam Maze.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Ravnica",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "jaliras_show",
     "name": "Jalira's Show",
     "type": "Plane",
-    "image": "cards/images/Jalira's Show.png",
-    "thumb": "cards/thumbs/Jalira's Show.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Jalira's%20Show&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Jalira's%20Show&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Jalira's Show.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Las Vegas",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "jund",
     "name": "Jund",
     "type": "Plane",
-    "image": "cards/images/Jund.png",
-    "thumb": "cards/thumbs/Jund.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Jund&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Jund&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Jund.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Alara",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "kerblam_warehouse",
     "name": "Kerblam! Warehouse",
     "type": "Plane",
-    "image": "cards/images/Kerblam! Warehouse.png",
-    "thumb": "cards/thumbs/Kerblam! Warehouse.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Kerblam!%20Warehouse&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Kerblam!%20Warehouse&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Kerblam! Warehouse.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Kandoka",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "kessig",
     "name": "Kessig",
     "type": "Plane",
-    "image": "cards/images/Kessig.png",
-    "thumb": "cards/thumbs/Kessig.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Kessig&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Kessig&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Kessig.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Innistrad",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "ketria",
     "name": "Ketria",
     "type": "Plane",
-    "image": "cards/images/Ketria.png",
-    "thumb": "cards/thumbs/Ketria.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Ketria&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Ketria&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Ketria.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Ikoria",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "kharasha_foothills",
     "name": "Kharasha Foothills",
     "type": "Plane",
-    "image": "cards/images/Kharasha Foothills.png",
-    "thumb": "cards/thumbs/Kharasha Foothills.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Kharasha%20Foothills&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Kharasha%20Foothills&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Kharasha Foothills.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Mongseng",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "kilnspire_district",
     "name": "Kilnspire District",
     "type": "Plane",
-    "image": "cards/images/Kilnspire District.png",
-    "thumb": "cards/thumbs/Kilnspire District.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Kilnspire%20District&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Kilnspire%20District&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Kilnspire District.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Ravnica",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "krosa",
     "name": "Krosa",
     "type": "Plane",
-    "image": "cards/images/Krosa.png",
-    "thumb": "cards/thumbs/Krosa.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Krosa&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Krosa&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Krosa.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Dominaria",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "lair_of_the_ashen_idol",
     "name": "Lair of the Ashen Idol",
     "type": "Plane",
-    "image": "cards/images/Lair of the Ashen Idol.png",
-    "thumb": "cards/thumbs/Lair of the Ashen Idol.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Lair%20of%20the%20Ashen%20Idol&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Lair%20of%20the%20Ashen%20Idol&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Lair of the Ashen Idol.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Azgol",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "lake_silencio",
     "name": "Lake Silencio",
     "type": "Plane",
-    "image": "cards/images/Lake Silencio.png",
-    "thumb": "cards/thumbs/Lake Silencio.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Lake%20Silencio&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Lake%20Silencio&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Lake Silencio.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Earth",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "lethe_lake",
     "name": "Lethe Lake",
     "type": "Plane",
-    "image": "cards/images/Lethe Lake.png",
-    "thumb": "cards/thumbs/Lethe Lake.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Lethe%20Lake&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Lethe%20Lake&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Lethe Lake.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Arkhos",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "lil_giri_saves_the_day",
     "name": "Li'l Giri Saves the Day",
     "type": "Plane",
-    "image": "cards/images/Li'l Giri Saves the Day.png",
-    "thumb": "cards/thumbs/Li'l Giri Saves the Day.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Li'l%20Giri%20Saves%20the%20Day&set=pssc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Li'l%20Giri%20Saves%20the%20Day&set=pssc&format=image&version=small",
     "transcript": "cards/transcripts/Li'l Giri Saves the Day.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Secret Lair",
       "hidden",
       "PSSC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "littjara",
     "name": "Littjara",
     "type": "Plane",
-    "image": "cards/images/Littjara.png",
-    "thumb": "cards/thumbs/Littjara.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Littjara&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Littjara&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Littjara.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Kaldheim",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "llanowar",
     "name": "Llanowar",
     "type": "Plane",
-    "image": "cards/images/Llanowar.png",
-    "thumb": "cards/thumbs/Llanowar.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Llanowar&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Llanowar&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Llanowar.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Dominaria",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "lotus_basin",
@@ -1558,30 +1465,28 @@
     "id": "math_is_for_blockers_plane",
     "name": "Math is for Blockers (Plane)",
     "type": "Plane",
-    "image": "cards/images/Math is for Blockers (Plane).png",
-    "thumb": "cards/thumbs/Math is for Blockers (Plane).webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Math%20is%20for%20Blockers%20(Plane)&set=pssc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Math%20is%20for%20Blockers%20(Plane)&set=pssc&format=image&version=small",
     "transcript": "cards/transcripts/Math is for Blockers (Plane).md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Secret Lair",
       "hidden",
       "PSSC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "megaflora_jungle",
     "name": "Megaflora Jungle",
     "type": "Plane",
-    "image": "cards/images/Megaflora Jungle.png",
-    "thumb": "cards/thumbs/Megaflora Jungle.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Megaflora%20Jungle&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Megaflora%20Jungle&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Megaflora Jungle.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Gargantikar",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "mephidross",
@@ -1600,1052 +1505,979 @@
     "id": "minamo",
     "name": "Minamo",
     "type": "Plane",
-    "image": "cards/images/Minamo.png",
-    "thumb": "cards/thumbs/Minamo.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Minamo&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Minamo&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Minamo.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Kamigawa",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "mirrored_depths",
     "name": "Mirrored Depths",
     "type": "Plane",
-    "image": "cards/images/Mirrored Depths.png",
-    "thumb": "cards/thumbs/Mirrored Depths.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Mirrored%20Depths&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Mirrored%20Depths&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Mirrored Depths.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Karsus",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "mojave_desert",
     "name": "Mojave Desert",
     "type": "Plane",
-    "image": "cards/images/Mojave Desert.png",
-    "thumb": "cards/thumbs/Mojave Desert.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Mojave%20Desert&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Mojave%20Desert&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Mojave Desert.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Las Vegas",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "mondassian_colony_ship",
     "name": "Mondassian Colony Ship",
     "type": "Plane",
-    "image": "cards/images/Mondassian Colony Ship.png",
-    "thumb": "cards/thumbs/Mondassian Colony Ship.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Mondassian%20Colony%20Ship&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Mondassian%20Colony%20Ship&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Mondassian Colony Ship.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Spacecraft",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "mount_keralia",
     "name": "Mount Keralia",
     "type": "Plane",
-    "image": "cards/images/Mount Keralia.png",
-    "thumb": "cards/thumbs/Mount Keralia.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Mount%20Keralia&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Mount%20Keralia&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Mount Keralia.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Regatha",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "multiversal_high_council",
     "name": "Multiversal High Council",
     "type": "Plane",
-    "image": "cards/images/Multiversal High Council.png",
-    "thumb": "cards/thumbs/Multiversal High Council.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Multiversal%20High%20Council&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Multiversal%20High%20Council&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Multiversal High Council.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Universia Beyondia",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "murasa",
     "name": "Murasa",
     "type": "Plane",
-    "image": "cards/images/Murasa.png",
-    "thumb": "cards/thumbs/Murasa.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Murasa&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Murasa&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Murasa.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Zendikar",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "mycosynthwave",
     "name": "Mycosynthwave",
     "type": "Plane",
-    "image": "cards/images/Mycosynthwave.png",
-    "thumb": "cards/thumbs/Mycosynthwave.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Mycosynthwave&set=pssc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Mycosynthwave&set=pssc&format=image&version=small",
     "transcript": "cards/transcripts/Mycosynthwave.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Secret Lair",
       "hidden",
       "PSSC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "naar_isle",
     "name": "Naar Isle",
     "type": "Plane",
-    "image": "cards/images/Naar Isle.png",
-    "thumb": "cards/thumbs/Naar Isle.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Naar%20Isle&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Naar%20Isle&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Naar Isle.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Wildfire",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "naktamun",
     "name": "Naktamun",
     "type": "Plane",
-    "image": "cards/images/Naktamun.png",
-    "thumb": "cards/thumbs/Naktamun.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Naktamun&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Naktamun&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Naktamun.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Amonkhet",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "naya",
     "name": "Naya",
     "type": "Plane",
-    "image": "cards/images/Naya.png",
-    "thumb": "cards/thumbs/Naya.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Naya&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Naya&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Naya.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Alara",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "nephalia",
     "name": "Nephalia",
     "type": "Plane",
-    "image": "cards/images/Nephalia.png",
-    "thumb": "cards/thumbs/Nephalia.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Nephalia&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Nephalia&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Nephalia.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Innistrad",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "new_argive",
     "name": "New Argive",
     "type": "Plane",
-    "image": "cards/images/New Argive.png",
-    "thumb": "cards/thumbs/New Argive.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=New%20Argive&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=New%20Argive&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/New Argive.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Dominaria",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "new_new_york",
     "name": "New New York",
     "type": "Plane",
-    "image": "cards/images/New New York.png",
-    "thumb": "cards/thumbs/New New York.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=New%20New%20York&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=New%20New%20York&set=who&format=image&version=small",
     "transcript": "cards/transcripts/New New York.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "New Earth",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "new_players_journey",
     "name": "New Player's Journey",
     "type": "Plane",
-    "image": "cards/images/New Player's Journey.png",
-    "thumb": "cards/thumbs/New Player's Journey.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=New%20Player's%20Journey&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=New%20Player's%20Journey&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/New Player's Journey.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Foundations",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "no_way_out_playtest",
     "name": "No Way Out (Playtest)",
     "type": "Plane",
-    "image": "cards/images/No Way Out (Playtest).png",
-    "thumb": "cards/thumbs/No Way Out (Playtest).webp",
+    "image": "https://api.scryfall.com/cards/named?exact=No%20Way%20Out%20(Playtest)&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=No%20Way%20Out%20(Playtest)&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/No Way Out (Playtest).md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Duskmourn",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "norns_dominion",
     "name": "Norn's Dominion",
     "type": "Plane",
-    "image": "cards/images/Norn's Dominion.png",
-    "thumb": "cards/thumbs/Norn's Dominion.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Norn's%20Dominion&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Norn's%20Dominion&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Norn's Dominion.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "New Phyrexia",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "norns_seedcore",
     "name": "Norn's Seedcore",
     "type": "Plane",
-    "image": "cards/images/Norn's Seedcore.png",
-    "thumb": "cards/thumbs/Norn's Seedcore.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Norn's%20Seedcore&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Norn's%20Seedcore&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Norn's Seedcore.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "New Phyrexia",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "north_pole_research_base",
     "name": "North Pole Research Base",
     "type": "Plane",
-    "image": "cards/images/North Pole Research Base.png",
-    "thumb": "cards/thumbs/North Pole Research Base.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=North%20Pole%20Research%20Base&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=North%20Pole%20Research%20Base&set=who&format=image&version=small",
     "transcript": "cards/transcripts/North Pole Research Base.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Earth",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "nyx",
     "name": "Nyx",
     "type": "Plane",
-    "image": "cards/images/Nyx.png",
-    "thumb": "cards/thumbs/Nyx.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Nyx&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Nyx&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Nyx.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Theros",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "onakke_catacomb",
     "name": "Onakke Catacomb",
     "type": "Plane",
-    "image": "cards/images/Onakke Catacomb.png",
-    "thumb": "cards/thumbs/Onakke Catacomb.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Onakke%20Catacomb&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Onakke%20Catacomb&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Onakke Catacomb.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Shandalar",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "ood_sphere",
     "name": "Ood Sphere",
     "type": "Plane",
-    "image": "cards/images/Ood Sphere.png",
-    "thumb": "cards/thumbs/Ood Sphere.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Ood%20Sphere&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Ood%20Sphere&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Ood Sphere.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Horsehead Nebula",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "orochi_colony",
     "name": "Orochi Colony",
     "type": "Plane",
-    "image": "cards/images/Orochi Colony.png",
-    "thumb": "cards/thumbs/Orochi Colony.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Orochi%20Colony&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Orochi%20Colony&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Orochi Colony.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Kamigawa",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "orzhova",
     "name": "Orzhova",
     "type": "Plane",
-    "image": "cards/images/Orzhova.png",
-    "thumb": "cards/thumbs/Orzhova.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Orzhova&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Orzhova&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Orzhova.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Ravnica",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "otaria",
     "name": "Otaria",
     "type": "Plane",
-    "image": "cards/images/Otaria.png",
-    "thumb": "cards/thumbs/Otaria.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Otaria&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Otaria&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Otaria.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Dominaria",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "otecln",
     "name": "Oteclán",
     "type": "Plane",
-    "image": "cards/images/Oteclán.png",
-    "thumb": "cards/thumbs/Oteclán.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Otecl%C3%A1n&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Otecl%C3%A1n&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Oteclán.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Ixalan",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "paliano",
     "name": "Paliano",
     "type": "Plane",
-    "image": "cards/images/Paliano.png",
-    "thumb": "cards/thumbs/Paliano.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Paliano&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Paliano&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Paliano.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Fiora",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "panopticon",
     "name": "Panopticon",
     "type": "Plane",
-    "image": "cards/images/Panopticon.png",
-    "thumb": "cards/thumbs/Panopticon.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Panopticon&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Panopticon&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Panopticon.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Mirrodin",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "pin_collectors_booth",
     "name": "Pin Collector's Booth",
     "type": "Plane",
-    "image": "cards/images/Pin Collector's Booth.png",
-    "thumb": "cards/thumbs/Pin Collector's Booth.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Pin%20Collector's%20Booth&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Pin%20Collector's%20Booth&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Pin Collector's Booth.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "pompeii",
     "name": "Pompeii",
     "type": "Plane",
-    "image": "cards/images/Pompeii.png",
-    "thumb": "cards/thumbs/Pompeii.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Pompeii&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Pompeii&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Pompeii.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Earth",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "pools_of_becoming",
     "name": "Pools of Becoming",
     "type": "Plane",
-    "image": "cards/images/Pools of Becoming.png",
-    "thumb": "cards/thumbs/Pools of Becoming.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Pools%20of%20Becoming&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Pools%20of%20Becoming&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Pools of Becoming.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Bolas's Meditation Realm",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "prahv",
     "name": "Prahv",
     "type": "Plane",
-    "image": "cards/images/Prahv.png",
-    "thumb": "cards/thumbs/Prahv.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Prahv&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Prahv&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Prahv.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Ravnica",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "prestons_stage",
     "name": "Preston's Stage",
     "type": "Plane",
-    "image": "cards/images/Preston's Stage.png",
-    "thumb": "cards/thumbs/Preston's Stage.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Preston's%20Stage&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Preston's%20Stage&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Preston's Stage.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Las Vegas",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "prime_ministers_cabinet_room",
     "name": "Prime Minister's Cabinet Room",
     "type": "Plane",
-    "image": "cards/images/Prime Minister's Cabinet Room.png",
-    "thumb": "cards/thumbs/Prime Minister's Cabinet Room.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Prime%20Minister's%20Cabinet%20Room&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Prime%20Minister's%20Cabinet%20Room&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Prime Minister's Cabinet Room.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Earth",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "pursued_by_something",
     "name": "Pursued by Something",
     "type": "Plane",
-    "image": "cards/images/Pursued by Something.png",
-    "thumb": "cards/thumbs/Pursued by Something.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Pursued%20by%20Something&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Pursued%20by%20Something&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Pursued by Something.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Duskmourn",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "quicksilver_sea",
     "name": "Quicksilver Sea",
     "type": "Plane",
-    "image": "cards/images/Quicksilver Sea.png",
-    "thumb": "cards/thumbs/Quicksilver Sea.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Quicksilver%20Sea&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Quicksilver%20Sea&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Quicksilver Sea.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Mirrodin",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "raiders_allegiance",
     "name": "Raiders' Allegiance",
     "type": "Plane",
-    "image": "cards/images/Raiders' Allegiance.png",
-    "thumb": "cards/thumbs/Raiders' Allegiance.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Raiders'%20Allegiance&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Raiders'%20Allegiance&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Raiders' Allegiance.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Ixalan",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "ravens_run",
     "name": "Raven's Run",
     "type": "Plane",
-    "image": "cards/images/Raven's Run.png",
-    "thumb": "cards/thumbs/Raven's Run.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Raven's%20Run&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Raven's%20Run&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Raven's Run.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Shadowmoor",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "riptide_island",
     "name": "Riptide Island",
     "type": "Plane",
-    "image": "cards/images/Riptide Island.png",
-    "thumb": "cards/thumbs/Riptide Island.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Riptide%20Island&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Riptide%20Island&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Riptide Island.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Dominaria",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "sanctum_of_serra",
     "name": "Sanctum of Serra",
     "type": "Plane",
-    "image": "cards/images/Sanctum of Serra.png",
-    "thumb": "cards/thumbs/Sanctum of Serra.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Sanctum%20of%20Serra&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Sanctum%20of%20Serra&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Sanctum of Serra.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Serra's Realm",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "sans_mercy",
     "name": "Sans Mercy",
     "type": "Plane",
-    "image": "cards/images/Sans Mercy.png",
-    "thumb": "cards/thumbs/Sans Mercy.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Sans%20Mercy&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Sans%20Mercy&format=image&version=small",
     "transcript": "cards/transcripts/Sans Mercy.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Secret Lair",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "sea_of_sand",
     "name": "Sea of Sand",
     "type": "Plane",
-    "image": "cards/images/Sea of Sand.png",
-    "thumb": "cards/thumbs/Sea of Sand.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Sea%20of%20Sand&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Sea%20of%20Sand&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Sea of Sand.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Rabiah",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "selesnya_loft_gardens",
     "name": "Selesnya Loft Gardens",
     "type": "Plane",
-    "image": "cards/images/Selesnya Loft Gardens.png",
-    "thumb": "cards/thumbs/Selesnya Loft Gardens.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Selesnya%20Loft%20Gardens&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Selesnya%20Loft%20Gardens&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Selesnya Loft Gardens.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Ravnica",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "shiv",
     "name": "Shiv",
     "type": "Plane",
-    "image": "cards/images/Shiv.png",
-    "thumb": "cards/thumbs/Shiv.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Shiv&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Shiv&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Shiv.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Dominaria",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "shrinking_plane",
     "name": "Shrinking Plane",
     "type": "Plane",
-    "image": "cards/images/Shrinking Plane.png",
-    "thumb": "cards/thumbs/Shrinking Plane.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Shrinking%20Plane&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Shrinking%20Plane&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Shrinking Plane.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Foldaria",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "shy_town",
     "name": "Shy Town",
     "type": "Plane",
-    "image": "cards/images/Shy Town.png",
-    "thumb": "cards/thumbs/Shy Town.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Shy%20Town&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Shy%20Town&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Shy Town.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Chicago",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "singing_towers_of_darillium",
     "name": "Singing Towers of Darillium",
     "type": "Plane",
-    "image": "cards/images/Singing Towers of Darillium.png",
-    "thumb": "cards/thumbs/Singing Towers of Darillium.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Singing%20Towers%20of%20Darillium&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Singing%20Towers%20of%20Darillium&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Singing Towers of Darillium.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Darillium",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "sky_deck",
     "name": "Sky Deck",
     "type": "Plane",
-    "image": "cards/images/Sky Deck.png",
-    "thumb": "cards/thumbs/Sky Deck.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Sky%20Deck&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Sky%20Deck&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Sky Deck.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Chicago",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "skybreen",
     "name": "Skybreen",
     "type": "Plane",
-    "image": "cards/images/Skybreen.png",
-    "thumb": "cards/thumbs/Skybreen.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Skybreen&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Skybreen&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Skybreen.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Kaldheim",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "sokenzan",
     "name": "Sokenzan",
     "type": "Plane",
-    "image": "cards/images/Sokenzan.png",
-    "thumb": "cards/thumbs/Sokenzan.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Sokenzan&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Sokenzan&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Sokenzan.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Kamigawa",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "sorins_remastered_manor",
     "name": "Sorin's Remastered Manor",
     "type": "Plane",
-    "image": "cards/images/Sorin's Remastered Manor.png",
-    "thumb": "cards/thumbs/Sorin's Remastered Manor.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Sorin's%20Remastered%20Manor&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Sorin's%20Remastered%20Manor&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Sorin's Remastered Manor.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Innistrad",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "spectrox_mines",
     "name": "Spectrox Mines",
     "type": "Plane",
-    "image": "cards/images/Spectrox Mines.png",
-    "thumb": "cards/thumbs/Spectrox Mines.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Spectrox%20Mines&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Spectrox%20Mines&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Spectrox Mines.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Androzani Minor",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "stairs_to_infinity",
     "name": "Stairs to Infinity",
     "type": "Plane",
-    "image": "cards/images/Stairs to Infinity.png",
-    "thumb": "cards/thumbs/Stairs to Infinity.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Stairs%20to%20Infinity&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Stairs%20to%20Infinity&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Stairs to Infinity.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Xerex",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "stensia",
     "name": "Stensia",
     "type": "Plane",
-    "image": "cards/images/Stensia.png",
-    "thumb": "cards/thumbs/Stensia.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Stensia&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Stensia&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Stensia.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Innistrad",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "stormcage_containment_facility",
     "name": "Stormcage Containment Facility",
     "type": "Plane",
-    "image": "cards/images/Stormcage Containment Facility.png",
-    "thumb": "cards/thumbs/Stormcage Containment Facility.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Stormcage%20Containment%20Facility&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Stormcage%20Containment%20Facility&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Stormcage Containment Facility.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Unknown Planet",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "strixhaven",
     "name": "Strixhaven",
     "type": "Plane",
-    "image": "cards/images/Strixhaven.png",
-    "thumb": "cards/thumbs/Strixhaven.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Strixhaven&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Strixhaven&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Strixhaven.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Arcavios",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "stronghold_furnace",
     "name": "Stronghold Furnace",
     "type": "Plane",
-    "image": "cards/images/Stronghold Furnace.png",
-    "thumb": "cards/thumbs/Stronghold Furnace.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Stronghold%20Furnace&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Stronghold%20Furnace&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Stronghold Furnace.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Rath",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "stroopwafel_cafe",
     "name": "Stroopwafel Cafe",
     "type": "Plane",
-    "image": "cards/images/Stroopwafel Cafe.png",
-    "thumb": "cards/thumbs/Stroopwafel Cafe.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Stroopwafel%20Cafe&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Stroopwafel%20Cafe&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Stroopwafel Cafe.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Amsterdam",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "takenuma",
     "name": "Takenuma",
     "type": "Plane",
-    "image": "cards/images/Takenuma.png",
-    "thumb": "cards/thumbs/Takenuma.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Takenuma&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Takenuma&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Takenuma.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Kamigawa",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "talon_gates",
     "name": "Talon Gates",
     "type": "Plane",
-    "image": "cards/images/Talon Gates.png",
-    "thumb": "cards/thumbs/Talon Gates.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Talon%20Gates&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Talon%20Gates&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Talon Gates.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Dominaria",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "tardis_bay",
     "name": "TARDIS Bay",
     "type": "Plane",
-    "image": "cards/images/TARDIS Bay.png",
-    "thumb": "cards/thumbs/TARDIS Bay.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=TARDIS%20Bay&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=TARDIS%20Bay&set=who&format=image&version=small",
     "transcript": "cards/transcripts/TARDIS Bay.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Gallifrey",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "tarnation",
     "name": "Tarnation",
     "type": "Plane",
-    "image": "cards/images/Tarnation.png",
-    "thumb": "cards/thumbs/Tarnation.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Tarnation&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Tarnation&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Tarnation.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Thunder Junction",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "tazeem",
     "name": "Tazeem",
     "type": "Plane",
-    "image": "cards/images/Tazeem.png",
-    "thumb": "cards/thumbs/Tazeem.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Tazeem&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Tazeem&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Tazeem.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Zendikar",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "tember_city",
     "name": "Tember City",
     "type": "Plane",
-    "image": "cards/images/Tember City.png",
-    "thumb": "cards/thumbs/Tember City.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Tember%20City&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Tember%20City&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Tember City.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Kinshala",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "temple_of_atropos",
     "name": "Temple of Atropos",
     "type": "Plane",
-    "image": "cards/images/Temple of Atropos.png",
-    "thumb": "cards/thumbs/Temple of Atropos.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Temple%20of%20Atropos&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Temple%20of%20Atropos&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Temple of Atropos.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Time",
       "WHO",
       "Hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "ten_wizards_mountain",
     "name": "Ten Wizards Mountain",
     "type": "Plane",
-    "image": "cards/images/Ten Wizards Mountain.png",
-    "thumb": "cards/thumbs/Ten Wizards Mountain.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Ten%20Wizards%20Mountain&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Ten%20Wizards%20Mountain&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Ten Wizards Mountain.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Shenmeng",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_aether_flues",
     "name": "The Aether Flues",
     "type": "Plane",
-    "image": "cards/images/The Aether Flues.png",
-    "thumb": "cards/thumbs/The Aether Flues.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Aether%20Flues&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Aether%20Flues&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/The Aether Flues.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Iquatana",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_bean",
     "name": "The Bean",
     "type": "Plane",
-    "image": "cards/images/The Bean.png",
-    "thumb": "cards/thumbs/The Bean.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Bean&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Bean&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/The Bean.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Chicago",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_caldaia",
     "name": "The Caldaia",
     "type": "Plane",
-    "image": "cards/images/The Caldaia.png",
-    "thumb": "cards/thumbs/The Caldaia.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Caldaia&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Caldaia&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/The Caldaia.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Capenna",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_cave_of_skulls",
     "name": "The Cave of Skulls",
     "type": "Plane",
-    "image": "cards/images/The Cave of Skulls.png",
-    "thumb": "cards/thumbs/The Cave of Skulls.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Cave%20of%20Skulls&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Cave%20of%20Skulls&set=who&format=image&version=small",
     "transcript": "cards/transcripts/The Cave of Skulls.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Earth",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_cheetah_planet",
     "name": "The Cheetah Planet",
     "type": "Plane",
-    "image": "cards/images/The Cheetah Planet.png",
-    "thumb": "cards/thumbs/The Cheetah Planet.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Cheetah%20Planet&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Cheetah%20Planet&set=who&format=image&version=small",
     "transcript": "cards/transcripts/The Cheetah Planet.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Outside Mutter's Spiral",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_command_zone",
     "name": "The Command Zone",
     "type": "Plane",
-    "image": "cards/images/The Command Zone.png",
-    "thumb": "cards/thumbs/The Command Zone.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Command%20Zone&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Command%20Zone&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/The Command Zone.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_dark_barony",
     "name": "The Dark Barony",
     "type": "Plane",
-    "image": "cards/images/The Dark Barony.png",
-    "thumb": "cards/thumbs/The Dark Barony.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Dark%20Barony&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Dark%20Barony&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/The Dark Barony.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Ulgrotha",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_dead_zone",
@@ -2664,75 +2496,70 @@
     "id": "the_dining_car",
     "name": "The Dining Car",
     "type": "Plane",
-    "image": "cards/images/The Dining Car.png",
-    "thumb": "cards/thumbs/The Dining Car.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Dining%20Car&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Dining%20Car&set=who&format=image&version=small",
     "transcript": "cards/transcripts/The Dining Car.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Spacecraft",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_doctors_childhood_barn",
     "name": "The Doctor's Childhood Barn",
     "type": "Plane",
-    "image": "cards/images/The Doctor's Childhood Barn.png",
-    "thumb": "cards/thumbs/The Doctor's Childhood Barn.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Doctor's%20Childhood%20Barn&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Doctor's%20Childhood%20Barn&set=who&format=image&version=small",
     "transcript": "cards/transcripts/The Doctor's Childhood Barn.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Gallifrey",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_doctors_tomb",
     "name": "The Doctor's Tomb",
     "type": "Plane",
-    "image": "cards/images/The Doctor's Tomb.png",
-    "thumb": "cards/thumbs/The Doctor's Tomb.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Doctor's%20Tomb&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Doctor's%20Tomb&set=who&format=image&version=small",
     "transcript": "cards/transcripts/The Doctor's Tomb.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Trenzalore",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_drum_mining_facility",
     "name": "The Drum, Mining Facility",
     "type": "Plane",
-    "image": "cards/images/The Drum, Mining Facility.png",
-    "thumb": "cards/thumbs/The Drum, Mining Facility.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Drum%2C%20Mining%20Facility&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Drum%2C%20Mining%20Facility&set=who&format=image&version=small",
     "transcript": "cards/transcripts/The Drum, Mining Facility.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Earth",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_eon_fog",
     "name": "The Eon Fog",
     "type": "Plane",
-    "image": "cards/images/The Eon Fog.png",
-    "thumb": "cards/thumbs/The Eon Fog.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Eon%20Fog&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Eon%20Fog&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/The Eon Fog.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Equilor",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_fathom_ward",
@@ -2751,217 +2578,202 @@
     "id": "the_fertile_lands_of_saulvinia",
     "name": "The Fertile Lands of Saulvinia",
     "type": "Plane",
-    "image": "cards/images/The Fertile Lands of Saulvinia.png",
-    "thumb": "cards/thumbs/The Fertile Lands of Saulvinia.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Fertile%20Lands%20of%20Saulvinia&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Fertile%20Lands%20of%20Saulvinia&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/The Fertile Lands of Saulvinia.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Antausia",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_food_court",
     "name": "The Food Court",
     "type": "Plane",
-    "image": "cards/images/The Food Court.png",
-    "thumb": "cards/thumbs/The Food Court.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Food%20Court&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Food%20Court&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/The Food Court.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Eldraine",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_fourth_sphere",
     "name": "The Fourth Sphere",
     "type": "Plane",
-    "image": "cards/images/The Fourth Sphere.png",
-    "thumb": "cards/thumbs/The Fourth Sphere.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Fourth%20Sphere&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Fourth%20Sphere&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/The Fourth Sphere.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Phyrexia",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_golden_city_of_orazca",
     "name": "The Golden City of Orazca",
     "type": "Plane",
-    "image": "cards/images/The Golden City of Orazca.png",
-    "thumb": "cards/thumbs/The Golden City of Orazca.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Golden%20City%20of%20Orazca&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Golden%20City%20of%20Orazca&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/The Golden City of Orazca.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Ixalan",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_great_aerie",
     "name": "The Great Aerie",
     "type": "Plane",
-    "image": "cards/images/The Great Aerie.png",
-    "thumb": "cards/thumbs/The Great Aerie.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Great%20Aerie&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Great%20Aerie&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/The Great Aerie.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Tarkir",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_great_forest",
     "name": "The Great Forest",
     "type": "Plane",
-    "image": "cards/images/The Great Forest.png",
-    "thumb": "cards/thumbs/The Great Forest.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Great%20Forest&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Great%20Forest&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/The Great Forest.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Lorwyn",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_hippodrome",
     "name": "The Hippodrome",
     "type": "Plane",
-    "image": "cards/images/The Hippodrome.png",
-    "thumb": "cards/thumbs/The Hippodrome.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Hippodrome&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Hippodrome&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/The Hippodrome.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Segovia",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_lux_foundation_library",
     "name": "The Lux Foundation Library",
     "type": "Plane",
-    "image": "cards/images/The Lux Foundation Library.png",
-    "thumb": "cards/thumbs/The Lux Foundation Library.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Lux%20Foundation%20Library&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Lux%20Foundation%20Library&set=who&format=image&version=small",
     "transcript": "cards/transcripts/The Lux Foundation Library.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "The Library",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_maelstrom",
     "name": "The Maelstrom",
     "type": "Plane",
-    "image": "cards/images/The Maelstrom.png",
-    "thumb": "cards/thumbs/The Maelstrom.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Maelstrom&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Maelstrom&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/The Maelstrom.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Alara",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_matrix_of_time",
     "name": "The Matrix of Time",
     "type": "Plane",
-    "image": "cards/images/The Matrix of Time.png",
-    "thumb": "cards/thumbs/The Matrix of Time.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Matrix%20of%20Time&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Matrix%20of%20Time&set=who&format=image&version=small",
     "transcript": "cards/transcripts/The Matrix of Time.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Gallifrey",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_moonbase",
     "name": "The Moonbase",
     "type": "Plane",
-    "image": "cards/images/The Moonbase.png",
-    "thumb": "cards/thumbs/The Moonbase.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Moonbase&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Moonbase&set=who&format=image&version=small",
     "transcript": "cards/transcripts/The Moonbase.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Moon",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_pit",
     "name": "The Pit",
     "type": "Plane",
-    "image": "cards/images/The Pit.png",
-    "thumb": "cards/thumbs/The Pit.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Pit&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Pit&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/The Pit.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "The Abyss",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_pro_tour",
     "name": "The Pro Tour",
     "type": "Plane",
-    "image": "cards/images/The Pro Tour.png",
-    "thumb": "cards/thumbs/The Pro Tour.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Pro%20Tour&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Pro%20Tour&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/The Pro Tour.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_pyramid_of_mars",
     "name": "The Pyramid of Mars",
     "type": "Plane",
-    "image": "cards/images/The Pyramid of Mars.png",
-    "thumb": "cards/thumbs/The Pyramid of Mars.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Pyramid%20of%20Mars&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Pyramid%20of%20Mars&set=who&format=image&version=small",
     "transcript": "cards/transcripts/The Pyramid of Mars.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Mars",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_sphere",
     "name": "The Sphere",
     "type": "Plane",
-    "image": "cards/images/The Sphere.png",
-    "thumb": "cards/thumbs/The Sphere.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Sphere&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Sphere&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/The Sphere.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Las Vegas",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_tangle",
@@ -2980,58 +2792,54 @@
     "id": "the_western_cloud",
     "name": "The Western Cloud",
     "type": "Plane",
-    "image": "cards/images/The Western Cloud.png",
-    "thumb": "cards/thumbs/The Western Cloud.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Western%20Cloud&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Western%20Cloud&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/The Western Cloud.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Gobakhan",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_wilds",
     "name": "The Wilds",
     "type": "Plane",
-    "image": "cards/images/The Wilds.png",
-    "thumb": "cards/thumbs/The Wilds.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Wilds&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Wilds&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/The Wilds.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Eldraine",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_windy_city",
     "name": "The Windy City",
     "type": "Plane",
-    "image": "cards/images/The Windy City.png",
-    "thumb": "cards/thumbs/The Windy City.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Windy%20City&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Windy%20City&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/The Windy City.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Chicago",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "the_zephyr_maze",
     "name": "The Zephyr Maze",
     "type": "Plane",
-    "image": "cards/images/The Zephyr Maze.png",
-    "thumb": "cards/thumbs/The Zephyr Maze.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Zephyr%20Maze&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=The%20Zephyr%20Maze&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/The Zephyr Maze.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Kyneth",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "thraben_high_city",
@@ -3050,201 +2858,187 @@
     "id": "towashi",
     "name": "Towashi",
     "type": "Plane",
-    "image": "cards/images/Towashi.png",
-    "thumb": "cards/thumbs/Towashi.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Towashi&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Towashi&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Towashi.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Kamigawa",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "trail_of_the_mage_rings",
     "name": "Trail of the Mage Rings",
     "type": "Plane",
-    "image": "cards/images/Trail of the Mage-Rings.png",
-    "thumb": "cards/thumbs/Trail of the Mage-Rings.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Trail%20of%20the%20Mage%20Rings&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Trail%20of%20the%20Mage%20Rings&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Trail of the Mage-Rings.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Vryn",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "truga_jungle",
     "name": "Truga Jungle",
     "type": "Plane",
-    "image": "cards/images/Truga Jungle.png",
-    "thumb": "cards/thumbs/Truga Jungle.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Truga%20Jungle&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Truga%20Jungle&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Truga Jungle.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Ergamon",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "turri_island",
     "name": "Turri Island",
     "type": "Plane",
-    "image": "cards/images/Turri Island.png",
-    "thumb": "cards/thumbs/Turri Island.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Turri%20Island&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Turri%20Island&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Turri Island.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Ir",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "two_streams_facility",
     "name": "Two Streams Facility",
     "type": "Plane",
-    "image": "cards/images/Two Streams Facility.png",
-    "thumb": "cards/thumbs/Two Streams Facility.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Two%20Streams%20Facility&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Two%20Streams%20Facility&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Two Streams Facility.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Apalapucia",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "undercity_reaches",
     "name": "Undercity Reaches",
     "type": "Plane",
-    "image": "cards/images/Undercity Reaches.png",
-    "thumb": "cards/thumbs/Undercity Reaches.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Undercity%20Reaches&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Undercity%20Reaches&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Undercity Reaches.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Ravnica",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "unit_headquarters",
     "name": "UNIT Headquarters",
     "type": "Plane",
-    "image": "cards/images/UNIT Headquarters.png",
-    "thumb": "cards/thumbs/UNIT Headquarters.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=UNIT%20Headquarters&set=who&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=UNIT%20Headquarters&set=who&format=image&version=small",
     "transcript": "cards/transcripts/UNIT Headquarters.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Earth",
       "WHO",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "unyaro",
     "name": "Unyaro",
     "type": "Plane",
-    "image": "cards/images/Unyaro.png",
-    "thumb": "cards/thumbs/Unyaro.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Unyaro&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Unyaro&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Unyaro.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Zhalfir",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "valors_reach",
     "name": "Valor's Reach",
     "type": "Plane",
-    "image": "cards/images/Valor's Reach.png",
-    "thumb": "cards/thumbs/Valor's Reach.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Valor's%20Reach&set=moc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Valor's%20Reach&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Valor's Reach.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Kylem",
       "MOC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "velis_vel",
     "name": "Velis Vel",
     "type": "Plane",
-    "image": "cards/images/Velis Vel.png",
-    "thumb": "cards/thumbs/Velis Vel.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Velis%20Vel&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Velis%20Vel&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Velis Vel.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Lorwyn",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "we_hope_you_like_squirrels",
     "name": "We Hope You Like Squirrels",
     "type": "Plane",
-    "image": "cards/images/We Hope You Like Squirrels.png",
-    "thumb": "cards/thumbs/We Hope You Like Squirrels.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=We%20Hope%20You%20Like%20Squirrels&set=pssc&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=We%20Hope%20You%20Like%20Squirrels&set=pssc&format=image&version=small",
     "transcript": "cards/transcripts/We Hope You Like Squirrels.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Secret Lair",
       "hidden",
       "PSSC"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "welcome_to_valley",
     "name": "Welcome to Valley",
     "type": "Plane",
-    "image": "cards/images/Welcome to Valley.png",
-    "thumb": "cards/thumbs/Welcome to Valley.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Welcome%20to%20Valley&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Welcome%20to%20Valley&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Welcome to Valley.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Bloomburrow",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "windmill_farm",
     "name": "Windmill Farm",
     "type": "Plane",
-    "image": "cards/images/Windmill Farm.png",
-    "thumb": "cards/thumbs/Windmill Farm.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Windmill%20Farm&set=punk&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Windmill%20Farm&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Windmill Farm.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Amsterdam",
       "PUNK",
       "hidden"
-    ],
-    "scryfallId": null
+    ]
   },
   {
     "id": "windriddle_palaces",
     "name": "Windriddle Palaces",
     "type": "Plane",
-    "image": "cards/images/Windriddle Palaces.png",
-    "thumb": "cards/thumbs/Windriddle Palaces.webp",
+    "image": "https://api.scryfall.com/cards/named?exact=Windriddle%20Palaces&set=opca&format=image&version=normal",
+    "thumb": "https://api.scryfall.com/cards/named?exact=Windriddle%20Palaces&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Windriddle Palaces.md",
     "tags": [
       ":top:badge:tr:green:Official",
       "Belenon",
       "OPCA"
-    ],
-    "scryfallId": null
+    ]
   }
 ]

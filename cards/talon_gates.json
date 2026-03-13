@@ -2,13 +2,12 @@
   "id": "talon_gates",
   "name": "Talon Gates",
   "type": "Plane",
-  "image": "cards/images/Talon Gates.png",
-  "thumb": "cards/thumbs/Talon Gates.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Talon%20Gates&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Talon%20Gates&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Talon Gates.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Dominaria",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

@@ -2,13 +2,12 @@
   "id": "naya",
   "name": "Naya",
   "type": "Plane",
-  "image": "cards/images/Naya.png",
-  "thumb": "cards/thumbs/Naya.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Naya&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Naya&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Naya.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Alara",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

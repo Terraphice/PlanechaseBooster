@@ -2,13 +2,12 @@
   "id": "jund",
   "name": "Jund",
   "type": "Plane",
-  "image": "cards/images/Jund.png",
-  "thumb": "cards/thumbs/Jund.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Jund&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Jund&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Jund.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Alara",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

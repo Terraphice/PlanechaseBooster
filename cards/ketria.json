@@ -2,13 +2,12 @@
   "id": "ketria",
   "name": "Ketria",
   "type": "Plane",
-  "image": "cards/images/Ketria.png",
-  "thumb": "cards/thumbs/Ketria.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Ketria&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Ketria&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Ketria.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Ikoria",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

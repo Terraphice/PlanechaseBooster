@@ -2,13 +2,12 @@
   "id": "kessig",
   "name": "Kessig",
   "type": "Plane",
-  "image": "cards/images/Kessig.png",
-  "thumb": "cards/thumbs/Kessig.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Kessig&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Kessig&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Kessig.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Innistrad",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

@@ -76,8 +76,8 @@ export function savePreferences(storageKey, displayState, filters, theme = "syst
 
 /**
  * Enriches a raw card object from cards.json with runtime fields.
- * @param {{ id: string, name: string, type: string, image: string, thumb: string, transcript: string, tags: string[], scryfallId?: string|null }} card - Raw card data.
- * @returns {object} Enriched card with id, name, displayName (alias), type, imagePath, thumbPath, transcriptPath, tags, normalizedTags, scryfallId.
+ * @param {{ id: string, name: string, type: string, image: string, thumb: string, transcript: string, tags: string[] }} card - Raw card data.
+ * @returns {object} Enriched card with id, name, displayName (alias), type, imagePath, thumbPath, transcriptPath, tags, normalizedTags.
  */
 export function enrichCard(card) {
   const tags = Array.isArray(card.tags)
@@ -99,8 +99,7 @@ export function enrichCard(card) {
     thumbPath: card.thumb,
     transcriptPath: card.transcript,
     tags,
-    normalizedTags,
-    scryfallId: card.scryfallId !== undefined ? card.scryfallId : undefined
+    normalizedTags
   };
 }
 

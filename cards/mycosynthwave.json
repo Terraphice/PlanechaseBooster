@@ -2,14 +2,13 @@
   "id": "mycosynthwave",
   "name": "Mycosynthwave",
   "type": "Plane",
-  "image": "cards/images/Mycosynthwave.png",
-  "thumb": "cards/thumbs/Mycosynthwave.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Mycosynthwave&set=pssc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Mycosynthwave&set=pssc&format=image&version=small",
   "transcript": "cards/transcripts/Mycosynthwave.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Secret Lair",
     "hidden",
     "PSSC"
-  ],
-  "scryfallId": null
+  ]
 }

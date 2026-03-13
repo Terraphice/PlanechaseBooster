@@ -2,14 +2,13 @@
   "id": "kerblam_warehouse",
   "name": "Kerblam! Warehouse",
   "type": "Plane",
-  "image": "cards/images/Kerblam! Warehouse.png",
-  "thumb": "cards/thumbs/Kerblam! Warehouse.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Kerblam!%20Warehouse&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Kerblam!%20Warehouse&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Kerblam! Warehouse.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Kandoka",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

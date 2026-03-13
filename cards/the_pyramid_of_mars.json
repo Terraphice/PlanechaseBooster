@@ -2,14 +2,13 @@
   "id": "the_pyramid_of_mars",
   "name": "The Pyramid of Mars",
   "type": "Plane",
-  "image": "cards/images/The Pyramid of Mars.png",
-  "thumb": "cards/thumbs/The Pyramid of Mars.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Pyramid%20of%20Mars&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=The%20Pyramid%20of%20Mars&set=who&format=image&version=small",
   "transcript": "cards/transcripts/The Pyramid of Mars.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Mars",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

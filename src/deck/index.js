@@ -1,5 +1,5 @@
 import { isHiddenCard } from "../gallery/utils.js";
-import { toBase64Url, fromBase64Url, decodeDeck, remapLegacyKey } from "./codec.js";
+import { toBase64Url, fromBase64Url, decodeDeck } from "./codec.js";
 
 import { initClassicGame, startClassicGame, gamePlaneswalk, buildMainCardActions } from "../game/classic.js";
 
@@ -153,10 +153,7 @@ function loadDecksFromStorage() {
           if (!Array.isArray(d)) return new Map();
           return new Map(d
             .filter(([k, v]) => typeof k === "string" && typeof v === "number" && v > 0 && v <= MAX_CARD_COUNT)
-            .map(([k, v]) => {
-              const remapped = remapLegacyKey(k);
-              return [remapped, v];
-            })
+            .map(([k, v]) => [k, v])
           );
         })
       : [];

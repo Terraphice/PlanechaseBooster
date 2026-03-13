@@ -2,14 +2,13 @@
   "id": "the_moonbase",
   "name": "The Moonbase",
   "type": "Plane",
-  "image": "cards/images/The Moonbase.png",
-  "thumb": "cards/thumbs/The Moonbase.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Moonbase&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=The%20Moonbase&set=who&format=image&version=small",
   "transcript": "cards/transcripts/The Moonbase.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Moon",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

@@ -2,13 +2,12 @@
   "id": "the_great_aerie",
   "name": "The Great Aerie",
   "type": "Plane",
-  "image": "cards/images/The Great Aerie.png",
-  "thumb": "cards/thumbs/The Great Aerie.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Great%20Aerie&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=The%20Great%20Aerie&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/The Great Aerie.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Tarkir",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

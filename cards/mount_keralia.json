@@ -2,13 +2,12 @@
   "id": "mount_keralia",
   "name": "Mount Keralia",
   "type": "Plane",
-  "image": "cards/images/Mount Keralia.png",
-  "thumb": "cards/thumbs/Mount Keralia.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Mount%20Keralia&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Mount%20Keralia&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Mount Keralia.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Regatha",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

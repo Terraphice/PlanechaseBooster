@@ -2,14 +2,13 @@
   "id": "fblthp_completely_utterly_totally_lost",
   "name": "Fblthp  Completely, Utterly, Totally Lost",
   "type": "Plane",
-  "image": "cards/images/Fblthp_ Completely, Utterly, Totally Lost.png",
-  "thumb": "cards/thumbs/Fblthp_ Completely, Utterly, Totally Lost.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Fblthp%20%20Completely%2C%20Utterly%2C%20Totally%20Lost&set=pssc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Fblthp%20%20Completely%2C%20Utterly%2C%20Totally%20Lost&set=pssc&format=image&version=small",
   "transcript": "cards/transcripts/Fblthp_ Completely, Utterly, Totally Lost.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Secret Lair",
     "hidden",
     "PSSC"
-  ],
-  "scryfallId": null
+  ]
 }

@@ -2,14 +2,13 @@
   "id": "coal_hill_school",
   "name": "Coal Hill School",
   "type": "Plane",
-  "image": "cards/images/Coal Hill School.png",
-  "thumb": "cards/thumbs/Coal Hill School.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Coal%20Hill%20School&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Coal%20Hill%20School&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Coal Hill School.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Earth",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

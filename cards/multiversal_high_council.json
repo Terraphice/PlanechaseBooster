@@ -2,14 +2,13 @@
   "id": "multiversal_high_council",
   "name": "Multiversal High Council",
   "type": "Plane",
-  "image": "cards/images/Multiversal High Council.png",
-  "thumb": "cards/thumbs/Multiversal High Council.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Multiversal%20High%20Council&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Multiversal%20High%20Council&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Multiversal High Council.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Universia Beyondia",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

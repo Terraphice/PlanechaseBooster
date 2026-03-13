@@ -2,14 +2,13 @@
   "id": "mondassian_colony_ship",
   "name": "Mondassian Colony Ship",
   "type": "Plane",
-  "image": "cards/images/Mondassian Colony Ship.png",
-  "thumb": "cards/thumbs/Mondassian Colony Ship.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Mondassian%20Colony%20Ship&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Mondassian%20Colony%20Ship&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Mondassian Colony Ship.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Spacecraft",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

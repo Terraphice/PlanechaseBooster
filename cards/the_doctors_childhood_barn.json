@@ -2,14 +2,13 @@
   "id": "the_doctors_childhood_barn",
   "name": "The Doctor's Childhood Barn",
   "type": "Plane",
-  "image": "cards/images/The Doctor's Childhood Barn.png",
-  "thumb": "cards/thumbs/The Doctor's Childhood Barn.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Doctor's%20Childhood%20Barn&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=The%20Doctor's%20Childhood%20Barn&set=who&format=image&version=small",
   "transcript": "cards/transcripts/The Doctor's Childhood Barn.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Gallifrey",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

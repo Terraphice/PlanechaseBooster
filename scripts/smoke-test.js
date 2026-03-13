@@ -83,30 +83,23 @@ if (schemaErrors === 0) {
 
 // ── 3. Referenced image files exist ──────────────────────────────────────────
 
-section("3. Image file existence");
+section("3. Image reference validation");
 
-let missingImages = 0;
+let invalidImageRefs = 0;
 for (const card of cards) {
+  if (card.image.startsWith("http://") || card.image.startsWith("https://")) {
+    continue;
+  }
   const imagePath = join(ROOT, card.image);
   if (!existsSync(imagePath)) {
-    // Image files may still use the old Plane_/Phenomenon_ prefix on disk until
-    // they are manually renamed. Warn but don't fail.
-    const dir = card.image.slice(0, card.image.lastIndexOf("/") + 1);
-    const file = card.image.slice(card.image.lastIndexOf("/") + 1);
-    const ext = file.slice(file.lastIndexOf("."));
-    const stem = file.slice(0, file.lastIndexOf("."));
-    const oldPlanePath = join(ROOT, dir + "Plane_" + stem + ext);
-    const oldPhenPath = join(ROOT, dir + "Phenomenon_" + stem + ext);
-    if (!existsSync(oldPlanePath) && !existsSync(oldPhenPath)) {
-      console.warn(`  ⚠ Image not found at new or old path: ${card.image}`);
-      missingImages++;
-    }
+    console.warn(`  ⚠ Local image not found: ${card.image}`);
+    invalidImageRefs++;
   }
 }
-if (missingImages === 0) {
-  pass(`All ${cards.length} referenced image files exist (or found at legacy path)`);
+if (invalidImageRefs === 0) {
+  pass(`All ${cards.length} image references are valid (remote URL or existing local file)`);
 } else {
-  pass(`${cards.length - missingImages} of ${cards.length} image files found (${missingImages} missing at both new and legacy paths — image files may need renaming)`);
+  fail(`${invalidImageRefs} card(s) reference missing local image paths`);
 }
 
 // ── 4. Transcript files (soft check — not all cards need transcripts) ─────────

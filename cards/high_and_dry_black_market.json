@@ -2,13 +2,12 @@
   "id": "high_and_dry_black_market",
   "name": "High and Dry Black Market",
   "type": "Phenomenon",
-  "image": "cards/images/High and Dry Black Market.png",
-  "thumb": "cards/thumbs/High and Dry Black Market.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=High%20and%20Dry%20Black%20Market&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=High%20and%20Dry%20Black%20Market&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/High and Dry Black Market.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

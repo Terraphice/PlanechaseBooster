@@ -2,13 +2,12 @@
   "id": "the_western_cloud",
   "name": "The Western Cloud",
   "type": "Plane",
-  "image": "cards/images/The Western Cloud.png",
-  "thumb": "cards/thumbs/The Western Cloud.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Western%20Cloud&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=The%20Western%20Cloud&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/The Western Cloud.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Gobakhan",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

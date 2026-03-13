@@ -2,13 +2,12 @@
   "id": "academy_at_tolaria_west",
   "name": "Academy at Tolaria West",
   "type": "Plane",
-  "image": "cards/images/Academy at Tolaria West.png",
-  "thumb": "cards/thumbs/Academy at Tolaria West.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Academy%20at%20Tolaria%20West&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Academy%20at%20Tolaria%20West&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Academy at Tolaria West.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Dominaria",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

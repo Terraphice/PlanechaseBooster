@@ -2,14 +2,13 @@
   "id": "the_windy_city",
   "name": "The Windy City",
   "type": "Plane",
-  "image": "cards/images/The Windy City.png",
-  "thumb": "cards/thumbs/The Windy City.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Windy%20City&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=The%20Windy%20City&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/The Windy City.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Chicago",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

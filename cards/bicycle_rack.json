@@ -2,14 +2,13 @@
   "id": "bicycle_rack",
   "name": "Bicycle Rack",
   "type": "Plane",
-  "image": "cards/images/Bicycle Rack.png",
-  "thumb": "cards/thumbs/Bicycle Rack.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Bicycle%20Rack&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Bicycle%20Rack&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Bicycle Rack.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Amsterdam",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

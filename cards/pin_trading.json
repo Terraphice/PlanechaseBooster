@@ -2,13 +2,12 @@
   "id": "pin_trading",
   "name": "Pin Trading",
   "type": "Phenomenon",
-  "image": "cards/images/Pin Trading.png",
-  "thumb": "cards/thumbs/Pin Trading.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Pin%20Trading&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Pin%20Trading&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Pin Trading.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

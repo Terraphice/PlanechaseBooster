@@ -2,13 +2,12 @@
   "id": "the_great_forest",
   "name": "The Great Forest",
   "type": "Plane",
-  "image": "cards/images/The Great Forest.png",
-  "thumb": "cards/thumbs/The Great Forest.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Great%20Forest&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=The%20Great%20Forest&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/The Great Forest.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Lorwyn",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

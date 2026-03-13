@@ -2,13 +2,12 @@
   "id": "new_argive",
   "name": "New Argive",
   "type": "Plane",
-  "image": "cards/images/New Argive.png",
-  "thumb": "cards/thumbs/New Argive.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=New%20Argive&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=New%20Argive&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/New Argive.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Dominaria",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

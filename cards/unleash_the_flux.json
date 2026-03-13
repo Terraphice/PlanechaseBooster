@@ -2,13 +2,12 @@
   "id": "unleash_the_flux",
   "name": "Unleash the Flux",
   "type": "Phenomenon",
-  "image": "cards/images/Unleash the Flux.png",
-  "thumb": "cards/thumbs/Unleash the Flux.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Unleash%20the%20Flux&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Unleash%20the%20Flux&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Unleash the Flux.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

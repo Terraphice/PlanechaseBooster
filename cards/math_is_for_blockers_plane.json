@@ -2,14 +2,13 @@
   "id": "math_is_for_blockers_plane",
   "name": "Math is for Blockers (Plane)",
   "type": "Plane",
-  "image": "cards/images/Math is for Blockers (Plane).png",
-  "thumb": "cards/thumbs/Math is for Blockers (Plane).webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Math%20is%20for%20Blockers%20(Plane)&set=pssc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Math%20is%20for%20Blockers%20(Plane)&set=pssc&format=image&version=small",
   "transcript": "cards/transcripts/Math is for Blockers (Plane).md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Secret Lair",
     "hidden",
     "PSSC"
-  ],
-  "scryfallId": null
+  ]
 }

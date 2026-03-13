@@ -2,13 +2,12 @@
   "id": "the_wilds",
   "name": "The Wilds",
   "type": "Plane",
-  "image": "cards/images/The Wilds.png",
-  "thumb": "cards/thumbs/The Wilds.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Wilds&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=The%20Wilds&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/The Wilds.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Eldraine",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

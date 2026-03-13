@@ -2,13 +2,12 @@
   "id": "valors_reach",
   "name": "Valor's Reach",
   "type": "Plane",
-  "image": "cards/images/Valor's Reach.png",
-  "thumb": "cards/thumbs/Valor's Reach.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Valor's%20Reach&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Valor's%20Reach&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Valor's Reach.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Kylem",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

@@ -2,14 +2,13 @@
   "id": "city_of_the_daleks",
   "name": "City of the Daleks",
   "type": "Plane",
-  "image": "cards/images/City of the Daleks.png",
-  "thumb": "cards/thumbs/City of the Daleks.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=City%20of%20the%20Daleks&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=City%20of%20the%20Daleks&set=who&format=image&version=small",
   "transcript": "cards/transcripts/City of the Daleks.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Skaro",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

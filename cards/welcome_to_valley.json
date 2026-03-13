@@ -2,14 +2,13 @@
   "id": "welcome_to_valley",
   "name": "Welcome to Valley",
   "type": "Plane",
-  "image": "cards/images/Welcome to Valley.png",
-  "thumb": "cards/thumbs/Welcome to Valley.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Welcome%20to%20Valley&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Welcome%20to%20Valley&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Welcome to Valley.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Bloomburrow",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

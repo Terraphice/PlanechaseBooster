@@ -2,14 +2,13 @@
   "id": "bad_wolf_bay",
   "name": "Bad Wolf Bay",
   "type": "Plane",
-  "image": "cards/images/Bad Wolf Bay.png",
-  "thumb": "cards/thumbs/Bad Wolf Bay.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Bad%20Wolf%20Bay&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Bad%20Wolf%20Bay&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Bad Wolf Bay.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Earth",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

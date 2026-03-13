@@ -74,6 +74,23 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
+  // For Scryfall-hosted card images: cache-first with network fallback
+  if (url.hostname === "api.scryfall.com" && url.pathname.startsWith("/cards/named")) {
+    event.respondWith(
+      caches.match(request).then((cached) => {
+        if (cached) return cached;
+        return fetch(request).then((response) => {
+          if (response.ok) {
+            const clone = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+          }
+          return response;
+        }).catch(() => caches.match("/assets/card-preview.jpg").then(r => r || Response.error()));
+      })
+    );
+    return;
+  }
+
   // For transcripts: cache-first with network fallback
   if (url.pathname.startsWith("/transcripts/")) {
     event.respondWith(

@@ -2,13 +2,12 @@
   "id": "isle_of_vesuva",
   "name": "Isle of Vesuva",
   "type": "Plane",
-  "image": "cards/images/Isle of Vesuva.png",
-  "thumb": "cards/thumbs/Isle of Vesuva.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Isle%20of%20Vesuva&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Isle%20of%20Vesuva&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Isle of Vesuva.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Dominaria",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

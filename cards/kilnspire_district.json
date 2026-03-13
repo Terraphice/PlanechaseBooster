@@ -2,13 +2,12 @@
   "id": "kilnspire_district",
   "name": "Kilnspire District",
   "type": "Plane",
-  "image": "cards/images/Kilnspire District.png",
-  "thumb": "cards/thumbs/Kilnspire District.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Kilnspire%20District&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Kilnspire%20District&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Kilnspire District.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Ravnica",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

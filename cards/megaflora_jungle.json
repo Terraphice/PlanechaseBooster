@@ -2,13 +2,12 @@
   "id": "megaflora_jungle",
   "name": "Megaflora Jungle",
   "type": "Plane",
-  "image": "cards/images/Megaflora Jungle.png",
-  "thumb": "cards/thumbs/Megaflora Jungle.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Megaflora%20Jungle&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Megaflora%20Jungle&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Megaflora Jungle.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Gargantikar",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

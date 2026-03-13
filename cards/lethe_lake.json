@@ -2,13 +2,12 @@
   "id": "lethe_lake",
   "name": "Lethe Lake",
   "type": "Plane",
-  "image": "cards/images/Lethe Lake.png",
-  "thumb": "cards/thumbs/Lethe Lake.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Lethe%20Lake&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Lethe%20Lake&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Lethe Lake.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Arkhos",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

@@ -2,13 +2,12 @@
   "id": "the_caldaia",
   "name": "The Caldaia",
   "type": "Plane",
-  "image": "cards/images/The Caldaia.png",
-  "thumb": "cards/thumbs/The Caldaia.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Caldaia&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=The%20Caldaia&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/The Caldaia.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Capenna",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

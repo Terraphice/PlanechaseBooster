@@ -60,9 +60,6 @@ if (isDirectRun) {
       transcript: card.transcript,
       tags: Array.isArray(card.tags) ? card.tags : []
     };
-    if (card.scryfallId !== undefined) {
-      output.scryfallId = card.scryfallId;
-    }
     const content = JSON.stringify(output, null, 2) + "\n";
 
     try {

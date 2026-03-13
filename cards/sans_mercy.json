@@ -2,13 +2,12 @@
   "id": "sans_mercy",
   "name": "Sans Mercy",
   "type": "Plane",
-  "image": "cards/images/Sans Mercy.png",
-  "thumb": "cards/thumbs/Sans Mercy.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Sans%20Mercy&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Sans%20Mercy&format=image&version=small",
   "transcript": "cards/transcripts/Sans Mercy.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Secret Lair",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

@@ -2,13 +2,12 @@
   "id": "agyrem",
   "name": "Agyrem",
   "type": "Plane",
-  "image": "cards/images/Agyrem.png",
-  "thumb": "cards/thumbs/Agyrem.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Agyrem&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Agyrem&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Agyrem.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Ravnica",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

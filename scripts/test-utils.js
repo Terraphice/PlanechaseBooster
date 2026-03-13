@@ -87,14 +87,13 @@ const rawOfficial = {
   id: "bant",
   name: "Bant",
   type: "Plane",
-  image: "cards/images/Bant.png",
-  thumb: "cards/thumbs/Bant.webp",
+  image: "https://api.scryfall.com/cards/named?exact=Bant&set=hop&format=image&version=normal",
+  thumb: "https://api.scryfall.com/cards/named?exact=Bant&set=hop&format=image&version=small",
   transcript: "cards/transcripts/Bant.md",
-  tags: [":top:badge:tr:green:Official"],
-  scryfallId: null
+  tags: [":top:badge:tr:green:Official"]
 };
 const enrichedOfficial = enrichCard(rawOfficial);
-assert(enrichedOfficial.scryfallId === null, "scryfallId null passes through");
+assert(enrichedOfficial.imagePath.startsWith("https://api.scryfall.com/cards/named?"), "official image path accepts scryfall URL");
 
 // ── sortCards ─────────────────────────────────────────────────────────────────
 

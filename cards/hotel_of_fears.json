@@ -2,14 +2,13 @@
   "id": "hotel_of_fears",
   "name": "Hotel of Fears",
   "type": "Plane",
-  "image": "cards/images/Hotel of Fears.png",
-  "thumb": "cards/thumbs/Hotel of Fears.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Hotel%20of%20Fears&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Hotel%20of%20Fears&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Hotel of Fears.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Spacecraft",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

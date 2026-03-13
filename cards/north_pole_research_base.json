@@ -2,14 +2,13 @@
   "id": "north_pole_research_base",
   "name": "North Pole Research Base",
   "type": "Plane",
-  "image": "cards/images/North Pole Research Base.png",
-  "thumb": "cards/thumbs/North Pole Research Base.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=North%20Pole%20Research%20Base&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=North%20Pole%20Research%20Base&set=who&format=image&version=small",
   "transcript": "cards/transcripts/North Pole Research Base.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Earth",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

@@ -2,13 +2,12 @@
   "id": "the_golden_city_of_orazca",
   "name": "The Golden City of Orazca",
   "type": "Plane",
-  "image": "cards/images/The Golden City of Orazca.png",
-  "thumb": "cards/thumbs/The Golden City of Orazca.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Golden%20City%20of%20Orazca&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=The%20Golden%20City%20of%20Orazca&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/The Golden City of Orazca.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Ixalan",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

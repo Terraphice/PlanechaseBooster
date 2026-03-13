@@ -2,13 +2,12 @@
   "id": "stairs_to_infinity",
   "name": "Stairs to Infinity",
   "type": "Plane",
-  "image": "cards/images/Stairs to Infinity.png",
-  "thumb": "cards/thumbs/Stairs to Infinity.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Stairs%20to%20Infinity&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Stairs%20to%20Infinity&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Stairs to Infinity.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Xerex",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

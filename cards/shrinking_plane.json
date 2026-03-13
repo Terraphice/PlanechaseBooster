@@ -2,14 +2,13 @@
   "id": "shrinking_plane",
   "name": "Shrinking Plane",
   "type": "Plane",
-  "image": "cards/images/Shrinking Plane.png",
-  "thumb": "cards/thumbs/Shrinking Plane.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Shrinking%20Plane&set=punk&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Shrinking%20Plane&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Shrinking Plane.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Foldaria",
     "PUNK",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

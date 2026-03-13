@@ -2,14 +2,13 @@
   "id": "the_matrix_of_time",
   "name": "The Matrix of Time",
   "type": "Plane",
-  "image": "cards/images/The Matrix of Time.png",
-  "thumb": "cards/thumbs/The Matrix of Time.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Matrix%20of%20Time&set=who&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=The%20Matrix%20of%20Time&set=who&format=image&version=small",
   "transcript": "cards/transcripts/The Matrix of Time.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Gallifrey",
     "WHO",
     "hidden"
-  ],
-  "scryfallId": null
+  ]
 }

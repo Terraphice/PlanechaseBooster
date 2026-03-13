@@ -2,13 +2,12 @@
   "id": "naktamun",
   "name": "Naktamun",
   "type": "Plane",
-  "image": "cards/images/Naktamun.png",
-  "thumb": "cards/thumbs/Naktamun.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Naktamun&set=moc&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Naktamun&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Naktamun.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Amonkhet",
     "MOC"
-  ],
-  "scryfallId": null
+  ]
 }

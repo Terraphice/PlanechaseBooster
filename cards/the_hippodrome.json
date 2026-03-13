@@ -2,13 +2,12 @@
   "id": "the_hippodrome",
   "name": "The Hippodrome",
   "type": "Plane",
-  "image": "cards/images/The Hippodrome.png",
-  "thumb": "cards/thumbs/The Hippodrome.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Hippodrome&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=The%20Hippodrome&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/The Hippodrome.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Segovia",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }

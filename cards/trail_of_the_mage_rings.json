@@ -2,13 +2,12 @@
   "id": "trail_of_the_mage_rings",
   "name": "Trail of the Mage Rings",
   "type": "Plane",
-  "image": "cards/images/Trail of the Mage-Rings.png",
-  "thumb": "cards/thumbs/Trail of the Mage-Rings.webp",
+  "image": "https://api.scryfall.com/cards/named?exact=Trail%20of%20the%20Mage%20Rings&set=opca&format=image&version=normal",
+  "thumb": "https://api.scryfall.com/cards/named?exact=Trail%20of%20the%20Mage%20Rings&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Trail of the Mage-Rings.md",
   "tags": [
     ":top:badge:tr:green:Official",
     "Vryn",
     "OPCA"
-  ],
-  "scryfallId": null
+  ]
 }
