@@ -839,6 +839,14 @@ export function buildBemCardActions() {
 
 export function buildBemAdjacentCardActions(nx, ny) {
   const { closeGameReaderView } = ctx;
+  const gameState = ctx.getGameState();
+  if (!gameState?.bemPos || !gameState?.bemGrid) return [];
+
+  const dx = nx - gameState.bemPos.x;
+  const dy = ny - gameState.bemPos.y;
+  const targetCell = gameState.bemGrid.get(bemKey(nx, ny));
+  if (!bemIsValidPlaneswalkTarget(dx, dy, targetCell)) return [];
+
   return [
     {
       label: "Planeswalk Here",
