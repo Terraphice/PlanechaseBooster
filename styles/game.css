@@ -363,8 +363,11 @@
   height: auto;
   border-radius: 5px;
   flex-shrink: 0;
-  object-fit: cover;
+  object-fit: contain;
   aspect-ratio: 800 / 559;
+  --planechase-rotation: 0deg;
+  --planechase-rotation-scale: 1;
+  transform: rotate(var(--planechase-rotation)) scale(var(--planechase-rotation-scale));
 }
 
 .deck-card-info {
@@ -450,6 +453,11 @@
   display: none;
 }
 
+.planechase-image-rotated {
+  --planechase-rotation: 90deg;
+  --planechase-rotation-scale: calc(800 / 559);
+}
+
 .game-main-area {
   display: flex;
   flex-direction: column;
@@ -469,6 +477,9 @@
   border-radius: 14px;
   box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
   object-fit: contain;
+  --planechase-rotation: 0deg;
+  --planechase-rotation-scale: 1;
+  transform: rotate(var(--planechase-rotation)) scale(var(--planechase-rotation-scale));
 }
 
 .game-card-name {
@@ -2349,6 +2360,9 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
   border-radius: 12px;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.6);
   object-fit: contain;
+  --planechase-rotation: 0deg;
+  --planechase-rotation-scale: 1;
+  transform: rotate(var(--planechase-rotation)) scale(var(--planechase-rotation-scale));
 }
 
 .game-reader-zoom-hint {
@@ -2397,6 +2411,9 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
   height: auto;
   object-fit: contain;
   border-radius: 4px;
+  --planechase-rotation: 0deg;
+  --planechase-rotation-scale: 1;
+  transform: rotate(var(--planechase-rotation)) scale(var(--planechase-rotation-scale));
 }
 
 .game-reader-info-col {
@@ -3034,8 +3051,11 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 4px;
+  --planechase-rotation: 0deg;
+  --planechase-rotation-scale: 1;
+  transform: rotate(var(--planechase-rotation)) scale(var(--planechase-rotation-scale));
 }
 
 .bem-cell-facedown-icon {

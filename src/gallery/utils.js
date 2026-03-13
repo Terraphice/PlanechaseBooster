@@ -103,6 +103,8 @@ export function enrichCard(card) {
   };
 }
 
+const planechaseOrientationBoundImages = new WeakSet();
+
 export function sortCards(cards) {
   cards.sort((a, b) => {
     const nameCompare = a.name.localeCompare(b.name, undefined, {
@@ -113,6 +115,34 @@ export function sortCards(cards) {
     if (nameCompare !== 0) return nameCompare;
     return a.type.localeCompare(b.type, undefined, { sensitivity: "base" });
   });
+}
+
+/**
+ * Keeps oversized Planechase card images visually consistent when a source image
+ * arrives in portrait orientation (common with some Scryfall scans).
+ * @param {HTMLImageElement | null} img
+ */
+export function syncPlanechaseImageOrientation(img) {
+  if (!img) return;
+
+  const updateOrientation = () => {
+    if (!img.naturalWidth || !img.naturalHeight) {
+      img.classList.remove("planechase-image-rotated");
+      return;
+    }
+    const isPortrait = img.naturalHeight > img.naturalWidth * 1.02;
+    img.classList.toggle("planechase-image-rotated", isPortrait);
+  };
+
+  if (!planechaseOrientationBoundImages.has(img)) {
+    img.addEventListener("load", updateOrientation);
+    img.addEventListener("error", () => {
+      img.classList.remove("planechase-image-rotated");
+    });
+    planechaseOrientationBoundImages.add(img);
+  }
+
+  if (img.complete) updateOrientation();
 }
 
 export function reconcileSelectedTags(selectedTags, cards) {
