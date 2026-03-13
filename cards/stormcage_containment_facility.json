@@ -2,7 +2,7 @@
   "id": "stormcage_containment_facility",
   "name": "Stormcage Containment Facility",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Stormcage%20Containment%20Facility&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Stormcage%20Containment%20Facility&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Stormcage%20Containment%20Facility&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Stormcage Containment Facility.md",
   "tags": [

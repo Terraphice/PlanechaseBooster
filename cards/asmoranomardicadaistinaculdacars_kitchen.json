@@ -2,7 +2,7 @@
   "id": "asmoranomardicadaistinaculdacars_kitchen",
   "name": "Asmoranomardicadaistinaculdacar's Kitchen",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Asmoranomardicadaistinaculdacar's%20Kitchen&set=punk&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Asmoranomardicadaistinaculdacar's%20Kitchen&set=punk&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Asmoranomardicadaistinaculdacar's%20Kitchen&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Asmoranomardicadaistinaculdacar's Kitchen.md",
   "tags": [

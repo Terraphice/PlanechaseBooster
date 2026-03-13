@@ -2,7 +2,7 @@
   "id": "ghirapur_grand_prix",
   "name": "Ghirapur Grand Prix",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Ghirapur%20Grand%20Prix&set=punk&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Ghirapur%20Grand%20Prix&set=punk&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Ghirapur%20Grand%20Prix&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Ghirapur Grand Prix.md",
   "tags": [

@@ -2,7 +2,7 @@
   "id": "spectrox_mines",
   "name": "Spectrox Mines",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Spectrox%20Mines&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Spectrox%20Mines&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Spectrox%20Mines&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Spectrox Mines.md",
   "tags": [

@@ -2,7 +2,7 @@
   "id": "towashi",
   "name": "Towashi",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Towashi&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Towashi&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Towashi&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Towashi.md",
   "tags": [

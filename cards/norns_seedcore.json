@@ -2,7 +2,7 @@
   "id": "norns_seedcore",
   "name": "Norn's Seedcore",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Norn's%20Seedcore&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Norn's%20Seedcore&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Norn's%20Seedcore&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Norn's Seedcore.md",
   "tags": [

@@ -2,7 +2,7 @@
   "id": "the_pyramid_of_mars",
   "name": "The Pyramid of Mars",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=The%20Pyramid%20of%20Mars&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Pyramid%20of%20Mars&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=The%20Pyramid%20of%20Mars&set=who&format=image&version=small",
   "transcript": "cards/transcripts/The Pyramid of Mars.md",
   "tags": [

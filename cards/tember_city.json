@@ -2,7 +2,7 @@
   "id": "tember_city",
   "name": "Tember City",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Tember%20City&set=opca&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Tember%20City&set=opca&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Tember%20City&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Tember City.md",
   "tags": [

@@ -2,7 +2,7 @@
   "id": "megaflora_jungle",
   "name": "Megaflora Jungle",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Megaflora%20Jungle&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Megaflora%20Jungle&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Megaflora%20Jungle&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Megaflora Jungle.md",
   "tags": [

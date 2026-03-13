@@ -2,7 +2,7 @@
   "id": "shy_town",
   "name": "Shy Town",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Shy%20Town&set=punk&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Shy%20Town&set=punk&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Shy%20Town&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Shy Town.md",
   "tags": [

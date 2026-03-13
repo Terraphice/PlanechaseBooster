@@ -2,7 +2,7 @@
   "id": "prime_ministers_cabinet_room",
   "name": "Prime Minister's Cabinet Room",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Prime%20Minister's%20Cabinet%20Room&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Prime%20Minister's%20Cabinet%20Room&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Prime%20Minister's%20Cabinet%20Room&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Prime Minister's Cabinet Room.md",
   "tags": [

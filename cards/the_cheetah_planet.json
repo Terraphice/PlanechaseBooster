@@ -2,7 +2,7 @@
   "id": "the_cheetah_planet",
   "name": "The Cheetah Planet",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=The%20Cheetah%20Planet&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Cheetah%20Planet&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=The%20Cheetah%20Planet&set=who&format=image&version=small",
   "transcript": "cards/transcripts/The Cheetah Planet.md",
   "tags": [

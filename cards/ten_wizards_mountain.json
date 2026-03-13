@@ -2,7 +2,7 @@
   "id": "ten_wizards_mountain",
   "name": "Ten Wizards Mountain",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Ten%20Wizards%20Mountain&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Ten%20Wizards%20Mountain&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Ten%20Wizards%20Mountain&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Ten Wizards Mountain.md",
   "tags": [

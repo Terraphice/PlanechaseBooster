@@ -2,7 +2,7 @@
   "id": "velis_vel",
   "name": "Velis Vel",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Velis%20Vel&set=opca&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Velis%20Vel&set=opca&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Velis%20Vel&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Velis Vel.md",
   "tags": [

@@ -2,7 +2,7 @@
   "id": "astral_arena",
   "name": "Astral Arena",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Astral%20Arena&set=opca&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Astral%20Arena&set=opca&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Astral%20Arena&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Astral Arena.md",
   "tags": [

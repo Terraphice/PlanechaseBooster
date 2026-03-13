@@ -2,7 +2,7 @@
   "id": "mycosynthwave",
   "name": "Mycosynthwave",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Mycosynthwave&set=pssc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Mycosynthwave&set=pssc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Mycosynthwave&set=pssc&format=image&version=small",
   "transcript": "cards/transcripts/Mycosynthwave.md",
   "tags": [

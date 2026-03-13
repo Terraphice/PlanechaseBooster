@@ -302,15 +302,31 @@ const {
 
 init();
 
+async function loadCardsData() {
+  const candidates = ["cards.json", "./cards.json", "/cards.json"];
+  let lastError = null;
+
+  for (const path of candidates) {
+    try {
+      const response = await fetch(path);
+      if (!response.ok) {
+        throw new Error(`Failed to load ${path} (${response.status})`);
+      }
+      return await response.json();
+    } catch (error) {
+      lastError = error;
+    }
+  }
+
+  throw lastError || new Error("Failed to load cards.json");
+}
+
 async function init() {
   try {
     stateManager.readState();
     stateManager.applyStoredPreferencesToUI();
 
-    const response = await fetch("cards.json");
-    if (!response.ok) throw new Error("Failed to load cards.json");
-
-    const rawCards = await response.json();
+    const rawCards = await loadCardsData();
     allCards = rawCards.map(enrichCard);
 
     filters.tags = reconcileSelectedTags(filters.tags, allCards);
@@ -345,7 +361,7 @@ async function init() {
     prefetchAllTranscripts(allCards);
   } catch (error) {
     console.error(error);
-    gallery.innerHTML = `<p class="empty-state">Could not load gallery data.</p>`;
+    gallery.innerHTML = `<p class="empty-state">Could not load gallery data. If you're testing locally, run a local web server instead of opening <code>index.html</code> directly.</p>`;
     resultsCount.textContent = "";
   }
 }

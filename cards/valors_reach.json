@@ -2,7 +2,7 @@
   "id": "valors_reach",
   "name": "Valor's Reach",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Valor's%20Reach&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Valor's%20Reach&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Valor's%20Reach&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Valor's Reach.md",
   "tags": [

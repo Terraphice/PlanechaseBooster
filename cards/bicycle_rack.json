@@ -2,7 +2,7 @@
   "id": "bicycle_rack",
   "name": "Bicycle Rack",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Bicycle%20Rack&set=punk&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Bicycle%20Rack&set=punk&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Bicycle%20Rack&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Bicycle Rack.md",
   "tags": [

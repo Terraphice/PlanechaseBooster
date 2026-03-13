@@ -2,7 +2,7 @@
   "id": "dalek_intensive_care",
   "name": "Dalek Intensive Care",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Dalek%20Intensive%20Care&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Dalek%20Intensive%20Care&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Dalek%20Intensive%20Care&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Dalek Intensive Care.md",
   "tags": [

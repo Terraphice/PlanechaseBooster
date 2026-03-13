@@ -2,7 +2,7 @@
   "id": "immersturm",
   "name": "Immersturm",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Immersturm&set=opca&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Immersturm&set=opca&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Immersturm&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Immersturm.md",
   "tags": [

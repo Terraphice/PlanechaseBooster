@@ -2,7 +2,7 @@
   "id": "mondassian_colony_ship",
   "name": "Mondassian Colony Ship",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Mondassian%20Colony%20Ship&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Mondassian%20Colony%20Ship&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Mondassian%20Colony%20Ship&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Mondassian Colony Ship.md",
   "tags": [

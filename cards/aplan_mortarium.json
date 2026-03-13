@@ -2,7 +2,7 @@
   "id": "aplan_mortarium",
   "name": "Aplan Mortarium",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Aplan%20Mortarium&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Aplan%20Mortarium&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Aplan%20Mortarium&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Aplan Mortarium.md",
   "tags": [

@@ -2,7 +2,7 @@
   "id": "izzet_steam_maze",
   "name": "Izzet Steam Maze",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Izzet%20Steam%20Maze&set=opca&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Izzet%20Steam%20Maze&set=opca&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Izzet%20Steam%20Maze&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Izzet Steam Maze.md",
   "tags": [

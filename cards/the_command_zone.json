@@ -2,7 +2,7 @@
   "id": "the_command_zone",
   "name": "The Command Zone",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=The%20Command%20Zone&set=punk&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Command%20Zone&set=punk&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=The%20Command%20Zone&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/The Command Zone.md",
   "tags": [

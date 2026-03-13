@@ -2,7 +2,7 @@
   "id": "unknown_event",
   "name": "Unknown Event",
   "type": "Phenomenon",
-  "image": "https://api.scryfall.com/cards/named?exact=Unknown%20Event&set=punk&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Unknown%20Event&set=punk&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Unknown%20Event&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Unknown Event.md",
   "tags": [

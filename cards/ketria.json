@@ -2,7 +2,7 @@
   "id": "ketria",
   "name": "Ketria",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Ketria&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Ketria&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Ketria&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Ketria.md",
   "tags": [

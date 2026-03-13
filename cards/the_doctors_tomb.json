@@ -2,7 +2,7 @@
   "id": "the_doctors_tomb",
   "name": "The Doctor's Tomb",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=The%20Doctor's%20Tomb&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Doctor's%20Tomb&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=The%20Doctor's%20Tomb&set=who&format=image&version=small",
   "transcript": "cards/transcripts/The Doctor's Tomb.md",
   "tags": [

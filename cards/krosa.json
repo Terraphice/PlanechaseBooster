@@ -2,7 +2,7 @@
   "id": "krosa",
   "name": "Krosa",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Krosa&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Krosa&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Krosa&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Krosa.md",
   "tags": [

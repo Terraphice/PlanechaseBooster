@@ -87,7 +87,7 @@ const rawOfficial = {
   id: "bant",
   name: "Bant",
   type: "Plane",
-  image: "https://api.scryfall.com/cards/named?exact=Bant&set=hop&format=image&version=normal",
+  image: "https://api.scryfall.com/cards/named?exact=Bant&set=hop&format=image&version=large",
   thumb: "https://api.scryfall.com/cards/named?exact=Bant&set=hop&format=image&version=small",
   transcript: "cards/transcripts/Bant.md",
   tags: [":top:badge:tr:green:Official"]

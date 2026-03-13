@@ -2,7 +2,7 @@
   "id": "clamilton_estate",
   "name": "Clamilton Estate",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Clamilton%20Estate&set=punk&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Clamilton%20Estate&set=punk&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Clamilton%20Estate&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Clamilton Estate.md",
   "tags": [

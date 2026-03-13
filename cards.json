@@ -27,7 +27,7 @@
     "id": "caught_in_a_parallel_universe",
     "name": "Caught in a Parallel Universe",
     "type": "Phenomenon",
-    "image": "https://api.scryfall.com/cards/named?exact=Caught%20in%20a%20Parallel%20Universe&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Caught%20in%20a%20Parallel%20Universe&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Caught%20in%20a%20Parallel%20Universe&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Caught in a Parallel Universe.md",
     "tags": [
@@ -40,7 +40,7 @@
     "id": "chaotic_aether",
     "name": "Chaotic Aether",
     "type": "Phenomenon",
-    "image": "https://api.scryfall.com/cards/named?exact=Chaotic%20Aether&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Chaotic%20Aether&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Chaotic%20Aether&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Chaotic Aether.md",
     "tags": [
@@ -112,7 +112,7 @@
     "id": "fixed_point_in_time",
     "name": "Fixed Point in Time",
     "type": "Phenomenon",
-    "image": "https://api.scryfall.com/cards/named?exact=Fixed%20Point%20in%20Time&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Fixed%20Point%20in%20Time&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Fixed%20Point%20in%20Time&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Fixed Point in Time.md",
     "tags": [
@@ -149,7 +149,7 @@
     "id": "high_and_dry_black_market",
     "name": "High and Dry Black Market",
     "type": "Phenomenon",
-    "image": "https://api.scryfall.com/cards/named?exact=High%20and%20Dry%20Black%20Market&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=High%20and%20Dry%20Black%20Market&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=High%20and%20Dry%20Black%20Market&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/High and Dry Black Market.md",
     "tags": [
@@ -162,7 +162,7 @@
     "id": "human-time_lord_meta_crisis",
     "name": "Human—Time Lord Meta Crisis",
     "type": "Phenomenon",
-    "image": "https://api.scryfall.com/cards/named?exact=Human%E2%80%94Time%20Lord%20Meta%20Crisis&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Human%E2%80%94Time%20Lord%20Meta%20Crisis&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Human%E2%80%94Time%20Lord%20Meta%20Crisis&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Human—Time Lord Meta-Crisis.md",
     "tags": [
@@ -199,7 +199,7 @@
     "id": "interplanar_tunnel",
     "name": "Interplanar Tunnel",
     "type": "Phenomenon",
-    "image": "https://api.scryfall.com/cards/named?exact=Interplanar%20Tunnel&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Interplanar%20Tunnel&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Interplanar%20Tunnel&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Interplanar Tunnel.md",
     "tags": [
@@ -211,7 +211,7 @@
     "id": "mad_labs",
     "name": "Mad Labs",
     "type": "Phenomenon",
-    "image": "https://api.scryfall.com/cards/named?exact=Mad%20Labs&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Mad%20Labs&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Mad%20Labs&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Mad Labs.md",
     "tags": [
@@ -224,7 +224,7 @@
     "id": "morphic_tide",
     "name": "Morphic Tide",
     "type": "Phenomenon",
-    "image": "https://api.scryfall.com/cards/named?exact=Morphic%20Tide&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Morphic%20Tide&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Morphic%20Tide&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Morphic Tide.md",
     "tags": [
@@ -236,7 +236,7 @@
     "id": "mutual_epiphany",
     "name": "Mutual Epiphany",
     "type": "Phenomenon",
-    "image": "https://api.scryfall.com/cards/named?exact=Mutual%20Epiphany&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Mutual%20Epiphany&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Mutual%20Epiphany&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Mutual Epiphany.md",
     "tags": [
@@ -248,7 +248,7 @@
     "id": "omenpath_instability",
     "name": "Omenpath Instability",
     "type": "Phenomenon",
-    "image": "https://api.scryfall.com/cards/named?exact=Omenpath%20Instability&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Omenpath%20Instability&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Omenpath%20Instability&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Omenpath Instability.md",
     "tags": [
@@ -273,7 +273,7 @@
     "id": "pin_trading",
     "name": "Pin Trading",
     "type": "Phenomenon",
-    "image": "https://api.scryfall.com/cards/named?exact=Pin%20Trading&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Pin%20Trading&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Pin%20Trading&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Pin Trading.md",
     "tags": [
@@ -286,7 +286,7 @@
     "id": "planewide_disaster",
     "name": "Planewide Disaster",
     "type": "Phenomenon",
-    "image": "https://api.scryfall.com/cards/named?exact=Planewide%20Disaster&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Planewide%20Disaster&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Planewide%20Disaster&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Planewide Disaster.md",
     "tags": [
@@ -298,7 +298,7 @@
     "id": "probability_flux",
     "name": "Probability Flux",
     "type": "Phenomenon",
-    "image": "https://api.scryfall.com/cards/named?exact=Probability%20Flux&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Probability%20Flux&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Probability%20Flux&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Probability Flux.md",
     "tags": [
@@ -311,7 +311,7 @@
     "id": "reality_shaping",
     "name": "Reality Shaping",
     "type": "Phenomenon",
-    "image": "https://api.scryfall.com/cards/named?exact=Reality%20Shaping&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Reality%20Shaping&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Reality%20Shaping&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Reality Shaping.md",
     "tags": [
@@ -323,7 +323,7 @@
     "id": "royal_booster",
     "name": "Royal Booster",
     "type": "Phenomenon",
-    "image": "https://api.scryfall.com/cards/named?exact=Royal%20Booster&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Royal%20Booster&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Royal%20Booster&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Royal Booster.md",
     "tags": [
@@ -348,7 +348,7 @@
     "id": "spatial_merging",
     "name": "Spatial Merging",
     "type": "Phenomenon",
-    "image": "https://api.scryfall.com/cards/named?exact=Spatial%20Merging&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Spatial%20Merging&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Spatial%20Merging&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Spatial Merging.md",
     "tags": [
@@ -372,7 +372,7 @@
     "id": "team_up",
     "name": "Team Up!",
     "type": "Phenomenon",
-    "image": "https://api.scryfall.com/cards/named?exact=Team%20Up!&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Team%20Up!&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Team%20Up!&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Team-Up!.md",
     "tags": [
@@ -385,7 +385,7 @@
     "id": "time_distortion",
     "name": "Time Distortion",
     "type": "Phenomenon",
-    "image": "https://api.scryfall.com/cards/named?exact=Time%20Distortion&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Time%20Distortion&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Time%20Distortion&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Time Distortion.md",
     "tags": [
@@ -409,7 +409,7 @@
     "id": "unknown_event",
     "name": "Unknown Event",
     "type": "Phenomenon",
-    "image": "https://api.scryfall.com/cards/named?exact=Unknown%20Event&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Unknown%20Event&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Unknown%20Event&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Unknown Event.md",
     "tags": [
@@ -422,7 +422,7 @@
     "id": "unleash_the_flux",
     "name": "Unleash the Flux",
     "type": "Phenomenon",
-    "image": "https://api.scryfall.com/cards/named?exact=Unleash%20the%20Flux&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Unleash%20the%20Flux&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Unleash%20the%20Flux&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Unleash the Flux.md",
     "tags": [
@@ -435,7 +435,7 @@
     "id": "year_end_review",
     "name": "Year End Review",
     "type": "Phenomenon",
-    "image": "https://api.scryfall.com/cards/named?exact=Year%20End%20Review&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Year%20End%20Review&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Year%20End%20Review&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Year-End Review.md",
     "tags": [
@@ -448,7 +448,7 @@
     "id": "academy_at_tolaria_west",
     "name": "Academy at Tolaria West",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Academy%20at%20Tolaria%20West&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Academy%20at%20Tolaria%20West&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Academy%20at%20Tolaria%20West&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Academy at Tolaria West.md",
     "tags": [
@@ -461,7 +461,7 @@
     "id": "agyrem",
     "name": "Agyrem",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Agyrem&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Agyrem&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Agyrem&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Agyrem.md",
     "tags": [
@@ -474,7 +474,7 @@
     "id": "akoum",
     "name": "Akoum",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Akoum&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Akoum&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Akoum&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Akoum.md",
     "tags": [
@@ -487,7 +487,7 @@
     "id": "amys_home",
     "name": "Amy's Home",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Amy's%20Home&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Amy's%20Home&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Amy's%20Home&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Amy's Home.md",
     "tags": [
@@ -501,7 +501,7 @@
     "id": "antarctic_research_base",
     "name": "Antarctic Research Base",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Antarctic%20Research%20Base&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Antarctic%20Research%20Base&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Antarctic%20Research%20Base&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Antarctic Research Base.md",
     "tags": [
@@ -515,7 +515,7 @@
     "id": "aplan_mortarium",
     "name": "Aplan Mortarium",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Aplan%20Mortarium&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Aplan%20Mortarium&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Aplan%20Mortarium&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Aplan Mortarium.md",
     "tags": [
@@ -529,7 +529,7 @@
     "id": "aretopolis",
     "name": "Aretopolis",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Aretopolis&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Aretopolis&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Aretopolis&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Aretopolis.md",
     "tags": [
@@ -542,7 +542,7 @@
     "id": "artist_alley",
     "name": "Artist Alley",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Artist%20Alley&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Artist%20Alley&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Artist%20Alley&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Artist Alley.md",
     "tags": [
@@ -555,7 +555,7 @@
     "id": "asmoranomardicadaistinaculdacars_kitchen",
     "name": "Asmoranomardicadaistinaculdacar's Kitchen",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Asmoranomardicadaistinaculdacar's%20Kitchen&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Asmoranomardicadaistinaculdacar's%20Kitchen&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Asmoranomardicadaistinaculdacar's%20Kitchen&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Asmoranomardicadaistinaculdacar's Kitchen.md",
     "tags": [
@@ -569,7 +569,7 @@
     "id": "astral_arena",
     "name": "Astral Arena",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Astral%20Arena&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Astral%20Arena&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Astral%20Arena&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Astral Arena.md",
     "tags": [
@@ -582,7 +582,7 @@
     "id": "bad_wolf_bay",
     "name": "Bad Wolf Bay",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Bad%20Wolf%20Bay&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Bad%20Wolf%20Bay&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Bad%20Wolf%20Bay&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Bad Wolf Bay.md",
     "tags": [
@@ -596,7 +596,7 @@
     "id": "bant",
     "name": "Bant",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Bant&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Bant&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Bant&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Bant.md",
     "tags": [
@@ -609,7 +609,7 @@
     "id": "besieged_viking_village",
     "name": "Besieged Viking Village",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Besieged%20Viking%20Village&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Besieged%20Viking%20Village&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Besieged%20Viking%20Village&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Besieged Viking Village.md",
     "tags": [
@@ -623,7 +623,7 @@
     "id": "bicycle_rack",
     "name": "Bicycle Rack",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Bicycle%20Rack&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Bicycle%20Rack&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Bicycle%20Rack&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Bicycle Rack.md",
     "tags": [
@@ -637,7 +637,7 @@
     "id": "black_lotus_lounge",
     "name": "Black Lotus Lounge",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Black%20Lotus%20Lounge&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Black%20Lotus%20Lounge&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Black%20Lotus%20Lounge&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Black Lotus Lounge.md",
     "tags": [
@@ -650,7 +650,7 @@
     "id": "bloodhill_bastion",
     "name": "Bloodhill Bastion",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Bloodhill%20Bastion&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Bloodhill%20Bastion&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Bloodhill%20Bastion&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Bloodhill Bastion.md",
     "tags": [
@@ -663,7 +663,7 @@
     "id": "bowie_base_one",
     "name": "Bowie Base One",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Bowie%20Base%20One&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Bowie%20Base%20One&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Bowie%20Base%20One&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Bowie Base One.md",
     "tags": [
@@ -677,7 +677,7 @@
     "id": "celestine_reef",
     "name": "Celestine Reef",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Celestine%20Reef&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Celestine%20Reef&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Celestine%20Reef&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Celestine Reef.md",
     "tags": [
@@ -690,7 +690,7 @@
     "id": "circus_of_the_sun",
     "name": "Circus of the Sun",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Circus%20of%20the%20Sun&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Circus%20of%20the%20Sun&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Circus%20of%20the%20Sun&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Circus of the Sun.md",
     "tags": [
@@ -704,7 +704,7 @@
     "id": "city_hall",
     "name": "City Hall",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=City%20Hall&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=City%20Hall&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=City%20Hall&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/City Hall.md",
     "tags": [
@@ -718,7 +718,7 @@
     "id": "city_of_the_daleks",
     "name": "City of the Daleks",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=City%20of%20the%20Daleks&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=City%20of%20the%20Daleks&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=City%20of%20the%20Daleks&set=who&format=image&version=small",
     "transcript": "cards/transcripts/City of the Daleks.md",
     "tags": [
@@ -732,7 +732,7 @@
     "id": "clamilton_estate",
     "name": "Clamilton Estate",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Clamilton%20Estate&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Clamilton%20Estate&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Clamilton%20Estate&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Clamilton Estate.md",
     "tags": [
@@ -746,7 +746,7 @@
     "id": "cliffside_market",
     "name": "Cliffside Market",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Cliffside%20Market&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Cliffside%20Market&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Cliffside%20Market&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Cliffside Market.md",
     "tags": [
@@ -759,7 +759,7 @@
     "id": "coal_hill_school",
     "name": "Coal Hill School",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Coal%20Hill%20School&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Coal%20Hill%20School&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Coal%20Hill%20School&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Coal Hill School.md",
     "tags": [
@@ -773,7 +773,7 @@
     "id": "dalek_intensive_care",
     "name": "Dalek Intensive Care",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Dalek%20Intensive%20Care&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Dalek%20Intensive%20Care&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Dalek%20Intensive%20Care&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Dalek Intensive Care.md",
     "tags": [
@@ -787,7 +787,7 @@
     "id": "deceptive_divination",
     "name": "Deceptive Divination",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Deceptive%20Divination&set=pssc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Deceptive%20Divination&set=pssc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Deceptive%20Divination&set=pssc&format=image&version=small",
     "transcript": "cards/transcripts/Deceptive Divination.md",
     "tags": [
@@ -801,7 +801,7 @@
     "id": "edge_of_malacol",
     "name": "Edge of Malacol",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Edge%20of%20Malacol&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Edge%20of%20Malacol&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Edge%20of%20Malacol&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Edge of Malacol.md",
     "tags": [
@@ -814,7 +814,7 @@
     "id": "eloren_wilds",
     "name": "Eloren Wilds",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Eloren%20Wilds&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Eloren%20Wilds&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Eloren%20Wilds&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Eloren Wilds.md",
     "tags": [
@@ -827,7 +827,7 @@
     "id": "elvish_impersonation_contest",
     "name": "Elvish Impersonation Contest",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Elvish%20Impersonation%20Contest&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Elvish%20Impersonation%20Contest&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Elvish%20Impersonation%20Contest&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Elvish Impersonation Contest.md",
     "tags": [
@@ -841,7 +841,7 @@
     "id": "enigma_ridges",
     "name": "Enigma Ridges",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Enigma%20Ridges&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Enigma%20Ridges&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Enigma%20Ridges&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Enigma Ridges.md",
     "tags": [
@@ -854,7 +854,7 @@
     "id": "esper",
     "name": "Esper",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Esper&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Esper&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Esper&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Esper.md",
     "tags": [
@@ -867,7 +867,7 @@
     "id": "event_horizon",
     "name": "Event Horizon",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Event%20Horizon&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Event%20Horizon&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Event%20Horizon&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Event Horizon.md",
     "tags": [
@@ -881,7 +881,7 @@
     "id": "fblthp_completely_utterly_totally_lost",
     "name": "Fblthp  Completely, Utterly, Totally Lost",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Fblthp%20%20Completely%2C%20Utterly%2C%20Totally%20Lost&set=pssc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Fblthp%20%20Completely%2C%20Utterly%2C%20Totally%20Lost&set=pssc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Fblthp%20%20Completely%2C%20Utterly%2C%20Totally%20Lost&set=pssc&format=image&version=small",
     "transcript": "cards/transcripts/Fblthp_ Completely, Utterly, Totally Lost.md",
     "tags": [
@@ -895,7 +895,7 @@
     "id": "feeding_grounds",
     "name": "Feeding Grounds",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Feeding%20Grounds&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Feeding%20Grounds&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Feeding%20Grounds&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Feeding Grounds.md",
     "tags": [
@@ -908,7 +908,7 @@
     "id": "fields_of_summer",
     "name": "Fields of Summer",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Fields%20of%20Summer&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Fields%20of%20Summer&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Fields%20of%20Summer&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Fields of Summer.md",
     "tags": [
@@ -921,7 +921,7 @@
     "id": "finally_left_handed_magic_cards",
     "name": "Finally! Left Handed Magic Cards",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Finally!%20Left%20Handed%20Magic%20Cards&set=pssc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Finally!%20Left%20Handed%20Magic%20Cards&set=pssc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Finally!%20Left%20Handed%20Magic%20Cards&set=pssc&format=image&version=small",
     "transcript": "cards/transcripts/Finally! Left-Handed Magic Cards.md",
     "tags": [
@@ -935,7 +935,7 @@
     "id": "furnace_layer",
     "name": "Furnace Layer",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Furnace%20Layer&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Furnace%20Layer&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Furnace%20Layer&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Furnace Layer.md",
     "tags": [
@@ -961,7 +961,7 @@
     "id": "game_knights_live",
     "name": "Game Knights Live",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Game%20Knights%20Live&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Game%20Knights%20Live&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Game%20Knights%20Live&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Game Knights Live.md",
     "tags": [
@@ -974,7 +974,7 @@
     "id": "gardens_of_tranquil_repose",
     "name": "Gardens of Tranquil Repose",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Gardens%20of%20Tranquil%20Repose&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Gardens%20of%20Tranquil%20Repose&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Gardens%20of%20Tranquil%20Repose&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Gardens of Tranquil Repose.md",
     "tags": [
@@ -988,7 +988,7 @@
     "id": "gavony",
     "name": "Gavony",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Gavony&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Gavony&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Gavony&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Gavony.md",
     "tags": [
@@ -1001,7 +1001,7 @@
     "id": "ghirapur_grand_prix",
     "name": "Ghirapur Grand Prix",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Ghirapur%20Grand%20Prix&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Ghirapur%20Grand%20Prix&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Ghirapur%20Grand%20Prix&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Ghirapur Grand Prix.md",
     "tags": [
@@ -1015,7 +1015,7 @@
     "id": "ghirapur",
     "name": "Ghirapur",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Ghirapur&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Ghirapur&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Ghirapur&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Ghirapur.md",
     "tags": [
@@ -1028,7 +1028,7 @@
     "id": "glen_elendra",
     "name": "Glen Elendra",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Glen%20Elendra&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Glen%20Elendra&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Glen%20Elendra&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Glen Elendra.md",
     "tags": [
@@ -1041,7 +1041,7 @@
     "id": "glimmervoid_basin",
     "name": "Glimmervoid Basin",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Glimmervoid%20Basin&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Glimmervoid%20Basin&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Glimmervoid%20Basin&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Glimmervoid Basin.md",
     "tags": [
@@ -1054,7 +1054,7 @@
     "id": "goldmeadow",
     "name": "Goldmeadow",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Goldmeadow&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Goldmeadow&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Goldmeadow&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Goldmeadow.md",
     "tags": [
@@ -1067,7 +1067,7 @@
     "id": "grand_ossuary",
     "name": "Grand Ossuary",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Grand%20Ossuary&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Grand%20Ossuary&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Grand%20Ossuary&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Grand Ossuary.md",
     "tags": [
@@ -1080,7 +1080,7 @@
     "id": "grixis",
     "name": "Grixis",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Grixis&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Grixis&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Grixis&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Grixis.md",
     "tags": [
@@ -1093,7 +1093,7 @@
     "id": "grove_of_the_dreampods",
     "name": "Grove of the Dreampods",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Grove%20of%20the%20Dreampods&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Grove%20of%20the%20Dreampods&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Grove%20of%20the%20Dreampods&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Grove of the Dreampods.md",
     "tags": [
@@ -1119,7 +1119,7 @@
     "id": "happy_yargle_day",
     "name": "Happy Yargle Day!",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Happy%20Yargle%20Day!&set=pssc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Happy%20Yargle%20Day!&set=pssc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Happy%20Yargle%20Day!&set=pssc&format=image&version=small",
     "transcript": "cards/transcripts/Happy Yargle Day!.md",
     "tags": [
@@ -1146,7 +1146,7 @@
     "id": "hedron_fields_of_agadeem",
     "name": "Hedron Fields of Agadeem",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Hedron%20Fields%20of%20Agadeem&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Hedron%20Fields%20of%20Agadeem&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Hedron%20Fields%20of%20Agadeem&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Hedron Fields of Agadeem.md",
     "tags": [
@@ -1159,7 +1159,7 @@
     "id": "high_noon_at_thunder_junction",
     "name": "High Noon At Thunder Junction",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=High%20Noon%20At%20Thunder%20Junction&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=High%20Noon%20At%20Thunder%20Junction&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=High%20Noon%20At%20Thunder%20Junction&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/High Noon At Thunder Junction.md",
     "tags": [
@@ -1173,7 +1173,7 @@
     "id": "horizon_boughs",
     "name": "Horizon Boughs",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Horizon%20Boughs&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Horizon%20Boughs&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Horizon%20Boughs&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Horizon Boughs.md",
     "tags": [
@@ -1186,7 +1186,7 @@
     "id": "hotel_of_fears",
     "name": "Hotel of Fears",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Hotel%20of%20Fears&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Hotel%20of%20Fears&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Hotel%20of%20Fears&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Hotel of Fears.md",
     "tags": [
@@ -1200,7 +1200,7 @@
     "id": "imaginary_friends_plane",
     "name": "Imaginary Friends (Plane)",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Imaginary%20Friends%20(Plane)&set=pssc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Imaginary%20Friends%20(Plane)&set=pssc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Imaginary%20Friends%20(Plane)&set=pssc&format=image&version=small",
     "transcript": "cards/transcripts/Imaginary Friends (Plane).md",
     "tags": [
@@ -1214,7 +1214,7 @@
     "id": "immersturm",
     "name": "Immersturm",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Immersturm&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Immersturm&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Immersturm&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Immersturm.md",
     "tags": [
@@ -1227,7 +1227,7 @@
     "id": "inys_haen",
     "name": "Inys Haen",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Inys%20Haen&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Inys%20Haen&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Inys%20Haen&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Inys Haen.md",
     "tags": [
@@ -1240,7 +1240,7 @@
     "id": "isle_of_vesuva",
     "name": "Isle of Vesuva",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Isle%20of%20Vesuva&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Isle%20of%20Vesuva&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Isle%20of%20Vesuva&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Isle of Vesuva.md",
     "tags": [
@@ -1253,7 +1253,7 @@
     "id": "izzet_steam_maze",
     "name": "Izzet Steam Maze",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Izzet%20Steam%20Maze&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Izzet%20Steam%20Maze&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Izzet%20Steam%20Maze&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Izzet Steam Maze.md",
     "tags": [
@@ -1266,7 +1266,7 @@
     "id": "jaliras_show",
     "name": "Jalira's Show",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Jalira's%20Show&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Jalira's%20Show&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Jalira's%20Show&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Jalira's Show.md",
     "tags": [
@@ -1280,7 +1280,7 @@
     "id": "jund",
     "name": "Jund",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Jund&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Jund&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Jund&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Jund.md",
     "tags": [
@@ -1293,7 +1293,7 @@
     "id": "kerblam_warehouse",
     "name": "Kerblam! Warehouse",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Kerblam!%20Warehouse&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Kerblam!%20Warehouse&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Kerblam!%20Warehouse&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Kerblam! Warehouse.md",
     "tags": [
@@ -1307,7 +1307,7 @@
     "id": "kessig",
     "name": "Kessig",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Kessig&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Kessig&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Kessig&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Kessig.md",
     "tags": [
@@ -1320,7 +1320,7 @@
     "id": "ketria",
     "name": "Ketria",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Ketria&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Ketria&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Ketria&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Ketria.md",
     "tags": [
@@ -1333,7 +1333,7 @@
     "id": "kharasha_foothills",
     "name": "Kharasha Foothills",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Kharasha%20Foothills&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Kharasha%20Foothills&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Kharasha%20Foothills&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Kharasha Foothills.md",
     "tags": [
@@ -1346,7 +1346,7 @@
     "id": "kilnspire_district",
     "name": "Kilnspire District",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Kilnspire%20District&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Kilnspire%20District&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Kilnspire%20District&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Kilnspire District.md",
     "tags": [
@@ -1359,7 +1359,7 @@
     "id": "krosa",
     "name": "Krosa",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Krosa&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Krosa&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Krosa&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Krosa.md",
     "tags": [
@@ -1372,7 +1372,7 @@
     "id": "lair_of_the_ashen_idol",
     "name": "Lair of the Ashen Idol",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Lair%20of%20the%20Ashen%20Idol&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Lair%20of%20the%20Ashen%20Idol&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Lair%20of%20the%20Ashen%20Idol&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Lair of the Ashen Idol.md",
     "tags": [
@@ -1385,7 +1385,7 @@
     "id": "lake_silencio",
     "name": "Lake Silencio",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Lake%20Silencio&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Lake%20Silencio&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Lake%20Silencio&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Lake Silencio.md",
     "tags": [
@@ -1399,7 +1399,7 @@
     "id": "lethe_lake",
     "name": "Lethe Lake",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Lethe%20Lake&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Lethe%20Lake&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Lethe%20Lake&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Lethe Lake.md",
     "tags": [
@@ -1412,7 +1412,7 @@
     "id": "lil_giri_saves_the_day",
     "name": "Li'l Giri Saves the Day",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Li'l%20Giri%20Saves%20the%20Day&set=pssc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Li'l%20Giri%20Saves%20the%20Day&set=pssc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Li'l%20Giri%20Saves%20the%20Day&set=pssc&format=image&version=small",
     "transcript": "cards/transcripts/Li'l Giri Saves the Day.md",
     "tags": [
@@ -1426,7 +1426,7 @@
     "id": "littjara",
     "name": "Littjara",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Littjara&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Littjara&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Littjara&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Littjara.md",
     "tags": [
@@ -1439,7 +1439,7 @@
     "id": "llanowar",
     "name": "Llanowar",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Llanowar&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Llanowar&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Llanowar&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Llanowar.md",
     "tags": [
@@ -1465,7 +1465,7 @@
     "id": "math_is_for_blockers_plane",
     "name": "Math is for Blockers (Plane)",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Math%20is%20for%20Blockers%20(Plane)&set=pssc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Math%20is%20for%20Blockers%20(Plane)&set=pssc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Math%20is%20for%20Blockers%20(Plane)&set=pssc&format=image&version=small",
     "transcript": "cards/transcripts/Math is for Blockers (Plane).md",
     "tags": [
@@ -1479,7 +1479,7 @@
     "id": "megaflora_jungle",
     "name": "Megaflora Jungle",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Megaflora%20Jungle&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Megaflora%20Jungle&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Megaflora%20Jungle&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Megaflora Jungle.md",
     "tags": [
@@ -1505,7 +1505,7 @@
     "id": "minamo",
     "name": "Minamo",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Minamo&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Minamo&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Minamo&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Minamo.md",
     "tags": [
@@ -1518,7 +1518,7 @@
     "id": "mirrored_depths",
     "name": "Mirrored Depths",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Mirrored%20Depths&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Mirrored%20Depths&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Mirrored%20Depths&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Mirrored Depths.md",
     "tags": [
@@ -1531,7 +1531,7 @@
     "id": "mojave_desert",
     "name": "Mojave Desert",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Mojave%20Desert&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Mojave%20Desert&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Mojave%20Desert&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Mojave Desert.md",
     "tags": [
@@ -1545,7 +1545,7 @@
     "id": "mondassian_colony_ship",
     "name": "Mondassian Colony Ship",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Mondassian%20Colony%20Ship&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Mondassian%20Colony%20Ship&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Mondassian%20Colony%20Ship&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Mondassian Colony Ship.md",
     "tags": [
@@ -1559,7 +1559,7 @@
     "id": "mount_keralia",
     "name": "Mount Keralia",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Mount%20Keralia&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Mount%20Keralia&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Mount%20Keralia&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Mount Keralia.md",
     "tags": [
@@ -1572,7 +1572,7 @@
     "id": "multiversal_high_council",
     "name": "Multiversal High Council",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Multiversal%20High%20Council&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Multiversal%20High%20Council&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Multiversal%20High%20Council&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Multiversal High Council.md",
     "tags": [
@@ -1586,7 +1586,7 @@
     "id": "murasa",
     "name": "Murasa",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Murasa&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Murasa&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Murasa&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Murasa.md",
     "tags": [
@@ -1599,7 +1599,7 @@
     "id": "mycosynthwave",
     "name": "Mycosynthwave",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Mycosynthwave&set=pssc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Mycosynthwave&set=pssc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Mycosynthwave&set=pssc&format=image&version=small",
     "transcript": "cards/transcripts/Mycosynthwave.md",
     "tags": [
@@ -1613,7 +1613,7 @@
     "id": "naar_isle",
     "name": "Naar Isle",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Naar%20Isle&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Naar%20Isle&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Naar%20Isle&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Naar Isle.md",
     "tags": [
@@ -1626,7 +1626,7 @@
     "id": "naktamun",
     "name": "Naktamun",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Naktamun&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Naktamun&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Naktamun&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Naktamun.md",
     "tags": [
@@ -1639,7 +1639,7 @@
     "id": "naya",
     "name": "Naya",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Naya&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Naya&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Naya&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Naya.md",
     "tags": [
@@ -1652,7 +1652,7 @@
     "id": "nephalia",
     "name": "Nephalia",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Nephalia&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Nephalia&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Nephalia&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Nephalia.md",
     "tags": [
@@ -1665,7 +1665,7 @@
     "id": "new_argive",
     "name": "New Argive",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=New%20Argive&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=New%20Argive&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=New%20Argive&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/New Argive.md",
     "tags": [
@@ -1678,7 +1678,7 @@
     "id": "new_new_york",
     "name": "New New York",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=New%20New%20York&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=New%20New%20York&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=New%20New%20York&set=who&format=image&version=small",
     "transcript": "cards/transcripts/New New York.md",
     "tags": [
@@ -1692,7 +1692,7 @@
     "id": "new_players_journey",
     "name": "New Player's Journey",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=New%20Player's%20Journey&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=New%20Player's%20Journey&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=New%20Player's%20Journey&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/New Player's Journey.md",
     "tags": [
@@ -1706,7 +1706,7 @@
     "id": "no_way_out_playtest",
     "name": "No Way Out (Playtest)",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=No%20Way%20Out%20(Playtest)&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=No%20Way%20Out%20(Playtest)&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=No%20Way%20Out%20(Playtest)&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/No Way Out (Playtest).md",
     "tags": [
@@ -1720,7 +1720,7 @@
     "id": "norns_dominion",
     "name": "Norn's Dominion",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Norn's%20Dominion&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Norn's%20Dominion&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Norn's%20Dominion&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Norn's Dominion.md",
     "tags": [
@@ -1733,7 +1733,7 @@
     "id": "norns_seedcore",
     "name": "Norn's Seedcore",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Norn's%20Seedcore&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Norn's%20Seedcore&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Norn's%20Seedcore&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Norn's Seedcore.md",
     "tags": [
@@ -1746,7 +1746,7 @@
     "id": "north_pole_research_base",
     "name": "North Pole Research Base",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=North%20Pole%20Research%20Base&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=North%20Pole%20Research%20Base&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=North%20Pole%20Research%20Base&set=who&format=image&version=small",
     "transcript": "cards/transcripts/North Pole Research Base.md",
     "tags": [
@@ -1760,7 +1760,7 @@
     "id": "nyx",
     "name": "Nyx",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Nyx&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Nyx&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Nyx&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Nyx.md",
     "tags": [
@@ -1773,7 +1773,7 @@
     "id": "onakke_catacomb",
     "name": "Onakke Catacomb",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Onakke%20Catacomb&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Onakke%20Catacomb&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Onakke%20Catacomb&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Onakke Catacomb.md",
     "tags": [
@@ -1786,7 +1786,7 @@
     "id": "ood_sphere",
     "name": "Ood Sphere",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Ood%20Sphere&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Ood%20Sphere&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Ood%20Sphere&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Ood Sphere.md",
     "tags": [
@@ -1800,7 +1800,7 @@
     "id": "orochi_colony",
     "name": "Orochi Colony",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Orochi%20Colony&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Orochi%20Colony&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Orochi%20Colony&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Orochi Colony.md",
     "tags": [
@@ -1813,7 +1813,7 @@
     "id": "orzhova",
     "name": "Orzhova",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Orzhova&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Orzhova&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Orzhova&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Orzhova.md",
     "tags": [
@@ -1826,7 +1826,7 @@
     "id": "otaria",
     "name": "Otaria",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Otaria&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Otaria&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Otaria&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Otaria.md",
     "tags": [
@@ -1839,7 +1839,7 @@
     "id": "otecln",
     "name": "Oteclán",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Otecl%C3%A1n&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Otecl%C3%A1n&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Otecl%C3%A1n&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Oteclán.md",
     "tags": [
@@ -1853,7 +1853,7 @@
     "id": "paliano",
     "name": "Paliano",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Paliano&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Paliano&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Paliano&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Paliano.md",
     "tags": [
@@ -1866,7 +1866,7 @@
     "id": "panopticon",
     "name": "Panopticon",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Panopticon&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Panopticon&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Panopticon&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Panopticon.md",
     "tags": [
@@ -1879,7 +1879,7 @@
     "id": "pin_collectors_booth",
     "name": "Pin Collector's Booth",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Pin%20Collector's%20Booth&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Pin%20Collector's%20Booth&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Pin%20Collector's%20Booth&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Pin Collector's Booth.md",
     "tags": [
@@ -1892,7 +1892,7 @@
     "id": "pompeii",
     "name": "Pompeii",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Pompeii&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Pompeii&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Pompeii&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Pompeii.md",
     "tags": [
@@ -1906,7 +1906,7 @@
     "id": "pools_of_becoming",
     "name": "Pools of Becoming",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Pools%20of%20Becoming&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Pools%20of%20Becoming&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Pools%20of%20Becoming&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Pools of Becoming.md",
     "tags": [
@@ -1919,7 +1919,7 @@
     "id": "prahv",
     "name": "Prahv",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Prahv&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Prahv&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Prahv&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Prahv.md",
     "tags": [
@@ -1932,7 +1932,7 @@
     "id": "prestons_stage",
     "name": "Preston's Stage",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Preston's%20Stage&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Preston's%20Stage&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Preston's%20Stage&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Preston's Stage.md",
     "tags": [
@@ -1946,7 +1946,7 @@
     "id": "prime_ministers_cabinet_room",
     "name": "Prime Minister's Cabinet Room",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Prime%20Minister's%20Cabinet%20Room&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Prime%20Minister's%20Cabinet%20Room&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Prime%20Minister's%20Cabinet%20Room&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Prime Minister's Cabinet Room.md",
     "tags": [
@@ -1960,7 +1960,7 @@
     "id": "pursued_by_something",
     "name": "Pursued by Something",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Pursued%20by%20Something&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Pursued%20by%20Something&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Pursued%20by%20Something&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Pursued by Something.md",
     "tags": [
@@ -1974,7 +1974,7 @@
     "id": "quicksilver_sea",
     "name": "Quicksilver Sea",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Quicksilver%20Sea&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Quicksilver%20Sea&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Quicksilver%20Sea&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Quicksilver Sea.md",
     "tags": [
@@ -1987,7 +1987,7 @@
     "id": "raiders_allegiance",
     "name": "Raiders' Allegiance",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Raiders'%20Allegiance&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Raiders'%20Allegiance&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Raiders'%20Allegiance&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Raiders' Allegiance.md",
     "tags": [
@@ -2001,7 +2001,7 @@
     "id": "ravens_run",
     "name": "Raven's Run",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Raven's%20Run&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Raven's%20Run&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Raven's%20Run&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Raven's Run.md",
     "tags": [
@@ -2014,7 +2014,7 @@
     "id": "riptide_island",
     "name": "Riptide Island",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Riptide%20Island&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Riptide%20Island&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Riptide%20Island&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Riptide Island.md",
     "tags": [
@@ -2027,7 +2027,7 @@
     "id": "sanctum_of_serra",
     "name": "Sanctum of Serra",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Sanctum%20of%20Serra&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Sanctum%20of%20Serra&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Sanctum%20of%20Serra&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Sanctum of Serra.md",
     "tags": [
@@ -2040,7 +2040,7 @@
     "id": "sans_mercy",
     "name": "Sans Mercy",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Sans%20Mercy&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Sans%20Mercy&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Sans%20Mercy&format=image&version=small",
     "transcript": "cards/transcripts/Sans Mercy.md",
     "tags": [
@@ -2053,7 +2053,7 @@
     "id": "sea_of_sand",
     "name": "Sea of Sand",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Sea%20of%20Sand&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Sea%20of%20Sand&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Sea%20of%20Sand&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Sea of Sand.md",
     "tags": [
@@ -2066,7 +2066,7 @@
     "id": "selesnya_loft_gardens",
     "name": "Selesnya Loft Gardens",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Selesnya%20Loft%20Gardens&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Selesnya%20Loft%20Gardens&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Selesnya%20Loft%20Gardens&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Selesnya Loft Gardens.md",
     "tags": [
@@ -2079,7 +2079,7 @@
     "id": "shiv",
     "name": "Shiv",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Shiv&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Shiv&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Shiv&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Shiv.md",
     "tags": [
@@ -2092,7 +2092,7 @@
     "id": "shrinking_plane",
     "name": "Shrinking Plane",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Shrinking%20Plane&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Shrinking%20Plane&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Shrinking%20Plane&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Shrinking Plane.md",
     "tags": [
@@ -2106,7 +2106,7 @@
     "id": "shy_town",
     "name": "Shy Town",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Shy%20Town&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Shy%20Town&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Shy%20Town&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Shy Town.md",
     "tags": [
@@ -2120,7 +2120,7 @@
     "id": "singing_towers_of_darillium",
     "name": "Singing Towers of Darillium",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Singing%20Towers%20of%20Darillium&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Singing%20Towers%20of%20Darillium&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Singing%20Towers%20of%20Darillium&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Singing Towers of Darillium.md",
     "tags": [
@@ -2134,7 +2134,7 @@
     "id": "sky_deck",
     "name": "Sky Deck",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Sky%20Deck&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Sky%20Deck&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Sky%20Deck&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Sky Deck.md",
     "tags": [
@@ -2148,7 +2148,7 @@
     "id": "skybreen",
     "name": "Skybreen",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Skybreen&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Skybreen&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Skybreen&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Skybreen.md",
     "tags": [
@@ -2161,7 +2161,7 @@
     "id": "sokenzan",
     "name": "Sokenzan",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Sokenzan&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Sokenzan&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Sokenzan&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Sokenzan.md",
     "tags": [
@@ -2174,7 +2174,7 @@
     "id": "sorins_remastered_manor",
     "name": "Sorin's Remastered Manor",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Sorin's%20Remastered%20Manor&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Sorin's%20Remastered%20Manor&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Sorin's%20Remastered%20Manor&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Sorin's Remastered Manor.md",
     "tags": [
@@ -2188,7 +2188,7 @@
     "id": "spectrox_mines",
     "name": "Spectrox Mines",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Spectrox%20Mines&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Spectrox%20Mines&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Spectrox%20Mines&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Spectrox Mines.md",
     "tags": [
@@ -2202,7 +2202,7 @@
     "id": "stairs_to_infinity",
     "name": "Stairs to Infinity",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Stairs%20to%20Infinity&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Stairs%20to%20Infinity&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Stairs%20to%20Infinity&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Stairs to Infinity.md",
     "tags": [
@@ -2215,7 +2215,7 @@
     "id": "stensia",
     "name": "Stensia",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Stensia&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Stensia&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Stensia&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Stensia.md",
     "tags": [
@@ -2228,7 +2228,7 @@
     "id": "stormcage_containment_facility",
     "name": "Stormcage Containment Facility",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Stormcage%20Containment%20Facility&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Stormcage%20Containment%20Facility&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Stormcage%20Containment%20Facility&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Stormcage Containment Facility.md",
     "tags": [
@@ -2242,7 +2242,7 @@
     "id": "strixhaven",
     "name": "Strixhaven",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Strixhaven&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Strixhaven&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Strixhaven&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Strixhaven.md",
     "tags": [
@@ -2255,7 +2255,7 @@
     "id": "stronghold_furnace",
     "name": "Stronghold Furnace",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Stronghold%20Furnace&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Stronghold%20Furnace&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Stronghold%20Furnace&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Stronghold Furnace.md",
     "tags": [
@@ -2268,7 +2268,7 @@
     "id": "stroopwafel_cafe",
     "name": "Stroopwafel Cafe",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Stroopwafel%20Cafe&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Stroopwafel%20Cafe&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Stroopwafel%20Cafe&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Stroopwafel Cafe.md",
     "tags": [
@@ -2282,7 +2282,7 @@
     "id": "takenuma",
     "name": "Takenuma",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Takenuma&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Takenuma&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Takenuma&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Takenuma.md",
     "tags": [
@@ -2295,7 +2295,7 @@
     "id": "talon_gates",
     "name": "Talon Gates",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Talon%20Gates&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Talon%20Gates&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Talon%20Gates&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Talon Gates.md",
     "tags": [
@@ -2308,7 +2308,7 @@
     "id": "tardis_bay",
     "name": "TARDIS Bay",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=TARDIS%20Bay&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=TARDIS%20Bay&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=TARDIS%20Bay&set=who&format=image&version=small",
     "transcript": "cards/transcripts/TARDIS Bay.md",
     "tags": [
@@ -2322,7 +2322,7 @@
     "id": "tarnation",
     "name": "Tarnation",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Tarnation&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Tarnation&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Tarnation&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Tarnation.md",
     "tags": [
@@ -2336,7 +2336,7 @@
     "id": "tazeem",
     "name": "Tazeem",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Tazeem&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Tazeem&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Tazeem&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Tazeem.md",
     "tags": [
@@ -2349,7 +2349,7 @@
     "id": "tember_city",
     "name": "Tember City",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Tember%20City&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Tember%20City&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Tember%20City&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Tember City.md",
     "tags": [
@@ -2362,7 +2362,7 @@
     "id": "temple_of_atropos",
     "name": "Temple of Atropos",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Temple%20of%20Atropos&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Temple%20of%20Atropos&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Temple%20of%20Atropos&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Temple of Atropos.md",
     "tags": [
@@ -2376,7 +2376,7 @@
     "id": "ten_wizards_mountain",
     "name": "Ten Wizards Mountain",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Ten%20Wizards%20Mountain&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Ten%20Wizards%20Mountain&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Ten%20Wizards%20Mountain&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Ten Wizards Mountain.md",
     "tags": [
@@ -2389,7 +2389,7 @@
     "id": "the_aether_flues",
     "name": "The Aether Flues",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Aether%20Flues&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Aether%20Flues&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Aether%20Flues&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/The Aether Flues.md",
     "tags": [
@@ -2402,7 +2402,7 @@
     "id": "the_bean",
     "name": "The Bean",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Bean&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Bean&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Bean&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/The Bean.md",
     "tags": [
@@ -2416,7 +2416,7 @@
     "id": "the_caldaia",
     "name": "The Caldaia",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Caldaia&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Caldaia&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Caldaia&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/The Caldaia.md",
     "tags": [
@@ -2429,7 +2429,7 @@
     "id": "the_cave_of_skulls",
     "name": "The Cave of Skulls",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Cave%20of%20Skulls&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Cave%20of%20Skulls&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Cave%20of%20Skulls&set=who&format=image&version=small",
     "transcript": "cards/transcripts/The Cave of Skulls.md",
     "tags": [
@@ -2443,7 +2443,7 @@
     "id": "the_cheetah_planet",
     "name": "The Cheetah Planet",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Cheetah%20Planet&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Cheetah%20Planet&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Cheetah%20Planet&set=who&format=image&version=small",
     "transcript": "cards/transcripts/The Cheetah Planet.md",
     "tags": [
@@ -2457,7 +2457,7 @@
     "id": "the_command_zone",
     "name": "The Command Zone",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Command%20Zone&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Command%20Zone&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Command%20Zone&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/The Command Zone.md",
     "tags": [
@@ -2470,7 +2470,7 @@
     "id": "the_dark_barony",
     "name": "The Dark Barony",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Dark%20Barony&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Dark%20Barony&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Dark%20Barony&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/The Dark Barony.md",
     "tags": [
@@ -2496,7 +2496,7 @@
     "id": "the_dining_car",
     "name": "The Dining Car",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Dining%20Car&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Dining%20Car&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Dining%20Car&set=who&format=image&version=small",
     "transcript": "cards/transcripts/The Dining Car.md",
     "tags": [
@@ -2510,7 +2510,7 @@
     "id": "the_doctors_childhood_barn",
     "name": "The Doctor's Childhood Barn",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Doctor's%20Childhood%20Barn&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Doctor's%20Childhood%20Barn&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Doctor's%20Childhood%20Barn&set=who&format=image&version=small",
     "transcript": "cards/transcripts/The Doctor's Childhood Barn.md",
     "tags": [
@@ -2524,7 +2524,7 @@
     "id": "the_doctors_tomb",
     "name": "The Doctor's Tomb",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Doctor's%20Tomb&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Doctor's%20Tomb&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Doctor's%20Tomb&set=who&format=image&version=small",
     "transcript": "cards/transcripts/The Doctor's Tomb.md",
     "tags": [
@@ -2538,7 +2538,7 @@
     "id": "the_drum_mining_facility",
     "name": "The Drum, Mining Facility",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Drum%2C%20Mining%20Facility&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Drum%2C%20Mining%20Facility&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Drum%2C%20Mining%20Facility&set=who&format=image&version=small",
     "transcript": "cards/transcripts/The Drum, Mining Facility.md",
     "tags": [
@@ -2552,7 +2552,7 @@
     "id": "the_eon_fog",
     "name": "The Eon Fog",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Eon%20Fog&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Eon%20Fog&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Eon%20Fog&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/The Eon Fog.md",
     "tags": [
@@ -2578,7 +2578,7 @@
     "id": "the_fertile_lands_of_saulvinia",
     "name": "The Fertile Lands of Saulvinia",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Fertile%20Lands%20of%20Saulvinia&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Fertile%20Lands%20of%20Saulvinia&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Fertile%20Lands%20of%20Saulvinia&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/The Fertile Lands of Saulvinia.md",
     "tags": [
@@ -2591,7 +2591,7 @@
     "id": "the_food_court",
     "name": "The Food Court",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Food%20Court&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Food%20Court&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Food%20Court&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/The Food Court.md",
     "tags": [
@@ -2605,7 +2605,7 @@
     "id": "the_fourth_sphere",
     "name": "The Fourth Sphere",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Fourth%20Sphere&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Fourth%20Sphere&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Fourth%20Sphere&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/The Fourth Sphere.md",
     "tags": [
@@ -2618,7 +2618,7 @@
     "id": "the_golden_city_of_orazca",
     "name": "The Golden City of Orazca",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Golden%20City%20of%20Orazca&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Golden%20City%20of%20Orazca&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Golden%20City%20of%20Orazca&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/The Golden City of Orazca.md",
     "tags": [
@@ -2631,7 +2631,7 @@
     "id": "the_great_aerie",
     "name": "The Great Aerie",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Great%20Aerie&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Great%20Aerie&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Great%20Aerie&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/The Great Aerie.md",
     "tags": [
@@ -2644,7 +2644,7 @@
     "id": "the_great_forest",
     "name": "The Great Forest",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Great%20Forest&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Great%20Forest&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Great%20Forest&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/The Great Forest.md",
     "tags": [
@@ -2657,7 +2657,7 @@
     "id": "the_hippodrome",
     "name": "The Hippodrome",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Hippodrome&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Hippodrome&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Hippodrome&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/The Hippodrome.md",
     "tags": [
@@ -2670,7 +2670,7 @@
     "id": "the_lux_foundation_library",
     "name": "The Lux Foundation Library",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Lux%20Foundation%20Library&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Lux%20Foundation%20Library&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Lux%20Foundation%20Library&set=who&format=image&version=small",
     "transcript": "cards/transcripts/The Lux Foundation Library.md",
     "tags": [
@@ -2684,7 +2684,7 @@
     "id": "the_maelstrom",
     "name": "The Maelstrom",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Maelstrom&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Maelstrom&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Maelstrom&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/The Maelstrom.md",
     "tags": [
@@ -2697,7 +2697,7 @@
     "id": "the_matrix_of_time",
     "name": "The Matrix of Time",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Matrix%20of%20Time&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Matrix%20of%20Time&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Matrix%20of%20Time&set=who&format=image&version=small",
     "transcript": "cards/transcripts/The Matrix of Time.md",
     "tags": [
@@ -2711,7 +2711,7 @@
     "id": "the_moonbase",
     "name": "The Moonbase",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Moonbase&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Moonbase&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Moonbase&set=who&format=image&version=small",
     "transcript": "cards/transcripts/The Moonbase.md",
     "tags": [
@@ -2725,7 +2725,7 @@
     "id": "the_pit",
     "name": "The Pit",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Pit&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Pit&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Pit&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/The Pit.md",
     "tags": [
@@ -2738,7 +2738,7 @@
     "id": "the_pro_tour",
     "name": "The Pro Tour",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Pro%20Tour&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Pro%20Tour&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Pro%20Tour&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/The Pro Tour.md",
     "tags": [
@@ -2751,7 +2751,7 @@
     "id": "the_pyramid_of_mars",
     "name": "The Pyramid of Mars",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Pyramid%20of%20Mars&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Pyramid%20of%20Mars&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Pyramid%20of%20Mars&set=who&format=image&version=small",
     "transcript": "cards/transcripts/The Pyramid of Mars.md",
     "tags": [
@@ -2765,7 +2765,7 @@
     "id": "the_sphere",
     "name": "The Sphere",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Sphere&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Sphere&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Sphere&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/The Sphere.md",
     "tags": [
@@ -2792,7 +2792,7 @@
     "id": "the_western_cloud",
     "name": "The Western Cloud",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Western%20Cloud&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Western%20Cloud&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Western%20Cloud&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/The Western Cloud.md",
     "tags": [
@@ -2805,7 +2805,7 @@
     "id": "the_wilds",
     "name": "The Wilds",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Wilds&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Wilds&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Wilds&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/The Wilds.md",
     "tags": [
@@ -2818,7 +2818,7 @@
     "id": "the_windy_city",
     "name": "The Windy City",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Windy%20City&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Windy%20City&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Windy%20City&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/The Windy City.md",
     "tags": [
@@ -2832,7 +2832,7 @@
     "id": "the_zephyr_maze",
     "name": "The Zephyr Maze",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=The%20Zephyr%20Maze&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=The%20Zephyr%20Maze&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=The%20Zephyr%20Maze&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/The Zephyr Maze.md",
     "tags": [
@@ -2858,7 +2858,7 @@
     "id": "towashi",
     "name": "Towashi",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Towashi&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Towashi&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Towashi&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Towashi.md",
     "tags": [
@@ -2871,7 +2871,7 @@
     "id": "trail_of_the_mage_rings",
     "name": "Trail of the Mage Rings",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Trail%20of%20the%20Mage%20Rings&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Trail%20of%20the%20Mage%20Rings&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Trail%20of%20the%20Mage%20Rings&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Trail of the Mage-Rings.md",
     "tags": [
@@ -2884,7 +2884,7 @@
     "id": "truga_jungle",
     "name": "Truga Jungle",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Truga%20Jungle&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Truga%20Jungle&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Truga%20Jungle&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Truga Jungle.md",
     "tags": [
@@ -2897,7 +2897,7 @@
     "id": "turri_island",
     "name": "Turri Island",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Turri%20Island&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Turri%20Island&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Turri%20Island&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Turri Island.md",
     "tags": [
@@ -2910,7 +2910,7 @@
     "id": "two_streams_facility",
     "name": "Two Streams Facility",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Two%20Streams%20Facility&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Two%20Streams%20Facility&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Two%20Streams%20Facility&set=who&format=image&version=small",
     "transcript": "cards/transcripts/Two Streams Facility.md",
     "tags": [
@@ -2924,7 +2924,7 @@
     "id": "undercity_reaches",
     "name": "Undercity Reaches",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Undercity%20Reaches&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Undercity%20Reaches&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Undercity%20Reaches&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Undercity Reaches.md",
     "tags": [
@@ -2937,7 +2937,7 @@
     "id": "unit_headquarters",
     "name": "UNIT Headquarters",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=UNIT%20Headquarters&set=who&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=UNIT%20Headquarters&set=who&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=UNIT%20Headquarters&set=who&format=image&version=small",
     "transcript": "cards/transcripts/UNIT Headquarters.md",
     "tags": [
@@ -2951,7 +2951,7 @@
     "id": "unyaro",
     "name": "Unyaro",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Unyaro&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Unyaro&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Unyaro&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Unyaro.md",
     "tags": [
@@ -2964,7 +2964,7 @@
     "id": "valors_reach",
     "name": "Valor's Reach",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Valor's%20Reach&set=moc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Valor's%20Reach&set=moc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Valor's%20Reach&set=moc&format=image&version=small",
     "transcript": "cards/transcripts/Valor's Reach.md",
     "tags": [
@@ -2977,7 +2977,7 @@
     "id": "velis_vel",
     "name": "Velis Vel",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Velis%20Vel&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Velis%20Vel&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Velis%20Vel&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Velis Vel.md",
     "tags": [
@@ -2990,7 +2990,7 @@
     "id": "we_hope_you_like_squirrels",
     "name": "We Hope You Like Squirrels",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=We%20Hope%20You%20Like%20Squirrels&set=pssc&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=We%20Hope%20You%20Like%20Squirrels&set=pssc&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=We%20Hope%20You%20Like%20Squirrels&set=pssc&format=image&version=small",
     "transcript": "cards/transcripts/We Hope You Like Squirrels.md",
     "tags": [
@@ -3004,7 +3004,7 @@
     "id": "welcome_to_valley",
     "name": "Welcome to Valley",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Welcome%20to%20Valley&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Welcome%20to%20Valley&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Welcome%20to%20Valley&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Welcome to Valley.md",
     "tags": [
@@ -3018,7 +3018,7 @@
     "id": "windmill_farm",
     "name": "Windmill Farm",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Windmill%20Farm&set=punk&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Windmill%20Farm&set=punk&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Windmill%20Farm&set=punk&format=image&version=small",
     "transcript": "cards/transcripts/Windmill Farm.md",
     "tags": [
@@ -3032,7 +3032,7 @@
     "id": "windriddle_palaces",
     "name": "Windriddle Palaces",
     "type": "Plane",
-    "image": "https://api.scryfall.com/cards/named?exact=Windriddle%20Palaces&set=opca&format=image&version=normal",
+    "image": "https://api.scryfall.com/cards/named?exact=Windriddle%20Palaces&set=opca&format=image&version=large",
     "thumb": "https://api.scryfall.com/cards/named?exact=Windriddle%20Palaces&set=opca&format=image&version=small",
     "transcript": "cards/transcripts/Windriddle Palaces.md",
     "tags": [

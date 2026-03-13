@@ -2,7 +2,7 @@
   "id": "two_streams_facility",
   "name": "Two Streams Facility",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Two%20Streams%20Facility&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Two%20Streams%20Facility&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Two%20Streams%20Facility&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Two Streams Facility.md",
   "tags": [

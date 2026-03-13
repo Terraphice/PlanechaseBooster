@@ -104,6 +104,7 @@ export function enrichCard(card) {
 }
 
 const planechaseOrientationBoundImages = new WeakSet();
+const PLANECHASE_TARGET_RATIO = 800 / 559;
 
 export function sortCards(cards) {
   cards.sort((a, b) => {
@@ -128,16 +129,28 @@ export function syncPlanechaseImageOrientation(img) {
   const updateOrientation = () => {
     if (!img.naturalWidth || !img.naturalHeight) {
       img.classList.remove("planechase-image-rotated");
+      img.style.removeProperty("--planechase-rotation-scale");
       return;
     }
+
     const isPortrait = img.naturalHeight > img.naturalWidth * 1.02;
     img.classList.toggle("planechase-image-rotated", isPortrait);
+
+    if (!isPortrait) {
+      img.style.removeProperty("--planechase-rotation-scale");
+      return;
+    }
+
+    const portraitRatio = img.naturalHeight / img.naturalWidth;
+    const scale = Math.min(PLANECHASE_TARGET_RATIO, portraitRatio);
+    img.style.setProperty("--planechase-rotation-scale", String(scale));
   };
 
   if (!planechaseOrientationBoundImages.has(img)) {
     img.addEventListener("load", updateOrientation);
     img.addEventListener("error", () => {
       img.classList.remove("planechase-image-rotated");
+      img.style.removeProperty("--planechase-rotation-scale");
     });
     planechaseOrientationBoundImages.add(img);
   }

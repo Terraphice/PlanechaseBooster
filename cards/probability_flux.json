@@ -2,7 +2,7 @@
   "id": "probability_flux",
   "name": "Probability Flux",
   "type": "Phenomenon",
-  "image": "https://api.scryfall.com/cards/named?exact=Probability%20Flux&set=punk&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Probability%20Flux&set=punk&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Probability%20Flux&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Probability Flux.md",
   "tags": [

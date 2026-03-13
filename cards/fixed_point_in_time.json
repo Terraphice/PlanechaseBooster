@@ -2,7 +2,7 @@
   "id": "fixed_point_in_time",
   "name": "Fixed Point in Time",
   "type": "Phenomenon",
-  "image": "https://api.scryfall.com/cards/named?exact=Fixed%20Point%20in%20Time&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Fixed%20Point%20in%20Time&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Fixed%20Point%20in%20Time&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Fixed Point in Time.md",
   "tags": [

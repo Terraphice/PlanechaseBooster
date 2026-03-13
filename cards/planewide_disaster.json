@@ -2,7 +2,7 @@
   "id": "planewide_disaster",
   "name": "Planewide Disaster",
   "type": "Phenomenon",
-  "image": "https://api.scryfall.com/cards/named?exact=Planewide%20Disaster&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Planewide%20Disaster&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Planewide%20Disaster&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Planewide Disaster.md",
   "tags": [

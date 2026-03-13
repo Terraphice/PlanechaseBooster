@@ -2,7 +2,7 @@
   "id": "sokenzan",
   "name": "Sokenzan",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Sokenzan&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Sokenzan&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Sokenzan&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Sokenzan.md",
   "tags": [

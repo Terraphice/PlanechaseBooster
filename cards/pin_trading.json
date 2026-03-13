@@ -2,7 +2,7 @@
   "id": "pin_trading",
   "name": "Pin Trading",
   "type": "Phenomenon",
-  "image": "https://api.scryfall.com/cards/named?exact=Pin%20Trading&set=punk&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Pin%20Trading&set=punk&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Pin%20Trading&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Pin Trading.md",
   "tags": [

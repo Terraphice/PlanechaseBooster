@@ -2,7 +2,7 @@
   "id": "isle_of_vesuva",
   "name": "Isle of Vesuva",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Isle%20of%20Vesuva&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Isle%20of%20Vesuva&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Isle%20of%20Vesuva&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Isle of Vesuva.md",
   "tags": [

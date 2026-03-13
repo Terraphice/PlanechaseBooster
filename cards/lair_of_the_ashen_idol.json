@@ -2,7 +2,7 @@
   "id": "lair_of_the_ashen_idol",
   "name": "Lair of the Ashen Idol",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Lair%20of%20the%20Ashen%20Idol&set=opca&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Lair%20of%20the%20Ashen%20Idol&set=opca&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Lair%20of%20the%20Ashen%20Idol&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Lair of the Ashen Idol.md",
   "tags": [

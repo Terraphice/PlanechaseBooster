@@ -2,7 +2,7 @@
   "id": "grove_of_the_dreampods",
   "name": "Grove of the Dreampods",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Grove%20of%20the%20Dreampods&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Grove%20of%20the%20Dreampods&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Grove%20of%20the%20Dreampods&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Grove of the Dreampods.md",
   "tags": [

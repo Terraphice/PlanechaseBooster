@@ -2,7 +2,7 @@
   "id": "kerblam_warehouse",
   "name": "Kerblam! Warehouse",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Kerblam!%20Warehouse&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Kerblam!%20Warehouse&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Kerblam!%20Warehouse&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Kerblam! Warehouse.md",
   "tags": [

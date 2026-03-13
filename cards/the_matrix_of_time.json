@@ -2,7 +2,7 @@
   "id": "the_matrix_of_time",
   "name": "The Matrix of Time",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=The%20Matrix%20of%20Time&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Matrix%20of%20Time&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=The%20Matrix%20of%20Time&set=who&format=image&version=small",
   "transcript": "cards/transcripts/The Matrix of Time.md",
   "tags": [

@@ -2,7 +2,7 @@
   "id": "the_aether_flues",
   "name": "The Aether Flues",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=The%20Aether%20Flues&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Aether%20Flues&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=The%20Aether%20Flues&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/The Aether Flues.md",
   "tags": [

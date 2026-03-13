@@ -2,7 +2,7 @@
   "id": "strixhaven",
   "name": "Strixhaven",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Strixhaven&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Strixhaven&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Strixhaven&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Strixhaven.md",
   "tags": [

@@ -2,7 +2,7 @@
   "id": "pools_of_becoming",
   "name": "Pools of Becoming",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Pools%20of%20Becoming&set=opca&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Pools%20of%20Becoming&set=opca&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Pools%20of%20Becoming&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Pools of Becoming.md",
   "tags": [

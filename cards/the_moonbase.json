@@ -2,7 +2,7 @@
   "id": "the_moonbase",
   "name": "The Moonbase",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=The%20Moonbase&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Moonbase&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=The%20Moonbase&set=who&format=image&version=small",
   "transcript": "cards/transcripts/The Moonbase.md",
   "tags": [

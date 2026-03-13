@@ -2,7 +2,7 @@
   "id": "stronghold_furnace",
   "name": "Stronghold Furnace",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Stronghold%20Furnace&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Stronghold%20Furnace&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Stronghold%20Furnace&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Stronghold Furnace.md",
   "tags": [

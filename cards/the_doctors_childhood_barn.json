@@ -2,7 +2,7 @@
   "id": "the_doctors_childhood_barn",
   "name": "The Doctor's Childhood Barn",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=The%20Doctor's%20Childhood%20Barn&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Doctor's%20Childhood%20Barn&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=The%20Doctor's%20Childhood%20Barn&set=who&format=image&version=small",
   "transcript": "cards/transcripts/The Doctor's Childhood Barn.md",
   "tags": [
