@@ -1,0 +1,14 @@
+{
+  "id": "plane_astral_arena",
+  "name": "Astral Arena",
+  "type": "Plane",
+  "image": "cards/images/Plane_Astral Arena.png",
+  "thumb": "cards/thumbs/Plane_Astral Arena.webp",
+  "transcript": "cards/transcripts/Plane_Astral Arena.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Kolbahan",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

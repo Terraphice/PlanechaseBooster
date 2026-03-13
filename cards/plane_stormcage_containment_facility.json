@@ -1,0 +1,15 @@
+{
+  "id": "plane_stormcage_containment_facility",
+  "name": "Stormcage Containment Facility",
+  "type": "Plane",
+  "image": "cards/images/Plane_Stormcage Containment Facility.png",
+  "thumb": "cards/thumbs/Plane_Stormcage Containment Facility.webp",
+  "transcript": "cards/transcripts/Plane_Stormcage Containment Facility.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Unknown Planet",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

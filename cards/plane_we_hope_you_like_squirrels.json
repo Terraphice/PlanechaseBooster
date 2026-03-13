@@ -1,0 +1,15 @@
+{
+  "id": "plane_we_hope_you_like_squirrels",
+  "name": "We Hope You Like Squirrels",
+  "type": "Plane",
+  "image": "cards/images/Plane_We Hope You Like Squirrels.png",
+  "thumb": "cards/thumbs/Plane_We Hope You Like Squirrels.webp",
+  "transcript": "cards/transcripts/Plane_We Hope You Like Squirrels.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Secret Lair",
+    "hidden",
+    "PSSC"
+  ],
+  "scryfallId": null
+}

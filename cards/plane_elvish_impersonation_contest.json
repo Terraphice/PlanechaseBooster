@@ -1,0 +1,15 @@
+{
+  "id": "plane_elvish_impersonation_contest",
+  "name": "Elvish Impersonation Contest",
+  "type": "Plane",
+  "image": "cards/images/Plane_Elvish Impersonation Contest.png",
+  "thumb": "cards/thumbs/Plane_Elvish Impersonation Contest.webp",
+  "transcript": "cards/transcripts/Plane_Elvish Impersonation Contest.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Las Vegas",
+    "PUNK",
+    "hidden"
+  ],
+  "scryfallId": null
+}

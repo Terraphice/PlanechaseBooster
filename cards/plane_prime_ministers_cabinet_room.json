@@ -1,0 +1,15 @@
+{
+  "id": "plane_prime_ministers_cabinet_room",
+  "name": "Prime Minister's Cabinet Room",
+  "type": "Plane",
+  "image": "cards/images/Plane_Prime Minister's Cabinet Room.png",
+  "thumb": "cards/thumbs/Plane_Prime Minister's Cabinet Room.webp",
+  "transcript": "cards/transcripts/Plane_Prime Minister's Cabinet Room.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Earth",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

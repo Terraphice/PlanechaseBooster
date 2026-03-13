@@ -1,0 +1,14 @@
+{
+  "id": "plane_undercity_reaches",
+  "name": "Undercity Reaches",
+  "type": "Plane",
+  "image": "cards/images/Plane_Undercity Reaches.png",
+  "thumb": "cards/thumbs/Plane_Undercity Reaches.webp",
+  "transcript": "cards/transcripts/Plane_Undercity Reaches.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Ravnica",
+    "MOC"
+  ],
+  "scryfallId": null
+}

@@ -1,0 +1,13 @@
+{
+  "id": "plane_the_fathom_ward",
+  "name": "The Fathom Ward",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Fathom Ward.png",
+  "thumb": "cards/thumbs/Plane_The Fathom Ward.webp",
+  "transcript": "cards/transcripts/Plane_The Fathom Ward.md",
+  "tags": [
+    ":top:badge:tr:amber:Custom",
+    "New Phyrexia",
+    "PBT"
+  ]
+}

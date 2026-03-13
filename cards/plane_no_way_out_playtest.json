@@ -1,0 +1,15 @@
+{
+  "id": "plane_no_way_out_playtest",
+  "name": "No Way Out (Playtest)",
+  "type": "Plane",
+  "image": "cards/images/Plane_No Way Out (Playtest).png",
+  "thumb": "cards/thumbs/Plane_No Way Out (Playtest).webp",
+  "transcript": "cards/transcripts/Plane_No Way Out (Playtest).md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Duskmourn",
+    "PUNK",
+    "hidden"
+  ],
+  "scryfallId": null
+}

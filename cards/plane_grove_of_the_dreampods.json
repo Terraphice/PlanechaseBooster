@@ -1,0 +1,14 @@
+{
+  "id": "plane_grove_of_the_dreampods",
+  "name": "Grove of the Dreampods",
+  "type": "Plane",
+  "image": "cards/images/Plane_Grove of the Dreampods.png",
+  "thumb": "cards/thumbs/Plane_Grove of the Dreampods.webp",
+  "transcript": "cards/transcripts/Plane_Grove of the Dreampods.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Fabacin",
+    "MOC"
+  ],
+  "scryfallId": null
+}

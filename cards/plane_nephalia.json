@@ -1,0 +1,14 @@
+{
+  "id": "plane_nephalia",
+  "name": "Nephalia",
+  "type": "Plane",
+  "image": "cards/images/Plane_Nephalia.png",
+  "thumb": "cards/thumbs/Plane_Nephalia.webp",
+  "transcript": "cards/transcripts/Plane_Nephalia.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Innistrad",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

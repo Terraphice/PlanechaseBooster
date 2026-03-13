@@ -4,9 +4,11 @@
 // Run with: node scripts/test-generate.js
 
 import {
-  getCardKey,
-  getInferredTypeTag,
+  getInferredType,
+  getDisplayName,
+  getCardId,
   uniqueTags,
+  isOfficialCard,
 } from "./generate-cards.js";
 
 let passed = 0;
@@ -30,37 +32,53 @@ function section(name) {
   console.log(`\n${name}`);
 }
 
-// ── getCardKey ────────────────────────────────────────────────────────────────
+// ── getInferredType ───────────────────────────────────────────────────────────
 
-section("getCardKey");
-assert(getCardKey("Plane_Akoum.png") === "Plane_Akoum", "Strips .png extension");
-assert(getCardKey("Phenomenon_Tunnel.jpg") === "Phenomenon_Tunnel", "Strips .jpg extension");
-assert(getCardKey("Card.webp") === "Card", "Strips .webp extension");
-assert(getCardKey("noext") === "noext", "No extension stays as-is");
-assert(getCardKey("file.name.png") === "file.name", "Only strips last extension");
+section("getInferredType");
+assert(getInferredType("Plane_Akoum.png") === "Plane", "Plane_ prefix → 'Plane'");
+assert(getInferredType("Phenomenon_Tunnel.jpg") === "Phenomenon", "Phenomenon_ prefix → 'Phenomenon'");
+assert(getInferredType("plane_lowercase.png") === "Plane", "Case-insensitive plane prefix");
+assert(getInferredType("Plane-Hyphenated.png") === "Plane", "Plane with hyphen separator");
+assert(getInferredType("Plane Spaced.png") === "Plane", "Plane with space separator");
+assert(getInferredType("CustomCard.png") === null, "No type prefix → null");
+assert(getInferredType("Planetary.png") === null, "Partial prefix 'Planetary' → null (no separator)");
+assert(getInferredType("") === null, "Empty string → null");
 
-// ── getInferredTypeTag ────────────────────────────────────────────────────────
+// ── getDisplayName ────────────────────────────────────────────────────────────
 
-section("getInferredTypeTag");
-assert(getInferredTypeTag("Plane_Akoum.png") === "Plane", "Plane_ prefix → 'Plane'");
-assert(getInferredTypeTag("Phenomenon_Tunnel.jpg") === "Phenomenon", "Phenomenon_ prefix → 'Phenomenon'");
-assert(getInferredTypeTag("plane_lowercase.png") === "Plane", "Case-insensitive plane prefix");
-assert(getInferredTypeTag("Plane-Hyphenated.png") === "Plane", "Plane with hyphen separator");
-assert(getInferredTypeTag("Plane Spaced.png") === "Plane", "Plane with space separator");
-assert(getInferredTypeTag("CustomCard.png") === null, "No type prefix → null");
-assert(getInferredTypeTag("Planetary.png") === null, "Partial prefix 'Planetary' → null (no separator)");
-assert(getInferredTypeTag("") === null, "Empty string → null");
+section("getDisplayName");
+assert(getDisplayName("Plane_Akoum.png") === "Akoum", "Strips 'Plane_' prefix and .png");
+assert(getDisplayName("Phenomenon_Interplanar_Tunnel.jpg") === "Interplanar Tunnel", "Strips Phenomenon_ and converts underscores");
+assert(getDisplayName("Plane_The_Library_of_Leng.png") === "The Library of Leng", "Multi-word names");
+assert(getDisplayName("Phenomenon_Atlas Consultation.png") === "Atlas Consultation", "Space-separated name");
+
+// ── getCardId ─────────────────────────────────────────────────────────────────
+
+section("getCardId");
+assert(getCardId("Plane_Akoum.png") === "plane_akoum", "Plane_Akoum → plane_akoum");
+assert(getCardId("Phenomenon_Atlas Consultation.png") === "phenomenon_atlas_consultation", "Spaces → underscores");
+assert(getCardId("Phenomenon_Interplanar_Tunnel.jpg") === "phenomenon_interplanar_tunnel", "Underscores normalized");
+assert(getCardId("CustomCard.png") === null, "No type prefix → null");
 
 // ── uniqueTags ────────────────────────────────────────────────────────────────
 
 section("uniqueTags");
-assert(deepEqual(uniqueTags(["Plane", "Zendikar"]), ["Plane", "Zendikar"]), "Unique tags unchanged");
-assert(deepEqual(uniqueTags(["Plane", "plane"]), ["Plane"]), "Case-insensitive dedup keeps first");
-assert(deepEqual(uniqueTags(["Plane", "Plane"]), ["Plane"]), "Exact duplicate removed");
+assert(deepEqual(uniqueTags(["Zendikar", "OPCA"]), ["Zendikar", "OPCA"]), "Unique tags unchanged");
+assert(deepEqual(uniqueTags(["Zendikar", "zendikar"]), ["Zendikar"]), "Case-insensitive dedup keeps first");
+assert(deepEqual(uniqueTags(["Zendikar", "Zendikar"]), ["Zendikar"]), "Exact duplicate removed");
 assert(deepEqual(uniqueTags([]), []), "Empty array returns empty");
-assert(deepEqual(uniqueTags(["  Plane  ", "Zendikar"]), ["Plane", "Zendikar"]), "Trims whitespace");
-assert(deepEqual(uniqueTags(["", "  ", "Plane"]), ["Plane"]), "Filters empty/whitespace-only tags");
-assert(deepEqual(uniqueTags(["Plane", "Zendikar", "plane", "zendikar"]), ["Plane", "Zendikar"]), "Multiple duplicates removed");
+assert(deepEqual(uniqueTags(["  Zendikar  ", "OPCA"]), ["Zendikar", "OPCA"]), "Trims whitespace");
+assert(deepEqual(uniqueTags(["", "  ", "Zendikar"]), ["Zendikar"]), "Filters empty/whitespace-only tags");
+assert(deepEqual(uniqueTags(["Zendikar", "OPCA", "zendikar", "opca"]), ["Zendikar", "OPCA"]), "Multiple duplicates removed");
+
+// ── isOfficialCard ────────────────────────────────────────────────────────────
+
+section("isOfficialCard");
+assert(isOfficialCard([":top:badge:tr:green:Official"]) === true, "Top badge with Official label → true");
+assert(isOfficialCard(["badge:tr:green:Official"]) === true, "Badge with Official label → true");
+assert(isOfficialCard([":top:badge:tr:amber:Custom"]) === false, "Custom badge → false");
+assert(isOfficialCard(["Zendikar"]) === false, "No badge → false");
+assert(isOfficialCard([]) === false, "Empty tags → false");
 
 // ── Summary ───────────────────────────────────────────────────────────────────
 

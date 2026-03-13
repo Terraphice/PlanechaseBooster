@@ -1,0 +1,15 @@
+{
+  "id": "plane_otecln",
+  "name": "Oteclán",
+  "type": "Plane",
+  "image": "cards/images/Plane_Oteclán.png",
+  "thumb": "cards/thumbs/Plane_Oteclán.webp",
+  "transcript": "cards/transcripts/Plane_Oteclán.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Ixalan",
+    "PUNK",
+    "hidden"
+  ],
+  "scryfallId": null
+}

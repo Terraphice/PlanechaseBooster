@@ -1,0 +1,14 @@
+{
+  "id": "plane_akoum",
+  "name": "Akoum",
+  "type": "Plane",
+  "image": "cards/images/Plane_Akoum.png",
+  "thumb": "cards/thumbs/Plane_Akoum.webp",
+  "transcript": "cards/transcripts/Plane_Akoum.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Zendikar",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

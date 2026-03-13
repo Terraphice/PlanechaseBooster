@@ -1,0 +1,15 @@
+{
+  "id": "plane_gardens_of_tranquil_repose",
+  "name": "Gardens of Tranquil Repose",
+  "type": "Plane",
+  "image": "cards/images/Plane_Gardens of Tranquil Repose.png",
+  "thumb": "cards/thumbs/Plane_Gardens of Tranquil Repose.webp",
+  "transcript": "cards/transcripts/Plane_Gardens of Tranquil Repose.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Necros",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

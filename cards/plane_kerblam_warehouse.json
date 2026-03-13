@@ -1,0 +1,15 @@
+{
+  "id": "plane_kerblam_warehouse",
+  "name": "Kerblam! Warehouse",
+  "type": "Plane",
+  "image": "cards/images/Plane_Kerblam! Warehouse.png",
+  "thumb": "cards/thumbs/Plane_Kerblam! Warehouse.webp",
+  "transcript": "cards/transcripts/Plane_Kerblam! Warehouse.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Kandoka",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

@@ -1,0 +1,15 @@
+{
+  "id": "plane_welcome_to_valley",
+  "name": "Welcome to Valley",
+  "type": "Plane",
+  "image": "cards/images/Plane_Welcome to Valley.png",
+  "thumb": "cards/thumbs/Plane_Welcome to Valley.webp",
+  "transcript": "cards/transcripts/Plane_Welcome to Valley.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Bloomburrow",
+    "PUNK",
+    "hidden"
+  ],
+  "scryfallId": null
+}

@@ -1,0 +1,15 @@
+{
+  "id": "plane_bowie_base_one",
+  "name": "Bowie Base One",
+  "type": "Plane",
+  "image": "cards/images/Plane_Bowie Base One.png",
+  "thumb": "cards/thumbs/Plane_Bowie Base One.webp",
+  "transcript": "cards/transcripts/Plane_Bowie Base One.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Mars",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

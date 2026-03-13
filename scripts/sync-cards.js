@@ -4,10 +4,8 @@ import { fileURLToPath } from "url";
 
 // ── Exported helper functions (also used by tests) ────────────────────────────
 
-export function getCardJsonFilename(filename) {
-  const withoutExtension = filename.replace(/\.[^.]+$/, "");
-  const withoutPrefix = withoutExtension.replace(/^(Plane|Phenomenon)[-_ ]+/i, "");
-  return withoutPrefix.toLowerCase().replace(/[_ ]+/g, "-") + ".json";
+export function getCardJsonFilename(cardId) {
+  return cardId + ".json";
 }
 
 // ── Main script (only runs when executed directly) ────────────────────────────
@@ -45,15 +43,26 @@ if (isDirectRun) {
   let unchanged = 0;
 
   for (const card of cards) {
-    if (typeof card.file !== "string" || !card.file) {
-      console.warn(`Skipping card with missing or invalid "file" field: ${JSON.stringify(card)}`);
+    if (typeof card.id !== "string" || !card.id) {
+      console.warn(`Skipping card with missing or invalid "id" field: ${JSON.stringify(card)}`);
       continue;
     }
-    const jsonFilename = getCardJsonFilename(card.file);
+    const jsonFilename = getCardJsonFilename(card.id);
     expectedFiles.add(jsonFilename);
 
     const outputPath = join(CARDS_DIR, jsonFilename);
-    const output = { file: card.file, tags: Array.isArray(card.tags) ? card.tags : [] };
+    const output = {
+      id: card.id,
+      name: card.name,
+      type: card.type,
+      image: card.image,
+      thumb: card.thumb,
+      transcript: card.transcript,
+      tags: Array.isArray(card.tags) ? card.tags : []
+    };
+    if (card.scryfallId !== undefined) {
+      output.scryfallId = card.scryfallId;
+    }
     const content = JSON.stringify(output, null, 2) + "\n";
 
     try {

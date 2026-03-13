@@ -1,0 +1,15 @@
+{
+  "id": "plane_city_of_the_daleks",
+  "name": "City of the Daleks",
+  "type": "Plane",
+  "image": "cards/images/Plane_City of the Daleks.png",
+  "thumb": "cards/thumbs/Plane_City of the Daleks.webp",
+  "transcript": "cards/transcripts/Plane_City of the Daleks.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Skaro",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

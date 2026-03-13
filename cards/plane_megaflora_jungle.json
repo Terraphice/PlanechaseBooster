@@ -1,0 +1,14 @@
+{
+  "id": "plane_megaflora_jungle",
+  "name": "Megaflora Jungle",
+  "type": "Plane",
+  "image": "cards/images/Plane_Megaflora Jungle.png",
+  "thumb": "cards/thumbs/Plane_Megaflora Jungle.webp",
+  "transcript": "cards/transcripts/Plane_Megaflora Jungle.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Gargantikar",
+    "MOC"
+  ],
+  "scryfallId": null
+}

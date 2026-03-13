@@ -1,0 +1,14 @@
+{
+  "id": "plane_mirrored_depths",
+  "name": "Mirrored Depths",
+  "type": "Plane",
+  "image": "cards/images/Plane_Mirrored Depths.png",
+  "thumb": "cards/thumbs/Plane_Mirrored Depths.webp",
+  "transcript": "cards/transcripts/Plane_Mirrored Depths.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Karsus",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

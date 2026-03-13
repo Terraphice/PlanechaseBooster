@@ -1,0 +1,15 @@
+{
+  "id": "plane_coal_hill_school",
+  "name": "Coal Hill School",
+  "type": "Plane",
+  "image": "cards/images/Plane_Coal Hill School.png",
+  "thumb": "cards/thumbs/Plane_Coal Hill School.webp",
+  "transcript": "cards/transcripts/Plane_Coal Hill School.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Earth",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

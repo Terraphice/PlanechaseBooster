@@ -1,0 +1,15 @@
+{
+  "id": "plane_antarctic_research_base",
+  "name": "Antarctic Research Base",
+  "type": "Plane",
+  "image": "cards/images/Plane_Antarctic Research Base.png",
+  "thumb": "cards/thumbs/Plane_Antarctic Research Base.webp",
+  "transcript": "cards/transcripts/Plane_Antarctic Research Base.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Earth",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

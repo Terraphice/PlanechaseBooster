@@ -1,0 +1,13 @@
+{
+  "id": "plane_gamalgoth_first_city",
+  "name": "Gamalgoth First City",
+  "type": "Plane",
+  "image": "cards/images/Plane_Gamalgoth First City.png",
+  "thumb": "cards/thumbs/Plane_Gamalgoth First City.webp",
+  "transcript": "cards/transcripts/Plane_Gamalgoth First City.md",
+  "tags": [
+    ":top:badge:tr:amber:Custom",
+    "Phyrexia",
+    "PBT"
+  ]
+}

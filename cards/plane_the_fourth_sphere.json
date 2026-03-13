@@ -1,0 +1,14 @@
+{
+  "id": "plane_the_fourth_sphere",
+  "name": "The Fourth Sphere",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Fourth Sphere.png",
+  "thumb": "cards/thumbs/Plane_The Fourth Sphere.webp",
+  "transcript": "cards/transcripts/Plane_The Fourth Sphere.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Phyrexia",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

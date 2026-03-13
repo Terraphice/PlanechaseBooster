@@ -1,0 +1,14 @@
+{
+  "id": "plane_feeding_grounds",
+  "name": "Feeding Grounds",
+  "type": "Plane",
+  "image": "cards/images/Plane_Feeding Grounds.png",
+  "thumb": "cards/thumbs/Plane_Feeding Grounds.webp",
+  "transcript": "cards/transcripts/Plane_Feeding Grounds.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Muraganda",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

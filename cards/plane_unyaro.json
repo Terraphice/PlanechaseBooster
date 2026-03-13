@@ -1,0 +1,14 @@
+{
+  "id": "plane_unyaro",
+  "name": "Unyaro",
+  "type": "Plane",
+  "image": "cards/images/Plane_Unyaro.png",
+  "thumb": "cards/thumbs/Plane_Unyaro.webp",
+  "transcript": "cards/transcripts/Plane_Unyaro.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Zhalfir",
+    "MOC"
+  ],
+  "scryfallId": null
+}

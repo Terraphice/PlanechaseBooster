@@ -1,0 +1,14 @@
+{
+  "id": "plane_stairs_to_infinity",
+  "name": "Stairs to Infinity",
+  "type": "Plane",
+  "image": "cards/images/Plane_Stairs to Infinity.png",
+  "thumb": "cards/thumbs/Plane_Stairs to Infinity.webp",
+  "transcript": "cards/transcripts/Plane_Stairs to Infinity.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Xerex",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

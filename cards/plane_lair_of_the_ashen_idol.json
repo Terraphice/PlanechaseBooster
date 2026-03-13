@@ -1,0 +1,14 @@
+{
+  "id": "plane_lair_of_the_ashen_idol",
+  "name": "Lair of the Ashen Idol",
+  "type": "Plane",
+  "image": "cards/images/Plane_Lair of the Ashen Idol.png",
+  "thumb": "cards/thumbs/Plane_Lair of the Ashen Idol.webp",
+  "transcript": "cards/transcripts/Plane_Lair of the Ashen Idol.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Azgol",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

@@ -4,9 +4,6 @@
 // Run with: node scripts/test-utils.js
 
 import {
-  getCardKey,
-  getDisplayName,
-  getCardType,
   enrichCard,
   sortCards,
   reconcileSelectedTags,
@@ -51,65 +48,74 @@ function section(name) {
   console.log(`\n${name}`);
 }
 
-// ── getCardKey ────────────────────────────────────────────────────────────────
+// ── Helper: build a raw card in the new schema ────────────────────────────────
 
-section("getCardKey");
-assert(getCardKey("Plane_Akoum.png") === "Plane_Akoum", "Strips .png extension");
-assert(getCardKey("Phenomenon_Interplanar_Tunnel.jpg") === "Phenomenon_Interplanar_Tunnel", "Strips .jpg");
-assert(getCardKey("Card.webp") === "Card", "Strips .webp");
-assert(getCardKey("noext") === "noext", "No extension stays as-is");
-
-// ── getDisplayName ────────────────────────────────────────────────────────────
-
-section("getDisplayName");
-assert(getDisplayName("Plane_Akoum.png") === "Akoum", "Strips 'Plane_' prefix and .png");
-assert(getDisplayName("Phenomenon_Interplanar_Tunnel.jpg") === "Interplanar Tunnel", "Strips Phenomenon_ and converts underscores");
-assert(getDisplayName("Plane_The_Library_of_Leng.png") === "The Library of Leng", "Multi-word names");
-assert(getDisplayName("Card_Name.png") === "Card Name", "Underscores become spaces without prefix");
-
-// ── getCardType ───────────────────────────────────────────────────────────────
-
-section("getCardType");
-assert(getCardType(["plane", "zendikar"]) === "Plane", "Tags with 'plane' → Plane");
-assert(getCardType(["phenomenon"]) === "Phenomenon", "Tags with 'phenomenon' → Phenomenon");
-assert(getCardType(["zendikar"]) === "Unknown", "No type tags → Unknown");
-assert(getCardType([]) === "Unknown", "Empty tags → Unknown");
-assert(getCardType(["plane", "phenomenon"]) === "Plane", "Plane takes precedence");
+function makeCard({ id, name, type, tags = [] }) {
+  const stem = `${type}_${name.replace(/ /g, "_")}`;
+  return {
+    id,
+    name,
+    type,
+    image: `cards/images/${stem}.png`,
+    thumb: `cards/thumbs/${stem}.webp`,
+    transcript: `cards/transcripts/${stem}.md`,
+    tags
+  };
+}
 
 // ── enrichCard ────────────────────────────────────────────────────────────────
 
 section("enrichCard");
-const raw = { file: "Plane_Akoum.png", tags: ["Plane", "Zendikar", "badge:tr:green:Official"] };
-const enriched = enrichCard(raw);
-assert(enriched.key === "Plane_Akoum", "key is set");
-assert(enriched.displayName === "Akoum", "displayName is set");
+const rawAkoum = makeCard({
+  id: "plane_akoum",
+  name: "Akoum",
+  type: "Plane",
+  tags: ["Zendikar", "badge:tr:green:Official"]
+});
+const enriched = enrichCard(rawAkoum);
+assert(enriched.id === "plane_akoum", "id is set");
+assert(enriched.name === "Akoum", "name is set");
+assert(enriched.displayName === "Akoum", "displayName alias equals name");
 assert(enriched.type === "Plane", "type is set");
-assert(enriched.imagePath === "cards/images/Plane_Akoum.png", "imagePath is set");
-assert(enriched.thumbPath === "cards/thumbs/Plane_Akoum.webp", "thumbPath is set");
-assert(enriched.transcriptPath === "cards/transcripts/Plane_Akoum.md", "transcriptPath is set");
+assert(enriched.imagePath === "cards/images/Plane_Akoum.png", "imagePath from image field");
+assert(enriched.thumbPath === "cards/thumbs/Plane_Akoum.webp", "thumbPath from thumb field");
+assert(enriched.transcriptPath === "cards/transcripts/Plane_Akoum.md", "transcriptPath from transcript field");
 assert(Array.isArray(enriched.tags), "tags is an array");
 assert(Array.isArray(enriched.normalizedTags), "normalizedTags is an array");
-assert(enriched.normalizedTags[0] === "plane", "normalizedTags are lowercased");
+assert(enriched.normalizedTags[0] === "zendikar", "normalizedTags are lowercased");
+
+const rawOfficial = {
+  id: "plane_bant",
+  name: "Bant",
+  type: "Plane",
+  image: "cards/images/Plane_Bant.png",
+  thumb: "cards/thumbs/Plane_Bant.webp",
+  transcript: "cards/transcripts/Plane_Bant.md",
+  tags: [":top:badge:tr:green:Official"],
+  scryfallId: null
+};
+const enrichedOfficial = enrichCard(rawOfficial);
+assert(enrichedOfficial.scryfallId === null, "scryfallId null passes through");
 
 // ── sortCards ─────────────────────────────────────────────────────────────────
 
 section("sortCards");
 const unsorted = [
-  enrichCard({ file: "Plane_Zendikar.png", tags: ["Plane"] }),
-  enrichCard({ file: "Plane_Akoum.png", tags: ["Plane"] }),
-  enrichCard({ file: "Plane_Bant.png", tags: ["Plane"] }),
+  enrichCard(makeCard({ id: "plane_zendikar", name: "Zendikar", type: "Plane" })),
+  enrichCard(makeCard({ id: "plane_akoum", name: "Akoum", type: "Plane" })),
+  enrichCard(makeCard({ id: "plane_bant", name: "Bant", type: "Plane" })),
 ];
 sortCards(unsorted);
-assert(unsorted[0].displayName === "Akoum", "First after sort: Akoum");
-assert(unsorted[1].displayName === "Bant", "Second after sort: Bant");
-assert(unsorted[2].displayName === "Zendikar", "Third after sort: Zendikar");
+assert(unsorted[0].name === "Akoum", "First after sort: Akoum");
+assert(unsorted[1].name === "Bant", "Second after sort: Bant");
+assert(unsorted[2].name === "Zendikar", "Third after sort: Zendikar");
 
 // ── reconcileSelectedTags ─────────────────────────────────────────────────────
 
 section("reconcileSelectedTags");
 const cards = [
-  enrichCard({ file: "Plane_A.png", tags: ["Zendikar", "Official"] }),
-  enrichCard({ file: "Plane_B.png", tags: ["Ravnica"] }),
+  enrichCard(makeCard({ id: "plane_a", name: "A", type: "Plane", tags: ["Zendikar", "Official"] })),
+  enrichCard(makeCard({ id: "plane_b", name: "B", type: "Plane", tags: ["Ravnica"] })),
 ];
 const reconciled = reconcileSelectedTags(new Set(["zendikar", "ravnica"]), cards);
 assert(reconciled.has("Zendikar"), "Reconciled 'zendikar' → 'Zendikar' (canonical)");
@@ -197,45 +203,42 @@ assert(topBadge?.label === "Custom", "Top badge label is 'Custom'");
 // ── getBadgeTags ──────────────────────────────────────────────────────────────
 
 section("getBadgeTags");
-const tags = ["Plane", "badge:tr:green:Official", "Zendikar", ":top:badge:bl:amber:Custom"];
-const badges = getBadgeTags(tags);
+const badgeTags = ["Zendikar", "badge:tr:green:Official", ":top:badge:bl:amber:Custom"];
+const badges = getBadgeTags(badgeTags);
 assert(badges.length === 2, "Two badge tags found");
-assert(badges[0].label === "Official", "First badge label");
-assert(badges[1].label === "Custom", "Second badge label");
+assert(badges.some((b) => b.label === "Official"), "Official badge found");
+assert(badges.some((b) => b.label === "Custom"), "Custom badge found");
 
-// ── getTagLabel ───────────────────────────────────────────────────────────────
+// ── getTagLabel / getTagToneClass ─────────────────────────────────────────────
 
-section("getTagLabel");
-assert(getTagLabel("badge:tr:green:Official") === "Official", "Badge tag → label");
-assert(getTagLabel("Zendikar") === "Zendikar", "Non-badge tag → itself");
-assert(getTagLabel(":top:badge:bl:amber:Custom") === "Custom", "Top badge → label");
-
-// ── getTagToneClass ───────────────────────────────────────────────────────────
-
-section("getTagToneClass");
-assert(getTagToneClass("badge:tr:green:Official", "tag") === "tag tone-green", "Badge gets tone class");
-assert(getTagToneClass("Zendikar", "tag") === "tag", "Non-badge keeps base class only");
+section("getTagLabel / getTagToneClass");
+assert(getTagLabel("badge:tr:green:Official") === "Official", "Label from badge tag");
+assert(getTagLabel(":top:badge:tr:green:Official") === "Official", "Label from top badge tag");
+assert(getTagLabel("Zendikar") === "Zendikar", "Non-badge tag: label is tag itself");
+assert(getTagToneClass("badge:tr:green:Official", "chip") === "chip tone-green", "Badge tone class");
+assert(getTagToneClass("Zendikar", "chip") === "chip", "Non-badge: base class only");
 
 // ── stripQuotes ───────────────────────────────────────────────────────────────
 
 section("stripQuotes");
-assert(stripQuotes('"hello world"') === "hello world", "Strips double quotes");
-assert(stripQuotes("noquotes") === "noquotes", "No quotes → unchanged");
-assert(stripQuotes('"only open') === '"only open', "Unmatched quote → unchanged");
+assert(stripQuotes('"hello world"') === "hello world", "Removes surrounding quotes");
+assert(stripQuotes("hello") === "hello", "No quotes: unchanged");
+assert(stripQuotes('"a"') === "a", "Single char in quotes");
+assert(stripQuotes('"') === '"', "Lone quote unchanged");
 
 // ── escapeHtml ────────────────────────────────────────────────────────────────
 
 section("escapeHtml");
-assert(escapeHtml("<script>") === "&lt;script&gt;", "Escapes < and >");
-assert(escapeHtml("a & b") === "a &amp; b", "Escapes &");
+assert(escapeHtml("<div>") === "&lt;div&gt;", "Escapes angle brackets");
+assert(escapeHtml("a & b") === "a &amp; b", "Escapes ampersand");
 assert(escapeHtml('"quoted"') === "&quot;quoted&quot;", "Escapes double quotes");
 assert(escapeHtml("it's") === "it&#39;s", "Escapes single quotes");
-assert(escapeHtml("plain") === "plain", "Plain text unchanged");
+assert(escapeHtml("no special chars") === "no special chars", "No change needed");
 
 // ── shuffleArray ──────────────────────────────────────────────────────────────
 
 section("shuffleArray");
-const original = [1, 2, 3, 4, 5, 6, 7, 8];
+const original = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const shuffled = shuffleArray(original);
 assert(shuffled.length === original.length, "Shuffled array has same length");
 assert(original[0] === 1, "Original array is not mutated");
@@ -311,17 +314,21 @@ assert(deepEqual(multiQuery.negTagTerms, ["custom"]), "Multi-term: negTagTerms")
 
 section("matchesParsedQuery");
 const testCard = enrichCard({
-  file: "Plane_Akoum.png",
-  folder: "complete",
-  tags: ["Plane", "Zendikar", "badge:tr:green:Official"],
+  id: "plane_akoum",
+  name: "Akoum",
+  type: "Plane",
+  image: "cards/images/Plane_Akoum.png",
+  thumb: "cards/thumbs/Plane_Akoum.webp",
+  transcript: "cards/transcripts/Plane_Akoum.md",
+  tags: ["Zendikar", "badge:tr:green:Official"]
 });
 const baseFilters = { fuzzy: false, showHidden: false, tags: new Set() };
 
-const noTermsQuery = parseSearchQuery("");
-assert(matchesParsedQuery(testCard, noTermsQuery, baseFilters) === true, "Empty query matches any card");
+const noTermsQuery2 = parseSearchQuery("");
+assert(matchesParsedQuery(testCard, noTermsQuery2, baseFilters) === true, "Empty query matches any card");
 
-const matchingQuery = parseSearchQuery("akoum");
-assert(matchesParsedQuery(testCard, matchingQuery, baseFilters) === true, "Name matches plain text");
+const matchingQuery2 = parseSearchQuery("akoum");
+assert(matchesParsedQuery(testCard, matchingQuery2, baseFilters) === true, "Name matches plain text");
 
 const nonMatchingQuery = parseSearchQuery("zendikar extra xyz");
 assert(matchesParsedQuery(testCard, nonMatchingQuery, baseFilters) === false, "No match for unknown text");

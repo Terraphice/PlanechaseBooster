@@ -1,0 +1,14 @@
+{
+  "id": "plane_norns_seedcore",
+  "name": "Norn's Seedcore",
+  "type": "Plane",
+  "image": "cards/images/Plane_Norn's Seedcore.png",
+  "thumb": "cards/thumbs/Plane_Norn's Seedcore.webp",
+  "transcript": "cards/transcripts/Plane_Norn's Seedcore.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "New Phyrexia",
+    "MOC"
+  ],
+  "scryfallId": null
+}

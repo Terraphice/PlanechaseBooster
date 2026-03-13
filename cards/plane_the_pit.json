@@ -1,0 +1,14 @@
+{
+  "id": "plane_the_pit",
+  "name": "The Pit",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Pit.png",
+  "thumb": "cards/thumbs/Plane_The Pit.webp",
+  "transcript": "cards/transcripts/Plane_The Pit.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "The Abyss",
+    "MOC"
+  ],
+  "scryfallId": null
+}

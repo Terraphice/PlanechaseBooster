@@ -1,0 +1,15 @@
+{
+  "id": "plane_imaginary_friends_plane",
+  "name": "Imaginary Friends (Plane)",
+  "type": "Plane",
+  "image": "cards/images/Plane_Imaginary Friends (Plane).png",
+  "thumb": "cards/thumbs/Plane_Imaginary Friends (Plane).webp",
+  "transcript": "cards/transcripts/Plane_Imaginary Friends (Plane).md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Secret Lair",
+    "hidden",
+    "PSSC"
+  ],
+  "scryfallId": null
+}

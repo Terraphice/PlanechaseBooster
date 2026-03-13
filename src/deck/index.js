@@ -1,5 +1,5 @@
 import { isHiddenCard } from "../gallery/utils.js";
-import { toBase64Url, fromBase64Url, decodeDeck } from "./codec.js";
+import { toBase64Url, fromBase64Url, decodeDeck, remapLegacyKey } from "./codec.js";
 
 import { initClassicGame, startClassicGame, gamePlaneswalk, buildMainCardActions } from "../game/classic.js";
 
@@ -37,7 +37,7 @@ import {
 const DECK_STORAGE_KEY = "planar-atlas-decks-v2";
 const DECK_NAMES_KEY = "planar-atlas-deck-names-v1";
 const BEM_ZOOM_KEY = "planar-atlas-bem-zoom-v1";
-const GAME_STATE_AUTOSAVE_KEY = "planar-atlas-game-state-autosave-v1";
+const GAME_STATE_AUTOSAVE_KEY = "planar-atlas-game-state-autosave-v2";
 const NUM_DECK_SLOTS = 10;
 const MAX_CARD_COUNT = 9;
 
@@ -97,7 +97,7 @@ function deckCards() {
 function filterValidDeck(map) {
   const valid = new Map();
   for (const [key, count] of map) {
-    if (allCards.some((c) => c.key === key)) valid.set(key, count);
+    if (allCards.some((c) => c.id === key)) valid.set(key, count);
   }
   return valid;
 }
@@ -105,7 +105,7 @@ function filterValidDeck(map) {
 function buildDeckArray() {
   const result = [];
   for (const [key, count] of deckCards()) {
-    const card = allCards.find((c) => c.key === key);
+    const card = allCards.find((c) => c.id === key);
     if (card) for (let i = 0; i < count; i++) result.push(card);
   }
   return result;
@@ -115,7 +115,7 @@ function populateDefaultSlot() {
   allDecks[0] = new Map();
   for (const card of allCards) {
     if (!isHiddenCard(card.normalizedTags) && card.normalizedTags.some((t) => t.includes("official"))) {
-      allDecks[0].set(card.key, 1);
+      allDecks[0].set(card.id, 1);
     }
   }
 }
@@ -151,7 +151,13 @@ function loadDecksFromStorage() {
     const decks = Array.isArray(parsed.decks)
       ? parsed.decks.slice(0, NUM_DECK_SLOTS).map((d) => {
           if (!Array.isArray(d)) return new Map();
-          return new Map(d.filter(([k, v]) => typeof k === "string" && typeof v === "number" && v > 0 && v <= MAX_CARD_COUNT));
+          return new Map(d
+            .filter(([k, v]) => typeof k === "string" && typeof v === "number" && v > 0 && v <= MAX_CARD_COUNT)
+            .map(([k, v]) => {
+              const remapped = (k.startsWith("Plane_") || k.startsWith("Phenomenon_")) ? remapLegacyKey(k) : k;
+              return [remapped, v];
+            })
+          );
         })
       : [];
     while (decks.length < NUM_DECK_SLOTS) decks.push(new Map());

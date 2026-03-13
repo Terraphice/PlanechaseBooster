@@ -1,0 +1,14 @@
+{
+  "id": "plane_pools_of_becoming",
+  "name": "Pools of Becoming",
+  "type": "Plane",
+  "image": "cards/images/Plane_Pools of Becoming.png",
+  "thumb": "cards/thumbs/Plane_Pools of Becoming.webp",
+  "transcript": "cards/transcripts/Plane_Pools of Becoming.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Bolas's Meditation Realm",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

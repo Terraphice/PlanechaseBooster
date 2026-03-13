@@ -1,0 +1,14 @@
+{
+  "id": "plane_agyrem",
+  "name": "Agyrem",
+  "type": "Plane",
+  "image": "cards/images/Plane_Agyrem.png",
+  "thumb": "cards/thumbs/Plane_Agyrem.webp",
+  "transcript": "cards/transcripts/Plane_Agyrem.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Ravnica",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

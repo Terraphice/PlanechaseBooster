@@ -1,0 +1,14 @@
+{
+  "id": "plane_izzet_steam_maze",
+  "name": "Izzet Steam Maze",
+  "type": "Plane",
+  "image": "cards/images/Plane_Izzet Steam Maze.png",
+  "thumb": "cards/thumbs/Plane_Izzet Steam Maze.webp",
+  "transcript": "cards/transcripts/Plane_Izzet Steam Maze.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Ravnica",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

@@ -1,0 +1,14 @@
+{
+  "id": "plane_littjara",
+  "name": "Littjara",
+  "type": "Plane",
+  "image": "cards/images/Plane_Littjara.png",
+  "thumb": "cards/thumbs/Plane_Littjara.webp",
+  "transcript": "cards/transcripts/Plane_Littjara.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Kaldheim",
+    "MOC"
+  ],
+  "scryfallId": null
+}

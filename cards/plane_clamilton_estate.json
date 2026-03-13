@@ -1,0 +1,15 @@
+{
+  "id": "plane_clamilton_estate",
+  "name": "Clamilton Estate",
+  "type": "Plane",
+  "image": "cards/images/Plane_Clamilton Estate.png",
+  "thumb": "cards/thumbs/Plane_Clamilton Estate.webp",
+  "transcript": "cards/transcripts/Plane_Clamilton Estate.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Clamhattan",
+    "PUNK",
+    "hidden"
+  ],
+  "scryfallId": null
+}

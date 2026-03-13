@@ -1,0 +1,14 @@
+{
+  "id": "plane_the_golden_city_of_orazca",
+  "name": "The Golden City of Orazca",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Golden City of Orazca.png",
+  "thumb": "cards/thumbs/Plane_The Golden City of Orazca.webp",
+  "transcript": "cards/transcripts/Plane_The Golden City of Orazca.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Ixalan",
+    "MOC"
+  ],
+  "scryfallId": null
+}

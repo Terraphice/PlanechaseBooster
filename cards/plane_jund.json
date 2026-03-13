@@ -1,0 +1,14 @@
+{
+  "id": "plane_jund",
+  "name": "Jund",
+  "type": "Plane",
+  "image": "cards/images/Plane_Jund.png",
+  "thumb": "cards/thumbs/Plane_Jund.webp",
+  "transcript": "cards/transcripts/Plane_Jund.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Alara",
+    "MOC"
+  ],
+  "scryfallId": null
+}

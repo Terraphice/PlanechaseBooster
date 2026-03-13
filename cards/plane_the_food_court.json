@@ -1,0 +1,15 @@
+{
+  "id": "plane_the_food_court",
+  "name": "The Food Court",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Food Court.png",
+  "thumb": "cards/thumbs/Plane_The Food Court.webp",
+  "transcript": "cards/transcripts/Plane_The Food Court.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Eldraine",
+    "PUNK",
+    "hidden"
+  ],
+  "scryfallId": null
+}

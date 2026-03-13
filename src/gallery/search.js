@@ -69,7 +69,7 @@ export function createSearchManager({
         value: card.displayName,
         title: card.displayName,
         meta: `${card.type} · ${card.tags.slice(0, 3).map(getTagLabel).join(" · ")}`,
-        cardKey: card.key
+        cardKey: card.id
       });
     }
 
@@ -100,7 +100,7 @@ export function createSearchManager({
       value: card.displayName,
       title: card.displayName,
       meta: `${card.type} · ${card.tags.slice(0, 3).map(getTagLabel).join(" · ")}`,
-      cardKey: card.key
+      cardKey: card.id
     };
   }
 

@@ -1,0 +1,15 @@
+{
+  "id": "plane_tardis_bay",
+  "name": "TARDIS Bay",
+  "type": "Plane",
+  "image": "cards/images/Plane_TARDIS Bay.png",
+  "thumb": "cards/thumbs/Plane_TARDIS Bay.webp",
+  "transcript": "cards/transcripts/Plane_TARDIS Bay.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Gallifrey",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

@@ -1,0 +1,14 @@
+{
+  "id": "plane_bloodhill_bastion",
+  "name": "Bloodhill Bastion",
+  "type": "Plane",
+  "image": "cards/images/Plane_Bloodhill Bastion.png",
+  "thumb": "cards/thumbs/Plane_Bloodhill Bastion.webp",
+  "transcript": "cards/transcripts/Plane_Bloodhill Bastion.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Equilor",
+    "MOC"
+  ],
+  "scryfallId": null
+}

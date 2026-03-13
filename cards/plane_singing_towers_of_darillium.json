@@ -1,0 +1,15 @@
+{
+  "id": "plane_singing_towers_of_darillium",
+  "name": "Singing Towers of Darillium",
+  "type": "Plane",
+  "image": "cards/images/Plane_Singing Towers of Darillium.png",
+  "thumb": "cards/thumbs/Plane_Singing Towers of Darillium.webp",
+  "transcript": "cards/transcripts/Plane_Singing Towers of Darillium.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Darillium",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

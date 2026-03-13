@@ -3,29 +3,55 @@
 // These functions have no DOM or module-state dependencies.
 
 /**
- * Compresses a card key by replacing known type prefixes with single characters.
- * @param {string} key - The full card key (e.g. "Plane_Akoum").
- * @returns {string} The compressed key (e.g. "pAkoum").
+ * Compresses a card id by replacing known type prefixes with single characters.
+ * @param {string} id - The card id (e.g. "plane_akoum").
+ * @returns {string} The compressed id (e.g. "pakoum").
  */
-export function compressKey(key) {
-  if (key.startsWith("Plane_")) return "p" + key.slice(6);
-  if (key.startsWith("Phenomenon_")) return "n" + key.slice(11);
-  return "u" + key;
+export function compressKey(id) {
+  if (id.startsWith("plane_")) return "p" + id.slice(6);
+  if (id.startsWith("phenomenon_")) return "n" + id.slice(11);
+  return "u" + id;
 }
 
 /**
- * Decompresses a compressed card key back to its full form.
- * @param {string | null | undefined} compressed - The compressed key (e.g. "pAkoum").
- * @returns {string | null} The full card key, or null if invalid.
+ * Decompresses a compressed card id back to its full form.
+ * @param {string | null | undefined} compressed - The compressed id (e.g. "pakoum").
+ * @returns {string | null} The full card id, or null if invalid.
  */
 export function decompressKey(compressed) {
   if (!compressed || compressed.length < 2) return null;
   const pre = compressed[0];
   const rest = compressed.slice(1);
-  if (pre === "p") return "Plane_" + rest;
-  if (pre === "n") return "Phenomenon_" + rest;
+  if (pre === "p") return "plane_" + rest;
+  if (pre === "n") return "phenomenon_" + rest;
   if (pre === "u") return rest;
   return null;
+}
+
+/**
+ * Converts an old-format card key (e.g. "Plane_Akoum") to the new id format (e.g. "plane_akoum").
+ * Used for backward compatibility when loading d1:/g1: seeds.
+ * @param {string} oldKey - Old format card key.
+ * @returns {string} New format card id.
+ */
+export function remapLegacyKey(oldKey) {
+  if (oldKey.startsWith("Plane_")) {
+    const name = oldKey.slice(6)
+      .replace(/\u2014/g, "-")
+      .replace(/[ _]+/g, "_")
+      .replace(/[^a-z0-9_-]/gi, "")
+      .toLowerCase();
+    return "plane_" + name;
+  }
+  if (oldKey.startsWith("Phenomenon_")) {
+    const name = oldKey.slice(11)
+      .replace(/\u2014/g, "-")
+      .replace(/[ _]+/g, "_")
+      .replace(/[^a-z0-9_-]/gi, "")
+      .toLowerCase();
+    return "phenomenon_" + name;
+  }
+  return oldKey.toLowerCase().replace(/\s+/g, "_");
 }
 
 /**
@@ -55,8 +81,8 @@ export function fromBase64Url(b64) {
 }
 
 /**
- * Encodes a deck map to a shareable "d1:" seed string.
- * @param {Map<string, number>} map - Map of card key → count.
+ * Encodes a deck map to a shareable "d2:" seed string using the new id format.
+ * @param {Map<string, number>} map - Map of card id → count.
  * @returns {string} Encoded seed, or empty string if the deck is empty.
  */
 export function encodeDeck(map) {
@@ -71,20 +97,22 @@ export function encodeDeck(map) {
   }).join(",");
 
   try {
-    return "d1:" + toBase64Url(raw);
+    return "d2:" + toBase64Url(raw);
   } catch {
     return "";
   }
 }
 
 /**
- * Decodes a "d1:" seed string into a deck map.
+ * Decodes a deck seed string into a deck map.
+ * Supports "d2:" (new format) and "d1:" (legacy format, remaps keys automatically).
  * @param {string | null | undefined} seed - The seed string to decode.
  * @param {number} [maxCardCount=9] - Maximum allowed copies per card.
- * @returns {Map<string, number>} Map of card key → count; empty map if invalid.
+ * @returns {Map<string, number>} Map of card id → count; empty map if invalid.
  */
 export function decodeDeck(seed, maxCardCount = 9) {
-  if (!seed?.startsWith("d1:")) return new Map();
+  const isLegacy = seed?.startsWith("d1:");
+  if (!seed?.startsWith("d2:") && !isLegacy) return new Map();
   try {
     const raw = fromBase64Url(seed.slice(3));
     const map = new Map();
@@ -99,8 +127,10 @@ export function decodeDeck(seed, maxCardCount = 9) {
         ck = part;
         count = 1;
       }
-      const key = decompressKey(ck);
-      if (key) map.set(key, count);
+      let id = decompressKey(ck);
+      if (!id) continue;
+      if (isLegacy) id = remapLegacyKey(id);
+      map.set(id, count);
     }
     return map;
   } catch {

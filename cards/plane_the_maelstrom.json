@@ -1,0 +1,14 @@
+{
+  "id": "plane_the_maelstrom",
+  "name": "The Maelstrom",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Maelstrom.png",
+  "thumb": "cards/thumbs/Plane_The Maelstrom.webp",
+  "transcript": "cards/transcripts/Plane_The Maelstrom.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Alara",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

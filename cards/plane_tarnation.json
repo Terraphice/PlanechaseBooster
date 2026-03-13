@@ -1,0 +1,15 @@
+{
+  "id": "plane_tarnation",
+  "name": "Tarnation",
+  "type": "Plane",
+  "image": "cards/images/Plane_Tarnation.png",
+  "thumb": "cards/thumbs/Plane_Tarnation.webp",
+  "transcript": "cards/transcripts/Plane_Tarnation.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Thunder Junction",
+    "PUNK",
+    "hidden"
+  ],
+  "scryfallId": null
+}

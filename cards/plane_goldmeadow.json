@@ -1,0 +1,14 @@
+{
+  "id": "plane_goldmeadow",
+  "name": "Goldmeadow",
+  "type": "Plane",
+  "image": "cards/images/Plane_Goldmeadow.png",
+  "thumb": "cards/thumbs/Plane_Goldmeadow.webp",
+  "transcript": "cards/transcripts/Plane_Goldmeadow.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Lorwyn",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

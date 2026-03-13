@@ -1,0 +1,14 @@
+{
+  "id": "plane_minamo",
+  "name": "Minamo",
+  "type": "Plane",
+  "image": "cards/images/Plane_Minamo.png",
+  "thumb": "cards/thumbs/Plane_Minamo.webp",
+  "transcript": "cards/transcripts/Plane_Minamo.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Kamigawa",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

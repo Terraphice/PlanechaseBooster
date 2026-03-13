@@ -1,0 +1,14 @@
+{
+  "id": "plane_edge_of_malacol",
+  "name": "Edge of Malacol",
+  "type": "Plane",
+  "image": "cards/images/Plane_Edge of Malacol.png",
+  "thumb": "cards/thumbs/Plane_Edge of Malacol.webp",
+  "transcript": "cards/transcripts/Plane_Edge of Malacol.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Belenon",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

@@ -1,0 +1,14 @@
+{
+  "id": "plane_paliano",
+  "name": "Paliano",
+  "type": "Plane",
+  "image": "cards/images/Plane_Paliano.png",
+  "thumb": "cards/thumbs/Plane_Paliano.webp",
+  "transcript": "cards/transcripts/Plane_Paliano.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Fiora",
+    "MOC"
+  ],
+  "scryfallId": null
+}

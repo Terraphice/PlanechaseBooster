@@ -54,12 +54,24 @@ section("2. Card schema validation");
 
 let schemaErrors = 0;
 for (const card of cards) {
-  if (typeof card.file !== "string" || !card.file) {
-    fail(`Card missing "file" field: ${JSON.stringify(card)}`);
+  if (typeof card.id !== "string" || !card.id) {
+    fail(`Card missing "id" field: ${JSON.stringify(card)}`);
+    schemaErrors++;
+  }
+  if (typeof card.name !== "string" || !card.name) {
+    fail(`Card "${card.id}" is missing "name" string`);
+    schemaErrors++;
+  }
+  if (card.type !== "Plane" && card.type !== "Phenomenon") {
+    fail(`Card "${card.id}" has invalid "type": ${JSON.stringify(card.type)}`);
+    schemaErrors++;
+  }
+  if (typeof card.image !== "string" || !card.image) {
+    fail(`Card "${card.id}" is missing "image" string`);
     schemaErrors++;
   }
   if (!Array.isArray(card.tags)) {
-    fail(`Card "${card.file}" is missing "tags" array`);
+    fail(`Card "${card.id}" is missing "tags" array`);
     schemaErrors++;
   }
 }
@@ -75,9 +87,9 @@ section("3. Image file existence");
 
 let missingImages = 0;
 for (const card of cards) {
-  const imagePath = join(ROOT, "cards", "images", card.file);
+  const imagePath = join(ROOT, card.image);
   if (!existsSync(imagePath)) {
-    fail(`Missing image: cards/images/${card.file}`);
+    fail(`Missing image: ${card.image}`);
     missingImages++;
   }
 }
@@ -93,9 +105,8 @@ section("4. Transcript file check");
 
 let missingTranscripts = 0;
 for (const card of cards) {
-  const stem = card.file.replace(/\.[^.]+$/, "");
-  const mdPath = join(ROOT, "cards", "transcripts", stem + ".md");
-  const txtPath = join(ROOT, "cards", "transcripts", stem + ".txt");
+  const mdPath = join(ROOT, card.transcript);
+  const txtPath = mdPath.replace(/\.md$/, ".txt");
   if (!existsSync(mdPath) && !existsSync(txtPath)) {
     missingTranscripts++;
   }
@@ -110,16 +121,9 @@ if (missingTranscripts === 0) {
 
 section("5. Per-card JSON file check");
 
-// This function must match the logic in sync-cards.js getCardJsonFilename().
-function getCardJsonFilename(filename) {
-  const withoutExtension = filename.replace(/\.[^.]+$/, "");
-  const withoutPrefix = withoutExtension.replace(/^(Plane|Phenomenon)[-_ ]+/i, "");
-  return withoutPrefix.toLowerCase().replace(/[_ ]+/g, "-") + ".json";
-}
-
 let missingCardJson = 0;
 for (const card of cards) {
-  const jsonFilename = getCardJsonFilename(card.file);
+  const jsonFilename = card.id + ".json";
   const jsonPath = join(ROOT, "cards", jsonFilename);
   if (!existsSync(jsonPath)) {
     missingCardJson++;

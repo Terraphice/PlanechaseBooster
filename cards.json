@@ -1,2124 +1,3250 @@
 [
   {
-    "file": "Phenomenon_Atlas Consultation.png",
+    "id": "phenomenon_atlas_consultation",
+    "name": "Atlas Consultation",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Atlas Consultation.png",
+    "thumb": "cards/thumbs/Phenomenon_Atlas Consultation.webp",
+    "transcript": "cards/transcripts/Phenomenon_Atlas Consultation.md",
     "tags": [
       ":top:badge:tr:amber:Custom",
-      "Phenomenon",
       "PBT"
     ]
   },
   {
-    "file": "Phenomenon_Battlefield Hysteria.png",
+    "id": "phenomenon_battlefield_hysteria",
+    "name": "Battlefield Hysteria",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Battlefield Hysteria.png",
+    "thumb": "cards/thumbs/Phenomenon_Battlefield Hysteria.webp",
+    "transcript": "cards/transcripts/Phenomenon_Battlefield Hysteria.md",
     "tags": [
       ":top:badge:tr:amber:Custom",
-      "Phenomenon",
       "PBT"
     ]
   },
   {
-    "file": "Phenomenon_Caught in a Parallel Universe.png",
+    "id": "phenomenon_caught_in_a_parallel_universe",
+    "name": "Caught in a Parallel Universe",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Caught in a Parallel Universe.png",
+    "thumb": "cards/thumbs/Phenomenon_Caught in a Parallel Universe.webp",
+    "transcript": "cards/transcripts/Phenomenon_Caught in a Parallel Universe.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Phenomenon_Chaotic Aether.png",
+    "id": "phenomenon_chaotic_aether",
+    "name": "Chaotic Aether",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Chaotic Aether.png",
+    "thumb": "cards/thumbs/Phenomenon_Chaotic Aether.webp",
+    "transcript": "cards/transcripts/Phenomenon_Chaotic Aether.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Phenomenon_Cleansing Dawn.png",
+    "id": "phenomenon_cleansing_dawn",
+    "name": "Cleansing Dawn",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Cleansing Dawn.png",
+    "thumb": "cards/thumbs/Phenomenon_Cleansing Dawn.webp",
+    "transcript": "cards/transcripts/Phenomenon_Cleansing Dawn.md",
     "tags": [
       ":top:badge:tr:amber:Custom",
-      "Phenomenon",
       "PBT"
     ]
   },
   {
-    "file": "Phenomenon_Corrupting Dusk.png",
+    "id": "phenomenon_corrupting_dusk",
+    "name": "Corrupting Dusk",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Corrupting Dusk.png",
+    "thumb": "cards/thumbs/Phenomenon_Corrupting Dusk.webp",
+    "transcript": "cards/transcripts/Phenomenon_Corrupting Dusk.md",
     "tags": [
       ":top:badge:tr:amber:Custom",
-      "Phenomenon",
       "PBT"
     ]
   },
   {
-    "file": "Phenomenon_Disturbed Slumber.png",
+    "id": "phenomenon_disturbed_slumber",
+    "name": "Disturbed Slumber",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Disturbed Slumber.png",
+    "thumb": "cards/thumbs/Phenomenon_Disturbed Slumber.webp",
+    "transcript": "cards/transcripts/Phenomenon_Disturbed Slumber.md",
     "tags": [
       ":top:badge:tr:amber:Custom",
-      "Phenomenon",
       "PBT"
     ]
   },
   {
-    "file": "Phenomenon_Embrace of Ichor.png",
+    "id": "phenomenon_embrace_of_ichor",
+    "name": "Embrace of Ichor",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Embrace of Ichor.png",
+    "thumb": "cards/thumbs/Phenomenon_Embrace of Ichor.webp",
+    "transcript": "cards/transcripts/Phenomenon_Embrace of Ichor.md",
     "tags": [
       ":top:badge:tr:amber:Custom",
-      "Phenomenon",
       "PBT"
     ]
   },
   {
-    "file": "Phenomenon_Fateful Return.png",
+    "id": "phenomenon_fateful_return",
+    "name": "Fateful Return",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Fateful Return.png",
+    "thumb": "cards/thumbs/Phenomenon_Fateful Return.webp",
+    "transcript": "cards/transcripts/Phenomenon_Fateful Return.md",
     "tags": [
       ":top:badge:tr:amber:Custom",
-      "Phenomenon",
       "PBT"
     ]
   },
   {
-    "file": "Phenomenon_Fixed Point in Time.png",
+    "id": "phenomenon_fixed_point_in_time",
+    "name": "Fixed Point in Time",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Fixed Point in Time.png",
+    "thumb": "cards/thumbs/Phenomenon_Fixed Point in Time.webp",
+    "transcript": "cards/transcripts/Phenomenon_Fixed Point in Time.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Phenomenon_Glimpse of Fate.png",
+    "id": "phenomenon_glimpse_of_fate",
+    "name": "Glimpse of Fate",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Glimpse of Fate.png",
+    "thumb": "cards/thumbs/Phenomenon_Glimpse of Fate.webp",
+    "transcript": "cards/transcripts/Phenomenon_Glimpse of Fate.md",
     "tags": [
       ":top:badge:tr:amber:Custom",
-      "Phenomenon",
       "PBT"
     ]
   },
   {
-    "file": "Phenomenon_Great Desparking.png",
+    "id": "phenomenon_great_desparking",
+    "name": "Great Desparking",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Great Desparking.png",
+    "thumb": "cards/thumbs/Phenomenon_Great Desparking.webp",
+    "transcript": "cards/transcripts/Phenomenon_Great Desparking.md",
     "tags": [
       ":top:badge:tr:amber:Custom",
-      "Phenomenon",
       "PBT"
     ]
   },
   {
-    "file": "Phenomenon_High and Dry Black Market.png",
+    "id": "phenomenon_high_and_dry_black_market",
+    "name": "High and Dry Black Market",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_High and Dry Black Market.png",
+    "thumb": "cards/thumbs/Phenomenon_High and Dry Black Market.webp",
+    "transcript": "cards/transcripts/Phenomenon_High and Dry Black Market.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Phenomenon_Human—Time Lord Meta-Crisis.png",
+    "id": "phenomenon_human-time_lord_meta_crisis",
+    "name": "Human—Time Lord Meta Crisis",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Human—Time Lord Meta-Crisis.png",
+    "thumb": "cards/thumbs/Phenomenon_Human—Time Lord Meta-Crisis.webp",
+    "transcript": "cards/transcripts/Phenomenon_Human—Time Lord Meta-Crisis.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Phenomenon_Ichor Trail.png",
+    "id": "phenomenon_ichor_trail",
+    "name": "Ichor Trail",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Ichor Trail.png",
+    "thumb": "cards/thumbs/Phenomenon_Ichor Trail.webp",
+    "transcript": "cards/transcripts/Phenomenon_Ichor Trail.md",
     "tags": [
       ":top:badge:tr:amber:Custom",
-      "Phenomenon",
       "PBT"
     ]
   },
   {
-    "file": "Phenomenon_Interplanar Mapping.png",
+    "id": "phenomenon_interplanar_mapping",
+    "name": "Interplanar Mapping",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Interplanar Mapping.png",
+    "thumb": "cards/thumbs/Phenomenon_Interplanar Mapping.webp",
+    "transcript": "cards/transcripts/Phenomenon_Interplanar Mapping.md",
     "tags": [
       ":top:badge:tr:amber:Custom",
-      "Phenomenon",
       "PBT"
     ]
   },
   {
-    "file": "Phenomenon_Interplanar Tunnel.png",
+    "id": "phenomenon_interplanar_tunnel",
+    "name": "Interplanar Tunnel",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Interplanar Tunnel.png",
+    "thumb": "cards/thumbs/Phenomenon_Interplanar Tunnel.webp",
+    "transcript": "cards/transcripts/Phenomenon_Interplanar Tunnel.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Phenomenon_Mad Labs.png",
+    "id": "phenomenon_mad_labs",
+    "name": "Mad Labs",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Mad Labs.png",
+    "thumb": "cards/thumbs/Phenomenon_Mad Labs.webp",
+    "transcript": "cards/transcripts/Phenomenon_Mad Labs.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Phenomenon_Morphic Tide.png",
+    "id": "phenomenon_morphic_tide",
+    "name": "Morphic Tide",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Morphic Tide.png",
+    "thumb": "cards/thumbs/Phenomenon_Morphic Tide.webp",
+    "transcript": "cards/transcripts/Phenomenon_Morphic Tide.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Phenomenon_Mutual Epiphany.png",
+    "id": "phenomenon_mutual_epiphany",
+    "name": "Mutual Epiphany",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Mutual Epiphany.png",
+    "thumb": "cards/thumbs/Phenomenon_Mutual Epiphany.webp",
+    "transcript": "cards/transcripts/Phenomenon_Mutual Epiphany.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Phenomenon_Omenpath Instability.png",
+    "id": "phenomenon_omenpath_instability",
+    "name": "Omenpath Instability",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Omenpath Instability.png",
+    "thumb": "cards/thumbs/Phenomenon_Omenpath Instability.webp",
+    "transcript": "cards/transcripts/Phenomenon_Omenpath Instability.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Phenomenon_Omenpath Shortcut.png",
+    "id": "phenomenon_omenpath_shortcut",
+    "name": "Omenpath Shortcut",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Omenpath Shortcut.png",
+    "thumb": "cards/thumbs/Phenomenon_Omenpath Shortcut.webp",
+    "transcript": "cards/transcripts/Phenomenon_Omenpath Shortcut.md",
     "tags": [
       ":top:badge:tr:amber:Custom",
-      "Phenomenon",
       "PBT"
     ]
   },
   {
-    "file": "Phenomenon_Pin Trading.png",
+    "id": "phenomenon_pin_trading",
+    "name": "Pin Trading",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Pin Trading.png",
+    "thumb": "cards/thumbs/Phenomenon_Pin Trading.webp",
+    "transcript": "cards/transcripts/Phenomenon_Pin Trading.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Phenomenon_Planewide Disaster.png",
+    "id": "phenomenon_planewide_disaster",
+    "name": "Planewide Disaster",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Planewide Disaster.png",
+    "thumb": "cards/thumbs/Phenomenon_Planewide Disaster.webp",
+    "transcript": "cards/transcripts/Phenomenon_Planewide Disaster.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Phenomenon_Probability Flux.png",
+    "id": "phenomenon_probability_flux",
+    "name": "Probability Flux",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Probability Flux.png",
+    "thumb": "cards/thumbs/Phenomenon_Probability Flux.webp",
+    "transcript": "cards/transcripts/Phenomenon_Probability Flux.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Phenomenon_Reality Shaping.png",
+    "id": "phenomenon_reality_shaping",
+    "name": "Reality Shaping",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Reality Shaping.png",
+    "thumb": "cards/thumbs/Phenomenon_Reality Shaping.webp",
+    "transcript": "cards/transcripts/Phenomenon_Reality Shaping.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Phenomenon_Royal Booster.png",
+    "id": "phenomenon_royal_booster",
+    "name": "Royal Booster",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Royal Booster.png",
+    "thumb": "cards/thumbs/Phenomenon_Royal Booster.webp",
+    "transcript": "cards/transcripts/Phenomenon_Royal Booster.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Phenomenon_Sleeper Agent.png",
+    "id": "phenomenon_sleeper_agent",
+    "name": "Sleeper Agent",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Sleeper Agent.png",
+    "thumb": "cards/thumbs/Phenomenon_Sleeper Agent.webp",
+    "transcript": "cards/transcripts/Phenomenon_Sleeper Agent.md",
     "tags": [
       ":top:badge:tr:amber:Custom",
-      "Phenomenon",
       "PBT"
     ]
   },
   {
-    "file": "Phenomenon_Spatial Merging.png",
+    "id": "phenomenon_spatial_merging",
+    "name": "Spatial Merging",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Spatial Merging.png",
+    "thumb": "cards/thumbs/Phenomenon_Spatial Merging.webp",
+    "transcript": "cards/transcripts/Phenomenon_Spatial Merging.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Phenomenon_Surging Vitality.png",
+    "id": "phenomenon_surging_vitality",
+    "name": "Surging Vitality",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Surging Vitality.png",
+    "thumb": "cards/thumbs/Phenomenon_Surging Vitality.webp",
+    "transcript": "cards/transcripts/Phenomenon_Surging Vitality.md",
     "tags": [
       ":top:badge:tr:amber:Custom",
-      "Phenomenon",
       "PBT"
     ]
   },
   {
-    "file": "Phenomenon_Team-Up!.png",
+    "id": "phenomenon_team_up",
+    "name": "Team Up!",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Team-Up!.png",
+    "thumb": "cards/thumbs/Phenomenon_Team-Up!.webp",
+    "transcript": "cards/transcripts/Phenomenon_Team-Up!.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Phenomenon_Time Distortion.png",
+    "id": "phenomenon_time_distortion",
+    "name": "Time Distortion",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Time Distortion.png",
+    "thumb": "cards/thumbs/Phenomenon_Time Distortion.webp",
+    "transcript": "cards/transcripts/Phenomenon_Time Distortion.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Phenomenon_Time Spiral.png",
+    "id": "phenomenon_time_spiral",
+    "name": "Time Spiral",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Time Spiral.png",
+    "thumb": "cards/thumbs/Phenomenon_Time Spiral.webp",
+    "transcript": "cards/transcripts/Phenomenon_Time Spiral.md",
     "tags": [
       ":top:badge:tr:amber:Custom",
-      "Phenomenon",
       "PBT"
     ]
   },
   {
-    "file": "Phenomenon_Unknown Event.png",
+    "id": "phenomenon_unknown_event",
+    "name": "Unknown Event",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Unknown Event.png",
+    "thumb": "cards/thumbs/Phenomenon_Unknown Event.webp",
+    "transcript": "cards/transcripts/Phenomenon_Unknown Event.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Phenomenon_Unleash the Flux.png",
+    "id": "phenomenon_unleash_the_flux",
+    "name": "Unleash the Flux",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Unleash the Flux.png",
+    "thumb": "cards/thumbs/Phenomenon_Unleash the Flux.webp",
+    "transcript": "cards/transcripts/Phenomenon_Unleash the Flux.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Phenomenon_Year-End Review.png",
+    "id": "phenomenon_year_end_review",
+    "name": "Year End Review",
+    "type": "Phenomenon",
+    "image": "cards/images/Phenomenon_Year-End Review.png",
+    "thumb": "cards/thumbs/Phenomenon_Year-End Review.webp",
+    "transcript": "cards/transcripts/Phenomenon_Year-End Review.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Phenomenon",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Academy at Tolaria West.png",
+    "id": "plane_academy_at_tolaria_west",
+    "name": "Academy at Tolaria West",
+    "type": "Plane",
+    "image": "cards/images/Plane_Academy at Tolaria West.png",
+    "thumb": "cards/thumbs/Plane_Academy at Tolaria West.webp",
+    "transcript": "cards/transcripts/Plane_Academy at Tolaria West.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Dominaria",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Agyrem.png",
+    "id": "plane_agyrem",
+    "name": "Agyrem",
+    "type": "Plane",
+    "image": "cards/images/Plane_Agyrem.png",
+    "thumb": "cards/thumbs/Plane_Agyrem.webp",
+    "transcript": "cards/transcripts/Plane_Agyrem.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Ravnica",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Akoum.png",
+    "id": "plane_akoum",
+    "name": "Akoum",
+    "type": "Plane",
+    "image": "cards/images/Plane_Akoum.png",
+    "thumb": "cards/thumbs/Plane_Akoum.webp",
+    "transcript": "cards/transcripts/Plane_Akoum.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Zendikar",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Amy's Home.png",
+    "id": "plane_amys_home",
+    "name": "Amy's Home",
+    "type": "Plane",
+    "image": "cards/images/Plane_Amy's Home.png",
+    "thumb": "cards/thumbs/Plane_Amy's Home.webp",
+    "transcript": "cards/transcripts/Plane_Amy's Home.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Earth",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Antarctic Research Base.png",
+    "id": "plane_antarctic_research_base",
+    "name": "Antarctic Research Base",
+    "type": "Plane",
+    "image": "cards/images/Plane_Antarctic Research Base.png",
+    "thumb": "cards/thumbs/Plane_Antarctic Research Base.webp",
+    "transcript": "cards/transcripts/Plane_Antarctic Research Base.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Earth",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Aplan Mortarium.png",
+    "id": "plane_aplan_mortarium",
+    "name": "Aplan Mortarium",
+    "type": "Plane",
+    "image": "cards/images/Plane_Aplan Mortarium.png",
+    "thumb": "cards/thumbs/Plane_Aplan Mortarium.webp",
+    "transcript": "cards/transcripts/Plane_Aplan Mortarium.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Alfava Metraxis",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Aretopolis.png",
+    "id": "plane_aretopolis",
+    "name": "Aretopolis",
+    "type": "Plane",
+    "image": "cards/images/Plane_Aretopolis.png",
+    "thumb": "cards/thumbs/Plane_Aretopolis.webp",
+    "transcript": "cards/transcripts/Plane_Aretopolis.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Kephalai",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Artist Alley.png",
+    "id": "plane_artist_alley",
+    "name": "Artist Alley",
+    "type": "Plane",
+    "image": "cards/images/Plane_Artist Alley.png",
+    "thumb": "cards/thumbs/Plane_Artist Alley.webp",
+    "transcript": "cards/transcripts/Plane_Artist Alley.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Asmoranomardicadaistinaculdacar's Kitchen.png",
+    "id": "plane_asmoranomardicadaistinaculdacars_kitchen",
+    "name": "Asmoranomardicadaistinaculdacar's Kitchen",
+    "type": "Plane",
+    "image": "cards/images/Plane_Asmoranomardicadaistinaculdacar's Kitchen.png",
+    "thumb": "cards/thumbs/Plane_Asmoranomardicadaistinaculdacar's Kitchen.webp",
+    "transcript": "cards/transcripts/Plane_Asmoranomardicadaistinaculdacar's Kitchen.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Hell",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Astral Arena.png",
+    "id": "plane_astral_arena",
+    "name": "Astral Arena",
+    "type": "Plane",
+    "image": "cards/images/Plane_Astral Arena.png",
+    "thumb": "cards/thumbs/Plane_Astral Arena.webp",
+    "transcript": "cards/transcripts/Plane_Astral Arena.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Kolbahan",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Bad Wolf Bay.png",
+    "id": "plane_bad_wolf_bay",
+    "name": "Bad Wolf Bay",
+    "type": "Plane",
+    "image": "cards/images/Plane_Bad Wolf Bay.png",
+    "thumb": "cards/thumbs/Plane_Bad Wolf Bay.webp",
+    "transcript": "cards/transcripts/Plane_Bad Wolf Bay.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Earth",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Bant.png",
+    "id": "plane_bant",
+    "name": "Bant",
+    "type": "Plane",
+    "image": "cards/images/Plane_Bant.png",
+    "thumb": "cards/thumbs/Plane_Bant.webp",
+    "transcript": "cards/transcripts/Plane_Bant.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Alara",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Besieged Viking Village.png",
+    "id": "plane_besieged_viking_village",
+    "name": "Besieged Viking Village",
+    "type": "Plane",
+    "image": "cards/images/Plane_Besieged Viking Village.png",
+    "thumb": "cards/thumbs/Plane_Besieged Viking Village.webp",
+    "transcript": "cards/transcripts/Plane_Besieged Viking Village.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Earth",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Bicycle Rack.png",
+    "id": "plane_bicycle_rack",
+    "name": "Bicycle Rack",
+    "type": "Plane",
+    "image": "cards/images/Plane_Bicycle Rack.png",
+    "thumb": "cards/thumbs/Plane_Bicycle Rack.webp",
+    "transcript": "cards/transcripts/Plane_Bicycle Rack.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Amsterdam",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Black Lotus Lounge.png",
+    "id": "plane_black_lotus_lounge",
+    "name": "Black Lotus Lounge",
+    "type": "Plane",
+    "image": "cards/images/Plane_Black Lotus Lounge.png",
+    "thumb": "cards/thumbs/Plane_Black Lotus Lounge.webp",
+    "transcript": "cards/transcripts/Plane_Black Lotus Lounge.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Bloodhill Bastion.png",
+    "id": "plane_bloodhill_bastion",
+    "name": "Bloodhill Bastion",
+    "type": "Plane",
+    "image": "cards/images/Plane_Bloodhill Bastion.png",
+    "thumb": "cards/thumbs/Plane_Bloodhill Bastion.webp",
+    "transcript": "cards/transcripts/Plane_Bloodhill Bastion.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Equilor",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Bowie Base One.png",
+    "id": "plane_bowie_base_one",
+    "name": "Bowie Base One",
+    "type": "Plane",
+    "image": "cards/images/Plane_Bowie Base One.png",
+    "thumb": "cards/thumbs/Plane_Bowie Base One.webp",
+    "transcript": "cards/transcripts/Plane_Bowie Base One.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Mars",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Celestine Reef.png",
+    "id": "plane_celestine_reef",
+    "name": "Celestine Reef",
+    "type": "Plane",
+    "image": "cards/images/Plane_Celestine Reef.png",
+    "thumb": "cards/thumbs/Plane_Celestine Reef.webp",
+    "transcript": "cards/transcripts/Plane_Celestine Reef.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Luvion",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Circus of the Sun.png",
+    "id": "plane_circus_of_the_sun",
+    "name": "Circus of the Sun",
+    "type": "Plane",
+    "image": "cards/images/Plane_Circus of the Sun.png",
+    "thumb": "cards/thumbs/Plane_Circus of the Sun.webp",
+    "transcript": "cards/transcripts/Plane_Circus of the Sun.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Las Vegas",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_City Hall.png",
+    "id": "plane_city_hall",
+    "name": "City Hall",
+    "type": "Plane",
+    "image": "cards/images/Plane_City Hall.png",
+    "thumb": "cards/thumbs/Plane_City Hall.webp",
+    "transcript": "cards/transcripts/Plane_City Hall.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Chicago",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_City of the Daleks.png",
+    "id": "plane_city_of_the_daleks",
+    "name": "City of the Daleks",
+    "type": "Plane",
+    "image": "cards/images/Plane_City of the Daleks.png",
+    "thumb": "cards/thumbs/Plane_City of the Daleks.webp",
+    "transcript": "cards/transcripts/Plane_City of the Daleks.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Skaro",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Clamilton Estate.png",
+    "id": "plane_clamilton_estate",
+    "name": "Clamilton Estate",
+    "type": "Plane",
+    "image": "cards/images/Plane_Clamilton Estate.png",
+    "thumb": "cards/thumbs/Plane_Clamilton Estate.webp",
+    "transcript": "cards/transcripts/Plane_Clamilton Estate.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Clamhattan",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Cliffside Market.png",
+    "id": "plane_cliffside_market",
+    "name": "Cliffside Market",
+    "type": "Plane",
+    "image": "cards/images/Plane_Cliffside Market.png",
+    "thumb": "cards/thumbs/Plane_Cliffside Market.webp",
+    "transcript": "cards/transcripts/Plane_Cliffside Market.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Mercadia",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Coal Hill School.png",
+    "id": "plane_coal_hill_school",
+    "name": "Coal Hill School",
+    "type": "Plane",
+    "image": "cards/images/Plane_Coal Hill School.png",
+    "thumb": "cards/thumbs/Plane_Coal Hill School.webp",
+    "transcript": "cards/transcripts/Plane_Coal Hill School.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Earth",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Dalek Intensive Care.png",
+    "id": "plane_dalek_intensive_care",
+    "name": "Dalek Intensive Care",
+    "type": "Plane",
+    "image": "cards/images/Plane_Dalek Intensive Care.png",
+    "thumb": "cards/thumbs/Plane_Dalek Intensive Care.webp",
+    "transcript": "cards/transcripts/Plane_Dalek Intensive Care.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "The Dalek Asylum",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Deceptive Divination.png",
+    "id": "plane_deceptive_divination",
+    "name": "Deceptive Divination",
+    "type": "Plane",
+    "image": "cards/images/Plane_Deceptive Divination.png",
+    "thumb": "cards/thumbs/Plane_Deceptive Divination.webp",
+    "transcript": "cards/transcripts/Plane_Deceptive Divination.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Secret Lair",
       "hidden",
       "PSSC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Edge of Malacol.png",
+    "id": "plane_edge_of_malacol",
+    "name": "Edge of Malacol",
+    "type": "Plane",
+    "image": "cards/images/Plane_Edge of Malacol.png",
+    "thumb": "cards/thumbs/Plane_Edge of Malacol.webp",
+    "transcript": "cards/transcripts/Plane_Edge of Malacol.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Belenon",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Eloren Wilds.png",
+    "id": "plane_eloren_wilds",
+    "name": "Eloren Wilds",
+    "type": "Plane",
+    "image": "cards/images/Plane_Eloren Wilds.png",
+    "thumb": "cards/thumbs/Plane_Eloren Wilds.webp",
+    "transcript": "cards/transcripts/Plane_Eloren Wilds.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Shandalar",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Elvish Impersonation Contest.png",
+    "id": "plane_elvish_impersonation_contest",
+    "name": "Elvish Impersonation Contest",
+    "type": "Plane",
+    "image": "cards/images/Plane_Elvish Impersonation Contest.png",
+    "thumb": "cards/thumbs/Plane_Elvish Impersonation Contest.webp",
+    "transcript": "cards/transcripts/Plane_Elvish Impersonation Contest.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Las Vegas",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Enigma Ridges.png",
+    "id": "plane_enigma_ridges",
+    "name": "Enigma Ridges",
+    "type": "Plane",
+    "image": "cards/images/Plane_Enigma Ridges.png",
+    "thumb": "cards/thumbs/Plane_Enigma Ridges.webp",
+    "transcript": "cards/transcripts/Plane_Enigma Ridges.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Echoir",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Esper.png",
+    "id": "plane_esper",
+    "name": "Esper",
+    "type": "Plane",
+    "image": "cards/images/Plane_Esper.png",
+    "thumb": "cards/thumbs/Plane_Esper.webp",
+    "transcript": "cards/transcripts/Plane_Esper.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Alara",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Event Horizon.png",
+    "id": "plane_event_horizon",
+    "name": "Event Horizon",
+    "type": "Plane",
+    "image": "cards/images/Plane_Event Horizon.png",
+    "thumb": "cards/thumbs/Plane_Event Horizon.webp",
+    "transcript": "cards/transcripts/Plane_Event Horizon.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Blind Eternities",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Fblthp_ Completely, Utterly, Totally Lost.png",
+    "id": "plane_fblthp_completely_utterly_totally_lost",
+    "name": "Fblthp  Completely, Utterly, Totally Lost",
+    "type": "Plane",
+    "image": "cards/images/Plane_Fblthp_ Completely, Utterly, Totally Lost.png",
+    "thumb": "cards/thumbs/Plane_Fblthp_ Completely, Utterly, Totally Lost.webp",
+    "transcript": "cards/transcripts/Plane_Fblthp_ Completely, Utterly, Totally Lost.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Secret Lair",
       "hidden",
       "PSSC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Feeding Grounds.png",
+    "id": "plane_feeding_grounds",
+    "name": "Feeding Grounds",
+    "type": "Plane",
+    "image": "cards/images/Plane_Feeding Grounds.png",
+    "thumb": "cards/thumbs/Plane_Feeding Grounds.webp",
+    "transcript": "cards/transcripts/Plane_Feeding Grounds.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Muraganda",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Fields of Summer.png",
+    "id": "plane_fields_of_summer",
+    "name": "Fields of Summer",
+    "type": "Plane",
+    "image": "cards/images/Plane_Fields of Summer.png",
+    "thumb": "cards/thumbs/Plane_Fields of Summer.webp",
+    "transcript": "cards/transcripts/Plane_Fields of Summer.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Moag",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Finally! Left-Handed Magic Cards.png",
+    "id": "plane_finally_left_handed_magic_cards",
+    "name": "Finally! Left Handed Magic Cards",
+    "type": "Plane",
+    "image": "cards/images/Plane_Finally! Left-Handed Magic Cards.png",
+    "thumb": "cards/thumbs/Plane_Finally! Left-Handed Magic Cards.webp",
+    "transcript": "cards/transcripts/Plane_Finally! Left-Handed Magic Cards.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Secret Lair",
       "hidden",
       "PSSC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Furnace Layer.png",
+    "id": "plane_furnace_layer",
+    "name": "Furnace Layer",
+    "type": "Plane",
+    "image": "cards/images/Plane_Furnace Layer.png",
+    "thumb": "cards/thumbs/Plane_Furnace Layer.webp",
+    "transcript": "cards/transcripts/Plane_Furnace Layer.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "New Phyrexia",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Gamalgoth First City.png",
+    "id": "plane_gamalgoth_first_city",
+    "name": "Gamalgoth First City",
+    "type": "Plane",
+    "image": "cards/images/Plane_Gamalgoth First City.png",
+    "thumb": "cards/thumbs/Plane_Gamalgoth First City.webp",
+    "transcript": "cards/transcripts/Plane_Gamalgoth First City.md",
     "tags": [
       ":top:badge:tr:amber:Custom",
-      "Plane",
       "Phyrexia",
       "PBT"
     ]
   },
   {
-    "file": "Plane_Game Knights Live.png",
+    "id": "plane_game_knights_live",
+    "name": "Game Knights Live",
+    "type": "Plane",
+    "image": "cards/images/Plane_Game Knights Live.png",
+    "thumb": "cards/thumbs/Plane_Game Knights Live.webp",
+    "transcript": "cards/transcripts/Plane_Game Knights Live.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Gardens of Tranquil Repose.png",
+    "id": "plane_gardens_of_tranquil_repose",
+    "name": "Gardens of Tranquil Repose",
+    "type": "Plane",
+    "image": "cards/images/Plane_Gardens of Tranquil Repose.png",
+    "thumb": "cards/thumbs/Plane_Gardens of Tranquil Repose.webp",
+    "transcript": "cards/transcripts/Plane_Gardens of Tranquil Repose.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Necros",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Gavony.png",
+    "id": "plane_gavony",
+    "name": "Gavony",
+    "type": "Plane",
+    "image": "cards/images/Plane_Gavony.png",
+    "thumb": "cards/thumbs/Plane_Gavony.webp",
+    "transcript": "cards/transcripts/Plane_Gavony.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Innistrad",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Ghirapur Grand Prix.png",
+    "id": "plane_ghirapur_grand_prix",
+    "name": "Ghirapur Grand Prix",
+    "type": "Plane",
+    "image": "cards/images/Plane_Ghirapur Grand Prix.png",
+    "thumb": "cards/thumbs/Plane_Ghirapur Grand Prix.webp",
+    "transcript": "cards/transcripts/Plane_Ghirapur Grand Prix.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Avishkar",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Ghirapur.png",
+    "id": "plane_ghirapur",
+    "name": "Ghirapur",
+    "type": "Plane",
+    "image": "cards/images/Plane_Ghirapur.png",
+    "thumb": "cards/thumbs/Plane_Ghirapur.webp",
+    "transcript": "cards/transcripts/Plane_Ghirapur.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Avishkar",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Glen Elendra.png",
+    "id": "plane_glen_elendra",
+    "name": "Glen Elendra",
+    "type": "Plane",
+    "image": "cards/images/Plane_Glen Elendra.png",
+    "thumb": "cards/thumbs/Plane_Glen Elendra.webp",
+    "transcript": "cards/transcripts/Plane_Glen Elendra.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Lorwyn",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Glimmervoid Basin.png",
+    "id": "plane_glimmervoid_basin",
+    "name": "Glimmervoid Basin",
+    "type": "Plane",
+    "image": "cards/images/Plane_Glimmervoid Basin.png",
+    "thumb": "cards/thumbs/Plane_Glimmervoid Basin.webp",
+    "transcript": "cards/transcripts/Plane_Glimmervoid Basin.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Mirrodin",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Goldmeadow.png",
+    "id": "plane_goldmeadow",
+    "name": "Goldmeadow",
+    "type": "Plane",
+    "image": "cards/images/Plane_Goldmeadow.png",
+    "thumb": "cards/thumbs/Plane_Goldmeadow.webp",
+    "transcript": "cards/transcripts/Plane_Goldmeadow.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Lorwyn",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Grand Ossuary.png",
+    "id": "plane_grand_ossuary",
+    "name": "Grand Ossuary",
+    "type": "Plane",
+    "image": "cards/images/Plane_Grand Ossuary.png",
+    "thumb": "cards/thumbs/Plane_Grand Ossuary.webp",
+    "transcript": "cards/transcripts/Plane_Grand Ossuary.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Ravnica",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Grixis.png",
+    "id": "plane_grixis",
+    "name": "Grixis",
+    "type": "Plane",
+    "image": "cards/images/Plane_Grixis.png",
+    "thumb": "cards/thumbs/Plane_Grixis.webp",
+    "transcript": "cards/transcripts/Plane_Grixis.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Alara",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Grove of the Dreampods.png",
+    "id": "plane_grove_of_the_dreampods",
+    "name": "Grove of the Dreampods",
+    "type": "Plane",
+    "image": "cards/images/Plane_Grove of the Dreampods.png",
+    "thumb": "cards/thumbs/Plane_Grove of the Dreampods.webp",
+    "transcript": "cards/transcripts/Plane_Grove of the Dreampods.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Fabacin",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Halcyon Floating Capital.png",
+    "id": "plane_halcyon_floating_capital",
+    "name": "Halcyon Floating Capital",
+    "type": "Plane",
+    "image": "cards/images/Plane_Halcyon Floating Capital.png",
+    "thumb": "cards/thumbs/Plane_Halcyon Floating Capital.webp",
+    "transcript": "cards/transcripts/Plane_Halcyon Floating Capital.md",
     "tags": [
       ":top:badge:tr:amber:Custom",
-      "Plane",
       "Dominaria",
       "PBT"
     ]
   },
   {
-    "file": "Plane_Happy Yargle Day!.png",
+    "id": "plane_happy_yargle_day",
+    "name": "Happy Yargle Day!",
+    "type": "Plane",
+    "image": "cards/images/Plane_Happy Yargle Day!.png",
+    "thumb": "cards/thumbs/Plane_Happy Yargle Day!.webp",
+    "transcript": "cards/transcripts/Plane_Happy Yargle Day!.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Secret Lair",
       "hidden",
       "PSSC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Havengul Port City.png",
+    "id": "plane_havengul_port_city",
+    "name": "Havengul Port City",
+    "type": "Plane",
+    "image": "cards/images/Plane_Havengul Port City.png",
+    "thumb": "cards/thumbs/Plane_Havengul Port City.webp",
+    "transcript": "cards/transcripts/Plane_Havengul Port City.md",
     "tags": [
       ":top:badge:tr:amber:Custom",
-      "Plane",
       "Innistrad",
       "PBT"
     ]
   },
   {
-    "file": "Plane_Hedron Fields of Agadeem.png",
+    "id": "plane_hedron_fields_of_agadeem",
+    "name": "Hedron Fields of Agadeem",
+    "type": "Plane",
+    "image": "cards/images/Plane_Hedron Fields of Agadeem.png",
+    "thumb": "cards/thumbs/Plane_Hedron Fields of Agadeem.webp",
+    "transcript": "cards/transcripts/Plane_Hedron Fields of Agadeem.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Zendikar",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_High Noon At Thunder Junction.png",
+    "id": "plane_high_noon_at_thunder_junction",
+    "name": "High Noon At Thunder Junction",
+    "type": "Plane",
+    "image": "cards/images/Plane_High Noon At Thunder Junction.png",
+    "thumb": "cards/thumbs/Plane_High Noon At Thunder Junction.webp",
+    "transcript": "cards/transcripts/Plane_High Noon At Thunder Junction.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Thunder Junction",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Horizon Boughs.png",
+    "id": "plane_horizon_boughs",
+    "name": "Horizon Boughs",
+    "type": "Plane",
+    "image": "cards/images/Plane_Horizon Boughs.png",
+    "thumb": "cards/thumbs/Plane_Horizon Boughs.webp",
+    "transcript": "cards/transcripts/Plane_Horizon Boughs.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Pyrulea",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Hotel of Fears.png",
+    "id": "plane_hotel_of_fears",
+    "name": "Hotel of Fears",
+    "type": "Plane",
+    "image": "cards/images/Plane_Hotel of Fears.png",
+    "thumb": "cards/thumbs/Plane_Hotel of Fears.webp",
+    "transcript": "cards/transcripts/Plane_Hotel of Fears.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Spacecraft",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Imaginary Friends (Plane).png",
+    "id": "plane_imaginary_friends_plane",
+    "name": "Imaginary Friends (Plane)",
+    "type": "Plane",
+    "image": "cards/images/Plane_Imaginary Friends (Plane).png",
+    "thumb": "cards/thumbs/Plane_Imaginary Friends (Plane).webp",
+    "transcript": "cards/transcripts/Plane_Imaginary Friends (Plane).md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Secret Lair",
       "hidden",
       "PSSC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Immersturm.png",
+    "id": "plane_immersturm",
+    "name": "Immersturm",
+    "type": "Plane",
+    "image": "cards/images/Plane_Immersturm.png",
+    "thumb": "cards/thumbs/Plane_Immersturm.webp",
+    "transcript": "cards/transcripts/Plane_Immersturm.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Valla",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Inys Haen.png",
+    "id": "plane_inys_haen",
+    "name": "Inys Haen",
+    "type": "Plane",
+    "image": "cards/images/Plane_Inys Haen.png",
+    "thumb": "cards/thumbs/Plane_Inys Haen.webp",
+    "transcript": "cards/transcripts/Plane_Inys Haen.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Cridhe",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Isle of Vesuva.png",
+    "id": "plane_isle_of_vesuva",
+    "name": "Isle of Vesuva",
+    "type": "Plane",
+    "image": "cards/images/Plane_Isle of Vesuva.png",
+    "thumb": "cards/thumbs/Plane_Isle of Vesuva.webp",
+    "transcript": "cards/transcripts/Plane_Isle of Vesuva.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Dominaria",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Izzet Steam Maze.png",
+    "id": "plane_izzet_steam_maze",
+    "name": "Izzet Steam Maze",
+    "type": "Plane",
+    "image": "cards/images/Plane_Izzet Steam Maze.png",
+    "thumb": "cards/thumbs/Plane_Izzet Steam Maze.webp",
+    "transcript": "cards/transcripts/Plane_Izzet Steam Maze.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Ravnica",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Jalira's Show.png",
+    "id": "plane_jaliras_show",
+    "name": "Jalira's Show",
+    "type": "Plane",
+    "image": "cards/images/Plane_Jalira's Show.png",
+    "thumb": "cards/thumbs/Plane_Jalira's Show.webp",
+    "transcript": "cards/transcripts/Plane_Jalira's Show.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Las Vegas",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Jund.png",
+    "id": "plane_jund",
+    "name": "Jund",
+    "type": "Plane",
+    "image": "cards/images/Plane_Jund.png",
+    "thumb": "cards/thumbs/Plane_Jund.webp",
+    "transcript": "cards/transcripts/Plane_Jund.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Alara",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Kerblam! Warehouse.png",
+    "id": "plane_kerblam_warehouse",
+    "name": "Kerblam! Warehouse",
+    "type": "Plane",
+    "image": "cards/images/Plane_Kerblam! Warehouse.png",
+    "thumb": "cards/thumbs/Plane_Kerblam! Warehouse.webp",
+    "transcript": "cards/transcripts/Plane_Kerblam! Warehouse.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Kandoka",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Kessig.png",
+    "id": "plane_kessig",
+    "name": "Kessig",
+    "type": "Plane",
+    "image": "cards/images/Plane_Kessig.png",
+    "thumb": "cards/thumbs/Plane_Kessig.webp",
+    "transcript": "cards/transcripts/Plane_Kessig.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Innistrad",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Ketria.png",
+    "id": "plane_ketria",
+    "name": "Ketria",
+    "type": "Plane",
+    "image": "cards/images/Plane_Ketria.png",
+    "thumb": "cards/thumbs/Plane_Ketria.webp",
+    "transcript": "cards/transcripts/Plane_Ketria.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Ikoria",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Kharasha Foothills.png",
+    "id": "plane_kharasha_foothills",
+    "name": "Kharasha Foothills",
+    "type": "Plane",
+    "image": "cards/images/Plane_Kharasha Foothills.png",
+    "thumb": "cards/thumbs/Plane_Kharasha Foothills.webp",
+    "transcript": "cards/transcripts/Plane_Kharasha Foothills.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Mongseng",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Kilnspire District.png",
+    "id": "plane_kilnspire_district",
+    "name": "Kilnspire District",
+    "type": "Plane",
+    "image": "cards/images/Plane_Kilnspire District.png",
+    "thumb": "cards/thumbs/Plane_Kilnspire District.webp",
+    "transcript": "cards/transcripts/Plane_Kilnspire District.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Ravnica",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Krosa.png",
+    "id": "plane_krosa",
+    "name": "Krosa",
+    "type": "Plane",
+    "image": "cards/images/Plane_Krosa.png",
+    "thumb": "cards/thumbs/Plane_Krosa.webp",
+    "transcript": "cards/transcripts/Plane_Krosa.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Dominaria",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Lair of the Ashen Idol.png",
+    "id": "plane_lair_of_the_ashen_idol",
+    "name": "Lair of the Ashen Idol",
+    "type": "Plane",
+    "image": "cards/images/Plane_Lair of the Ashen Idol.png",
+    "thumb": "cards/thumbs/Plane_Lair of the Ashen Idol.webp",
+    "transcript": "cards/transcripts/Plane_Lair of the Ashen Idol.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Azgol",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Lake Silencio.png",
+    "id": "plane_lake_silencio",
+    "name": "Lake Silencio",
+    "type": "Plane",
+    "image": "cards/images/Plane_Lake Silencio.png",
+    "thumb": "cards/thumbs/Plane_Lake Silencio.webp",
+    "transcript": "cards/transcripts/Plane_Lake Silencio.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Earth",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Lethe Lake.png",
+    "id": "plane_lethe_lake",
+    "name": "Lethe Lake",
+    "type": "Plane",
+    "image": "cards/images/Plane_Lethe Lake.png",
+    "thumb": "cards/thumbs/Plane_Lethe Lake.webp",
+    "transcript": "cards/transcripts/Plane_Lethe Lake.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Arkhos",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Li'l Giri Saves the Day.png",
+    "id": "plane_lil_giri_saves_the_day",
+    "name": "Li'l Giri Saves the Day",
+    "type": "Plane",
+    "image": "cards/images/Plane_Li'l Giri Saves the Day.png",
+    "thumb": "cards/thumbs/Plane_Li'l Giri Saves the Day.webp",
+    "transcript": "cards/transcripts/Plane_Li'l Giri Saves the Day.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Secret Lair",
       "hidden",
       "PSSC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Littjara.png",
+    "id": "plane_littjara",
+    "name": "Littjara",
+    "type": "Plane",
+    "image": "cards/images/Plane_Littjara.png",
+    "thumb": "cards/thumbs/Plane_Littjara.webp",
+    "transcript": "cards/transcripts/Plane_Littjara.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Kaldheim",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Llanowar.png",
+    "id": "plane_llanowar",
+    "name": "Llanowar",
+    "type": "Plane",
+    "image": "cards/images/Plane_Llanowar.png",
+    "thumb": "cards/thumbs/Plane_Llanowar.webp",
+    "transcript": "cards/transcripts/Plane_Llanowar.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Dominaria",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Lotus Basin.png",
+    "id": "plane_lotus_basin",
+    "name": "Lotus Basin",
+    "type": "Plane",
+    "image": "cards/images/Plane_Lotus Basin.png",
+    "thumb": "cards/thumbs/Plane_Lotus Basin.webp",
+    "transcript": "cards/transcripts/Plane_Lotus Basin.md",
     "tags": [
       ":top:badge:tr:amber:Custom",
-      "Plane",
       "Dominaria",
       "PBT"
     ]
   },
   {
-    "file": "Plane_Math is for Blockers (Plane).png",
+    "id": "plane_math_is_for_blockers_plane",
+    "name": "Math is for Blockers (Plane)",
+    "type": "Plane",
+    "image": "cards/images/Plane_Math is for Blockers (Plane).png",
+    "thumb": "cards/thumbs/Plane_Math is for Blockers (Plane).webp",
+    "transcript": "cards/transcripts/Plane_Math is for Blockers (Plane).md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Secret Lair",
       "hidden",
       "PSSC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Megaflora Jungle.png",
+    "id": "plane_megaflora_jungle",
+    "name": "Megaflora Jungle",
+    "type": "Plane",
+    "image": "cards/images/Plane_Megaflora Jungle.png",
+    "thumb": "cards/thumbs/Plane_Megaflora Jungle.webp",
+    "transcript": "cards/transcripts/Plane_Megaflora Jungle.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Gargantikar",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Mephidross.png",
+    "id": "plane_mephidross",
+    "name": "Mephidross",
+    "type": "Plane",
+    "image": "cards/images/Plane_Mephidross.png",
+    "thumb": "cards/thumbs/Plane_Mephidross.webp",
+    "transcript": "cards/transcripts/Plane_Mephidross.md",
     "tags": [
       ":top:badge:tr:amber:Custom",
-      "Plane",
       "Mirrodin",
       "PBT"
     ]
   },
   {
-    "file": "Plane_Minamo.png",
+    "id": "plane_minamo",
+    "name": "Minamo",
+    "type": "Plane",
+    "image": "cards/images/Plane_Minamo.png",
+    "thumb": "cards/thumbs/Plane_Minamo.webp",
+    "transcript": "cards/transcripts/Plane_Minamo.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Kamigawa",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Mirrored Depths.png",
+    "id": "plane_mirrored_depths",
+    "name": "Mirrored Depths",
+    "type": "Plane",
+    "image": "cards/images/Plane_Mirrored Depths.png",
+    "thumb": "cards/thumbs/Plane_Mirrored Depths.webp",
+    "transcript": "cards/transcripts/Plane_Mirrored Depths.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Karsus",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Mojave Desert.png",
+    "id": "plane_mojave_desert",
+    "name": "Mojave Desert",
+    "type": "Plane",
+    "image": "cards/images/Plane_Mojave Desert.png",
+    "thumb": "cards/thumbs/Plane_Mojave Desert.webp",
+    "transcript": "cards/transcripts/Plane_Mojave Desert.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Las Vegas",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Mondassian Colony Ship.png",
+    "id": "plane_mondassian_colony_ship",
+    "name": "Mondassian Colony Ship",
+    "type": "Plane",
+    "image": "cards/images/Plane_Mondassian Colony Ship.png",
+    "thumb": "cards/thumbs/Plane_Mondassian Colony Ship.webp",
+    "transcript": "cards/transcripts/Plane_Mondassian Colony Ship.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Spacecraft",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Mount Keralia.png",
+    "id": "plane_mount_keralia",
+    "name": "Mount Keralia",
+    "type": "Plane",
+    "image": "cards/images/Plane_Mount Keralia.png",
+    "thumb": "cards/thumbs/Plane_Mount Keralia.webp",
+    "transcript": "cards/transcripts/Plane_Mount Keralia.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Regatha",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Multiversal High Council.png",
+    "id": "plane_multiversal_high_council",
+    "name": "Multiversal High Council",
+    "type": "Plane",
+    "image": "cards/images/Plane_Multiversal High Council.png",
+    "thumb": "cards/thumbs/Plane_Multiversal High Council.webp",
+    "transcript": "cards/transcripts/Plane_Multiversal High Council.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Universia Beyondia",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Murasa.png",
+    "id": "plane_murasa",
+    "name": "Murasa",
+    "type": "Plane",
+    "image": "cards/images/Plane_Murasa.png",
+    "thumb": "cards/thumbs/Plane_Murasa.webp",
+    "transcript": "cards/transcripts/Plane_Murasa.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Zendikar",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Mycosynthwave.png",
+    "id": "plane_mycosynthwave",
+    "name": "Mycosynthwave",
+    "type": "Plane",
+    "image": "cards/images/Plane_Mycosynthwave.png",
+    "thumb": "cards/thumbs/Plane_Mycosynthwave.webp",
+    "transcript": "cards/transcripts/Plane_Mycosynthwave.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Secret Lair",
       "hidden",
       "PSSC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Naar Isle.png",
+    "id": "plane_naar_isle",
+    "name": "Naar Isle",
+    "type": "Plane",
+    "image": "cards/images/Plane_Naar Isle.png",
+    "thumb": "cards/thumbs/Plane_Naar Isle.webp",
+    "transcript": "cards/transcripts/Plane_Naar Isle.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Wildfire",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Naktamun.png",
+    "id": "plane_naktamun",
+    "name": "Naktamun",
+    "type": "Plane",
+    "image": "cards/images/Plane_Naktamun.png",
+    "thumb": "cards/thumbs/Plane_Naktamun.webp",
+    "transcript": "cards/transcripts/Plane_Naktamun.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Amonkhet",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Naya.png",
+    "id": "plane_naya",
+    "name": "Naya",
+    "type": "Plane",
+    "image": "cards/images/Plane_Naya.png",
+    "thumb": "cards/thumbs/Plane_Naya.webp",
+    "transcript": "cards/transcripts/Plane_Naya.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Alara",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Nephalia.png",
+    "id": "plane_nephalia",
+    "name": "Nephalia",
+    "type": "Plane",
+    "image": "cards/images/Plane_Nephalia.png",
+    "thumb": "cards/thumbs/Plane_Nephalia.webp",
+    "transcript": "cards/transcripts/Plane_Nephalia.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Innistrad",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_New Argive.png",
+    "id": "plane_new_argive",
+    "name": "New Argive",
+    "type": "Plane",
+    "image": "cards/images/Plane_New Argive.png",
+    "thumb": "cards/thumbs/Plane_New Argive.webp",
+    "transcript": "cards/transcripts/Plane_New Argive.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Dominaria",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_New New York.png",
+    "id": "plane_new_new_york",
+    "name": "New New York",
+    "type": "Plane",
+    "image": "cards/images/Plane_New New York.png",
+    "thumb": "cards/thumbs/Plane_New New York.webp",
+    "transcript": "cards/transcripts/Plane_New New York.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "New Earth",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_New Player's Journey.png",
+    "id": "plane_new_players_journey",
+    "name": "New Player's Journey",
+    "type": "Plane",
+    "image": "cards/images/Plane_New Player's Journey.png",
+    "thumb": "cards/thumbs/Plane_New Player's Journey.webp",
+    "transcript": "cards/transcripts/Plane_New Player's Journey.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Foundations",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_No Way Out (Playtest).png",
+    "id": "plane_no_way_out_playtest",
+    "name": "No Way Out (Playtest)",
+    "type": "Plane",
+    "image": "cards/images/Plane_No Way Out (Playtest).png",
+    "thumb": "cards/thumbs/Plane_No Way Out (Playtest).webp",
+    "transcript": "cards/transcripts/Plane_No Way Out (Playtest).md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Duskmourn",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Norn's Dominion.png",
+    "id": "plane_norns_dominion",
+    "name": "Norn's Dominion",
+    "type": "Plane",
+    "image": "cards/images/Plane_Norn's Dominion.png",
+    "thumb": "cards/thumbs/Plane_Norn's Dominion.webp",
+    "transcript": "cards/transcripts/Plane_Norn's Dominion.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "New Phyrexia",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Norn's Seedcore.png",
+    "id": "plane_norns_seedcore",
+    "name": "Norn's Seedcore",
+    "type": "Plane",
+    "image": "cards/images/Plane_Norn's Seedcore.png",
+    "thumb": "cards/thumbs/Plane_Norn's Seedcore.webp",
+    "transcript": "cards/transcripts/Plane_Norn's Seedcore.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "New Phyrexia",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_North Pole Research Base.png",
+    "id": "plane_north_pole_research_base",
+    "name": "North Pole Research Base",
+    "type": "Plane",
+    "image": "cards/images/Plane_North Pole Research Base.png",
+    "thumb": "cards/thumbs/Plane_North Pole Research Base.webp",
+    "transcript": "cards/transcripts/Plane_North Pole Research Base.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Earth",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Nyx.png",
+    "id": "plane_nyx",
+    "name": "Nyx",
+    "type": "Plane",
+    "image": "cards/images/Plane_Nyx.png",
+    "thumb": "cards/thumbs/Plane_Nyx.webp",
+    "transcript": "cards/transcripts/Plane_Nyx.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Theros",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Onakke Catacomb.png",
+    "id": "plane_onakke_catacomb",
+    "name": "Onakke Catacomb",
+    "type": "Plane",
+    "image": "cards/images/Plane_Onakke Catacomb.png",
+    "thumb": "cards/thumbs/Plane_Onakke Catacomb.webp",
+    "transcript": "cards/transcripts/Plane_Onakke Catacomb.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Shandalar",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Ood Sphere.png",
+    "id": "plane_ood_sphere",
+    "name": "Ood Sphere",
+    "type": "Plane",
+    "image": "cards/images/Plane_Ood Sphere.png",
+    "thumb": "cards/thumbs/Plane_Ood Sphere.webp",
+    "transcript": "cards/transcripts/Plane_Ood Sphere.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Horsehead Nebula",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Orochi Colony.png",
+    "id": "plane_orochi_colony",
+    "name": "Orochi Colony",
+    "type": "Plane",
+    "image": "cards/images/Plane_Orochi Colony.png",
+    "thumb": "cards/thumbs/Plane_Orochi Colony.webp",
+    "transcript": "cards/transcripts/Plane_Orochi Colony.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Kamigawa",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Orzhova.png",
+    "id": "plane_orzhova",
+    "name": "Orzhova",
+    "type": "Plane",
+    "image": "cards/images/Plane_Orzhova.png",
+    "thumb": "cards/thumbs/Plane_Orzhova.webp",
+    "transcript": "cards/transcripts/Plane_Orzhova.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Ravnica",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Otaria.png",
+    "id": "plane_otaria",
+    "name": "Otaria",
+    "type": "Plane",
+    "image": "cards/images/Plane_Otaria.png",
+    "thumb": "cards/thumbs/Plane_Otaria.webp",
+    "transcript": "cards/transcripts/Plane_Otaria.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Dominaria",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Oteclán.png",
+    "id": "plane_otecln",
+    "name": "Oteclán",
+    "type": "Plane",
+    "image": "cards/images/Plane_Oteclán.png",
+    "thumb": "cards/thumbs/Plane_Oteclán.webp",
+    "transcript": "cards/transcripts/Plane_Oteclán.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Ixalan",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Paliano.png",
+    "id": "plane_paliano",
+    "name": "Paliano",
+    "type": "Plane",
+    "image": "cards/images/Plane_Paliano.png",
+    "thumb": "cards/thumbs/Plane_Paliano.webp",
+    "transcript": "cards/transcripts/Plane_Paliano.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Fiora",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Panopticon.png",
+    "id": "plane_panopticon",
+    "name": "Panopticon",
+    "type": "Plane",
+    "image": "cards/images/Plane_Panopticon.png",
+    "thumb": "cards/thumbs/Plane_Panopticon.webp",
+    "transcript": "cards/transcripts/Plane_Panopticon.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Mirrodin",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Pin Collector's Booth.png",
+    "id": "plane_pin_collectors_booth",
+    "name": "Pin Collector's Booth",
+    "type": "Plane",
+    "image": "cards/images/Plane_Pin Collector's Booth.png",
+    "thumb": "cards/thumbs/Plane_Pin Collector's Booth.webp",
+    "transcript": "cards/transcripts/Plane_Pin Collector's Booth.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Pompeii.png",
+    "id": "plane_pompeii",
+    "name": "Pompeii",
+    "type": "Plane",
+    "image": "cards/images/Plane_Pompeii.png",
+    "thumb": "cards/thumbs/Plane_Pompeii.webp",
+    "transcript": "cards/transcripts/Plane_Pompeii.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Earth",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Pools of Becoming.png",
+    "id": "plane_pools_of_becoming",
+    "name": "Pools of Becoming",
+    "type": "Plane",
+    "image": "cards/images/Plane_Pools of Becoming.png",
+    "thumb": "cards/thumbs/Plane_Pools of Becoming.webp",
+    "transcript": "cards/transcripts/Plane_Pools of Becoming.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Bolas's Meditation Realm",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Prahv.png",
+    "id": "plane_prahv",
+    "name": "Prahv",
+    "type": "Plane",
+    "image": "cards/images/Plane_Prahv.png",
+    "thumb": "cards/thumbs/Plane_Prahv.webp",
+    "transcript": "cards/transcripts/Plane_Prahv.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Ravnica",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Preston's Stage.png",
+    "id": "plane_prestons_stage",
+    "name": "Preston's Stage",
+    "type": "Plane",
+    "image": "cards/images/Plane_Preston's Stage.png",
+    "thumb": "cards/thumbs/Plane_Preston's Stage.webp",
+    "transcript": "cards/transcripts/Plane_Preston's Stage.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Las Vegas",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Prime Minister's Cabinet Room.png",
+    "id": "plane_prime_ministers_cabinet_room",
+    "name": "Prime Minister's Cabinet Room",
+    "type": "Plane",
+    "image": "cards/images/Plane_Prime Minister's Cabinet Room.png",
+    "thumb": "cards/thumbs/Plane_Prime Minister's Cabinet Room.webp",
+    "transcript": "cards/transcripts/Plane_Prime Minister's Cabinet Room.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Earth",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Pursued by Something.png",
+    "id": "plane_pursued_by_something",
+    "name": "Pursued by Something",
+    "type": "Plane",
+    "image": "cards/images/Plane_Pursued by Something.png",
+    "thumb": "cards/thumbs/Plane_Pursued by Something.webp",
+    "transcript": "cards/transcripts/Plane_Pursued by Something.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Duskmourn",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Quicksilver Sea.png",
+    "id": "plane_quicksilver_sea",
+    "name": "Quicksilver Sea",
+    "type": "Plane",
+    "image": "cards/images/Plane_Quicksilver Sea.png",
+    "thumb": "cards/thumbs/Plane_Quicksilver Sea.webp",
+    "transcript": "cards/transcripts/Plane_Quicksilver Sea.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Mirrodin",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Raiders' Allegiance.png",
+    "id": "plane_raiders_allegiance",
+    "name": "Raiders' Allegiance",
+    "type": "Plane",
+    "image": "cards/images/Plane_Raiders' Allegiance.png",
+    "thumb": "cards/thumbs/Plane_Raiders' Allegiance.webp",
+    "transcript": "cards/transcripts/Plane_Raiders' Allegiance.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Ixalan",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Raven's Run.png",
+    "id": "plane_ravens_run",
+    "name": "Raven's Run",
+    "type": "Plane",
+    "image": "cards/images/Plane_Raven's Run.png",
+    "thumb": "cards/thumbs/Plane_Raven's Run.webp",
+    "transcript": "cards/transcripts/Plane_Raven's Run.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Shadowmoor",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Riptide Island.png",
+    "id": "plane_riptide_island",
+    "name": "Riptide Island",
+    "type": "Plane",
+    "image": "cards/images/Plane_Riptide Island.png",
+    "thumb": "cards/thumbs/Plane_Riptide Island.webp",
+    "transcript": "cards/transcripts/Plane_Riptide Island.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Dominaria",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Sanctum of Serra.png",
+    "id": "plane_sanctum_of_serra",
+    "name": "Sanctum of Serra",
+    "type": "Plane",
+    "image": "cards/images/Plane_Sanctum of Serra.png",
+    "thumb": "cards/thumbs/Plane_Sanctum of Serra.webp",
+    "transcript": "cards/transcripts/Plane_Sanctum of Serra.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Serra's Realm",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Sans Mercy.png",
+    "id": "plane_sans_mercy",
+    "name": "Sans Mercy",
+    "type": "Plane",
+    "image": "cards/images/Plane_Sans Mercy.png",
+    "thumb": "cards/thumbs/Plane_Sans Mercy.webp",
+    "transcript": "cards/transcripts/Plane_Sans Mercy.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Secret Lair",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Sea of Sand.png",
+    "id": "plane_sea_of_sand",
+    "name": "Sea of Sand",
+    "type": "Plane",
+    "image": "cards/images/Plane_Sea of Sand.png",
+    "thumb": "cards/thumbs/Plane_Sea of Sand.webp",
+    "transcript": "cards/transcripts/Plane_Sea of Sand.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Rabiah",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Selesnya Loft Gardens.png",
+    "id": "plane_selesnya_loft_gardens",
+    "name": "Selesnya Loft Gardens",
+    "type": "Plane",
+    "image": "cards/images/Plane_Selesnya Loft Gardens.png",
+    "thumb": "cards/thumbs/Plane_Selesnya Loft Gardens.webp",
+    "transcript": "cards/transcripts/Plane_Selesnya Loft Gardens.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Ravnica",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Shiv.png",
+    "id": "plane_shiv",
+    "name": "Shiv",
+    "type": "Plane",
+    "image": "cards/images/Plane_Shiv.png",
+    "thumb": "cards/thumbs/Plane_Shiv.webp",
+    "transcript": "cards/transcripts/Plane_Shiv.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Dominaria",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Shrinking Plane.png",
+    "id": "plane_shrinking_plane",
+    "name": "Shrinking Plane",
+    "type": "Plane",
+    "image": "cards/images/Plane_Shrinking Plane.png",
+    "thumb": "cards/thumbs/Plane_Shrinking Plane.webp",
+    "transcript": "cards/transcripts/Plane_Shrinking Plane.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Foldaria",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Shy Town.png",
+    "id": "plane_shy_town",
+    "name": "Shy Town",
+    "type": "Plane",
+    "image": "cards/images/Plane_Shy Town.png",
+    "thumb": "cards/thumbs/Plane_Shy Town.webp",
+    "transcript": "cards/transcripts/Plane_Shy Town.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Chicago",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Singing Towers of Darillium.png",
+    "id": "plane_singing_towers_of_darillium",
+    "name": "Singing Towers of Darillium",
+    "type": "Plane",
+    "image": "cards/images/Plane_Singing Towers of Darillium.png",
+    "thumb": "cards/thumbs/Plane_Singing Towers of Darillium.webp",
+    "transcript": "cards/transcripts/Plane_Singing Towers of Darillium.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Darillium",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Sky Deck.png",
+    "id": "plane_sky_deck",
+    "name": "Sky Deck",
+    "type": "Plane",
+    "image": "cards/images/Plane_Sky Deck.png",
+    "thumb": "cards/thumbs/Plane_Sky Deck.webp",
+    "transcript": "cards/transcripts/Plane_Sky Deck.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Chicago",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Skybreen.png",
+    "id": "plane_skybreen",
+    "name": "Skybreen",
+    "type": "Plane",
+    "image": "cards/images/Plane_Skybreen.png",
+    "thumb": "cards/thumbs/Plane_Skybreen.webp",
+    "transcript": "cards/transcripts/Plane_Skybreen.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Kaldheim",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Sokenzan.png",
+    "id": "plane_sokenzan",
+    "name": "Sokenzan",
+    "type": "Plane",
+    "image": "cards/images/Plane_Sokenzan.png",
+    "thumb": "cards/thumbs/Plane_Sokenzan.webp",
+    "transcript": "cards/transcripts/Plane_Sokenzan.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Kamigawa",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Sorin's Remastered Manor.png",
+    "id": "plane_sorins_remastered_manor",
+    "name": "Sorin's Remastered Manor",
+    "type": "Plane",
+    "image": "cards/images/Plane_Sorin's Remastered Manor.png",
+    "thumb": "cards/thumbs/Plane_Sorin's Remastered Manor.webp",
+    "transcript": "cards/transcripts/Plane_Sorin's Remastered Manor.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Innistrad",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Spectrox Mines.png",
+    "id": "plane_spectrox_mines",
+    "name": "Spectrox Mines",
+    "type": "Plane",
+    "image": "cards/images/Plane_Spectrox Mines.png",
+    "thumb": "cards/thumbs/Plane_Spectrox Mines.webp",
+    "transcript": "cards/transcripts/Plane_Spectrox Mines.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Androzani Minor",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Stairs to Infinity.png",
+    "id": "plane_stairs_to_infinity",
+    "name": "Stairs to Infinity",
+    "type": "Plane",
+    "image": "cards/images/Plane_Stairs to Infinity.png",
+    "thumb": "cards/thumbs/Plane_Stairs to Infinity.webp",
+    "transcript": "cards/transcripts/Plane_Stairs to Infinity.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Xerex",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Stensia.png",
+    "id": "plane_stensia",
+    "name": "Stensia",
+    "type": "Plane",
+    "image": "cards/images/Plane_Stensia.png",
+    "thumb": "cards/thumbs/Plane_Stensia.webp",
+    "transcript": "cards/transcripts/Plane_Stensia.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Innistrad",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Stormcage Containment Facility.png",
+    "id": "plane_stormcage_containment_facility",
+    "name": "Stormcage Containment Facility",
+    "type": "Plane",
+    "image": "cards/images/Plane_Stormcage Containment Facility.png",
+    "thumb": "cards/thumbs/Plane_Stormcage Containment Facility.webp",
+    "transcript": "cards/transcripts/Plane_Stormcage Containment Facility.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Unknown Planet",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Strixhaven.png",
+    "id": "plane_strixhaven",
+    "name": "Strixhaven",
+    "type": "Plane",
+    "image": "cards/images/Plane_Strixhaven.png",
+    "thumb": "cards/thumbs/Plane_Strixhaven.webp",
+    "transcript": "cards/transcripts/Plane_Strixhaven.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Arcavios",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Stronghold Furnace.png",
+    "id": "plane_stronghold_furnace",
+    "name": "Stronghold Furnace",
+    "type": "Plane",
+    "image": "cards/images/Plane_Stronghold Furnace.png",
+    "thumb": "cards/thumbs/Plane_Stronghold Furnace.webp",
+    "transcript": "cards/transcripts/Plane_Stronghold Furnace.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Rath",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Stroopwafel Cafe.png",
+    "id": "plane_stroopwafel_cafe",
+    "name": "Stroopwafel Cafe",
+    "type": "Plane",
+    "image": "cards/images/Plane_Stroopwafel Cafe.png",
+    "thumb": "cards/thumbs/Plane_Stroopwafel Cafe.webp",
+    "transcript": "cards/transcripts/Plane_Stroopwafel Cafe.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Amsterdam",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Takenuma.png",
+    "id": "plane_takenuma",
+    "name": "Takenuma",
+    "type": "Plane",
+    "image": "cards/images/Plane_Takenuma.png",
+    "thumb": "cards/thumbs/Plane_Takenuma.webp",
+    "transcript": "cards/transcripts/Plane_Takenuma.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Kamigawa",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Talon Gates.png",
+    "id": "plane_talon_gates",
+    "name": "Talon Gates",
+    "type": "Plane",
+    "image": "cards/images/Plane_Talon Gates.png",
+    "thumb": "cards/thumbs/Plane_Talon Gates.webp",
+    "transcript": "cards/transcripts/Plane_Talon Gates.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Dominaria",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_TARDIS Bay.png",
+    "id": "plane_tardis_bay",
+    "name": "TARDIS Bay",
+    "type": "Plane",
+    "image": "cards/images/Plane_TARDIS Bay.png",
+    "thumb": "cards/thumbs/Plane_TARDIS Bay.webp",
+    "transcript": "cards/transcripts/Plane_TARDIS Bay.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Gallifrey",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Tarnation.png",
+    "id": "plane_tarnation",
+    "name": "Tarnation",
+    "type": "Plane",
+    "image": "cards/images/Plane_Tarnation.png",
+    "thumb": "cards/thumbs/Plane_Tarnation.webp",
+    "transcript": "cards/transcripts/Plane_Tarnation.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Thunder Junction",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Tazeem.png",
+    "id": "plane_tazeem",
+    "name": "Tazeem",
+    "type": "Plane",
+    "image": "cards/images/Plane_Tazeem.png",
+    "thumb": "cards/thumbs/Plane_Tazeem.webp",
+    "transcript": "cards/transcripts/Plane_Tazeem.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Zendikar",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Tember City.png",
+    "id": "plane_tember_city",
+    "name": "Tember City",
+    "type": "Plane",
+    "image": "cards/images/Plane_Tember City.png",
+    "thumb": "cards/thumbs/Plane_Tember City.webp",
+    "transcript": "cards/transcripts/Plane_Tember City.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Kinshala",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Temple of Atropos.png",
+    "id": "plane_temple_of_atropos",
+    "name": "Temple of Atropos",
+    "type": "Plane",
+    "image": "cards/images/Plane_Temple of Atropos.png",
+    "thumb": "cards/thumbs/Plane_Temple of Atropos.webp",
+    "transcript": "cards/transcripts/Plane_Temple of Atropos.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Time",
       "WHO",
       "Hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Ten Wizards Mountain.png",
+    "id": "plane_ten_wizards_mountain",
+    "name": "Ten Wizards Mountain",
+    "type": "Plane",
+    "image": "cards/images/Plane_Ten Wizards Mountain.png",
+    "thumb": "cards/thumbs/Plane_Ten Wizards Mountain.webp",
+    "transcript": "cards/transcripts/Plane_Ten Wizards Mountain.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Shenmeng",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Aether Flues.png",
+    "id": "plane_the_aether_flues",
+    "name": "The Aether Flues",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Aether Flues.png",
+    "thumb": "cards/thumbs/Plane_The Aether Flues.webp",
+    "transcript": "cards/transcripts/Plane_The Aether Flues.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Iquatana",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Bean.png",
+    "id": "plane_the_bean",
+    "name": "The Bean",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Bean.png",
+    "thumb": "cards/thumbs/Plane_The Bean.webp",
+    "transcript": "cards/transcripts/Plane_The Bean.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Chicago",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Caldaia.png",
+    "id": "plane_the_caldaia",
+    "name": "The Caldaia",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Caldaia.png",
+    "thumb": "cards/thumbs/Plane_The Caldaia.webp",
+    "transcript": "cards/transcripts/Plane_The Caldaia.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Capenna",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Cave of Skulls.png",
+    "id": "plane_the_cave_of_skulls",
+    "name": "The Cave of Skulls",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Cave of Skulls.png",
+    "thumb": "cards/thumbs/Plane_The Cave of Skulls.webp",
+    "transcript": "cards/transcripts/Plane_The Cave of Skulls.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Earth",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Cheetah Planet.png",
+    "id": "plane_the_cheetah_planet",
+    "name": "The Cheetah Planet",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Cheetah Planet.png",
+    "thumb": "cards/thumbs/Plane_The Cheetah Planet.webp",
+    "transcript": "cards/transcripts/Plane_The Cheetah Planet.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Outside Mutter's Spiral",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Command Zone.png",
+    "id": "plane_the_command_zone",
+    "name": "The Command Zone",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Command Zone.png",
+    "thumb": "cards/thumbs/Plane_The Command Zone.webp",
+    "transcript": "cards/transcripts/Plane_The Command Zone.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Dark Barony.png",
+    "id": "plane_the_dark_barony",
+    "name": "The Dark Barony",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Dark Barony.png",
+    "thumb": "cards/thumbs/Plane_The Dark Barony.webp",
+    "transcript": "cards/transcripts/Plane_The Dark Barony.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Ulgrotha",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Dead Zone.png",
+    "id": "plane_the_dead_zone",
+    "name": "The Dead Zone",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Dead Zone.png",
+    "thumb": "cards/thumbs/Plane_The Dead Zone.webp",
+    "transcript": "cards/transcripts/Plane_The Dead Zone.md",
     "tags": [
       ":top:badge:tr:amber:Custom",
-      "Plane",
       "Ulgrotha",
       "PBT"
     ]
   },
   {
-    "file": "Plane_The Dining Car.png",
+    "id": "plane_the_dining_car",
+    "name": "The Dining Car",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Dining Car.png",
+    "thumb": "cards/thumbs/Plane_The Dining Car.webp",
+    "transcript": "cards/transcripts/Plane_The Dining Car.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Spacecraft",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Doctor's Childhood Barn.png",
+    "id": "plane_the_doctors_childhood_barn",
+    "name": "The Doctor's Childhood Barn",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Doctor's Childhood Barn.png",
+    "thumb": "cards/thumbs/Plane_The Doctor's Childhood Barn.webp",
+    "transcript": "cards/transcripts/Plane_The Doctor's Childhood Barn.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Gallifrey",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Doctor's Tomb.png",
+    "id": "plane_the_doctors_tomb",
+    "name": "The Doctor's Tomb",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Doctor's Tomb.png",
+    "thumb": "cards/thumbs/Plane_The Doctor's Tomb.webp",
+    "transcript": "cards/transcripts/Plane_The Doctor's Tomb.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Trenzalore",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Drum, Mining Facility.png",
+    "id": "plane_the_drum_mining_facility",
+    "name": "The Drum, Mining Facility",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Drum, Mining Facility.png",
+    "thumb": "cards/thumbs/Plane_The Drum, Mining Facility.webp",
+    "transcript": "cards/transcripts/Plane_The Drum, Mining Facility.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Earth",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Eon Fog.png",
+    "id": "plane_the_eon_fog",
+    "name": "The Eon Fog",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Eon Fog.png",
+    "thumb": "cards/thumbs/Plane_The Eon Fog.webp",
+    "transcript": "cards/transcripts/Plane_The Eon Fog.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Equilor",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Fathom Ward.png",
+    "id": "plane_the_fathom_ward",
+    "name": "The Fathom Ward",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Fathom Ward.png",
+    "thumb": "cards/thumbs/Plane_The Fathom Ward.webp",
+    "transcript": "cards/transcripts/Plane_The Fathom Ward.md",
     "tags": [
       ":top:badge:tr:amber:Custom",
-      "Plane",
       "New Phyrexia",
       "PBT"
     ]
   },
   {
-    "file": "Plane_The Fertile Lands of Saulvinia.png",
+    "id": "plane_the_fertile_lands_of_saulvinia",
+    "name": "The Fertile Lands of Saulvinia",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Fertile Lands of Saulvinia.png",
+    "thumb": "cards/thumbs/Plane_The Fertile Lands of Saulvinia.webp",
+    "transcript": "cards/transcripts/Plane_The Fertile Lands of Saulvinia.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Antausia",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Food Court.png",
+    "id": "plane_the_food_court",
+    "name": "The Food Court",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Food Court.png",
+    "thumb": "cards/thumbs/Plane_The Food Court.webp",
+    "transcript": "cards/transcripts/Plane_The Food Court.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Eldraine",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Fourth Sphere.png",
+    "id": "plane_the_fourth_sphere",
+    "name": "The Fourth Sphere",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Fourth Sphere.png",
+    "thumb": "cards/thumbs/Plane_The Fourth Sphere.webp",
+    "transcript": "cards/transcripts/Plane_The Fourth Sphere.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Phyrexia",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Golden City of Orazca.png",
+    "id": "plane_the_golden_city_of_orazca",
+    "name": "The Golden City of Orazca",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Golden City of Orazca.png",
+    "thumb": "cards/thumbs/Plane_The Golden City of Orazca.webp",
+    "transcript": "cards/transcripts/Plane_The Golden City of Orazca.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Ixalan",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Great Aerie.png",
+    "id": "plane_the_great_aerie",
+    "name": "The Great Aerie",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Great Aerie.png",
+    "thumb": "cards/thumbs/Plane_The Great Aerie.webp",
+    "transcript": "cards/transcripts/Plane_The Great Aerie.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Tarkir",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Great Forest.png",
+    "id": "plane_the_great_forest",
+    "name": "The Great Forest",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Great Forest.png",
+    "thumb": "cards/thumbs/Plane_The Great Forest.webp",
+    "transcript": "cards/transcripts/Plane_The Great Forest.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Lorwyn",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Hippodrome.png",
+    "id": "plane_the_hippodrome",
+    "name": "The Hippodrome",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Hippodrome.png",
+    "thumb": "cards/thumbs/Plane_The Hippodrome.webp",
+    "transcript": "cards/transcripts/Plane_The Hippodrome.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Segovia",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Lux Foundation Library.png",
+    "id": "plane_the_lux_foundation_library",
+    "name": "The Lux Foundation Library",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Lux Foundation Library.png",
+    "thumb": "cards/thumbs/Plane_The Lux Foundation Library.webp",
+    "transcript": "cards/transcripts/Plane_The Lux Foundation Library.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "The Library",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Maelstrom.png",
+    "id": "plane_the_maelstrom",
+    "name": "The Maelstrom",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Maelstrom.png",
+    "thumb": "cards/thumbs/Plane_The Maelstrom.webp",
+    "transcript": "cards/transcripts/Plane_The Maelstrom.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Alara",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Matrix of Time.png",
+    "id": "plane_the_matrix_of_time",
+    "name": "The Matrix of Time",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Matrix of Time.png",
+    "thumb": "cards/thumbs/Plane_The Matrix of Time.webp",
+    "transcript": "cards/transcripts/Plane_The Matrix of Time.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Gallifrey",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Moonbase.png",
+    "id": "plane_the_moonbase",
+    "name": "The Moonbase",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Moonbase.png",
+    "thumb": "cards/thumbs/Plane_The Moonbase.webp",
+    "transcript": "cards/transcripts/Plane_The Moonbase.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Moon",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Pit.png",
+    "id": "plane_the_pit",
+    "name": "The Pit",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Pit.png",
+    "thumb": "cards/thumbs/Plane_The Pit.webp",
+    "transcript": "cards/transcripts/Plane_The Pit.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "The Abyss",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Pro Tour.png",
+    "id": "plane_the_pro_tour",
+    "name": "The Pro Tour",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Pro Tour.png",
+    "thumb": "cards/thumbs/Plane_The Pro Tour.webp",
+    "transcript": "cards/transcripts/Plane_The Pro Tour.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Pyramid of Mars.png",
+    "id": "plane_the_pyramid_of_mars",
+    "name": "The Pyramid of Mars",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Pyramid of Mars.png",
+    "thumb": "cards/thumbs/Plane_The Pyramid of Mars.webp",
+    "transcript": "cards/transcripts/Plane_The Pyramid of Mars.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Mars",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Sphere.png",
+    "id": "plane_the_sphere",
+    "name": "The Sphere",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Sphere.png",
+    "thumb": "cards/thumbs/Plane_The Sphere.webp",
+    "transcript": "cards/transcripts/Plane_The Sphere.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Las Vegas",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Tangle.png",
+    "id": "plane_the_tangle",
+    "name": "The Tangle",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Tangle.png",
+    "thumb": "cards/thumbs/Plane_The Tangle.webp",
+    "transcript": "cards/transcripts/Plane_The Tangle.md",
     "tags": [
       ":top:badge:tr:amber:Custom",
-      "Plane",
       "Mirrodin",
       "PBT"
     ]
   },
   {
-    "file": "Plane_The Western Cloud.png",
+    "id": "plane_the_western_cloud",
+    "name": "The Western Cloud",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Western Cloud.png",
+    "thumb": "cards/thumbs/Plane_The Western Cloud.webp",
+    "transcript": "cards/transcripts/Plane_The Western Cloud.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Gobakhan",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Wilds.png",
+    "id": "plane_the_wilds",
+    "name": "The Wilds",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Wilds.png",
+    "thumb": "cards/thumbs/Plane_The Wilds.webp",
+    "transcript": "cards/transcripts/Plane_The Wilds.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Eldraine",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Windy City.png",
+    "id": "plane_the_windy_city",
+    "name": "The Windy City",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Windy City.png",
+    "thumb": "cards/thumbs/Plane_The Windy City.webp",
+    "transcript": "cards/transcripts/Plane_The Windy City.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Chicago",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_The Zephyr Maze.png",
+    "id": "plane_the_zephyr_maze",
+    "name": "The Zephyr Maze",
+    "type": "Plane",
+    "image": "cards/images/Plane_The Zephyr Maze.png",
+    "thumb": "cards/thumbs/Plane_The Zephyr Maze.webp",
+    "transcript": "cards/transcripts/Plane_The Zephyr Maze.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Kyneth",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Thraben High City.png",
+    "id": "plane_thraben_high_city",
+    "name": "Thraben High City",
+    "type": "Plane",
+    "image": "cards/images/Plane_Thraben High City.png",
+    "thumb": "cards/thumbs/Plane_Thraben High City.webp",
+    "transcript": "cards/transcripts/Plane_Thraben High City.md",
     "tags": [
       ":top:badge:tr:amber:Custom",
-      "Plane",
       "Innistrad",
       "PBT"
     ]
   },
   {
-    "file": "Plane_Towashi.png",
+    "id": "plane_towashi",
+    "name": "Towashi",
+    "type": "Plane",
+    "image": "cards/images/Plane_Towashi.png",
+    "thumb": "cards/thumbs/Plane_Towashi.webp",
+    "transcript": "cards/transcripts/Plane_Towashi.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Kamigawa",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Trail of the Mage-Rings.png",
+    "id": "plane_trail_of_the_mage_rings",
+    "name": "Trail of the Mage Rings",
+    "type": "Plane",
+    "image": "cards/images/Plane_Trail of the Mage-Rings.png",
+    "thumb": "cards/thumbs/Plane_Trail of the Mage-Rings.webp",
+    "transcript": "cards/transcripts/Plane_Trail of the Mage-Rings.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Vryn",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Truga Jungle.png",
+    "id": "plane_truga_jungle",
+    "name": "Truga Jungle",
+    "type": "Plane",
+    "image": "cards/images/Plane_Truga Jungle.png",
+    "thumb": "cards/thumbs/Plane_Truga Jungle.webp",
+    "transcript": "cards/transcripts/Plane_Truga Jungle.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Ergamon",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Turri Island.png",
+    "id": "plane_turri_island",
+    "name": "Turri Island",
+    "type": "Plane",
+    "image": "cards/images/Plane_Turri Island.png",
+    "thumb": "cards/thumbs/Plane_Turri Island.webp",
+    "transcript": "cards/transcripts/Plane_Turri Island.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Ir",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Two Streams Facility.png",
+    "id": "plane_two_streams_facility",
+    "name": "Two Streams Facility",
+    "type": "Plane",
+    "image": "cards/images/Plane_Two Streams Facility.png",
+    "thumb": "cards/thumbs/Plane_Two Streams Facility.webp",
+    "transcript": "cards/transcripts/Plane_Two Streams Facility.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Apalapucia",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Undercity Reaches.png",
+    "id": "plane_undercity_reaches",
+    "name": "Undercity Reaches",
+    "type": "Plane",
+    "image": "cards/images/Plane_Undercity Reaches.png",
+    "thumb": "cards/thumbs/Plane_Undercity Reaches.webp",
+    "transcript": "cards/transcripts/Plane_Undercity Reaches.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Ravnica",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_UNIT Headquarters.png",
+    "id": "plane_unit_headquarters",
+    "name": "UNIT Headquarters",
+    "type": "Plane",
+    "image": "cards/images/Plane_UNIT Headquarters.png",
+    "thumb": "cards/thumbs/Plane_UNIT Headquarters.webp",
+    "transcript": "cards/transcripts/Plane_UNIT Headquarters.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Earth",
       "WHO",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Unyaro.png",
+    "id": "plane_unyaro",
+    "name": "Unyaro",
+    "type": "Plane",
+    "image": "cards/images/Plane_Unyaro.png",
+    "thumb": "cards/thumbs/Plane_Unyaro.webp",
+    "transcript": "cards/transcripts/Plane_Unyaro.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Zhalfir",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Valor's Reach.png",
+    "id": "plane_valors_reach",
+    "name": "Valor's Reach",
+    "type": "Plane",
+    "image": "cards/images/Plane_Valor's Reach.png",
+    "thumb": "cards/thumbs/Plane_Valor's Reach.webp",
+    "transcript": "cards/transcripts/Plane_Valor's Reach.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Kylem",
       "MOC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Velis Vel.png",
+    "id": "plane_velis_vel",
+    "name": "Velis Vel",
+    "type": "Plane",
+    "image": "cards/images/Plane_Velis Vel.png",
+    "thumb": "cards/thumbs/Plane_Velis Vel.webp",
+    "transcript": "cards/transcripts/Plane_Velis Vel.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Lorwyn",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_We Hope You Like Squirrels.png",
+    "id": "plane_we_hope_you_like_squirrels",
+    "name": "We Hope You Like Squirrels",
+    "type": "Plane",
+    "image": "cards/images/Plane_We Hope You Like Squirrels.png",
+    "thumb": "cards/thumbs/Plane_We Hope You Like Squirrels.webp",
+    "transcript": "cards/transcripts/Plane_We Hope You Like Squirrels.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Secret Lair",
       "hidden",
       "PSSC"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Welcome to Valley.png",
+    "id": "plane_welcome_to_valley",
+    "name": "Welcome to Valley",
+    "type": "Plane",
+    "image": "cards/images/Plane_Welcome to Valley.png",
+    "thumb": "cards/thumbs/Plane_Welcome to Valley.webp",
+    "transcript": "cards/transcripts/Plane_Welcome to Valley.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Bloomburrow",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Windmill Farm.png",
+    "id": "plane_windmill_farm",
+    "name": "Windmill Farm",
+    "type": "Plane",
+    "image": "cards/images/Plane_Windmill Farm.png",
+    "thumb": "cards/thumbs/Plane_Windmill Farm.webp",
+    "transcript": "cards/transcripts/Plane_Windmill Farm.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Amsterdam",
       "PUNK",
       "hidden"
-    ]
+    ],
+    "scryfallId": null
   },
   {
-    "file": "Plane_Windriddle Palaces.png",
+    "id": "plane_windriddle_palaces",
+    "name": "Windriddle Palaces",
+    "type": "Plane",
+    "image": "cards/images/Plane_Windriddle Palaces.png",
+    "thumb": "cards/thumbs/Plane_Windriddle Palaces.webp",
+    "transcript": "cards/transcripts/Plane_Windriddle Palaces.md",
     "tags": [
       ":top:badge:tr:green:Official",
-      "Plane",
       "Belenon",
       "OPCA"
-    ]
+    ],
+    "scryfallId": null
   }
 ]

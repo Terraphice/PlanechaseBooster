@@ -1,0 +1,14 @@
+{
+  "id": "plane_murasa",
+  "name": "Murasa",
+  "type": "Plane",
+  "image": "cards/images/Plane_Murasa.png",
+  "thumb": "cards/thumbs/Plane_Murasa.webp",
+  "transcript": "cards/transcripts/Plane_Murasa.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Zendikar",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

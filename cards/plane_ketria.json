@@ -1,0 +1,14 @@
+{
+  "id": "plane_ketria",
+  "name": "Ketria",
+  "type": "Plane",
+  "image": "cards/images/Plane_Ketria.png",
+  "thumb": "cards/thumbs/Plane_Ketria.webp",
+  "transcript": "cards/transcripts/Plane_Ketria.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Ikoria",
+    "MOC"
+  ],
+  "scryfallId": null
+}

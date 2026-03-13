@@ -1,0 +1,14 @@
+{
+  "id": "plane_turri_island",
+  "name": "Turri Island",
+  "type": "Plane",
+  "image": "cards/images/Plane_Turri Island.png",
+  "thumb": "cards/thumbs/Plane_Turri Island.webp",
+  "transcript": "cards/transcripts/Plane_Turri Island.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Ir",
+    "MOC"
+  ],
+  "scryfallId": null
+}

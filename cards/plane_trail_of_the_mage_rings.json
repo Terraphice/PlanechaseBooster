@@ -1,0 +1,14 @@
+{
+  "id": "plane_trail_of_the_mage_rings",
+  "name": "Trail of the Mage Rings",
+  "type": "Plane",
+  "image": "cards/images/Plane_Trail of the Mage-Rings.png",
+  "thumb": "cards/thumbs/Plane_Trail of the Mage-Rings.webp",
+  "transcript": "cards/transcripts/Plane_Trail of the Mage-Rings.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Vryn",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

@@ -1,0 +1,15 @@
+{
+  "id": "plane_lake_silencio",
+  "name": "Lake Silencio",
+  "type": "Plane",
+  "image": "cards/images/Plane_Lake Silencio.png",
+  "thumb": "cards/thumbs/Plane_Lake Silencio.webp",
+  "transcript": "cards/transcripts/Plane_Lake Silencio.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Earth",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

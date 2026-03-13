@@ -1,0 +1,15 @@
+{
+  "id": "plane_the_bean",
+  "name": "The Bean",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Bean.png",
+  "thumb": "cards/thumbs/Plane_The Bean.webp",
+  "transcript": "cards/transcripts/Plane_The Bean.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Chicago",
+    "PUNK",
+    "hidden"
+  ],
+  "scryfallId": null
+}

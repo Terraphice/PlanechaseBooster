@@ -1,0 +1,15 @@
+{
+  "id": "plane_shy_town",
+  "name": "Shy Town",
+  "type": "Plane",
+  "image": "cards/images/Plane_Shy Town.png",
+  "thumb": "cards/thumbs/Plane_Shy Town.webp",
+  "transcript": "cards/transcripts/Plane_Shy Town.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Chicago",
+    "PUNK",
+    "hidden"
+  ],
+  "scryfallId": null
+}

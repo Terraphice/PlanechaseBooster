@@ -1,0 +1,15 @@
+{
+  "id": "plane_asmoranomardicadaistinaculdacars_kitchen",
+  "name": "Asmoranomardicadaistinaculdacar's Kitchen",
+  "type": "Plane",
+  "image": "cards/images/Plane_Asmoranomardicadaistinaculdacar's Kitchen.png",
+  "thumb": "cards/thumbs/Plane_Asmoranomardicadaistinaculdacar's Kitchen.webp",
+  "transcript": "cards/transcripts/Plane_Asmoranomardicadaistinaculdacar's Kitchen.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Hell",
+    "PUNK",
+    "hidden"
+  ],
+  "scryfallId": null
+}

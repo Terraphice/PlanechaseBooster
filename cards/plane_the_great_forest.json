@@ -1,0 +1,14 @@
+{
+  "id": "plane_the_great_forest",
+  "name": "The Great Forest",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Great Forest.png",
+  "thumb": "cards/thumbs/Plane_The Great Forest.webp",
+  "transcript": "cards/transcripts/Plane_The Great Forest.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Lorwyn",
+    "MOC"
+  ],
+  "scryfallId": null
+}

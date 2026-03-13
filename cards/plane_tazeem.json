@@ -1,0 +1,14 @@
+{
+  "id": "plane_tazeem",
+  "name": "Tazeem",
+  "type": "Plane",
+  "image": "cards/images/Plane_Tazeem.png",
+  "thumb": "cards/thumbs/Plane_Tazeem.webp",
+  "transcript": "cards/transcripts/Plane_Tazeem.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Zendikar",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

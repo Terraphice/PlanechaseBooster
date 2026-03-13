@@ -1,0 +1,13 @@
+{
+  "id": "plane_the_dead_zone",
+  "name": "The Dead Zone",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Dead Zone.png",
+  "thumb": "cards/thumbs/Plane_The Dead Zone.webp",
+  "transcript": "cards/transcripts/Plane_The Dead Zone.md",
+  "tags": [
+    ":top:badge:tr:amber:Custom",
+    "Ulgrotha",
+    "PBT"
+  ]
+}

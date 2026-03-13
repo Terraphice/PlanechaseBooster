@@ -1,0 +1,14 @@
+{
+  "id": "plane_celestine_reef",
+  "name": "Celestine Reef",
+  "type": "Plane",
+  "image": "cards/images/Plane_Celestine Reef.png",
+  "thumb": "cards/thumbs/Plane_Celestine Reef.webp",
+  "transcript": "cards/transcripts/Plane_Celestine Reef.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Luvion",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

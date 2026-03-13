@@ -1,0 +1,14 @@
+{
+  "id": "plane_the_dark_barony",
+  "name": "The Dark Barony",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Dark Barony.png",
+  "thumb": "cards/thumbs/Plane_The Dark Barony.webp",
+  "transcript": "cards/transcripts/Plane_The Dark Barony.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Ulgrotha",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

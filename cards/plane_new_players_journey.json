@@ -1,0 +1,15 @@
+{
+  "id": "plane_new_players_journey",
+  "name": "New Player's Journey",
+  "type": "Plane",
+  "image": "cards/images/Plane_New Player's Journey.png",
+  "thumb": "cards/thumbs/Plane_New Player's Journey.webp",
+  "transcript": "cards/transcripts/Plane_New Player's Journey.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Foundations",
+    "PUNK",
+    "hidden"
+  ],
+  "scryfallId": null
+}

@@ -1,0 +1,15 @@
+{
+  "id": "plane_the_windy_city",
+  "name": "The Windy City",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Windy City.png",
+  "thumb": "cards/thumbs/Plane_The Windy City.webp",
+  "transcript": "cards/transcripts/Plane_The Windy City.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Chicago",
+    "PUNK",
+    "hidden"
+  ],
+  "scryfallId": null
+}

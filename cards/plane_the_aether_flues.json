@@ -1,0 +1,14 @@
+{
+  "id": "plane_the_aether_flues",
+  "name": "The Aether Flues",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Aether Flues.png",
+  "thumb": "cards/thumbs/Plane_The Aether Flues.webp",
+  "transcript": "cards/transcripts/Plane_The Aether Flues.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Iquatana",
+    "MOC"
+  ],
+  "scryfallId": null
+}

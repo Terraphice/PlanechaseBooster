@@ -1,0 +1,15 @@
+{
+  "id": "plane_jaliras_show",
+  "name": "Jalira's Show",
+  "type": "Plane",
+  "image": "cards/images/Plane_Jalira's Show.png",
+  "thumb": "cards/thumbs/Plane_Jalira's Show.webp",
+  "transcript": "cards/transcripts/Plane_Jalira's Show.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Las Vegas",
+    "PUNK",
+    "hidden"
+  ],
+  "scryfallId": null
+}

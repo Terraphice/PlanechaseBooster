@@ -1,0 +1,15 @@
+{
+  "id": "plane_finally_left_handed_magic_cards",
+  "name": "Finally! Left Handed Magic Cards",
+  "type": "Plane",
+  "image": "cards/images/Plane_Finally! Left-Handed Magic Cards.png",
+  "thumb": "cards/thumbs/Plane_Finally! Left-Handed Magic Cards.webp",
+  "transcript": "cards/transcripts/Plane_Finally! Left-Handed Magic Cards.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Secret Lair",
+    "hidden",
+    "PSSC"
+  ],
+  "scryfallId": null
+}

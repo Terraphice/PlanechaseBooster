@@ -1,0 +1,14 @@
+{
+  "id": "plane_aretopolis",
+  "name": "Aretopolis",
+  "type": "Plane",
+  "image": "cards/images/Plane_Aretopolis.png",
+  "thumb": "cards/thumbs/Plane_Aretopolis.webp",
+  "transcript": "cards/transcripts/Plane_Aretopolis.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Kephalai",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

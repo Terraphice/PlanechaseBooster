@@ -1,0 +1,14 @@
+{
+  "id": "plane_inys_haen",
+  "name": "Inys Haen",
+  "type": "Plane",
+  "image": "cards/images/Plane_Inys Haen.png",
+  "thumb": "cards/thumbs/Plane_Inys Haen.webp",
+  "transcript": "cards/transcripts/Plane_Inys Haen.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Cridhe",
+    "MOC"
+  ],
+  "scryfallId": null
+}

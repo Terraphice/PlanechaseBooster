@@ -1,0 +1,15 @@
+{
+  "id": "plane_mondassian_colony_ship",
+  "name": "Mondassian Colony Ship",
+  "type": "Plane",
+  "image": "cards/images/Plane_Mondassian Colony Ship.png",
+  "thumb": "cards/thumbs/Plane_Mondassian Colony Ship.webp",
+  "transcript": "cards/transcripts/Plane_Mondassian Colony Ship.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Spacecraft",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

@@ -1,0 +1,15 @@
+{
+  "id": "plane_ghirapur_grand_prix",
+  "name": "Ghirapur Grand Prix",
+  "type": "Plane",
+  "image": "cards/images/Plane_Ghirapur Grand Prix.png",
+  "thumb": "cards/thumbs/Plane_Ghirapur Grand Prix.webp",
+  "transcript": "cards/transcripts/Plane_Ghirapur Grand Prix.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Avishkar",
+    "PUNK",
+    "hidden"
+  ],
+  "scryfallId": null
+}

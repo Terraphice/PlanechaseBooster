@@ -1,0 +1,14 @@
+{
+  "id": "plane_velis_vel",
+  "name": "Velis Vel",
+  "type": "Plane",
+  "image": "cards/images/Plane_Velis Vel.png",
+  "thumb": "cards/thumbs/Plane_Velis Vel.webp",
+  "transcript": "cards/transcripts/Plane_Velis Vel.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Lorwyn",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

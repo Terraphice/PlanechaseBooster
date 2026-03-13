@@ -1,0 +1,15 @@
+{
+  "id": "plane_the_pyramid_of_mars",
+  "name": "The Pyramid of Mars",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Pyramid of Mars.png",
+  "thumb": "cards/thumbs/Plane_The Pyramid of Mars.webp",
+  "transcript": "cards/transcripts/Plane_The Pyramid of Mars.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Mars",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

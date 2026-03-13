@@ -1,0 +1,14 @@
+{
+  "id": "plane_onakke_catacomb",
+  "name": "Onakke Catacomb",
+  "type": "Plane",
+  "image": "cards/images/Plane_Onakke Catacomb.png",
+  "thumb": "cards/thumbs/Plane_Onakke Catacomb.webp",
+  "transcript": "cards/transcripts/Plane_Onakke Catacomb.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Shandalar",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

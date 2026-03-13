@@ -1,0 +1,15 @@
+{
+  "id": "plane_raiders_allegiance",
+  "name": "Raiders' Allegiance",
+  "type": "Plane",
+  "image": "cards/images/Plane_Raiders' Allegiance.png",
+  "thumb": "cards/thumbs/Plane_Raiders' Allegiance.webp",
+  "transcript": "cards/transcripts/Plane_Raiders' Allegiance.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Ixalan",
+    "PUNK",
+    "hidden"
+  ],
+  "scryfallId": null
+}

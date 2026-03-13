@@ -1,0 +1,15 @@
+{
+  "id": "plane_bad_wolf_bay",
+  "name": "Bad Wolf Bay",
+  "type": "Plane",
+  "image": "cards/images/Plane_Bad Wolf Bay.png",
+  "thumb": "cards/thumbs/Plane_Bad Wolf Bay.webp",
+  "transcript": "cards/transcripts/Plane_Bad Wolf Bay.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Earth",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

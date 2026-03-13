@@ -1,0 +1,15 @@
+{
+  "id": "plane_new_new_york",
+  "name": "New New York",
+  "type": "Plane",
+  "image": "cards/images/Plane_New New York.png",
+  "thumb": "cards/thumbs/Plane_New New York.webp",
+  "transcript": "cards/transcripts/Plane_New New York.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "New Earth",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

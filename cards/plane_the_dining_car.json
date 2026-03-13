@@ -1,0 +1,15 @@
+{
+  "id": "plane_the_dining_car",
+  "name": "The Dining Car",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Dining Car.png",
+  "thumb": "cards/thumbs/Plane_The Dining Car.webp",
+  "transcript": "cards/transcripts/Plane_The Dining Car.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Spacecraft",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

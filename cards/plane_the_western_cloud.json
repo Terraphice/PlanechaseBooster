@@ -1,0 +1,14 @@
+{
+  "id": "plane_the_western_cloud",
+  "name": "The Western Cloud",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Western Cloud.png",
+  "thumb": "cards/thumbs/Plane_The Western Cloud.webp",
+  "transcript": "cards/transcripts/Plane_The Western Cloud.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Gobakhan",
+    "MOC"
+  ],
+  "scryfallId": null
+}

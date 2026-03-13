@@ -1,0 +1,15 @@
+{
+  "id": "plane_two_streams_facility",
+  "name": "Two Streams Facility",
+  "type": "Plane",
+  "image": "cards/images/Plane_Two Streams Facility.png",
+  "thumb": "cards/thumbs/Plane_Two Streams Facility.webp",
+  "transcript": "cards/transcripts/Plane_Two Streams Facility.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Apalapucia",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

@@ -1,0 +1,14 @@
+{
+  "id": "plane_riptide_island",
+  "name": "Riptide Island",
+  "type": "Plane",
+  "image": "cards/images/Plane_Riptide Island.png",
+  "thumb": "cards/thumbs/Plane_Riptide Island.webp",
+  "transcript": "cards/transcripts/Plane_Riptide Island.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Dominaria",
+    "MOC"
+  ],
+  "scryfallId": null
+}

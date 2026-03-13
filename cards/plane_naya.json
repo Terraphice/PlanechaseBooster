@@ -1,0 +1,14 @@
+{
+  "id": "plane_naya",
+  "name": "Naya",
+  "type": "Plane",
+  "image": "cards/images/Plane_Naya.png",
+  "thumb": "cards/thumbs/Plane_Naya.webp",
+  "transcript": "cards/transcripts/Plane_Naya.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Alara",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

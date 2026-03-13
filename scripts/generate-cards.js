@@ -4,14 +4,28 @@ import { fileURLToPath } from "url";
 
 // ── Exported helper functions (also used by tests) ────────────────────────────
 
-export function getCardKey(filename) {
-  return filename.replace(/\.[^.]+$/, "");
-}
-
-export function getInferredTypeTag(filename) {
+export function getInferredType(filename) {
   if (/^plane[-_ ]/i.test(filename)) return "Plane";
   if (/^phenomenon[-_ ]/i.test(filename)) return "Phenomenon";
   return null;
+}
+
+export function getDisplayName(filename) {
+  const withoutExtension = filename.replace(/\.[^.]+$/, "");
+  const withoutTypePrefix = withoutExtension.replace(/^(Plane|Phenomenon)[-_ ]+/i, "");
+  return withoutTypePrefix.replace(/[_-]+/g, " ").trim();
+}
+
+export function getCardId(filename) {
+  const type = getInferredType(filename);
+  if (!type) return null;
+  const name = getDisplayName(filename);
+  const suffix = name
+    .toLowerCase()
+    .replace(/\u2014/g, "-")
+    .replace(/\s+/g, "_")
+    .replace(/[^a-z0-9_-]/g, "");
+  return type.toLowerCase() + "_" + suffix;
 }
 
 export function uniqueTags(tags) {
@@ -24,6 +38,20 @@ export function uniqueTags(tags) {
       return true;
     })
     .map((tag) => String(tag).trim());
+}
+
+export function isOfficialCard(tags) {
+  return tags.some((tag) => {
+    const stripped = tag.startsWith(":top:") ? tag.slice(5) : tag;
+    if (stripped.startsWith("badge:")) {
+      const parts = stripped.split(":");
+      if (parts.length >= 4) {
+        const label = parts.slice(3).join(":");
+        return label.toLowerCase().includes("official");
+      }
+    }
+    return false;
+  });
 }
 
 // ── Internal helpers ──────────────────────────────────────────────────────────
@@ -55,7 +83,7 @@ if (isDirectRun) {
   const OUTPUT_FILE = join(ROOT, "cards.json");
 
   const existingCards = readExistingCards(OUTPUT_FILE);
-  const existingByKey = new Map(existingCards.map((card) => [getCardKey(card.file), card]));
+  const existingById = new Map(existingCards.map((card) => [card.id, card]));
 
   const cards = [];
 
@@ -78,23 +106,40 @@ if (isDirectRun) {
     const extension = extname(entry.name).toLowerCase();
     if (!VALID_EXTENSIONS.has(extension)) continue;
 
-    const key = getCardKey(entry.name);
-    const existing = existingByKey.get(key) || {};
-    const inferredTypeTag = getInferredTypeTag(entry.name);
+    const type = getInferredType(entry.name);
+    if (!type) continue;
 
-    const mergedTags = uniqueTags([
-      ...(Array.isArray(existing.tags) ? existing.tags : []),
-      ...(inferredTypeTag ? [inferredTypeTag] : [])
-    ]);
+    const id = getCardId(entry.name);
+    const name = getDisplayName(entry.name);
+    const stem = entry.name.replace(/\.[^.]+$/, "");
+    const existing = existingById.get(id) || {};
 
-    cards.push({
-      file: entry.name,
-      tags: mergedTags
+    const mergedTags = uniqueTags(
+      Array.isArray(existing.tags) ? existing.tags : []
+    ).filter((tag) => {
+      const lower = tag.toLowerCase().trim();
+      return lower !== "plane" && lower !== "phenomenon";
     });
+
+    const card = {
+      id,
+      name,
+      type,
+      image: `cards/images/${entry.name}`,
+      thumb: `cards/thumbs/${stem}.webp`,
+      transcript: `cards/transcripts/${stem}.md`,
+      tags: mergedTags
+    };
+
+    if (isOfficialCard(mergedTags)) {
+      card.scryfallId = existing.scryfallId !== undefined ? existing.scryfallId : null;
+    }
+
+    cards.push(card);
   }
 
   cards.sort((a, b) => {
-    return a.file.localeCompare(b.file, undefined, {
+    return a.image.localeCompare(b.image, undefined, {
       numeric: true,
       sensitivity: "base"
     });

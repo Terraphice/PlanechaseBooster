@@ -1,0 +1,14 @@
+{
+  "id": "plane_pin_collectors_booth",
+  "name": "Pin Collector's Booth",
+  "type": "Plane",
+  "image": "cards/images/Plane_Pin Collector's Booth.png",
+  "thumb": "cards/thumbs/Plane_Pin Collector's Booth.webp",
+  "transcript": "cards/transcripts/Plane_Pin Collector's Booth.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "PUNK",
+    "hidden"
+  ],
+  "scryfallId": null
+}

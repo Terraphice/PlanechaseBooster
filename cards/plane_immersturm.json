@@ -1,0 +1,14 @@
+{
+  "id": "plane_immersturm",
+  "name": "Immersturm",
+  "type": "Plane",
+  "image": "cards/images/Plane_Immersturm.png",
+  "thumb": "cards/thumbs/Plane_Immersturm.webp",
+  "transcript": "cards/transcripts/Plane_Immersturm.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Valla",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

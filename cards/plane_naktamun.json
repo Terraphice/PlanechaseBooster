@@ -1,0 +1,14 @@
+{
+  "id": "plane_naktamun",
+  "name": "Naktamun",
+  "type": "Plane",
+  "image": "cards/images/Plane_Naktamun.png",
+  "thumb": "cards/thumbs/Plane_Naktamun.webp",
+  "transcript": "cards/transcripts/Plane_Naktamun.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Amonkhet",
+    "MOC"
+  ],
+  "scryfallId": null
+}

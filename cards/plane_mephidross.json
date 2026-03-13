@@ -1,0 +1,13 @@
+{
+  "id": "plane_mephidross",
+  "name": "Mephidross",
+  "type": "Plane",
+  "image": "cards/images/Plane_Mephidross.png",
+  "thumb": "cards/thumbs/Plane_Mephidross.webp",
+  "transcript": "cards/transcripts/Plane_Mephidross.md",
+  "tags": [
+    ":top:badge:tr:amber:Custom",
+    "Mirrodin",
+    "PBT"
+  ]
+}

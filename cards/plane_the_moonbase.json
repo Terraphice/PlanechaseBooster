@@ -1,0 +1,15 @@
+{
+  "id": "plane_the_moonbase",
+  "name": "The Moonbase",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Moonbase.png",
+  "thumb": "cards/thumbs/Plane_The Moonbase.webp",
+  "transcript": "cards/transcripts/Plane_The Moonbase.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Moon",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

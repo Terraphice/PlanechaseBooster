@@ -1,0 +1,15 @@
+{
+  "id": "plane_hotel_of_fears",
+  "name": "Hotel of Fears",
+  "type": "Plane",
+  "image": "cards/images/Plane_Hotel of Fears.png",
+  "thumb": "cards/thumbs/Plane_Hotel of Fears.webp",
+  "transcript": "cards/transcripts/Plane_Hotel of Fears.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Spacecraft",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

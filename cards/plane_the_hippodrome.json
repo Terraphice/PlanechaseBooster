@@ -1,0 +1,14 @@
+{
+  "id": "plane_the_hippodrome",
+  "name": "The Hippodrome",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Hippodrome.png",
+  "thumb": "cards/thumbs/Plane_The Hippodrome.webp",
+  "transcript": "cards/transcripts/Plane_The Hippodrome.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Segovia",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

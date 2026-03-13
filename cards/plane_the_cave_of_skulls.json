@@ -1,0 +1,15 @@
+{
+  "id": "plane_the_cave_of_skulls",
+  "name": "The Cave of Skulls",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Cave of Skulls.png",
+  "thumb": "cards/thumbs/Plane_The Cave of Skulls.webp",
+  "transcript": "cards/transcripts/Plane_The Cave of Skulls.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Earth",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

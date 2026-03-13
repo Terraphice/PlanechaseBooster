@@ -1,0 +1,15 @@
+{
+  "id": "plane_pompeii",
+  "name": "Pompeii",
+  "type": "Plane",
+  "image": "cards/images/Plane_Pompeii.png",
+  "thumb": "cards/thumbs/Plane_Pompeii.webp",
+  "transcript": "cards/transcripts/Plane_Pompeii.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Earth",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

@@ -1,0 +1,14 @@
+{
+  "id": "plane_glimmervoid_basin",
+  "name": "Glimmervoid Basin",
+  "type": "Plane",
+  "image": "cards/images/Plane_Glimmervoid Basin.png",
+  "thumb": "cards/thumbs/Plane_Glimmervoid Basin.webp",
+  "transcript": "cards/transcripts/Plane_Glimmervoid Basin.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Mirrodin",
+    "MOC"
+  ],
+  "scryfallId": null
+}

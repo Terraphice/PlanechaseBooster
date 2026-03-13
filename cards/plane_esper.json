@@ -1,0 +1,14 @@
+{
+  "id": "plane_esper",
+  "name": "Esper",
+  "type": "Plane",
+  "image": "cards/images/Plane_Esper.png",
+  "thumb": "cards/thumbs/Plane_Esper.webp",
+  "transcript": "cards/transcripts/Plane_Esper.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Alara",
+    "MOC"
+  ],
+  "scryfallId": null
+}

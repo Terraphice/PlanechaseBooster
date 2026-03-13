@@ -1,0 +1,15 @@
+{
+  "id": "plane_circus_of_the_sun",
+  "name": "Circus of the Sun",
+  "type": "Plane",
+  "image": "cards/images/Plane_Circus of the Sun.png",
+  "thumb": "cards/thumbs/Plane_Circus of the Sun.webp",
+  "transcript": "cards/transcripts/Plane_Circus of the Sun.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Las Vegas",
+    "PUNK",
+    "hidden"
+  ],
+  "scryfallId": null
+}

@@ -1,0 +1,14 @@
+{
+  "id": "plane_sanctum_of_serra",
+  "name": "Sanctum of Serra",
+  "type": "Plane",
+  "image": "cards/images/Plane_Sanctum of Serra.png",
+  "thumb": "cards/thumbs/Plane_Sanctum of Serra.webp",
+  "transcript": "cards/transcripts/Plane_Sanctum of Serra.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Serra's Realm",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

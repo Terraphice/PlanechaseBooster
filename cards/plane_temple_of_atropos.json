@@ -1,0 +1,15 @@
+{
+  "id": "plane_temple_of_atropos",
+  "name": "Temple of Atropos",
+  "type": "Plane",
+  "image": "cards/images/Plane_Temple of Atropos.png",
+  "thumb": "cards/thumbs/Plane_Temple of Atropos.webp",
+  "transcript": "cards/transcripts/Plane_Temple of Atropos.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Time",
+    "WHO",
+    "Hidden"
+  ],
+  "scryfallId": null
+}

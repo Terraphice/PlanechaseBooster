@@ -1,0 +1,15 @@
+{
+  "id": "plane_amys_home",
+  "name": "Amy's Home",
+  "type": "Plane",
+  "image": "cards/images/Plane_Amy's Home.png",
+  "thumb": "cards/thumbs/Plane_Amy's Home.webp",
+  "transcript": "cards/transcripts/Plane_Amy's Home.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Earth",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

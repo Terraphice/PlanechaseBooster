@@ -1,0 +1,14 @@
+{
+  "id": "plane_the_wilds",
+  "name": "The Wilds",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Wilds.png",
+  "thumb": "cards/thumbs/Plane_The Wilds.webp",
+  "transcript": "cards/transcripts/Plane_The Wilds.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Eldraine",
+    "MOC"
+  ],
+  "scryfallId": null
+}

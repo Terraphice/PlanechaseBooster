@@ -1,0 +1,15 @@
+{
+  "id": "plane_high_noon_at_thunder_junction",
+  "name": "High Noon At Thunder Junction",
+  "type": "Plane",
+  "image": "cards/images/Plane_High Noon At Thunder Junction.png",
+  "thumb": "cards/thumbs/Plane_High Noon At Thunder Junction.webp",
+  "transcript": "cards/transcripts/Plane_High Noon At Thunder Junction.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Thunder Junction",
+    "PUNK",
+    "hidden"
+  ],
+  "scryfallId": null
+}

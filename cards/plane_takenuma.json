@@ -1,0 +1,14 @@
+{
+  "id": "plane_takenuma",
+  "name": "Takenuma",
+  "type": "Plane",
+  "image": "cards/images/Plane_Takenuma.png",
+  "thumb": "cards/thumbs/Plane_Takenuma.webp",
+  "transcript": "cards/transcripts/Plane_Takenuma.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Kamigawa",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

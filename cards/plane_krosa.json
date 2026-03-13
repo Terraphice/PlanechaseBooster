@@ -1,0 +1,14 @@
+{
+  "id": "plane_krosa",
+  "name": "Krosa",
+  "type": "Plane",
+  "image": "cards/images/Plane_Krosa.png",
+  "thumb": "cards/thumbs/Plane_Krosa.webp",
+  "transcript": "cards/transcripts/Plane_Krosa.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Dominaria",
+    "MOC"
+  ],
+  "scryfallId": null
+}

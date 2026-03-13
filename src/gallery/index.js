@@ -358,17 +358,17 @@ function prefetchAllTranscripts(cards) {
     if (index >= cards.length) return;
     const card = cards[index++];
 
-    if (transcriptCache.has(card.key)) { next(); return; }
+    if (transcriptCache.has(card.id)) { next(); return; }
 
-    transcriptCache.set(card.key, null);
+    transcriptCache.set(card.id, null);
     fetch(card.transcriptPath)
       .then((r) => (r.ok ? r.text() : ""))
       .then((text) => {
-        transcriptCache.set(card.key, text ? text.trim() : "");
+        transcriptCache.set(card.id, text ? text.trim() : "");
         next();
       })
       .catch(() => {
-        transcriptCache.set(card.key, "");
+        transcriptCache.set(card.id, "");
         next();
       });
   }
@@ -477,7 +477,7 @@ function toggleTagFilter(tag) {
   applyFilters();
 
   if (!modal.classList.contains("hidden") && currentKey) {
-    const matchingIndex = filteredCards.findIndex((card) => card.key === currentKey);
+    const matchingIndex = filteredCards.findIndex((card) => card.id === currentKey);
     if (matchingIndex === -1) { closeModal(false); return; }
     modalManager.renderModal(filteredCards[matchingIndex], false);
   }

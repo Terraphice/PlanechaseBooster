@@ -1,0 +1,14 @@
+{
+  "id": "plane_the_eon_fog",
+  "name": "The Eon Fog",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Eon Fog.png",
+  "thumb": "cards/thumbs/Plane_The Eon Fog.webp",
+  "transcript": "cards/transcripts/Plane_The Eon Fog.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Equilor",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

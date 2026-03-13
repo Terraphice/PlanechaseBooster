@@ -1,0 +1,14 @@
+{
+  "id": "plane_kessig",
+  "name": "Kessig",
+  "type": "Plane",
+  "image": "cards/images/Plane_Kessig.png",
+  "thumb": "cards/thumbs/Plane_Kessig.webp",
+  "transcript": "cards/transcripts/Plane_Kessig.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Innistrad",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

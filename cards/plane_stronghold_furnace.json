@@ -1,0 +1,14 @@
+{
+  "id": "plane_stronghold_furnace",
+  "name": "Stronghold Furnace",
+  "type": "Plane",
+  "image": "cards/images/Plane_Stronghold Furnace.png",
+  "thumb": "cards/thumbs/Plane_Stronghold Furnace.webp",
+  "transcript": "cards/transcripts/Plane_Stronghold Furnace.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Rath",
+    "MOC"
+  ],
+  "scryfallId": null
+}

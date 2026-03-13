@@ -1,0 +1,14 @@
+{
+  "id": "plane_bant",
+  "name": "Bant",
+  "type": "Plane",
+  "image": "cards/images/Plane_Bant.png",
+  "thumb": "cards/thumbs/Plane_Bant.webp",
+  "transcript": "cards/transcripts/Plane_Bant.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Alara",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

@@ -1,0 +1,14 @@
+{
+  "id": "plane_academy_at_tolaria_west",
+  "name": "Academy at Tolaria West",
+  "type": "Plane",
+  "image": "cards/images/Plane_Academy at Tolaria West.png",
+  "thumb": "cards/thumbs/Plane_Academy at Tolaria West.webp",
+  "transcript": "cards/transcripts/Plane_Academy at Tolaria West.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Dominaria",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

@@ -1,0 +1,12 @@
+{
+  "id": "phenomenon_surging_vitality",
+  "name": "Surging Vitality",
+  "type": "Phenomenon",
+  "image": "cards/images/Phenomenon_Surging Vitality.png",
+  "thumb": "cards/thumbs/Phenomenon_Surging Vitality.webp",
+  "transcript": "cards/transcripts/Phenomenon_Surging Vitality.md",
+  "tags": [
+    ":top:badge:tr:amber:Custom",
+    "PBT"
+  ]
+}

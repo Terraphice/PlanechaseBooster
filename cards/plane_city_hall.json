@@ -1,0 +1,15 @@
+{
+  "id": "plane_city_hall",
+  "name": "City Hall",
+  "type": "Plane",
+  "image": "cards/images/Plane_City Hall.png",
+  "thumb": "cards/thumbs/Plane_City Hall.webp",
+  "transcript": "cards/transcripts/Plane_City Hall.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Chicago",
+    "PUNK",
+    "hidden"
+  ],
+  "scryfallId": null
+}

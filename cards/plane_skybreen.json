@@ -1,0 +1,14 @@
+{
+  "id": "plane_skybreen",
+  "name": "Skybreen",
+  "type": "Plane",
+  "image": "cards/images/Plane_Skybreen.png",
+  "thumb": "cards/thumbs/Plane_Skybreen.webp",
+  "transcript": "cards/transcripts/Plane_Skybreen.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Kaldheim",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

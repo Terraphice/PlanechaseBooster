@@ -1,0 +1,15 @@
+{
+  "id": "plane_the_lux_foundation_library",
+  "name": "The Lux Foundation Library",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Lux Foundation Library.png",
+  "thumb": "cards/thumbs/Plane_The Lux Foundation Library.webp",
+  "transcript": "cards/transcripts/Plane_The Lux Foundation Library.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "The Library",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

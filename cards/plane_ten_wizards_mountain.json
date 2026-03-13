@@ -1,0 +1,14 @@
+{
+  "id": "plane_ten_wizards_mountain",
+  "name": "Ten Wizards Mountain",
+  "type": "Plane",
+  "image": "cards/images/Plane_Ten Wizards Mountain.png",
+  "thumb": "cards/thumbs/Plane_Ten Wizards Mountain.webp",
+  "transcript": "cards/transcripts/Plane_Ten Wizards Mountain.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Shenmeng",
+    "MOC"
+  ],
+  "scryfallId": null
+}

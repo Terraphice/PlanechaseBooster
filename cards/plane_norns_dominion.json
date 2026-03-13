@@ -1,0 +1,14 @@
+{
+  "id": "plane_norns_dominion",
+  "name": "Norn's Dominion",
+  "type": "Plane",
+  "image": "cards/images/Plane_Norn's Dominion.png",
+  "thumb": "cards/thumbs/Plane_Norn's Dominion.webp",
+  "transcript": "cards/transcripts/Plane_Norn's Dominion.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "New Phyrexia",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

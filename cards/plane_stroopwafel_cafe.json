@@ -1,0 +1,15 @@
+{
+  "id": "plane_stroopwafel_cafe",
+  "name": "Stroopwafel Cafe",
+  "type": "Plane",
+  "image": "cards/images/Plane_Stroopwafel Cafe.png",
+  "thumb": "cards/thumbs/Plane_Stroopwafel Cafe.webp",
+  "transcript": "cards/transcripts/Plane_Stroopwafel Cafe.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Amsterdam",
+    "PUNK",
+    "hidden"
+  ],
+  "scryfallId": null
+}

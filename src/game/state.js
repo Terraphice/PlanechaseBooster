@@ -3,7 +3,7 @@
 // and game lifecycle transitions (start, exit, reset).
 
 import { shuffleArray } from "../gallery/utils.js";
-import { compressKey, decompressKey, toBase64Url, fromBase64Url } from "../deck/codec.js";
+import { compressKey, decompressKey, remapLegacyKey, toBase64Url, fromBase64Url } from "../deck/codec.js";
 import {
   bemKey,
   resetBemState,
@@ -15,7 +15,7 @@ import {
 
 // ── Constants ─────────────────────────────────────────────────────────────────
 
-const GAME_STATE_AUTOSAVE_KEY = "planar-atlas-game-state-autosave-v1";
+const GAME_STATE_AUTOSAVE_KEY = "planar-atlas-game-state-autosave-v2";
 const MAX_GAME_HISTORY = 20;
 
 // ── Module state ──────────────────────────────────────────────────────────────
@@ -169,7 +169,7 @@ export function redoNextAction() {
 // ── Game state encoding / decoding ────────────────────────────────────────────
 
 /**
- * Encodes the current game state to a "g1:" seed string for saving or sharing.
+ * Encodes the current game state to a "g2:" seed string for saving or sharing.
  * @returns {string} The encoded seed, or an empty string on failure.
  */
 export function encodeGameState() {
@@ -183,58 +183,61 @@ export function encodeGameState() {
       if (cell.placeholder && !cell.card) {
         grid.push([x, y, null, 1, null, true]);
       } else {
-        const entry = [x, y, compressKey(cell.card.key), cell.faceUp ? 1 : 0];
-        if (cell.queuedCard) entry.push(compressKey(cell.queuedCard.key));
+        const entry = [x, y, compressKey(cell.card.id), cell.faceUp ? 1 : 0];
+        if (cell.queuedCard) entry.push(compressKey(cell.queuedCard.id));
         grid.push(entry);
       }
     }
     const obj = {
       m: "bem",
-      r: gameState.remaining.map((c) => compressKey(c.key)),
-      a: gameState.activePlanes.map((c) => compressKey(c.key)),
-      e: gameState.exiled.map((c) => compressKey(c.key)),
+      r: gameState.remaining.map((c) => compressKey(c.id)),
+      a: gameState.activePlanes.map((c) => compressKey(c.id)),
+      e: gameState.exiled.map((c) => compressKey(c.id)),
       c: gameState.chaosCost,
       g: grid,
       px: gameState.bemPos.x,
       py: gameState.bemPos.y
     };
     try {
-      return "g1:" + toBase64Url(JSON.stringify(obj));
+      return "g2:" + toBase64Url(JSON.stringify(obj));
     } catch {
       return "";
     }
   }
   const obj = {
-    r: gameState.remaining.map((c) => compressKey(c.key)),
-    a: gameState.activePlanes.map((c) => compressKey(c.key)),
+    r: gameState.remaining.map((c) => compressKey(c.id)),
+    a: gameState.activePlanes.map((c) => compressKey(c.id)),
     f: gameState.focusedIndex,
     c: gameState.chaosCost,
-    e: gameState.exiled.map((c) => compressKey(c.key))
+    e: gameState.exiled.map((c) => compressKey(c.id))
   };
   if (revealedCards.length > 0) {
-    obj.rv = revealedCards.map((c) => compressKey(c.key));
+    obj.rv = revealedCards.map((c) => compressKey(c.id));
   }
   try {
-    return "g1:" + toBase64Url(JSON.stringify(obj));
+    return "g2:" + toBase64Url(JSON.stringify(obj));
   } catch {
     return "";
   }
 }
 
 /**
- * Decodes a "g1:" seed string back into a game state object.
+ * Decodes a "g2:" or legacy "g1:" seed string back into a game state object.
  * @param {string | null | undefined} seed - The seed string to decode.
  * @returns {object | null} The decoded game state, or null if invalid.
  */
 export function decodeGameState(seed) {
-  if (!seed?.startsWith("g1:")) return null;
+  const isLegacy = seed?.startsWith("g1:");
+  if (!seed?.startsWith("g2:") && !isLegacy) return null;
   const allCards = ctx.getAllCards();
   try {
     const raw = fromBase64Url(seed.slice(3));
     const obj = JSON.parse(raw);
     const lookupCard = (ck) => {
-      const key = decompressKey(ck);
-      return key ? allCards.find((c) => c.key === key) : null;
+      let id = decompressKey(ck);
+      if (!id) return null;
+      if (isLegacy) id = remapLegacyKey(id);
+      return allCards.find((c) => c.id === id) || null;
     };
     if (obj.m === "bem") {
       const remaining = (obj.r || []).map(lookupCard).filter(Boolean);

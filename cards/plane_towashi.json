@@ -1,0 +1,14 @@
+{
+  "id": "plane_towashi",
+  "name": "Towashi",
+  "type": "Plane",
+  "image": "cards/images/Plane_Towashi.png",
+  "thumb": "cards/thumbs/Plane_Towashi.webp",
+  "transcript": "cards/transcripts/Plane_Towashi.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Kamigawa",
+    "MOC"
+  ],
+  "scryfallId": null
+}

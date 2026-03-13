@@ -1,0 +1,14 @@
+{
+  "id": "plane_furnace_layer",
+  "name": "Furnace Layer",
+  "type": "Plane",
+  "image": "cards/images/Plane_Furnace Layer.png",
+  "thumb": "cards/thumbs/Plane_Furnace Layer.webp",
+  "transcript": "cards/transcripts/Plane_Furnace Layer.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "New Phyrexia",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

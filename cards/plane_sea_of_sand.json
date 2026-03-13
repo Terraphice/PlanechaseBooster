@@ -1,0 +1,14 @@
+{
+  "id": "plane_sea_of_sand",
+  "name": "Sea of Sand",
+  "type": "Plane",
+  "image": "cards/images/Plane_Sea of Sand.png",
+  "thumb": "cards/thumbs/Plane_Sea of Sand.webp",
+  "transcript": "cards/transcripts/Plane_Sea of Sand.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Rabiah",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

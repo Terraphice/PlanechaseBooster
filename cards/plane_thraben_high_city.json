@@ -1,0 +1,13 @@
+{
+  "id": "plane_thraben_high_city",
+  "name": "Thraben High City",
+  "type": "Plane",
+  "image": "cards/images/Plane_Thraben High City.png",
+  "thumb": "cards/thumbs/Plane_Thraben High City.webp",
+  "transcript": "cards/transcripts/Plane_Thraben High City.md",
+  "tags": [
+    ":top:badge:tr:amber:Custom",
+    "Innistrad",
+    "PBT"
+  ]
+}

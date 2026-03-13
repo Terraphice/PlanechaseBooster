@@ -3,6 +3,7 @@
 // phenomenon flip animation, and URL hash synchronisation.
 
 import { enhanceManaSymbols } from "./utils.js";
+import { remapLegacyKey } from "../deck/codec.js";
 
 export function createModalManager({
   modal,
@@ -42,7 +43,7 @@ export function createModalManager({
   // ── URL helpers ───────────────────────────────────────────────────────────────
 
   function updateUrlForCard(card) {
-    const hash = `#card=${encodeURIComponent(card.key)}`;
+    const hash = `#card=${encodeURIComponent(card.id)}`;
     const url = `${window.location.pathname}${window.location.search}${hash}`;
     if (`${window.location.pathname}${window.location.search}${window.location.hash}` !== url) {
       history.pushState(null, "", url);
@@ -96,14 +97,18 @@ export function createModalManager({
 
   function openModalByKey(cardKey, updateHash = true) {
     const filteredCards = getFilteredCards();
-    let index = filteredCards.findIndex((card) => card.key === cardKey);
+    let index = filteredCards.findIndex((card) => card.id === cardKey);
 
     if (index === -1) {
       const allCards = getAllCards();
-      const cardInAll = allCards.find((card) => card.key === cardKey);
+      let resolvedKey = cardKey;
+      if (!allCards.some((c) => c.id === resolvedKey)) {
+        resolvedKey = remapLegacyKey(cardKey);
+      }
+      const cardInAll = allCards.find((card) => card.id === resolvedKey);
       if (!cardInAll) return;
 
-      if (!filteredCards.some((card) => card.key === cardKey)) {
+      if (!filteredCards.some((card) => card.id === resolvedKey)) {
         const newFiltered = [...allCards];
         callbacks.sortCards(newFiltered);
         paginationState.currentPage = 1;
@@ -113,7 +118,7 @@ export function createModalManager({
       }
 
       const updatedFiltered = getFilteredCards();
-      index = updatedFiltered.findIndex((card) => card.key === cardKey);
+      index = updatedFiltered.findIndex((card) => card.id === resolvedKey);
       if (index === -1) return;
     }
 
@@ -145,10 +150,11 @@ export function createModalManager({
 
     const isOfficial = card.normalizedTags.some((t) => t.includes("official"));
     modalScryfallLink.classList.toggle("hidden", !isOfficial);
-    const scryfallQuery = encodeURIComponent(`"${card.displayName}"`);
+    // TODO: Use card.scryfallId when populated to link directly to the Scryfall card page.
+    const scryfallQuery = encodeURIComponent(`"${card.name}"`);
     modalScryfallLink.href = `https://scryfall.com/search?q=${scryfallQuery}&utm_source=planar-atlas&utm_medium=referral`;
 
-    callbacks.setModalCardKey(card.key);
+    callbacks.setModalCardKey(card.id);
 
     modalTagList.innerHTML = "";
     for (const tag of card.tags) {
@@ -164,7 +170,7 @@ export function createModalManager({
     preloadAdjacentImages();
 
     const transcriptCache = getTranscriptCache();
-    const cached = transcriptCache.get(card.key);
+    const cached = transcriptCache.get(card.id);
     if (typeof cached === "string") {
       renderTranscriptMarkdown(cached || "No transcript available.");
       return;
@@ -176,10 +182,10 @@ export function createModalManager({
       const response = await fetch(card.transcriptPath);
       if (!response.ok) throw new Error("Transcript not found");
       const transcript = await response.text();
-      transcriptCache.set(card.key, transcript.trim());
+      transcriptCache.set(card.id, transcript.trim());
       renderTranscriptMarkdown(transcript.trim() || "No transcript available.");
     } catch {
-      transcriptCache.set(card.key, "");
+      transcriptCache.set(card.id, "");
       renderTranscriptMarkdown("No transcript available.");
     }
   }
@@ -268,7 +274,7 @@ export function createModalManager({
     const filteredCards = getFilteredCards();
     if (!filteredCards.length) return;
     const randomIndex = Math.floor(Math.random() * filteredCards.length);
-    openModalByKey(filteredCards[randomIndex].key, true);
+    openModalByKey(filteredCards[randomIndex].id, true);
   }
 
   function handleRandomPointerDown(event) {

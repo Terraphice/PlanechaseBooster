@@ -1,0 +1,15 @@
+{
+  "id": "plane_the_drum_mining_facility",
+  "name": "The Drum, Mining Facility",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Drum, Mining Facility.png",
+  "thumb": "cards/thumbs/Plane_The Drum, Mining Facility.webp",
+  "transcript": "cards/transcripts/Plane_The Drum, Mining Facility.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Earth",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

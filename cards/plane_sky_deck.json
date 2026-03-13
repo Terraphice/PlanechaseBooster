@@ -1,0 +1,15 @@
+{
+  "id": "plane_sky_deck",
+  "name": "Sky Deck",
+  "type": "Plane",
+  "image": "cards/images/Plane_Sky Deck.png",
+  "thumb": "cards/thumbs/Plane_Sky Deck.webp",
+  "transcript": "cards/transcripts/Plane_Sky Deck.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Chicago",
+    "PUNK",
+    "hidden"
+  ],
+  "scryfallId": null
+}

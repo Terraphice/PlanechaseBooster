@@ -1,0 +1,15 @@
+{
+  "id": "plane_event_horizon",
+  "name": "Event Horizon",
+  "type": "Plane",
+  "image": "cards/images/Plane_Event Horizon.png",
+  "thumb": "cards/thumbs/Plane_Event Horizon.webp",
+  "transcript": "cards/transcripts/Plane_Event Horizon.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Blind Eternities",
+    "PUNK",
+    "hidden"
+  ],
+  "scryfallId": null
+}

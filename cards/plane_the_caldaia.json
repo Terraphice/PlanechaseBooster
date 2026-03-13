@@ -1,0 +1,14 @@
+{
+  "id": "plane_the_caldaia",
+  "name": "The Caldaia",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Caldaia.png",
+  "thumb": "cards/thumbs/Plane_The Caldaia.webp",
+  "transcript": "cards/transcripts/Plane_The Caldaia.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Capenna",
+    "MOC"
+  ],
+  "scryfallId": null
+}

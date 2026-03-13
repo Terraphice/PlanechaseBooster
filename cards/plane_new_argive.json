@@ -1,0 +1,14 @@
+{
+  "id": "plane_new_argive",
+  "name": "New Argive",
+  "type": "Plane",
+  "image": "cards/images/Plane_New Argive.png",
+  "thumb": "cards/thumbs/Plane_New Argive.webp",
+  "transcript": "cards/transcripts/Plane_New Argive.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Dominaria",
+    "MOC"
+  ],
+  "scryfallId": null
+}

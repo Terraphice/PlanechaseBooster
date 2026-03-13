@@ -1,0 +1,14 @@
+{
+  "id": "plane_stensia",
+  "name": "Stensia",
+  "type": "Plane",
+  "image": "cards/images/Plane_Stensia.png",
+  "thumb": "cards/thumbs/Plane_Stensia.webp",
+  "transcript": "cards/transcripts/Plane_Stensia.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Innistrad",
+    "MOC"
+  ],
+  "scryfallId": null
+}

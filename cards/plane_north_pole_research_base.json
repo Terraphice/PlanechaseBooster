@@ -1,0 +1,15 @@
+{
+  "id": "plane_north_pole_research_base",
+  "name": "North Pole Research Base",
+  "type": "Plane",
+  "image": "cards/images/Plane_North Pole Research Base.png",
+  "thumb": "cards/thumbs/Plane_North Pole Research Base.webp",
+  "transcript": "cards/transcripts/Plane_North Pole Research Base.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Earth",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

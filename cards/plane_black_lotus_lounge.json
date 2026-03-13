@@ -1,0 +1,14 @@
+{
+  "id": "plane_black_lotus_lounge",
+  "name": "Black Lotus Lounge",
+  "type": "Plane",
+  "image": "cards/images/Plane_Black Lotus Lounge.png",
+  "thumb": "cards/thumbs/Plane_Black Lotus Lounge.webp",
+  "transcript": "cards/transcripts/Plane_Black Lotus Lounge.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "PUNK",
+    "hidden"
+  ],
+  "scryfallId": null
+}

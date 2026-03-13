@@ -1,0 +1,15 @@
+{
+  "id": "plane_the_sphere",
+  "name": "The Sphere",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Sphere.png",
+  "thumb": "cards/thumbs/Plane_The Sphere.webp",
+  "transcript": "cards/transcripts/Plane_The Sphere.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Las Vegas",
+    "PUNK",
+    "hidden"
+  ],
+  "scryfallId": null
+}

@@ -1,0 +1,14 @@
+{
+  "id": "plane_valors_reach",
+  "name": "Valor's Reach",
+  "type": "Plane",
+  "image": "cards/images/Plane_Valor's Reach.png",
+  "thumb": "cards/thumbs/Plane_Valor's Reach.webp",
+  "transcript": "cards/transcripts/Plane_Valor's Reach.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Kylem",
+    "MOC"
+  ],
+  "scryfallId": null
+}

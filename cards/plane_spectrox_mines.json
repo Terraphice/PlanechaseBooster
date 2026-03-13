@@ -1,0 +1,15 @@
+{
+  "id": "plane_spectrox_mines",
+  "name": "Spectrox Mines",
+  "type": "Plane",
+  "image": "cards/images/Plane_Spectrox Mines.png",
+  "thumb": "cards/thumbs/Plane_Spectrox Mines.webp",
+  "transcript": "cards/transcripts/Plane_Spectrox Mines.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Androzani Minor",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

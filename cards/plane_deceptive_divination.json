@@ -1,0 +1,15 @@
+{
+  "id": "plane_deceptive_divination",
+  "name": "Deceptive Divination",
+  "type": "Plane",
+  "image": "cards/images/Plane_Deceptive Divination.png",
+  "thumb": "cards/thumbs/Plane_Deceptive Divination.webp",
+  "transcript": "cards/transcripts/Plane_Deceptive Divination.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Secret Lair",
+    "hidden",
+    "PSSC"
+  ],
+  "scryfallId": null
+}

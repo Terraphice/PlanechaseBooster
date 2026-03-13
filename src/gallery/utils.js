@@ -75,41 +75,9 @@ export function savePreferences(storageKey, displayState, filters, theme = "syst
 }
 
 /**
- * Derives a card's storage key from its filename (strips extension).
- * @param {string} filename - The card's filename (e.g. "Plane_Akoum.png").
- * @returns {string} The card key (e.g. "Plane_Akoum").
- */
-export function getCardKey(filename) {
-  return filename.replace(/\.[^.]+$/, "");
-}
-
-/**
- * Derives the human-readable display name from a card filename.
- * Strips the type prefix ("Plane_" / "Phenomenon_"), extension, and converts underscores to spaces.
- * @param {string} filename - The card's filename (e.g. "Plane_Akoum.png").
- * @returns {string} The display name (e.g. "Akoum").
- */
-export function getDisplayName(filename) {
-  const withoutExtension = filename.replace(/\.[^.]+$/, "");
-  const withoutTypePrefix = withoutExtension.replace(/^(Plane|Phenomenon)[-_ ]+/i, "");
-  return withoutTypePrefix.replace(/[_-]+/g, " ").trim();
-}
-
-/**
- * Determines a card's type from its normalized (lowercased) tags.
- * @param {string[]} tags - Normalized lowercase tag array.
- * @returns {"Plane" | "Phenomenon" | "Unknown"} The card type.
- */
-export function getCardType(tags) {
-  if (tags.includes("plane")) return "Plane";
-  if (tags.includes("phenomenon")) return "Phenomenon";
-  return "Unknown";
-}
-
-/**
- * Enriches a raw card object from cards.json with derived fields.
- * @param {{ file: string, tags: string[] }} card - Raw card data.
- * @returns {object} Enriched card with key, displayName, type, imagePath, thumbPath, transcriptPath, tags, normalizedTags.
+ * Enriches a raw card object from cards.json with runtime fields.
+ * @param {{ id: string, name: string, type: string, image: string, thumb: string, transcript: string, tags: string[], scryfallId?: string|null }} card - Raw card data.
+ * @returns {object} Enriched card with id, name, displayName (alias), type, imagePath, thumbPath, transcriptPath, tags, normalizedTags, scryfallId.
  */
 export function enrichCard(card) {
   const tags = Array.isArray(card.tags)
@@ -123,20 +91,22 @@ export function enrichCard(card) {
 
   return {
     ...card,
-    key: getCardKey(card.file),
-    displayName: getDisplayName(card.file),
-    imagePath: `cards/images/${card.file}`,
-    thumbPath: `cards/thumbs/${getCardKey(card.file)}.webp`,
-    transcriptPath: `cards/transcripts/${getCardKey(card.file)}.md`,
+    id: card.id,
+    name: card.name,
+    displayName: card.name,
+    type: card.type,
+    imagePath: card.image,
+    thumbPath: card.thumb,
+    transcriptPath: card.transcript,
     tags,
     normalizedTags,
-    type: getCardType(normalizedTags)
+    scryfallId: card.scryfallId !== undefined ? card.scryfallId : undefined
   };
 }
 
 export function sortCards(cards) {
   cards.sort((a, b) => {
-    const nameCompare = a.displayName.localeCompare(b.displayName, undefined, {
+    const nameCompare = a.name.localeCompare(b.name, undefined, {
       numeric: true,
       sensitivity: "base"
     });
@@ -258,7 +228,7 @@ export function matchesFilters(card, parsedQuery, filters, transcriptCache = nul
 
 export function matchesParsedQuery(card, parsedQuery, filters, transcriptCache = null) {
   const haystack = [
-    card.displayName,
+    card.name,
     card.type,
     ...card.normalizedTags
   ].join(" ").toLowerCase();
@@ -294,7 +264,7 @@ export function matchesParsedQuery(card, parsedQuery, filters, transcriptCache =
   }
 
   for (const value of parsedQuery.nameTerms) {
-    const candidate = card.displayName.toLowerCase();
+    const candidate = card.name.toLowerCase();
     if (filters.fuzzy) {
       if (!fuzzyIncludes(candidate, value)) return false;
     } else if (!candidate.includes(value)) {
@@ -303,7 +273,7 @@ export function matchesParsedQuery(card, parsedQuery, filters, transcriptCache =
   }
 
   for (const value of parsedQuery.negNameTerms) {
-    const candidate = card.displayName.toLowerCase();
+    const candidate = card.name.toLowerCase();
     if (filters.fuzzy) {
       if (fuzzyIncludes(candidate, value)) return false;
     } else if (candidate.includes(value)) {
@@ -324,7 +294,7 @@ export function matchesParsedQuery(card, parsedQuery, filters, transcriptCache =
   }
 
   if (parsedQuery.oracleTerms.length > 0 || parsedQuery.negOracleTerms.length > 0) {
-    const cached = transcriptCache ? transcriptCache.get(card.key) : null;
+    const cached = transcriptCache ? transcriptCache.get(card.id) : null;
     const cardText = (typeof cached === "string" ? cached : "").toLowerCase();
 
     for (const value of parsedQuery.oracleTerms) {

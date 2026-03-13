@@ -1,0 +1,15 @@
+{
+  "id": "plane_the_cheetah_planet",
+  "name": "The Cheetah Planet",
+  "type": "Plane",
+  "image": "cards/images/Plane_The Cheetah Planet.png",
+  "thumb": "cards/thumbs/Plane_The Cheetah Planet.webp",
+  "transcript": "cards/transcripts/Plane_The Cheetah Planet.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Outside Mutter's Spiral",
+    "WHO",
+    "hidden"
+  ],
+  "scryfallId": null
+}

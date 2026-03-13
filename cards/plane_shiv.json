@@ -1,0 +1,14 @@
+{
+  "id": "plane_shiv",
+  "name": "Shiv",
+  "type": "Plane",
+  "image": "cards/images/Plane_Shiv.png",
+  "thumb": "cards/thumbs/Plane_Shiv.webp",
+  "transcript": "cards/transcripts/Plane_Shiv.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Dominaria",
+    "OPCA"
+  ],
+  "scryfallId": null
+}

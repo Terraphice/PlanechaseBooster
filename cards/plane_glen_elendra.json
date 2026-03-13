@@ -1,0 +1,14 @@
+{
+  "id": "plane_glen_elendra",
+  "name": "Glen Elendra",
+  "type": "Plane",
+  "image": "cards/images/Plane_Glen Elendra.png",
+  "thumb": "cards/thumbs/Plane_Glen Elendra.webp",
+  "transcript": "cards/transcripts/Plane_Glen Elendra.md",
+  "tags": [
+    ":top:badge:tr:green:Official",
+    "Lorwyn",
+    "OPCA"
+  ],
+  "scryfallId": null
+}
