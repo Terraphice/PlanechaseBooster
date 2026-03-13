@@ -2,7 +2,7 @@
   "id": "the_dining_car",
   "name": "The Dining Car",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=The%20Dining%20Car&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Dining%20Car&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=The%20Dining%20Car&set=who&format=image&version=small",
   "transcript": "cards/transcripts/The Dining Car.md",
   "tags": [

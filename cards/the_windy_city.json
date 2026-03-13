@@ -2,7 +2,7 @@
   "id": "the_windy_city",
   "name": "The Windy City",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=The%20Windy%20City&set=punk&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Windy%20City&set=punk&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=The%20Windy%20City&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/The Windy City.md",
   "tags": [

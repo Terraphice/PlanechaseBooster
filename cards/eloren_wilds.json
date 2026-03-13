@@ -2,7 +2,7 @@
   "id": "eloren_wilds",
   "name": "Eloren Wilds",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Eloren%20Wilds&set=opca&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Eloren%20Wilds&set=opca&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Eloren%20Wilds&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Eloren Wilds.md",
   "tags": [

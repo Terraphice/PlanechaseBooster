@@ -2,7 +2,7 @@
   "id": "pursued_by_something",
   "name": "Pursued by Something",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Pursued%20by%20Something&set=punk&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Pursued%20by%20Something&set=punk&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Pursued%20by%20Something&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Pursued by Something.md",
   "tags": [

@@ -2,7 +2,7 @@
   "id": "pompeii",
   "name": "Pompeii",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Pompeii&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Pompeii&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Pompeii&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Pompeii.md",
   "tags": [

@@ -2,7 +2,7 @@
   "id": "riptide_island",
   "name": "Riptide Island",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Riptide%20Island&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Riptide%20Island&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Riptide%20Island&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Riptide Island.md",
   "tags": [

@@ -2,7 +2,7 @@
   "id": "bowie_base_one",
   "name": "Bowie Base One",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Bowie%20Base%20One&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Bowie%20Base%20One&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Bowie%20Base%20One&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Bowie Base One.md",
   "tags": [

@@ -2,7 +2,7 @@
   "id": "spatial_merging",
   "name": "Spatial Merging",
   "type": "Phenomenon",
-  "image": "https://api.scryfall.com/cards/named?exact=Spatial%20Merging&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Spatial%20Merging&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Spatial%20Merging&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Spatial Merging.md",
   "tags": [

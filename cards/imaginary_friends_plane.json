@@ -2,7 +2,7 @@
   "id": "imaginary_friends_plane",
   "name": "Imaginary Friends (Plane)",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Imaginary%20Friends%20(Plane)&set=pssc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Imaginary%20Friends%20(Plane)&set=pssc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Imaginary%20Friends%20(Plane)&set=pssc&format=image&version=small",
   "transcript": "cards/transcripts/Imaginary Friends (Plane).md",
   "tags": [

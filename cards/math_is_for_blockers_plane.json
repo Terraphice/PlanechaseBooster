@@ -2,7 +2,7 @@
   "id": "math_is_for_blockers_plane",
   "name": "Math is for Blockers (Plane)",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Math%20is%20for%20Blockers%20(Plane)&set=pssc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Math%20is%20for%20Blockers%20(Plane)&set=pssc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Math%20is%20for%20Blockers%20(Plane)&set=pssc&format=image&version=small",
   "transcript": "cards/transcripts/Math is for Blockers (Plane).md",
   "tags": [

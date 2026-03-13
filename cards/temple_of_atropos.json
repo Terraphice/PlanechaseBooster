@@ -2,7 +2,7 @@
   "id": "temple_of_atropos",
   "name": "Temple of Atropos",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Temple%20of%20Atropos&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Temple%20of%20Atropos&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Temple%20of%20Atropos&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Temple of Atropos.md",
   "tags": [

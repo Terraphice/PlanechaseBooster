@@ -2,7 +2,7 @@
   "id": "truga_jungle",
   "name": "Truga Jungle",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Truga%20Jungle&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Truga%20Jungle&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Truga%20Jungle&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Truga Jungle.md",
   "tags": [

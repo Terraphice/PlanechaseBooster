@@ -2,7 +2,7 @@
   "id": "tarnation",
   "name": "Tarnation",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Tarnation&set=punk&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Tarnation&set=punk&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Tarnation&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Tarnation.md",
   "tags": [

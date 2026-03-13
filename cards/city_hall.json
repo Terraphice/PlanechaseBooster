@@ -2,7 +2,7 @@
   "id": "city_hall",
   "name": "City Hall",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=City%20Hall&set=punk&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=City%20Hall&set=punk&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=City%20Hall&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/City Hall.md",
   "tags": [

@@ -2,7 +2,7 @@
   "id": "the_food_court",
   "name": "The Food Court",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=The%20Food%20Court&set=punk&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Food%20Court&set=punk&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=The%20Food%20Court&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/The Food Court.md",
   "tags": [

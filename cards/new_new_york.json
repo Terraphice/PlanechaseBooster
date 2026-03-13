@@ -2,7 +2,7 @@
   "id": "new_new_york",
   "name": "New New York",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=New%20New%20York&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=New%20New%20York&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=New%20New%20York&set=who&format=image&version=small",
   "transcript": "cards/transcripts/New New York.md",
   "tags": [

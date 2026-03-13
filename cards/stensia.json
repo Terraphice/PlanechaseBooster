@@ -2,7 +2,7 @@
   "id": "stensia",
   "name": "Stensia",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Stensia&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Stensia&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Stensia&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Stensia.md",
   "tags": [

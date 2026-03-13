@@ -2,7 +2,7 @@
   "id": "deceptive_divination",
   "name": "Deceptive Divination",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Deceptive%20Divination&set=pssc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Deceptive%20Divination&set=pssc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Deceptive%20Divination&set=pssc&format=image&version=small",
   "transcript": "cards/transcripts/Deceptive Divination.md",
   "tags": [

@@ -2,7 +2,7 @@
   "id": "welcome_to_valley",
   "name": "Welcome to Valley",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Welcome%20to%20Valley&set=punk&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Welcome%20to%20Valley&set=punk&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Welcome%20to%20Valley&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Welcome to Valley.md",
   "tags": [

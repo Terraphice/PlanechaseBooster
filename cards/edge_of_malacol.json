@@ -2,7 +2,7 @@
   "id": "edge_of_malacol",
   "name": "Edge of Malacol",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Edge%20of%20Malacol&set=opca&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Edge%20of%20Malacol&set=opca&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Edge%20of%20Malacol&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Edge of Malacol.md",
   "tags": [

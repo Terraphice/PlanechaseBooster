@@ -2,7 +2,7 @@
   "id": "lethe_lake",
   "name": "Lethe Lake",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Lethe%20Lake&set=opca&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Lethe%20Lake&set=opca&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Lethe%20Lake&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Lethe Lake.md",
   "tags": [

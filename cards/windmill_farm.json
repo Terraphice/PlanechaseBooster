@@ -2,7 +2,7 @@
   "id": "windmill_farm",
   "name": "Windmill Farm",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Windmill%20Farm&set=punk&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Windmill%20Farm&set=punk&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Windmill%20Farm&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Windmill Farm.md",
   "tags": [

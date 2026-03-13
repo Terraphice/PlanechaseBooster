@@ -2,7 +2,7 @@
   "id": "raiders_allegiance",
   "name": "Raiders' Allegiance",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Raiders'%20Allegiance&set=punk&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Raiders'%20Allegiance&set=punk&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Raiders'%20Allegiance&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Raiders' Allegiance.md",
   "tags": [

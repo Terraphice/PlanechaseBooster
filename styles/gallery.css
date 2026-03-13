@@ -1045,12 +1045,11 @@ button.active-filter-pill:disabled {
   --planechase-rotation: 0deg;
   --planechase-rotation-scale: 1;
   transform: rotate(var(--planechase-rotation)) scale(var(--planechase-rotation-scale));
-  transition: transform 220ms ease;
 }
 
 .planechase-image-rotated {
   --planechase-rotation: 90deg;
-  --planechase-rotation-scale: calc(800 / 559);
+  --planechase-rotation-scale: 1;
 }
 
 .card-link:hover .card-image,

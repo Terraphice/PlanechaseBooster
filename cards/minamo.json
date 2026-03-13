@@ -2,7 +2,7 @@
   "id": "minamo",
   "name": "Minamo",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Minamo&set=opca&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Minamo&set=opca&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Minamo&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Minamo.md",
   "tags": [

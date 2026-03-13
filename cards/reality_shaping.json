@@ -2,7 +2,7 @@
   "id": "reality_shaping",
   "name": "Reality Shaping",
   "type": "Phenomenon",
-  "image": "https://api.scryfall.com/cards/named?exact=Reality%20Shaping&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Reality%20Shaping&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Reality%20Shaping&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Reality Shaping.md",
   "tags": [

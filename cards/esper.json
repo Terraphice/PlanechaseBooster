@@ -2,7 +2,7 @@
   "id": "esper",
   "name": "Esper",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Esper&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Esper&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Esper&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Esper.md",
   "tags": [

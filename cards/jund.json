@@ -2,7 +2,7 @@
   "id": "jund",
   "name": "Jund",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Jund&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Jund&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Jund&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Jund.md",
   "tags": [

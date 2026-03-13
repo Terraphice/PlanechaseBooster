@@ -2,7 +2,7 @@
   "id": "finally_left_handed_magic_cards",
   "name": "Finally! Left Handed Magic Cards",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Finally!%20Left%20Handed%20Magic%20Cards&set=pssc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Finally!%20Left%20Handed%20Magic%20Cards&set=pssc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Finally!%20Left%20Handed%20Magic%20Cards&set=pssc&format=image&version=small",
   "transcript": "cards/transcripts/Finally! Left-Handed Magic Cards.md",
   "tags": [

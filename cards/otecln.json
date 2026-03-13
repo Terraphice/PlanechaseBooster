@@ -2,7 +2,7 @@
   "id": "otecln",
   "name": "Oteclán",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Otecl%C3%A1n&set=punk&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Otecl%C3%A1n&set=punk&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Otecl%C3%A1n&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Oteclán.md",
   "tags": [

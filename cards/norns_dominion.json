@@ -2,7 +2,7 @@
   "id": "norns_dominion",
   "name": "Norn's Dominion",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Norn's%20Dominion&set=opca&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Norn's%20Dominion&set=opca&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Norn's%20Dominion&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Norn's Dominion.md",
   "tags": [

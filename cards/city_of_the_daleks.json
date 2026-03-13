@@ -2,7 +2,7 @@
   "id": "city_of_the_daleks",
   "name": "City of the Daleks",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=City%20of%20the%20Daleks&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=City%20of%20the%20Daleks&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=City%20of%20the%20Daleks&set=who&format=image&version=small",
   "transcript": "cards/transcripts/City of the Daleks.md",
   "tags": [

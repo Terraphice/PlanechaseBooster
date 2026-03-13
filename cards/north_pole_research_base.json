@@ -2,7 +2,7 @@
   "id": "north_pole_research_base",
   "name": "North Pole Research Base",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=North%20Pole%20Research%20Base&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=North%20Pole%20Research%20Base&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=North%20Pole%20Research%20Base&set=who&format=image&version=small",
   "transcript": "cards/transcripts/North Pole Research Base.md",
   "tags": [

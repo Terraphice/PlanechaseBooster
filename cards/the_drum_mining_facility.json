@@ -2,7 +2,7 @@
   "id": "the_drum_mining_facility",
   "name": "The Drum, Mining Facility",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=The%20Drum%2C%20Mining%20Facility&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Drum%2C%20Mining%20Facility&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=The%20Drum%2C%20Mining%20Facility&set=who&format=image&version=small",
   "transcript": "cards/transcripts/The Drum, Mining Facility.md",
   "tags": [

@@ -2,7 +2,7 @@
   "id": "kessig",
   "name": "Kessig",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Kessig&set=opca&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Kessig&set=opca&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Kessig&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Kessig.md",
   "tags": [

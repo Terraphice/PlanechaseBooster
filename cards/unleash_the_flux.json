@@ -2,7 +2,7 @@
   "id": "unleash_the_flux",
   "name": "Unleash the Flux",
   "type": "Phenomenon",
-  "image": "https://api.scryfall.com/cards/named?exact=Unleash%20the%20Flux&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Unleash%20the%20Flux&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Unleash%20the%20Flux&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Unleash the Flux.md",
   "tags": [

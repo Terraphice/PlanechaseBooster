@@ -2,7 +2,7 @@
   "id": "ood_sphere",
   "name": "Ood Sphere",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Ood%20Sphere&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Ood%20Sphere&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Ood%20Sphere&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Ood Sphere.md",
   "tags": [

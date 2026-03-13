@@ -2,7 +2,7 @@
   "id": "orochi_colony",
   "name": "Orochi Colony",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Orochi%20Colony&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Orochi%20Colony&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Orochi%20Colony&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Orochi Colony.md",
   "tags": [

@@ -2,7 +2,7 @@
   "id": "the_maelstrom",
   "name": "The Maelstrom",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=The%20Maelstrom&set=opca&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Maelstrom&set=opca&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=The%20Maelstrom&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/The Maelstrom.md",
   "tags": [

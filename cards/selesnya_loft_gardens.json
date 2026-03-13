@@ -2,7 +2,7 @@
   "id": "selesnya_loft_gardens",
   "name": "Selesnya Loft Gardens",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Selesnya%20Loft%20Gardens&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Selesnya%20Loft%20Gardens&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Selesnya%20Loft%20Gardens&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Selesnya Loft Gardens.md",
   "tags": [

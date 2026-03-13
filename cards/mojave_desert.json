@@ -2,7 +2,7 @@
   "id": "mojave_desert",
   "name": "Mojave Desert",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Mojave%20Desert&set=punk&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Mojave%20Desert&set=punk&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Mojave%20Desert&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Mojave Desert.md",
   "tags": [

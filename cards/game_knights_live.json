@@ -2,7 +2,7 @@
   "id": "game_knights_live",
   "name": "Game Knights Live",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Game%20Knights%20Live&set=punk&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Game%20Knights%20Live&set=punk&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Game%20Knights%20Live&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Game Knights Live.md",
   "tags": [

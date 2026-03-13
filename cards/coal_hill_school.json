@@ -2,7 +2,7 @@
   "id": "coal_hill_school",
   "name": "Coal Hill School",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Coal%20Hill%20School&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Coal%20Hill%20School&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Coal%20Hill%20School&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Coal Hill School.md",
   "tags": [

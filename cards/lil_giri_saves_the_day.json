@@ -2,7 +2,7 @@
   "id": "lil_giri_saves_the_day",
   "name": "Li'l Giri Saves the Day",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Li'l%20Giri%20Saves%20the%20Day&set=pssc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Li'l%20Giri%20Saves%20the%20Day&set=pssc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Li'l%20Giri%20Saves%20the%20Day&set=pssc&format=image&version=small",
   "transcript": "cards/transcripts/Li'l Giri Saves the Day.md",
   "tags": [

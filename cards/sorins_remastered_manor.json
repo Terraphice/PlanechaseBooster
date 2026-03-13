@@ -2,7 +2,7 @@
   "id": "sorins_remastered_manor",
   "name": "Sorin's Remastered Manor",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Sorin's%20Remastered%20Manor&set=punk&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Sorin's%20Remastered%20Manor&set=punk&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Sorin's%20Remastered%20Manor&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Sorin's Remastered Manor.md",
   "tags": [

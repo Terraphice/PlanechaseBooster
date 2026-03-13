@@ -2,7 +2,7 @@
   "id": "unit_headquarters",
   "name": "UNIT Headquarters",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=UNIT%20Headquarters&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=UNIT%20Headquarters&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=UNIT%20Headquarters&set=who&format=image&version=small",
   "transcript": "cards/transcripts/UNIT Headquarters.md",
   "tags": [

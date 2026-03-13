@@ -2,7 +2,7 @@
   "id": "grand_ossuary",
   "name": "Grand Ossuary",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Grand%20Ossuary&set=opca&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Grand%20Ossuary&set=opca&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Grand%20Ossuary&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Grand Ossuary.md",
   "tags": [

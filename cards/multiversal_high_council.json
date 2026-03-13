@@ -2,7 +2,7 @@
   "id": "multiversal_high_council",
   "name": "Multiversal High Council",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Multiversal%20High%20Council&set=punk&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Multiversal%20High%20Council&set=punk&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Multiversal%20High%20Council&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Multiversal High Council.md",
   "tags": [

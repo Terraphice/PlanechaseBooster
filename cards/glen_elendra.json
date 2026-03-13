@@ -2,7 +2,7 @@
   "id": "glen_elendra",
   "name": "Glen Elendra",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Glen%20Elendra&set=opca&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Glen%20Elendra&set=opca&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Glen%20Elendra&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Glen Elendra.md",
   "tags": [

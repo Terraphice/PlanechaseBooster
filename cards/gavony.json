@@ -2,7 +2,7 @@
   "id": "gavony",
   "name": "Gavony",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Gavony&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Gavony&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Gavony&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Gavony.md",
   "tags": [

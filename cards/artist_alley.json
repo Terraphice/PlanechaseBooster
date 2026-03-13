@@ -2,7 +2,7 @@
   "id": "artist_alley",
   "name": "Artist Alley",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Artist%20Alley&set=punk&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Artist%20Alley&set=punk&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Artist%20Alley&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/Artist Alley.md",
   "tags": [

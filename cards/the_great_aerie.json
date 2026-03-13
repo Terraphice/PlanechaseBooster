@@ -2,7 +2,7 @@
   "id": "the_great_aerie",
   "name": "The Great Aerie",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=The%20Great%20Aerie&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=The%20Great%20Aerie&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=The%20Great%20Aerie&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/The Great Aerie.md",
   "tags": [

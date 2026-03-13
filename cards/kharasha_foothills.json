@@ -2,7 +2,7 @@
   "id": "kharasha_foothills",
   "name": "Kharasha Foothills",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Kharasha%20Foothills&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Kharasha%20Foothills&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Kharasha%20Foothills&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Kharasha Foothills.md",
   "tags": [

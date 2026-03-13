@@ -30,9 +30,6 @@ let readerOpenedFromReveal = false;
 let readerOpenedFromLibrary = false;
 let readerOpenedFromExile = false;
 
-syncPlanechaseImageOrientation(gameCardImage);
-syncPlanechaseImageOrientation(gameReaderImage);
-syncPlanechaseImageOrientation(gameReaderZoomImg);
 let exileViewMode = "list";
 let libraryViewMode = "list";
 let readerCardPath = "";
@@ -78,6 +75,10 @@ const gameReaderImage = document.getElementById("game-reader-image");
 const gameReaderImageWrap = document.getElementById("game-reader-image-wrap");
 const gameReaderZoomOverlay = document.getElementById("game-reader-zoom-overlay");
 const gameReaderZoomImg = document.getElementById("game-reader-zoom-img");
+
+syncPlanechaseImageOrientation(gameCardImage);
+syncPlanechaseImageOrientation(gameReaderImage);
+syncPlanechaseImageOrientation(gameReaderZoomImg);
 const gameReaderClose = document.getElementById("game-reader-close");
 const gameReaderBackdrop = document.getElementById("game-reader-backdrop");
 const gameReaderCardName = document.getElementById("game-reader-card-name");

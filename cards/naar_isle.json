@@ -2,7 +2,7 @@
   "id": "naar_isle",
   "name": "Naar Isle",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Naar%20Isle&set=opca&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Naar%20Isle&set=opca&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Naar%20Isle&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Naar Isle.md",
   "tags": [

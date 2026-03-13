@@ -2,7 +2,7 @@
   "id": "antarctic_research_base",
   "name": "Antarctic Research Base",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Antarctic%20Research%20Base&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Antarctic%20Research%20Base&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Antarctic%20Research%20Base&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Antarctic Research Base.md",
   "tags": [

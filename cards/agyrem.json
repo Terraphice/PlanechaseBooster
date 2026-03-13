@@ -2,7 +2,7 @@
   "id": "agyrem",
   "name": "Agyrem",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Agyrem&set=opca&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Agyrem&set=opca&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Agyrem&set=opca&format=image&version=small",
   "transcript": "cards/transcripts/Agyrem.md",
   "tags": [

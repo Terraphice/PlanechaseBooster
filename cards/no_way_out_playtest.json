@@ -2,7 +2,7 @@
   "id": "no_way_out_playtest",
   "name": "No Way Out (Playtest)",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=No%20Way%20Out%20(Playtest)&set=punk&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=No%20Way%20Out%20(Playtest)&set=punk&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=No%20Way%20Out%20(Playtest)&set=punk&format=image&version=small",
   "transcript": "cards/transcripts/No Way Out (Playtest).md",
   "tags": [

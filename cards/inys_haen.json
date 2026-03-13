@@ -2,7 +2,7 @@
   "id": "inys_haen",
   "name": "Inys Haen",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Inys%20Haen&set=moc&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Inys%20Haen&set=moc&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Inys%20Haen&set=moc&format=image&version=small",
   "transcript": "cards/transcripts/Inys Haen.md",
   "tags": [

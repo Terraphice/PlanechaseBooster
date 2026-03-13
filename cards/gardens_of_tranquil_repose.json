@@ -2,7 +2,7 @@
   "id": "gardens_of_tranquil_repose",
   "name": "Gardens of Tranquil Repose",
   "type": "Plane",
-  "image": "https://api.scryfall.com/cards/named?exact=Gardens%20of%20Tranquil%20Repose&set=who&format=image&version=normal",
+  "image": "https://api.scryfall.com/cards/named?exact=Gardens%20of%20Tranquil%20Repose&set=who&format=image&version=large",
   "thumb": "https://api.scryfall.com/cards/named?exact=Gardens%20of%20Tranquil%20Repose&set=who&format=image&version=small",
   "transcript": "cards/transcripts/Gardens of Tranquil Repose.md",
   "tags": [
