@@ -310,11 +310,10 @@ export function renderGameSidePanel(activePlanes, focusedIndex) {
       `;
       ensureCounterState(gameState);
       if (gameState.counterTrackedIds.has(card.id)) {
-        sideCard.classList.add("game-counter-glow");
         const counterWrap = document.createElement("div");
         counterWrap.className = "game-side-counter-wrap";
         counterWrap.innerHTML = `
-          <button type="button" class="game-side-counter-toggle" aria-label="Adjust counters">⬤</button>
+          <button type="button" class="game-side-counter-toggle game-counter-glow" aria-label="Adjust counters">⬤</button>
           <div class="game-side-counter-controls">
             <button type="button" class="game-side-counter-step" data-step="-1" aria-label="Remove counter">−</button>
             <span class="game-side-counter-value">${getCardCounter(gameState, card.id)}</span>

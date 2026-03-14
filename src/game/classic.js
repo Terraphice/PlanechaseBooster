@@ -223,7 +223,7 @@ export function renderClassicSidePanel(activePlanes, focusedIndex) {
       counterWrap.className = "game-side-counter-wrap";
       const value = getCardCounter(gameState, card.id);
       counterWrap.innerHTML = `
-        <button type="button" class="game-side-counter-toggle" aria-label="Adjust counters">
+        <button type="button" class="game-side-counter-toggle game-counter-glow" aria-label="Adjust counters">
           <span aria-hidden="true">⬤</span>
         </button>
         <div class="game-side-counter-controls">
@@ -298,6 +298,22 @@ export function buildMainCardActions(focusedIdx) {
         trimCountersToCards(gameState);
         updateGameView();
         showToast(`${top.displayName} added simultaneously.`);
+      }
+    },
+    {
+      label: "Counters",
+      action: () => {
+        const gameState = getGameState();
+        if (!gameState) return;
+        const card = gameState.activePlanes[focusedIdx];
+        if (!card) return;
+        ctx.pushHistory?.();
+        ensureCounterState(gameState);
+        gameState.counterTrackedIds.add(card.id);
+        if (!gameState.cardCounters.has(card.id)) gameState.cardCounters.set(card.id, 0);
+        closeGameReaderView();
+        updateGameView();
+        showToast(`${card.displayName} is now tracking counters.`);
       }
     },
     {

@@ -2242,6 +2242,7 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
 /* ── Game card image button ───────────────────────────────────────────────────── */
 
 .game-card-image-btn {
+  position: relative;
   border: 0;
   background: transparent;
   padding: 0;
@@ -3944,4 +3945,66 @@ html[data-palette="scryfall"][data-theme="dark"] .sidebar {
     width: 15px;
     height: 15px;
   }
+}
+
+
+.bem-cell-counter-wrap {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.bem-cell-counter-toggle {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  border: 1px solid rgba(250, 204, 21, 0.75);
+  background: color-mix(in srgb, var(--bg-elev-2) 92%, transparent);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.bem-cell-counter-toggle img {
+  width: 14px;
+  height: 14px;
+}
+
+.bem-cell-counter-controls {
+  display: none;
+  align-items: center;
+  gap: 4px;
+  border-radius: 999px;
+  padding: 2px 4px;
+  border: 1px solid rgba(250, 204, 21, 0.45);
+  background: color-mix(in srgb, var(--bg-elev-1) 93%, transparent);
+}
+
+.bem-cell-counter-controls-visible {
+  display: inline-flex;
+}
+
+.bem-cell-counter-step {
+  border: 0;
+  border-radius: 999px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  background: rgba(250, 204, 21, 0.22);
+  color: #fde68a;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.bem-cell-counter-value {
+  min-width: 14px;
+  text-align: center;
+  font-size: 0.72rem;
+  color: #fde68a;
+  font-weight: 700;
 }

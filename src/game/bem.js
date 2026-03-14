@@ -53,6 +53,51 @@ function clearTemporaryBemCounters(gameState, activeCard) {
   }
 }
 
+function getCardCounter(gameState, cardId) {
+  return gameState.cardCounters?.get(cardId) || 0;
+}
+
+function addBemCounterControls(gameState, container, card) {
+  ensureCounterState(gameState);
+  if (!card || !gameState.counterTrackedIds.has(card.id)) return;
+  const wrap = document.createElement("div");
+  wrap.className = "bem-cell-counter-wrap";
+  wrap.innerHTML = `
+    <button type="button" class="bem-cell-counter-toggle game-counter-glow" aria-label="Adjust counters">
+      <img src="assets/favicon.svg" alt="" aria-hidden="true" />
+    </button>
+    <div class="bem-cell-counter-controls">
+      <button type="button" class="bem-cell-counter-step" data-step="-1" aria-label="Remove counter">−</button>
+      <span class="bem-cell-counter-value">${getCardCounter(gameState, card.id)}</span>
+      <button type="button" class="bem-cell-counter-step" data-step="1" aria-label="Add counter">+</button>
+    </div>
+  `;
+  const toggle = wrap.querySelector('.bem-cell-counter-toggle');
+  const controls = wrap.querySelector('.bem-cell-counter-controls');
+  toggle?.addEventListener('click', (event) => {
+    event.stopPropagation();
+    event.preventDefault();
+    controls?.classList.toggle('bem-cell-counter-controls-visible');
+  });
+  wrap.querySelectorAll('.bem-cell-counter-step').forEach((btn) => {
+    btn.addEventListener('click', (event) => {
+      event.stopPropagation();
+      event.preventDefault();
+      const gs = ctx.getGameState();
+      if (!gs) return;
+      ctx.pushHistory?.();
+      const delta = Number(btn.dataset.step || 0);
+      const next = Math.max(0, getCardCounter(gs, card.id) + delta);
+      if (next <= 0) gs.cardCounters.delete(card.id);
+      else gs.cardCounters.set(card.id, next);
+      renderBemMap();
+      updateBemInfoBar();
+      syncBemTrButton();
+    });
+  });
+  container.appendChild(wrap);
+}
+
 export function initBemGame(context) {
   ctx = context;
 }
@@ -639,6 +684,7 @@ export function renderBemMap() {
           } else {
             div.classList.add("bem-cell-active-plane");
           }
+          addBemCounterControls(gameState, div, cell.card);
         } else if (isOrthogToPlayer && !isPanning) {
           if (!bemPlaneswalkPending) div.classList.add("bem-cell-moveable");
         }
