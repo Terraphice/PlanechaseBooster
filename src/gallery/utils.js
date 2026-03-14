@@ -17,7 +17,8 @@ export function loadPreferences(storageKey) {
     phenomenonAnimation: true,
     hellridingMode: "risky",
     smoothTravel: true,
-    bemEdgePlaceholders: false
+    bemEdgePlaceholders: false,
+    counterBehavior: "permanent"
   };
 
   try {
@@ -43,7 +44,8 @@ export function loadPreferences(storageKey) {
         ? parsed.hellridingMode
         : defaults.hellridingMode,
       smoothTravel: parsed.smoothTravel === undefined ? defaults.smoothTravel : Boolean(parsed.smoothTravel),
-      bemEdgePlaceholders: parsed.bemEdgePlaceholders === undefined ? defaults.bemEdgePlaceholders : Boolean(parsed.bemEdgePlaceholders)
+      bemEdgePlaceholders: parsed.bemEdgePlaceholders === undefined ? defaults.bemEdgePlaceholders : Boolean(parsed.bemEdgePlaceholders),
+      counterBehavior: ["temporary", "permanent"].includes(parsed.counterBehavior) ? parsed.counterBehavior : defaults.counterBehavior
     };
   } catch {
     return defaults;
@@ -68,7 +70,8 @@ export function savePreferences(storageKey, displayState, filters, theme = "syst
         phenomenonAnimation: filters.phenomenonAnimation,
         hellridingMode: filters.hellridingMode,
         smoothTravel: filters.smoothTravel,
-        bemEdgePlaceholders: filters.bemEdgePlaceholders
+        bemEdgePlaceholders: filters.bemEdgePlaceholders,
+        counterBehavior: filters.counterBehavior
       })
     );
   } catch {

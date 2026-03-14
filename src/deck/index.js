@@ -56,6 +56,7 @@ let phenomenonAnimationEnabled = true;
 let hellridingMode = "risky";
 let smoothTravelEnabled = false;
 let bemEdgePlaceholdersEnabled = false;
+let counterBehavior = "permanent";
 
 // ── DOM references (only what deck.js needs directly) ────────────────────────
 
@@ -418,6 +419,10 @@ export function setBemEdgePlaceholders(enabled) {
   bemEdgePlaceholdersEnabled = Boolean(enabled);
 }
 
+export function setCounterBehavior(mode) {
+  counterBehavior = ["temporary", "permanent"].includes(mode) ? mode : "permanent";
+}
+
 export function syncGameHash() {
   if (window.location.hash === "#play") {
     if (!gameActive && getDeckTotal() > 0) startGame();
@@ -621,6 +626,7 @@ export function initDeck({ cards, showToast, onDeckChange }) {
     handleBemArrowKey,
     showToast: (msg) => showToastFn?.(msg),
     getEasyPlaneswalk: () => easyPlaneswalk,
+    getCounterBehavior: () => counterBehavior,
   });
 
   initGameStateManager({
@@ -662,6 +668,7 @@ export function initDeck({ cards, showToast, onDeckChange }) {
     syncBemTrButton,
     showToast: (msg) => showToastFn?.(msg),
     getEasyPlaneswalk: () => easyPlaneswalk,
+    getCounterBehavior: () => counterBehavior,
     updateGameView,
     openGameReaderView,
     closeGameReaderView,
@@ -693,6 +700,7 @@ export function initDeck({ cards, showToast, onDeckChange }) {
     getHellridingMode: () => hellridingMode,
     getSmoothTravelEnabled: () => smoothTravelEnabled,
     getBemEdgePlaceholders: () => bemEdgePlaceholdersEnabled,
+    getCounterBehavior: () => counterBehavior,
     getEasyPlaneswalk: () => easyPlaneswalk,
     showToast: (msg) => showToastFn?.(msg),
     renderGameSidePanel,

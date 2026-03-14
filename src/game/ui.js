@@ -40,6 +40,59 @@ const readerTranscriptCache = new Map();
 
 let ctx = null;
 
+function ensureCounterState(gameState) {
+  if (!gameState) return;
+  if (!gameState.cardCounters) gameState.cardCounters = new Map();
+  if (!(gameState.counterTrackedIds instanceof Set)) gameState.counterTrackedIds = new Set();
+}
+
+function getCardCounter(gameState, cardId) {
+  return gameState.cardCounters?.get(cardId) || 0;
+}
+
+function renderMainCounter(card, gameState) {
+  if (!gameCardImageBtn || !card) return;
+  ensureCounterState(gameState);
+  gameCardImageBtn.querySelector(".game-main-counter-wrap")?.remove();
+  if (!gameState.counterTrackedIds.has(card.id)) return;
+  const wrap = document.createElement("div");
+  wrap.className = "game-main-counter-wrap";
+  wrap.innerHTML = `
+    <button type="button" class="game-main-counter-toggle" aria-label="Adjust counters">
+      <img src="assets/favicon.svg" alt="" aria-hidden="true" />
+    </button>
+    <div class="game-main-counter-controls">
+      <button type="button" class="game-main-counter-step" data-step="-1" aria-label="Remove counter">−</button>
+      <span class="game-main-counter-value">${getCardCounter(gameState, card.id)}</span>
+      <button type="button" class="game-main-counter-step" data-step="1" aria-label="Add counter">+</button>
+    </div>
+  `;
+  const toggle = wrap.querySelector(".game-main-counter-toggle");
+  const controls = wrap.querySelector(".game-main-counter-controls");
+  toggle?.addEventListener("click", (event) => {
+    event.stopPropagation();
+    event.preventDefault();
+    controls?.classList.toggle("game-main-counter-controls-visible");
+  });
+  wrap.querySelectorAll(".game-main-counter-step").forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+      event.stopPropagation();
+      event.preventDefault();
+      const gs = ctx.getGameState();
+      if (!gs) return;
+      ensureCounterState(gs);
+      ctx.pushGameHistory();
+      const delta = Number(btn.dataset.step || 0);
+      const current = getCardCounter(gs, card.id);
+      const next = Math.max(0, current + delta);
+      if (next <= 0) gs.cardCounters.delete(card.id);
+      else gs.cardCounters.set(card.id, next);
+      updateGameView();
+    });
+  });
+  gameCardImageBtn.appendChild(wrap);
+}
+
 // ── DOM references ────────────────────────────────────────────────────────────
 
 const gameView = document.getElementById("game-view");
@@ -169,6 +222,7 @@ export function showGamePlaceholder() {
     gameCardImageBtn.setAttribute("aria-label", "Planeswalk");
     gameCardImageBtn.classList.add("game-card-image-btn-placeholder");
     gameCardImageBtn.classList.remove("active-plane", "active-phenomenon");
+    gameCardImageBtn.querySelector(".game-main-counter-wrap")?.remove();
   }
   if (classicViewCardBtn) classicViewCardBtn.classList.add("hidden");
   syncGameToolsState(ctx.getGameState()?.remaining.length ?? 0);
@@ -182,6 +236,8 @@ export function updateGameView() {
   const { activePlanes, focusedIndex, remaining } = gameState;
 
   if (gameState.mode === "bem") {
+    const cell = gameState.bemGrid?.get(bemKey(gameState.bemPos.x, gameState.bemPos.y));
+    renderMainCounter(cell?.card || null, gameState);
     renderGameSidePanel(activePlanes, focusedIndex);
     syncGameToolsState(remaining.length);
     return;
@@ -195,6 +251,7 @@ export function updateGameView() {
   }
 
   updateClassicGameView(gameState);
+  renderMainCounter(focused, gameState);
 }
 
 /** Renders the game side panel (BEM simultaneous planes or Classic side panel). */
@@ -251,6 +308,41 @@ export function renderGameSidePanel(activePlanes, focusedIndex) {
         <img class="game-side-card-img" src="${card.thumbPath}" alt="${escapeHtml(card.displayName)}" />
         <div class="game-side-card-label">${escapeHtml(card.displayName)}</div>
       `;
+      ensureCounterState(gameState);
+      if (gameState.counterTrackedIds.has(card.id)) {
+        const counterWrap = document.createElement("div");
+        counterWrap.className = "game-side-counter-wrap";
+        counterWrap.innerHTML = `
+          <button type="button" class="game-side-counter-toggle game-counter-glow" aria-label="Adjust counters">⬤</button>
+          <div class="game-side-counter-controls">
+            <button type="button" class="game-side-counter-step" data-step="-1" aria-label="Remove counter">−</button>
+            <span class="game-side-counter-value">${getCardCounter(gameState, card.id)}</span>
+            <button type="button" class="game-side-counter-step" data-step="1" aria-label="Add counter">+</button>
+          </div>
+        `;
+        const toggle = counterWrap.querySelector(".game-side-counter-toggle");
+        const controls = counterWrap.querySelector(".game-side-counter-controls");
+        toggle?.addEventListener("click", (event) => {
+          event.stopPropagation();
+          controls?.classList.toggle("game-side-counter-controls-visible");
+        });
+        counterWrap.querySelectorAll(".game-side-counter-step").forEach((btn) => {
+          btn.addEventListener("click", (event) => {
+            event.stopPropagation();
+            const gs = ctx.getGameState();
+            if (!gs) return;
+            ensureCounterState(gs);
+            ctx.pushGameHistory();
+            const delta = Number(btn.dataset.step || 0);
+            const current = getCardCounter(gs, card.id);
+            const next = Math.max(0, current + delta);
+            if (next <= 0) gs.cardCounters.delete(card.id);
+            else gs.cardCounters.set(card.id, next);
+            updateGameView();
+          });
+        });
+        sideCard.appendChild(counterWrap);
+      }
       sideCard.addEventListener("click", () => {
         if (!ctx.getGameState()) return;
         openGameReaderView(card, buildBemSideCardActions(idx));
@@ -497,6 +589,7 @@ export function openGameReaderView(card, actions = [], options = {}) {
   if (gameReaderActions) {
     gameReaderActions.innerHTML = "";
     for (const { label, action, danger } of actions) {
+      if (isFaceDown && label === "Counters") continue;
       const btn = document.createElement("button");
       btn.type = "button";
       btn.className = "game-reader-action-btn" + (danger ? " game-reader-action-danger" : "");

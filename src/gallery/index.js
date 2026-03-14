@@ -38,7 +38,8 @@ import {
   closeTopGameOverlay,
   setHellridingMode,
   setSmoothTravel,
-  setBemEdgePlaceholders
+  setBemEdgePlaceholders,
+  setCounterBehavior
 } from "../deck/index.js";
 
 import {
@@ -80,6 +81,7 @@ const phenomenonAnimationToggle = document.getElementById("phenomenon-animation-
 const hellridingModeSelect = document.getElementById("hellriding-mode-select");
 const smoothTravelToggle = document.getElementById("smooth-travel-toggle");
 const bemEdgePlaceholdersToggle = document.getElementById("bem-edge-placeholders-toggle");
+const counterBehaviorSelect = document.getElementById("counter-behavior-select");
 
 const sidebar = document.getElementById("sidebar");
 const sidebarContent = document.getElementById("sidebar-content");
@@ -158,6 +160,7 @@ const stateManager = initStateManager({
   hellridingModeSelect,
   smoothTravelToggle,
   bemEdgePlaceholdersToggle,
+  counterBehaviorSelect,
   viewModeSelect,
   groupBySelect,
   groupTagPickerWrap
@@ -339,6 +342,7 @@ async function init() {
     setHellridingMode(filters.hellridingMode);
     setSmoothTravel(filters.smoothTravel);
     setBemEdgePlaceholders(filters.bemEdgePlaceholders);
+    setCounterBehavior(filters.counterBehavior);
 
     initChangelog();
 
@@ -568,6 +572,8 @@ function executeClearAll() {
   setSmoothTravel(true);
   filters.bemEdgePlaceholders = false;
   setBemEdgePlaceholders(false);
+  filters.counterBehavior = "permanent";
+  setCounterBehavior("permanent");
 
   displayState.viewMode = "grid";
   displayState.groupBy = "none";
@@ -657,6 +663,7 @@ function importProfile() {
     if (typeof p.bemEdgePlaceholders === "boolean") {
       filters.bemEdgePlaceholders = p.bemEdgePlaceholders;
       setBemEdgePlaceholders(filters.bemEdgePlaceholders);
+    setCounterBehavior(filters.counterBehavior);
     }
     if ([10, 20, 50, 100].includes(p.pageSize)) paginationState.pageSize = p.pageSize;
     if (["paginated", "infinite"].includes(p.paginationMode)) paginationState.mode = p.paginationMode;
@@ -762,6 +769,7 @@ function bindEvents() {
   bemEdgePlaceholdersToggle?.addEventListener("change", () => {
     filters.bemEdgePlaceholders = bemEdgePlaceholdersToggle.checked;
     setBemEdgePlaceholders(filters.bemEdgePlaceholders);
+    setCounterBehavior(filters.counterBehavior);
     stateManager.persistPreferences();
   });
 

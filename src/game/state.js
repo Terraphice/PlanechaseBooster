@@ -80,6 +80,8 @@ function cloneGameState(state) {
   if (state.bemHellridedPositions instanceof Set) {
     clone.bemHellridedPositions = new Set(state.bemHellridedPositions);
   }
+  if (state.cardCounters instanceof Map) clone.cardCounters = new Map(state.cardCounters);
+  if (state.counterTrackedIds instanceof Set) clone.counterTrackedIds = new Set(state.counterTrackedIds);
   clone.dieRolling = false;
   clone._dieResetTimer = null;
   return clone;
@@ -196,7 +198,9 @@ export function encodeGameState() {
       c: gameState.chaosCost,
       g: grid,
       px: gameState.bemPos.x,
-      py: gameState.bemPos.y
+      py: gameState.bemPos.y,
+      ct: [...(gameState.cardCounters?.entries() || [])],
+      cti: [...(gameState.counterTrackedIds || [])]
     };
     try {
       return "g2:" + toBase64Url(JSON.stringify(obj));
@@ -209,7 +213,9 @@ export function encodeGameState() {
     a: gameState.activePlanes.map((c) => compressKey(c.id)),
     f: gameState.focusedIndex,
     c: gameState.chaosCost,
-    e: gameState.exiled.map((c) => compressKey(c.id))
+    e: gameState.exiled.map((c) => compressKey(c.id)),
+    ct: [...(gameState.cardCounters?.entries() || [])],
+    cti: [...(gameState.counterTrackedIds || [])]
   };
   if (revealedCards.length > 0) {
     obj.rv = revealedCards.map((c) => compressKey(c.id));
@@ -269,7 +275,9 @@ export function decodeGameState(seed) {
         x: typeof obj.px === "number" ? obj.px : 0,
         y: typeof obj.py === "number" ? obj.py : 0
       };
-      return { mode: "bem", remaining, activePlanes, focusedIndex: 0, exiled, chaosCost, bemGrid, bemPos };
+      const cardCounters = new Map((obj.ct || []).filter((e) => Array.isArray(e) && typeof e[0] === "string" && typeof e[1] === "number").map(([k,v]) => [k, Math.max(0, v)]));
+      const counterTrackedIds = new Set((obj.cti || []).filter((v) => typeof v === "string"));
+      return { mode: "bem", remaining, activePlanes, focusedIndex: 0, exiled, chaosCost, bemGrid, bemPos, cardCounters, counterTrackedIds };
     }
     const remaining = (obj.r || []).map(lookupCard).filter(Boolean);
     const activePlanes = (obj.a || []).map(lookupCard).filter(Boolean);
@@ -280,7 +288,9 @@ export function decodeGameState(seed) {
       Math.max(0, activePlanes.length - 1)
     ));
     const chaosCost = typeof obj.c === "number" ? Math.max(0, obj.c) : 0;
-    return { mode: "classic", remaining, activePlanes, focusedIndex, chaosCost, exiled, revealed };
+    const cardCounters = new Map((obj.ct || []).filter((e) => Array.isArray(e) && typeof e[0] === "string" && typeof e[1] === "number").map(([k,v]) => [k, Math.max(0, v)]));
+    const counterTrackedIds = new Set((obj.cti || []).filter((v) => typeof v === "string"));
+    return { mode: "classic", remaining, activePlanes, focusedIndex, chaosCost, exiled, revealed, cardCounters, counterTrackedIds };
   } catch {
     return null;
   }
@@ -322,7 +332,9 @@ export function startGameFromState(decoded) {
       activePlanes: decoded.activePlanes ?? [],
       focusedIndex: 0,
       bemGrid: decoded.bemGrid,
-      bemPos: decoded.bemPos
+      bemPos: decoded.bemPos,
+      cardCounters: decoded.cardCounters ?? new Map(),
+      counterTrackedIds: decoded.counterTrackedIds ?? new Set()
     });
     ctx.setRevealedCards([]);
 
@@ -346,6 +358,8 @@ export function startGameFromState(decoded) {
       dieRolling: false,
       chaosCost: decoded.chaosCost,
       exiled: decoded.exiled,
+      cardCounters: decoded.cardCounters ?? new Map(),
+      counterTrackedIds: decoded.counterTrackedIds ?? new Set(),
       _dieResetTimer: null
     });
     ctx.setRevealedCards(decoded.revealed);
@@ -440,6 +454,8 @@ export function resetGame() {
       chaosCost: 0,
       exiled: [],
       recentPhenomena: [],
+      cardCounters: new Map(),
+      counterTrackedIds: new Set(),
       _dieResetTimer: null
     });
     ctx.showGamePlaceholder();

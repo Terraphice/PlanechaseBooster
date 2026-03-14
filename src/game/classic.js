@@ -5,6 +5,54 @@ import { escapeHtml, shuffleArray } from "../gallery/utils.js";
 
 let ctx = null;
 
+function ensureCounterState(gameState) {
+  if (!gameState.cardCounters) gameState.cardCounters = new Map();
+  if (!(gameState.counterTrackedIds instanceof Set)) gameState.counterTrackedIds = new Set();
+}
+
+function getCardCounter(gameState, cardId) {
+  return gameState.cardCounters?.get(cardId) || 0;
+}
+
+function setCardCounter(gameState, cardId, nextValue) {
+  ensureCounterState(gameState);
+  if (nextValue <= 0) gameState.cardCounters.delete(cardId);
+  else gameState.cardCounters.set(cardId, nextValue);
+}
+
+function addCounter(gameState, cardId, delta) {
+  const current = getCardCounter(gameState, cardId);
+  const next = Math.max(0, current + delta);
+  setCardCounter(gameState, cardId, next);
+  return next;
+}
+
+function trimCountersToCards(gameState) {
+  ensureCounterState(gameState);
+  const ids = new Set(gameState.activePlanes.map((card) => card.id));
+  for (const id of [...gameState.counterTrackedIds]) {
+    if (!ids.has(id)) {
+      gameState.counterTrackedIds.delete(id);
+      gameState.cardCounters.delete(id);
+    }
+  }
+  for (const id of [...gameState.cardCounters.keys()]) {
+    if (!ids.has(id)) gameState.cardCounters.delete(id);
+  }
+}
+
+function clearTemporaryCountersForClassic(gameState, nextActiveCard) {
+  if (ctx.getCounterBehavior?.() !== "temporary") return;
+  ensureCounterState(gameState);
+  const keepId = nextActiveCard?.id;
+  for (const id of [...gameState.counterTrackedIds]) {
+    if (id !== keepId) {
+      gameState.counterTrackedIds.delete(id);
+      gameState.cardCounters.delete(id);
+    }
+  }
+}
+
 export function initClassicGame(context) {
   ctx = context;
 }
@@ -27,6 +75,8 @@ export function startClassicGame() {
     chaosCost: 0,
     exiled: [],
     recentPhenomena: [],
+    cardCounters: new Map(),
+    counterTrackedIds: new Set(),
     _dieResetTimer: null
   });
 
@@ -83,6 +133,7 @@ export function gamePlaneswalk() {
   if (remaining.length === 0) {
     gameState.activePlanes = [];
     gameState.focusedIndex = 0;
+    trimCountersToCards(gameState);
     updateGameView();
     showToast("No more planes in the library.");
     ctx.updatePhenomenonBanner?.();
@@ -90,7 +141,9 @@ export function gamePlaneswalk() {
   }
 
   const nextCard = remaining.shift();
+  clearTemporaryCountersForClassic(gameState, nextCard);
   gameState.activePlanes = [nextCard];
+  trimCountersToCards(gameState);
   gameState.focusedIndex = 0;
   updateGameView();
   ctx.updatePhenomenonBanner?.();
@@ -162,6 +215,42 @@ export function renderClassicSidePanel(activePlanes, focusedIndex) {
       <img class="game-side-card-img" src="${card.thumbPath}" alt="${escapeHtml(card.displayName)}" />
       <div class="game-side-card-label">${escapeHtml(card.displayName)}</div>
     `;
+
+    const gameState = getGameState();
+    ensureCounterState(gameState);
+    if (gameState.counterTrackedIds.has(card.id)) {
+      const counterWrap = document.createElement("div");
+      counterWrap.className = "game-side-counter-wrap";
+      const value = getCardCounter(gameState, card.id);
+      counterWrap.innerHTML = `
+        <button type="button" class="game-side-counter-toggle game-counter-glow" aria-label="Adjust counters">
+          <span aria-hidden="true">⬤</span>
+        </button>
+        <div class="game-side-counter-controls">
+          <button type="button" class="game-side-counter-step" data-step="-1" aria-label="Remove counter">−</button>
+          <span class="game-side-counter-value">${value}</span>
+          <button type="button" class="game-side-counter-step" data-step="1" aria-label="Add counter">+</button>
+        </div>
+      `;
+      const toggle = counterWrap.querySelector(".game-side-counter-toggle");
+      const controls = counterWrap.querySelector(".game-side-counter-controls");
+      toggle?.addEventListener("click", (event) => {
+        event.stopPropagation();
+        controls?.classList.toggle("game-side-counter-controls-visible");
+      });
+      counterWrap.querySelectorAll(".game-side-counter-step").forEach((stepBtn) => {
+        stepBtn.addEventListener("click", (event) => {
+          event.stopPropagation();
+          const gs = getGameState();
+          if (!gs) return;
+          ctx.pushHistory?.();
+          const delta = Number(stepBtn.dataset.step || 0);
+          addCounter(gs, card.id, delta);
+          ctx.updateGameView();
+        });
+      });
+      sideCard.appendChild(counterWrap);
+    }
     sideCard.addEventListener("click", () => {
       const gameState = getGameState();
       if (!gameState) return;
@@ -190,8 +279,25 @@ export function buildMainCardActions(focusedIdx) {
         const top = gameState.remaining.shift();
         gameState.activePlanes.push(top);
         closeGameReaderView();
+        trimCountersToCards(gameState);
         updateGameView();
         showToast(`${top.displayName} added simultaneously.`);
+      }
+    },
+    {
+      label: "Counters",
+      action: () => {
+        const gameState = getGameState();
+        if (!gameState) return;
+        const card = gameState.activePlanes[focusedIdx];
+        if (!card) return;
+        ctx.pushHistory?.();
+        ensureCounterState(gameState);
+        gameState.counterTrackedIds.add(card.id);
+        if (!gameState.cardCounters.has(card.id)) gameState.cardCounters.set(card.id, 0);
+        closeGameReaderView();
+        updateGameView();
+        showToast(`${card.displayName} is now tracking counters.`);
       }
     },
     {
@@ -208,6 +314,7 @@ export function buildMainCardActions(focusedIdx) {
         if (!card) return;
         gameState.remaining.unshift(card);
         gameState.focusedIndex = Math.min(gameState.focusedIndex, Math.max(0, gameState.activePlanes.length - 1));
+        trimCountersToCards(gameState);
         closeGameReaderView();
         updateGameView();
         showToast(`${card.displayName} returned to top.`);
@@ -223,6 +330,7 @@ export function buildMainCardActions(focusedIdx) {
         if (!card) return;
         gameState.remaining.push(card);
         gameState.focusedIndex = Math.min(gameState.focusedIndex, Math.max(0, gameState.activePlanes.length - 1));
+        trimCountersToCards(gameState);
         closeGameReaderView();
         updateGameView();
         showToast(`${card.displayName} returned to bottom.`);
@@ -239,6 +347,7 @@ export function buildMainCardActions(focusedIdx) {
         gameState.remaining.push(card);
         gameState.remaining = shuffleArray(gameState.remaining);
         gameState.focusedIndex = Math.min(gameState.focusedIndex, Math.max(0, gameState.activePlanes.length - 1));
+        trimCountersToCards(gameState);
         closeGameReaderView();
         updateGameView();
         showToast(`${card.displayName} shuffled into library.`);
@@ -255,6 +364,7 @@ export function buildMainCardActions(focusedIdx) {
         if (!card) return;
         gameState.exiled.push(card);
         gameState.focusedIndex = Math.min(gameState.focusedIndex, Math.max(0, gameState.activePlanes.length - 1));
+        trimCountersToCards(gameState);
         closeGameReaderView();
         updateGameView();
         showToast(`${card.displayName} exiled.`);
@@ -267,6 +377,22 @@ export function buildSideCardActions(sideIdx) {
   const { getGameState, closeGameReaderView, updateGameView, showToast } = ctx;
 
   return [
+    {
+      label: "Counters",
+      action: () => {
+        const gameState = getGameState();
+        if (!gameState) return;
+        const card = gameState.activePlanes[sideIdx];
+        if (!card) return;
+        ctx.pushHistory?.();
+        ensureCounterState(gameState);
+        gameState.counterTrackedIds.add(card.id);
+        if (!gameState.cardCounters.has(card.id)) gameState.cardCounters.set(card.id, 0);
+        closeGameReaderView();
+        updateGameView();
+        showToast(`${card.displayName} is now tracking counters.`);
+      }
+    },
     {
       label: "Make Main",
       action: () => {
@@ -287,8 +413,10 @@ export function buildSideCardActions(sideIdx) {
         const card = gameState.activePlanes.splice(sideIdx, 1)[0];
         if (!card) return;
         gameState.remaining.push(...gameState.activePlanes);
+        clearTemporaryCountersForClassic(gameState, card);
         gameState.activePlanes = [card];
         gameState.focusedIndex = 0;
+        trimCountersToCards(gameState);
         closeGameReaderView();
         updateGameView();
         showToast(`Planeswalked to ${card.displayName}.`);
@@ -304,6 +432,7 @@ export function buildSideCardActions(sideIdx) {
         if (!card) return;
         gameState.remaining.unshift(card);
         gameState.focusedIndex = Math.min(gameState.focusedIndex, Math.max(0, gameState.activePlanes.length - 1));
+        trimCountersToCards(gameState);
         closeGameReaderView();
         updateGameView();
         showToast(`${card.displayName} returned to top.`);
@@ -319,6 +448,7 @@ export function buildSideCardActions(sideIdx) {
         if (!card) return;
         gameState.remaining.push(card);
         gameState.focusedIndex = Math.min(gameState.focusedIndex, Math.max(0, gameState.activePlanes.length - 1));
+        trimCountersToCards(gameState);
         closeGameReaderView();
         updateGameView();
         showToast(`${card.displayName} returned to bottom.`);
@@ -335,6 +465,7 @@ export function buildSideCardActions(sideIdx) {
         gameState.remaining.push(card);
         gameState.remaining = shuffleArray(gameState.remaining);
         gameState.focusedIndex = Math.min(gameState.focusedIndex, Math.max(0, gameState.activePlanes.length - 1));
+        trimCountersToCards(gameState);
         closeGameReaderView();
         updateGameView();
         showToast(`${card.displayName} shuffled into library.`);
@@ -351,6 +482,7 @@ export function buildSideCardActions(sideIdx) {
         if (!card) return;
         gameState.exiled.push(card);
         gameState.focusedIndex = Math.min(gameState.focusedIndex, Math.max(0, gameState.activePlanes.length - 1));
+        trimCountersToCards(gameState);
         closeGameReaderView();
         updateGameView();
         showToast(`${card.displayName} exiled.`);
