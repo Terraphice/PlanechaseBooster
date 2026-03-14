@@ -480,9 +480,9 @@ export function openGameReaderView(card, actions = [], options = {}) {
   if (gameReaderImage) {
     gameReaderImage.src = readerImagePath;
     gameReaderImage.alt = isFaceDown ? "Face-down card" : card.displayName;
-  }
+}
   closeReaderZoom();
-  if (gameReaderCardName) gameReaderCardName.textContent = card.displayName;
+  if (gameReaderCardName) gameReaderCardName.textContent = isFaceDown ? "Unknown" : card.displayName;
   if (gameReaderCardType) gameReaderCardType.textContent = isFaceDown ? "Unknown" : (card.type || "");
 
   if (gameReaderTranscript) {
