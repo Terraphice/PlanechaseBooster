@@ -53,7 +53,7 @@ let showToastFn = null;
 let onDeckChangeFn = null;
 let easyPlaneswalk = false;
 let phenomenonAnimationEnabled = true;
-let riskyHellridingEnabled = true;
+let hellridingMode = "risky";
 let smoothTravelEnabled = false;
 let bemEdgePlaceholdersEnabled = false;
 
@@ -406,8 +406,8 @@ export function setPhenomenonAnimation(enabled) {
   phenomenonAnimationEnabled = Boolean(enabled);
 }
 
-export function setRiskyHellriding(enabled) {
-  riskyHellridingEnabled = Boolean(enabled);
+export function setHellridingMode(mode) {
+  hellridingMode = ["safe", "normal", "risky", "extreme"].includes(mode) ? mode : "risky";
 }
 
 export function setSmoothTravel(enabled) {
@@ -537,7 +537,7 @@ function bindDeckEvents() {
       if (anyBlockingOverlay) return;
       if (gameState?.mode === "bem") {
         const cell = gameState.bemGrid?.get(bemKey(gameState.bemPos.x, gameState.bemPos.y));
-        if (cell?.card) openGameReaderView(cell.card, buildBemCardActions());
+        if (cell?.card) openGameReaderView(cell.card, buildBemCardActions(), { faceDown: !cell.faceUp });
       } else if (gameState) {
         const focused = gameState.activePlanes[gameState.focusedIndex] ?? gameState.activePlanes[0];
         if (focused) openGameReaderView(focused, buildMainCardActions(gameState.focusedIndex));
@@ -690,7 +690,7 @@ export function initDeck({ cards, showToast, onDeckChange }) {
     updateCostDisplay,
     syncBemTrButton,
     getPhenomenonAnimationEnabled: () => phenomenonAnimationEnabled,
-    getRiskyHellridingEnabled: () => riskyHellridingEnabled,
+    getHellridingMode: () => hellridingMode,
     getSmoothTravelEnabled: () => smoothTravelEnabled,
     getBemEdgePlaceholders: () => bemEdgePlaceholdersEnabled,
     getEasyPlaneswalk: () => easyPlaneswalk,

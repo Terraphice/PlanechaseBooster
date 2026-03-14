@@ -597,6 +597,18 @@ html[data-palette="gruvbox"][data-theme="dark"] .sidebar {
   margin: 0;
 }
 
+.settings-menu-select-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 10px 0 0;
+  color: var(--text-soft);
+}
+
+.settings-menu-select-input {
+  width: 100%;
+}
+
 .settings-menu-actions {
   display: flex;
   flex-direction: column;

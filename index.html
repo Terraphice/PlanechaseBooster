@@ -216,12 +216,17 @@
                 </div>
 
                 <div class="settings-menu-section">
-                  <h2 class="settings-menu-title">Preferences</h2>
+                  <h2 class="settings-menu-title">Gallery Preferences</h2>
 
                   <label class="checkbox-row settings-checkbox-row">
                     <input id="inline-autocomplete-toggle" type="checkbox" />
                     <span>Tab Autocompletion</span>
                   </label>
+
+                </div>
+
+                <div class="settings-menu-section">
+                  <h2 class="settings-menu-title">Game Preferences</h2>
 
                   <label class="checkbox-row settings-checkbox-row">
                     <input id="phenomenon-animation-toggle" type="checkbox" />
@@ -234,13 +239,18 @@
                   </label>
 
                   <label class="checkbox-row settings-checkbox-row">
-                    <input id="risky-hellriding-toggle" type="checkbox" />
-                    <span>Risky Hellriding</span>
-                  </label>
-
-                  <label class="checkbox-row settings-checkbox-row">
                     <input id="bem-edge-placeholders-toggle" type="checkbox" />
                     <span>Placeholder Borders</span>
+                  </label>
+
+                  <label class="settings-menu-select-row" for="hellriding-mode-select">
+                    <span>Hellriding Mode</span>
+                    <select id="hellriding-mode-select" class="select-input settings-menu-select-input">
+                      <option value="safe">Safe Hellriding</option>
+                      <option value="normal">Normal Hellriding</option>
+                      <option value="risky">Risky Hellriding</option>
+                      <option value="extreme">Extreme Hellriding</option>
+                    </select>
                   </label>
                 </div>
 

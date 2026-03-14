@@ -15,7 +15,7 @@ export const filters = {
   inlineAutocomplete: preferences.inlineAutocomplete,
   showHidden: preferences.showHidden,
   phenomenonAnimation: preferences.phenomenonAnimation,
-  riskyHellriding: preferences.riskyHellriding,
+  hellridingMode: preferences.hellridingMode,
   smoothTravel: preferences.smoothTravel,
   bemEdgePlaceholders: preferences.bemEdgePlaceholders
 };
@@ -33,7 +33,7 @@ export const paginationState = {
   infiniteLoadedCount: preferences.pageSize
 };
 
-export function initStateManager({ themeController, topSearch, sidebarSearch, topSearchGhost, sidebarSearchGhost, fuzzySearchToggle, showHiddenToggle, inlineAutocompleteToggle, phenomenonAnimationToggle, riskyHellridingToggle, smoothTravelToggle, bemEdgePlaceholdersToggle, viewModeSelect, groupBySelect, groupTagPickerWrap }) {
+export function initStateManager({ themeController, topSearch, sidebarSearch, topSearchGhost, sidebarSearchGhost, fuzzySearchToggle, showHiddenToggle, inlineAutocompleteToggle, phenomenonAnimationToggle, hellridingModeSelect, smoothTravelToggle, bemEdgePlaceholdersToggle, viewModeSelect, groupBySelect, groupTagPickerWrap }) {
   function persistPreferences() {
     savePreferences(
       STORAGE_KEY,
@@ -60,7 +60,7 @@ export function initStateManager({ themeController, topSearch, sidebarSearch, to
     showHiddenToggle.checked = filters.showHidden;
     inlineAutocompleteToggle.checked = filters.inlineAutocomplete;
     if (phenomenonAnimationToggle) phenomenonAnimationToggle.checked = filters.phenomenonAnimation;
-    if (riskyHellridingToggle) riskyHellridingToggle.checked = filters.riskyHellriding;
+    if (hellridingModeSelect) hellridingModeSelect.value = filters.hellridingMode;
     if (smoothTravelToggle) smoothTravelToggle.checked = filters.smoothTravel;
     if (bemEdgePlaceholdersToggle) bemEdgePlaceholdersToggle.checked = filters.bemEdgePlaceholders;
     topSearch.value = filters.search;

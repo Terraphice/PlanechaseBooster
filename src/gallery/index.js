@@ -36,7 +36,7 @@ import {
   decodeProfileData,
   setPhenomenonAnimation,
   closeTopGameOverlay,
-  setRiskyHellriding,
+  setHellridingMode,
   setSmoothTravel,
   setBemEdgePlaceholders
 } from "../deck/index.js";
@@ -77,7 +77,7 @@ const fuzzySearchToggle = document.getElementById("fuzzy-search-toggle");
 const showHiddenToggle = document.getElementById("show-hidden-toggle");
 const inlineAutocompleteToggle = document.getElementById("inline-autocomplete-toggle");
 const phenomenonAnimationToggle = document.getElementById("phenomenon-animation-toggle");
-const riskyHellridingToggle = document.getElementById("risky-hellriding-toggle");
+const hellridingModeSelect = document.getElementById("hellriding-mode-select");
 const smoothTravelToggle = document.getElementById("smooth-travel-toggle");
 const bemEdgePlaceholdersToggle = document.getElementById("bem-edge-placeholders-toggle");
 
@@ -155,7 +155,7 @@ const stateManager = initStateManager({
   showHiddenToggle,
   inlineAutocompleteToggle,
   phenomenonAnimationToggle,
-  riskyHellridingToggle,
+  hellridingModeSelect,
   smoothTravelToggle,
   bemEdgePlaceholdersToggle,
   viewModeSelect,
@@ -336,7 +336,7 @@ async function init() {
       }
     });
     setPhenomenonAnimation(filters.phenomenonAnimation);
-    setRiskyHellriding(filters.riskyHellriding);
+    setHellridingMode(filters.hellridingMode);
     setSmoothTravel(filters.smoothTravel);
     setBemEdgePlaceholders(filters.bemEdgePlaceholders);
 
@@ -562,8 +562,8 @@ function executeClearAll() {
   filters.fuzzy = false;
   filters.inlineAutocomplete = true;
   filters.showHidden = false;
-  filters.riskyHellriding = true;
-  setRiskyHellriding(true);
+  filters.hellridingMode = "risky";
+  setHellridingMode("risky");
   filters.smoothTravel = true;
   setSmoothTravel(true);
   filters.bemEdgePlaceholders = false;
@@ -609,7 +609,7 @@ function exportProfile() {
     pageSize: paginationState.pageSize,
     paginationMode: paginationState.mode,
     phenomenonAnimation: filters.phenomenonAnimation,
-    riskyHellriding: filters.riskyHellriding,
+    hellridingMode: filters.hellridingMode,
     smoothTravel: filters.smoothTravel,
     bemEdgePlaceholders: filters.bemEdgePlaceholders
   };
@@ -646,9 +646,9 @@ function importProfile() {
       filters.phenomenonAnimation = p.phenomenonAnimation;
       setPhenomenonAnimation(filters.phenomenonAnimation);
     }
-    if (typeof p.riskyHellriding === "boolean") {
-      filters.riskyHellriding = p.riskyHellriding;
-      setRiskyHellriding(filters.riskyHellriding);
+    if (["safe", "normal", "risky", "extreme"].includes(p.hellridingMode)) {
+      filters.hellridingMode = p.hellridingMode;
+      setHellridingMode(filters.hellridingMode);
     }
     if (typeof p.smoothTravel === "boolean") {
       filters.smoothTravel = p.smoothTravel;
@@ -747,9 +747,9 @@ function bindEvents() {
     stateManager.persistPreferences();
   });
 
-  riskyHellridingToggle?.addEventListener("change", () => {
-    filters.riskyHellriding = riskyHellridingToggle.checked;
-    setRiskyHellriding(filters.riskyHellriding);
+  hellridingModeSelect?.addEventListener("change", () => {
+    filters.hellridingMode = hellridingModeSelect.value;
+    setHellridingMode(filters.hellridingMode);
     stateManager.persistPreferences();
   });
 

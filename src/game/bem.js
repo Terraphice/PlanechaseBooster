@@ -65,6 +65,19 @@ function bemDrawForMap(remaining, { avoidPhenomena = false } = {}) {
   return bemDrawFirstPlane(remaining);
 }
 
+function bemShouldAvoidPhenomena() {
+  const mode = ctx.getHellridingMode?.() ?? "risky";
+  return mode !== "normal";
+}
+
+function bemHellridePhenomenonChance() {
+  const mode = ctx.getHellridingMode?.() ?? "risky";
+  if (mode === "safe") return 0;
+  if (mode === "extreme") return 1;
+  if (mode === "risky") return 2 / 3;
+  return 0;
+}
+
 function bemRestorePhenomenaToTop(remaining, cards) {
   if (!cards.length) return;
   const shuffled = shuffleArray([...cards]);
@@ -74,7 +87,7 @@ function bemRestorePhenomenaToTop(remaining, cards) {
 function bemRevealOrthogonalsAround(nx, ny) {
   const gameState = ctx.getGameState();
   const { bemGrid, remaining } = gameState;
-  const antiPhenomena = ctx.getRiskyHellridingEnabled();
+  const antiPhenomena = bemShouldAvoidPhenomena();
   const orthDirs = [{ dx: 0, dy: -1 }, { dx: 0, dy: 1 }, { dx: -1, dy: 0 }, { dx: 1, dy: 0 }];
   const replacedPhenomena = [];
 
@@ -102,7 +115,7 @@ function bemRevealOrthogonalsAround(nx, ny) {
 
 function bemDiscoverAdjacent() {
   const { bemGrid, bemPos, remaining } = ctx.getGameState();
-  const antiPhenomena = ctx.getRiskyHellridingEnabled();
+  const antiPhenomena = bemShouldAvoidPhenomena();
   const { x: px, y: py } = bemPos;
 
   const dirs = [
@@ -217,7 +230,7 @@ export function startBemGame() {
     { dx: -1, dy: -1, faceUp: false }
   ];
 
-  const antiPhenomena = ctx.getRiskyHellridingEnabled();
+  const antiPhenomena = bemShouldAvoidPhenomena();
 
   for (const { dx, dy, faceUp } of positions) {
     const isCenter = dx === 0 && dy === 0;
@@ -305,7 +318,7 @@ export function bemMovePlayer(nx, ny) {
 
   if (cell.placeholder && !cell.card) {
     const { remaining } = gameState;
-    const nextCard = bemDrawForMap(remaining, { avoidPhenomena: ctx.getRiskyHellridingEnabled() });
+    const nextCard = bemDrawForMap(remaining, { avoidPhenomena: bemShouldAvoidPhenomena() });
     if (nextCard) {
       cell.card = nextCard;
       cell.placeholder = false;
@@ -340,10 +353,11 @@ export function bemMovePlayer(nx, ny) {
 
     const originalCard = cell.card;
     const alreadyHellrided = gameState.bemHellridedPositions?.has(key);
-    if (ctx.getRiskyHellridingEnabled() && originalCard.type !== "Phenomenon" && !alreadyHellrided) {
+    const hellrideChance = bemHellridePhenomenonChance();
+    if (hellrideChance > 0 && originalCard.type !== "Phenomenon" && !alreadyHellrided) {
       gameState.bemHellridedPositions?.add(key);
       const phenIdx = gameState.remaining.findIndex(c => c.type === "Phenomenon");
-      if (phenIdx !== -1 && Math.random() < 2 / 3) {
+      if (phenIdx !== -1 && Math.random() < hellrideChance) {
         const [phenomenon] = gameState.remaining.splice(phenIdx, 1);
         cell.card = phenomenon;
         cell.queuedCard = originalCard;
@@ -397,7 +411,7 @@ export function bemResolvePhenomenon() {
   ctx.pushHistory?.();
 
   const phenomenon = cell.card;
-  const nextCard = cell.queuedCard ?? bemDrawForMap(remaining, { avoidPhenomena: ctx.getRiskyHellridingEnabled() });
+  const nextCard = cell.queuedCard ?? bemDrawForMap(remaining, { avoidPhenomena: bemShouldAvoidPhenomena() });
   delete cell.queuedCard;
   remaining.push(phenomenon);
 
@@ -435,7 +449,7 @@ export function bemFillPlaceholder() {
 
   ctx.pushHistory?.();
 
-  const nextCard = bemDrawForMap(remaining, { avoidPhenomena: ctx.getRiskyHellridingEnabled() });
+  const nextCard = bemDrawForMap(remaining, { avoidPhenomena: bemShouldAvoidPhenomena() });
   if (nextCard) {
     bemLandOnPhenomenon = nextCard.type === "Phenomenon" && ctx.getPhenomenonAnimationEnabled();
     bemGrid.set(key, { card: nextCard, faceUp: true });
@@ -703,14 +717,14 @@ export function handleBemCellClick(event) {
       bemMovePlayer(nx, ny);
     } else {
       const gridCell = gameState.bemGrid.get(bemKey(nx, ny));
-      if (gridCell?.card && gridCell.faceUp) openGameReaderView(gridCell.card, buildBemAdjacentCardActions(nx, ny));
+      if (gridCell?.card) openGameReaderView(gridCell.card, buildBemAdjacentCardActions(nx, ny), { faceDown: !gridCell.faceUp });
     }
     return;
   }
 
   const gridCell = gameState.bemGrid.get(bemKey(nx, ny));
-  if (gridCell?.card && gridCell.faceUp) {
-    openGameReaderView(gridCell.card, buildBemAdjacentCardActions(nx, ny));
+  if (gridCell?.card) {
+    openGameReaderView(gridCell.card, buildBemAdjacentCardActions(nx, ny), { faceDown: !gridCell.faceUp });
   }
 }
 
@@ -820,6 +834,28 @@ export function handleBemPointerUp(event) {
 
 // ── BEM action builders ───────────────────────────────────────────────────────
 
+
+function buildBemFlipAction(x, y) {
+  return {
+    label: "Flip",
+    action: () => {
+      const gameState = ctx.getGameState();
+      if (!gameState?.bemGrid) return;
+      const key = bemKey(x, y);
+      const target = gameState.bemGrid.get(key);
+      if (!target?.card || target.placeholder) return;
+      ctx.pushHistory?.();
+      target.faceUp = !target.faceUp;
+      const nowFaceUp = target.faceUp;
+      ctx.closeGameReaderView?.();
+      renderBemMap();
+      updateBemInfoBar();
+      syncBemTrButton();
+      ctx.showToast(nowFaceUp ? `${target.card.displayName} turned face-up.` : `${target.card.displayName} turned face-down.`);
+    }
+  };
+}
+
 export function buildBemCardActions() {
   const { closeGameReaderView, showToast } = ctx;
 
@@ -835,7 +871,11 @@ export function buildBemCardActions() {
     }};
   }
 
+  const gameState = ctx.getGameState();
+  const pos = gameState?.bemPos;
+
   return [
+    ...(pos ? [buildBemFlipAction(pos.x, pos.y)] : []),
     makeAction("Add", (gs, key, cell, name) => {
       gs.activePlanes.push(cell.card);
       gs.bemGrid.set(key, { card: null, faceUp: true, placeholder: true });
@@ -871,23 +911,72 @@ export function buildBemCardActions() {
 }
 
 export function buildBemAdjacentCardActions(nx, ny) {
-  const { closeGameReaderView } = ctx;
+  const { closeGameReaderView, showToast } = ctx;
   const gameState = ctx.getGameState();
   if (!gameState?.bemPos || !gameState?.bemGrid) return [];
 
   const dx = nx - gameState.bemPos.x;
   const dy = ny - gameState.bemPos.y;
-  const targetCell = gameState.bemGrid.get(bemKey(nx, ny));
-  if (!bemIsValidPlaneswalkTarget(dx, dy, targetCell)) return [];
+  const targetKey = bemKey(nx, ny);
+  const targetCell = gameState.bemGrid.get(targetKey);
+  if (!targetCell?.card || targetCell.placeholder) return [];
+
+  const canPlaneswalkHere = bemIsValidPlaneswalkTarget(dx, dy, targetCell);
+
+  function makeTargetAction(label, handler, danger = false) {
+    return {
+      label,
+      danger,
+      action: () => {
+        const gs = ctx.getGameState();
+        const cell = gs?.bemGrid?.get(targetKey);
+        if (!gs || !cell?.card || cell.placeholder) return;
+        ctx.pushHistory?.();
+        handler(gs, cell, cell.card.displayName);
+      }
+    };
+  }
 
   return [
-    {
+    buildBemFlipAction(nx, ny),
+    ...(canPlaneswalkHere ? [{
       label: "Planeswalk Here",
       action: () => {
         closeGameReaderView();
         bemMovePlayer(nx, ny);
       }
-    }
+    }] : []),
+    makeTargetAction("Add", (gs, cell, name) => {
+      gs.activePlanes.push(cell.card);
+      gs.bemGrid.set(targetKey, { card: null, faceUp: true, placeholder: true });
+      closeGameReaderView(); renderBemMap(); updateBemInfoBar(); syncBemTrButton();
+      showToast(`${name} added simultaneously.`);
+    }),
+    makeTargetAction("Return to Top", (gs, cell, name) => {
+      gs.remaining.unshift(cell.card);
+      gs.bemGrid.set(targetKey, { card: null, faceUp: true, placeholder: true });
+      closeGameReaderView(); renderBemMap(); updateBemInfoBar(); syncBemTrButton();
+      showToast(`${name} returned to top.`);
+    }),
+    makeTargetAction("Return to Bottom", (gs, cell, name) => {
+      gs.remaining.push(cell.card);
+      gs.bemGrid.set(targetKey, { card: null, faceUp: true, placeholder: true });
+      closeGameReaderView(); renderBemMap(); updateBemInfoBar(); syncBemTrButton();
+      showToast(`${name} returned to bottom.`);
+    }),
+    makeTargetAction("Shuffle Into Library", (gs, cell, name) => {
+      gs.remaining.push(cell.card);
+      gs.remaining = shuffleArray(gs.remaining);
+      gs.bemGrid.set(targetKey, { card: null, faceUp: true, placeholder: true });
+      closeGameReaderView(); renderBemMap(); updateBemInfoBar(); syncBemTrButton();
+      showToast(`${name} shuffled into library.`);
+    }),
+    makeTargetAction("Exile", (gs, cell, name) => {
+      gs.exiled.push(cell.card);
+      gs.bemGrid.set(targetKey, { card: null, faceUp: true, placeholder: true });
+      closeGameReaderView(); renderBemMap(); updateBemInfoBar(); syncBemTrButton();
+      showToast(`${name} exiled.`);
+    }, true)
   ];
 }
 

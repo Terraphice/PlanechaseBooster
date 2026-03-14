@@ -271,7 +271,6 @@ export function renderGameSidePanel(activePlanes, focusedIndex) {
  */
 export function syncGameToolsState(remainingCount) {
   const gameState = ctx.getGameState();
-  const isBem = gameState?.mode === "bem";
   if (gameToolsUndo) gameToolsUndo.disabled = ctx.getGameHistory().length === 0;
   if (gameToolsRedo) gameToolsRedo.disabled = ctx.getGameRedoStack().length === 0;
   if (gameToolsAddTop) {
@@ -470,22 +469,29 @@ export function closeTopGameOverlay() {
  * @param {object} card - The enriched card object to display.
  * @param {{ label: string, action: Function, danger?: boolean }[]} [actions] - Action buttons.
  */
-export function openGameReaderView(card, actions = []) {
+export function openGameReaderView(card, actions = [], options = {}) {
   if (!gameReaderView || !card) return;
 
-  readerCardPath = card.imagePath;
+  const isFaceDown = Boolean(options.faceDown);
+  const readerImagePath = isFaceDown ? "assets/card-preview.jpg" : card.imagePath;
+
+  readerCardPath = readerImagePath;
 
   if (gameReaderImage) {
-    gameReaderImage.src = card.imagePath;
-    gameReaderImage.alt = card.displayName;
+    gameReaderImage.src = readerImagePath;
+    gameReaderImage.alt = isFaceDown ? "Face-down card" : card.displayName;
   }
   closeReaderZoom();
-  if (gameReaderCardName) gameReaderCardName.textContent = card.displayName;
-  if (gameReaderCardType) gameReaderCardType.textContent = card.type || "";
+  if (gameReaderCardName) gameReaderCardName.textContent = isFaceDown ? "Unknown" : card.displayName;
+  if (gameReaderCardType) gameReaderCardType.textContent = isFaceDown ? "Unknown" : (card.type || "");
 
   if (gameReaderTranscript) {
-    gameReaderTranscript.textContent = "Loading…";
-    loadReaderTranscript(card);
+    if (isFaceDown) {
+      gameReaderTranscript.textContent = "This card is face-down.";
+    } else {
+      gameReaderTranscript.textContent = "Loading…";
+      loadReaderTranscript(card);
+    }
   }
 
   if (gameReaderActions) {
@@ -1562,7 +1568,7 @@ function bindGameUIEvents() {
     const gameState = ctx.getGameState();
     if (!gameState?.bemGrid || !gameState?.bemPos) return;
     const cell = gameState.bemGrid.get(bemKey(gameState.bemPos.x, gameState.bemPos.y));
-    if (cell?.card) openGameReaderView(cell.card, buildBemCardActions());
+    if (cell?.card) openGameReaderView(cell.card, buildBemCardActions(), { faceDown: !cell.faceUp });
   });
 
   classicViewCardBtn?.addEventListener("click", () => {
