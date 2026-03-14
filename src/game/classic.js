@@ -267,6 +267,22 @@ export function buildMainCardActions(focusedIdx) {
 
   return [
     {
+      label: "Counters",
+      action: () => {
+        const gameState = getGameState();
+        if (!gameState) return;
+        const card = gameState.activePlanes[focusedIdx];
+        if (!card) return;
+        ctx.pushHistory?.();
+        ensureCounterState(gameState);
+        gameState.counterTrackedIds.add(card.id);
+        if (!gameState.cardCounters.has(card.id)) gameState.cardCounters.set(card.id, 0);
+        closeGameReaderView();
+        updateGameView();
+        showToast(`${card.displayName} is now tracking counters.`);
+      }
+    },
+    {
       label: "Add",
       action: () => {
         const gameState = getGameState();

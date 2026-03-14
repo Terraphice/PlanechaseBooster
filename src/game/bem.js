@@ -636,6 +636,9 @@ export function renderBemMap() {
       const isDiagToPlayer = Math.abs(pdx) === 1 && Math.abs(pdy) === 1;
       const isOrthogToPlayer = (Math.abs(pdx) + Math.abs(pdy)) === 1;
 
+      ensureCounterState(gameState);
+      if (cell?.card && gameState.counterTrackedIds.has(cell.card.id)) div.classList.add("game-counter-glow");
+
       if (bemPlaneswalkPending && !isPlayer) {
         if (isOrthogToPlayer && cell?.faceUp) div.classList.add("bem-cell-planeswalk-glow");
         else if (isDiagToPlayer && cell && !cell.faceUp) div.classList.add("bem-cell-hellride-glow");
